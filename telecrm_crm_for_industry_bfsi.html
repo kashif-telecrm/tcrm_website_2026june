@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CRM for BFSI — telecrm | Banking, Financial Services and Insurance Lead Management</title>
+<meta name="description" content="How telecrm works for BFSI businesses — lead management, policy and loan pipeline tracking, renewal automation, DSA network management and compliance-ready call logging for banking, financial services and insurance.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://telecrm.in/solutions/industries/bfsi/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="CRM for BFSI — telecrm | Banking, Financial Services and Insurance">
+<meta property="og:description" content="telecrm gives BFSI businesses structured lead pipelines, policy and loan tracking, renewal automation, DSA network management and compliance-ready call recording — all in one mobile-first platform.">
+<meta property="og:url" content="https://telecrm.in/solutions/industries/bfsi/">
+<meta property="og:site_name" content="telecrm">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://telecrm.in/"},{"@type":"ListItem","position":2,"name":"Solutions","item":"https://telecrm.in/solutions/"},{"@type":"ListItem","position":3,"name":"Industry Hub","item":"https://telecrm.in/solutions/industries/"},{"@type":"ListItem","position":4,"name":"BFSI","item":"https://telecrm.in/solutions/industries/bfsi/"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What CRM do BFSI businesses need?","acceptedAnswer":{"@type":"Answer","text":"BFSI businesses need a CRM with structured lead pipelines for loans, policies and investment products, renewal automation, DSA and channel partner management, compliance-ready call recording and field team tracking — all in one platform that works on mobile for agents selling in the field."}},{"@type":"Question","name":"How does telecrm work for BFSI?","acceptedAnswer":{"@type":"Answer","text":"telecrm gives BFSI teams structured product pipelines, automated renewal follow-up sequences, DSA network management with role-based access, compliance-ready call recording and real-time field activity dashboards — from a mobile-first platform designed for Indian financial services distribution."}}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cta:#F97316; --cta-hover:#EA580C;--v50:#EDEBF6;--v100:#E1DDF0;--v200:#C4BAE5;--v300:#9C8FCF;--v400:#7260B5;--v500:#4F38A2;--v600:#483393;--v700:#382873;--v900:#211844;--grey:#64748B;--grey2:#94A3B8;--border:#E9EBF8;--success:#22C55E;--font-head:'Plus Jakarta Sans',sans-serif;--font-body:'DM Sans',sans-serif;--radius-btn:10px;--radius-card:16px;--radius-pill:100px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);color:var(--v900);background:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+.nav__inner{max-width:1280px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:72px;}
+.nav__logo{font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--v500);letter-spacing:-.5px;}
+.nav__links{display:flex;align-items:center;gap:2px;}
+.nav__link{font-family:var(--font-head);font-size:12.5px;font-weight:600;color:var(--v700);padding:7px 11px;border-radius:8px;transition:all .18s;white-space:nowrap;}
+.nav__link:hover,.nav__link--active{background:var(--v50);color:var(--v500);}
+.nav__sep{display:inline-block;width:1px;height:20px;background:var(--border);margin:0 8px;vertical-align:middle;}
+.nav__cta{font-family:var(--font-head);font-size:13px;font-weight:700;background:var(--cta);color:#fff;padding:10px 22px;border-radius:var(--radius-btn);box-shadow:0 4px 12px rgba(249,115,22,.3);transition:all .18s;white-space:nowrap;margin-left:8px;}
+.nav__cta:hover{background:var(--cta-hover);transform:translateY(-1px);}
+.nav__mobile-right{display:none;align-items:center;gap:8px;margin-left:auto;}
+.nav__mobile-cta{font-family:var(--font-head);font-size:13px;font-weight:700;background:var(--v500);color:#fff;padding:8px 16px;border-radius:var(--radius-btn);white-space:nowrap;}
+.nav__mob-sep{display:none;width:1px;height:20px;background:var(--border);}
+.nav__hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:8px;border:none;background:transparent;}
+.nav__hamburger span{display:block;width:22px;height:2px;background:var(--v900);border-radius:2px;transition:all .18s;}
+.nav__hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav__hamburger.open span:nth-child(2){opacity:0;}
+.nav__hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.hero{padding:64px 0 56px;background:#fff;position:relative;overflow:hidden;}
+.hero__bg{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;opacity:.35;pointer-events:none;}
+.hero__glow{position:absolute;top:-80px;right:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(79,56,162,.07) 0%,transparent 70%);pointer-events:none;}
+.hero__inner{max-width:1280px;margin:0 auto;padding:0 32px;position:relative;}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-family:var(--font-head);font-size:12px;font-weight:600;color:var(--grey2);margin-bottom:24px;flex-wrap:wrap;}
+.breadcrumb-sep{color:var(--v200);}
+.breadcrumb a{color:var(--grey2);transition:color .2s;}
+.breadcrumb a:hover{color:var(--v500);}
+.breadcrumb-current{color:var(--v500);}
+.hero__eyebrow{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;}
+.hero__h1{font-family:var(--font-head);font-size:clamp(28px,4vw,56px);font-weight:900;letter-spacing:-1.5px;color:var(--v900);line-height:1.1;margin-bottom:16px;}
+.hero__h1 em{font-style:normal;color:var(--v500);}
+.hero__sub{font-size:17px;color:var(--grey);line-height:1.75;max-width:700px;}
+.highlights{background:var(--v50);border-top:1px solid var(--v100);border-bottom:1px solid var(--v100);padding:20px 32px;}
+.highlights__inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.highlight{display:flex;align-items:center;gap:10px;padding:10px 16px;background:#fff;border:1.5px solid var(--v100);border-radius:10px;}
+.highlight__dot{width:7px;height:7px;border-radius:50%;background:var(--v500);flex-shrink:0;}
+.highlight__text{font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--v700);}
+.section{padding:80px 0;}
+.section--white{background:#fff;}
+.section--tint{background:#F8F7FC;}
+.inner{max-width:1280px;margin:0 auto;padding:0 32px;}
+.sec-eyebrow{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
+.sec-h2{font-family:var(--font-head);font-size:clamp(24px,3vw,38px);font-weight:900;color:var(--v900);letter-spacing:-.8px;line-height:1.2;margin-bottom:16px;}
+.sec-h2 em{font-style:normal;color:var(--v500);}
+.sec-body{font-size:16px;color:var(--grey);line-height:1.8;margin-bottom:20px;}
+.sec-body:last-child{margin-bottom:0;}
+.definition{background:var(--v50);border:1.5px solid var(--v100);border-radius:20px;padding:36px 40px;margin-top:36px;}
+.definition__label{font-family:var(--font-head);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--v400);margin-bottom:12px;}
+.definition__text{font-size:18px;color:var(--v900);line-height:1.75;font-weight:500;}
+.definition__text em{font-style:normal;color:var(--v500);}
+.criteria-list{display:flex;flex-direction:column;margin-top:36px;}
+.criterion{padding:24px 0;border-bottom:1px solid var(--border);display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start;}
+.criterion:last-child{border-bottom:none;}
+.criterion__num{width:36px;height:36px;border-radius:10px;background:var(--v500);color:#fff;font-family:var(--font-head);font-size:14px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.criterion__title{font-family:var(--font-head);font-size:15px;font-weight:800;color:var(--v900);margin-bottom:5px;}
+.criterion__body{font-size:14px;color:var(--grey);line-height:1.7;}
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px;}
+.feature-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--radius-card);padding:24px;display:flex;flex-direction:column;gap:14px;transition:all .2s;}
+.feature-card:hover{border-color:var(--v200);box-shadow:0 8px 24px rgba(79,56,162,.08);}
+.feature-card__header{display:flex;align-items:center;gap:12px;}
+.feature-card__icon{width:44px;height:44px;border-radius:12px;background:var(--v50);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.feature-card__icon svg{width:22px;height:22px;}
+.feature-card__title{font-family:var(--font-head);font-size:14px;font-weight:800;color:var(--v900);}
+.feature-card__body{font-size:13px;color:var(--grey);line-height:1.7;}
+.usecase-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px;}
+.usecase-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--radius-card);padding:24px 20px;}
+.usecase-card__industry{font-family:var(--font-head);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--v400);margin-bottom:8px;}
+.usecase-card__title{font-family:var(--font-head);font-size:15px;font-weight:800;color:var(--v900);margin-bottom:8px;}
+.usecase-card__body{font-size:13px;color:var(--grey);line-height:1.65;}
+.testimonial-band{background:var(--v900);border-radius:20px;padding:40px 48px;position:relative;overflow:hidden;}
+.testimonial-band::before{content:'';position:absolute;top:-80px;right:-60px;width:360px;height:360px;background:radial-gradient(circle,rgba(114,96,181,.2) 0%,transparent 70%);pointer-events:none;}
+.testimonial-band__qmark{font-size:48px;color:var(--v400);line-height:.6;margin-bottom:16px;font-family:Georgia,serif;position:relative;}
+.testimonial-band__quote{font-size:18px;color:rgba(255,255,255,.9);line-height:1.75;font-style:italic;margin-bottom:28px;position:relative;max-width:760px;}
+.testimonial-band__person{display:flex;align-items:center;gap:14px;border-top:1px solid rgba(255,255,255,.1);padding-top:20px;position:relative;}
+.testimonial-band__avatar{width:44px;height:44px;border-radius:50%;background:var(--v700);color:var(--v200);font-family:var(--font-head);font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.testimonial-band__name{font-family:var(--font-head);font-size:14px;font-weight:700;color:#fff;}
+.testimonial-band__role{font-size:13px;color:var(--v300);margin-top:2px;}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px;}
+.related-card{border:1.5px solid var(--border);border-radius:var(--radius-card);padding:24px;display:flex;flex-direction:column;gap:10px;transition:all .2s;position:relative;overflow:hidden;}
+.related-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--v400),var(--v500));opacity:0;transition:opacity .2s;}
+.related-card:hover{border-color:var(--v200);box-shadow:0 8px 24px rgba(79,56,162,.08);transform:translateY(-2px);}
+.related-card:hover::after{opacity:1;}
+.related-card__name{font-family:var(--font-head);font-size:15px;font-weight:800;color:var(--v900);}
+.related-card__desc{font-size:13px;color:var(--grey);line-height:1.6;flex:1;}
+.related-card__link{display:inline-flex;align-items:center;gap:5px;font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v500);transition:gap .2s;}
+.related-card:hover .related-card__link{gap:8px;}
+.related-card__link svg{width:11px;height:11px;}
+.final-cta{padding:96px 0;background:var(--v900);position:relative;overflow:hidden;}
+.final-cta__grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;}
+.final-cta__glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(114,96,181,.25) 0%,transparent 65%);pointer-events:none;}
+.final-cta__inner{max-width:860px;margin:0 auto;padding:0 32px;text-align:center;position:relative;}
+.final-cta__badge{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v200);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);padding:6px 16px;border-radius:var(--radius-pill);margin-bottom:28px;}
+.final-cta__badge-dot{width:6px;height:6px;border-radius:50%;background:var(--success);}
+.final-cta__eyebrow{font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v300);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;}
+.final-cta__h2{font-family:var(--font-head);font-size:clamp(28px,4vw,48px);font-weight:900;letter-spacing:-1.2px;color:#fff;line-height:1.1;margin-bottom:16px;}
+.final-cta__h2 em{font-style:normal;color:var(--v300);}
+.final-cta__sub{font-size:17px;color:var(--v200);line-height:1.75;max-width:560px;margin:0 auto 36px;}
+.btn-cta-white{font-family:var(--font-head);font-size:15px;font-weight:700;background:#fff;color:var(--v500);padding:15px 36px;border-radius:var(--radius-btn);box-shadow:0 8px 28px rgba(0,0,0,.2);transition:all .2s;display:inline-flex;align-items:center;gap:8px;}
+.btn-cta-white:hover{background:var(--v50);transform:translateY(-2px);}
+.btn-cta-white svg{width:16px;height:16px;}
+.final-cta__trust{display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:28px;}
+.final-cta__trust-item{display:flex;align-items:center;gap:7px;font-family:var(--font-head);font-size:12px;font-weight:600;color:var(--v200);}
+.final-cta__trust-dot{width:5px;height:5px;border-radius:50%;background:var(--success);}
+.footer{background:#fff;border-top:1px solid var(--border);padding:64px 0 40px;}
+.footer__inner{max-width:1280px;margin:0 auto;padding:0 32px;}
+.footer__grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+.footer__links-grid{display:contents;}
+.footer__logo{font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--v500);margin-bottom:16px;letter-spacing:-.5px;}
+.footer__tagline{font-size:14px;color:var(--grey);line-height:1.7;max-width:280px;margin-bottom:24px;}
+.footer__col-title{font-family:var(--font-head);font-size:12px;font-weight:800;color:var(--v900);text-transform:uppercase;letter-spacing:.06em;margin-bottom:16px;}
+.footer__links{display:flex;flex-direction:column;gap:10px;}
+.footer__link{font-size:14px;color:var(--grey);transition:color .2s;}
+.footer__link:hover{color:var(--v500);}
+.footer__bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer__copy{font-size:13px;color:var(--grey);}
+.footer__legal{display:flex;gap:24px;}
+.footer__legal a{font-size:13px;color:var(--grey);transition:color .2s;}
+.footer__legal a:hover{color:var(--v500);}
+.btn-primary{font-family:var(--font-head);font-size:13px;font-weight:700;background:var(--cta);color:#fff;padding:10px 20px;border-radius:var(--radius-btn);box-shadow:0 4px 12px rgba(249,115,22,.3);transition:all .2s;display:inline-flex;align-items:center;gap:6px;}
+.btn-primary:hover{background:var(--cta-hover);}
+@media(max-width:768px){
+  .highlights__inner{grid-template-columns:1fr;}
+  .feature-grid{grid-template-columns:1fr 1fr;}
+  .usecase-grid{grid-template-columns:1fr 1fr;}
+  .related-grid{grid-template-columns:1fr 1fr;}
+  .testimonial-band{padding:28px 24px;}
+  .definition{padding:24px 28px;}
+  .criterion{grid-template-columns:36px 1fr;}
+  .footer__grid{grid-template-columns:1fr;}
+  .footer__tagline{max-width:100%;}
+  .btn-primary{width:100%;justify-content:center;}
+  .footer__links-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px 16px;margin-top:32px;}
+  .footer__links-grid > div:nth-child(1),.footer__links-grid > div:nth-child(2),.footer__links-grid > div:nth-child(3){text-align:left;grid-column:1;}
+  .footer__links-grid > div:nth-child(4){text-align:right;grid-column:2;grid-row:1 / span 3;}
+  .footer__links-grid > div:nth-child(4) .footer__links{align-items:flex-end;}
+  .footer__bottom{flex-direction:column;align-items:center;text-align:center;}
+  .footer__legal{flex-wrap:wrap;justify-content:center;}
+}
+@media(max-width:600px){
+  .feature-grid,.usecase-grid,.related-grid{grid-template-columns:1fr;}
+  .inner{padding:0 20px;}
+  .highlights{padding:20px;}
+}
+@media(min-width:769px){.nav__hamburger{display:none;}.nav__mobile-right{display:none;}}
+
+/* ===== ROLLOUT v2026-05-29: nav mega-menu + fat footer (canonical) ===== */
+.nav__item{position:relative;display:flex;align-items:center;height:72px;}
+.nav__item > .nav__link{display:inline-flex;align-items:center;gap:4px;}
+.nav__caret{width:11px;height:11px;flex-shrink:0;transition:transform .2s;}
+.nav__item:hover > .nav__link .nav__caret,.nav__item:focus-within > .nav__link .nav__caret{transform:rotate(180deg);}
+.nav__item:hover > .nav__link,.nav__item:focus-within > .nav__link{background:var(--v50);color:var(--v500);}
+.nav__panel{position:absolute;top:100%;left:0;background:#fff;border:1px solid var(--border);border-radius:14px;box-shadow:0 18px 44px rgba(33,24,68,.13);padding:14px;opacity:0;visibility:hidden;transform:translateY(7px);transition:opacity .16s,transform .16s,visibility .16s;z-index:200;}
+.nav__panel--right{left:auto;right:0;}
+.nav__item:hover > .nav__panel,.nav__item:focus-within > .nav__panel{opacity:1;visibility:visible;transform:translateY(0);}
+.np__list{display:grid;gap:1px;}
+.np__list--2{grid-template-columns:1fr 1fr;gap:1px 14px;}
+.np__link{display:flex;flex-direction:column;gap:2px;padding:9px 12px;border-radius:8px;transition:background .15s;min-width:0;}
+.np__link:hover{background:var(--v50);}
+.np__t{font-family:var(--font-head);font-size:13.5px;font-weight:700;color:var(--v900);white-space:nowrap;}
+.np__list--2 .np__t{white-space:normal;line-height:1.3;overflow-wrap:break-word;}
+.np__link:hover .np__t{color:var(--v500);}
+.np__s{font-family:var(--font-body);font-size:12px;color:var(--grey);line-height:1.35;}
+.np__foot{display:flex;align-items:center;gap:6px;border-top:1px solid var(--border);margin-top:8px;padding:11px 12px 3px;font-family:var(--font-head);font-size:12.5px;font-weight:700;color:var(--v500);}
+.np__foot svg{width:13px;height:13px;}
+.nav__mobile-cta{background:var(--cta);}
+.footer__grid{grid-template-columns:1.5fr 1fr 1fr 1fr 1fr 1.15fr;gap:40px 32px;}
+.footer__col-stack{display:flex;flex-direction:column;gap:48px;}
+@media(max-width:1024px){.footer__grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:768px){
+  .nav__item{width:100%;height:auto;display:block;position:static;}
+  .nav__item > .nav__link{display:flex;align-items:center;justify-content:space-between;width:100%;}
+  .nav__item.open > .nav__link .nav__caret{transform:rotate(180deg);}
+  .nav__caret{width:13px;height:13px;}
+  .nav__panel{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;border-radius:0;padding:4px 0 10px 10px;width:auto !important;display:none;z-index:auto;}
+  .nav__item.open > .nav__panel{display:block;}
+  .np__list--2{grid-template-columns:1fr;}
+  .np__link{padding:9px 10px;}
+  .np__foot{padding-left:10px;}
+  .footer__links-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px 16px;margin-top:32px;}
+  .footer__links-grid > div:nth-child(1),.footer__links-grid > div:nth-child(2),.footer__links-grid > div:nth-child(3),.footer__links-grid > div:nth-child(4),.footer__links-grid > div:nth-child(5){text-align:left;grid-column:auto;grid-row:auto;}
+  .footer__links-grid > div:nth-child(4) .footer__links{align-items:flex-start;}
+}
+@media(max-width:600px){.footer__grid{grid-template-columns:1fr;}}
+/* ===== end ROLLOUT ===== */
+
+/* ===== FAQ section (locked §16A) ===== */
+.faq{padding:96px 0;background:#F8F7FC;}
+.faq__inner{max-width:1280px;margin:0 auto;padding:0 32px;}
+.faq__header{text-align:center;margin-bottom:8px;}
+.faq__eyebrow{font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v500);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;}
+.faq__h2{font-family:var(--font-head);font-size:clamp(28px,3.5vw,42px);font-weight:900;letter-spacing:-1.2px;color:var(--v900);line-height:1.15;}
+.faq__h2 em{font-style:normal;color:var(--v500);}
+.faq-list{display:flex;flex-direction:column;border-top:1px solid var(--border);max-width:860px;margin:40px auto 0;}
+.faq-item{border-bottom:1px solid var(--border);}
+.faq-item__q{display:flex;align-items:center;justify-content:space-between;padding:22px 0;cursor:pointer;gap:24px;}
+.faq-item__q-text{font-family:var(--font-head);font-size:16px;font-weight:700;color:var(--v900);}
+.faq-item__icon{width:28px;height:28px;border-radius:50%;background:#fff;border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s;}
+.faq-item__icon svg{width:12px;height:12px;transition:transform .25s;}
+.faq-item.open .faq-item__icon{background:var(--v500);border-color:var(--v500);}
+.faq-item.open .faq-item__icon svg{transform:rotate(45deg);stroke:#fff;}
+.faq-item__a{display:none;font-family:var(--font-body);font-size:15px;color:var(--grey);line-height:1.75;padding-bottom:22px;max-width:760px;}
+.faq-item.open .faq-item__a{display:block;}
+@media(max-width:768px){.faq{padding:64px 0;}.faq__inner{padding:0 20px;}}
+/* ===== end FAQ ===== */
+
+.np__cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.np__col-head{display:block;font-family:var(--font-head);font-size:11px;font-weight:800;color:var(--v400);text-transform:uppercase;letter-spacing:.07em;padding:4px 12px 8px;transition:color .15s;}
+.np__col-head:hover{color:var(--v500);}
+.nav__panel:has(.np__col:only-child) .np__cols{grid-template-columns:1fr;}
+@media(max-width:768px){.np__cols{grid-template-columns:1fr !important;gap:0 !important;}.np__col-head{padding:8px 10px 4px;}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="telecrm-approach2-home.html" class="nav__logo">telecrm</a>
+    <div class="nav__links">
+      <div class="nav__item">
+        <a href="telecrm-platform-overview.html" class="nav__link">Platform Overview <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:560px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-platform-hub.html">Platform Hub</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-platform-unified-revenue-management.html"><span class="np__t">Unified Revenue Management</span><span class="np__s">One connected engine</span></a>
+                <a class="np__link" href="telecrm-platform-lead-management.html"><span class="np__t">Lead Management</span><span class="np__s">Capture, dedupe, assign</span></a>
+                <a class="np__link" href="telecrm-platform-call-management.html"><span class="np__t">Call Management &amp; Recording</span><span class="np__s">Dial, record, track</span></a>
+                <a class="np__link" href="telecrm-platform-adaptive-crm.html"><span class="np__t">Adaptive CRM</span><span class="np__s">Stages, fields, 360°</span></a>
+                <a class="np__link" href="telecrm-platform-marketing-automation.html"><span class="np__t">Marketing Automation</span><span class="np__s">Reach leads automatically</span></a>
+                <a class="np__link" href="telecrm-platform-sales-pipeline-management.html"><span class="np__t">Sales Funnel &amp; Pipeline Management</span><span class="np__s">Track every deal stage</span></a>
+              </div>
+            </div>
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-benefits-hub.html">Benefits Hub</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-benefits-hub.html"><span class="np__t">Outcomes &amp; ROI</span><span class="np__s">What telecrm delivers for your team</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-platform-overview.html">Platform Overview — the product, end to end <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-solutions-hub.html" class="nav__link nav__link--active">Solutions <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-solutions-hub.html">By approach</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-problems-hub.html"><span class="np__t">Problems Hub</span><span class="np__s">Revenue leaks, by stage</span></a>
+                <a class="np__link" href="telecrm-crm-hub.html"><span class="np__t">CRM Hub</span><span class="np__s">By type &amp; by team</span></a>
+                <a class="np__link" href="telecrm-industry-hub.html"><span class="np__t">Industry Hub</span><span class="np__s">11 industries covered</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-solutions-hub.html">Browse all solutions <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-features-hub.html" class="nav__link">Features <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:620px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-features-hub.html">Engagement</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-feature-call-management.html"><span class="np__t">Call Management</span></a>
+                <a class="np__link" href="telecrm-feature-calling-campaign.html"><span class="np__t">Calling Campaign Management</span></a>
+                <a class="np__link" href="telecrm-feature-whatsapp.html"><span class="np__t">WhatsApp</span></a>
+                <a class="np__link" href="telecrm-feature-automations.html"><span class="np__t">Automation</span></a>
+              </div>
+            </div>
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-features-hub.html">Data &amp; Admin</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-feature-lead-management.html"><span class="np__t">Lead Management &amp; Reporting</span></a>
+                <a class="np__link" href="telecrm-feature-lead-fields.html"><span class="np__t">Lead Fields</span></a>
+                <a class="np__link" href="telecrm-feature-lead-stages.html"><span class="np__t">Lead Stages</span></a>
+                <a class="np__link" href="telecrm-feature-list-labels.html"><span class="np__t">List and Labels</span></a>
+                <a class="np__link" href="telecrm-feature-reporting.html"><span class="np__t">Reporting</span></a>
+                <a class="np__link" href="telecrm-feature-integrations.html"><span class="np__t">Integrations</span></a>
+                <a class="np__link" href="telecrm-feature-user-management.html"><span class="np__t">User Management</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-features-hub.html">See all features <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-trust-hub.html" class="nav__link">Trust <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-trust-hub.html">Proof</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-testimonials.html"><span class="np__t">Testimonials</span><span class="np__s">Real customers, real numbers</span></a>
+                <a class="np__link" href="telecrm-case-studies.html"><span class="np__t">Case Studies</span><span class="np__s">9 detailed stories</span></a>
+                <a class="np__link" href="telecrm-comparison.html"><span class="np__t">Comparison</span><span class="np__s">telecrm vs. alternatives</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-trust-hub.html">Visit the Trust Hub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-pricing.html" class="nav__link">Pricing <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:320px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-pricing.html">Plans</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-pricing.html"><span class="np__t">Pricing</span><span class="np__s">Plans &amp; what's included</span></a>
+                <a class="np__link" href="telecrm-cost-savings.html"><span class="np__t">Cost Savings</span><span class="np__s">What you save vs. tools</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-support-hub.html" class="nav__link">Support <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:560px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-support-hub.html">Resources</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-faqs.html"><span class="np__t">FAQs</span></a>
+                <a class="np__link" href="telecrm-glossary.html"><span class="np__t">Glossary</span></a>
+                <a class="np__link" href="telecrm-learning-repository.html"><span class="np__t">Learning Repository</span></a>
+                <a class="np__link" href="telecrm-onboarding.html"><span class="np__t">Onboarding</span></a>
+                <a class="np__link" href="telecrm-recommended-devices.html"><span class="np__t">Recommended Devices</span></a>
+              </div>
+            </div>
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-support-hub.html">Policies</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-privacy-policy.html"><span class="np__t">Privacy Policy</span></a>
+                <a class="np__link" href="telecrm-refund-policy.html"><span class="np__t">Refund Policy</span></a>
+                <a class="np__link" href="telecrm-terms-conditions.html"><span class="np__t">Terms &amp; Conditions</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-support-hub.html">Go to Support Hub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-get-started.html" class="nav__link">Get Started <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-get-started.html">Get started</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-partnership.html"><span class="np__t">Partner Program</span><span class="np__s">Refer &amp; earn 10% for life</span></a>
+                <a class="np__link" href="telecrm-demo-request.html"><span class="np__t">Demo Request</span><span class="np__s">Book a free demo</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-get-started.html">All ways to start <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-about-us.html" class="nav__link">About Us <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-about-us.html">Company</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-about-telecrm.html"><span class="np__t">About telecrm</span><span class="np__s">Story, vision, mission</span></a>
+                <a class="np__link" href="telecrm-life-at-telecrm.html"><span class="np__t">Life at telecrm</span><span class="np__s">Culture &amp; team</span></a>
+                <a class="np__link" href="telecrm-careers.html"><span class="np__t">Careers</span><span class="np__s">Open roles</span></a>
+                <a class="np__link" href="telecrm-contact.html"><span class="np__t">Contact Us</span><span class="np__s">Talk to us</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="nav__sep"></span>
+      <a href="telecrm-demo-request.html" class="nav__cta">Get a Demo</a>
+    </div>
+    <div class="nav__mobile-right">
+      <a href="telecrm-demo-request.html" class="nav__mobile-cta">Get a Demo</a>
+      <span class="nav__mob-sep"></span>
+      <button class="nav__hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero__bg"></div>
+  <div class="hero__glow"></div>
+  <div class="hero__inner">
+    <div class="breadcrumb">
+      <a href="telecrm-approach2-home.html">Home</a><span class="breadcrumb-sep">›</span>
+      <a href="telecrm-solutions-hub.html">Solutions</a><span class="breadcrumb-sep">›</span>
+      <a href="telecrm-industry-hub.html">Industry Hub</a><span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">BFSI</span>
+    </div>
+    <div class="hero__eyebrow">CRM for Industry · BFSI</div>
+    <h1 class="hero__h1">Every loan, policy and investment lead —<br><em>tracked from enquiry to disbursement.</em></h1>
+    <p class="hero__sub">BFSI businesses manage high volumes of product enquiries, complex multi-stage pipelines, large DSA and channel partner networks and renewal cycles that repeat every year. telecrm gives banking, financial services and insurance teams the structured pipelines, automated follow-up sequences and compliance-ready call logging they need to close more business and retain more customers.</p>
+  </div>
+</section>
+
+<div class="highlights">
+  <div class="highlights__inner">
+    <div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">Loan &amp; policy pipeline tracking</span></div>
+    <div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">Renewal automation</span></div>
+    <div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">DSA network management</span></div>
+    <div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">Compliance-ready call recording</span></div>
+  </div>
+</div>
+
+<section class="section section--white">
+  <div class="inner">
+    <div class="sec-eyebrow">The BFSI sales challenge</div>
+    <h2 class="sec-h2">BFSI sales involves high volumes, long cycles<br><em>and renewals that cannot be missed.</em></h2>
+    <p class="sec-body">A financial services business handles three distinct sales challenges simultaneously — acquiring new customers for products like loans, insurance policies and investment plans; managing those customers through multi-stage application and disbursement processes; and retaining them through annual renewals that are predictable in timing but still frequently missed.</p>
+    <p class="sec-body">Large DSA networks and channel partner operations add a fourth challenge — managing a distributed sales force whose activity is difficult to verify and whose leads need to be tracked separately from the core sales team. telecrm addresses all four of these challenges in one platform, with the field-first mobile design that BFSI distribution operations in India require.</p>
+    <div class="definition">
+      <div class="definition__label">What telecrm solves for BFSI</div>
+      <div class="definition__text">telecrm gives BFSI teams <em>structured product pipelines, automated renewal sequences and DSA network management</em> — with compliance-ready call recording, field team GPS tracking and real-time performance dashboards that give leadership visibility across the full distribution operation.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tint">
+  <div class="inner">
+    <div class="sec-eyebrow">What BFSI teams need from a CRM</div>
+    <h2 class="sec-h2">Five things that determine whether a BFSI business<br><em>grows its book or just replaces churn.</em></h2>
+    <p class="sec-body">BFSI CRM requirements go beyond a standard sales pipeline. Product complexity, regulatory expectations, distribution network scale and the critical importance of renewals all demand capabilities that a generic CRM does not provide by default.</p>
+    <div class="criteria-list">
+      <div class="criterion">
+        <div class="criterion__num">1</div>
+        <div>
+          <div class="criterion__title">Product-specific pipeline stages</div>
+          <div class="criterion__body">A home loan application moves through different stages than a term insurance policy or a mutual fund investment. Each product needs its own pipeline with the appropriate stages — document collection, credit check, underwriting, approval, disbursement or issuance. A generic pipeline with generic stages forces BFSI teams to work around the system rather than within it, creating gaps where deals stall and are never recovered.</div>
+        </div>
+      </div>
+      <div class="criterion">
+        <div class="criterion__num">2</div>
+        <div>
+          <div class="criterion__title">Renewal pipeline managed with the same rigour as new business</div>
+          <div class="criterion__body">A policy renewal that is not actively managed is a policy that lapses. A loan customer whose renewal product is not offered at the right time is a cross-sell that never happens. Renewal pipelines need the same structured follow-up, automated outreach sequences and stage tracking as new customer acquisition — not a reminder in someone's phone that gets missed during a busy month.</div>
+        </div>
+      </div>
+      <div class="criterion">
+        <div class="criterion__num">3</div>
+        <div>
+          <div class="criterion__title">DSA and channel partner management with role-based access</div>
+          <div class="criterion__body">DSA networks are the primary distribution mechanism for many BFSI products in India. Managing a large DSA network requires giving each DSA access to their own leads only, tracking their sourcing attribution and pipeline progress, and giving the parent organisation consolidated visibility across the full network — without exposing any DSA's customer data to another.</div>
+        </div>
+      </div>
+      <div class="criterion">
+        <div class="criterion__num">4</div>
+        <div>
+          <div class="criterion__title">Compliance-ready call recording and logging</div>
+          <div class="criterion__body">BFSI businesses operating under regulatory frameworks need a record of every customer communication. telecrm records and logs every call automatically — creating a searchable, timestamped audit trail of all agent-customer interactions. This is not an optional add-on for BFSI; it is a foundational compliance requirement that the CRM must deliver by default.</div>
+        </div>
+      </div>
+      <div class="criterion">
+        <div class="criterion__num">5</div>
+        <div>
+          <div class="criterion__title">Field team tracking for on-ground distribution</div>
+          <div class="criterion__body">Much of India's BFSI distribution happens in the field — agents visiting customers at home or work to complete applications, collect documents and close policies. Field teams need GPS-verified check-ins, mobile CRM access and real-time visit logging. Managers need live field activity dashboards that show where their agents are and what they are doing — without relying on verbal updates.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--white">
+  <div class="inner">
+    <div class="sec-eyebrow">How telecrm works for BFSI</div>
+    <h2 class="sec-h2">From lead to disbursement —<br><em>every stage tracked and every renewal managed.</em></h2>
+    <p class="sec-body">telecrm is used by insurance distributors, loan DSAs, investment advisors and banking operations across India — businesses that need mobile-first CRM built for field-heavy, high-volume financial services distribution.</p>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-card__header">
+          <div class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+          <div class="feature-card__title">Product-specific pipelines</div>
+        </div>
+        <div class="feature-card__body">Configure separate pipelines for each product — home loans, personal loans, term insurance, health insurance, mutual funds, fixed deposits. Each pipeline has the exact stages, document checklists and follow-up rules specific to that product's approval and disbursement process.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__header">
+          <div class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+          <div class="feature-card__title">Renewal automation</div>
+        </div>
+        <div class="feature-card__body">Renewal dates are tracked for every policy and product. Automated outreach sequences trigger 90 days, 60 days and 30 days before renewal — WhatsApp messages, automated calls and agent follow-up reminders. No renewal is missed because no one remembered to check the date.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__header">
+          <div class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <div class="feature-card__title">DSA network management</div>
+        </div>
+        <div class="feature-card__body">Each DSA or channel partner sees only their own leads and pipeline. The parent organisation sees the full network — sourcing attribution, pipeline stage distribution, conversion rates and performance rankings across all DSAs — in one consolidated view with role-based access enforcement.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__header">
+          <div class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+          <div class="feature-card__title">Compliance-ready call recording</div>
+        </div>
+        <div class="feature-card__body">Every agent-customer call is recorded automatically and stored against the customer record with timestamp and duration. The full call archive is searchable and retrievable — creating an audit trail that meets regulatory record-keeping requirements without any additional manual process.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__header">
+          <div class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="feature-card__title">Field team GPS tracking</div>
+        </div>
+        <div class="feature-card__body">Field agents check in at customer locations with GPS verification and photo capture. Managers see live field activity — which agents are active, which locations have been visited and which territories are being covered — without depending on verbal updates or end-of-day reports.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__header">
+          <div class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+          <div class="feature-card__title">Document collection tracking</div>
+        </div>
+        <div class="feature-card__body">Custom fields track which documents have been collected, which are pending and which have been submitted for each application. Automated reminders trigger for missing documents. Applications no longer stall silently because an agent forgot to follow up on a pending KYC document.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__header">
+          <div class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+          <div class="feature-card__title">WhatsApp customer communication</div>
+        </div>
+        <div class="feature-card__body">Agents send application status updates, document request messages, approval notifications and renewal reminders via WhatsApp directly from the customer record. Every message is logged automatically — so the full customer communication history is always available in one place.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__header">
+          <div class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 012 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg></div>
+          <div class="feature-card__title">Cross-sell and upsell pipelines</div>
+        </div>
+        <div class="feature-card__body">Existing customers are among the highest-converting prospects for additional BFSI products. telecrm identifies customers eligible for cross-sell — a home loan customer who may benefit from home insurance, a term policy customer due for a health plan — and triggers structured outreach at the right moment in the customer lifecycle.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__header">
+          <div class="feature-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <div class="feature-card__title">Leadership performance dashboards</div>
+        </div>
+        <div class="feature-card__body">Branch managers and national leadership see pipeline volume, application stage distribution, renewal conversion, DSA performance and field activity in real time — across every product, region and distribution channel — without waiting for weekly MIS reports.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tint">
+  <div class="inner">
+    <div class="sec-eyebrow">BFSI business types</div>
+    <h2 class="sec-h2">telecrm works for every type of<br><em>BFSI business in India.</em></h2>
+    <p class="sec-body">The sales process differs between a retail bank, an insurance distributor and a mutual fund platform — but the core need is the same: every lead captured, every application tracked, every renewal managed and every agent accountable.</p>
+    <div class="usecase-grid">
+      <div class="usecase-card">
+        <div class="usecase-card__industry">Insurance Distribution</div>
+        <div class="usecase-card__title">Policy sales and renewal management</div>
+        <div class="usecase-card__body">Insurance distributors and POSPs managing term, health and general insurance policies need structured sales pipelines, automated renewal sequences, compliance-ready call recording and DSA network management — all from a mobile app that works in the field.</div>
+      </div>
+      <div class="usecase-card">
+        <div class="usecase-card__industry">Loan DSAs</div>
+        <div class="usecase-card__title">Loan application pipeline tracking</div>
+        <div class="usecase-card__body">Loan DSAs managing home loan, personal loan and business loan applications need product-specific pipelines with document collection tracking, credit check stage management and disbursement milestone follow-up — so no application stalls silently at any stage.</div>
+      </div>
+      <div class="usecase-card">
+        <div class="usecase-card__industry">Wealth Management</div>
+        <div class="usecase-card__title">Investment advisory pipelines</div>
+        <div class="usecase-card__body">Wealth managers and investment advisors managing mutual fund, PMS and fixed income portfolios need client relationship tracking, SIP renewal management and portfolio review scheduling — alongside the compliance-ready communication logging that SEBI regulations require.</div>
+      </div>
+      <div class="usecase-card">
+        <div class="usecase-card__industry">Banking Operations</div>
+        <div class="usecase-card__title">Retail banking lead management</div>
+        <div class="usecase-card__body">Bank branches managing retail product leads — savings accounts, credit cards, personal loans, fixed deposits — need structured follow-up pipelines for each product type, with territory-based assignment and branch-level performance dashboards for regional managers.</div>
+      </div>
+      <div class="usecase-card">
+        <div class="usecase-card__industry">Microfinance</div>
+        <div class="usecase-card__title">Field loan officer management</div>
+        <div class="usecase-card__body">Microfinance institutions with large field loan officer networks need GPS-verified field activity tracking, mobile lead management and real-time collection dashboards — so area managers have verified data on what every field officer is doing across their territory.</div>
+      </div>
+      <div class="usecase-card">
+        <div class="usecase-card__industry">Fintech</div>
+        <div class="usecase-card__title">Digital product sales pipelines</div>
+        <div class="usecase-card__body">Fintech businesses selling digital lending, payment or insurance products through inside sales teams need high-volume calling infrastructure, automated follow-up sequences and source-to-conversion analytics — to optimise acquisition costs across digital and assisted channels simultaneously.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--white">
+  <div class="inner">
+    <div class="sec-eyebrow">From a telecrm customer</div>
+    <div class="testimonial-band">
+      <div class="testimonial-band__qmark">&ldquo;</div>
+      <div class="testimonial-band__quote">telecrm has given us the visibility we needed across our distribution network. Our renewal follow-up is now systematic, our field team activity is verified and our managers can see the full pipeline without chasing agents for updates. It has significantly improved how we run our operations.</div>
+      <div class="testimonial-band__person">
+        <div class="testimonial-band__avatar">BF</div>
+        <div>
+          <div class="testimonial-band__name">A financial services business on telecrm</div>
+          <div class="testimonial-band__role">BFSI · India</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tint">
+  <div class="inner">
+    <div class="sec-eyebrow">Related industries</div>
+    <h2 class="sec-h2">Explore telecrm for <em>other industries.</em></h2>
+    <div class="related-grid">
+      <a href="telecrm_crm_for_industry_real_estate.html" class="related-card">
+        <div class="related-card__name">Real Estate</div>
+        <div class="related-card__desc">Portal lead capture, site visit tracking and post-booking pipelines for developers, brokers and channel partners.</div>
+        <div class="related-card__link">Explore Real Estate CRM <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></div>
+      </a>
+      <a href="telecrm_crm_for_industry_automobile.html" class="related-card">
+        <div class="related-card__name">Automobile</div>
+        <div class="related-card__desc">Multi-source lead capture, dealer pipeline management and field team visit tracking for automotive dealerships and OEMs.</div>
+        <div class="related-card__link">Explore Automobile CRM <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></div>
+      </a>
+      <a href="telecrm_crm_for_industry_services.html" class="related-card">
+        <div class="related-card__name">Services</div>
+        <div class="related-card__desc">Enquiry management, quote tracking and post-sale follow-up for service businesses across every category.</div>
+        <div class="related-card__link">Explore Services CRM <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="final-cta__grid"></div>
+  <div class="final-cta__glow"></div>
+  <div class="final-cta__inner">
+    <div class="final-cta__badge"><span class="final-cta__badge-dot"></span>Free 30-minute demo</div>
+    <div class="final-cta__eyebrow">Join 5,000+ Indian businesses</div>
+    <h2 class="final-cta__h2">See how telecrm works<br><em>for your BFSI business.</em></h2>
+    <p class="final-cta__sub">We'll show you product pipelines, renewal automation, DSA network management and field team tracking — configured for your distribution structure. The demo is free. The setup is guided.</p>
+    <a href="telecrm-demo-request.html" class="btn-cta-white">Get a Demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    <div class="final-cta__trust">
+      <span class="final-cta__trust-item"><span class="final-cta__trust-dot"></span>No credit card needed</span>
+      <span class="final-cta__trust-item"><span class="final-cta__trust-dot"></span>Response within 24 hours</span>
+      <span class="final-cta__trust-item"><span class="final-cta__trust-dot"></span>5,000+ businesses onboarded</span>
+      <span class="final-cta__trust-item"><span class="final-cta__trust-dot"></span>Fast setup</span>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="faq__inner">
+    <div class="faq__header">
+      <div class="faq__eyebrow">FAQ</div>
+      <h2 class="faq__h2">Your questions, <em>answered plainly.</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">How does telecrm work for BFSI businesses?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">It tracks every loan, policy, and investment lead from enquiry to disbursement, automates renewals, manages DSA networks, and keeps compliance-ready call logs.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">Can it manage renewals?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">Yes — renewal automation ensures policy and loan renewals are never missed.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">Does it support DSA networks?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">Yes — DSA network management is built in.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">Is the call logging compliance-ready?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">Yes — compliance-ready call logging for banking, financial services, and insurance.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__logo">telecrm</div>
+        <p class="footer__tagline">A Comprehensive Revenue Management Engine — fusing Lead Management, Call Management, Adaptive CRM, Marketing Automation, and Pipeline Management into one high-performance workspace.</p>
+        <a href="telecrm-get-started.html" class="btn-primary">Get Started →</a>
+      </div>
+      <div class="footer__links-grid">
+      <div class="footer__col-stack">
+        <div>
+          <div class="footer__col-title">Platform</div>
+          <div class="footer__links">
+            <a href="telecrm-platform-overview.html" class="footer__link">Platform Overview</a>
+            <a href="telecrm-platform-hub.html" class="footer__link">Platform Hub</a>
+            <a href="telecrm-benefits-hub.html" class="footer__link">Benefits Hub</a>
+            <a href="telecrm-platform-unified-revenue-management.html" class="footer__link">Unified Revenue Management</a>
+            <a href="telecrm-platform-lead-management.html" class="footer__link">Lead Management</a>
+            <a href="telecrm-platform-call-management.html" class="footer__link">Call Management &amp; Recording</a>
+            <a href="telecrm-platform-adaptive-crm.html" class="footer__link">Adaptive CRM</a>
+            <a href="telecrm-platform-marketing-automation.html" class="footer__link">Marketing Automation</a>
+            <a href="telecrm-platform-sales-pipeline-management.html" class="footer__link">Sales Pipeline Management</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Pricing</div>
+          <div class="footer__links">
+            <a href="telecrm-pricing.html" class="footer__link">Pricing</a>
+            <a href="telecrm-cost-savings.html" class="footer__link">Cost Savings</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__col-stack">
+        <div>
+          <div class="footer__col-title">Solutions</div>
+          <div class="footer__links">
+            <a href="telecrm-problems-hub.html" class="footer__link">Problems Hub</a>
+            <a href="telecrm-crm-hub.html" class="footer__link">CRM Hub</a>
+            <a href="telecrm-industry-hub.html" class="footer__link">Industry Hub</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Get Started</div>
+          <div class="footer__links">
+            <a href="telecrm-partnership.html" class="footer__link">Partner Program</a>
+            <a href="telecrm-demo-request.html" class="footer__link">Demo Request</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__col-stack">
+        <div>
+          <div class="footer__col-title">Trust</div>
+          <div class="footer__links">
+            <a href="telecrm-testimonials.html" class="footer__link">Testimonials</a>
+            <a href="telecrm-case-studies.html" class="footer__link">Case Studies</a>
+            <a href="telecrm-comparison.html" class="footer__link">Comparison</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">About Us</div>
+          <div class="footer__links">
+            <a href="telecrm-about-telecrm.html" class="footer__link">About telecrm</a>
+            <a href="telecrm-life-at-telecrm.html" class="footer__link">Life at telecrm</a>
+            <a href="telecrm-careers.html" class="footer__link">Careers</a>
+            <a href="telecrm-contact.html" class="footer__link">Contact Us</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Support</div>
+        <div class="footer__links">
+          <a href="telecrm-faqs.html" class="footer__link">FAQs</a>
+          <a href="telecrm-glossary.html" class="footer__link">Glossary</a>
+          <a href="telecrm-learning-repository.html" class="footer__link">Learning Repository</a>
+          <a href="telecrm-onboarding.html" class="footer__link">Onboarding</a>
+          <a href="telecrm-privacy-policy.html" class="footer__link">Privacy Policy</a>
+          <a href="telecrm-recommended-devices.html" class="footer__link">Recommended Devices</a>
+          <a href="telecrm-refund-policy.html" class="footer__link">Refund Policy</a>
+          <a href="telecrm-terms-conditions.html" class="footer__link">Terms &amp; Conditions</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Features</div>
+        <div class="footer__links">
+          <a href="telecrm-feature-automations.html" class="footer__link">Automation</a>
+          <a href="telecrm-feature-call-management.html" class="footer__link">Call Management</a>
+          <a href="telecrm-feature-calling-campaign.html" class="footer__link">Calling Campaign Management</a>
+          <a href="telecrm-feature-integrations.html" class="footer__link">Integrations</a>
+          <a href="telecrm-feature-lead-fields.html" class="footer__link">Lead Fields</a>
+          <a href="telecrm-feature-lead-management.html" class="footer__link">Lead Management &amp; Reporting</a>
+          <a href="telecrm-feature-lead-stages.html" class="footer__link">Lead Stages</a>
+          <a href="telecrm-feature-list-labels.html" class="footer__link">List and Labels</a>
+          <a href="telecrm-feature-reporting.html" class="footer__link">Reporting</a>
+          <a href="telecrm-feature-user-management.html" class="footer__link">User Management</a>
+          <a href="telecrm-feature-whatsapp.html" class="footer__link">WhatsApp</a>
+        </div>
+      </div>
+      </div><!-- /footer__links-grid -->
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__copy">© 2026 telecrm. All rights reserved.</div>
+      <div class="footer__legal">
+        <a href="telecrm-privacy-policy.html">Privacy Policy</a>
+        <a href="telecrm-terms-conditions.html">Terms &amp; Conditions</a>
+        <a href="telecrm-refund-policy.html">Refund Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var btn=document.querySelector('.nav__hamburger');
+  var links=document.querySelector('.nav__links');
+  if(btn&&links){
+    btn.addEventListener('click',function(){btn.classList.toggle('open');links.classList.toggle('open');});
+  }
+  var mq=window.matchMedia('(max-width:768px)');
+  document.querySelectorAll('.nav__item > .nav__link').forEach(function(hub){
+    hub.addEventListener('click',function(e){ if(mq.matches){ e.preventDefault(); hub.parentElement.classList.toggle('open'); } });
+  });
+  document.querySelectorAll('.np__link,.np__foot,.nav__cta,.nav__mobile-cta').forEach(function(l){
+    l.addEventListener('click',function(){ if(btn){btn.classList.remove('open');} if(links){links.classList.remove('open');} });
+  });
+})();
+</script>
+<script>
+function toggleFaq(el){
+  var item=el.parentElement;
+  var isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+  if(!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>

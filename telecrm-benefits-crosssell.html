@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ease of Cross-Sell & Up-Sell — Automated Revenue from Existing Customers | telecrm</title>
+<meta name="description" content="Drip WhatsApp sequences, renewal reminders and cross-sell triggers — automated for every industry. telecrm turns existing customers into your best revenue opportunity.">
+<link href="https://fonts.cdnfonts.com/css/nexa" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --v50:#EDEBF6;--v100:#E1DDF0;--v200:#C4BAE5;--v300:#9C8FCF;
+  --v400:#7260B5;--v500:#4F38A2;--v600:#483393;--v700:#382873;--v900:#211844;
+  --orange:#E8771A;--cta:#F97316;--cta-hover:#EA580C;--border:#E9EBF8;--grey:#64748B;--grey2:#94A3B8;--grey-bg:#F8F7FC;
+  --success:#22C55E;--error:#EF4444;--wa:#25D366;
+  --gold:#F59E0B;--silver:#9CA3AF;--bronze:#B45309;
+  --font:'Nexa','Nunito',sans-serif;--radius-btn:10px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font);color:var(--v900);background:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+svg,img{display:block;max-width:100%;}
+@keyframes dot-pulse{0%,100%{box-shadow:0 0 0 3px rgba(34,197,94,.2);}50%{box-shadow:0 0 0 6px rgba(34,197,94,.05);}}
+@keyframes bar-grow{from{transform:scaleY(0);}to{transform:scaleY(1);}}
+@keyframes lb-fade-in{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+.lb-animate{animation:lb-fade-in .3s ease-out both;}
+.lb-tab{transition:color .2s,border-color .2s;}
+
+/* ── NAV ── */
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+.nav__inner{max-width:1280px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px;}
+.nav__logo{flex-shrink:0;}
+.nav__links{display:flex;align-items:center;gap:2px;}
+.nav__link{font-size:13px;font-weight:700;color:var(--v700);padding:7px 11px;border-radius:8px;transition:all .18s;white-space:nowrap;}
+.nav__link:hover,.nav__link--active{background:var(--v50);color:var(--v500);}
+.nav__divider{width:1px;height:20px;background:var(--border);margin:0 8px;}
+.nav__cta{background:var(--cta) !important;font-size:13px;font-weight:700;background:var(--orange);color:#fff;padding:10px 22px;border-radius:var(--radius-btn);box-shadow:0 4px 12px rgba(232,119,26,.3);transition:all .18s;white-space:nowrap;}
+.nav__cta:hover{background:#d36912;transform:translateY(-1px);}
+
+/* ── SHARED ── */
+.sec-eyebrow{font-size:11px;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px;}
+.sec-title{font-size:clamp(28px,3.4vw,42px);font-weight:700;letter-spacing:-.8px;line-height:1.15;}
+.sec-title em{font-style:normal;color:var(--v500);}
+.sec-sub{font-size:16px;color:var(--grey);line-height:1.7;margin-top:16px;}
+.center{text-align:center;}
+.center .sec-sub{max-width:640px;margin-left:auto;margin-right:auto;}
+.btn-primary{font-size:14px;font-weight:700;background:var(--orange);color:#fff;padding:14px 28px;border-radius:var(--radius-btn);border:none;cursor:pointer;box-shadow:0 6px 18px rgba(232,119,26,.3);transition:all .2s;display:inline-flex;align-items:center;gap:8px;}
+.btn-primary:hover{background:#d36912;transform:translateY(-1px);}
+.btn-ghost{font-size:14px;font-weight:700;background:#fff;color:var(--v500);padding:14px 24px;border-radius:var(--radius-btn);border:1.5px solid var(--v100);cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:8px;}
+.btn-ghost:hover{border-color:var(--v300);background:var(--v50);}
+.btn-white{font-size:14px;font-weight:700;background:#fff;color:var(--v500);padding:14px 28px;border-radius:var(--radius-btn);border:none;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:8px;}
+.btn-white:hover{background:var(--v50);}
+
+/* ══ HERO ══ */
+.hero{padding:60px 0 80px;background:#fff;position:relative;overflow:hidden;}
+.hero__bg{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:64px 64px;opacity:.35;pointer-events:none;mask-image:radial-gradient(ellipse at center,#000 20%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at center,#000 20%,transparent 70%);}
+.hero__glow{position:absolute;top:-80px;right:-180px;width:700px;height:700px;background:radial-gradient(circle,rgba(79,56,162,.07) 0%,transparent 60%);pointer-events:none;}
+.hero__inner{max-width:1180px;margin:0 auto;padding:0 32px;position:relative;}
+.hero__breadcrumb{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:var(--grey2);margin-bottom:40px;flex-wrap:wrap;}
+.hero__breadcrumb a:hover{color:var(--v500);}
+.hero__breadcrumb-sep{color:var(--v200);}
+.hero__breadcrumb-current{color:var(--v500);}
+.hero__grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+.hero__badge{display:inline-flex;align-items:center;gap:8px;background:var(--v50);border:1px solid var(--v100);padding:7px 14px 7px 10px;border-radius:50px;font-size:12px;font-weight:700;color:var(--v500);margin-bottom:22px;}
+.hero__badge-dot{width:6px;height:6px;border-radius:50%;background:var(--orange);animation:dot-pulse 2s ease-in-out infinite;}
+.hero__h1{font-size:clamp(32px,4.2vw,52px);font-weight:700;letter-spacing:-1.5px;color:var(--v900);line-height:1.08;margin-bottom:20px;}
+.hero__h1 em{font-style:normal;color:var(--v500);}
+.hero__sub{font-size:17px;color:var(--grey);line-height:1.65;max-width:480px;margin-bottom:32px;}
+.hero__cta-row{display:flex;gap:12px;flex-wrap:wrap;}
+
+/* ── Leaderboard hero visual ── */
+.lb-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 0 0 1px rgba(79,56,162,.1),0 -3px 0 0 var(--v500),0 20px 56px rgba(79,56,162,.13);max-height:520px;overflow:hidden;position:relative;}
+.lb-card::after{content:"";position:absolute;bottom:0;left:0;right:0;height:100px;background:linear-gradient(to bottom,transparent,rgba(255,255,255,.97));pointer-events:none;z-index:10;}
+.lb-head{padding:16px 16px 0;border-bottom:1px solid var(--border);}
+.lb-title-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+.lb-title{font-size:16px;font-weight:800;color:var(--v900);display:flex;align-items:center;gap:8px;}
+.lb-refresh{font-size:14px;color:var(--v400);cursor:pointer;}
+.lb-icons{display:flex;gap:10px;color:var(--grey2);font-size:14px;}
+.lb-tabs{display:flex;gap:0;border-bottom:none;}
+.lb-tab{padding:8px 16px;font-size:13px;font-weight:700;color:var(--grey2);border-bottom:2px solid transparent;cursor:pointer;}
+.lb-tab--active{color:var(--v500);border-bottom-color:var(--v500);}
+.lb-filters{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;}
+.lb-filter-pill{display:inline-flex;align-items:center;gap:4px;border:1.5px solid var(--v500);color:var(--v500);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:700;cursor:pointer;}
+.lb-filter-calls{display:inline-flex;align-items:center;gap:4px;border:1.5px solid var(--border);color:var(--grey);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:700;cursor:pointer;}
+.lb-search{margin:0 16px 10px;background:var(--grey-bg);border:1px solid var(--border);border-radius:8px;padding:8px 12px;display:flex;align-items:center;gap:8px;font-size:12px;color:var(--grey2);}
+.lb-totals{margin:0 16px 12px;padding:14px;background:var(--grey-bg);border-radius:10px;border:1px solid var(--border);}
+.lb-totals-row1{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.lb-totals-label{font-size:13px;font-weight:800;color:var(--v900);display:flex;align-items:center;gap:6px;}
+.lb-totals-team{font-size:11px;font-weight:800;background:var(--v50);color:var(--v500);padding:3px 10px;border-radius:20px;}
+.lb-totals-stats{display:grid;grid-template-columns:1fr 1px 1fr 1px 1fr;align-items:center;gap:0;}
+.lb-totals-stat{text-align:center;}
+.lb-totals-stat__n{font-size:22px;font-weight:800;color:var(--v500);line-height:1;}
+.lb-totals-stat__l{font-size:11px;color:var(--grey2);margin-top:2px;}
+.lb-totals-div{height:28px;width:1px;background:var(--border);}
+.lb-rep{padding:12px 16px;border-top:1px solid var(--border);}
+.lb-rep-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.lb-rep-left{display:flex;align-items:center;gap:10px;}
+.lb-rep-av{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff;flex-shrink:0;border:2px solid rgba(255,255,255,.5);}
+.lb-rep-name{font-size:14px;font-weight:800;color:var(--v900);}
+.lb-rep-role{font-size:11px;color:var(--grey2);}
+.lb-rep-times{text-align:right;}
+.lb-rep-time{font-size:11px;color:var(--grey2);}
+.lb-rep-stats{display:grid;grid-template-columns:1fr 1px 1fr 1px 1fr;align-items:center;}
+.lb-rep-stat{text-align:center;padding:4px;}
+.lb-rep-stat__n{font-size:20px;font-weight:800;color:var(--v500);line-height:1;}
+.lb-rep-stat__l{font-size:10px;color:var(--grey2);font-weight:700;margin-top:1px;}
+.lb-rep-div{height:24px;width:1px;background:var(--border);}
+.lb-rep-rank{display:inline-flex;align-items:center;justify-content:center;width:26px;height:18px;border-radius:5px;font-size:10px;font-weight:800;margin-top:4px;}
+.lb-rep-rank--1{background:rgba(245,158,11,.15);color:var(--gold);}
+.lb-rep-rank--2{background:rgba(156,163,175,.15);color:var(--silver);}
+.lb-rep-rank--3{background:rgba(180,83,9,.12);color:var(--bronze);}
+.lb-rep-rank--n{background:var(--grey-bg);color:var(--grey2);}
+
+/* ══ TRUST BAR ══ */
+.auth-bar{background:var(--v50);border-top:1px solid var(--v100);border-bottom:1px solid var(--v100);padding:28px 32px;}
+.auth-bar__inner{max-width:1100px;margin:0 auto;text-align:center;}
+.auth-bar__label{font-size:11px;font-weight:700;color:var(--grey2);text-transform:uppercase;letter-spacing:.1em;margin-bottom:18px;display:block;}
+.auth-bar__logos{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;}
+.auth-logo{font-size:13px;font-weight:800;color:var(--v400);padding:8px 16px;border:1px solid var(--v100);border-radius:8px;background:#fff;opacity:.85;}
+
+/* ══ PAIN ══ */
+.pain{padding:96px 0;background:var(--grey-bg);}
+.pain__inner{max-width:1180px;margin:0 auto;padding:0 32px;}
+.pain__header{max-width:640px;margin:0 auto 64px;text-align:center;}
+.scenarios{display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden;}
+.scenario{display:grid;grid-template-columns:56px 260px 1fr;gap:0 40px;padding:32px 36px;border-bottom:1px solid var(--border);align-items:center;position:relative;}
+.scenario:last-child{border-bottom:none;}
+.scenario::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;}
+.scenario--a::before{background:var(--error);}
+.scenario--b::before{background:var(--orange);}
+.scenario--c::before{background:var(--v500);}
+.scenario--d::before{background:var(--gold);}
+.scenario__n{font-size:44px;font-weight:800;letter-spacing:-.04em;line-height:1;}
+.scenario--a .scenario__n{color:rgba(239,68,68,.18);}
+.scenario--b .scenario__n{color:rgba(232,119,26,.18);}
+.scenario--c .scenario__n{color:rgba(79,56,162,.15);}
+.scenario--d .scenario__n{color:rgba(245,158,11,.2);}
+.scenario__visual{min-width:0;}
+.scenario__vis-pad{background:var(--grey-bg);border-radius:10px;padding:14px;}
+.scenario__body{min-width:0;}
+.scenario__label{font-size:10px;font-weight:800;color:var(--grey2);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
+.scenario__title{font-size:17px;font-weight:800;color:var(--v900);line-height:1.35;margin-bottom:8px;}
+.scenario__story{font-size:14px;color:var(--grey);line-height:1.6;margin-bottom:12px;}
+.scenario__story em{font-style:normal;font-weight:700;color:var(--v900);}
+.scenario__kicker{font-size:13px;font-weight:700;}
+.scenario--a .scenario__kicker{color:var(--error);}
+.scenario--b .scenario__kicker{color:var(--orange);}
+.scenario--c .scenario__kicker{color:var(--v500);}
+.scenario--d .scenario__kicker{color:var(--gold);}
+
+/* Pain visuals */
+.sv-team-stat{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:#fff;border:1px solid var(--border);border-radius:8px;}
+.sv-team-stat__label{font-size:11.5px;font-weight:700;color:var(--grey);}
+.sv-team-stat__val{font-size:20px;font-weight:800;color:var(--error);}
+.sv-rank-compare{display:flex;gap:8px;}
+.sv-rank-card{flex:1;background:#fff;border-radius:9px;padding:10px;border:1px solid var(--border);text-align:center;}
+.sv-rank-card__name{font-size:11px;font-weight:800;color:var(--v900);margin-bottom:4px;}
+.sv-rank-card__n{font-size:22px;font-weight:800;line-height:1;}
+.sv-rank-card__l{font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;letter-spacing:.05em;margin-top:2px;}
+.sv-rank-card--hi{border-color:rgba(22,163,74,.3);}.sv-rank-card--hi .sv-rank-card__n{color:#16A34A;}
+.sv-rank-card--lo{border-color:rgba(239,68,68,.25);}.sv-rank-card--lo .sv-rank-card__n{color:var(--error);}
+.sv-avail{display:flex;flex-direction:column;gap:5px;}
+.sv-avail-row{display:flex;align-items:center;justify-content:space-between;padding:7px 10px;background:#fff;border:1px solid var(--border);border-radius:7px;}
+.sv-avail-name{font-size:12px;font-weight:700;color:var(--v900);}
+.sv-avail-badge{font-size:10px;font-weight:800;padding:2px 8px;border-radius:4px;}
+.sv-avail-badge--ok{background:rgba(22,163,74,.1);color:#16A34A;}
+.sv-avail-badge--away{background:rgba(239,68,68,.08);color:var(--error);}
+.sv-avail-calls{font-size:10px;color:var(--grey2);}
+.sv-audit{display:flex;flex-direction:column;gap:4px;}
+.sv-audit-bar{display:flex;align-items:center;gap:8px;}
+.sv-audit-label{font-size:11px;color:var(--grey);width:80px;flex-shrink:0;}
+.sv-audit-track{flex:1;height:8px;border-radius:4px;background:var(--border);overflow:hidden;}
+.sv-audit-fill{height:100%;border-radius:4px;}
+.sv-audit-val{font-size:11px;font-weight:800;width:36px;text-align:right;flex-shrink:0;}
+
+/* ══ PRODUCT SHOWCASE ══ */
+.showcase{padding:96px 0;background:#fff;}
+.showcase__inner{max-width:1180px;margin:0 auto;padding:0 32px;}
+.showcase__header{text-align:center;margin-bottom:56px;}
+.showcase__header .sec-sub{max-width:560px;margin:16px auto 0;}
+.showcase__grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;}
+
+/* Full leaderboard card */
+.lb-full{background:#fff;border-radius:16px;border:1px solid var(--border);overflow:hidden;box-shadow:0 8px 28px rgba(33,24,68,.07);}
+.lb-full__head{padding:16px;border-bottom:1px solid var(--border);}
+.lb-full__title{font-size:15px;font-weight:800;color:var(--v900);margin-bottom:12px;display:flex;align-items:center;justify-content:space-between;}
+.lb-full__tabs{display:flex;gap:2px;background:var(--grey-bg);border-radius:8px;padding:3px;}
+.lb-full__tab{padding:5px 14px;border-radius:6px;font-size:12px;font-weight:700;color:var(--grey2);cursor:pointer;}
+.lb-full__tab--active{background:#fff;color:var(--v500);box-shadow:0 1px 4px rgba(33,24,68,.08);}
+.lb-full__totals{display:grid;grid-template-columns:1fr 1px 1fr 1px 1fr;margin:12px 0 0;gap:0;}
+.lb-full__total{text-align:center;padding:8px;}
+.lb-full__total-n{font-size:20px;font-weight:800;color:var(--v500);}
+.lb-full__total-l{font-size:10px;color:var(--grey2);margin-top:2px;}
+.lb-full__divider{background:var(--border);}
+.lb-full__row{display:grid;grid-template-columns:28px 1fr 56px 56px 64px;gap:8px;align-items:center;padding:11px 16px;border-top:1px solid var(--grey-bg);}
+.lb-full__rank{font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;width:26px;height:18px;border-radius:5px;}
+.lb-full__rank--1{background:rgba(245,158,11,.15);color:var(--gold);}
+.lb-full__rank--2{background:rgba(156,163,175,.15);color:var(--silver);}
+.lb-full__rank--3{background:rgba(180,83,9,.12);color:var(--bronze);}
+.lb-full__rank--n{background:var(--grey-bg);color:var(--grey2);}
+.lb-full__rep{display:flex;align-items:center;gap:8px;}
+.lb-full__av{width:28px;height:28px;border-radius:50%;color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.lb-full__name{font-size:13px;font-weight:700;color:var(--v900);}
+.lb-full__calls{font-size:15px;font-weight:800;color:var(--v500);text-align:center;}
+.lb-full__dur{font-size:12px;font-weight:700;color:var(--grey);text-align:center;}
+.lb-full__sales{font-size:12px;font-weight:800;color:var(--v900);text-align:right;}
+.lb-full__col-head{display:grid;grid-template-columns:28px 1fr 56px 56px 64px;gap:8px;padding:8px 16px;background:var(--grey-bg);}
+.lb-full__ch{font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:var(--grey2);}
+.lb-full__ch--r{text-align:right;}
+.lb-full__ch--c{text-align:center;}
+
+/* Reports card */
+.rpt-card{background:#fff;border-radius:16px;border:1px solid var(--border);overflow:hidden;box-shadow:0 8px 28px rgba(33,24,68,.07);}
+.rpt-card__head{padding:16px;border-bottom:1px solid var(--border);}
+.rpt-card__title{font-size:15px;font-weight:800;color:var(--v900);margin-bottom:12px;display:flex;align-items:center;justify-content:space-between;}
+.rpt-card__tabs{display:flex;gap:2px;background:var(--grey-bg);border-radius:8px;padding:3px;margin-bottom:12px;}
+.rpt-card__tab{padding:5px 14px;border-radius:6px;font-size:12px;font-weight:700;color:var(--grey2);cursor:pointer;}
+.rpt-card__tab--active{background:#fff;color:var(--v500);box-shadow:0 1px 4px rgba(33,24,68,.08);}
+.rpt-card__kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.rpt-kpi{border-radius:10px;padding:12px 10px;text-align:center;}
+.rpt-kpi--calls{background:var(--v500);color:#fff;}
+.rpt-kpi--time{border:2px solid var(--border);color:var(--v900);}
+.rpt-kpi--sales{border:2px solid var(--border);color:var(--v900);}
+.rpt-kpi__label{font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;opacity:.75;margin-bottom:4px;}
+.rpt-kpi__n{font-size:20px;font-weight:800;line-height:1;}
+.rpt-chart{padding:16px;}
+.rpt-chart__bars{display:flex;align-items:flex-end;gap:4px;height:140px;}
+.rpt-chart__bar-wrap{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;}
+.rpt-chart__bar{width:100%;border-radius:3px 3px 0 0;background:var(--v300);transform-origin:bottom;animation:bar-grow .6s ease-out both;}
+.rpt-chart__bar--peak{background:var(--v500);}
+.rpt-chart__bar-val{font-size:8px;font-weight:800;color:var(--v500);}
+.rpt-chart__time{font-size:8.5px;color:var(--grey2);font-weight:600;width:100%;text-align:center;}
+.rpt-chart__labels{display:flex;gap:4px;margin-top:6px;padding-top:6px;border-top:1px solid var(--border);}
+.rpt-chart__label-item{flex:1;text-align:center;font-size:7.5px;color:var(--grey2);}
+
+/* ══ FEATURE ROWS ══ */
+.features{padding:96px 0;background:var(--grey-bg);}
+.features__inner{max-width:1180px;margin:0 auto;padding:0 32px;}
+.features__header{text-align:center;margin-bottom:72px;max-width:640px;margin-left:auto;margin-right:auto;}
+.features__header .sec-sub{margin:16px auto 0;}
+.feat-row{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;padding:72px 0;border-top:1px solid var(--border);}
+.feat-row--flip .feat-row__visual{order:-1;}
+.feat-row__num{font-size:12px;font-weight:800;color:var(--orange);text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+.feat-row__num::before{content:"";width:24px;height:1.5px;background:var(--orange);}
+.feat-row__h3{font-size:clamp(22px,2.4vw,30px);font-weight:700;letter-spacing:-.5px;line-height:1.25;margin-bottom:16px;}
+.feat-row__h3 em{font-style:normal;color:var(--v500);}
+.feat-row__desc{font-size:15.5px;color:var(--grey);line-height:1.72;margin-bottom:20px;}
+.feat-row__desc strong{color:var(--v900);font-weight:700;}
+.feat-row__kicker{font-size:14px;font-weight:700;color:var(--v500);background:var(--v50);border-radius:8px;padding:10px 14px;border-left:3px solid var(--v500);}
+.feat-vis{background:#fff;border:1px solid var(--border);border-radius:16px;padding:20px;box-shadow:0 8px 28px rgba(33,24,68,.06);}
+
+/* Feature visual components */
+.fv-mini-lb{display:flex;flex-direction:column;gap:8px;}
+.fv-lb-row{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--grey-bg);border-radius:8px;border:1px solid var(--border);}
+.fv-lb-rank{width:22px;height:16px;border-radius:4px;font-size:9px;font-weight:800;display:flex;align-items:center;justify-content:center;}
+.fv-lb-av{width:28px;height:28px;border-radius:50%;color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.fv-lb-name{flex:1;font-size:12.5px;font-weight:700;color:var(--v900);}
+.fv-lb-calls{font-size:16px;font-weight:800;color:var(--v500);}
+.fv-lb-sales{font-size:12px;font-weight:800;color:var(--grey);text-align:right;}
+.fv-period-tabs{display:flex;gap:4px;margin-bottom:12px;}
+.fv-period-tab{padding:5px 12px;border-radius:6px;font-size:11px;font-weight:700;border:1px solid var(--border);color:var(--grey2);cursor:pointer;}
+.fv-period-tab--active{background:var(--v500);color:#fff;border-color:var(--v500);}
+
+/* Mini bar chart */
+.fv-chart{display:flex;align-items:flex-end;gap:5px;height:80px;}
+.fv-bar-g{display:flex;flex-direction:column;align-items:center;gap:3px;flex:1;}
+.fv-bar{width:100%;border-radius:3px 3px 0 0;background:var(--v200);}
+.fv-bar--hi{background:var(--v500);}
+.fv-bar-l{font-size:8px;color:var(--grey2);}
+
+/* Availability */
+.fv-avail{display:flex;flex-direction:column;gap:6px;}
+.fv-avail-row{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--grey-bg);border-radius:8px;border:1px solid var(--border);}
+.fv-avail-av{width:28px;height:28px;border-radius:50%;color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.fv-avail-name{flex:1;font-size:12.5px;font-weight:700;color:var(--v900);}
+.fv-avail-status{font-size:10.5px;font-weight:800;padding:3px 10px;border-radius:20px;}
+.fv-avail-status--ok{background:rgba(22,163,74,.1);color:#16A34A;}
+.fv-avail-status--away{background:rgba(239,68,68,.08);color:var(--error);}
+.fv-avail-status--auto{background:rgba(79,56,162,.08);color:var(--v500);}
+.fv-avail-note{font-size:10px;color:var(--grey2);}
+
+/* Call coaching */
+.fv-call-card{background:var(--grey-bg);border:1px solid var(--border);border-radius:10px;padding:12px;margin-bottom:10px;}
+.fv-call-card__top{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.fv-call-card__av{width:28px;height:28px;border-radius:50%;color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.fv-call-card__info{flex:1;}
+.fv-call-card__name{font-size:12.5px;font-weight:800;color:var(--v900);}
+.fv-call-card__meta{font-size:11px;color:var(--grey2);}
+.fv-call-card__dur{font-size:12px;font-weight:800;background:rgba(34,197,94,.1);color:var(--success);padding:3px 9px;border-radius:5px;}
+.fv-player{background:#fff;border:1px solid var(--border);border-radius:8px;padding:8px 12px;display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.fv-play{width:26px;height:26px;border-radius:50%;background:var(--v500);color:#fff;display:flex;align-items:center;justify-content:center;font-size:9px;flex-shrink:0;}
+.fv-wave{flex:1;height:20px;display:flex;align-items:center;gap:1.5px;}
+.fvwb{width:2.5px;border-radius:1px;background:var(--v200);}
+.fvwb-p{background:var(--v500);}
+.fv-dur{font-size:10px;font-weight:700;color:var(--grey);}
+.fv-coach{background:var(--v50);border-radius:7px;padding:8px 11px;border-left:3px solid var(--v500);font-size:12px;color:var(--v700);line-height:1.5;}
+.fv-coach strong{color:var(--v500);}
+
+/* ══ MANAGER DARK ══ */
+.manager{padding:96px 0;background:var(--v900);position:relative;overflow:hidden;}
+.manager::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;}
+.manager__inner{max-width:1180px;margin:0 auto;padding:0 32px;}
+.manager__grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+.manager__eyebrow{font-size:11px;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px;}
+.manager__h2{font-size:clamp(28px,3.2vw,40px);font-weight:700;color:#fff;letter-spacing:-.8px;line-height:1.15;margin-bottom:14px;}
+.manager__h2 em{font-style:normal;color:var(--orange);}
+.manager__sub{font-size:16px;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:20px;}
+.manager__stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;}
+.manager__stat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px;}
+.manager__stat-n{font-size:30px;font-weight:700;color:#fff;letter-spacing:-.02em;line-height:1;margin-bottom:4px;}
+.manager__stat-n span{color:var(--orange);}
+.manager__stat-l{font-size:13px;color:rgba(255,255,255,.5);}
+
+/* ══ PROOF ══ */
+.proof{padding:96px 0;background:var(--grey-bg);}
+.proof__inner{max-width:1180px;margin:0 auto;padding:0 32px;}
+.proof__header{max-width:560px;margin:0 auto 56px;text-align:center;}
+.proof__header .sec-sub{margin:16px auto 0;}
+.proof__grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:24px;}
+.tcard{background:#fff;border:1px solid var(--border);border-radius:16px;padding:28px 24px;}
+.tcard--stat{display:flex;flex-direction:column;justify-content:center;text-align:center;}
+.tcard__qm{font-size:48px;line-height:.8;color:var(--v200);font-family:Georgia,serif;margin-bottom:12px;}
+.tcard__quote{font-size:15.5px;color:var(--v700);line-height:1.6;margin-bottom:20px;}
+.tcard__author{display:flex;align-items:center;gap:12px;padding-top:18px;border-top:1px solid var(--border);}
+.tcard__av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--v400),var(--v600));color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.tcard__an{font-size:13.5px;font-weight:800;color:var(--v900);}
+.tcard__ar{font-size:12px;color:var(--grey2);margin-top:1px;}
+.tcard__stat-num{font-size:52px;font-weight:700;color:var(--v500);letter-spacing:-.04em;line-height:1;margin-bottom:8px;}
+.tcard__stat-label{font-size:14px;font-weight:700;color:var(--v900);margin-bottom:6px;}
+.tcard__stat-src{font-size:12px;color:var(--grey2);}
+
+/* ══ RELATED ══ */
+.related__inner{max-width:1180px;margin:0 auto;padding:64px 32px;}
+.related__card{background:var(--v900);border-radius:20px;padding:48px 56px;display:flex;align-items:center;gap:64px;position:relative;overflow:hidden;}
+.related__card::before{content:"";position:absolute;top:-30%;right:-5%;width:500px;height:500px;background:radial-gradient(circle,rgba(232,119,26,.12) 0%,transparent 60%);pointer-events:none;}
+.related__eyebrow{font-size:11px;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px;}
+.related__title{font-size:clamp(22px,2.4vw,30px);font-weight:700;color:#fff;letter-spacing:-.6px;line-height:1.25;margin-bottom:14px;}
+.related__title em{font-style:normal;color:var(--orange);}
+.related__desc{font-size:15px;color:rgba(255,255,255,.6);line-height:1.65;max-width:440px;}
+.related__cta{flex-shrink:0;margin-left:auto;}
+
+/* ══ FAQ ══ */
+.faq{padding:96px 0;background:var(--grey-bg);}
+.faq__inner{max-width:840px;margin:0 auto;padding:0 32px;}
+.faq__header{text-align:center;margin-bottom:56px;}
+.faq__list{display:flex;flex-direction:column;}
+.faq__item{border-top:1px solid var(--border);}
+.faq__item:last-child{border-bottom:1px solid var(--border);}
+.faq__q{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0;font-size:16px;font-weight:700;color:var(--v900);cursor:pointer;list-style:none;line-height:1.45;}
+.faq__q::-webkit-details-marker{display:none;}
+.faq__q-icon{width:24px;height:24px;border-radius:50%;background:var(--v50);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .2s,background .2s;}
+.faq__q-icon svg{width:10px;height:10px;color:var(--v500);}
+.faq__item[open] .faq__q-icon{transform:rotate(45deg);background:var(--v500);}
+.faq__item[open] .faq__q-icon svg{color:#fff;}
+.faq__a{padding:0 0 20px;font-size:15px;color:var(--grey);line-height:1.7;}
+.faq__a strong{color:var(--v900);}
+
+/* ══ CTA ══ */
+.page-cta{background:var(--v500);padding:96px 32px;text-align:center;position:relative;overflow:hidden;}
+.page-cta::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:56px 56px;pointer-events:none;}
+.page-cta__glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:400px;background:radial-gradient(ellipse,rgba(255,255,255,.08) 0%,transparent 65%);pointer-events:none;}
+.page-cta__inner{position:relative;max-width:640px;margin:0 auto;}
+.page-cta__consensus{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.55);margin-bottom:20px;}
+.page-cta__h2{font-size:clamp(28px,4vw,50px);font-weight:700;color:#fff;letter-spacing:-.8px;line-height:1.1;margin-bottom:18px;}
+.page-cta__h2 em{font-style:normal;color:var(--orange);}
+.page-cta__sub{font-size:17px;color:rgba(255,255,255,.7);line-height:1.65;margin-bottom:36px;max-width:480px;margin-left:auto;margin-right:auto;}
+.page-cta__trust{display:flex;align-items:center;justify-content:center;gap:20px;margin-top:24px;flex-wrap:wrap;}
+.page-cta__trust-item{font-size:13px;font-weight:700;color:rgba(255,255,255,.65);display:flex;align-items:center;gap:7px;}
+.page-cta__trust-dot{width:5px;height:5px;border-radius:50%;background:var(--orange);}
+
+/* ══ FOOTER ══ */
+.footer{background:var(--v900);padding:64px 32px 32px;}
+.footer__inner{max-width:1280px;margin:0 auto;}
+.footer__grid{display:grid;grid-template-columns:280px 1fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.08);}
+.footer__tagline{font-size:13.5px;color:rgba(255,255,255,.45);line-height:1.6;margin:16px 0 24px;}
+.footer__col-title{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.35);margin-bottom:14px;}
+.footer__links{display:flex;flex-direction:column;gap:10px;}
+.footer__link{font-size:14px;font-weight:600;color:rgba(255,255,255,.55);transition:color .15s;}
+.footer__link:hover{color:#fff;}
+.footer__bottom{display:flex;align-items:center;justify-content:space-between;padding-top:28px;flex-wrap:wrap;gap:12px;}
+.footer__copy{font-size:12px;color:rgba(255,255,255,.3);}
+.footer__legal{display:flex;gap:20px;}
+.footer__legal a{font-size:12px;color:rgba(255,255,255,.35);transition:color .15s;}
+.footer__legal a:hover{color:rgba(255,255,255,.7);}
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:960px){
+  .nav__links,.nav__divider{display:none;}
+  .nav__inner{padding:0 20px;}
+  .hero{padding:40px 0 56px;}
+  .hero__inner{padding:0 20px;}
+  .hero__grid{grid-template-columns:1fr;gap:40px;}
+  .hero__sub{max-width:100%;font-size:16px;}
+  .hero__cta-row{flex-direction:column;}
+  .hero__cta-row .btn-primary,.hero__cta-row .btn-ghost{justify-content:center;}
+  .auth-bar{padding:20px;}
+  .auth-bar__logos{gap:6px;}
+  .auth-logo{font-size:12px;padding:6px 12px;}
+  .pain{padding:64px 0;}
+  .pain__inner{padding:0 20px;}
+  .scenario{grid-template-columns:40px 1fr;grid-template-rows:auto auto;gap:12px 16px;padding:24px 20px;}
+  .scenario__n{grid-column:1;grid-row:1;font-size:28px;}
+  .scenario__visual{grid-column:2;grid-row:1;}
+  .scenario__body{grid-column:1/-1;grid-row:2;}
+  .showcase{padding:64px 0;}
+  .showcase__inner{padding:0 20px;}
+  .showcase__grid{grid-template-columns:1fr;}
+  .features{padding:64px 0;}
+  .features__inner{padding:0 20px;}
+  .feat-row{grid-template-columns:1fr;gap:32px;padding:48px 0;}
+  .feat-row--flip .feat-row__visual{order:0;}
+  .manager{padding:64px 0;}
+  .manager__inner{padding:0 20px;}
+  .manager__grid{grid-template-columns:1fr;}
+  .manager__stats{grid-template-columns:1fr 1fr;}
+  .proof{padding:64px 0;}
+  .proof__inner{padding:0 20px;}
+  .proof__grid{grid-template-columns:1fr;}
+  .related__inner{padding:40px 20px;}
+  .related__card{flex-direction:column;padding:36px 28px;gap:28px;}
+  .related__cta{margin-left:0;width:100%;}
+  .related__cta .btn-white{width:100%;justify-content:center;}
+  .faq{padding:64px 0;}
+  .faq__inner{padding:0 20px;}
+  .page-cta{padding:64px 20px;}
+  .page-cta__trust{flex-direction:column;gap:12px;}
+  .footer{padding:48px 20px 24px;}
+  .footer__grid{grid-template-columns:1fr 1fr;gap:32px;}
+  .footer__grid>div:first-child{grid-column:1/-1;}
+  .footer__bottom{flex-direction:column;gap:12px;text-align:center;}
+  .footer__legal{justify-content:center;}
+}
+@media(max-width:480px){
+  .hero__h1{font-size:clamp(26px,9vw,36px);}
+  .sec-title{font-size:clamp(24px,7vw,32px);}
+  .footer__grid{grid-template-columns:1fr;}
+  .manager__stats{grid-template-columns:1fr;}
+  .scenario{grid-template-columns:1fr;grid-template-rows:auto;}
+  .scenario__n,.scenario__visual,.scenario__body{grid-column:1;}
+  .scenario__n{grid-row:1;font-size:24px;}
+  .scenario__visual{grid-row:2;}
+  .scenario__body{grid-row:3;}
+}
+
+/* ── Drip sequence nodes ── */
+.drip-node{border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.07);}
+.drip-node__head{padding:10px 14px;font-size:13px;font-weight:800;color:#fff;display:flex;align-items:center;gap:7px;}
+.drip-node__body{padding:10px 14px;background:#fff;border:1px solid var(--border);border-top:none;border-radius:0 0 10px 10px;font-size:12.5px;color:var(--v900);line-height:1.6;}
+.drip-connector{display:flex;flex-direction:column;align-items:center;margin:4px 0;gap:2px;}
+.drip-connector__line{width:2px;height:16px;background:var(--border);}
+.drip-connector__dot{width:8px;height:8px;border-radius:50%;border:2px solid var(--border);background:#fff;}
+.drip-delay{display:flex;align-items:center;gap:8px;padding:6px 12px;background:var(--grey-bg);border:1px solid var(--border);border-radius:8px;font-size:12px;font-weight:700;color:var(--grey2);}
+.drip-condition{background:rgba(79,56,162,.05);border:1px solid var(--v100);border-radius:8px;padding:7px 12px;font-size:11.5px;color:var(--v900);margin-top:4px;}
+.drip-condition__row{display:flex;align-items:center;gap:5px;padding:2px 0;}
+.drip-tag{background:var(--v50);color:var(--v500);padding:1px 6px;border-radius:4px;font-size:10.5px;font-weight:800;}
+
+/* ── WA message card ── */
+.wa-msg{background:var(--grey-bg);border-radius:0 10px 10px 10px;padding:10px 13px;font-size:12.5px;color:var(--v900);line-height:1.6;border:1px solid var(--border);}
+.wa-btn-row{display:flex;flex-direction:column;gap:5px;margin-top:8px;}
+.wa-btn{background:#fff;border:1px solid var(--border);border-radius:6px;padding:6px 11px;font-size:12px;font-weight:700;color:var(--v500);}
+
+/* ── Bar rows (reuse from support) ── */
+.cr-bar-row{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.cr-bar-label{font-size:12px;font-weight:700;color:var(--v900);width:90px;flex-shrink:0;}
+.cr-bar-track{flex:1;height:10px;background:var(--border);border-radius:5px;overflow:hidden;}
+.cr-bar-fill{height:100%;border-radius:5px;}
+.cr-bar-val{font-size:12px;font-weight:800;width:36px;text-align:right;}
+
+@media(max-width:600px){
+  .drip-node__head{font-size:12px;}
+  .drip-node__body{font-size:12px;}
+}
+
+/* === canonical nav+footer CSS (added in conversion) === */
+/* === canonical nav + footer CSS (clean) === */
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+.nav__inner{max-width:1280px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:72px;}
+.nav__logo{font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--v500);letter-spacing:-.5px;}
+.nav__links{display:flex;align-items:center;gap:2px;}
+.nav__link{font-family:var(--font-head);font-size:12.5px;font-weight:600;color:var(--v700);padding:7px 11px;border-radius:8px;transition:all .18s;white-space:nowrap;}
+.nav__link:hover,.nav__link--active{background:var(--v50);color:var(--v500);}
+.nav__sep{display:inline-block;width:1px;height:20px;background:var(--border);margin:0 8px;vertical-align:middle;}
+.nav__cta{background:var(--cta) !important;font-family:var(--font-head);font-size:13px;font-weight:700;background:var(--cta);color:#fff;padding:10px 22px;border-radius:var(--radius-btn);box-shadow:0 4px 12px rgba(249,115,22,.3);transition:all .18s;white-space:nowrap;margin-left:8px;}
+.nav__cta:hover{background:var(--cta-hover);transform:translateY(-1px);}
+.nav__mobile-right{display:none;align-items:center;gap:8px;margin-left:auto;}
+.nav__mobile-cta{font-family:var(--font-head);font-size:13px;font-weight:700;background:var(--v500);color:#fff;padding:8px 16px;border-radius:var(--radius-btn);white-space:nowrap;}
+.nav__mob-sep{display:none;width:1px;height:20px;background:var(--border);}
+.nav__hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:8px;border:none;background:transparent;}
+.nav__hamburger span{display:block;width:22px;height:2px;background:var(--v900);border-radius:2px;transition:all .18s;}
+.nav__hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav__hamburger.open span:nth-child(2){opacity:0;}
+.nav__hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+/* FOOTER */
+.footer{background:#fff;border-top:1px solid var(--border);padding:64px 0 40px;}
+.footer__inner{max-width:1280px;margin:0 auto;padding:0 32px;}
+.footer__grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+.footer__links-grid{display:contents;}
+.footer__logo{font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--v500);margin-bottom:16px;letter-spacing:-.5px;}
+.footer__tagline{font-size:14px;color:var(--grey);line-height:1.7;max-width:280px;margin-bottom:24px;}
+.footer__col-title{font-family:var(--font-head);font-size:12px;font-weight:800;color:var(--v900);text-transform:uppercase;letter-spacing:.06em;margin-bottom:16px;}
+.footer__links{display:flex;flex-direction:column;gap:10px;}
+.footer__link{font-size:14px;color:var(--grey);transition:color .2s;}
+.footer__link:hover{color:var(--v500);}
+.footer__bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer__copy{font-size:13px;color:var(--grey);}
+.footer__legal{display:flex;gap:24px;}
+.footer__legal a{font-size:13px;color:var(--grey);transition:color .2s;}
+.footer__legal a:hover{color:var(--v500);}
+/* ===== ROLLOUT v2026-05-29: nav mega-menu + fat footer (canonical) ===== */
+.nav__item{position:relative;display:flex;align-items:center;height:72px;}
+.nav__item > .nav__link{display:inline-flex;align-items:center;gap:4px;}
+.nav__caret{width:11px;height:11px;flex-shrink:0;transition:transform .2s;}
+.nav__item:hover > .nav__link .nav__caret,.nav__item:focus-within > .nav__link .nav__caret{transform:rotate(180deg);}
+.nav__item:hover > .nav__link,.nav__item:focus-within > .nav__link{background:var(--v50);color:var(--v500);}
+.nav__panel{position:absolute;top:100%;left:0;background:#fff;border:1px solid var(--border);border-radius:14px;box-shadow:0 18px 44px rgba(33,24,68,.13);padding:14px;opacity:0;visibility:hidden;transform:translateY(7px);transition:opacity .16s,transform .16s,visibility .16s;z-index:200;}
+.nav__panel--right{left:auto;right:0;}
+.nav__item:hover > .nav__panel,.nav__item:focus-within > .nav__panel{opacity:1;visibility:visible;transform:translateY(0);}
+.np__list{display:grid;gap:1px;}
+.np__list--2{grid-template-columns:1fr 1fr;gap:1px 14px;}
+.np__link{display:flex;flex-direction:column;gap:2px;padding:9px 12px;border-radius:8px;transition:background .15s;min-width:0;}
+.np__link:hover{background:var(--v50);}
+.np__t{font-family:var(--font-head);font-size:13.5px;font-weight:700;color:var(--v900);white-space:nowrap;}
+.np__list--2 .np__t{white-space:normal;line-height:1.3;overflow-wrap:break-word;}
+.np__link:hover .np__t{color:var(--v500);}
+.np__s{font-family:var(--font-body);font-size:12px;color:var(--grey);line-height:1.35;}
+.np__foot{display:flex;align-items:center;gap:6px;border-top:1px solid var(--border);margin-top:8px;padding:11px 12px 3px;font-family:var(--font-head);font-size:12.5px;font-weight:700;color:var(--v500);}
+.np__foot svg{width:13px;height:13px;}
+.nav__mobile-cta{background:var(--cta);}
+.footer__grid{grid-template-columns:1.5fr 1fr 1fr 1fr 1fr 1.15fr;gap:40px 32px;}
+.footer__col-stack{display:flex;flex-direction:column;gap:48px;}
+@media(max-width:768px){.footer__grid{grid-template-columns:1fr;}.footer__tagline{max-width:100%;}.footer__links-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px 16px;margin-top:32px;}.footer__links-grid > div:nth-child(1),.footer__links-grid > div:nth-child(2),.footer__links-grid > div:nth-child(3){text-align:left;grid-column:1;}.footer__links-grid > div:nth-child(4){text-align:right;grid-column:2;grid-row:1 / span 3;}.footer__links-grid > div:nth-child(4) .footer__links{align-items:flex-end;}.footer__bottom{flex-direction:column;align-items:center;text-align:center;}.footer__legal{flex-wrap:wrap;justify-content:center;}.footer__tagline{max-width:100%;}}
+@media(min-width:769px){.nav__hamburger{display:none;}.nav__mobile-right{display:none;}}
+@media(max-width:1024px){.footer__grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:768px){.nav__item{width:100%;height:auto;display:block;position:static;}.nav__item > .nav__link{display:flex;align-items:center;justify-content:space-between;width:100%;}.nav__item.open > .nav__link .nav__caret{transform:rotate(180deg);}.nav__caret{width:13px;height:13px;}.nav__panel{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;border-radius:0;padding:4px 0 10px 10px;width:auto !important;display:none;z-index:auto;}.nav__item.open > .nav__panel{display:block;}.np__list--2{grid-template-columns:1fr;}.np__link{padding:9px 10px;}.np__foot{padding-left:10px;}.footer__links-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px 16px;margin-top:32px;}.footer__links-grid > div:nth-child(1),.footer__links-grid > div:nth-child(2),.footer__links-grid > div:nth-child(3),.footer__links-grid > div:nth-child(4),.footer__links-grid > div:nth-child(5){text-align:left;grid-column:auto;grid-row:auto;}.footer__links-grid > div:nth-child(4) .footer__links{align-items:flex-start;}}
+@media(max-width:600px){.footer__grid{grid-template-columns:1fr;}}
+/* === end nav/footer === */
+.hero__eyebrow{display:inline-block;font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v500);text-transform:uppercase;letter-spacing:.09em;margin-bottom:18px;}
+
+/* === design-language conversion === */
+
+.highlights{background:var(--v50);border-top:1px solid var(--v100);border-bottom:1px solid var(--v100);padding:20px 32px;}
+.highlights__inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.highlight{display:flex;align-items:center;gap:10px;padding:11px 16px;background:#fff;border:1.5px solid var(--v100);border-radius:10px;}
+.highlight__dot{width:7px;height:7px;border-radius:50%;background:var(--v500);flex-shrink:0;}
+.highlight__text{font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--v700);}
+.final-cta{padding:96px 0;background:var(--v900);position:relative;overflow:hidden;}
+.final-cta__grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;}
+.final-cta__glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(114,96,181,.25) 0%,transparent 65%);pointer-events:none;}
+.final-cta__inner{max-width:860px;margin:0 auto;padding:0 32px;text-align:center;position:relative;}
+.final-cta__badge{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v200);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);padding:6px 16px;border-radius:var(--radius-pill);margin-bottom:28px;}
+.final-cta__badge-dot{width:6px;height:6px;border-radius:50%;background:var(--success);}
+.final-cta__eyebrow{font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v300);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;}
+.final-cta__h2{font-family:var(--font-head);font-size:clamp(28px,4vw,48px);font-weight:900;letter-spacing:-1.2px;color:#fff;line-height:1.1;margin-bottom:16px;}
+.final-cta__h2 em{font-style:normal;color:var(--v300);}
+.final-cta__sub{font-size:17px;color:var(--v200);line-height:1.75;max-width:560px;margin:0 auto 36px;}
+.final-cta__trust{display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:28px;}
+.final-cta__trust-item{display:flex;align-items:center;gap:7px;font-family:var(--font-head);font-size:12px;font-weight:600;color:var(--v200);}
+.final-cta__trust-dot{width:5px;height:5px;border-radius:50%;background:var(--success);}
+.btn-cta-white{font-family:var(--font-head);font-size:15px;font-weight:700;background:#fff;color:var(--v500);padding:15px 36px;border-radius:var(--radius-btn);box-shadow:0 8px 28px rgba(0,0,0,.2);transition:all .2s;display:inline-flex;align-items:center;gap:8px;}
+.btn-cta-white:hover{background:var(--v50);transform:translateY(-2px);}
+.btn-cta-white svg{width:16px;height:16px;}
+@media(max-width:900px){.highlights__inner{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.highlights__inner{grid-template-columns:1fr;}}
+/* section eyebrow -> canonical purple */
+.sec-eyebrow{color:var(--v400) !important;}
+.scenario__kicker{color:var(--v500) !important;}
+.power-col__head{display:flex !important;flex-wrap:wrap;align-items:center;gap:8px;}
+.power-col__icon{margin-bottom:0 !important;line-height:1;}
+.power-col__title{flex:1;min-width:0;}
+.power-col__sub{flex-basis:100%;width:100%;}
+
+.pain{background:var(--grey-bg) !important;}
+.showcase{background:#fff !important;}
+.features{background:var(--grey-bg) !important;}
+.manager{background:#fff !important;}
+.proof{background:var(--grey-bg) !important;}
+.pain__header,.showcase__header,.features__header,.manager__header,.proof__header{text-align:left !important;margin-left:0 !important;margin-right:0 !important;max-width:none !important;}
+.pain__header .sec-sub,.showcase__header .sec-sub,.features__header .sec-sub,.manager__header .sec-sub,.proof__header .sec-sub{margin-left:0 !important;margin-right:0 !important;max-width:none !important;width:100%;}
+
+/* dark section 'manager' -> light (blanket text override + accents) */
+.manager{color:var(--v900) !important;}
+.manager *{color:var(--v900) !important;}
+.manager p,.manager [class*="__sub"],.manager [class*="__note"],.manager [class*="__role"],.manager [class*="__source"],.manager [class*="__meta"],.manager [class*="-item"],.manager [class*="__label"]{color:var(--grey) !important;}
+.manager__bg,.manager__glow{display:none !important;}
+.manager .sec-title,.manager__title{color:var(--v900) !important;}
+.manager .sec-title em,.manager__title em{color:var(--v500) !important;}
+.manager .sec-eyebrow,.manager__eyebrow{color:var(--v400) !important;}
+.manager .sec-sub,.manager__sub{color:var(--grey) !important;}
+.manager [class*="__stat-l"],.manager [class*="__stat-source"],.manager [class*="__author-role"]{color:var(--grey) !important;}
+.manager [class*="__stat-n"],.manager [class*="__stat-num"]{color:var(--v500) !important;}
+.manager [class*="__stat"]{background:linear-gradient(135deg,var(--v50),#fff) !important;border:1px solid var(--v100) !important;}
+.manager .tcard{background:#fff !important;border:1.5px solid var(--border) !important;backdrop-filter:none !important;box-shadow:0 10px 30px rgba(33,24,68,.06);}
+.manager .tcard__quote,.manager .tcard__author-name,.manager .tcard__stat-label{color:var(--v900) !important;}
+.manager .tcard__quote-mark{color:var(--v500) !important;}
+.manager .btn-white{background:var(--cta) !important;color:#fff !important;}
+
+/* === end === */
+
+.np__cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.np__col-head{display:block;font-family:var(--font-head);font-size:11px;font-weight:800;color:var(--v400);text-transform:uppercase;letter-spacing:.07em;padding:4px 12px 8px;transition:color .15s;}
+.np__col-head:hover{color:var(--v500);}
+.nav__panel:has(.np__col:only-child) .np__cols{grid-template-columns:1fr;}
+@media(max-width:768px){.np__cols{grid-template-columns:1fr !important;gap:0 !important;}.np__col-head{padding:8px 10px 4px;}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="telecrm-approach2-home.html" class="nav__logo">telecrm</a>
+    <div class="nav__links">
+      <div class="nav__item">
+        <a href="telecrm-platform-overview.html" class="nav__link nav__link--active">Platform Overview <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:560px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-platform-hub.html">Platform Hub</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-platform-unified-revenue-management.html"><span class="np__t">Unified Revenue Management</span><span class="np__s">One connected engine</span></a>
+                <a class="np__link" href="telecrm-platform-lead-management.html"><span class="np__t">Lead Management</span><span class="np__s">Capture, dedupe, assign</span></a>
+                <a class="np__link" href="telecrm-platform-call-management.html"><span class="np__t">Call Management &amp; Recording</span><span class="np__s">Dial, record, track</span></a>
+                <a class="np__link" href="telecrm-platform-adaptive-crm.html"><span class="np__t">Adaptive CRM</span><span class="np__s">Stages, fields, 360°</span></a>
+                <a class="np__link" href="telecrm-platform-marketing-automation.html"><span class="np__t">Marketing Automation</span><span class="np__s">Reach leads automatically</span></a>
+                <a class="np__link" href="telecrm-platform-sales-pipeline-management.html"><span class="np__t">Sales Funnel &amp; Pipeline Management</span><span class="np__s">Track every deal stage</span></a>
+              </div>
+            </div>
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-benefits-hub.html">Benefits Hub</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-benefits-hub.html"><span class="np__t">Outcomes &amp; ROI</span><span class="np__s">What telecrm delivers for your team</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-platform-overview.html">Platform Overview — the product, end to end <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-solutions-hub.html" class="nav__link">Solutions <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-solutions-hub.html">By approach</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-problems-hub.html"><span class="np__t">Problems Hub</span><span class="np__s">Revenue leaks, by stage</span></a>
+                <a class="np__link" href="telecrm-crm-hub.html"><span class="np__t">CRM Hub</span><span class="np__s">By type &amp; by team</span></a>
+                <a class="np__link" href="telecrm-industry-hub.html"><span class="np__t">Industry Hub</span><span class="np__s">11 industries covered</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-solutions-hub.html">Browse all solutions <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-features-hub.html" class="nav__link">Features <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:620px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-features-hub.html">Engagement</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-feature-call-management.html"><span class="np__t">Call Management</span></a>
+                <a class="np__link" href="telecrm-feature-calling-campaign.html"><span class="np__t">Calling Campaign Management</span></a>
+                <a class="np__link" href="telecrm-feature-whatsapp.html"><span class="np__t">WhatsApp</span></a>
+                <a class="np__link" href="telecrm-feature-automations.html"><span class="np__t">Automation</span></a>
+              </div>
+            </div>
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-features-hub.html">Data &amp; Admin</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-feature-lead-management.html"><span class="np__t">Lead Management &amp; Reporting</span></a>
+                <a class="np__link" href="telecrm-feature-lead-fields.html"><span class="np__t">Lead Fields</span></a>
+                <a class="np__link" href="telecrm-feature-lead-stages.html"><span class="np__t">Lead Stages</span></a>
+                <a class="np__link" href="telecrm-feature-list-labels.html"><span class="np__t">List and Labels</span></a>
+                <a class="np__link" href="telecrm-feature-reporting.html"><span class="np__t">Reporting</span></a>
+                <a class="np__link" href="telecrm-feature-integrations.html"><span class="np__t">Integrations</span></a>
+                <a class="np__link" href="telecrm-feature-user-management.html"><span class="np__t">User Management</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-features-hub.html">See all features <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-trust-hub.html" class="nav__link">Trust <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-trust-hub.html">Proof</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-testimonials.html"><span class="np__t">Testimonials</span><span class="np__s">Real customers, real numbers</span></a>
+                <a class="np__link" href="telecrm-case-studies.html"><span class="np__t">Case Studies</span><span class="np__s">9 detailed stories</span></a>
+                <a class="np__link" href="telecrm-comparison.html"><span class="np__t">Comparison</span><span class="np__s">telecrm vs. alternatives</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-trust-hub.html">Visit the Trust Hub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-pricing.html" class="nav__link">Pricing <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:320px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-pricing.html">Plans</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-pricing.html"><span class="np__t">Pricing</span><span class="np__s">Plans &amp; what's included</span></a>
+                <a class="np__link" href="telecrm-cost-savings.html"><span class="np__t">Cost Savings</span><span class="np__s">What you save vs. tools</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-support-hub.html" class="nav__link">Support <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:560px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-support-hub.html">Resources</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-faqs.html"><span class="np__t">FAQs</span></a>
+                <a class="np__link" href="telecrm-glossary.html"><span class="np__t">Glossary</span></a>
+                <a class="np__link" href="telecrm-learning-repository.html"><span class="np__t">Learning Repository</span></a>
+                <a class="np__link" href="telecrm-onboarding.html"><span class="np__t">Onboarding</span></a>
+                <a class="np__link" href="telecrm-recommended-devices.html"><span class="np__t">Recommended Devices</span></a>
+              </div>
+            </div>
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-support-hub.html">Policies</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-privacy-policy.html"><span class="np__t">Privacy Policy</span></a>
+                <a class="np__link" href="telecrm-refund-policy.html"><span class="np__t">Refund Policy</span></a>
+                <a class="np__link" href="telecrm-terms-conditions.html"><span class="np__t">Terms &amp; Conditions</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-support-hub.html">Go to Support Hub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-get-started.html" class="nav__link">Get Started <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-get-started.html">Get started</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-partnership.html"><span class="np__t">Partner Program</span><span class="np__s">Refer &amp; earn 10% for life</span></a>
+                <a class="np__link" href="telecrm-demo-request.html"><span class="np__t">Demo Request</span><span class="np__s">Book a free demo</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-get-started.html">All ways to start <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-about-us.html" class="nav__link">About Us <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-about-us.html">Company</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-about-telecrm.html"><span class="np__t">About telecrm</span><span class="np__s">Story, vision, mission</span></a>
+                <a class="np__link" href="telecrm-life-at-telecrm.html"><span class="np__t">Life at telecrm</span><span class="np__s">Culture &amp; team</span></a>
+                <a class="np__link" href="telecrm-careers.html"><span class="np__t">Careers</span><span class="np__s">Open roles</span></a>
+                <a class="np__link" href="telecrm-contact.html"><span class="np__t">Contact Us</span><span class="np__s">Talk to us</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="nav__sep"></span>
+      <a href="telecrm-demo-request.html" class="nav__cta">Get a Demo</a>
+    </div>
+    <div class="nav__mobile-right">
+      <a href="telecrm-demo-request.html" class="nav__mobile-cta">Get a Demo</a>
+      <span class="nav__mob-sep"></span>
+      <button class="nav__hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero__bg"></div>
+  <div class="hero__glow"></div>
+  <div class="hero__inner">
+    <div class="hero__breadcrumb">
+      <a href="#">Home</a><span class="hero__breadcrumb-sep">›</span>
+      <a href="#">Benefits Hub</a><span class="hero__breadcrumb-sep">›</span>
+      <span class="hero__breadcrumb-current">Ease of Cross-Sell & Up-Sell</span>
+    </div>
+    <div class="hero__grid">
+      <div class="hero__copy">
+        <div class="hero__eyebrow">Benefits · Crosssell</div>
+        <h1 class="hero__h1">Sell more to customers<br>who already<br><em>said yes.</em></h1>
+        <p class="hero__sub">The hardest part of any sale is earning trust. Your existing customers already gave you that. telecrm uses triggers, drip sequences and timed messages to pitch the right upgrade or cross-sell at exactly the right moment — automatically.</p>
+      </div>
+      <!-- Hero: Customer revenue expansion over time -->
+      <div>
+        <div style="background:#fff;border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:0 -3px 0 0 var(--v500),0 20px 56px rgba(79,56,162,.12);">
+
+          <!-- Customer header -->
+          <div style="padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:10px;">
+              <div style="width:36px;height:36px;border-radius:50%;background:var(--v50);border:1px solid var(--v100);color:var(--v500);font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;">RS</div>
+              <div>
+                <div style="font-size:13.5px;font-weight:800;color:var(--v900);">Rahul Sharma</div>
+                <div style="font-size:11.5px;color:var(--grey2);">BFSI · Customer since Jan 2025</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:20px;padding:5px 12px;">
+              <span style="font-size:12px;font-weight:800;color:#16A34A;">↑ 2.3× revenue</span>
+              <span style="font-size:11px;color:var(--grey2);">same customer</span>
+            </div>
+          </div>
+
+          <!-- Timeline -->
+          <div style="padding:20px 18px 16px;">
+
+            <!-- Timeline track — flex row, lines connect dot centres naturally -->
+            <div style="display:flex;align-items:flex-start;gap:0;margin-bottom:18px;">
+
+              <!-- M1: Original purchase -->
+              <div style="display:flex;flex-direction:column;align-items:center;gap:5px;min-width:72px;text-align:center;">
+                <div style="width:32px;height:32px;border-radius:50%;background:var(--v500);border:3px solid #fff;box-shadow:0 0 0 2px var(--v500);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">🚗</div>
+                <div style="font-size:9.5px;font-weight:800;color:var(--grey2);">JAN 2025</div>
+                <div style="font-size:11px;font-weight:800;color:var(--v900);line-height:1.25;">Car<br>Insurance</div>
+                <div style="font-size:10.5px;font-weight:700;color:var(--v500);">₹8,400/yr</div>
+              </div>
+
+              <!-- Line 1 → 2: completed (purple) -->
+              <div style="flex:1;height:2px;background:var(--v500);margin-top:16px;flex-shrink:1;"></div>
+
+              <!-- M2: Cross-sell -->
+              <div style="display:flex;flex-direction:column;align-items:center;gap:5px;min-width:72px;text-align:center;">
+                <div style="width:32px;height:32px;border-radius:50%;background:var(--v500);border:3px solid #fff;box-shadow:0 0 0 2px var(--v500);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">🏠</div>
+                <div style="font-size:9.5px;font-weight:800;color:var(--grey2);">APR 2025</div>
+                <div style="font-size:11px;font-weight:800;color:var(--v900);line-height:1.25;">Home<br>Insurance</div>
+                <div style="font-size:10.5px;font-weight:700;color:#16A34A;">+₹6,200/yr</div>
+                <div style="font-size:9px;font-weight:800;background:rgba(79,56,162,.08);color:var(--v500);padding:2px 5px;border-radius:3px;white-space:nowrap;">CROSS-SELL ⚡</div>
+              </div>
+
+              <!-- Line 2 → 3: completed (purple) -->
+              <div style="flex:1;height:2px;background:var(--v500);margin-top:16px;flex-shrink:1;"></div>
+
+              <!-- M3: Up-sell -->
+              <div style="display:flex;flex-direction:column;align-items:center;gap:5px;min-width:72px;text-align:center;">
+                <div style="width:32px;height:32px;border-radius:50%;background:var(--v500);border:3px solid #fff;box-shadow:0 0 0 2px var(--v500);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">⬆</div>
+                <div style="font-size:9.5px;font-weight:800;color:var(--grey2);">AUG 2025</div>
+                <div style="font-size:11px;font-weight:800;color:var(--v900);line-height:1.25;">Premium<br>Plan</div>
+                <div style="font-size:10.5px;font-weight:700;color:#16A34A;">+₹4,800/yr</div>
+                <div style="font-size:9px;font-weight:800;background:rgba(232,119,26,.1);color:var(--orange);padding:2px 5px;border-radius:3px;white-space:nowrap;">UP-SELL ⚡</div>
+              </div>
+
+              <!-- Line 3 → 4: upcoming (grey dashed) -->
+              <div style="flex:1;height:0;border-top:2px dashed #CBD5E1;margin-top:16px;flex-shrink:1;"></div>
+
+              <!-- M4: Upcoming -->
+              <div style="display:flex;flex-direction:column;align-items:center;gap:5px;min-width:72px;text-align:center;opacity:.45;">
+                <div style="width:32px;height:32px;border-radius:50%;background:#fff;border:2px dashed #CBD5E1;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">🔄</div>
+                <div style="font-size:9.5px;font-weight:800;color:var(--grey2);">JAN 2026</div>
+                <div style="font-size:11px;font-weight:800;color:var(--v900);line-height:1.25;">Renewal<br>due</div>
+                <div style="font-size:9px;font-weight:800;background:rgba(100,116,139,.08);color:var(--grey2);padding:2px 5px;border-radius:3px;margin-top:2px;white-space:nowrap;">SCHEDULED ⚡</div>
+              </div>
+
+            </div>
+
+            <!-- Revenue comparison -->
+            <div style="background:var(--grey-bg);border-radius:10px;padding:12px 14px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;">
+              <div>
+                <div style="font-size:10.5px;font-weight:700;color:var(--grey2);margin-bottom:3px;">Year 1 revenue</div>
+                <div style="font-size:20px;font-weight:900;color:var(--grey);">₹8,400</div>
+                <div style="font-size:11px;color:var(--grey2);">Car insurance only</div>
+              </div>
+              <div style="text-align:center;">
+                <div style="font-size:20px;">→</div>
+                <div style="font-size:10px;font-weight:800;color:var(--v500);white-space:nowrap;">all automated</div>
+              </div>
+              <div>
+                <div style="font-size:10.5px;font-weight:700;color:var(--grey2);margin-bottom:3px;">Year 2 revenue</div>
+                <div style="font-size:20px;font-weight:900;color:#16A34A;">₹19,400</div>
+                <div style="font-size:11px;color:var(--grey2);">3 products · same customer</div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Footer note -->
+          <div style="padding:9px 18px;border-top:1px solid var(--border);background:var(--v50);display:flex;align-items:center;gap:7px;">
+            <svg viewBox="0 0 16 16" fill="var(--v500)" style="width:12px;height:12px;flex-shrink:0;"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm.5 4v3.5l2.5 1.5-.5.86L7.5 9V5h1z"/></svg>
+            <span style="font-size:12px;font-weight:700;color:var(--v500);">Every ⚡ trigger fired automatically. Zero manual outreach by the rep.</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ TRUST ══ -->
+<div class="highlights"><div class="highlights__inner"><div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">Spot upsell signals</span></div><div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">Automated cross-sell</span></div><div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">Sell to existing customers</span></div><div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">Recurring revenue</span></div></div></div>
+
+
+<!-- ══ PAIN ══ -->
+<section class="pain">
+  <div class="pain__inner">
+    <div class="pain__header center">
+      <p class="sec-eyebrow">Where the revenue goes missing</p>
+      <h2 class="sec-title">The sale was there.<br><em>Nobody made it.</em></h2>
+      <p class="sec-sub">Every missed upgrade and every cross-sell that never happened had one thing in common — the right message wasn't sent at the right time.</p>
+    </div>
+    <div class="scenarios">
+
+      <div class="scenario scenario--a">
+        <div class="scenario__n">01</div>
+        <div class="scenario__visual">
+          <div class="scenario__vis-pad">
+            <div style="border:1px solid var(--border);border-radius:10px;overflow:hidden;">
+              <div style="background:var(--grey-bg);padding:8px 14px;border-bottom:1px solid var(--border);font-size:11px;font-weight:800;color:var(--grey2);">INSURANCE RENEWALS · THIS MONTH</div>
+              <div style="padding:16px 14px;display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                <div style="text-align:center;"><div style="font-size:38px;font-weight:900;color:var(--v500);line-height:1;">47</div><div style="font-size:12px;font-weight:700;color:var(--grey);margin-top:4px;">policies due<br>for renewal</div></div>
+                <div style="text-align:center;"><div style="font-size:38px;font-weight:900;color:var(--error);line-height:1;">12</div><div style="font-size:12px;font-weight:700;color:var(--grey);margin-top:4px;">already<br>lapsed</div></div>
+              </div>
+              <div style="padding:8px 14px;background:rgba(239,68,68,.04);border-top:1px solid rgba(239,68,68,.1);font-size:11.5px;font-weight:700;color:var(--error);">12 customers renewed with a competitor. Nobody followed up.</div>
+            </div>
+          </div>
+        </div>
+        <div class="scenario__body">
+          <div class="scenario__label">Renewals missed</div>
+          <div class="scenario__title">47 policies due this month. 12 already lapsed. No automated reminder went out.</div>
+          <div class="scenario__story">The renewal date was in the system. Nobody set up a trigger. The customer renewed with whoever called first.</div>
+          <div class="scenario__kicker">→ Set the renewal date field once. telecrm sends reminders automatically.</div>
+        </div>
+      </div>
+
+      <div class="scenario scenario--b">
+        <div class="scenario__n">02</div>
+        <div class="scenario__visual">
+          <div class="scenario__vis-pad">
+            <div style="border:1px solid var(--border);border-radius:10px;overflow:hidden;">
+              <div style="background:var(--grey-bg);padding:8px 14px;border-bottom:1px solid var(--border);font-size:11px;font-weight:800;color:var(--grey2);">CUSTOMER PROFILE</div>
+              <div style="padding:12px 14px;display:flex;flex-direction:column;gap:7px;">
+                <div style="display:flex;justify-content:space-between;"><span style="font-size:13px;color:var(--v900);">Current plan</span><span style="font-size:13px;font-weight:800;color:var(--v500);">Starter</span></div>
+                <div style="display:flex;justify-content:space-between;"><span style="font-size:13px;color:var(--v900);">On plan since</span><span style="font-size:13px;font-weight:800;color:var(--v900);">6 months</span></div>
+                <div style="display:flex;justify-content:space-between;"><span style="font-size:13px;color:var(--v900);">Usage</span><span style="font-size:13px;font-weight:800;color:#D97706;">94% of limit</span></div>
+                <div style="display:flex;justify-content:space-between;"><span style="font-size:13px;color:var(--v900);">Upgrade offered</span><span style="font-size:13px;font-weight:800;color:var(--error);">Never</span></div>
+              </div>
+              <div style="padding:8px 14px;background:rgba(239,68,68,.04);border-top:1px solid rgba(239,68,68,.1);font-size:11.5px;font-weight:700;color:var(--error);">Hitting the ceiling for 3 months. Nobody offered them more.</div>
+            </div>
+          </div>
+        </div>
+        <div class="scenario__body">
+          <div class="scenario__label">Upgrade never offered</div>
+          <div class="scenario__title">Customer on the Starter plan for 6 months. Usage at 94%. No one suggested the upgrade.</div>
+          <div class="scenario__story">The signal was clear. The opportunity was obvious. It needed someone to notice and act — nobody did.</div>
+          <div class="scenario__kicker">→ Condition-based triggers fire automatically when usage or time thresholds are hit.</div>
+        </div>
+      </div>
+
+      <div class="scenario scenario--c">
+        <div class="scenario__n">03</div>
+        <div class="scenario__visual">
+          <div class="scenario__vis-pad">
+            <div style="border:1px solid var(--border);border-radius:10px;overflow:hidden;">
+              <div style="background:var(--grey-bg);padding:8px 14px;border-bottom:1px solid var(--border);font-size:11px;font-weight:800;color:var(--grey2);">COURSE COMPLETION · EDTECH</div>
+              <div style="padding:14px;display:flex;flex-direction:column;gap:6px;">
+                <div style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:rgba(34,197,94,.06);border-radius:6px;border:1px solid rgba(34,197,94,.15);"><span style="font-size:16px;">🎓</span><span style="font-size:13px;font-weight:700;color:var(--v900);">Digital Marketing — Completed</span></div>
+                <div style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--grey-bg);border-radius:6px;border:1px solid var(--border);"><span style="font-size:16px;">📚</span><div><span style="font-size:13px;font-weight:700;color:var(--v900);">Advanced SEO & Analytics</span><div style="font-size:11px;color:var(--grey2);">Natural next course — never offered</div></div></div>
+              </div>
+              <div style="padding:8px 14px;background:rgba(239,68,68,.04);border-top:1px solid rgba(239,68,68,.1);font-size:11.5px;font-weight:700;color:var(--error);">Student graduated. Nobody suggested what to do next.</div>
+            </div>
+          </div>
+        </div>
+        <div class="scenario__body">
+          <div class="scenario__label">Cross-sell missed</div>
+          <div class="scenario__title">Student finished the course. The natural next course exists. Nobody reached out.</div>
+          <div class="scenario__story">The best moment to sell the next course is the day the first one ends — when motivation is highest. That window closes fast.</div>
+          <div class="scenario__kicker">→ Course completion triggers the cross-sell sequence automatically.</div>
+        </div>
+      </div>
+
+      <div class="scenario scenario--d">
+        <div class="scenario__n">04</div>
+        <div class="scenario__visual">
+          <div class="scenario__vis-pad">
+            <div style="border:1px solid var(--border);border-radius:10px;overflow:hidden;">
+              <div style="background:var(--grey-bg);padding:8px 14px;border-bottom:1px solid var(--border);font-size:11px;font-weight:800;color:var(--grey2);">RENEWAL TRACKING · SPREADSHEET</div>
+              <div style="padding:12px 14px;display:flex;flex-direction:column;gap:5px;">
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;font-size:10.5px;font-weight:800;color:var(--grey2);padding-bottom:5px;border-bottom:1px solid var(--border);">
+                  <span>Customer</span><span>Renewal date</span><span>Followed up?</span>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;font-size:12px;color:var(--v900);">
+                  <span>Rahul S.</span><span>12 May</span><span style="color:var(--error);">No</span>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;font-size:12px;color:var(--v900);">
+                  <span>Priya M.</span><span>14 May</span><span style="color:#16A34A;">Yes</span>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;font-size:12px;color:var(--v900);">
+                  <span>Vikram J.</span><span>18 May</span><span style="color:var(--grey2);">?</span>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;font-size:12px;color:var(--grey2);">
+                  <span>+ 496 more</span><span>—</span><span>—</span>
+                </div>
+              </div>
+              <div style="padding:8px 14px;background:rgba(239,68,68,.04);border-top:1px solid rgba(239,68,68,.1);font-size:11.5px;font-weight:700;color:var(--error);">500 renewals tracked manually. Inevitably some fall through.</div>
+            </div>
+          </div>
+        </div>
+        <div class="scenario__body">
+          <div class="scenario__label">Manual tracking at scale</div>
+          <div class="scenario__title">500 renewal dates tracked in a spreadsheet. Three people updating it. Some cells always fall through.</div>
+          <div class="scenario__story">Manual tracking works for 20 customers. At 500, it becomes the thing that keeps slipping — until a customer is gone.</div>
+          <div class="scenario__kicker">→ telecrm tracks every date field and fires reminders automatically at scale.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ SHOWCASE ══ -->
+<section class="showcase" id="showcase" style="background:var(--grey-bg);padding:80px 0;">
+  <div class="showcase__inner">
+    <div class="showcase__header center">
+      <p class="sec-eyebrow">Industry-specific drip sequences</p>
+      <h2 class="sec-title">One system. Every industry.<br><em>Every cross-sell and renewal — automated.</em></h2>
+      <p class="sec-sub">Pick an industry. See the exact sequence — trigger, messages, timing and the condition check before every send.</p>
+    </div>
+
+    <div style="display:flex;justify-content:center;gap:10px;margin-bottom:36px;flex-wrap:wrap;">
+      <button id="ind-1" onclick="showInd(1)" style="padding:10px 24px;border-radius:30px;border:2px solid var(--v500);background:var(--v500);color:#fff;font-size:13px;font-weight:800;cursor:pointer;font-family:inherit;transition:all .2s;">🏠 Real Estate</button>
+      <button id="ind-2" onclick="showInd(2)" style="padding:10px 24px;border-radius:30px;border:2px solid var(--border);background:#fff;color:var(--grey2);font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s;">🏦 BFSI</button>
+      <button id="ind-3" onclick="showInd(3)" style="padding:10px 24px;border-radius:30px;border:2px solid var(--border);background:#fff;color:var(--grey2);font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s;">🎓 EdTech</button>
+    </div>
+
+    <div style="background:#fff;border-radius:20px;border:1px solid var(--border);overflow:hidden;box-shadow:0 -3px 0 0 var(--v500),0 8px 32px rgba(79,56,162,.08);">
+      <div style="padding:10px 24px;border-bottom:1px solid var(--border);background:var(--grey-bg);display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+        <span style="font-size:10.5px;font-weight:800;color:var(--grey2);text-transform:uppercase;letter-spacing:.07em;">Trigger</span>
+        <span style="color:var(--border);">→</span>
+        <span style="font-size:10.5px;font-weight:800;color:var(--grey2);text-transform:uppercase;letter-spacing:.07em;">Automated messages · timed intervals</span>
+        <span style="color:var(--border);">→</span>
+        <span style="font-size:10.5px;font-weight:800;color:#16A34A;text-transform:uppercase;letter-spacing:.07em;">Result</span>
+        <span style="font-size:11px;color:var(--grey2);margin-left:auto;">Condition re-checked before every send</span>
+      </div>
+      <div style="padding:0 24px;overflow-x:auto;">
+        <div id="tl-1"><div style="display:flex;align-items:center;gap:0;width:max-content;margin:0 auto;padding:28px 0;"><div style="background:var(--v500);border-radius:12px;padding:20px 10px;text-align:center;color:#fff;width:105px;flex-shrink:0;"><div style="font-size:22px;margin-bottom:8px;">🏠</div><div style="font-size:8.5px;font-weight:800;opacity:.55;text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px;">Trigger</div><div style="font-size:12px;font-weight:800;line-height:1.35;">Site visit<br>logged</div></div><div style="width:70px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;"><div style="font-size:9.5px;font-weight:700;color:var(--grey2);margin-bottom:5px;white-space:nowrap;">immediately</div><div style="display:flex;align-items:center;width:100%;"><div style="flex:1;height:1.5px;background:#CBD5E1;"></div><div style="width:0;height:0;border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:5px solid #CBD5E1;"></div></div></div><div style="width:160px;flex-shrink:0;border-radius:10px;overflow:hidden;border:1.5px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,.06);"><div style="background:#16A34A;padding:7px 11px;font-size:11px;font-weight:800;color:#fff;">💬 Day 1</div><div style="background:#ECE5DD;padding:9px;"><div style="background:#DCF8C6;border-radius:7px 7px 0 7px;padding:9px 10px;font-size:12px;color:#111;line-height:1.5;">Hi [Name], thanks for visiting. 🏠 Want floor plans for the 3BHK options from ₹1.1Cr?</div><div style="background:#fff;border-radius:5px;padding:6px 8px;font-size:11.5px;font-weight:700;color:var(--v500);text-align:center;margin-top:5px;">📐 Floor plans</div><div style="background:#fff;border-radius:5px;padding:6px 8px;font-size:11.5px;font-weight:700;color:var(--v500);text-align:center;margin-top:5px;">📅 Book site visit</div></div></div><div style="width:70px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;"><div style="font-size:9.5px;font-weight:700;color:var(--grey2);margin-bottom:5px;white-space:nowrap;">+72h</div><div style="display:flex;align-items:center;width:100%;"><div style="flex:1;height:1.5px;background:#CBD5E1;"></div><div style="width:0;height:0;border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:5px solid #CBD5E1;"></div></div><div style="margin-top:5px;background:rgba(107,93,211,.1);border:1px solid rgba(107,93,211,.25);border-radius:20px;padding:3px 9px;font-size:9.5px;font-weight:800;color:#6B5DD3;white-space:nowrap;">if: Interested</div></div><div style="width:160px;flex-shrink:0;border-radius:10px;overflow:hidden;border:1.5px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,.06);"><div style="background:#0891B2;padding:7px 11px;font-size:11px;font-weight:800;color:#fff;">💬 Day 4</div><div style="background:#ECE5DD;padding:9px;"><div style="background:#DCF8C6;border-radius:7px 7px 0 7px;padding:9px 10px;font-size:12px;color:#111;line-height:1.5;">Great news [Name] — revised price ₹1.05Cr this week only. 📣</div><div style="background:#fff;border-radius:5px;padding:6px 8px;font-size:11.5px;font-weight:700;color:var(--v500);text-align:center;margin-top:5px;">📞 Call me now</div></div></div><div style="width:70px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;"><div style="font-size:9.5px;font-weight:700;color:var(--grey2);margin-bottom:5px;white-space:nowrap;">+5 days</div><div style="display:flex;align-items:center;width:100%;"><div style="flex:1;height:1.5px;background:#CBD5E1;"></div><div style="width:0;height:0;border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:5px solid #CBD5E1;"></div></div><div style="margin-top:5px;background:rgba(107,93,211,.1);border:1px solid rgba(107,93,211,.25);border-radius:20px;padding:3px 9px;font-size:9.5px;font-weight:800;color:#6B5DD3;white-space:nowrap;">if: still open</div></div><div style="width:160px;flex-shrink:0;border-radius:10px;overflow:hidden;border:1.5px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,.06);"><div style="background:#7C3AED;padding:7px 11px;font-size:11px;font-weight:800;color:#fff;">💬 Day 9</div><div style="background:#ECE5DD;padding:9px;"><div style="background:#DCF8C6;border-radius:7px 7px 0 7px;padding:9px 10px;font-size:12px;color:#111;line-height:1.5;">Only 2 units left in the block you visited [Name]. Next phase not ready until Q3. 🏠</div><div style="background:#fff;border-radius:5px;padding:6px 8px;font-size:11.5px;font-weight:700;color:var(--v500);text-align:center;margin-top:5px;">📅 Book final visit</div></div></div><div style="width:44px;flex-shrink:0;display:flex;align-items:center;"><div style="flex:1;height:1.5px;background:rgba(34,197,94,.45);"></div><div style="width:0;height:0;border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:5px solid rgba(34,197,94,.45);"></div></div><div style="width:115px;flex-shrink:0;background:rgba(34,197,94,.07);border:1.5px solid rgba(34,197,94,.3);border-radius:12px;padding:16px 10px;text-align:center;"><div style="font-size:28px;font-weight:900;color:#16A34A;line-height:1;">24%</div><div style="font-size:11.5px;font-weight:800;color:#16A34A;margin-top:5px;line-height:1.3;">site visitors<br>convert</div><div style="font-size:10.5px;color:var(--grey2);margin-top:5px;line-height:1.3;">via this sequence</div></div></div></div>
+        <div id="tl-2" style="display:none;"><div style="display:flex;align-items:center;gap:0;width:max-content;margin:0 auto;padding:28px 0;"><div style="background:var(--v500);border-radius:12px;padding:20px 10px;text-align:center;color:#fff;width:105px;flex-shrink:0;"><div style="font-size:22px;margin-bottom:8px;">📋</div><div style="font-size:8.5px;font-weight:800;opacity:.55;text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px;">Trigger</div><div style="font-size:12px;font-weight:800;line-height:1.35;">Renewal date<br>30 days away</div></div><div style="width:70px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;"><div style="font-size:9.5px;font-weight:700;color:var(--grey2);margin-bottom:5px;white-space:nowrap;">immediately</div><div style="display:flex;align-items:center;width:100%;"><div style="flex:1;height:1.5px;background:#CBD5E1;"></div><div style="width:0;height:0;border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:5px solid #CBD5E1;"></div></div></div><div style="width:160px;flex-shrink:0;border-radius:10px;overflow:hidden;border:1.5px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,.06);"><div style="background:#16A34A;padding:7px 11px;font-size:11px;font-weight:800;color:#fff;">💬 30-day reminder</div><div style="background:#ECE5DD;padding:9px;"><div style="background:#DCF8C6;border-radius:7px 7px 0 7px;padding:9px 10px;font-size:12px;color:#111;line-height:1.5;">Hi [Name], your policy renews in 30 days. Renewing now takes 5 mins — plan upgraded at same premium. 📋</div><div style="background:#fff;border-radius:5px;padding:6px 8px;font-size:11.5px;font-weight:700;color:var(--v500);text-align:center;margin-top:5px;">✅ Renew now</div><div style="background:#fff;border-radius:5px;padding:6px 8px;font-size:11.5px;font-weight:700;color:var(--v500);text-align:center;margin-top:5px;">📞 Talk to advisor</div></div></div><div style="width:70px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;"><div style="font-size:9.5px;font-weight:700;color:var(--grey2);margin-bottom:5px;white-space:nowrap;">+23 days</div><div style="display:flex;align-items:center;width:100%;"><div style="flex:1;height:1.5px;background:#CBD5E1;"></div><div style="width:0;height:0;border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:5px solid #CBD5E1;"></div></div><div style="margin-top:5px;background:rgba(107,93,211,.1);border:1px solid rgba(107,93,211,.25);border-radius:20px;padding:3px 9px;font-size:9.5px;font-weight:800;color:#6B5DD3;white-space:nowrap;">if: not renewed</div></div><div style="width:160px;flex-shrink:0;border-radius:10px;overflow:hidden;border:1.5px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,.06);"><div style="background:#D97706;padding:7px 11px;font-size:11px;font-weight:800;color:#fff;">💬 7-day reminder</div><div style="background:#ECE5DD;padding:9px;"><div style="background:#DCF8C6;border-radius:7px 7px 0 7px;padding:9px 10px;font-size:12px;color:#111;line-height:1.5;">Policy expires in 7 days [Name]. ⚠️ Lapsing means new medical check and higher premiums.</div><div style="background:#fff;border-radius:5px;padding:6px 8px;font-size:11.5px;font-weight:700;color:var(--v500);text-align:center;margin-top:5px;">✅ Renew in 2 mins</div></div></div><div style="width:70px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;"><div style="font-size:9.5px;font-weight:700;color:var(--grey2);margin-bottom:5px;white-space:nowrap;">+6 days</div><div style="display:flex;align-items:center;width:100%;"><div style="flex:1;height:1.5px;background:#CBD5E1;"></div><div style="width:0;height:0;border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:5px solid #CBD5E1;"></div></div><div style="margin-top:5px;background:rgba(107,93,211,.1);border:1px solid rgba(107,93,211,.25);border-radius:20px;padding:3px 9px;font-size:9.5px;font-weight:800;color:#6B5DD3;white-space:nowrap;">if: not renewed</div></div><div style="width:160px;flex-shrink:0;border-radius:10px;overflow:hidden;border:1.5px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,.06);"><div style="background:#DC2626;padding:7px 11px;font-size:11px;font-weight:800;color:#fff;">💬 Final notice</div><div style="background:#ECE5DD;padding:9px;"><div style="background:#DCF8C6;border-radius:7px 7px 0 7px;padding:9px 10px;font-size:12px;color:#111;line-height:1.5;">Tomorrow is your last day [Name]. 🔴 After lapse coverage stops — even for claims in progress.</div><div style="background:#fff;border-radius:5px;padding:6px 8px;font-size:11.5px;font-weight:700;color:var(--v500);text-align:center;margin-top:5px;">🔒 Secure coverage now</div></div></div><div style="width:44px;flex-shrink:0;display:flex;align-items:center;"><div style="flex:1;height:1.5px;background:rgba(34,197,94,.45);"></div><div style="width:0;height:0;border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:5px solid rgba(34,197,94,.45);"></div></div><div style="width:115px;flex-shrink:0;background:rgba(34,197,94,.07);border:1.5px solid rgba(34,197,94,.3);border-radius:12px;padding:16px 10px;text-align:center;"><div style="font-size:28px;font-weight:900;color:#16A34A;line-height:1;">83%</div><div style="font-size:11.5px;font-weight:800;color:#16A34A;margin-top:5px;line-height:1.3;">renewal<br>rate</div><div style="font-size:10.5px;color:var(--grey2);margin-top:5px;line-height:1.3;">vs 61% without sequence</div></div></div></div>
+        <div id="tl-3" style="display:none;"><div style="display:flex;align-items:center;gap:0;width:max-content;margin:0 auto;padding:28px 0;"><div style="background:var(--v500);border-radius:12px;padding:20px 10px;text-align:center;color:#fff;width:105px;flex-shrink:0;"><div style="font-size:22px;margin-bottom:8px;">🎓</div><div style="font-size:8.5px;font-weight:800;opacity:.55;text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px;">Trigger</div><div style="font-size:12px;font-weight:800;line-height:1.35;">Course 1<br>completed</div></div><div style="width:70px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;"><div style="font-size:9.5px;font-weight:700;color:var(--grey2);margin-bottom:5px;white-space:nowrap;">immediately</div><div style="display:flex;align-items:center;width:100%;"><div style="flex:1;height:1.5px;background:#CBD5E1;"></div><div style="width:0;height:0;border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:5px solid #CBD5E1;"></div></div></div><div style="width:160px;flex-shrink:0;border-radius:10px;overflow:hidden;border:1.5px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,.06);"><div style="background:#16A34A;padding:7px 11px;font-size:11px;font-weight:800;color:#fff;">💬 Cross-sell</div><div style="background:#ECE5DD;padding:9px;"><div style="background:#DCF8C6;border-radius:7px 7px 0 7px;padding:9px 10px;font-size:12px;color:#111;line-height:1.5;">Congratulations [Name]! 🎓 Students who take Advanced SEO next see 3× better placement outcomes. Batch starts Monday.</div><div style="background:#fff;border-radius:5px;padding:6px 8px;font-size:11.5px;font-weight:700;color:var(--v500);text-align:center;margin-top:5px;">📚 Enrol in Advanced SEO</div><div style="background:#fff;border-radius:5px;padding:6px 8px;font-size:11.5px;font-weight:700;color:var(--v500);text-align:center;margin-top:5px;">ℹ️ Course details</div></div></div><div style="width:70px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;"><div style="font-size:9.5px;font-weight:700;color:var(--grey2);margin-bottom:5px;white-space:nowrap;">+48h</div><div style="display:flex;align-items:center;width:100%;"><div style="flex:1;height:1.5px;background:#CBD5E1;"></div><div style="width:0;height:0;border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:5px solid #CBD5E1;"></div></div><div style="margin-top:5px;background:rgba(107,93,211,.1);border:1px solid rgba(107,93,211,.25);border-radius:20px;padding:3px 9px;font-size:9.5px;font-weight:800;color:#6B5DD3;white-space:nowrap;">if: not enrolled</div></div><div style="width:160px;flex-shrink:0;border-radius:10px;overflow:hidden;border:1.5px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,.06);"><div style="background:#7C3AED;padding:7px 11px;font-size:11px;font-weight:800;color:#fff;">💬 Urgency nudge</div><div style="background:#ECE5DD;padding:9px;"><div style="background:#DCF8C6;border-radius:7px 7px 0 7px;padding:9px 10px;font-size:12px;color:#111;line-height:1.5;">Just 4 seats left in Monday's batch [Name]. 📣 Last chance before the next one in 6 weeks.</div><div style="background:#fff;border-radius:5px;padding:6px 8px;font-size:11.5px;font-weight:700;color:var(--v500);text-align:center;margin-top:5px;">📚 Reserve my seat</div></div></div><div style="width:44px;flex-shrink:0;display:flex;align-items:center;"><div style="flex:1;height:1.5px;background:rgba(34,197,94,.45);"></div><div style="width:0;height:0;border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:5px solid rgba(34,197,94,.45);"></div></div><div style="width:115px;flex-shrink:0;background:rgba(34,197,94,.07);border:1.5px solid rgba(34,197,94,.3);border-radius:12px;padding:16px 10px;text-align:center;"><div style="font-size:28px;font-weight:900;color:#16A34A;line-height:1;">34%</div><div style="font-size:11.5px;font-weight:800;color:#16A34A;margin-top:5px;line-height:1.3;">cross-sell<br>rate</div><div style="font-size:10.5px;color:var(--grey2);margin-top:5px;line-height:1.3;">from completion trigger</div></div></div></div>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:11.5px;color:var(--grey2);margin-top:12px;">* Visual representation of the telecrm interface. Exact UI may vary by account configuration.</p>
+  </div>
+</section>
+
+<script>
+function showInd(n){
+  [1,2,3].forEach(function(i){
+    var tl=document.getElementById('tl-'+i),btn=document.getElementById('ind-'+i);
+    if(tl)tl.style.display='none';
+    if(btn){btn.style.background='#fff';btn.style.color='var(--grey2)';btn.style.borderColor='var(--border)';btn.style.fontWeight='700';}
+  });
+  var at=document.getElementById('tl-'+n),ab=document.getElementById('ind-'+n);
+  if(at)at.style.display='block';
+  if(ab){ab.style.background='var(--v500)';ab.style.color='#fff';ab.style.borderColor='var(--v500)';ab.style.fontWeight='800';}
+}
+</script>
+
+
+
+<!-- ══ HOW IT WORKS ══ -->
+<section class="features">
+  <div class="features__inner">
+    <div class="features__header center">
+      <p class="sec-eyebrow">How it works</p>
+      <h2 class="sec-title">Set it up once.<br><em>It runs for every customer, automatically.</em></h2>
+    </div>
+
+    <div class="feat-row">
+      <div class="feat-row__copy">
+        <div class="feat-row__num">Step 01 — Set the trigger</div>
+        <h3 class="feat-row__h3">A date field, a status change<br><em>or a completed action starts the sequence.</em></h3>
+        <p class="feat-row__desc">The trigger can be anything: a renewal date approaching, a course completed, a plan in use for 6 months, a policy due in 30 days. Set the condition once and every customer who matches it enters the sequence automatically — now and in the future.</p>
+        <div class="feat-row__kicker">Works for any recurring event in any industry.</div>
+      </div>
+      <div class="feat-row__visual">
+        <div class="feat-vis" style="padding:0;overflow:hidden;">
+          <div style="padding:8px 14px;background:var(--grey-bg);border-bottom:1px solid var(--border);font-size:11px;font-weight:800;color:var(--grey2);">TRIGGER CONDITIONS</div>
+          <div style="padding:12px 14px;display:flex;flex-direction:column;gap:8px;">
+            <div style="display:flex;align-items:center;gap:10px;padding:9px 12px;border:1px solid var(--border);border-radius:8px;background:#fff;">
+              <span style="font-size:18px;">📅</span>
+              <div><div style="font-size:13px;font-weight:800;color:var(--v900);">Renewal date approaching</div><div style="font-size:11.5px;color:var(--grey2);">Trigger 30 days before the date field</div></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;padding:9px 12px;border:1px solid var(--border);border-radius:8px;background:#fff;">
+              <span style="font-size:18px;">🎓</span>
+              <div><div style="font-size:13px;font-weight:800;color:var(--v900);">Course or milestone completed</div><div style="font-size:11.5px;color:var(--grey2);">Trigger when a custom field is updated</div></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;padding:9px 12px;border:1px solid var(--v200);border-radius:8px;background:var(--v50);">
+              <span style="font-size:18px;">📈</span>
+              <div><div style="font-size:13px;font-weight:800;color:var(--v900);">Usage threshold hit</div><div style="font-size:11.5px;color:var(--grey2);">Trigger when a numeric field crosses a value</div></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;padding:9px 12px;border:1px solid var(--border);border-radius:8px;background:#fff;">
+              <span style="font-size:18px;">🔄</span>
+              <div><div style="font-size:13px;font-weight:800;color:var(--v900);">Time since purchase / onboarding</div><div style="font-size:11.5px;color:var(--grey2);">Trigger X days after a date field</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feat-row feat-row--flip">
+      <div class="feat-row__copy">
+        <div class="feat-row__num">Step 02 — Route by segment</div>
+        <h3 class="feat-row__h3">Different customers.<br><em>Different sequences. Same builder.</em></h3>
+        <p class="feat-row__desc">Add a condition check before each sequence branch. Real estate leads get a property sequence. Insurance customers get a renewal sequence. EdTech students get a course cross-sell. All built in the same workflow builder, all running simultaneously.</p>
+        <div class="feat-row__kicker">Industry, status, rating, date — any field can be a condition.</div>
+      </div>
+      <div class="feat-row__visual">
+        <div class="feat-vis" style="padding:0;overflow:hidden;">
+          <div style="padding:8px 14px;background:var(--grey-bg);border-bottom:1px solid var(--border);font-size:11px;font-weight:800;color:var(--grey2);">ROUTING BY INDUSTRY</div>
+          <div style="padding:14px;">
+            <div style="background:rgba(107,93,211,.08);border:1px solid rgba(107,93,211,.2);border-radius:8px;padding:10px 12px;margin-bottom:10px;">
+              <div style="font-size:12px;font-weight:800;color:#6B5DD3;margin-bottom:6px;">🔍 Check If Lead · Industry Is</div>
+              <div style="display:flex;gap:6px;flex-wrap:wrap;">
+                <span style="background:#fff;border:1px solid var(--border);border-radius:5px;padding:4px 10px;font-size:12px;font-weight:700;color:var(--v900);">🏠 Real Estate</span>
+                <span style="background:#fff;border:1px solid var(--border);border-radius:5px;padding:4px 10px;font-size:12px;font-weight:700;color:var(--v900);">🏦 BFSI</span>
+                <span style="background:#fff;border:1px solid var(--border);border-radius:5px;padding:4px 10px;font-size:12px;font-weight:700;color:var(--v900);">🎓 EdTech</span>
+                <span style="background:#fff;border:1px solid var(--border);border-radius:5px;padding:4px 10px;font-size:12px;font-weight:700;color:var(--grey2);">+14 more</span>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;">
+              <div style="text-align:center;padding:8px;background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.15);border-radius:6px;font-size:11.5px;font-weight:700;color:#16A34A;">Property<br>sequence</div>
+              <div style="text-align:center;padding:8px;background:rgba(14,165,233,.06);border:1px solid rgba(14,165,233,.15);border-radius:6px;font-size:11.5px;font-weight:700;color:#0284C7;">Renewal<br>sequence</div>
+              <div style="text-align:center;padding:8px;background:rgba(124,58,237,.06);border:1px solid rgba(124,58,237,.15);border-radius:6px;font-size:11.5px;font-weight:700;color:#7C3AED;">Course<br>sequence</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feat-row">
+      <div class="feat-row__copy">
+        <div class="feat-row__num">Step 03 — Condition check before every message</div>
+        <h3 class="feat-row__h3">Customer converted mid-sequence?<br><em>The next message doesn't go out.</em></h3>
+        <p class="feat-row__desc">Before every message in the sequence, telecrm re-checks the conditions. If the customer has converted, opted out or changed status, the sequence stops automatically. Only customers who still need the message receive it — no one gets spammed after buying.</p>
+        <div class="feat-row__kicker">Sequences are intelligent, not just scheduled.</div>
+      </div>
+      <div class="feat-row__visual">
+        <div class="feat-vis" style="padding:0;overflow:hidden;">
+          <div style="padding:8px 14px;background:var(--grey-bg);border-bottom:1px solid var(--border);font-size:11px;font-weight:800;color:var(--grey2);">BEFORE MESSAGE 2 IS SENT</div>
+          <div style="padding:14px;display:flex;flex-direction:column;gap:8px;">
+            <div style="background:rgba(107,93,211,.06);border:1px solid rgba(107,93,211,.2);border-radius:8px;padding:10px 12px;">
+              <div style="font-size:12px;font-weight:800;color:#6B5DD3;margin-bottom:6px;">🔍 Condition re-check</div>
+              <div style="font-size:12.5px;color:var(--v900);">WhatsApp opt-out <span class="drip-tag">Is</span> <strong>False</strong></div>
+              <div style="font-size:12.5px;color:var(--v900);margin-top:4px;">Status <span class="drip-tag">Is still</span> <strong>Relevant · Fresh lead</strong></div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+              <div style="padding:10px;background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.2);border-radius:8px;text-align:center;">
+                <div style="font-size:20px;margin-bottom:4px;">✅</div>
+                <div style="font-size:12px;font-weight:800;color:#16A34A;">Condition met</div>
+                <div style="font-size:11px;color:var(--grey2);margin-top:2px;">Message 2 sends</div>
+              </div>
+              <div style="padding:10px;background:rgba(239,68,68,.05);border:1px solid rgba(239,68,68,.15);border-radius:8px;text-align:center;">
+                <div style="font-size:20px;margin-bottom:4px;">🚫</div>
+                <div style="font-size:12px;font-weight:800;color:var(--error);">Converted / opted out</div>
+                <div style="font-size:11px;color:var(--grey2);margin-top:2px;">Sequence stops</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══ DARK ══ -->
+<section class="manager">
+  <div class="manager__inner">
+    <div class="manager__grid">
+      <div>
+        <div class="manager__eyebrow">Why this matters</div>
+        <h2 class="manager__h2">Acquiring a new customer costs<br><em>5× more than retaining one.</em></h2>
+        <p class="manager__sub">Your existing customers already trust you. They've already bought from you. A timed, relevant message at the right moment — renewal, upgrade, cross-sell — converts at a rate no cold outreach can match. telecrm makes sure that message always goes out.</p>
+        <div class="manager__stats">
+          <div class="manager__stat"><div class="manager__stat-n">5×</div><div class="manager__stat-l">cheaper to sell to an existing customer than acquire a new one</div></div>
+          <div class="manager__stat"><div class="manager__stat-n">100%</div><div class="manager__stat-l">of renewal dates and triggers followed up — automatically</div></div>
+          <div class="manager__stat"><div class="manager__stat-n">0</div><div class="manager__stat-l">messages sent after a customer converts — sequences stop automatically</div></div>
+          <div class="manager__stat"><div class="manager__stat-n">Any</div><div class="manager__stat-l">industry, any trigger, any sequence length — one builder</div></div>
+        </div>
+      </div>
+      <div>
+        <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;overflow:hidden;">
+          <div style="background:rgba(255,255,255,.08);padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.08);">
+            <div>What changes when sequences run</div>
+            <div>Before and after</div>
+          </div>
+          <div style="padding:14px 16px;display:flex;flex-direction:column;gap:10px;">
+            <div style="display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;">
+              <div>Renewal missed — customer lapses</div>
+              <span>→</span>
+              <div>Reminder sent 30 days before. Customer renews.</div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;">
+              <div>Upgrade never offered — revenue left behind</div>
+              <span>→</span>
+              <div>Trigger fires at 6 months. Customer upgrades.</div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;">
+              <div>Cross-sell missed — student churns</div>
+              <span>→</span>
+              <div>Sequence starts on completion. Student enrols in next course.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ PROOF ══ -->
+<section class="proof">
+  <div class="proof__inner">
+    <div class="proof__header center">
+      <p class="sec-eyebrow">What teams say</p>
+      <h2 class="sec-title">Revenue from customers<br><em>you already have.</em></h2>
+    </div>
+    <div class="proof__grid">
+      <div class="tcard">
+        <div class="tcard__qm">"</div>
+        <div class="tcard__quote">25% of our sales now come through telecrm. The automated sequences mean our team is in front of the right customer at exactly the right time — without anyone having to remember to follow up. The renewal sequences alone recovered revenue we were consistently losing.</div>
+        <div class="tcard__author">
+          <div class="tcard__av">RS</div>
+          <div><div class="tcard__an">Rohan Shetty</div><div class="tcard__ar">Digital Marketing Manager · Mahindra</div></div>
+        </div>
+      </div>
+      <div class="tcard tcard--stat">
+        <div class="tcard__stat-num">25%</div>
+        <div class="tcard__stat-label">of sales come through telecrm sequences</div>
+        <div class="tcard__stat-src">Rohan Shetty · Mahindra</div>
+      </div>
+      <div class="tcard tcard--stat">
+        <div class="tcard__stat-num">7%→16%</div>
+        <div class="tcard__stat-label">Conversion after automated follow-up</div>
+        <div class="tcard__stat-src">Disha Sharma · RASA Group</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ RELATED ══ -->
+<section>
+  <div class="related__inner">
+    <div class="related__card">
+      <div style="flex:1;">
+        <div class="related__eyebrow">Next on the Benefits Hub</div>
+        <div class="related__title">You can automate cross-sells and renewals. <em>Now reach new customers at scale.</em></div>
+        <p class="related__desc">Boost Lead Gen covers outbound campaigns — WhatsApp broadcasts, calling campaigns and drip sequences for fresh lead acquisition.</p>
+      </div>
+      <div class="related__cta">
+        <a href="#" class="btn-white">Explore Boost Lead Gen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="width:14px;height:14px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ FAQ ══ -->
+<section class="faq">
+  <div class="faq__inner">
+    <div class="faq__header center">
+      <p class="sec-eyebrow">Before you request a demo</p>
+      <h2 class="sec-title">Questions we <em>always get.</em></h2>
+    </div>
+    <div class="faq__list">
+      <details class="faq__item">
+        <summary class="faq__q">Can I build sequences for any industry, or only the ones shown?<span class="faq__q-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 1v10M1 6h10"/></svg></span></summary>
+        <div class="faq__a">Any industry. The sequences shown — Real Estate, BFSI, EdTech — are examples. The workflow builder lets you set any trigger, any condition and any message content. <strong>Automobile dealers use it for service reminders and insurance renewal. Travel agencies use it for trip anniversary offers. SaaS companies use it for plan upgrade nudges.</strong> If you can define the trigger and segment, you can build the sequence.</div>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__q">What happens if a customer converts partway through a sequence?<span class="faq__q-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 1v10M1 6h10"/></svg></span></summary>
+        <div class="faq__a">The sequence stops automatically. Before every message, telecrm re-checks the conditions you set. <strong>If the customer's status has changed — they converted, opted out or were marked Won — the next message doesn't send.</strong> This means customers who respond early never receive the remaining messages in the sequence.</div>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__q">How many messages can a drip sequence have?<span class="faq__q-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 1v10M1 6h10"/></svg></span></summary>
+        <div class="faq__a">There's no hard limit. You can build sequences with 2 messages or 10, with delays ranging from minutes to weeks. <strong>Most effective sequences have 3–5 messages</strong> spaced 24–72 hours apart, but the right length depends entirely on your sales cycle and customer behaviour.</div>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__q">Does the sequence work for customers already in the CRM, or only new ones?<span class="faq__q-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 1v10M1 6h10"/></svg></span></summary>
+        <div class="faq__a">Both. You can trigger sequences based on a new event (lead created, course completed) or on a scheduled date (renewal date approaching, subscription anniversary). <strong>Existing customers in the CRM are eligible for date-based triggers immediately once you set the renewal date field.</strong></div>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__q">Do customers need to have WhatsApp for this to work?<span class="faq__q-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 1v10M1 6h10"/></svg></span></summary>
+        <div class="faq__a">The drip sequences use WhatsApp as the delivery channel, so customers need WhatsApp on the number in the CRM. <strong>The condition check includes a WhatsApp opt-out filter</strong> — customers who have opted out are automatically excluded from every sequence. telecrm also supports SMS as an alternate channel.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ CTA ══ -->
+<section class="final-cta">
+  <div class="final-cta__grid"></div>
+  <div class="final-cta__glow"></div>
+  <div class="final-cta__inner">
+    <div class="final-cta__badge"><span class="final-cta__badge-dot"></span>Free 30-minute demo</div>
+    <div class="final-cta__eyebrow">Join 5,000+ Indian sales teams</div>
+    <h2 class="final-cta__h2">Are you ready<br>to <em>get started?</em></h2>
+    <p class="final-cta__sub">No jargon. We'll show you exactly how telecrm works for your business — your industry, your team size, your lead sources. The demo is free. The setup is guided. The commitment is yours to make when you're ready.</p>
+    <a href="telecrm-demo-request.html" class="btn-cta-white">Get a Demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    <div class="final-cta__trust">
+      <span class="final-cta__trust-item"><span class="final-cta__trust-dot"></span>No credit card needed</span>
+      <span class="final-cta__trust-item"><span class="final-cta__trust-dot"></span>Response within 2 hours</span>
+      <span class="final-cta__trust-item"><span class="final-cta__trust-dot"></span>5,000+ businesses onboarded</span>
+      <span class="final-cta__trust-item"><span class="final-cta__trust-dot"></span>Fast setup</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__logo">telecrm</div>
+        <p class="footer__tagline">A Comprehensive Revenue Management Engine — fusing Lead Management, Call Management, Adaptive CRM, Marketing Automation, and Pipeline Management into one high-performance workspace.</p>
+        <a href="telecrm-get-started.html" class="btn-primary">Get Started →</a>
+      </div>
+      <div class="footer__links-grid">
+      <div class="footer__col-stack">
+        <div>
+          <div class="footer__col-title">Platform</div>
+          <div class="footer__links">
+            <a href="telecrm-platform-overview.html" class="footer__link">Platform Overview</a>
+            <a href="telecrm-platform-hub.html" class="footer__link">Platform Hub</a>
+            <a href="telecrm-benefits-hub.html" class="footer__link">Benefits Hub</a>
+            <a href="telecrm-platform-unified-revenue-management.html" class="footer__link">Unified Revenue Management</a>
+            <a href="telecrm-platform-lead-management.html" class="footer__link">Lead Management</a>
+            <a href="telecrm-platform-call-management.html" class="footer__link">Call Management &amp; Recording</a>
+            <a href="telecrm-platform-adaptive-crm.html" class="footer__link">Adaptive CRM</a>
+            <a href="telecrm-platform-marketing-automation.html" class="footer__link">Marketing Automation</a>
+            <a href="telecrm-platform-sales-pipeline-management.html" class="footer__link">Sales Pipeline Management</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Pricing</div>
+          <div class="footer__links">
+            <a href="telecrm-pricing.html" class="footer__link">Pricing</a>
+            <a href="telecrm-cost-savings.html" class="footer__link">Cost Savings</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__col-stack">
+        <div>
+          <div class="footer__col-title">Solutions</div>
+          <div class="footer__links">
+            <a href="telecrm-problems-hub.html" class="footer__link">Problems Hub</a>
+            <a href="telecrm-crm-hub.html" class="footer__link">CRM Hub</a>
+            <a href="telecrm-industry-hub.html" class="footer__link">Industry Hub</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Get Started</div>
+          <div class="footer__links">
+            <a href="telecrm-partnership.html" class="footer__link">Partner Program</a>
+            <a href="telecrm-demo-request.html" class="footer__link">Demo Request</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__col-stack">
+        <div>
+          <div class="footer__col-title">Trust</div>
+          <div class="footer__links">
+            <a href="telecrm-testimonials.html" class="footer__link">Testimonials</a>
+            <a href="telecrm-case-studies.html" class="footer__link">Case Studies</a>
+            <a href="telecrm-comparison.html" class="footer__link">Comparison</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">About Us</div>
+          <div class="footer__links">
+            <a href="telecrm-about-telecrm.html" class="footer__link">About telecrm</a>
+            <a href="telecrm-life-at-telecrm.html" class="footer__link">Life at telecrm</a>
+            <a href="telecrm-careers.html" class="footer__link">Careers</a>
+            <a href="telecrm-contact.html" class="footer__link">Contact Us</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Support</div>
+        <div class="footer__links">
+          <a href="telecrm-faqs.html" class="footer__link">FAQs</a>
+          <a href="telecrm-glossary.html" class="footer__link">Glossary</a>
+          <a href="telecrm-learning-repository.html" class="footer__link">Learning Repository</a>
+          <a href="telecrm-onboarding.html" class="footer__link">Onboarding</a>
+          <a href="telecrm-privacy-policy.html" class="footer__link">Privacy Policy</a>
+          <a href="telecrm-recommended-devices.html" class="footer__link">Recommended Devices</a>
+          <a href="telecrm-refund-policy.html" class="footer__link">Refund Policy</a>
+          <a href="telecrm-terms-conditions.html" class="footer__link">Terms &amp; Conditions</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Features</div>
+        <div class="footer__links">
+          <a href="telecrm-feature-automations.html" class="footer__link">Automation</a>
+          <a href="telecrm-feature-call-management.html" class="footer__link">Call Management</a>
+          <a href="telecrm-feature-calling-campaign.html" class="footer__link">Calling Campaign Management</a>
+          <a href="telecrm-feature-integrations.html" class="footer__link">Integrations</a>
+          <a href="telecrm-feature-lead-fields.html" class="footer__link">Lead Fields</a>
+          <a href="telecrm-feature-lead-management.html" class="footer__link">Lead Management &amp; Reporting</a>
+          <a href="telecrm-feature-lead-stages.html" class="footer__link">Lead Stages</a>
+          <a href="telecrm-feature-list-labels.html" class="footer__link">List and Labels</a>
+          <a href="telecrm-feature-reporting.html" class="footer__link">Reporting</a>
+          <a href="telecrm-feature-user-management.html" class="footer__link">User Management</a>
+          <a href="telecrm-feature-whatsapp.html" class="footer__link">WhatsApp</a>
+        </div>
+      </div>
+      </div><!-- /footer__links-grid -->
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__copy">© 2026 telecrm. All rights reserved.</div>
+      <div class="footer__legal">
+        <a href="telecrm-privacy-policy.html">Privacy Policy</a>
+        <a href="telecrm-terms-conditions.html">Terms &amp; Conditions</a>
+        <a href="telecrm-refund-policy.html">Refund Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // ── Showcase slider ──────────────────────────────────────────────────────
+  var csActive=1,csTimer,CS_DUR=4500,csTotal=3;
+  function csShow(n){
+    var slides=document.querySelectorAll('.cs-slide');
+    var wrap=document.getElementById('cs-wrap');
+    slides.forEach(function(el,i){
+      el.style.transition='transform .5s cubic-bezier(.4,0,.2,1)';
+      el.style.transform='translateX('+((i-(n-1))*100)+'%)';
+    });
+    setTimeout(function(){
+      var active=document.querySelectorAll('.cs-slide')[n-1];
+      if(active&&wrap)wrap.style.height=active.offsetHeight+'px';
+    },20);
+    for(var i=1;i<=csTotal;i++){
+      var t=document.getElementById('cst-'+i),d=document.getElementById('cs-dot-'+i);
+      if(t){t.style.color='var(--grey2)';t.style.fontWeight='700';t.style.borderBottom='none';}
+      if(d){d.style.opacity='.4';d.querySelector('div').style.width='6px';d.querySelector('div').style.background='var(--grey2)';d.querySelector('span').style.color='var(--grey2)';}
+    }
+    var at=document.getElementById('cst-'+n),ad=document.getElementById('cs-dot-'+n);
+    if(at){at.style.color='var(--v500)';at.style.fontWeight='800';at.style.borderBottom='2px solid var(--v500)';}
+    if(ad){ad.style.opacity='1';ad.querySelector('div').style.width='20px';ad.querySelector('div').style.background='var(--v500)';ad.querySelector('span').style.color='var(--v500)';}
+    csActive=n;
+  }
+  function csProg(){
+    var p=document.getElementById('cs-prog');
+    if(!p)return;
+    p.style.transition='none';p.style.width='0%';
+    setTimeout(function(){p.style.transition='width '+CS_DUR+'ms linear';p.style.width='100%';},30);
+  }
+  function csNext(){csShow(csActive>=csTotal?1:csActive+1);csProg();}
+  window.addEventListener('load',function(){
+    var wrap=document.getElementById('cs-wrap');
+    var first=document.querySelectorAll('.cs-slide')[0];
+    if(wrap&&first)wrap.style.height=first.offsetHeight+'px';
+    csShow(1);csProg();
+    csTimer=setInterval(csNext,CS_DUR);
+    var sc=document.getElementById('showcase');
+    if(sc){
+      sc.addEventListener('mouseenter',function(){clearInterval(csTimer);var p=document.getElementById('cs-prog');if(p)p.style.transition='none';});
+      sc.addEventListener('mouseleave',function(){csProg();csTimer=setInterval(csNext,CS_DUR);});
+    }
+  });
+  window.csShow=csShow;
+})();
+</script>
+
+<script>
+(function(){
+  var btn=document.querySelector('.nav__hamburger');
+  var links=document.querySelector('.nav__links');
+  if(btn&&links){
+    btn.addEventListener('click',function(){btn.classList.toggle('open');links.classList.toggle('open');});
+  }
+  var mq=window.matchMedia('(max-width:768px)');
+  document.querySelectorAll('.nav__item > .nav__link').forEach(function(hub){
+    hub.addEventListener('click',function(e){ if(mq.matches){ e.preventDefault(); hub.parentElement.classList.toggle('open'); } });
+  });
+  document.querySelectorAll('.np__link,.np__foot,.nav__cta,.nav__mobile-cta').forEach(function(l){
+    l.addEventListener('click',function(){ if(btn){btn.classList.remove('open');} if(links){links.classList.remove('open');} });
+  });
+})();
+</script>
+</body>
+</html>
