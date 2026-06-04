@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQs — telecrm | Frequently Asked Questions</title>
+<meta name="description" content="Answers to the most common questions about telecrm — pricing, features, industries, CRM types, field teams, WhatsApp, call recording, devices, data, and getting started.">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cta:#F97316; --cta-hover:#EA580C;--v50:#EDEBF6;--v100:#E1DDF0;--v200:#C4BAE5;--v300:#9C8FCF;--v400:#7260B5;--v500:#4F38A2;--v600:#483393;--v700:#382873;--v900:#211844;--white:#fff;--grey:#64748B;--border:#E9EBF8;--grey2:#94A3B8;--font-head:'Plus Jakarta Sans',sans-serif;--font-body:'DM Sans',sans-serif;--radius-btn:10px;--radius-card:16px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);color:var(--v900);background:#fff;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+.nav__inner{max-width:1280px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:72px;}
+.nav__logo{font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--v500);letter-spacing:-.5px;}
+.nav__links{display:flex;align-items:center;gap:2px;}
+.nav__link{font-family:var(--font-head);font-size:12.5px;font-weight:600;color:var(--v700);padding:7px 11px;border-radius:8px;transition:all .18s;white-space:nowrap;}
+.nav__link:hover,.nav__link--active{background:var(--v50);color:var(--v500);}
+.nav__sep{display:inline-block;width:1px;height:20px;background:var(--border);margin:0 8px;vertical-align:middle;}
+.nav__cta{font-family:var(--font-head);font-size:13px;font-weight:700;background:var(--cta);color:#fff;padding:10px 22px;border-radius:var(--radius-btn);box-shadow:0 4px 12px rgba(249,115,22,.3);transition:all .18s;white-space:nowrap;margin-left:8px;}
+.nav__cta:hover{background:var(--cta-hover);transform:translateY(-1px);}
+.nav__mobile-right{display:none;align-items:center;gap:8px;margin-left:auto;}
+.nav__mobile-cta{font-family:var(--font-head);font-size:13px;font-weight:700;background:var(--v500);color:#fff;padding:8px 16px;border-radius:var(--radius-btn);text-decoration:none;white-space:nowrap;}
+.nav__mob-sep{display:none;width:1px;height:20px;background:var(--border);}
+.nav__hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:8px;border:none;background:transparent;}
+.nav__hamburger span{display:block;width:22px;height:2px;background:var(--v900);border-radius:2px;transition:all .18s;}
+.nav__hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav__hamburger.open span:nth-child(2){opacity:0;}
+.nav__hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.hero{padding:72px 0 56px;background:#fff;position:relative;overflow:hidden;}
+.hero__bg{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;opacity:.3;pointer-events:none;}
+.hero__inner{max-width:1280px;margin:0 auto;padding:0 32px;position:relative;text-align:left;}
+.breadcrumb{display:flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-head);font-size:12px;font-weight:600;color:var(--grey2);margin-bottom:24px;}
+.breadcrumb-sep{color:var(--v200);}
+.breadcrumb a{color:var(--grey2);transition:color .2s;}
+.breadcrumb a:hover{color:var(--v500);}
+.breadcrumb-current{color:var(--v500);}
+.hero__eyebrow{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px;}
+.hero__h1{font-family:var(--font-head);font-size:clamp(34px,5vw,60px);font-weight:900;letter-spacing:-2px;color:var(--v900);line-height:1.05;margin-bottom:16px;}
+.hero__h1 em{font-style:normal;color:var(--v500);}
+.hero__sub{font-size:17px;color:var(--grey);line-height:1.8;}
+.faq-cats{padding:32px 0;background:#fff;border-bottom:1px solid var(--border);position:sticky;top:72px;z-index:90;}
+.faq-cats__inner{max-width:900px;margin:0 auto;padding:0 32px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;}
+.faq-cat__btn{font-family:var(--font-head);font-size:12.5px;font-weight:700;color:var(--grey);background:#fff;border:1.5px solid var(--border);padding:8px 18px;border-radius:100px;cursor:pointer;transition:all .18s;white-space:nowrap;}
+.faq-cat__btn:hover{border-color:var(--v300);color:var(--v500);}
+.faq-cat__btn.active{background:var(--v500);color:#fff;border-color:var(--v500);}
+.faq-body{padding:64px 0 96px;}
+.faq-body__inner{max-width:900px;margin:0 auto;padding:0 32px;}
+.faq__group{margin-bottom:56px;}
+.faq__group-title{font-family:var(--font-head);font-size:13px;font-weight:800;color:var(--v500);text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--v100);}
+.faq__item{border-top:1px solid var(--border);}
+.faq__item:last-child{border-bottom:1px solid var(--border);}
+.faq__q{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0;cursor:pointer;font-family:var(--font-head);font-size:15px;font-weight:700;color:var(--v900);line-height:1.4;user-select:none;}
+.faq__q:hover{color:var(--v500);}
+.faq__icon{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s;}
+.faq__icon svg{transition:transform .2s;}
+.faq__item.open .faq__icon{background:var(--v500);border-color:var(--v500);}
+.faq__item.open .faq__icon svg{transform:rotate(45deg);}
+.faq__item.open .faq__icon path{stroke:#fff;}
+.faq__a{display:none;padding:0 0 20px;font-size:15px;color:var(--grey);line-height:1.85;}
+.faq__a a{color:var(--v500);text-decoration:underline;text-underline-offset:2px;}
+.faq__item.open .faq__a{display:block;}
+.faq-contact{margin-top:48px;padding:40px;background:var(--v50);border-radius:20px;border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:space-between;gap:24px;}
+.faq-contact__text h3{font-family:var(--font-head);font-size:20px;font-weight:900;color:var(--v900);margin-bottom:8px;}
+.faq-contact__text p{font-size:14px;color:var(--grey);line-height:1.7;}
+.faq-contact__btns{display:flex;gap:12px;flex-shrink:0;}
+.btn-primary{font-family:var(--font-head);font-size:13px;font-weight:700;background:var(--cta);color:#fff;padding:12px 24px;border-radius:var(--radius-btn);display:inline-flex;align-items:center;gap:6px;transition:all .18s;}
+.btn-primary:hover{background:var(--cta-hover);}
+.btn-outline{font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--v500);border:1.5px solid var(--v200);padding:11px 20px;border-radius:var(--radius-btn);display:inline-flex;align-items:center;gap:6px;transition:all .18s;}
+.btn-outline:hover{background:var(--v50);}
+.footer{background:#fff;border-top:1px solid var(--border);padding:64px 0 40px;}
+.footer__inner{max-width:1280px;margin:0 auto;padding:0 32px;width:100%;}
+.footer__links-grid{display:contents;}
+.footer__grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:32px;margin-bottom:48px;}
+.footer__logo{font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--v500);margin-bottom:16px;letter-spacing:-.5px;}
+.footer__tagline{font-size:14px;color:var(--grey);line-height:1.7;max-width:280px;margin-bottom:24px;}
+.footer__col-title{font-family:var(--font-head);font-size:12px;font-weight:800;color:var(--v900);text-transform:uppercase;letter-spacing:.06em;margin-bottom:16px;}
+.footer__links{display:flex;flex-direction:column;gap:10px;}
+.footer__link{font-size:14px;color:var(--grey);transition:color .2s;}
+.footer__link:hover{color:var(--v500);}
+.footer__bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer__copy{font-size:13px;color:var(--grey);}
+.footer__legal{display:flex;gap:24px;}
+.footer__legal a{font-size:13px;color:var(--grey);transition:color .2s;}
+.footer__legal a:hover{color:var(--v500);}
+.btn-footer{font-family:var(--font-head);font-size:13px;font-weight:700;background:var(--v500);color:#fff;padding:10px 20px;border-radius:var(--radius-btn);display:inline-flex;align-items:center;gap:6px;}
+@media(max-width:768px){
+  .nav__links{display:none;flex-direction:column;position:fixed;top:72px;left:0;right:0;background:rgba(255,255,255,.98);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:16px 24px;gap:0;z-index:99;}
+  .nav__links.open{display:flex;}
+  .nav__link{padding:12px 0;border-bottom:1px solid var(--border);font-size:15px;display:block;}
+  .nav__link:last-child{border-bottom:none;}
+  .nav__sep{display:none;}
+  .nav__cta{display:none;}
+  .nav__mobile-right{display:flex;align-items:center;gap:8px;margin-left:auto;}
+  .nav__mob-sep{display:block;}
+  .nav__hamburger{display:flex;}
+  .hero__inner{padding:0 20px;}
+  .faq-cats{top:72px;}
+  .faq-cats__inner{padding:0 16px;display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  .faq-cat__btn[data-cat="all"]{grid-column:1/-1;}
+  .faq-body__inner{padding:0 20px;}
+  .faq-contact{flex-direction:column;gap:20px;}
+  .faq-contact__btns{flex-direction:column;width:100%;}
+  .btn-primary,.btn-outline{justify-content:center;}
+  .footer__grid{grid-template-columns:1fr!important;gap:32px!important;}
+  .footer__tagline{max-width:100%!important;}
+  .footer__links-grid{display:grid!important;grid-template-columns:1fr 1fr;gap:32px 16px;margin-top:32px;}
+  .footer__bottom{flex-direction:column;align-items:center;text-align:center;}
+  .footer__legal{flex-wrap:wrap;justify-content:center;}
+}
+@media(min-width:769px){.nav__hamburger{display:none;}.nav__mobile-right{display:none;}}
+
+/* ===== ROLLOUT v2026-05-29: nav mega-menu + fat footer (canonical) ===== */
+.nav__item{position:relative;display:flex;align-items:center;height:72px;}
+.nav__item > .nav__link{display:inline-flex;align-items:center;gap:4px;}
+.nav__caret{width:11px;height:11px;flex-shrink:0;transition:transform .2s;}
+.nav__item:hover > .nav__link .nav__caret,.nav__item:focus-within > .nav__link .nav__caret{transform:rotate(180deg);}
+.nav__item:hover > .nav__link,.nav__item:focus-within > .nav__link{background:var(--v50);color:var(--v500);}
+.nav__panel{position:absolute;top:100%;left:0;background:#fff;border:1px solid var(--border);border-radius:14px;box-shadow:0 18px 44px rgba(33,24,68,.13);padding:14px;opacity:0;visibility:hidden;transform:translateY(7px);transition:opacity .16s,transform .16s,visibility .16s;z-index:200;}
+.nav__panel--right{left:auto;right:0;}
+.nav__item:hover > .nav__panel,.nav__item:focus-within > .nav__panel{opacity:1;visibility:visible;transform:translateY(0);}
+.np__list{display:grid;gap:1px;}
+.np__list--2{grid-template-columns:1fr 1fr;gap:1px 14px;}
+.np__link{display:flex;flex-direction:column;gap:2px;padding:9px 12px;border-radius:8px;transition:background .15s;min-width:0;}
+.np__link:hover{background:var(--v50);}
+.np__t{font-family:var(--font-head);font-size:13.5px;font-weight:700;color:var(--v900);white-space:nowrap;}
+.np__list--2 .np__t{white-space:normal;line-height:1.3;overflow-wrap:break-word;}
+.np__link:hover .np__t{color:var(--v500);}
+.np__s{font-family:var(--font-body);font-size:12px;color:var(--grey);line-height:1.35;}
+.np__foot{display:flex;align-items:center;gap:6px;border-top:1px solid var(--border);margin-top:8px;padding:11px 12px 3px;font-family:var(--font-head);font-size:12.5px;font-weight:700;color:var(--v500);}
+.np__foot svg{width:13px;height:13px;}
+.nav__mobile-cta{background:var(--cta);}
+.footer__grid{grid-template-columns:1.5fr 1fr 1fr 1fr 1fr 1.15fr;gap:40px 32px;}
+.footer__col-stack{display:flex;flex-direction:column;gap:48px;}
+@media(max-width:1024px){.footer__grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:768px){
+  .nav__item{width:100%;height:auto;display:block;position:static;}
+  .nav__item > .nav__link{display:flex;align-items:center;justify-content:space-between;width:100%;}
+  .nav__item.open > .nav__link .nav__caret{transform:rotate(180deg);}
+  .nav__caret{width:13px;height:13px;}
+  .nav__panel{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;border-radius:0;padding:4px 0 10px 10px;width:auto !important;display:none;z-index:auto;}
+  .nav__item.open > .nav__panel{display:block;}
+  .np__list--2{grid-template-columns:1fr;}
+  .np__link{padding:9px 10px;}
+  .np__foot{padding-left:10px;}
+  .footer__links-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px 16px;margin-top:32px;}
+  .footer__links-grid > div:nth-child(1),.footer__links-grid > div:nth-child(2),.footer__links-grid > div:nth-child(3),.footer__links-grid > div:nth-child(4),.footer__links-grid > div:nth-child(5){text-align:left;grid-column:auto;grid-row:auto;}
+  .footer__links-grid > div:nth-child(4) .footer__links{align-items:flex-start;}
+}
+@media(max-width:600px){.footer__grid{grid-template-columns:1fr;}}
+/* ===== end ROLLOUT ===== */
+
+.np__cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.np__col-head{display:block;font-family:var(--font-head);font-size:11px;font-weight:800;color:var(--v400);text-transform:uppercase;letter-spacing:.07em;padding:4px 12px 8px;transition:color .15s;}
+.np__col-head:hover{color:var(--v500);}
+.nav__panel:has(.np__col:only-child) .np__cols{grid-template-columns:1fr;}
+@media(max-width:768px){.np__cols{grid-template-columns:1fr !important;gap:0 !important;}.np__col-head{padding:8px 10px 4px;}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="telecrm-approach2-home.html" class="nav__logo">telecrm</a>
+    <div class="nav__links">
+      <div class="nav__item">
+        <a href="telecrm-platform-overview.html" class="nav__link">Platform Overview <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:560px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-platform-hub.html">Platform Hub</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-platform-unified-revenue-management.html"><span class="np__t">Unified Revenue Management</span><span class="np__s">One connected engine</span></a>
+                <a class="np__link" href="telecrm-platform-lead-management.html"><span class="np__t">Lead Management</span><span class="np__s">Capture, dedupe, assign</span></a>
+                <a class="np__link" href="telecrm-platform-call-management.html"><span class="np__t">Call Management &amp; Recording</span><span class="np__s">Dial, record, track</span></a>
+                <a class="np__link" href="telecrm-platform-adaptive-crm.html"><span class="np__t">Adaptive CRM</span><span class="np__s">Stages, fields, 360°</span></a>
+                <a class="np__link" href="telecrm-platform-marketing-automation.html"><span class="np__t">Marketing Automation</span><span class="np__s">Reach leads automatically</span></a>
+                <a class="np__link" href="telecrm-platform-sales-pipeline-management.html"><span class="np__t">Sales Funnel &amp; Pipeline Management</span><span class="np__s">Track every deal stage</span></a>
+              </div>
+            </div>
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-benefits-hub.html">Benefits Hub</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-benefits-hub.html"><span class="np__t">Outcomes &amp; ROI</span><span class="np__s">What telecrm delivers for your team</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-platform-overview.html">Platform Overview — the product, end to end <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-solutions-hub.html" class="nav__link">Solutions <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-solutions-hub.html">By approach</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-problems-hub.html"><span class="np__t">Problems Hub</span><span class="np__s">Revenue leaks, by stage</span></a>
+                <a class="np__link" href="telecrm-crm-hub.html"><span class="np__t">CRM Hub</span><span class="np__s">By type &amp; by team</span></a>
+                <a class="np__link" href="telecrm-industry-hub.html"><span class="np__t">Industry Hub</span><span class="np__s">11 industries covered</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-solutions-hub.html">Browse all solutions <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-features-hub.html" class="nav__link">Features <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:620px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-features-hub.html">Engagement</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-feature-call-management.html"><span class="np__t">Call Management</span></a>
+                <a class="np__link" href="telecrm-feature-calling-campaign.html"><span class="np__t">Calling Campaign Management</span></a>
+                <a class="np__link" href="telecrm-feature-whatsapp.html"><span class="np__t">WhatsApp</span></a>
+                <a class="np__link" href="telecrm-feature-automations.html"><span class="np__t">Automation</span></a>
+              </div>
+            </div>
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-features-hub.html">Data &amp; Admin</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-feature-lead-management.html"><span class="np__t">Lead Management &amp; Reporting</span></a>
+                <a class="np__link" href="telecrm-feature-lead-fields.html"><span class="np__t">Lead Fields</span></a>
+                <a class="np__link" href="telecrm-feature-lead-stages.html"><span class="np__t">Lead Stages</span></a>
+                <a class="np__link" href="telecrm-feature-list-labels.html"><span class="np__t">List and Labels</span></a>
+                <a class="np__link" href="telecrm-feature-reporting.html"><span class="np__t">Reporting</span></a>
+                <a class="np__link" href="telecrm-feature-integrations.html"><span class="np__t">Integrations</span></a>
+                <a class="np__link" href="telecrm-feature-user-management.html"><span class="np__t">User Management</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-features-hub.html">See all features <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-trust-hub.html" class="nav__link">Trust <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-trust-hub.html">Proof</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-testimonials.html"><span class="np__t">Testimonials</span><span class="np__s">Real customers, real numbers</span></a>
+                <a class="np__link" href="telecrm-case-studies.html"><span class="np__t">Case Studies</span><span class="np__s">9 detailed stories</span></a>
+                <a class="np__link" href="telecrm-comparison.html"><span class="np__t">Comparison</span><span class="np__s">telecrm vs. alternatives</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-trust-hub.html">Visit the Trust Hub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-pricing.html" class="nav__link">Pricing <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:320px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-pricing.html">Plans</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-pricing.html"><span class="np__t">Pricing</span><span class="np__s">Plans &amp; what's included</span></a>
+                <a class="np__link" href="telecrm-cost-savings.html"><span class="np__t">Cost Savings</span><span class="np__s">What you save vs. tools</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-support-hub.html" class="nav__link nav__link--active">Support <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:560px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-support-hub.html">Resources</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-faqs.html"><span class="np__t">FAQs</span></a>
+                <a class="np__link" href="telecrm-glossary.html"><span class="np__t">Glossary</span></a>
+                <a class="np__link" href="telecrm-learning-repository.html"><span class="np__t">Learning Repository</span></a>
+                <a class="np__link" href="telecrm-onboarding.html"><span class="np__t">Onboarding</span></a>
+                <a class="np__link" href="telecrm-recommended-devices.html"><span class="np__t">Recommended Devices</span></a>
+              </div>
+            </div>
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-support-hub.html">Policies</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-privacy-policy.html"><span class="np__t">Privacy Policy</span></a>
+                <a class="np__link" href="telecrm-refund-policy.html"><span class="np__t">Refund Policy</span></a>
+                <a class="np__link" href="telecrm-terms-conditions.html"><span class="np__t">Terms &amp; Conditions</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-support-hub.html">Go to Support Hub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-get-started.html" class="nav__link">Get Started <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-get-started.html">Get started</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-partnership.html"><span class="np__t">Partner Program</span><span class="np__s">Refer &amp; earn 10% for life</span></a>
+                <a class="np__link" href="telecrm-demo-request.html"><span class="np__t">Demo Request</span><span class="np__s">Book a free demo</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-get-started.html">All ways to start <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-about-us.html" class="nav__link">About Us <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-about-us.html">Company</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-about-telecrm.html"><span class="np__t">About telecrm</span><span class="np__s">Story, vision, mission</span></a>
+                <a class="np__link" href="telecrm-life-at-telecrm.html"><span class="np__t">Life at telecrm</span><span class="np__s">Culture &amp; team</span></a>
+                <a class="np__link" href="telecrm-careers.html"><span class="np__t">Careers</span><span class="np__s">Open roles</span></a>
+                <a class="np__link" href="telecrm-contact.html"><span class="np__t">Contact Us</span><span class="np__s">Talk to us</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="nav__sep"></span>
+      <a href="telecrm-demo-request.html" class="nav__cta">Get a Demo</a>
+    </div>
+    <div class="nav__mobile-right">
+      <a href="telecrm-demo-request.html" class="nav__mobile-cta">Get a Demo</a>
+      <span class="nav__mob-sep"></span>
+      <button class="nav__hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero__bg"></div>
+  <div class="hero__inner">
+    <div class="breadcrumb">
+      <a href="telecrm-approach2-home.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="telecrm-support-hub.html">Support</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">FAQs</span>
+    </div>
+    <div class="hero__eyebrow">Frequently Asked Questions</div>
+    <h1 class="hero__h1">Straight answers.<br><em>No jargon.</em></h1>
+    <p class="hero__sub">Everything you want to know about telecrm — pricing, features, industries, CRM types, field teams, WhatsApp, devices, data, and getting started.</p>
+  </div>
+</section>
+
+<div class="faq-cats">
+  <div class="faq-cats__inner">
+    <button class="faq-cat__btn active" data-cat="all">All Questions</button>
+    <button class="faq-cat__btn" data-cat="getting-started">Getting Started</button>
+    <button class="faq-cat__btn" data-cat="pricing">Pricing</button>
+    <button class="faq-cat__btn" data-cat="features">Features</button>
+    <button class="faq-cat__btn" data-cat="industries">Industries</button>
+    <button class="faq-cat__btn" data-cat="crm-types">CRM Types</button>
+    <button class="faq-cat__btn" data-cat="teams">Teams</button>
+    <button class="faq-cat__btn" data-cat="calls">Calls</button>
+    <button class="faq-cat__btn" data-cat="whatsapp">WhatsApp</button>
+    <button class="faq-cat__btn" data-cat="devices">Devices</button>
+    <button class="faq-cat__btn" data-cat="data">Data</button>
+    <button class="faq-cat__btn" data-cat="support">Support</button>
+    <button class="faq-cat__btn" data-cat="onboarding">Onboarding</button>
+  </div>
+</div>
+
+<section class="faq-body">
+  <div class="faq-body__inner">
+
+    <!-- GETTING STARTED -->
+    <div class="faq__group" data-cat="getting-started">
+      <div class="faq__group-title">Getting Started</div>
+      <div class="faq__item">
+        <div class="faq__q">What is telecrm and who is it built for?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">telecrm is a Comprehensive Revenue Management Engine built for Indian sales teams. It fuses Lead Management, Call Management, WhatsApp, Automation, and Reporting into one mobile-first platform. It is built for businesses that sell over the phone and WhatsApp — real estate, education, healthcare, BFSI, automobile, travel, digital marketing, recruitment, services, manufacturing, start-ups, and more.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">How long does it take to get started?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">Most teams are up and running within a day. The setup is guided — you don't need a technical team or months of configuration. You can <a href="telecrm-demo-request.html">book a demo</a> and our team will walk you through the setup for your specific business.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">Is telecrm available on mobile?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">Yes. telecrm is built mobile-first for Android. Reps can make calls, log activity, manage leads, send WhatsApp messages, check in at client locations with GPS, and view their pipeline — all from their phone. A web interface is also available for managers and desktop users.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">Can I try telecrm before committing?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">Yes. You can <a href="telecrm-demo-request.html">request a free demo</a> and our team will show you exactly how telecrm works for your business — your industry, your team size, your lead sources. No commitment required.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">What team sizes does telecrm work for?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">telecrm works for teams of all sizes — from a 3-person start-up to enterprises with hundreds of reps across multiple cities and teams. The platform scales without re-implementation as you grow. See how it works for <a href="telecrm_crm_for_industry_startups.html">start-ups</a> and <a href="telecrm_crm_team_enterprise.html">enterprise teams</a>.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">Does telecrm save money compared to running multiple tools?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">Yes — significantly. Businesses switching to telecrm from a stack of separate tools typically eliminate spend on standalone dialers, WhatsApp platforms, lead management tools, reporting dashboards and field tracking apps. telecrm consolidates all of these into one platform. See the full breakdown on the <a href="telecrm-cost-savings.html">Cost Savings page</a>.</div>
+      </div>
+    </div>
+
+    <!-- PRICING -->
+    <div class="faq__group" data-cat="pricing">
+      <div class="faq__group-title">Pricing &amp; Plans</div>
+      <div class="faq__item">
+        <div class="faq__q">How is telecrm priced?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">telecrm is priced per user per month. Plans are available on monthly, quarterly, and annual billing. Annual plans offer the best value. Visit the <a href="telecrm-pricing.html">Pricing page</a> for current plan details.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">Is there a free plan?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">telecrm does not offer a free plan, but we do offer a free demo so you can see the full product before committing. <a href="telecrm-demo-request.html">Book your demo here.</a></div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">What is the refund policy?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">For quarterly and annual plans, we offer a full refund within the first 15 days if we are unable to deliver the promised services. Monthly plans are non-refundable. Read our full <a href="telecrm-refund-policy.html">Refund Policy</a> for details.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">Can I add or remove users during my subscription?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">Yes. You can add users at any time during your subscription. Pricing for additional users is prorated based on your current plan. Contact our support team to adjust your user count.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">Does telecrm offer a partner or reseller program?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">Yes. telecrm offers a partner program where you earn 10% recurring commission on every subscription you refer. There are no targets, no upfront costs and no limit on earnings. Learn more on the <a href="telecrm-partnership.html">Partner Program page</a>.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">How much can a business save by switching to telecrm?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">Businesses consolidating multiple tools into telecrm typically save on dialer subscriptions, WhatsApp platform fees, separate CRM costs, reporting tools and field tracking apps. The exact saving depends on your current stack. See a detailed breakdown on the <a href="telecrm-cost-savings.html">Cost Savings page</a>.</div>
+      </div>
+    </div>
+
+    <!-- FEATURES -->
+    <div class="faq__group" data-cat="features">
+      <div class="faq__group-title">Features</div>
+      <div class="faq__item">
+        <div class="faq__q">What are the core features of telecrm?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">telecrm includes: Lead Management (custom fields, stages, labels, lists, pipelines), Call Management (1-click dialling, auto recording, campaigns), WhatsApp (Chat Sync, automated messages, drip sequences), Automations (stage triggers, lead assignment, multi-action workflows), and Reporting (live leaderboards, funnel analytics, call breakdowns). See the full <a href="telecrm-features-hub.html">Features list here</a>.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">Does telecrm support automation?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">Yes — automation is a core part of telecrm. You can automate lead assignment, stage triggers, WhatsApp follow-ups, drip campaigns, and cross-pipeline handoffs. Over 9 crore automations are executed on the platform every month. See the <a href="telecrm-feature-automations.html">Automations page</a> for details.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">What integrations does telecrm support?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">telecrm integrates with Facebook Lead Ads, Google Lead Forms, IndiaMART, JustDial, 99acres, MagicBricks, Housing.com, CarDekho, and more. It also supports Zapier, webhooks, and a developer API for custom integrations. See all integrations on the <a href="telecrm-feature-integrations.html">Integrations page</a>.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">Can I customise lead stages and fields?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">Yes. telecrm supports fully custom lead stages, custom fields (text, numbers, dropdowns, dates, and more), and custom labels and lists. You can model your exact sales process without compromise. See <a href="telecrm-feature-lead-stages.html">Lead Stages</a>, <a href="telecrm-feature-lead-fields.html">Lead Fields</a> and <a href="telecrm-feature-list-labels.html">Lists & Labels</a> for details.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">Does telecrm support multiple pipelines?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">Yes. You can create multiple pipelines for different products, teams, or geographies. Leads can be automatically moved between pipelines based on stage or trigger rules. This is particularly useful for enterprises with multiple sales verticals or businesses that have separate pre-sale and post-sale pipelines.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">Does telecrm support GPS field tracking?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">Yes. Field reps can check in at client locations with GPS verification and optional photo capture. Managers see live field activity — which reps are active, which locations have been visited and how long reps spent at each location — without relying on verbal updates. This is widely used by manufacturing, BFSI and automobile field sales teams.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">What is WhatsApp Chat Sync?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">WhatsApp Chat Sync automatically logs all WhatsApp conversations between your reps and leads directly into the lead record in telecrm. Every message sent and received is captured — so the full conversation history is visible to managers and the whole team, and is not lost when a rep leaves or changes phone.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">What reporting does telecrm offer managers?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">Managers get live leaderboards, call breakdown reports by rep and time, funnel analytics, hourly activity tracking, field visit summaries and custom dashboards — all in real time. No manual report compilation needed. See <a href="telecrm-feature-reporting.html">Reporting</a> for details.</div>
+      </div>
+    </div>
+
+    <!-- INDUSTRIES -->
+    <div class="faq__group" data-cat="industries">
+      <div class="faq__group-title">Industries</div>
+      <div class="faq__item">
+        <div class="faq__q">Which industries does telecrm work for?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">telecrm is configured for 11 Indian industries: Real Estate, Education, Healthcare, BFSI, Automobile, Travel, Digital Marketing, Recruitment, Services, Manufacturing and Start Ups. See the <a href="telecrm-industry-hub.html">Industry Hub</a> to find your industry and see exactly how it works for a business like yours.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">How does telecrm work for real estate businesses?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">telecrm captures leads from Housing.com, 99acres, MagicBricks and Facebook instantly, deduplicates across sources, assigns to the right agent, tracks site visits with GPS check-in and manages the full pipeline from first enquiry to booking and possession. It also handles channel partner management with role-based access. See the <a href="telecrm_crm_for_industry_real_estate.html">Real Estate CRM page</a> for details.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">How does telecrm work for education businesses?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">telecrm gives education businesses structured counsellor pipelines, automated follow-up sequences, AI call summaries for quality monitoring and admission season scale — so every student enquiry is followed up and every counsellor is accountable. See the <a href="telecrm_crm_for_industry_education.html">Education CRM page</a> for details.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">How does telecrm work for automobile dealerships?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">telecrm captures leads from CarDekho and other portals instantly, deduplicates across sources, tracks test drives as a formal pipeline stage and manages the full journey from enquiry to delivery. After delivery, it continues managing vehicle insurance, service reminders and insurance renewal as automated post-sale sequences. See the <a href="telecrm_crm_for_industry_automobile.html">Automobile CRM page</a>.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">How does telecrm work for BFSI businesses?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">telecrm gives BFSI businesses product-specific pipelines for loans, insurance and investment products, automated renewal sequences, DSA network management with role-based access, compliance-ready call recording and GPS field team tracking. See the <a href="telecrm_crm_for_industry_bfsi.html">BFSI CRM page</a>.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">How does telecrm work for manufacturing businesses?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">telecrm gives manufacturing businesses GPS-verified field visit records, structured dealer and distributor pipelines, territory-based assignment and real-time dashboards — replacing self-reported field activity with independently verified data. See the <a href="telecrm_crm_for_industry_manufacturing.html">Manufacturing CRM page</a>.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">Does telecrm work for recruitment agencies?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">Yes. telecrm gives recruitment agencies separate pipelines for candidates and clients, automated follow-up on both sides, placement milestone tracking and WhatsApp Chat Sync to keep all candidate and client communication centralised. See the <a href="telecrm_crm_for_industry_recruitment.html">Recruitment CRM page</a>.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">Is telecrm suitable for start-ups?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">Yes. telecrm sets up fast, works for teams of 3 and scales to 300 without a platform migration. Start-ups use it to build their sales process from day one, manage investor relationships alongside customer pipelines and let a small team compete with a much larger one through automation. See the <a href="telecrm_crm_for_industry_startups.html">Start Ups CRM page</a>.</div>
+      </div>
+    </div>
+
+    <!-- CRM TYPES -->
+    <div class="faq__group" data-cat="crm-types">
+      <div class="faq__group-title">CRM Types</div>
+      <div class="faq__item">
+        <div class="faq__q">What types of CRM does telecrm support?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">telecrm covers every major CRM type — Calling CRM, WhatsApp CRM, Mobile CRM, AI CRM, Collaborative CRM, Operational CRM, Analytical CRM, General CRM and more. Each type is configured to the needs of businesses that use that approach to manage their sales. See the <a href="telecrm-crm-by-type.html">CRM by Type page</a>.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">What is a Calling CRM and does telecrm support it?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">A Calling CRM is built around phone-based sales — 1-click dialling, automatic call recording, call logging and campaign management. telecrm is one of the strongest calling CRMs available for Indian sales teams, with over 1 crore calls logged monthly. See the <a href="telecrm_crm_type_calling_crm.html">Calling CRM page</a>.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">What is a WhatsApp CRM and does telecrm support it?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">A WhatsApp CRM connects WhatsApp communication directly to the lead record — logging every message, enabling automated follow-up sequences and giving managers visibility into every conversation. telecrm's WhatsApp Chat Sync and WhatsApp automation make it a full-featured WhatsApp CRM. See the <a href="telecrm_crm_type_whatsapp_crm.html">WhatsApp CRM page</a>.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">Is telecrm a Mobile CRM?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">Yes. telecrm is built mobile-first — the Android app is where most reps spend their time. Field teams can log visits, make calls, send WhatsApp messages, update lead stages and check in with GPS — entirely from their phone without needing desktop access. See the <a href="telecrm_crm_type_mobile_crm.html">Mobile CRM page</a>.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">Does telecrm support AI features?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">Yes. telecrm includes AI call summaries — automatically generated summaries of every call recording that give managers key insights without listening to every call in full. Additional AI capabilities power lead scoring, follow-up recommendations and pattern recognition across the pipeline. See the <a href="telecrm_crm_type_ai_crm.html">AI CRM page</a>.</div>
+      </div>
+    </div>
+
+    <!-- TEAMS -->
+    <div class="faq__group" data-cat="teams">
+      <div class="faq__group-title">Teams</div>
+      <div class="faq__item">
+        <div class="faq__q">Which team types does telecrm support?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">telecrm is configured for six team types — Sales, Inside Sales, Remote, Field, Service and Enterprise. Each has specific capabilities tuned to how that team works. See the <a href="telecrm-crm-hub.html">CRM Hub</a> to find the right fit for your team.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">How does telecrm support field sales teams?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">Field teams use telecrm's GPS check-in to verify client visits, log structured visit notes on mobile, manage their lead pipeline between meetings and communicate with clients via WhatsApp — all without desktop access. Managers see live field activity and visit history. See the <a href="telecrm_crm_team_field.html">Field Teams page</a>.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">How does telecrm support inside sales teams?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">Inside sales teams use telecrm for high-volume outbound calling, automatic call recording, WhatsApp follow-up automation, calling campaigns and performance leaderboards. The platform is built for teams that sell entirely over the phone and WhatsApp. See the <a href="telecrm_crm_team_inside_sales.html">Inside Sales page</a>.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">Does telecrm support remote teams?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">Yes. Remote teams get the same pipeline, call recording, WhatsApp integration and performance dashboards as office-based teams — with no dependency on physical infrastructure. Managers have full visibility into remote rep activity without needing to be in the same location. See the <a href="telecrm_crm_team_remote.html">Remote Teams page</a>.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">Does telecrm support enterprise businesses with multiple teams?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">Yes. telecrm supports multi-team workspaces with shadow hierarchy — giving senior leadership visibility across all teams without disrupting team-level management structures. Separate workspaces can be created per city, region, product or vertical. Each team has role-based access to its own data. See the <a href="telecrm_crm_team_enterprise.html">Enterprise Teams page</a>.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">How does telecrm support service teams?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">Service teams use telecrm for ticket tracking, complaint management, escalation workflows, SLA monitoring and post-service follow-up. Managers get visibility into ticket volumes, resolution times and customer satisfaction — so service quality can be managed proactively rather than reactively. See the <a href="telecrm_crm_team_service.html">Service Teams page</a>.</div>
+      </div>
+    </div>
+
+    <!-- CALLS -->
+    <div class="faq__group" data-cat="calls">
+      <div class="faq__group-title">Calls &amp; Recording</div>
+      <div class="faq__item">
+        <div class="faq__q">Does telecrm support automatic call recording?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">Yes. Every call made or received through telecrm is recorded and stored against the lead automatically. No manual action required from the rep. This requires a compatible Android device with a manufacturer dialer — not the Google Dialer.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">Does call recording work on iPhones?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">No. Auto call recording is not available on iPhones due to iOS restrictions. It is only available on compatible Android devices — specifically those with a manufacturer dialer and native auto-recording support, typically found in Indian brands and select Samsung models.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">What is the difference between the manufacturer dialer and the Google Dialer?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">The manufacturer dialer is the default phone app built by the device maker (e.g. Samsung's Phone app). The Google Dialer is a separate app pre-installed on some Android phones. The Google Dialer does not support auto call recording — so telecrm requires the manufacturer dialer to be the default.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">Does telecrm log calls automatically?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">Yes. Every inbound and outbound call is automatically logged against the relevant lead — duration, timestamp, recording and outcome — without the rep doing anything manually. Over 1 crore calls are logged on the platform every month.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">Can managers listen to call recordings?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">Yes. Managers can access and listen to recordings from the lead's activity timeline or the reporting dashboard. AI call summaries are also available — giving managers key insights from every call without listening to each recording in full.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">What are calling campaigns and how do they work?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">Calling campaigns let managers assign batches of leads to reps with defined follow-up sequences and call targets. Reps work through their assigned list systematically — making calls, logging outcomes and triggering next actions — without manually deciding who to call next. Useful for outbound prospecting, re-engagement drives and peak-season follow-up. See the <a href="telecrm-feature-calling-campaign.html">Calling Campaigns page</a>.</div>
+      </div>
+    </div>
+
+    <!-- WHATSAPP -->
+    <div class="faq__group" data-cat="whatsapp">
+      <div class="faq__group-title">WhatsApp</div>
+      <div class="faq__item">
+        <div class="faq__q">Does telecrm integrate with WhatsApp?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">Yes. telecrm has deep WhatsApp integration — every message sent and received is automatically logged against the lead via WhatsApp Chat Sync. You can also send templated messages, run drip sequences, and trigger WhatsApp automations based on lead stage or action. Over 1 crore WhatsApp messages are sent through telecrm every month.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">What is WhatsApp Chat Sync and how does it work?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">WhatsApp Chat Sync automatically captures and stores every WhatsApp conversation between your reps and their leads inside telecrm — against the correct lead record. Managers can see the full conversation history for any lead without the rep forwarding screenshots. When a rep leaves, all their WhatsApp conversations remain in the system. See the <a href="telecrm-feature-whatsapp.html">WhatsApp features page</a>.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">Can telecrm send automatic WhatsApp messages?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">Yes. telecrm can automatically send WhatsApp messages when a lead reaches a certain stage, after a call, on a scheduled drip, or based on any custom trigger. Messages can be personalised with the lead's name, enquiry details, or any custom field value.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">Does telecrm work with WhatsApp Business API?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">Yes. telecrm supports WhatsApp Business API for enterprise-grade messaging — including bulk messaging, template-based campaigns, and two-way conversation management. Contact our team for setup assistance.</div>
+      </div>
+    </div>
+
+    <!-- DEVICES -->
+    <div class="faq__group" data-cat="devices">
+      <div class="faq__group-title">Devices</div>
+      <div class="faq__item">
+        <div class="faq__q">Which Android phones work best with telecrm?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">Recommended Samsung models include: M14, M34, F34, A05s, A12, A15, A14, and M30. These are tested and verified for full compatibility including auto call recording. See the full <a href="telecrm-recommended-devices.html">Recommended Devices page</a>.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">What are the minimum device specifications?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">Minimum requirements: 4 GB RAM, 64 GB internal storage, Android 9 or above. The device must use a manufacturer dialer and support native auto call recording.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">Why doesn't telecrm support the Google Dialer?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">The Google Dialer does not provide access to call recordings at the system level. This is a Google platform restriction — not a telecrm limitation. Manufacturer dialers on Indian Android brands provide the system-level access telecrm needs to capture and store call recordings automatically.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">Does telecrm work on tablets or desktops?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">telecrm has a full web interface accessible from any browser on desktop or tablet. Managers typically use the web app for reporting and pipeline oversight, while reps use the Android app for calls and daily activity.</div>
+      </div>
+    </div>
+
+    <!-- DATA & PRIVACY -->
+    <div class="faq__group" data-cat="data">
+      <div class="faq__group-title">Data &amp; Privacy</div>
+      <div class="faq__item">
+        <div class="faq__q">Who owns the data in telecrm?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">You do. Your data — leads, calls, recordings, WhatsApp conversations and all CRM activity — belongs to you. telecrm will not redistribute, publish, or disclose any of your uploaded data unless required by law. See our <a href="telecrm-privacy-policy.html">Privacy Policy</a> for full details.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">Is my data secure?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">Yes. All data is transmitted over SSL (HTTPS) and stored securely. Payment information is encrypted and handled by our payment gateway. We implement industry-standard security measures to protect your data.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">Does telecrm sell my data to third parties?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">No. telecrm does not sell, trade, or transfer your personally identifiable information to outside parties. Read our <a href="telecrm-privacy-policy.html">Privacy Policy</a> in full.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">Can I export my data from telecrm?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">Yes. Your lead data, activity history and reports can be exported. Contact our support team for assistance with data exports or if you need a specific format.</div>
+      </div>
+    </div>
+
+    <!-- SUPPORT -->
+    <div class="faq__group" data-cat="support">
+      <div class="faq__group-title">Support</div>
+      <div class="faq__item">
+        <div class="faq__q">What support does telecrm provide?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">telecrm provides guided onboarding, a learning repository, FAQs, webinars and a dedicated support team. Response time for support requests is within 24 hours. Visit the <a href="telecrm-support-hub.html">Support Hub</a> to access all resources.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">Is onboarding included?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">Yes. All new customers receive guided onboarding including account configuration, lead pipeline setup, integration connection and a walkthrough of key features for your specific use case.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">How do I contact telecrm?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">You can reach us at <a href="mailto:r@telecrm.in">r@telecrm.in</a>. Our team is based in Gurugram, Haryana and typically responds within 24 hours.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">Does telecrm offer training for my team?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">Yes. We offer webinars, a learning repository and hands-on onboarding sessions. For larger teams, dedicated training sessions can be arranged. <a href="telecrm-book-webinar.html">Book a webinar slot here.</a></div>
+      </div>
+    </div>
+
+    <!-- ONBOARDING -->
+    <div class="faq__group" data-cat="onboarding">
+      <div class="faq__group-title">Onboarding</div>
+      <div class="faq__item">
+        <div class="faq__q">What happens immediately after I sign up?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">A dedicated WhatsApp group is created for your account immediately. Your implementation manager, account manager and tech team are all added. This becomes your primary support channel from day one.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">What happens on the onboarding Zoom call?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">Our team learns your complete business flow — how leads come in, how follow-up works, what your funnel stages look like, what pipelines you run and what automations would save the most time. We then configure telecrm accordingly — pipelines, stages, automations and integrations are all set up during or directly after this call.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">Will telecrm set up my integrations for me?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">Yes. During onboarding, the tech team connects your lead sources — Facebook Lead Ads, your website, Instagram, IndiaMART, portal APIs and others — so leads flow into telecrm automatically from day one.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">How long does the onboarding process take?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">The full onboarding runs over 4 steps: WhatsApp group creation (day one) → business setup Zoom call (first few days) → 7–14 day guided usage period → review and optimisation session. Most teams are fully operational within 2–3 weeks. See the full <a href="telecrm-onboarding.html">Onboarding page</a>.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q">Is support available after onboarding is complete?<div class="faq__icon"><svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M12 5v14M5 12h14" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round"/></svg></div></div>
+        <div class="faq__a">Yes. The WhatsApp group stays active and the customer success team remains available beyond onboarding — via WhatsApp, phone and Zoom. telecrm has a team of 30+ associates available to support you as your business grows.</div>
+      </div>
+    </div>
+
+    <div class="faq-contact">
+      <div class="faq-contact__text">
+        <h3>Still have a question?</h3>
+        <p>Our team typically responds within 24 hours. No chatbot — a real person will get back to you.</p>
+      </div>
+      <div class="faq-contact__btns">
+        <a href="telecrm-demo-request.html" class="btn-primary">Get a Demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="telecrm-contact.html" class="btn-outline">Contact Us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__logo">telecrm</div>
+        <p class="footer__tagline">A Comprehensive Revenue Management Engine — fusing Lead Management, Call Management, Adaptive CRM, Marketing Automation, and Pipeline Management into one high-performance workspace.</p>
+        <a href="telecrm-get-started.html" class="btn-primary">Get Started →</a>
+      </div>
+      <div class="footer__links-grid">
+      <div class="footer__col-stack">
+        <div>
+          <div class="footer__col-title">Platform</div>
+          <div class="footer__links">
+            <a href="telecrm-platform-overview.html" class="footer__link">Platform Overview</a>
+            <a href="telecrm-platform-hub.html" class="footer__link">Platform Hub</a>
+            <a href="telecrm-benefits-hub.html" class="footer__link">Benefits Hub</a>
+            <a href="telecrm-platform-unified-revenue-management.html" class="footer__link">Unified Revenue Management</a>
+            <a href="telecrm-platform-lead-management.html" class="footer__link">Lead Management</a>
+            <a href="telecrm-platform-call-management.html" class="footer__link">Call Management &amp; Recording</a>
+            <a href="telecrm-platform-adaptive-crm.html" class="footer__link">Adaptive CRM</a>
+            <a href="telecrm-platform-marketing-automation.html" class="footer__link">Marketing Automation</a>
+            <a href="telecrm-platform-sales-pipeline-management.html" class="footer__link">Sales Pipeline Management</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Pricing</div>
+          <div class="footer__links">
+            <a href="telecrm-pricing.html" class="footer__link">Pricing</a>
+            <a href="telecrm-cost-savings.html" class="footer__link">Cost Savings</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__col-stack">
+        <div>
+          <div class="footer__col-title">Solutions</div>
+          <div class="footer__links">
+            <a href="telecrm-problems-hub.html" class="footer__link">Problems Hub</a>
+            <a href="telecrm-crm-hub.html" class="footer__link">CRM Hub</a>
+            <a href="telecrm-industry-hub.html" class="footer__link">Industry Hub</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Get Started</div>
+          <div class="footer__links">
+            <a href="telecrm-partnership.html" class="footer__link">Partner Program</a>
+            <a href="telecrm-demo-request.html" class="footer__link">Demo Request</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__col-stack">
+        <div>
+          <div class="footer__col-title">Trust</div>
+          <div class="footer__links">
+            <a href="telecrm-testimonials.html" class="footer__link">Testimonials</a>
+            <a href="telecrm-case-studies.html" class="footer__link">Case Studies</a>
+            <a href="telecrm-comparison.html" class="footer__link">Comparison</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">About Us</div>
+          <div class="footer__links">
+            <a href="telecrm-about-telecrm.html" class="footer__link">About telecrm</a>
+            <a href="telecrm-life-at-telecrm.html" class="footer__link">Life at telecrm</a>
+            <a href="telecrm-careers.html" class="footer__link">Careers</a>
+            <a href="telecrm-contact.html" class="footer__link">Contact Us</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Support</div>
+        <div class="footer__links">
+          <a href="telecrm-faqs.html" class="footer__link">FAQs</a>
+          <a href="telecrm-glossary.html" class="footer__link">Glossary</a>
+          <a href="telecrm-learning-repository.html" class="footer__link">Learning Repository</a>
+          <a href="telecrm-onboarding.html" class="footer__link">Onboarding</a>
+          <a href="telecrm-privacy-policy.html" class="footer__link">Privacy Policy</a>
+          <a href="telecrm-recommended-devices.html" class="footer__link">Recommended Devices</a>
+          <a href="telecrm-refund-policy.html" class="footer__link">Refund Policy</a>
+          <a href="telecrm-terms-conditions.html" class="footer__link">Terms &amp; Conditions</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Features</div>
+        <div class="footer__links">
+          <a href="telecrm-feature-automations.html" class="footer__link">Automation</a>
+          <a href="telecrm-feature-call-management.html" class="footer__link">Call Management</a>
+          <a href="telecrm-feature-calling-campaign.html" class="footer__link">Calling Campaign Management</a>
+          <a href="telecrm-feature-integrations.html" class="footer__link">Integrations</a>
+          <a href="telecrm-feature-lead-fields.html" class="footer__link">Lead Fields</a>
+          <a href="telecrm-feature-lead-management.html" class="footer__link">Lead Management &amp; Reporting</a>
+          <a href="telecrm-feature-lead-stages.html" class="footer__link">Lead Stages</a>
+          <a href="telecrm-feature-list-labels.html" class="footer__link">List and Labels</a>
+          <a href="telecrm-feature-reporting.html" class="footer__link">Reporting</a>
+          <a href="telecrm-feature-user-management.html" class="footer__link">User Management</a>
+          <a href="telecrm-feature-whatsapp.html" class="footer__link">WhatsApp</a>
+        </div>
+      </div>
+      </div><!-- /footer__links-grid -->
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__copy">© 2026 telecrm. All rights reserved.</div>
+      <div class="footer__legal">
+        <a href="telecrm-privacy-policy.html">Privacy Policy</a>
+        <a href="telecrm-terms-conditions.html">Terms &amp; Conditions</a>
+        <a href="telecrm-refund-policy.html">Refund Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.querySelector('.nav__hamburger');
+  var links=document.querySelector('.nav__links');
+  if(btn&&links){
+    btn.addEventListener('click',function(){btn.classList.toggle('open');links.classList.toggle('open');});
+  }
+  var mq=window.matchMedia('(max-width:768px)');
+  document.querySelectorAll('.nav__item > .nav__link').forEach(function(hub){
+    hub.addEventListener('click',function(e){ if(mq.matches){ e.preventDefault(); hub.parentElement.classList.toggle('open'); } });
+  });
+  document.querySelectorAll('.np__link,.np__foot,.nav__cta,.nav__mobile-cta').forEach(function(l){
+    l.addEventListener('click',function(){ if(btn){btn.classList.remove('open');} if(links){links.classList.remove('open');} });
+  });
+})();
+</script>
+</body>
+</html>

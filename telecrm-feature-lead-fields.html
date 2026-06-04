@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://telecrm.in/features/lead-fields/">
+<title>Lead Fields — telecrm Features</title>
+<meta name="description" content="Custom lead fields in telecrm — capture exactly the data your business needs, with the right field type for every piece of information.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cta:#F97316; --cta-hover:#EA580C;
+  --v50:#EDEBF6;--v100:#E1DDF0;--v200:#C4BAE5;--v300:#9C8FCF;
+  --v400:#7260B5;--v500:#4F38A2;--v600:#483393;--v700:#382873;--v900:#211844;
+  --white:#fff;--grey:#64748B;--border:#E9EBF8;--grey2:#94A3B8;
+  --font-head:'Plus Jakarta Sans',sans-serif;--font-body:'DM Sans',sans-serif;
+  --radius-btn:10px;--radius-card:16px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);color:var(--v900);background:#fff;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+.nav__inner{max-width:1280px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:72px;}
+.nav__logo{font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--v500);letter-spacing:-.5px;}
+.nav__links{display:flex;align-items:center;gap:2px;}
+.nav__link{font-family:var(--font-head);font-size:12.5px;font-weight:600;color:var(--v700);padding:7px 11px;border-radius:8px;transition:all .18s;white-space:nowrap;}
+.nav__link:hover,.nav__link--active{background:var(--v50);color:var(--v500);}
+.nav__sep{display:inline-block;width:1px;height:20px;background:var(--border);margin:0 8px;vertical-align:middle;}
+.nav__cta{font-family:var(--font-head);font-size:13px;font-weight:700;background:var(--cta);color:#fff;padding:10px 22px;border-radius:var(--radius-btn);box-shadow:0 4px 12px rgba(249,115,22,.3);transition:all .18s;white-space:nowrap;margin-left:8px;}
+.nav__cta:hover{background:var(--cta-hover);transform:translateY(-1px);}
+.nav__mobile-right{display:none;align-items:center;gap:8px;margin-left:auto;}
+.nav__mobile-cta{font-family:var(--font-head);font-size:13px;font-weight:700;background:var(--v500);color:#fff;padding:8px 16px;border-radius:var(--radius-btn);text-decoration:none;white-space:nowrap;}
+.nav__mob-sep{display:none;width:1px;height:20px;background:var(--border);}
+.nav__hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:8px;border:none;background:transparent;}
+.nav__hamburger span{display:block;width:22px;height:2px;background:var(--v900);border-radius:2px;transition:all .18s;}
+.nav__hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav__hamburger.open span:nth-child(2){opacity:0;}
+.nav__hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* HERO */
+.hero{padding:64px 0 56px;background:#fff;position:relative;overflow:hidden;}
+.hero__bg{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;opacity:.35;pointer-events:none;}
+.hero__glow{position:absolute;top:-80px;right:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(79,56,162,.07) 0%,transparent 70%);pointer-events:none;}
+.hero__inner{max-width:1280px;margin:0 auto;padding:0 32px;position:relative;}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-family:var(--font-head);font-size:12px;font-weight:600;color:var(--grey2);margin-bottom:24px;}
+.breadcrumb-sep{color:var(--v200);}
+.breadcrumb a{color:var(--grey2);transition:color .2s;}
+.breadcrumb a:hover{color:var(--v500);}
+.breadcrumb-current{color:var(--v500);}
+.hero__eyebrow{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;}
+.hero__h1{font-family:var(--font-head);font-size:clamp(28px,4vw,48px);font-weight:900;letter-spacing:-1.5px;color:var(--v900);line-height:1.1;margin-bottom:14px;}
+.hero__h1 em{font-style:normal;color:var(--v500);}
+.hero__sub{font-size:17px;color:var(--grey);line-height:1.75;}
+
+/* HIGHLIGHTS BAR */
+.highlights{background:var(--v50);border-top:1px solid var(--v100);border-bottom:1px solid var(--v100);padding:20px 32px;}
+.highlights__inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}@media(max-width:768px){
+  .nav__links{display:none;flex-direction:column;position:fixed;top:72px;left:0;right:0;background:rgba(255,255,255,.98);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:16px 24px;gap:0;z-index:99;}
+  .nav__links.open{display:flex;}
+  .nav__link{padding:12px 0;border-bottom:1px solid var(--border);font-size:15px;display:block;}
+  .nav__link:last-child{border-bottom:none;}
+  .nav__sep{display:none;}
+  .nav__cta{display:none;}
+  .nav__mobile-right{display:flex;align-items:center;gap:8px;margin-left:auto;}
+  .nav__mob-sep{display:block;}
+  .nav__hamburger{display:flex;}
+.highlight{display:flex;align-items:center;gap:10px;padding:10px 16px;background:#fff;border:1.5px solid var(--v100);border-radius:10px;}
+.highlight__dot{width:7px;height:7px;border-radius:50%;background:var(--v500);flex-shrink:0;}
+.highlight__text{font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--v700);}
+
+/* MAIN CONTENT */
+.content{padding:72px 0;background:#fff;}
+.inner{max-width:1280px;margin:0 auto;padding:0 32px;}
+
+/* FEATURE SECTIONS */
+.feature-section{margin-bottom:64px;padding-bottom:64px;border-bottom:1px solid var(--border);}
+.feature-section > div[style*="margin-bottom:32px"] + div{margin-top:32px;}
+.feature-section:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.feature-section__layout{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+.feature-section__layout--reverse{direction:rtl;}
+.feature-section__layout--reverse > *{direction:ltr;}
+.feature-section__eyebrow{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
+.feature-section__h2{font-family:var(--font-head);font-size:clamp(22px,2.5vw,30px);font-weight:900;color:var(--v900);letter-spacing:-.5px;line-height:1.2;margin-bottom:12px;}
+.feature-section__h2 em{font-style:normal;color:var(--v500);}
+.feature-section__body{font-size:15px;color:var(--grey);line-height:1.75;margin-bottom:24px;}
+.feature-bullets{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.feature-bullets li{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--grey);line-height:1.6;}
+.feature-bullets__dot{width:20px;height:20px;border-radius:6px;background:var(--v50);border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.feature-bullets__dot svg{width:10px;height:10px;}
+.feature-bullets strong{font-family:var(--font-head);font-weight:700;color:var(--v700);}
+
+/* VISUAL PANEL */
+.feature-visual{background:var(--v50);border:1.5px solid var(--v100);border-radius:20px;padding:32px;display:flex;align-items:center;justify-content:center;min-height:280px;}
+.feature-visual--dark{background:var(--v900);}
+
+/* INTEGRATION LOGOS GRID */
+.int-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;width:100%;}
+.int-tile{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:16px 12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;transition:all .2s;}
+.int-tile:hover{border-color:var(--v300);box-shadow:0 4px 16px rgba(79,56,162,.1);}
+.int-tile__icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:20px;}
+.int-tile__name{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v700);text-align:center;}
+
+  .cat-row{grid-template-columns:1fr;}
+  .cat-row__label{border-right:none;border-bottom:1px solid var(--border);}
+}
+@media(min-width:769px){.nav__hamburger{display:none;}.nav__mobile-right{display:none;}}
+
+/* CATALOGUE */
+.catalogue{padding:80px 0;background:#F8F7FC;}
+.catalogue__header{margin-bottom:56px;}
+.catalogue__eyebrow{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
+.catalogue__h2{font-family:var(--font-head);font-size:clamp(24px,3vw,36px);font-weight:900;color:var(--v900);letter-spacing:-.5px;margin-bottom:10px;line-height:1.2;}
+.catalogue__sub{font-size:15px;color:var(--grey);line-height:1.7;}
+
+/* ORBITAL HUB */
+.orbital-section{padding:80px 0;background:#F8F7FC;}
+.orbital-section__header{margin-bottom:56px;}
+.orbital-section__eyebrow{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
+.orbital-section__h2{font-family:var(--font-head);font-size:clamp(24px,3vw,36px);font-weight:900;color:var(--v900);letter-spacing:-.5px;margin-bottom:10px;line-height:1.2;}
+.orbital-section__h2 em{font-style:normal;color:var(--v500);}
+.orbital-section__sub{font-size:15px;color:var(--grey);line-height:1.7;}
+
+.orbital-wrap{position:relative;width:600px;height:600px;margin:0 auto;}
+
+/* RINGS */
+.orbital-ring{position:absolute;border:1.5px dashed rgba(79,56,162,.15);border-radius:50%;}
+.orbital-ring--inner{width:300px;height:300px;top:150px;left:150px;}
+.orbital-ring--outer{width:560px;height:560px;top:20px;left:20px;}
+
+/* CENTRE NODE */
+.orbital-centre{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120px;height:120px;background:var(--v500);border-radius:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 8px 40px rgba(79,56,162,.4);z-index:10;}
+.orbital-centre__logo{font-family:var(--font-head);font-size:16px;font-weight:900;color:#fff;letter-spacing:-.5px;}
+.orbital-centre__label{font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--v200);text-transform:uppercase;letter-spacing:.08em;margin-top:2px;}
+
+/* ORBITAL NODES */
+.orbital-node{position:absolute;display:flex;flex-direction:column;align-items:center;gap:6px;transform:translate(-50%,-50%);z-index:10;}
+.orbital-node__icon{width:52px;height:52px;border-radius:14px;background:#fff;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(79,56,162,.08);transition:all .2s;}
+.orbital-node__icon:hover{border-color:var(--v300);box-shadow:0 4px 24px rgba(79,56,162,.18);}
+.orbital-node__icon svg{width:26px;height:26px;}
+.orbital-node__label{font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v700);white-space:nowrap;text-align:center;max-width:80px;white-space:normal;line-height:1.3;}
+
+/* SVG CANVAS FOR LINES + PULSES */
+.orbital-svg{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;}
+
+/* PULSE ANIMATION */
+@keyframes pulse-flow{
+  0%{opacity:0;offset-distance:0%;}
+  10%{opacity:1;}
+  90%{opacity:1;}
+  100%{opacity:0;offset-distance:100%;}
+}
+.pulse{animation:pulse-flow 2.5s linear infinite;}
+
+@media(max-width:680px){
+  .orbital-wrap{width:340px;height:340px;}
+  .orbital-ring--inner{width:170px;height:170px;top:85px;left:85px;}
+  .orbital-ring--outer{width:320px;height:320px;top:10px;left:10px;}
+  .orbital-centre{width:72px;height:72px;border-radius:16px;}
+  .orbital-centre__logo{font-size:11px;}
+  .orbital-node__icon{width:36px;height:36px;border-radius:10px;}
+  .orbital-node__icon svg{width:18px;height:18px;}
+  .orbital-node__label{font-size:8px;}
+}
+
+/* INT LIST */
+.int-list{display:flex;flex-direction:column;border:1.5px solid var(--border);border-radius:16px;overflow:hidden;background:#fff;}
+.int-row{display:grid;grid-template-columns:180px 1fr;border-bottom:1px solid var(--border);}
+.int-row:last-child{border-bottom:none;}
+.int-row__cat{background:var(--v50);border-right:1px solid var(--border);padding:14px 18px;display:flex;align-items:center;gap:10px;}
+.int-row__cat-icon{width:32px;height:32px;border-radius:8px;background:#fff;border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.int-row__cat-icon svg{width:16px;height:16px;}
+.int-row__cat-name{font-family:var(--font-head);font-size:11.5px;font-weight:800;color:var(--v700);line-height:1.3;}
+.int-row__platforms{padding:14px 18px;display:flex;flex-wrap:wrap;align-items:center;gap:6px;}
+.int-pill{font-family:var(--font-head);font-size:11px;font-weight:600;color:var(--v600);background:var(--v50);border:1.5px solid var(--v100);padding:4px 12px;border-radius:100px;white-space:nowrap;}
+
+@media(max-width:600px){.int-row{grid-template-columns:1fr;}.int-row__cat{border-right:none;border-bottom:1px solid var(--border);}}'
+
+/* FLOW DIAGRAM */
+.flow-diagram{display:flex;flex-direction:column;gap:12px;}
+.flow-row{display:flex;align-items:center;gap:0;background:#fff;border:1.5px solid var(--border);border-radius:12px;overflow:hidden;}
+.flow-cat{display:flex;align-items:center;gap:10px;padding:14px 16px;background:var(--v50);border-right:1px solid var(--border);min-width:200px;flex-shrink:0;}
+.flow-cat__icon{width:32px;height:32px;border-radius:8px;background:#fff;border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.flow-cat__icon svg{width:16px;height:16px;}
+.flow-cat__name{font-family:var(--font-head);font-size:11px;font-weight:800;color:var(--v700);line-height:1.3;}
+.flow-arrow{padding:0 12px;color:var(--v300);font-size:16px;flex-shrink:0;}
+.flow-platforms{display:flex;flex-wrap:wrap;gap:5px;padding:10px 14px;flex:1;}
+.flow-pill{font-family:var(--font-head);font-size:10.5px;font-weight:600;color:var(--v600);background:var(--v50);border:1.5px solid var(--v100);padding:4px 10px;border-radius:100px;white-space:nowrap;}
+.flow-arrow-final{padding:0 12px;color:var(--v400);font-size:16px;flex-shrink:0;font-weight:700;}
+.flow-crm{background:var(--v500);padding:14px 16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;border-left:1px solid var(--v600);}
+.flow-crm__logo{font-family:var(--font-head);font-size:11px;font-weight:900;color:#fff;letter-spacing:-.3px;}
+
+@media(max-width:768px){
+  .flow-cat{min-width:140px;}
+  .flow-crm{display:none;}
+  .flow-arrow-final{display:none;}
+}
+
+  .converge__lines,.converge__mid,.converge__logo-wrap{display:none;}
+}
+.converge-right{display:none;}}
+
+/* FINAL CTA */
+.page-cta{padding:80px 0;background:var(--v900);position:relative;overflow:hidden;}
+.page-cta__glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(114,96,181,.2) 0%,transparent 65%);pointer-events:none;}
+.page-cta__grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;}
+.page-cta__inner{max-width:768px;margin:0 auto;padding:0 32px;text-align:center;position:relative;}
+.page-cta__consensus{font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v300);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;}
+.page-cta__h2{font-family:var(--font-head);font-size:clamp(28px,3.5vw,44px);font-weight:900;letter-spacing:-1px;color:#fff;line-height:1.15;margin-bottom:12px;}
+.page-cta__h2 em{font-style:normal;color:var(--v300);}
+.page-cta__sub{font-size:16px;color:var(--v200);line-height:1.7;margin-bottom:32px;}
+.btn-white{font-family:var(--font-head);font-size:15px;font-weight:700;background:#fff;color:var(--v500);padding:15px 36px;border-radius:var(--radius-btn);border:none;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.15);transition:all .2s;display:inline-flex;align-items:center;gap:8px;}
+.btn-white:hover{background:var(--v50);transform:translateY(-2px);}
+.btn-white svg{width:16px;height:16px;}
+.page-cta__trust{display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:24px;}
+.page-cta__trust-item{font-size:13px;font-weight:500;color:var(--v200);display:flex;align-items:center;gap:7px;}
+.page-cta__trust-dot{width:6px;height:6px;border-radius:50%;background:#22C55E;flex-shrink:0;}
+
+/* FOOTER */
+.footer{background:#fff;border-top:1px solid var(--border);padding:64px 0 40px;}
+.footer__inner{max-width:1280px;margin:0 auto;padding:0 32px;}
+.footer__links-grid{display:contents;}
+.footer__grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+.footer__logo{font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--v500);margin-bottom:16px;letter-spacing:-.5px;}
+.footer__tagline{font-size:14px;color:var(--grey);line-height:1.7;max-width:280px;margin-bottom:24px;}@media(max-width:768px){.footer__tagline{max-width:100%;}}
+.footer__col-title{font-family:var(--font-head);font-size:12px;font-weight:800;color:var(--v900);text-transform:uppercase;letter-spacing:.06em;margin-bottom:16px;}
+.footer__links{display:flex;flex-direction:column;gap:10px;}
+.footer__link{font-size:14px;color:var(--grey);transition:color .2s;}
+.footer__link:hover{color:var(--v500);}
+.footer__bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer__copy{font-size:13px;color:var(--grey);}
+.footer__legal{display:flex;gap:24px;}
+.footer__legal a{font-size:13px;color:var(--grey);transition:color .2s;}
+.footer__legal a:hover{color:var(--v500);}
+.btn-primary{font-family:var(--font-head);font-size:13px;font-weight:700;background:var(--cta);color:#fff;padding:10px 20px;border-radius:var(--radius-btn);border:none;cursor:pointer;box-shadow:0 4px 12px rgba(249,115,22,.3);transition:all .2s;display:inline-flex;align-items:center;gap:6px;}
+.btn-primary:hover{background:var(--cta-hover);}
+
+/* FINAL CTA */
+.final-cta{padding:96px 0;background:var(--v900);position:relative;overflow:hidden;}
+.final-cta__grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;}
+.final-cta__glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(114,96,181,.25) 0%,transparent 65%);pointer-events:none;}
+.final-cta__inner{max-width:860px;margin:0 auto;padding:0 32px;text-align:center;position:relative;}
+.final-cta__badge{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v200);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);padding:6px 16px;border-radius:100px;margin-bottom:28px;}
+.final-cta__badge-dot{width:6px;height:6px;border-radius:50%;background:#22C55E;}
+.final-cta__h2{font-family:var(--font-head);font-size:clamp(32px,4.5vw,56px);font-weight:900;letter-spacing:-1.5px;color:#fff;line-height:1.1;margin-bottom:16px;}
+.final-cta__h2 em{font-style:normal;color:var(--v300);}
+.final-cta__sub{font-size:18px;color:var(--v200);line-height:1.7;max-width:560px;margin:0 auto 40px;}
+.final-cta__cta-wrap{display:flex;align-items:center;justify-content:center;margin-bottom:40px;}
+.btn-cta-white{font-family:var(--font-head);font-size:16px;font-weight:700;background:#fff;color:var(--v500);padding:16px 40px;border-radius:var(--radius-btn);border:none;cursor:pointer;box-shadow:0 8px 28px rgba(0,0,0,.2);transition:all .2s;display:inline-flex;align-items:center;gap:8px;}
+.btn-cta-white:hover{background:var(--v50);transform:translateY(-2px);}
+.btn-cta-white svg{width:16px;height:16px;}
+.final-cta__trust{display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap;}
+.final-cta__trust-item{font-size:13px;font-weight:500;color:var(--v200);display:flex;align-items:center;gap:7px;}
+.final-cta__trust-dot{width:6px;height:6px;border-radius:50%;background:#22C55E;flex-shrink:0;}
+@media(max-width:768px){.final-cta__inner{padding:0 20px;}.final-cta__trust{display:grid!important;grid-template-columns:1fr 1fr;gap:12px;justify-items:center;}}
+
+@media(max-width:768px){
+  .feature-section__layout,
+  .feature-section__layout--reverse{
+    grid-template-columns:1fr;
+    direction:ltr;
+  }
+  .feature-section__layout--reverse > *{direction:ltr;}
+  .s2__inner,.s3__inner,.s5__inner{grid-template-columns:1fr;}
+}
+
+.np__cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.np__col-head{display:block;font-family:var(--font-head);font-size:11px;font-weight:800;color:var(--v400);text-transform:uppercase;letter-spacing:.07em;padding:4px 12px 8px;transition:color .15s;}
+.np__col-head:hover{color:var(--v500);}
+.nav__panel:has(.np__col:only-child) .np__cols{grid-template-columns:1fr;}
+@media(max-width:768px){.np__cols{grid-template-columns:1fr !important;gap:0 !important;}.np__col-head{padding:8px 10px 4px;}}
+</style>
+<style>
+/* CALL MGMT CONTENT SECTIONS */
+
+/* SECTION 1 — numbered horizontal rows, full width, no boxes */
+.s1{padding:80px 0;background:#fff;}
+.s1__header{margin-bottom:48px;}
+.s1__eyebrow{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
+.s1__h2{font-family:var(--font-head);font-size:clamp(24px,3vw,34px);font-weight:900;color:var(--v900);letter-spacing:-.5px;line-height:1.2;margin-bottom:10px;}
+.s1__h2 em{font-style:normal;color:var(--v500);}
+.s1__body{font-size:15px;color:var(--grey);line-height:1.7;}
+.s1__rows{border-top:1px solid var(--border);}
+.s1__row{display:grid;grid-template-columns:56px 280px 1fr;gap:32px;align-items:start;padding:28px 0;border-bottom:1px solid var(--border);}
+.s1__num{font-family:var(--font-head);font-size:24px;font-weight:900;color:var(--v200);}
+.s1__title{font-family:var(--font-head);font-size:15px;font-weight:800;color:var(--v900);padding-top:2px;}
+.s1__desc{font-size:14px;color:var(--grey);line-height:1.7;padding-top:2px;}
+
+/* SECTION 2 — two col: bullets left, dark UI panel right */
+.s2{padding:80px 0;background:#fff;}
+.s2__inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.s2__eyebrow{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
+.s2__h2{font-family:var(--font-head);font-size:clamp(22px,2.5vw,30px);font-weight:900;color:var(--v900);letter-spacing:-.5px;line-height:1.2;margin-bottom:12px;}
+.s2__h2 em{font-style:normal;color:var(--v500);}
+.s2__body{font-size:15px;color:var(--grey);line-height:1.75;margin-bottom:24px;}
+.s2__bullets{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;}
+.s2__bullets li{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--grey);line-height:1.6;}
+.s2__check{width:20px;height:20px;border-radius:6px;background:var(--v50);border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.s2__check svg{width:10px;height:10px;}
+.s2__bullets strong{font-family:var(--font-head);font-weight:700;color:var(--v700);}
+
+/* UI PANEL */
+.ui-panel{background:var(--v900);border-radius:16px;overflow:hidden;}
+.ui-panel__bar{background:rgba(255,255,255,.06);padding:11px 16px;display:flex;align-items:center;gap:6px;border-bottom:1px solid rgba(255,255,255,.06);}
+.ui-dot{width:10px;height:10px;border-radius:50%;}
+.ui-dot--r{background:#FF5F57;} .ui-dot--y{background:#FEBC2E;} .ui-dot--g{background:#28C840;}
+.ui-panel__ttl{font-family:var(--font-head);font-size:11px;font-weight:600;color:var(--v300);margin-left:8px;}
+.ui-panel__body{padding:20px;}
+.ui-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06);}
+.ui-row:last-child{border-bottom:none;}
+.ui-lbl{font-family:var(--font-head);font-size:11.5px;font-weight:600;color:var(--v300);}
+.ui-val{font-family:var(--font-head);font-size:12px;font-weight:800;color:#fff;}
+.ub{font-family:var(--font-head);font-size:9px;font-weight:700;padding:2px 7px;border-radius:100px;display:inline-block;}
+.ub-g{background:rgba(34,197,94,.2);color:#22C55E;}
+.ub-o{background:rgba(251,146,60,.2);color:#FB923C;}
+.ub-b{background:rgba(99,179,237,.2);color:#63B3ED;}
+.ub-r{background:rgba(239,68,68,.2);color:#F87171;}
+
+/* SECTION 3 — timeline left, UI panel right (reversed) */
+.s3{padding:80px 0;background:#F8F7FC;}
+.s3__inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.s3__eyebrow{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
+.s3__h2{font-family:var(--font-head);font-size:clamp(22px,2.5vw,30px);font-weight:900;color:var(--v900);letter-spacing:-.5px;line-height:1.2;margin-bottom:12px;}
+.s3__h2 em{font-style:normal;color:var(--v500);}
+.s3__body{font-size:15px;color:var(--grey);line-height:1.75;margin-bottom:28px;}
+.tl{display:flex;flex-direction:column;gap:0;}
+.tl__item{display:flex;gap:18px;padding-bottom:28px;position:relative;}
+.tl__item:last-child{padding-bottom:0;}
+.tl__item:not(:last-child)::before{content:'';position:absolute;left:19px;top:42px;bottom:0;width:2px;background:linear-gradient(var(--v200),var(--v50));}
+.tl__num{width:40px;height:40px;border-radius:50%;background:var(--v500);color:#fff;font-family:var(--font-head);font-size:14px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 12px rgba(79,56,162,.25);}
+.tl__title{font-family:var(--font-head);font-size:15px;font-weight:800;color:var(--v900);margin-bottom:4px;margin-top:8px;}
+.tl__body{font-size:14px;color:var(--grey);line-height:1.7;}
+
+/* SECTION 4 — full dark, 3 col icon+text no borders */
+.s4{padding:80px 0;background:var(--v900);}
+.s4__header{margin-bottom:56px;}
+.s4__eyebrow{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v300);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
+.s4__h2{font-family:var(--font-head);font-size:clamp(24px,3vw,34px);font-weight:900;color:#fff;letter-spacing:-.5px;line-height:1.2;margin-bottom:10px;}
+.s4__h2 em{font-style:normal;color:var(--v300);}
+.s4__body{font-size:15px;color:var(--grey);line-height:1.7;}
+.s4__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;}
+.s4__icon{width:48px;height:48px;border-radius:14px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.s4__icon svg{width:24px;height:24px;}
+.s4__title{font-family:var(--font-head);font-size:15px;font-weight:800;color:#fff;margin-bottom:8px;}
+.s4__desc{font-size:14px;color:var(--v200);line-height:1.7;}
+
+/* SECTION 5 — agent table in UI panel left, bullets right */
+.s5{padding:80px 0;background:#fff;}
+.s5__inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.s5__eyebrow{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
+.s5__h2{font-family:var(--font-head);font-size:clamp(22px,2.5vw,30px);font-weight:900;color:var(--v900);letter-spacing:-.5px;line-height:1.2;margin-bottom:12px;}
+.s5__h2 em{font-style:normal;color:var(--v500);}
+.s5__body{font-size:15px;color:var(--grey);line-height:1.75;margin-bottom:24px;}
+.agent-tbl{width:100%;border-collapse:collapse;}
+.agent-tbl th{font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v300);text-transform:uppercase;letter-spacing:.06em;padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.08);text-align:left;}
+.agent-tbl td{font-family:var(--font-head);font-size:12px;padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.06);color:var(--v200);}
+.agent-tbl td:last-child{color:#fff;font-weight:700;}
+.agent-tbl tr:last-child td{border-bottom:none;}
+
+/* SECTION 6 — numbered rows, white bg */
+.s6{padding:80px 0;background:#F8F7FC;}
+.s7{padding:80px 0;background:#F8F7FC;}
+
+@media(max-width:900px){
+  .s1__row,.s2__inner,.s3__inner,.s5__inner{grid-template-columns:1fr;}
+  .s4__grid{grid-template-columns:1fr;gap:32px;}
+  .s1__row{grid-template-columns:48px 1fr;}
+  .s1__desc{display:block;}
+  .prop-row .s1__desc{display:block;}
+  .prop-row .s1__title{display:block;}
+}
+</style>
+<style>
+.s1{padding:80px 0;background:#fff;}
+.s2{padding:80px 0;background:#F8F7FC;}
+.s3{padding:80px 0;background:#fff;}
+.s4{padding:80px 0;background:#F8F7FC;}
+.s5{padding:80px 0;background:#fff;}
+.s1__header{margin-bottom:48px;}
+.s1__eyebrow{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
+.s1__h2{font-family:var(--font-head);font-size:clamp(24px,3vw,36px);font-weight:900;color:var(--v900);letter-spacing:-.5px;line-height:1.2;margin-bottom:12px;}
+.s1__h2 em{font-style:normal;color:var(--v500);}
+.s1__body{font-size:16px;color:var(--grey);line-height:1.75;}
+.s1__title{font-family:var(--font-head);font-size:15px;font-weight:800;color:var(--v900);margin-bottom:8px;}
+.s1__desc{font-size:14px;color:var(--grey);line-height:1.75;}
+.field-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.field-card{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:20px 18px;}
+.field-card__icon{width:44px;height:44px;border-radius:12px;background:var(--v50);border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+.field-card__name{font-family:var(--font-head);font-size:13px;font-weight:800;color:var(--v900);margin-bottom:6px;}
+.field-card__desc{font-size:12px;color:var(--grey2);line-height:1.6;}
+.field-card__eg{font-family:var(--font-head);font-size:10px;font-weight:600;color:var(--v400);margin-top:8px;}
+@media(max-width:768px){.field-grid{grid-template-columns:repeat(2,1fr);}}
+</style>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="telecrm-approach2-home.html" class="nav__logo">telecrm</a>
+    <div class="nav__links">
+      <div class="nav__item">
+        <a href="telecrm-platform-overview.html" class="nav__link">Platform Overview <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:560px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-platform-hub.html">Platform Hub</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-platform-unified-revenue-management.html"><span class="np__t">Unified Revenue Management</span><span class="np__s">One connected engine</span></a>
+                <a class="np__link" href="telecrm-platform-lead-management.html"><span class="np__t">Lead Management</span><span class="np__s">Capture, dedupe, assign</span></a>
+                <a class="np__link" href="telecrm-platform-call-management.html"><span class="np__t">Call Management &amp; Recording</span><span class="np__s">Dial, record, track</span></a>
+                <a class="np__link" href="telecrm-platform-adaptive-crm.html"><span class="np__t">Adaptive CRM</span><span class="np__s">Stages, fields, 360°</span></a>
+                <a class="np__link" href="telecrm-platform-marketing-automation.html"><span class="np__t">Marketing Automation</span><span class="np__s">Reach leads automatically</span></a>
+                <a class="np__link" href="telecrm-platform-sales-pipeline-management.html"><span class="np__t">Sales Funnel &amp; Pipeline Management</span><span class="np__s">Track every deal stage</span></a>
+              </div>
+            </div>
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-benefits-hub.html">Benefits Hub</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-benefits-hub.html"><span class="np__t">Outcomes &amp; ROI</span><span class="np__s">What telecrm delivers for your team</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-platform-overview.html">Platform Overview — the product, end to end <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-solutions-hub.html" class="nav__link">Solutions <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-solutions-hub.html">By approach</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-problems-hub.html"><span class="np__t">Problems Hub</span><span class="np__s">Revenue leaks, by stage</span></a>
+                <a class="np__link" href="telecrm-crm-hub.html"><span class="np__t">CRM Hub</span><span class="np__s">By type &amp; by team</span></a>
+                <a class="np__link" href="telecrm-industry-hub.html"><span class="np__t">Industry Hub</span><span class="np__s">11 industries covered</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-solutions-hub.html">Browse all solutions <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-features-hub.html" class="nav__link nav__link--active">Features <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:620px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-features-hub.html">Engagement</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-feature-call-management.html"><span class="np__t">Call Management</span></a>
+                <a class="np__link" href="telecrm-feature-calling-campaign.html"><span class="np__t">Calling Campaign Management</span></a>
+                <a class="np__link" href="telecrm-feature-whatsapp.html"><span class="np__t">WhatsApp</span></a>
+                <a class="np__link" href="telecrm-feature-automations.html"><span class="np__t">Automation</span></a>
+              </div>
+            </div>
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-features-hub.html">Data &amp; Admin</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-feature-lead-management.html"><span class="np__t">Lead Management &amp; Reporting</span></a>
+                <a class="np__link" href="telecrm-feature-lead-fields.html"><span class="np__t">Lead Fields</span></a>
+                <a class="np__link" href="telecrm-feature-lead-stages.html"><span class="np__t">Lead Stages</span></a>
+                <a class="np__link" href="telecrm-feature-list-labels.html"><span class="np__t">List and Labels</span></a>
+                <a class="np__link" href="telecrm-feature-reporting.html"><span class="np__t">Reporting</span></a>
+                <a class="np__link" href="telecrm-feature-integrations.html"><span class="np__t">Integrations</span></a>
+                <a class="np__link" href="telecrm-feature-user-management.html"><span class="np__t">User Management</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-features-hub.html">See all features <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-trust-hub.html" class="nav__link">Trust <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-trust-hub.html">Proof</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-testimonials.html"><span class="np__t">Testimonials</span><span class="np__s">Real customers, real numbers</span></a>
+                <a class="np__link" href="telecrm-case-studies.html"><span class="np__t">Case Studies</span><span class="np__s">9 detailed stories</span></a>
+                <a class="np__link" href="telecrm-comparison.html"><span class="np__t">Comparison</span><span class="np__s">telecrm vs. alternatives</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-trust-hub.html">Visit the Trust Hub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-pricing.html" class="nav__link">Pricing <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:320px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-pricing.html">Plans</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-pricing.html"><span class="np__t">Pricing</span><span class="np__s">Plans &amp; what's included</span></a>
+                <a class="np__link" href="telecrm-cost-savings.html"><span class="np__t">Cost Savings</span><span class="np__s">What you save vs. tools</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-support-hub.html" class="nav__link">Support <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:560px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-support-hub.html">Resources</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-faqs.html"><span class="np__t">FAQs</span></a>
+                <a class="np__link" href="telecrm-glossary.html"><span class="np__t">Glossary</span></a>
+                <a class="np__link" href="telecrm-learning-repository.html"><span class="np__t">Learning Repository</span></a>
+                <a class="np__link" href="telecrm-onboarding.html"><span class="np__t">Onboarding</span></a>
+                <a class="np__link" href="telecrm-recommended-devices.html"><span class="np__t">Recommended Devices</span></a>
+              </div>
+            </div>
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-support-hub.html">Policies</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-privacy-policy.html"><span class="np__t">Privacy Policy</span></a>
+                <a class="np__link" href="telecrm-refund-policy.html"><span class="np__t">Refund Policy</span></a>
+                <a class="np__link" href="telecrm-terms-conditions.html"><span class="np__t">Terms &amp; Conditions</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-support-hub.html">Go to Support Hub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-get-started.html" class="nav__link">Get Started <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-get-started.html">Get started</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-partnership.html"><span class="np__t">Partner Program</span><span class="np__s">Refer &amp; earn 10% for life</span></a>
+                <a class="np__link" href="telecrm-demo-request.html"><span class="np__t">Demo Request</span><span class="np__s">Book a free demo</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-get-started.html">All ways to start <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-about-us.html" class="nav__link">About Us <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-about-us.html">Company</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-about-telecrm.html"><span class="np__t">About telecrm</span><span class="np__s">Story, vision, mission</span></a>
+                <a class="np__link" href="telecrm-life-at-telecrm.html"><span class="np__t">Life at telecrm</span><span class="np__s">Culture &amp; team</span></a>
+                <a class="np__link" href="telecrm-careers.html"><span class="np__t">Careers</span><span class="np__s">Open roles</span></a>
+                <a class="np__link" href="telecrm-contact.html"><span class="np__t">Contact Us</span><span class="np__s">Talk to us</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="nav__sep"></span>
+      <a href="telecrm-demo-request.html" class="nav__cta">Get a Demo</a>
+    </div>
+    <div class="nav__mobile-right">
+      <a href="telecrm-demo-request.html" class="nav__mobile-cta">Get a Demo</a>
+      <span class="nav__mob-sep"></span>
+      <button class="nav__hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__bg"></div>
+  <div class="hero__glow"></div>
+  <div class="hero__inner">
+    <div class="breadcrumb">
+      <a href="telecrm-approach2-home.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="telecrm-features-hub.html">Features</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">Lead Fields</span>
+    </div>
+    <div class="hero__eyebrow">Features · Lead Fields</div>
+    <h1 class="hero__h1">Your leads. Your fields.<br><em>Built exactly for your business.</em></h1>
+    <p class="hero__sub">telecrm gives you a fully configurable lead data model — 13 field types, deep nesting, recurring dates, and limits built for enterprise-scale sales teams. No code. No IT. Just configure and go.</p>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS BAR -->
+<div class="highlights">
+  <div class="highlights__inner">
+    <div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">13 field types</span></div>
+    <div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">650 fields per lead</span></div>
+    <div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">4-level dependent dropdowns</span></div>
+    <div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">Recurring date tracking</span></div>
+  </div>
+</div>
+<!-- SECTION 1: FIELD TYPES -->
+<section class="s1">
+  <div class="inner">
+    <div class="s1__header">
+      <div class="s1__eyebrow">Field Types</div>
+      <h2 class="s1__h2">13 field types.<br><em>Every data point your team needs.</em></h2>
+      <p class="s1__body">From simple text to GPS-aware location fields — telecrm covers every type of data your sales team collects. Each field type is purpose-built for a specific kind of information.</p>
+    </div>
+
+    <style>
+      .ft-cat-label{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-head);font-size:11px;font-weight:700;color:#3D2B8A;background:#EDEBF6;border:0.5px solid #B3A9DB;padding:4px 12px;border-radius:100px;}
+      .ft-cat-sep{border-top:1px solid var(--border);margin:32px 0 16px;display:flex;align-items:center;gap:10px;padding-top:20px;}
+      .ft-cat-sep:first-of-type{border-top:none;margin-top:0;padding-top:0;}
+      .ft-row{display:grid;grid-template-columns:40px 1fr 220px;gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid var(--border);}
+      .ft-row:last-child{border-bottom:none;}
+      .ft-icon{width:40px;height:40px;border-radius:12px;background:#EDEBF6;border:1.5px solid #D9D4ED;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+      .ft-name{font-family:var(--font-head);font-size:14px;font-weight:800;color:var(--v900);margin-bottom:4px;}
+      .ft-desc{font-size:13px;color:var(--grey);line-height:1.6;margin-bottom:4px;}
+      .ft-eg{font-family:var(--font-head);font-size:11px;color:var(--v400);}
+      .ft-visual{background:var(--v50);border:1px solid var(--border);border-radius:10px;padding:10px 12px;}
+      .fv-label{font-family:var(--font-head);font-size:10px;font-weight:600;color:var(--grey2);margin-bottom:5px;}
+      .fv-input{height:30px;border:1px solid var(--border);border-radius:6px;padding:0 10px;font-size:12px;color:var(--v900);background:#fff;display:flex;align-items:center;}
+      .fv-select{height:30px;border:1px solid var(--border);border-radius:6px;padding:0 10px;font-size:12px;color:var(--v900);background:#fff;display:flex;align-items:center;justify-content:space-between;}
+      .fv-tag{display:inline-block;font-family:var(--font-head);font-size:10px;font-weight:600;background:#EDEBF6;color:#3D2B8A;padding:2px 8px;border-radius:100px;margin:2px 2px 2px 0;}
+      .fv-check{width:16px;height:16px;border-radius:4px;background:var(--v500);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;}
+    
+
+.prop-row{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;padding:32px 0;}
+.prop-row.has-border{border-bottom:1px solid var(--border);}
+@media(max-width:768px){
+  .prop-row{grid-template-columns:1fr;gap:24px;}
+}
+
+@media(max-width:768px){.recurring-grid{grid-template-columns:1fr!important;gap:32px!important;}}
+
+@media(max-width:768px){.dup-grid{grid-template-columns:1fr!important;}}
+
+@media(max-width:768px){
+  .nav__inner{display:flex;align-items:center;justify-content:space-between;}
+  .nav__links{display:none;flex-direction:column;position:fixed;top:72px;left:0;right:0;background:rgba(255,255,255,.98);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:16px 24px;gap:0;z-index:99;}
+  .nav__links.open{display:flex;}
+  .nav__link{padding:12px 0;border-bottom:1px solid var(--border);font-size:15px;}
+  .nav__link:last-child{border-bottom:none;}
+  .nav__cta{display:none;}
+  .nav__mobile-right{display:flex;align-items:center;gap:8px;margin-left:auto;}
+  .nav__mobile-cta{font-family:var(--font-head);font-size:13px;font-weight:700;background:var(--v500);color:#fff;padding:8px 16px;border-radius:var(--radius-btn);text-decoration:none;white-space:nowrap;}
+  .nav__hamburger{display:flex;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:8px;border:none;background:transparent;}
+  .nav__hamburger span{display:block;width:22px;height:2px;background:var(--v900);border-radius:2px;transition:all .25s;}
+  .nav__hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav__hamburger.open span:nth-child(2){opacity:0;}
+  .nav__hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+}
+@media(min-width:769px){
+  .nav__hamburger{display:none;}
+  .nav__mobile-right{display:none;}
+}
+
+@media(max-width:768px){
+  .footer__grid{grid-template-columns:1fr!important;gap:32px!important;}  .footer__bottom{flex-direction:column;gap:12px;text-align:center;}
+  .footer__legal{flex-wrap:wrap;justify-content:center;}
+}
+
+@media(max-width:768px){
+  .footer-col-right .footer__links{align-items:flex-end;}
+  .footer-col-right .footer__link{text-align:right;}
+
+  /* Footer Section A — full width brand block */
+  .footer__tagline{max-width:100%;}
+  .btn-primary{width:100%;justify-content:center;}
+  /* Footer Section B — 2-col link layout */
+  .footer__links-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px 16px;margin-top:32px;}
+  .footer__links-grid > div:nth-child(1),
+  .footer__links-grid > div:nth-child(2),
+  .footer__links-grid > div:nth-child(3){text-align:left;grid-column:1;}
+  .footer__links-grid > div:nth-child(4){text-align:right;grid-column:2;grid-row:1 / span 3;}
+  .footer__links-grid > div:nth-child(4) .footer__links{align-items:flex-end;}
+
+  .int-grid{grid-template-columns:1fr;}
+  .field-grid{grid-template-columns:1fr 1fr!important;}
+  .ft-row{grid-template-columns:1fr;gap:12px;}
+}
+
+/* ===== ROLLOUT v2026-05-29: nav mega-menu + fat footer (canonical) ===== */
+.nav__item{position:relative;display:flex;align-items:center;height:72px;}
+.nav__item > .nav__link{display:inline-flex;align-items:center;gap:4px;}
+.nav__caret{width:11px;height:11px;flex-shrink:0;transition:transform .2s;}
+.nav__item:hover > .nav__link .nav__caret,.nav__item:focus-within > .nav__link .nav__caret{transform:rotate(180deg);}
+.nav__item:hover > .nav__link,.nav__item:focus-within > .nav__link{background:var(--v50);color:var(--v500);}
+.nav__panel{position:absolute;top:100%;left:0;background:#fff;border:1px solid var(--border);border-radius:14px;box-shadow:0 18px 44px rgba(33,24,68,.13);padding:14px;opacity:0;visibility:hidden;transform:translateY(7px);transition:opacity .16s,transform .16s,visibility .16s;z-index:200;}
+.nav__panel--right{left:auto;right:0;}
+.nav__item:hover > .nav__panel,.nav__item:focus-within > .nav__panel{opacity:1;visibility:visible;transform:translateY(0);}
+.np__list{display:grid;gap:1px;}
+.np__list--2{grid-template-columns:1fr 1fr;gap:1px 14px;}
+.np__link{display:flex;flex-direction:column;gap:2px;padding:9px 12px;border-radius:8px;transition:background .15s;min-width:0;}
+.np__link:hover{background:var(--v50);}
+.np__t{font-family:var(--font-head);font-size:13.5px;font-weight:700;color:var(--v900);white-space:nowrap;}
+.np__list--2 .np__t{white-space:normal;line-height:1.3;overflow-wrap:break-word;}
+.np__link:hover .np__t{color:var(--v500);}
+.np__s{font-family:var(--font-body);font-size:12px;color:var(--grey);line-height:1.35;}
+.np__foot{display:flex;align-items:center;gap:6px;border-top:1px solid var(--border);margin-top:8px;padding:11px 12px 3px;font-family:var(--font-head);font-size:12.5px;font-weight:700;color:var(--v500);}
+.np__foot svg{width:13px;height:13px;}
+.nav__mobile-cta{background:var(--cta);}
+.footer__grid{grid-template-columns:1.5fr 1fr 1fr 1fr 1fr 1.15fr;gap:40px 32px;}
+.footer__col-stack{display:flex;flex-direction:column;gap:48px;}
+@media(max-width:1024px){.footer__grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:768px){
+  .nav__item{width:100%;height:auto;display:block;position:static;}
+  .nav__item > .nav__link{display:flex;align-items:center;justify-content:space-between;width:100%;}
+  .nav__item.open > .nav__link .nav__caret{transform:rotate(180deg);}
+  .nav__caret{width:13px;height:13px;}
+  .nav__panel{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;border-radius:0;padding:4px 0 10px 10px;width:auto !important;display:none;z-index:auto;}
+  .nav__item.open > .nav__panel{display:block;}
+  .np__list--2{grid-template-columns:1fr;}
+  .np__link{padding:9px 10px;}
+  .np__foot{padding-left:10px;}
+  .footer__links-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px 16px;margin-top:32px;}
+  .footer__links-grid > div:nth-child(1),.footer__links-grid > div:nth-child(2),.footer__links-grid > div:nth-child(3),.footer__links-grid > div:nth-child(4),.footer__links-grid > div:nth-child(5){text-align:left;grid-column:auto;grid-row:auto;}
+  .footer__links-grid > div:nth-child(4) .footer__links{align-items:flex-start;}
+}
+@media(max-width:600px){.footer__grid{grid-template-columns:1fr;}}
+/* ===== end ROLLOUT ===== */
+
+/* ===== FAQ section (locked §16A) ===== */
+.faq{padding:96px 0;background:#F8F7FC;}
+.faq__inner{max-width:1280px;margin:0 auto;padding:0 32px;}
+.faq__header{text-align:center;margin-bottom:8px;}
+.faq__eyebrow{font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v500);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;}
+.faq__h2{font-family:var(--font-head);font-size:clamp(28px,3.5vw,42px);font-weight:900;letter-spacing:-1.2px;color:var(--v900);line-height:1.15;}
+.faq__h2 em{font-style:normal;color:var(--v500);}
+.faq-list{display:flex;flex-direction:column;border-top:1px solid var(--border);max-width:860px;margin:40px auto 0;}
+.faq-item{border-bottom:1px solid var(--border);}
+.faq-item__q{display:flex;align-items:center;justify-content:space-between;padding:22px 0;cursor:pointer;gap:24px;}
+.faq-item__q-text{font-family:var(--font-head);font-size:16px;font-weight:700;color:var(--v900);}
+.faq-item__icon{width:28px;height:28px;border-radius:50%;background:#fff;border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s;}
+.faq-item__icon svg{width:12px;height:12px;transition:transform .25s;}
+.faq-item.open .faq-item__icon{background:var(--v500);border-color:var(--v500);}
+.faq-item.open .faq-item__icon svg{transform:rotate(45deg);stroke:#fff;}
+.faq-item__a{display:none;font-family:var(--font-body);font-size:15px;color:var(--grey);line-height:1.75;padding-bottom:22px;max-width:760px;}
+.faq-item.open .faq-item__a{display:block;}
+@media(max-width:768px){.faq{padding:64px 0;}.faq__inner{padding:0 20px;}}
+/* ===== end FAQ ===== */
+</style>
+
+    <!-- CONTACT INFO -->
+    <div class="ft-cat-sep">
+      <div class="ft-cat-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" width="12" height="12"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Contact info
+      </div>
+    </div>
+    <div class="ft-row">
+      <div class="ft-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M3 5a2 2 0 012-2h3.28l1.5 4.5-2.26 1.13a11 11 0 005.52 5.52l1.13-2.26 4.5 1.5V19a2 2 0 01-2 2h-1C9.7 21 3 14.3 3 6z" fill="#EDEBF6"/></svg></div>
+      <div><div class="ft-name">Phone</div><div class="ft-desc">Store contact numbers with country code support.</div><div class="ft-eg">e.g. Mobile Number, Office Phone · max 10 fields</div></div>
+      <div class="ft-visual"><div class="fv-label">Mobile number</div><div class="fv-input">+91 98765 43210</div></div>
+    </div>
+    <div class="ft-row">
+      <div class="ft-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="#EDEBF6"/><polyline points="22,6 12,13 2,6"/></svg></div>
+      <div><div class="ft-name">Email</div><div class="ft-desc">Email addresses for communication and outreach.</div><div class="ft-eg">e.g. Work Email, Personal Email · max 10 fields</div></div>
+      <div class="ft-visual"><div class="fv-label">Work email</div><div class="fv-input" style="color:var(--v500);">rahul@example.com</div></div>
+    </div>
+    <div class="ft-row">
+      <div class="ft-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#EDEBF6"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+      <div><div class="ft-name">Location</div><div class="ft-desc">Geographical details or GPS-based location data.</div><div class="ft-eg">e.g. City, Landmark, GPS Coordinates</div></div>
+      <div class="ft-visual"><div class="fv-label">City</div><div class="fv-input">Mumbai, Maharashtra</div></div>
+    </div>
+
+    <!-- DATA CAPTURE -->
+    <div class="ft-cat-sep">
+      <div class="ft-cat-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" width="12" height="12"><path d="M11 4H4a2 2 0 00-2 2v14h14v-7"/></svg>
+        Data capture
+      </div>
+    </div>
+    <div class="ft-row">
+      <div class="ft-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M11 4H4a2 2 0 00-2 2v14h14v-7" fill="#EDEBF6"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1z"/></svg></div>
+      <div><div class="ft-name">Text</div><div class="ft-desc">Store any free-form text information in a lead record.</div><div class="ft-eg">e.g. Customer Name, Company, Address · max 100 fields</div></div>
+      <div class="ft-visual"><div class="fv-label">Company name</div><div class="fv-input">Tata Motors Ltd.</div></div>
+    </div>
+    <div class="ft-row">
+      <div class="ft-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M12 20h9" fill="none"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1z" fill="#EDEBF6"/></svg></div>
+      <div><div class="ft-name">Number</div><div class="ft-desc">Numeric values — integers or decimals for any quantitative data.</div><div class="ft-eg">e.g. Age, Price, Quantity · max 50 fields</div></div>
+      <div class="ft-visual"><div class="fv-label">Age</div><div class="fv-input">34</div></div>
+    </div>
+    <div class="ft-row">
+      <div class="ft-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" fill="#EDEBF6"/></svg></div>
+      <div><div class="ft-name">Checkbox</div><div class="ft-desc">Yes/No or True/False binary selections.</div><div class="ft-eg">e.g. Is Active, Stop Promotions · max 50 fields</div></div>
+      <div class="ft-visual" style="display:flex;align-items:center;gap:8px;"><div class="fv-check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="10" height="10"><polyline points="20 6 9 17 4 12"/></svg></div><span style="font-size:12px;color:var(--v900);">Is Active</span></div>
+    </div>
+    <div class="ft-row">
+      <div class="ft-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" fill="none"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" fill="#EDEBF6"/></svg></div>
+      <div><div class="ft-name">URL</div><div class="ft-desc">Website or profile links for any online resource.</div><div class="ft-eg">e.g. Website, Form submission URL · max 50 fields</div></div>
+      <div class="ft-visual"><div class="fv-label">Website</div><div class="fv-input" style="color:var(--v500);">www.tatamotors.com</div></div>
+    </div>
+
+    <!-- SELECTION FIELDS -->
+    <div class="ft-cat-sep">
+      <div class="ft-cat-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" width="12" height="12"><path d="M19 9l-7 7-7-7"/></svg>
+        Selection fields
+      </div>
+    </div>
+    <div class="ft-row">
+      <div class="ft-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M19 9l-7 7-7-7" fill="none"/></svg></div>
+      <div><div class="ft-name">Dropdown</div><div class="ft-desc">Select one option from a predefined list of up to 100 options.</div><div class="ft-eg">e.g. State, Occupation, Lead Source · max 100 fields</div></div>
+      <div class="ft-visual"><div class="fv-label">State</div><div class="fv-select">Maharashtra <span style="font-size:10px;">▾</span></div></div>
+    </div>
+    <div class="ft-row">
+      <div class="ft-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M8 9l4-4 4 4m0 6l-4 4-4-4" fill="none"/></svg></div>
+      <div><div class="ft-name">Dependent dropdown</div><div class="ft-desc">Linked options based on prior selection — up to 4 levels deep, 1,000 options per child level.</div><div class="ft-eg">e.g. Country → State → City → Area · max 100 fields</div></div>
+      <div class="ft-visual">
+        <div style="display:flex;flex-direction:column;gap:4px;">
+          <div class="fv-select" style="font-size:11px;">India <span style="font-size:10px;">▾</span></div>
+          <div class="fv-select" style="font-size:11px;">Maharashtra <span style="font-size:10px;">▾</span></div>
+          <div class="fv-select" style="font-size:11px;">Mumbai <span style="font-size:10px;">▾</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="ft-row">
+      <div class="ft-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M7 7h.01M7 3h5l7 7a2 2 0 010 2.83l-7 7a2 2 0 01-2.83 0l-7-7A2 2 0 013 12V7a4 4 0 014-4z" fill="#EDEBF6"/></svg></div>
+      <div><div class="ft-name">Tags</div><div class="ft-desc">Select multiple options for grouping and categorising leads. 1,000 unique options per tag field.</div><div class="ft-eg">e.g. Interests, Services, Categories · max 100 fields</div></div>
+      <div class="ft-visual"><div class="fv-label">Interests</div><div><span class="fv-tag">SIP</span><span class="fv-tag">Insurance</span><span class="fv-tag">MF</span></div></div>
+    </div>
+
+    <!-- TIME & MONEY -->
+    <div class="ft-cat-sep">
+      <div class="ft-cat-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" width="12" height="12"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        Time &amp; money
+      </div>
+    </div>
+    <div class="ft-row">
+      <div class="ft-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect x="3" y="4" width="18" height="18" rx="2" fill="#EDEBF6"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+      <div><div class="ft-name">Date</div><div class="ft-desc">Specific calendar dates for tracking events and milestones.</div><div class="ft-eg">e.g. Sign-up Date, Demo Date · max 100 fields</div></div>
+      <div class="ft-visual"><div class="fv-label">Demo date</div><div class="fv-input">15 Jul 2025</div></div>
+    </div>
+    <div class="ft-row">
+      <div class="ft-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" fill="#EDEBF6"/></svg></div>
+      <div><div class="ft-name">Recurring date</div><div class="ft-desc">Repeating events on monthly, quarterly, half-yearly, or annual schedules.</div><div class="ft-eg">e.g. Birthday, EMI, SIP, Renewal · max 10 fields</div></div>
+      <div class="ft-visual">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;">
+          <div class="fv-label" style="margin:0;">Birthday</div>
+          <span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v500);background:var(--v50);border:1px solid var(--v100);padding:1px 6px;border-radius:100px;">Annually</span>
+        </div>
+        <div style="font-size:12px;color:var(--v900);">14 Aug</div>
+      </div>
+    </div>
+    <div class="ft-row">
+      <div class="ft-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" fill="none"/></svg></div>
+      <div><div class="ft-name">Currency</div><div class="ft-desc">Financial or deal-related amounts in any currency.</div><div class="ft-eg">e.g. Price, Budget, Deal Value · max 50 fields</div></div>
+      <div class="ft-visual"><div class="fv-label">Budget</div><div class="fv-input">₹ 5,00,000</div></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SECTION 2: SCALE & LIMITS -->
+<section class="s2">
+  <div class="inner">
+    <div class="s1__header">
+      <div class="s1__eyebrow">Scale &amp; Limits</div>
+      <h2 class="s1__h2">Generous limits.<br><em>Built for teams that run at scale.</em></h2>
+      <p class="s1__body">telecrm's lead field system can effortlessly handle large, complex sales operations — with limits across every field type that give your team room to grow without ever hitting a wall.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;">
+      <div style="background:#fff;border:1.5px solid var(--border);border-radius:14px;overflow:hidden;"><div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid var(--border);"><span style="font-size:13px;color:var(--grey);">Total lead fields</span><span style="font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--v900);">650</span></div><div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid var(--border);"><span style="font-size:13px;color:var(--grey);">Text fields</span><span style="font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--v900);">100</span></div><div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid var(--border);"><span style="font-size:13px;color:var(--grey);">Number fields</span><span style="font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--v900);">50</span></div><div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid var(--border);"><span style="font-size:13px;color:var(--grey);">Phone fields</span><span style="font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--v900);">10</span></div><div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid var(--border);"><span style="font-size:13px;color:var(--grey);">Email fields</span><span style="font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--v900);">10</span></div><div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;"><span style="font-size:13px;color:var(--grey);">Dropdown fields</span><span style="font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--v900);">100</span></div></div>
+      <div style="background:#fff;border:1.5px solid var(--border);border-radius:14px;overflow:hidden;"><div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid var(--border);"><span style="font-size:13px;color:var(--grey);">Dependent dropdowns</span><span style="font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--v900);">100</span></div><div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid var(--border);"><span style="font-size:13px;color:var(--grey);">Dependent dropdown levels</span><span style="font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--v900);">4</span></div><div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid var(--border);"><span style="font-size:13px;color:var(--grey);">Options per child level</span><span style="font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--v900);">1,000</span></div><div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid var(--border);"><span style="font-size:13px;color:var(--grey);">Tags fields</span><span style="font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--v900);">100</span></div><div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid var(--border);"><span style="font-size:13px;color:var(--grey);">Options per tag</span><span style="font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--v900);">1,000</span></div><div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;"><span style="font-size:13px;color:var(--grey);">Date fields</span><span style="font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--v900);">100</span></div></div>
+      <div style="background:#fff;border:1.5px solid var(--border);border-radius:14px;overflow:hidden;"><div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid var(--border);"><span style="font-size:13px;color:var(--grey);">Recurring date fields</span><span style="font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--v900);">10</span></div><div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid var(--border);"><span style="font-size:13px;color:var(--grey);">Checkbox fields</span><span style="font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--v900);">50</span></div><div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid var(--border);"><span style="font-size:13px;color:var(--grey);">Currency fields</span><span style="font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--v900);">50</span></div><div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid var(--border);"><span style="font-size:13px;color:var(--grey);">URL fields</span><span style="font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--v900);">50</span></div><div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid var(--border);"><span style="font-size:13px;color:var(--grey);">Location fields</span><span style="font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--v900);">Unlimited</span></div><div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;"><span style="font-size:13px;color:var(--grey);">Recurring frequencies</span><span style="font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--v900);">4</span></div></div>
+    </div>
+  </div>
+</section>
+<!-- SECTION 3: FIELD PROPERTIES -->
+<section class="s3">
+  <div class="inner">
+    <div class="s1__header">
+      <div class="s1__eyebrow">Field Properties</div>
+      <h2 class="s1__h2">Control how every field behaves.<br><em>Not just what it stores.</em></h2>
+      <p class="s1__body">Each field can be configured with a set of properties that control its behaviour — how it appears, what it accepts, and how it participates in imports, templates, and quick-add flows.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;border-top:1px solid var(--border);">
+
+      <div class="prop-row has-border">
+        <div style="display:flex;gap:20px;align-items:flex-start;min-width:0;">
+          <div style="width:44px;height:44px;border-radius:12px;background:var(--v50);border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="#EDEBF6"/></svg>
+          </div>
+          <div style="min-width:0;flex:1;">
+            <div class="s1__title">Lock after create</div>
+            <p class="s1__desc">Field cannot be edited once a lead is created. Ideal for source tracking, UUID fields, or any data that must remain immutable. Set it on creation — it stays that way forever.</p>
+          </div>
+        </div>
+        <div style="background:var(--v50);border:1.5px solid var(--border);border-radius:12px;padding:14px 16px;">
+          <div style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--grey2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;">Field settings</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);">
+            <span style="font-size:12px;color:var(--grey);">Lock after create</span>
+            <div style="width:36px;height:20px;border-radius:100px;background:var(--v500);display:flex;align-items:center;justify-content:flex-end;padding:2px;"><div style="width:16px;height:16px;border-radius:50%;background:#fff;"></div></div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;">
+            <span style="font-size:12px;color:var(--grey2);">Source: Facebook Ad</span>
+            <span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:#EF4444;">🔒 Locked</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="prop-row has-border">
+        <div style="display:flex;gap:20px;align-items:flex-start;min-width:0;">
+          <div style="width:44px;height:44px;border-radius:12px;background:var(--v50);border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" fill="#EDEBF6"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          </div>
+          <div style="min-width:0;flex:1;">
+            <div class="s1__title">Show in import</div>
+            <p class="s1__desc">Include this field in CSV imports. Fields marked for import appear as mappable columns when uploading lead data. Essential for any field you regularly bulk-upload.</p>
+          </div>
+        </div>
+        <div style="background:var(--v50);border:1.5px solid var(--border);border-radius:12px;padding:14px 16px;">
+          <div style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--grey2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;">CSV column mapping</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--border);"><span style="font-size:12px;color:var(--grey);">Mobile Number</span><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:#22C55E;">✓ Mapped</span></div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--border);"><span style="font-size:12px;color:var(--grey);">Customer Name</span><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:#22C55E;">✓ Mapped</span></div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:6px 0;"><span style="font-size:12px;color:var(--grey2);">Internal Score</span><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--grey2);">— Hidden</span></div>
+        </div>
+      </div>
+
+      <div class="prop-row has-border">
+        <div style="display:flex;gap:20px;align-items:flex-start;min-width:0;">
+          <div style="width:44px;height:44px;border-radius:12px;background:var(--v50);border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+          </div>
+          <div style="min-width:0;flex:1;">
+            <div class="s1__title">Can use variables</div>
+            <p class="s1__desc">Use this field as a variable in message templates, automation rules, and WhatsApp messages. Enables personalised outreach at scale — every message feels hand-written.</p>
+          </div>
+        </div>
+        <div style="background:var(--v50);border:1.5px solid var(--border);border-radius:12px;padding:14px 16px;">
+          <div style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--grey2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;">Message template</div>
+          <div style="background:#fff;border-radius:8px;padding:10px 12px;font-size:12px;color:var(--grey);line-height:1.7;">Hi <span style="font-family:var(--font-head);font-weight:700;color:var(--v500);">{customer_name}</span>, following up on our call. Your renewal date is <span style="font-family:var(--font-head);font-weight:700;color:var(--v500);">{renewal_date}</span> — let's connect before then!</div>
+        </div>
+      </div>
+
+      <div class="prop-row has-border">
+        <div style="display:flex;gap:20px;align-items:flex-start;min-width:0;">
+          <div style="width:44px;height:44px;border-radius:12px;background:var(--v50);border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><rect x="2" y="3" width="20" height="14" rx="2" fill="#EDEBF6"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <div style="min-width:0;flex:1;">
+            <div class="s1__title">Show in quick add</div>
+            <p class="s1__desc">Include this field in the quick-add lead form — the lightweight form used when reps add a lead on the fly during a call or meeting. Keep it lean with only the essentials.</p>
+          </div>
+        </div>
+        <div style="background:var(--v50);border:1.5px solid var(--border);border-radius:12px;padding:14px 16px;">
+          <div style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--grey2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;">Quick add form</div>
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <div style="display:flex;align-items:center;justify-content:space-between;"><span style="font-size:12px;color:var(--grey);">Customer Name</span><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:#22C55E;">✓ Shown</span></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;"><span style="font-size:12px;color:var(--grey);">Mobile Number</span><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:#22C55E;">✓ Shown</span></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;"><span style="font-size:12px;color:var(--grey2);">Annual Income</span><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--grey2);">— Hidden</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="prop-row">
+        <div style="display:flex;gap:20px;align-items:flex-start;min-width:0;">
+          <div style="width:44px;height:44px;border-radius:12px;background:var(--v50);border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" fill="#EDEBF6"/></svg>
+          </div>
+          <div style="min-width:0;flex:1;">
+            <div class="s1__title">Length range</div>
+            <p class="s1__desc">Set minimum and maximum character or value limits for the field — ensuring data quality and consistency across your team. Prevents garbage input before it enters the system.</p>
+          </div>
+        </div>
+        <div style="background:var(--v50);border:1.5px solid var(--border);border-radius:12px;padding:14px 16px;">
+          <div style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--grey2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;">Length range · Customer Name</div>
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+            <div style="flex:1;"><div style="font-size:10px;color:var(--grey2);margin-bottom:4px;">Min characters</div><div style="background:#fff;border:1px solid var(--border);border-radius:6px;padding:6px 10px;font-size:13px;font-family:var(--font-head);font-weight:700;color:var(--v900);">2</div></div>
+            <div style="flex:1;"><div style="font-size:10px;color:var(--grey2);margin-bottom:4px;">Max characters</div><div style="background:#fff;border:1px solid var(--border);border-radius:6px;padding:6px 10px;font-size:13px;font-family:var(--font-head);font-weight:700;color:var(--v900);">100</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: RECURRING FIELDS -->
+<section class="s4">
+  <div class="inner">
+    <div class="s1__header">
+      <div class="s1__eyebrow">Recurring Dates</div>
+      <h2 class="s1__h2">Never miss a recurring date again.<br><em>For every event that repeats.</em></h2>
+      <p class="s1__body">Recurring date fields are designed for events that repeat on a schedule — birthdays, anniversaries, EMIs, SIPs, insurance renewals, credit card payments, or any custom recurring workflow. telecrm tracks the next occurrence automatically.</p>
+    </div>
+    <div class="recurring-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
+      <div>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div style="display:grid;grid-template-columns:100px 1fr;gap:12px;align-items:start;">
+            <span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:#22C55E;background:rgba(34,197,94,.1);padding:4px 12px;border-radius:100px;white-space:nowrap;text-align:center;width:100%;">Annually</span>
+            <div><div style="font-family:var(--font-head);font-size:13px;font-weight:800;color:var(--v900);margin-bottom:4px;">Annual reminders</div><p style="font-size:13px;color:var(--grey);line-height:1.65;margin:0;">Birthdays, anniversaries, yearly insurance renewals — fires once a year on the same date.</p></div>
+          </div>
+          <div style="display:grid;grid-template-columns:100px 1fr;gap:12px;align-items:start;">
+            <span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:#8B5CF6;background:rgba(139,92,246,.1);padding:4px 12px;border-radius:100px;white-space:nowrap;text-align:center;width:100%;">Half-yearly</span>
+            <div><div style="font-family:var(--font-head);font-size:13px;font-weight:800;color:var(--v900);margin-bottom:4px;">Half-yearly cycles</div><p style="font-size:13px;color:var(--grey);line-height:1.65;margin:0;">Six-monthly reviews, semi-annual payments, or any recurring event on a twice-yearly cycle.</p></div>
+          </div>
+          <div style="display:grid;grid-template-columns:100px 1fr;gap:12px;align-items:start;">
+            <span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:#8B5CF6;background:rgba(139,92,246,.1);padding:4px 12px;border-radius:100px;white-space:nowrap;text-align:center;width:100%;">Quarterly</span>
+            <div><div style="font-family:var(--font-head);font-size:13px;font-weight:800;color:var(--v900);margin-bottom:4px;">Quarterly cycles</div><p style="font-size:13px;color:var(--grey);line-height:1.65;margin:0;">Quarterly reviews, Q-based payments, or any event that fires every 3 months.</p></div>
+          </div>
+          <div style="display:grid;grid-template-columns:100px 1fr;gap:12px;align-items:start;">
+            <span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:#F59E0B;background:rgba(245,158,11,.1);padding:4px 12px;border-radius:100px;white-space:nowrap;text-align:center;width:100%;">Monthly</span>
+            <div><div style="font-family:var(--font-head);font-size:13px;font-weight:800;color:var(--v900);margin-bottom:4px;">Monthly cycles</div><p style="font-size:13px;color:var(--grey);line-height:1.65;margin:0;">EMIs, SIPs, credit card payments, monthly subscriptions — fires on the same date every month.</p></div>
+          </div>
+        </div>
+      </div>
+      <div><div style="background:#fff;border:1.5px solid var(--border);border-radius:16px;overflow:hidden;">
+  <div style="background:var(--v50);padding:12px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;">
+    <span style="font-family:var(--font-head);font-size:12px;font-weight:800;color:var(--v900);">Recurring date fields</span>
+    <span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v500);background:var(--v50);border:1px solid var(--v100);padding:2px 8px;border-radius:100px;">Max 10 fields</span>
+  </div>
+  <div style="padding:0;">
+    <div style="display:grid;grid-template-columns:1fr auto;align-items:center;padding:12px 16px;border-bottom:1px solid var(--border);">
+      <div><div style="font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v900);">Birthday</div><div style="font-size:11px;color:var(--grey2);margin-top:2px;">Next: 14 Aug 2025</div></div>
+      <span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:#22C55E;background:rgba(34,197,94,.1);padding:2px 8px;border-radius:100px;">Annually</span>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr auto;align-items:center;padding:12px 16px;border-bottom:1px solid var(--border);">
+      <div><div style="font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v900);">Car insurance renewal</div><div style="font-size:11px;color:var(--grey2);margin-top:2px;">Next: 1 Sep 2025</div></div>
+      <span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v500);background:var(--v50);padding:2px 8px;border-radius:100px;border:1px solid var(--v100);">Annually</span>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr auto;align-items:center;padding:12px 16px;border-bottom:1px solid var(--border);">
+      <div><div style="font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v900);">SIP payment due</div><div style="font-size:11px;color:var(--grey2);margin-top:2px;">Next: 5 Jul 2025</div></div>
+      <span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:#F59E0B;background:rgba(245,158,11,.1);padding:2px 8px;border-radius:100px;">Monthly</span>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr auto;align-items:center;padding:12px 16px;border-bottom:1px solid var(--border);">
+      <div><div style="font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v900);">EMI payment</div><div style="font-size:11px;color:var(--grey2);margin-top:2px;">Next: 10 Jul 2025</div></div>
+      <span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:#F59E0B;background:rgba(245,158,11,.1);padding:2px 8px;border-radius:100px;">Monthly</span>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr auto;align-items:center;padding:12px 16px;">
+      <div><div style="font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v900);">Quarterly review</div><div style="font-size:11px;color:var(--grey2);margin-top:2px;">Next: 1 Oct 2025</div></div>
+      <span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:#8B5CF6;background:rgba(139,92,246,.1);padding:2px 8px;border-radius:100px;">Quarterly</span>
+    </div>
+  </div>
+</div></div>
+    </div>
+  </div>
+</section>
+<!-- SECTION 5: DUPLICATION & UNIQUENESS -->
+<section class="s5">
+  <div class="inner">
+    <div class="s1__header">
+      <div class="s1__eyebrow">Duplication &amp; Uniqueness</div>
+      <h2 class="s1__h2">One person. Multiple records.<br><em>All under control.</em></h2>
+      <p class="s1__body">telecrm handles complex real-world scenarios — where the same contact has multiple active leads (e.g. 3 vehicles at the same dealership), and where you need a unique, customisable identifier for every lead record.</p>
+    </div>
+    <div class="dup-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;">
+
+      <!-- Duplicate management -->
+      <div style="background:#fff;border:1.5px solid var(--border);border-radius:16px;overflow:hidden;">
+        <div style="background:var(--v50);padding:12px 16px;border-bottom:1px solid var(--border);">
+          <div style="font-family:var(--font-head);font-size:12px;font-weight:800;color:var(--v900);">Duplicate flag</div>
+        </div>
+        <div style="padding:16px;">
+          <div style="background:#FEF3C7;border:1px solid #FCD34D;border-radius:10px;padding:12px 14px;margin-bottom:16px;display:flex;align-items:flex-start;gap:10px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" style="flex-shrink:0;margin-top:1px;"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+            <div><div style="font-family:var(--font-head);font-size:11.5px;font-weight:800;color:#92400E;margin-bottom:3px;">2 more leads exist for this number</div><div style="font-size:11px;color:#B45309;">+91 98765 43210 · Rahul Sharma</div></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:var(--v50);border-radius:8px;border:1px solid var(--v100);">
+              <div><div style="font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v900);">Rahul Sharma · Honda City</div><div style="font-size:10px;color:var(--grey2);">Created 12 Jan · Stage: Interested</div></div>
+              <span style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--v500);">Active</span>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:#fff;border-radius:8px;border:1px solid var(--border);">
+              <div><div style="font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v900);">Rahul Sharma · Honda Amaze</div><div style="font-size:10px;color:var(--grey2);">Created 3 Mar · Stage: Won</div></div>
+              <span style="font-family:var(--font-head);font-size:9px;font-weight:700;color:#22C55E;">Won</span>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:#fff;border-radius:8px;border:1px solid var(--border);">
+              <div><div style="font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v900);">Rahul Sharma · Honda WRV</div><div style="font-size:10px;color:var(--grey2);">Created 15 May · Stage: Negotiation</div></div>
+              <span style="font-family:var(--font-head);font-size:9px;font-weight:700;color:#F59E0B;">Active</span>
+            </div>
+          </div>
+          <p style="font-size:12px;color:var(--grey2);margin-top:12px;line-height:1.6;">telecrm keeps all leads intact — flagging duplicates while supporting multiple active records for the same contact. Useful for dealerships, insurance, and any multi-product sales cycle.</p>
+        </div>
+      </div>
+
+      <!-- UUID -->
+      <div style="background:#fff;border:1.5px solid var(--border);border-radius:16px;overflow:hidden;">
+        <div style="background:var(--v50);padding:12px 16px;border-bottom:1px solid var(--border);">
+          <div style="font-family:var(--font-head);font-size:12px;font-weight:800;color:var(--v900);">Lead UUID</div>
+        </div>
+        <div style="padding:16px;">
+          <div style="background:var(--v900);border-radius:10px;padding:14px 16px;margin-bottom:16px;font-family:monospace;font-size:11px;color:#86efac;line-height:1.8;word-break:break-all;">
+            TLC-2025-MH-<span style="color:#fbbf24;">RHS</span>-<span style="color:#60a5fa;">00481</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:10px;">
+              <div style="width:6px;height:6px;border-radius:50%;background:var(--v500);flex-shrink:0;margin-top:6px;"></div>
+              <p style="font-size:13px;color:var(--grey);line-height:1.65;margin:0;">Every lead gets a UUID — a unique alphanumeric identifier of up to 256 characters.</p>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:10px;">
+              <div style="width:6px;height:6px;border-radius:50%;background:var(--v500);flex-shrink:0;margin-top:6px;"></div>
+              <p style="font-size:13px;color:var(--grey);line-height:1.65;margin:0;">UUID format is fully customisable per customer account — include prefixes, regions, rep codes, or any custom segments.</p>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:10px;">
+              <div style="width:6px;height:6px;border-radius:50%;background:var(--v500);flex-shrink:0;margin-top:6px;"></div>
+              <p style="font-size:13px;color:var(--grey);line-height:1.65;margin:0;">One-time setup only — once configured, every new lead automatically gets its UUID assigned on creation.</p>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:10px;">
+              <div style="width:6px;height:6px;border-radius:50%;background:var(--v500);flex-shrink:0;margin-top:6px;"></div>
+              <p style="font-size:13px;color:var(--grey);line-height:1.65;margin:0;">Ideal for managing multiple entries for the same person — e.g. a customer with 3 vehicles at the same dealership, each with its own UUID.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="final-cta__grid"></div>
+  <div class="final-cta__glow"></div>
+  <div class="final-cta__inner">
+    <div class="final-cta__badge">
+      <span class="final-cta__badge-dot"></span>
+      Free 30-minute demo
+    </div>
+    <div style="font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v300);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;">Join 5,000+ Indian sales teams</div>
+    <h2 class="final-cta__h2">Are you ready<br>to <em>get started?</em></h2>
+    <p class="final-cta__sub">No jargon. We'll show you exactly how telecrm works for your business — your industry, your team size, your lead sources. The demo is free. The setup is guided. The commitment is yours to make when you're ready.</p>
+    <div class="final-cta__cta-wrap">
+      <a href="telecrm-demo-request.html" class="btn-cta-white">Get a Demo
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="final-cta__trust">
+      <span class="final-cta__trust-item"><span class="final-cta__trust-dot"></span>No credit card needed</span>
+      <span class="final-cta__trust-item"><span class="final-cta__trust-dot"></span>Response within 24 hours</span>
+      <span class="final-cta__trust-item"><span class="final-cta__trust-dot"></span>5,000+ businesses onboarded</span>
+      <span class="final-cta__trust-item"><span class="final-cta__trust-dot"></span>Fast setup</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<section class="faq">
+  <div class="faq__inner">
+    <div class="faq__header">
+      <div class="faq__eyebrow">FAQ</div>
+      <h2 class="faq__h2">Your questions, <em>answered plainly.</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">Can I create custom lead fields?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">Yes — capture exactly the data your business needs, with the right field type for every piece of information.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">How many field types are available?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">13 field types, covering every data point your team needs.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">Is there a limit on how many fields I can add?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">Limits are generous and built for teams that run at scale.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">Can telecrm track recurring dates?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">Yes — set fields for events that repeat so you never miss a recurring date.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__logo">telecrm</div>
+        <p class="footer__tagline">A Comprehensive Revenue Management Engine — fusing Lead Management, Call Management, Adaptive CRM, Marketing Automation, and Pipeline Management into one high-performance workspace.</p>
+        <a href="telecrm-get-started.html" class="btn-primary">Get Started →</a>
+      </div>
+      <div class="footer__links-grid">
+      <div class="footer__col-stack">
+        <div>
+          <div class="footer__col-title">Platform</div>
+          <div class="footer__links">
+            <a href="telecrm-platform-overview.html" class="footer__link">Platform Overview</a>
+            <a href="telecrm-platform-hub.html" class="footer__link">Platform Hub</a>
+            <a href="telecrm-benefits-hub.html" class="footer__link">Benefits Hub</a>
+            <a href="telecrm-platform-unified-revenue-management.html" class="footer__link">Unified Revenue Management</a>
+            <a href="telecrm-platform-lead-management.html" class="footer__link">Lead Management</a>
+            <a href="telecrm-platform-call-management.html" class="footer__link">Call Management &amp; Recording</a>
+            <a href="telecrm-platform-adaptive-crm.html" class="footer__link">Adaptive CRM</a>
+            <a href="telecrm-platform-marketing-automation.html" class="footer__link">Marketing Automation</a>
+            <a href="telecrm-platform-sales-pipeline-management.html" class="footer__link">Sales Pipeline Management</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Pricing</div>
+          <div class="footer__links">
+            <a href="telecrm-pricing.html" class="footer__link">Pricing</a>
+            <a href="telecrm-cost-savings.html" class="footer__link">Cost Savings</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__col-stack">
+        <div>
+          <div class="footer__col-title">Solutions</div>
+          <div class="footer__links">
+            <a href="telecrm-problems-hub.html" class="footer__link">Problems Hub</a>
+            <a href="telecrm-crm-hub.html" class="footer__link">CRM Hub</a>
+            <a href="telecrm-industry-hub.html" class="footer__link">Industry Hub</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Get Started</div>
+          <div class="footer__links">
+            <a href="telecrm-partnership.html" class="footer__link">Partner Program</a>
+            <a href="telecrm-demo-request.html" class="footer__link">Demo Request</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__col-stack">
+        <div>
+          <div class="footer__col-title">Trust</div>
+          <div class="footer__links">
+            <a href="telecrm-testimonials.html" class="footer__link">Testimonials</a>
+            <a href="telecrm-case-studies.html" class="footer__link">Case Studies</a>
+            <a href="telecrm-comparison.html" class="footer__link">Comparison</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">About Us</div>
+          <div class="footer__links">
+            <a href="telecrm-about-telecrm.html" class="footer__link">About telecrm</a>
+            <a href="telecrm-life-at-telecrm.html" class="footer__link">Life at telecrm</a>
+            <a href="telecrm-careers.html" class="footer__link">Careers</a>
+            <a href="telecrm-contact.html" class="footer__link">Contact Us</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Support</div>
+        <div class="footer__links">
+          <a href="telecrm-faqs.html" class="footer__link">FAQs</a>
+          <a href="telecrm-glossary.html" class="footer__link">Glossary</a>
+          <a href="telecrm-learning-repository.html" class="footer__link">Learning Repository</a>
+          <a href="telecrm-onboarding.html" class="footer__link">Onboarding</a>
+          <a href="telecrm-privacy-policy.html" class="footer__link">Privacy Policy</a>
+          <a href="telecrm-recommended-devices.html" class="footer__link">Recommended Devices</a>
+          <a href="telecrm-refund-policy.html" class="footer__link">Refund Policy</a>
+          <a href="telecrm-terms-conditions.html" class="footer__link">Terms &amp; Conditions</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Features</div>
+        <div class="footer__links">
+          <a href="telecrm-feature-automations.html" class="footer__link">Automation</a>
+          <a href="telecrm-feature-call-management.html" class="footer__link">Call Management</a>
+          <a href="telecrm-feature-calling-campaign.html" class="footer__link">Calling Campaign Management</a>
+          <a href="telecrm-feature-integrations.html" class="footer__link">Integrations</a>
+          <a href="telecrm-feature-lead-fields.html" class="footer__link">Lead Fields</a>
+          <a href="telecrm-feature-lead-management.html" class="footer__link">Lead Management &amp; Reporting</a>
+          <a href="telecrm-feature-lead-stages.html" class="footer__link">Lead Stages</a>
+          <a href="telecrm-feature-list-labels.html" class="footer__link">List and Labels</a>
+          <a href="telecrm-feature-reporting.html" class="footer__link">Reporting</a>
+          <a href="telecrm-feature-user-management.html" class="footer__link">User Management</a>
+          <a href="telecrm-feature-whatsapp.html" class="footer__link">WhatsApp</a>
+        </div>
+      </div>
+      </div><!-- /footer__links-grid -->
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__copy">© 2026 telecrm. All rights reserved.</div>
+      <div class="footer__legal">
+        <a href="telecrm-privacy-policy.html">Privacy Policy</a>
+        <a href="telecrm-terms-conditions.html">Terms &amp; Conditions</a>
+        <a href="telecrm-refund-policy.html">Refund Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.querySelector('.nav__hamburger');
+  var links=document.querySelector('.nav__links');
+  if(btn&&links){
+    btn.addEventListener('click',function(){btn.classList.toggle('open');links.classList.toggle('open');});
+  }
+  var mq=window.matchMedia('(max-width:768px)');
+  document.querySelectorAll('.nav__item > .nav__link').forEach(function(hub){
+    hub.addEventListener('click',function(e){ if(mq.matches){ e.preventDefault(); hub.parentElement.classList.toggle('open'); } });
+  });
+  document.querySelectorAll('.np__link,.np__foot,.nav__cta,.nav__mobile-cta').forEach(function(l){
+    l.addEventListener('click',function(){ if(btn){btn.classList.remove('open');} if(links){links.classList.remove('open');} });
+  });
+})();
+</script>
+<script>
+function toggleFaq(el){
+  var item=el.parentElement;
+  var isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+  if(!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>

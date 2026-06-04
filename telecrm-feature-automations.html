@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://telecrm.in/features/automations/">
+<title>Automations — telecrm Features</title>
+<meta name="description" content="Stage-based triggers, multi-action sequences, WhatsApp automation, lead assignment rules, drip campaigns, and cross-pipeline handoffs — telecrm runs your sales process so your team doesn't have to.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Automations — telecrm | Set it once. Let it run.">
+<meta property="og:description" content="Stage triggers, WhatsApp sequences, auto-assignment, drip campaigns, and pipeline handoffs — all configurable, all live.">
+<meta property="og:url" content="https://telecrm.in/features/automations/">
+<meta property="og:site_name" content="telecrm">
+<meta property="og:image" content="https://telecrm.in/assets/og-image.png">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Automations — telecrm | Set it once. Let it run.">
+<meta name="twitter:description" content="Stage triggers, WhatsApp sequences, auto-assignment, drip campaigns, and pipeline handoffs.">
+<meta name="twitter:image" content="https://telecrm.in/assets/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Automations — telecrm",
+  "description": "Stage-based triggers, multi-action sequences, WhatsApp automation, lead assignment, drip campaigns, and cross-pipeline handoffs in telecrm.",
+  "url": "https://telecrm.in/features/automations/",
+  "publisher": { "@type": "Organization", "name": "telecrm" }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cta:#F97316; --cta-hover:#EA580C;
+  --v50:#EDEBF6;--v100:#E1DDF0;--v200:#C4BAE5;--v300:#9C8FCF;
+  --v400:#7260B5;--v500:#4F38A2;--v600:#483393;--v700:#382873;--v900:#211844;
+  --white:#fff;--grey:#64748B;--border:#E9EBF8;--grey2:#94A3B8;
+  --success:#22C55E;--warning:#F59E0B;--error:#EF4444;
+  --font-head:'Plus Jakarta Sans',sans-serif;--font-body:'DM Sans',sans-serif;
+  --radius-btn:10px;--radius-card:16px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);color:var(--v900);background:#fff;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+.nav__inner{max-width:1280px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:72px;}
+.nav__logo{font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--v500);letter-spacing:-.5px;}
+.nav__links{display:flex;align-items:center;gap:2px;}
+.nav__link{font-family:var(--font-head);font-size:12.5px;font-weight:600;color:var(--v700);padding:7px 11px;border-radius:8px;transition:all .18s;white-space:nowrap;}
+.nav__link:hover,.nav__link--active{background:var(--v50);color:var(--v500);}
+.nav__sep{display:inline-block;width:1px;height:20px;background:var(--border);margin:0 8px;vertical-align:middle;}
+.nav__cta{font-family:var(--font-head);font-size:13px;font-weight:700;background:var(--cta);color:#fff;padding:10px 22px;border-radius:var(--radius-btn);box-shadow:0 4px 12px rgba(249,115,22,.3);transition:all .18s;white-space:nowrap;margin-left:8px;}
+.nav__cta:hover{background:var(--cta-hover);transform:translateY(-1px);}
+.nav__mobile-right{display:none;align-items:center;gap:8px;margin-left:auto;}
+.nav__mobile-cta{font-family:var(--font-head);font-size:13px;font-weight:700;background:var(--v500);color:#fff;padding:8px 16px;border-radius:var(--radius-btn);text-decoration:none;white-space:nowrap;}
+.nav__mob-sep{display:none;width:1px;height:20px;background:var(--border);}
+.nav__hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:8px;border:none;background:transparent;}
+.nav__hamburger span{display:block;width:22px;height:2px;background:var(--v900);border-radius:2px;transition:all .18s;}
+.nav__hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav__hamburger.open span:nth-child(2){opacity:0;}
+.nav__hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* HERO */
+.hero{padding:64px 0 56px;background:#fff;position:relative;overflow:hidden;}
+.hero__bg{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;opacity:.35;pointer-events:none;}
+.hero__glow{position:absolute;top:-80px;right:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(79,56,162,.07) 0%,transparent 70%);pointer-events:none;}
+.hero__inner{max-width:1280px;margin:0 auto;padding:0 32px;position:relative;}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-family:var(--font-head);font-size:12px;font-weight:600;color:var(--grey2);margin-bottom:24px;}
+.breadcrumb-sep{color:var(--v200);}
+.breadcrumb a{color:var(--grey2);transition:color .2s;}
+.breadcrumb a:hover{color:var(--v500);}
+.breadcrumb-current{color:var(--v500);}
+.hero__eyebrow{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;}
+.hero__h1{font-family:var(--font-head);font-size:clamp(28px,4vw,52px);font-weight:900;letter-spacing:-1.5px;color:var(--v900);line-height:1.1;margin-bottom:16px;}
+.hero__h1 em{font-style:normal;color:var(--v500);}
+.hero__sub{font-size:17px;color:var(--grey);line-height:1.75;max-width:680px;margin-bottom:32px;}
+.btn-primary{font-family:var(--font-head);font-size:14px;font-weight:700;background:var(--cta);color:#fff;padding:13px 28px;border-radius:var(--radius-btn);border:none;cursor:pointer;box-shadow:0 4px 14px rgba(249,115,22,.3);transition:all .2s;display:inline-flex;align-items:center;gap:8px;text-decoration:none;}
+.btn-primary:hover{background:var(--cta-hover);transform:translateY(-1px);}
+.btn-primary svg{width:16px;height:16px;}
+
+/* HIGHLIGHTS */
+.highlights{background:var(--v50);border-top:1px solid var(--v100);border-bottom:1px solid var(--v100);padding:20px 32px;}
+.highlights__inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.highlight{display:flex;align-items:center;gap:10px;padding:10px 16px;background:#fff;border:1.5px solid var(--v100);border-radius:10px;}
+.highlight__dot{width:7px;height:7px;border-radius:50%;background:var(--v500);flex-shrink:0;}
+.highlight__text{font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v700);}
+
+/* SHARED */
+.inner{max-width:1280px;margin:0 auto;padding:0 32px;}
+.s-white{padding:80px 0;background:#fff;}
+.s-tint{padding:80px 0;background:#F8F7FC;}
+.s-eye{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
+.s-h2{font-family:var(--font-head);font-size:clamp(22px,2.5vw,32px);font-weight:900;color:var(--v900);letter-spacing:-.5px;line-height:1.2;margin-bottom:12px;}
+.s-h2 em{font-style:normal;color:var(--v500);}
+.s-body{font-size:15px;color:var(--grey);line-height:1.75;margin-bottom:28px;}
+.fbullets{list-style:none;display:flex;flex-direction:column;gap:20px;}
+.fbullets li{display:flex;flex-direction:column;align-items:stretch;gap:10px;}
+.fbd{width:20px;height:20px;border-radius:6px;background:var(--v50);border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.fbd svg{width:10px;height:10px;}
+.li-head{display:flex;align-items:flex-start;gap:12px;}
+.li-title{font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;}
+.li-body{font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;}
+
+/* stacked layout */
+.s-stack{display:flex;flex-direction:column;gap:40px;}
+
+/* MINI VISUAL */
+.mv{background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;}
+.mv-label{font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;}
+
+/* AUTOMATION RULE BUILDER */
+.rule-builder{background:#fff;border:1.5px solid var(--border);border-radius:12px;overflow:hidden;}
+.rb-head{background:var(--v50);border-bottom:1px solid var(--v100);padding:10px 14px;display:flex;align-items:center;justify-content:space-between;}
+.rb-title{font-family:var(--font-head);font-size:11px;font-weight:800;color:var(--v900);}
+.rb-badge{font-family:var(--font-head);font-size:9px;font-weight:700;background:var(--v500);color:#fff;padding:2px 8px;border-radius:100px;}
+.rb-body{padding:12px 14px;}
+.rb-section-label{font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;}
+.rb-trigger{background:var(--v50);border:1.5px solid var(--v100);border-radius:8px;padding:9px 12px;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.rb-trigger-text{font-size:12px;color:var(--v900);}
+.rb-actions{display:flex;flex-direction:column;gap:6px;}
+.rb-action{display:flex;align-items:center;gap:8px;padding:8px 10px;background:#fff;border:1.5px solid var(--border);border-radius:8px;}
+.rb-action-icon{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.rb-action-text{font-size:12px;color:var(--grey);}
+
+/* TAG CHIPS */
+.chips{display:flex;gap:6px;flex-wrap:wrap;}
+.chip{font-family:var(--font-head);font-size:10px;font-weight:700;padding:4px 10px;border-radius:100px;}
+.chip--purple{background:var(--v50);color:var(--v500);border:1.5px solid var(--v100);}
+.chip--green{background:rgba(34,197,94,.1);color:#16A34A;}
+.chip--amber{background:rgba(245,158,11,.1);color:#D97706;}
+.chip--red{background:rgba(239,68,68,.08);color:#EF4444;}
+
+/* FLOW DIAGRAM */
+.flow{display:flex;flex-direction:column;gap:0;}
+.flow-node{display:flex;align-items:center;gap:10px;padding:9px 12px;background:#fff;border:1.5px solid var(--border);border-radius:8px;}
+.flow-node-icon{width:24px;height:24px;border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.flow-node-text{font-size:12px;color:var(--v900);}
+.flow-arrow{display:flex;align-items:center;padding:0 0 0 19px;}
+.flow-arrow svg{opacity:.4;}
+
+/* PIPELINE HANDOFF */
+.pipeline-strip{display:flex;align-items:center;gap:0;}
+.ps-stage{background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:8px 12px;text-align:center;flex:1;}
+.ps-stage__label{font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px;}
+.ps-stage__name{font-family:var(--font-head);font-size:11px;font-weight:800;color:var(--v900);}
+.ps-arrow{padding:0 6px;color:var(--v300);}
+
+/* DRIP SEQUENCE */
+.drip{display:flex;flex-direction:column;gap:0;}
+.drip-step{display:flex;align-items:flex-start;gap:10px;}
+.drip-step-line{display:flex;flex-direction:column;align-items:center;gap:0;flex-shrink:0;}
+.drip-dot{width:10px;height:10px;border-radius:50%;background:var(--v500);flex-shrink:0;margin-top:3px;}
+.drip-connector{width:2px;flex:1;background:var(--v100);min-height:20px;}
+.drip-content{background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:8px 10px;margin-bottom:8px;flex:1;}
+.drip-day{font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--v400);text-transform:uppercase;margin-bottom:3px;}
+.drip-msg{font-size:11px;color:var(--v900);}
+
+/* ASSIGNMENT */
+.assign-row{display:flex;align-items:center;gap:8px;padding:8px 10px;background:#fff;border:1.5px solid var(--border);border-radius:8px;margin-bottom:6px;}
+.assign-av{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:7px;font-weight:800;color:#fff;flex-shrink:0;}
+
+/* FINAL CTA */
+.final-cta{padding:96px 0;background:var(--v900);position:relative;overflow:hidden;}
+.final-cta__grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;}
+.final-cta__glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(114,96,181,.2) 0%,transparent 65%);pointer-events:none;}
+.final-cta__inner{max-width:860px;margin:0 auto;padding:0 32px;text-align:center;position:relative;}
+.final-cta__badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v300);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:6px 14px;border-radius:100px;margin-bottom:24px;}
+.final-cta__badge-dot{width:7px;height:7px;border-radius:50%;background:#22C55E;flex-shrink:0;}
+.final-cta__h2{font-family:var(--font-head);font-size:clamp(28px,3.5vw,44px);font-weight:900;letter-spacing:-1px;color:#fff;line-height:1.15;margin-bottom:12px;}
+.final-cta__h2 em{font-style:normal;color:var(--v300);}
+.final-cta__sub{font-size:16px;color:var(--v200);line-height:1.7;margin-bottom:32px;}
+.btn-cta-white{font-family:var(--font-head);font-size:15px;font-weight:700;background:#fff;color:var(--v500);padding:15px 36px;border-radius:var(--radius-btn);border:none;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.15);transition:all .2s;display:inline-flex;align-items:center;gap:8px;text-decoration:none;}
+.btn-cta-white:hover{background:var(--v50);transform:translateY(-2px);}
+.btn-cta-white svg{width:16px;height:16px;}
+.final-cta__cta-wrap{margin-bottom:28px;}
+.final-cta__trust{display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap;}
+.final-cta__trust-item{font-size:13px;font-weight:500;color:var(--v200);display:flex;align-items:center;gap:7px;}
+.final-cta__trust-dot{width:6px;height:6px;border-radius:50%;background:#22C55E;flex-shrink:0;}
+
+/* FOOTER */
+.footer{background:#fff;border-top:1px solid var(--border);padding:64px 0 40px;}
+.footer__inner{max-width:1280px;margin:0 auto;padding:0 32px;}
+.footer__grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+.footer__logo{font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--v500);margin-bottom:16px;letter-spacing:-.5px;}
+.footer__tagline{font-size:14px;color:var(--grey);line-height:1.7;max-width:280px;margin-bottom:24px;}
+.footer__col-title{font-family:var(--font-head);font-size:12px;font-weight:800;color:var(--v900);text-transform:uppercase;letter-spacing:.06em;margin-bottom:16px;}
+.footer__links{display:flex;flex-direction:column;gap:10px;}
+.footer__link{font-size:14px;color:var(--grey);transition:color .2s;}
+.footer__link:hover{color:var(--v500);}
+.footer-col-right{}
+.footer-col-left{}
+.footer__links-grid{display:contents;}
+.footer__bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer__copy{font-size:13px;color:var(--grey);}
+.footer__legal{display:flex;gap:24px;}
+.footer__legal a{font-size:13px;color:var(--grey);transition:color .2s;}
+.footer__legal a:hover{color:var(--v500);}
+
+/* MOBILE */
+@media(max-width:768px){
+  .nav__links{display:none;flex-direction:column;position:fixed;top:72px;left:0;right:0;background:rgba(255,255,255,.98);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:16px 24px;gap:0;z-index:99;}
+  .nav__links.open{display:flex;}
+  .nav__link{padding:12px 0;border-bottom:1px solid var(--border);font-size:15px;display:block;}
+  .nav__link:last-child{border-bottom:none;}
+  .nav__sep{display:none;}
+  .nav__cta{display:none;}
+  .nav__mobile-right{display:flex;align-items:center;gap:8px;margin-left:auto;}
+  .nav__mob-sep{display:block;}
+  .nav__hamburger{display:flex;}
+  .highlights__inner{grid-template-columns:1fr 1fr!important;}
+  .footer__grid{grid-template-columns:1fr!important;gap:32px!important;}
+  .footer__tagline{max-width:100%!important;}
+  .footer__bottom{flex-direction:column!important;gap:12px!important;text-align:center!important;}
+  .footer__legal{flex-wrap:wrap!important;justify-content:center!important;}
+  .footer__links-grid{display:grid!important;grid-template-columns:1fr 1fr;gap:32px 16px;margin-top:32px;}
+  .footer__links-grid > div:nth-child(1),
+  .footer__links-grid > div:nth-child(2),
+  .footer__links-grid > div:nth-child(3){text-align:left!important;grid-column:1;}
+  .footer__links-grid > div:nth-child(4){text-align:right!important;grid-column:2;grid-row:1 / span 3;}
+  .footer__links-grid > div:nth-child(4) .footer__links{align-items:flex-end;}
+  .final-cta__trust{gap:16px;}
+  .final-cta__inner{padding:0 20px;}
+  .mv{max-width:100%;}
+  .pipeline-strip{flex-wrap:wrap;gap:6px;}
+}
+@media(min-width:769px){.nav__hamburger{display:none;}.nav__mobile-right{display:none;}}
+.nav__mobile-right{display:none;}}
+.nav__mobile-right{display:none;}}
+
+/* ===== ROLLOUT v2026-05-29: nav mega-menu + fat footer (canonical) ===== */
+.nav__item{position:relative;display:flex;align-items:center;height:72px;}
+.nav__item > .nav__link{display:inline-flex;align-items:center;gap:4px;}
+.nav__caret{width:11px;height:11px;flex-shrink:0;transition:transform .2s;}
+.nav__item:hover > .nav__link .nav__caret,.nav__item:focus-within > .nav__link .nav__caret{transform:rotate(180deg);}
+.nav__item:hover > .nav__link,.nav__item:focus-within > .nav__link{background:var(--v50);color:var(--v500);}
+.nav__panel{position:absolute;top:100%;left:0;background:#fff;border:1px solid var(--border);border-radius:14px;box-shadow:0 18px 44px rgba(33,24,68,.13);padding:14px;opacity:0;visibility:hidden;transform:translateY(7px);transition:opacity .16s,transform .16s,visibility .16s;z-index:200;}
+.nav__panel--right{left:auto;right:0;}
+.nav__item:hover > .nav__panel,.nav__item:focus-within > .nav__panel{opacity:1;visibility:visible;transform:translateY(0);}
+.np__list{display:grid;gap:1px;}
+.np__list--2{grid-template-columns:1fr 1fr;gap:1px 14px;}
+.np__link{display:flex;flex-direction:column;gap:2px;padding:9px 12px;border-radius:8px;transition:background .15s;min-width:0;}
+.np__link:hover{background:var(--v50);}
+.np__t{font-family:var(--font-head);font-size:13.5px;font-weight:700;color:var(--v900);white-space:nowrap;}
+.np__list--2 .np__t{white-space:normal;line-height:1.3;overflow-wrap:break-word;}
+.np__link:hover .np__t{color:var(--v500);}
+.np__s{font-family:var(--font-body);font-size:12px;color:var(--grey);line-height:1.35;}
+.np__foot{display:flex;align-items:center;gap:6px;border-top:1px solid var(--border);margin-top:8px;padding:11px 12px 3px;font-family:var(--font-head);font-size:12.5px;font-weight:700;color:var(--v500);}
+.np__foot svg{width:13px;height:13px;}
+.nav__mobile-cta{background:var(--cta);}
+.footer__grid{grid-template-columns:1.5fr 1fr 1fr 1fr 1fr 1.15fr;gap:40px 32px;}
+.footer__col-stack{display:flex;flex-direction:column;gap:48px;}
+@media(max-width:1024px){.footer__grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:768px){
+  .nav__item{width:100%;height:auto;display:block;position:static;}
+  .nav__item > .nav__link{display:flex;align-items:center;justify-content:space-between;width:100%;}
+  .nav__item.open > .nav__link .nav__caret{transform:rotate(180deg);}
+  .nav__caret{width:13px;height:13px;}
+  .nav__panel{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;border-radius:0;padding:4px 0 10px 10px;width:auto !important;display:none;z-index:auto;}
+  .nav__item.open > .nav__panel{display:block;}
+  .np__list--2{grid-template-columns:1fr;}
+  .np__link{padding:9px 10px;}
+  .np__foot{padding-left:10px;}
+  .footer__links-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px 16px;margin-top:32px;}
+  .footer__links-grid > div:nth-child(1),.footer__links-grid > div:nth-child(2),.footer__links-grid > div:nth-child(3),.footer__links-grid > div:nth-child(4),.footer__links-grid > div:nth-child(5){text-align:left;grid-column:auto;grid-row:auto;}
+  .footer__links-grid > div:nth-child(4) .footer__links{align-items:flex-start;}
+}
+@media(max-width:600px){.footer__grid{grid-template-columns:1fr;}}
+/* ===== end ROLLOUT ===== */
+
+/* ===== FAQ section (locked §16A) ===== */
+.faq{padding:96px 0;background:#F8F7FC;}
+.faq__inner{max-width:1280px;margin:0 auto;padding:0 32px;}
+.faq__header{text-align:center;margin-bottom:8px;}
+.faq__eyebrow{font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v500);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;}
+.faq__h2{font-family:var(--font-head);font-size:clamp(28px,3.5vw,42px);font-weight:900;letter-spacing:-1.2px;color:var(--v900);line-height:1.15;}
+.faq__h2 em{font-style:normal;color:var(--v500);}
+.faq-list{display:flex;flex-direction:column;border-top:1px solid var(--border);max-width:860px;margin:40px auto 0;}
+.faq-item{border-bottom:1px solid var(--border);}
+.faq-item__q{display:flex;align-items:center;justify-content:space-between;padding:22px 0;cursor:pointer;gap:24px;}
+.faq-item__q-text{font-family:var(--font-head);font-size:16px;font-weight:700;color:var(--v900);}
+.faq-item__icon{width:28px;height:28px;border-radius:50%;background:#fff;border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s;}
+.faq-item__icon svg{width:12px;height:12px;transition:transform .25s;}
+.faq-item.open .faq-item__icon{background:var(--v500);border-color:var(--v500);}
+.faq-item.open .faq-item__icon svg{transform:rotate(45deg);stroke:#fff;}
+.faq-item__a{display:none;font-family:var(--font-body);font-size:15px;color:var(--grey);line-height:1.75;padding-bottom:22px;max-width:760px;}
+.faq-item.open .faq-item__a{display:block;}
+@media(max-width:768px){.faq{padding:64px 0;}.faq__inner{padding:0 20px;}}
+/* ===== end FAQ ===== */
+
+.np__cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.np__col-head{display:block;font-family:var(--font-head);font-size:11px;font-weight:800;color:var(--v400);text-transform:uppercase;letter-spacing:.07em;padding:4px 12px 8px;transition:color .15s;}
+.np__col-head:hover{color:var(--v500);}
+.nav__panel:has(.np__col:only-child) .np__cols{grid-template-columns:1fr;}
+@media(max-width:768px){.np__cols{grid-template-columns:1fr !important;gap:0 !important;}.np__col-head{padding:8px 10px 4px;}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="telecrm-approach2-home.html" class="nav__logo">telecrm</a>
+    <div class="nav__links">
+      <div class="nav__item">
+        <a href="telecrm-platform-overview.html" class="nav__link">Platform Overview <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:560px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-platform-hub.html">Platform Hub</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-platform-unified-revenue-management.html"><span class="np__t">Unified Revenue Management</span><span class="np__s">One connected engine</span></a>
+                <a class="np__link" href="telecrm-platform-lead-management.html"><span class="np__t">Lead Management</span><span class="np__s">Capture, dedupe, assign</span></a>
+                <a class="np__link" href="telecrm-platform-call-management.html"><span class="np__t">Call Management &amp; Recording</span><span class="np__s">Dial, record, track</span></a>
+                <a class="np__link" href="telecrm-platform-adaptive-crm.html"><span class="np__t">Adaptive CRM</span><span class="np__s">Stages, fields, 360°</span></a>
+                <a class="np__link" href="telecrm-platform-marketing-automation.html"><span class="np__t">Marketing Automation</span><span class="np__s">Reach leads automatically</span></a>
+                <a class="np__link" href="telecrm-platform-sales-pipeline-management.html"><span class="np__t">Sales Funnel &amp; Pipeline Management</span><span class="np__s">Track every deal stage</span></a>
+              </div>
+            </div>
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-benefits-hub.html">Benefits Hub</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-benefits-hub.html"><span class="np__t">Outcomes &amp; ROI</span><span class="np__s">What telecrm delivers for your team</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-platform-overview.html">Platform Overview — the product, end to end <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-solutions-hub.html" class="nav__link">Solutions <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-solutions-hub.html">By approach</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-problems-hub.html"><span class="np__t">Problems Hub</span><span class="np__s">Revenue leaks, by stage</span></a>
+                <a class="np__link" href="telecrm-crm-hub.html"><span class="np__t">CRM Hub</span><span class="np__s">By type &amp; by team</span></a>
+                <a class="np__link" href="telecrm-industry-hub.html"><span class="np__t">Industry Hub</span><span class="np__s">11 industries covered</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-solutions-hub.html">Browse all solutions <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-features-hub.html" class="nav__link nav__link--active">Features <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:620px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-features-hub.html">Engagement</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-feature-call-management.html"><span class="np__t">Call Management</span></a>
+                <a class="np__link" href="telecrm-feature-calling-campaign.html"><span class="np__t">Calling Campaign Management</span></a>
+                <a class="np__link" href="telecrm-feature-whatsapp.html"><span class="np__t">WhatsApp</span></a>
+                <a class="np__link" href="telecrm-feature-automations.html"><span class="np__t">Automation</span></a>
+              </div>
+            </div>
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-features-hub.html">Data &amp; Admin</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-feature-lead-management.html"><span class="np__t">Lead Management &amp; Reporting</span></a>
+                <a class="np__link" href="telecrm-feature-lead-fields.html"><span class="np__t">Lead Fields</span></a>
+                <a class="np__link" href="telecrm-feature-lead-stages.html"><span class="np__t">Lead Stages</span></a>
+                <a class="np__link" href="telecrm-feature-list-labels.html"><span class="np__t">List and Labels</span></a>
+                <a class="np__link" href="telecrm-feature-reporting.html"><span class="np__t">Reporting</span></a>
+                <a class="np__link" href="telecrm-feature-integrations.html"><span class="np__t">Integrations</span></a>
+                <a class="np__link" href="telecrm-feature-user-management.html"><span class="np__t">User Management</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-features-hub.html">See all features <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-trust-hub.html" class="nav__link">Trust <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-trust-hub.html">Proof</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-testimonials.html"><span class="np__t">Testimonials</span><span class="np__s">Real customers, real numbers</span></a>
+                <a class="np__link" href="telecrm-case-studies.html"><span class="np__t">Case Studies</span><span class="np__s">9 detailed stories</span></a>
+                <a class="np__link" href="telecrm-comparison.html"><span class="np__t">Comparison</span><span class="np__s">telecrm vs. alternatives</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-trust-hub.html">Visit the Trust Hub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-pricing.html" class="nav__link">Pricing <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:320px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-pricing.html">Plans</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-pricing.html"><span class="np__t">Pricing</span><span class="np__s">Plans &amp; what's included</span></a>
+                <a class="np__link" href="telecrm-cost-savings.html"><span class="np__t">Cost Savings</span><span class="np__s">What you save vs. tools</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-support-hub.html" class="nav__link">Support <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:560px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-support-hub.html">Resources</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-faqs.html"><span class="np__t">FAQs</span></a>
+                <a class="np__link" href="telecrm-glossary.html"><span class="np__t">Glossary</span></a>
+                <a class="np__link" href="telecrm-learning-repository.html"><span class="np__t">Learning Repository</span></a>
+                <a class="np__link" href="telecrm-onboarding.html"><span class="np__t">Onboarding</span></a>
+                <a class="np__link" href="telecrm-recommended-devices.html"><span class="np__t">Recommended Devices</span></a>
+              </div>
+            </div>
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-support-hub.html">Policies</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-privacy-policy.html"><span class="np__t">Privacy Policy</span></a>
+                <a class="np__link" href="telecrm-refund-policy.html"><span class="np__t">Refund Policy</span></a>
+                <a class="np__link" href="telecrm-terms-conditions.html"><span class="np__t">Terms &amp; Conditions</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-support-hub.html">Go to Support Hub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-get-started.html" class="nav__link">Get Started <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-get-started.html">Get started</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-partnership.html"><span class="np__t">Partner Program</span><span class="np__s">Refer &amp; earn 10% for life</span></a>
+                <a class="np__link" href="telecrm-demo-request.html"><span class="np__t">Demo Request</span><span class="np__s">Book a free demo</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-get-started.html">All ways to start <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-about-us.html" class="nav__link">About Us <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-about-us.html">Company</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-about-telecrm.html"><span class="np__t">About telecrm</span><span class="np__s">Story, vision, mission</span></a>
+                <a class="np__link" href="telecrm-life-at-telecrm.html"><span class="np__t">Life at telecrm</span><span class="np__s">Culture &amp; team</span></a>
+                <a class="np__link" href="telecrm-careers.html"><span class="np__t">Careers</span><span class="np__s">Open roles</span></a>
+                <a class="np__link" href="telecrm-contact.html"><span class="np__t">Contact Us</span><span class="np__s">Talk to us</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="nav__sep"></span>
+      <a href="telecrm-demo-request.html" class="nav__cta">Get a Demo</a>
+    </div>
+    <div class="nav__mobile-right">
+      <a href="telecrm-demo-request.html" class="nav__mobile-cta">Get a Demo</a>
+      <span class="nav__mob-sep"></span>
+      <button class="nav__hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__bg"></div>
+  <div class="hero__glow"></div>
+  <div class="hero__inner">
+    <div class="breadcrumb">
+      <a href="telecrm-approach2-home.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="telecrm-features-hub.html">Features</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">Automations</span>
+    </div>
+    <div class="hero__eyebrow">Features · Automations</div>
+    <h1 class="hero__h1">Flexible automation for<br><em>every step of your process.</em></h1>
+    <p class="hero__sub">telecrm automations handle the repetitive work for your team — assigning leads the moment they arrive, sending the right WhatsApp at the right stage, scheduling follow-ups, and moving records between pipelines — unlock your team's full selling capacity.</p>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS -->
+<div class="highlights">
+  <div class="highlights__inner">
+    <div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">Stage-based triggers</span></div>
+    <div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">Multi-action sequences</span></div>
+    <div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">WhatsApp automation</span></div>
+    <div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">Auto lead assignment</span></div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════
+     01 — STAGE-BASED TRIGGERS
+     bg: white
+════════════════════════════════════ -->
+<section class="s-white">
+  <div class="inner">
+    <div class="s-stack">
+      <div>
+        <div class="s-eye">01 — Workflow Automation & Stage Triggers</div>
+        <h2 class="s-h2">Your sales process,<br><em>running on autopilot.</em></h2>
+        <p class="s-body">telecrm's workflow automation lets you model your entire sales process as a set of rules — define what happens when a lead enters a stage, exits it, reaches a lifecycle milestone, or goes stale. Every rule fires in real time, every time, without exception.</p>
+        <ul class="fbullets">
+
+          <li>
+            <div class="li-head"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1L9 4H7v5H3V4H1z" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div class="li-title">Trigger on stage entry.</div><div class="li-body">Set a rule on any stage — Initial, Active substage, Won, or Lost — that fires the instant a lead is moved into it. One rule per stage or many; each is independent.</div></div></div>
+            <div class="mv">
+              <div class="mv-label">Trigger — on stage entry</div>
+              <div class="rb-trigger">
+                <svg viewBox="0 0 10 10" fill="none" width="14" height="14"><path d="M5 1L9 4H7v5H3V4H1z" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="rb-trigger-text">Lead moves to <strong>Proposal Sent</strong></span>
+              </div>
+              <div class="chips">
+                <span class="chip chip--purple">Any stage</span>
+                <span class="chip chip--purple">Fires instantly</span>
+                <span class="chip chip--purple">No delay</span>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="li-head"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M7.5 3.5A3.2 3.2 0 105 8.2" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round"/><path d="M7.5 1.5v2h-2" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div class="li-title">Trigger on stage exit.</div><div class="li-body">Rules can also fire when a lead leaves a stage — useful for ending a nurture sequence, revoking access, or notifying a team that a record has moved on.</div></div></div>
+            <div class="mv">
+              <div class="mv-label">Trigger — on stage exit</div>
+              <div class="rb-trigger">
+                <svg viewBox="0 0 10 10" fill="none" width="14" height="14"><path d="M7.5 3.5A3.2 3.2 0 105 8.2" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round"/><path d="M7.5 1.5v2h-2" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span class="rb-trigger-text">Lead exits <strong>Negotiating</strong> → moved to Won or Lost</span>
+              </div>
+              <div class="chips">
+                <span class="chip chip--purple">Stop sequences</span>
+                <span class="chip chip--purple">Notify manager</span>
+                <span class="chip chip--purple">Log outcome</span>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="li-head"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 5h7M1.5 3h7M1.5 7h5" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round"/></svg></span><div><div class="li-title">Unlimited rules per pipeline.</div><div class="li-body">Every stage in every pipeline can have its own independent automation rules. Rules don't interfere with each other — each stage is its own trigger context.</div></div></div>
+            <div class="mv">
+              <div class="mv-label">Active rules — Sales pipeline</div>
+              <div style="display:flex;flex-direction:column;gap:5px;">
+                <div style="display:flex;align-items:center;gap:8px;padding:7px 10px;background:#fff;border:1.5px solid var(--border);border-radius:7px;"><div style="width:6px;height:6px;border-radius:50%;background:#22C55E;flex-shrink:0;"></div><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);flex:1;">New Lead</span><span style="font-family:var(--font-head);font-size:9px;color:var(--grey2);">2 actions</span></div>
+                <div style="display:flex;align-items:center;gap:8px;padding:7px 10px;background:#fff;border:1.5px solid var(--border);border-radius:7px;"><div style="width:6px;height:6px;border-radius:50%;background:#22C55E;flex-shrink:0;"></div><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);flex:1;">Proposal Sent</span><span style="font-family:var(--font-head);font-size:9px;color:var(--grey2);">3 actions</span></div>
+                <div style="display:flex;align-items:center;gap:8px;padding:7px 10px;background:#fff;border:1.5px solid var(--border);border-radius:7px;"><div style="width:6px;height:6px;border-radius:50%;background:#22C55E;flex-shrink:0;"></div><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);flex:1;">Won</span><span style="font-family:var(--font-head);font-size:9px;color:var(--grey2);">4 actions</span></div>
+                <div style="display:flex;align-items:center;gap:8px;padding:7px 10px;background:#fff;border:1.5px solid var(--border);border-radius:7px;"><div style="width:6px;height:6px;border-radius:50%;background:#EF4444;flex-shrink:0;"></div><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);flex:1;">Lost</span><span style="font-family:var(--font-head);font-size:9px;color:var(--grey2);">2 actions</span></div>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="li-head"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1.5c-1.9 0-3.5 1.6-3.5 3.5s1.6 3.5 3.5 3.5 3.5-1.6 3.5-3.5" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round"/><path d="M6.5 1.5h2v2" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div class="li-title">Lifecycle-based triggers.</div><div class="li-body">Triggers don't have to be stage moves — they can fire based on lifecycle events too: a lead going stale after X days without a call, a deal sitting in a stage too long, a follow-up task expiring. Set conditions on time and inactivity, not just movement.</div></div></div>
+            <div class="mv">
+              <div class="mv-label">Lifecycle trigger examples</div>
+              <div style="display:flex;flex-direction:column;gap:5px;">
+                <div style="display:flex;align-items:center;gap:8px;padding:7px 10px;background:#fff;border:1.5px solid var(--border);border-radius:7px;"><span style="font-family:var(--font-head);font-size:9px;font-weight:700;background:var(--v50);color:var(--v500);padding:2px 7px;border-radius:4px;white-space:nowrap;">No call for 3 days</span><span style="font-size:9px;color:var(--grey2);">→</span><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);">Alert manager</span></div>
+                <div style="display:flex;align-items:center;gap:8px;padding:7px 10px;background:#fff;border:1.5px solid var(--border);border-radius:7px;"><span style="font-family:var(--font-head);font-size:9px;font-weight:700;background:var(--v50);color:var(--v500);padding:2px 7px;border-radius:4px;white-space:nowrap;">Stage stale 7 days</span><span style="font-size:9px;color:var(--grey2);">→</span><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);">Send re-engagement WA</span></div>
+                <div style="display:flex;align-items:center;gap:8px;padding:7px 10px;background:#fff;border:1.5px solid var(--border);border-radius:7px;"><span style="font-family:var(--font-head);font-size:9px;font-weight:700;background:var(--v50);color:var(--v500);padding:2px 7px;border-radius:4px;white-space:nowrap;">Task overdue 1 day</span><span style="font-size:9px;color:var(--grey2);">→</span><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);">Reassign to manager</span></div>
+              </div>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     02 — MULTI-ACTION SEQUENCES
+     bg: #F8F7FC
+════════════════════════════════════ -->
+<section class="s-tint">
+  <div class="inner">
+    <div class="s-stack">
+      <div>
+        <div class="s-eye">02 — Multi-Action Sequences</div>
+        <h2 class="s-h2">One trigger.<br><em>Many actions, in order.</em></h2>
+        <p class="s-body">A single stage move can fire a chain of actions — send a WhatsApp, create a follow-up task, notify the manager, reassign the lead, and move it to another pipeline — all from one rule, in sequence, without any manual intervention.</p>
+        <ul class="fbullets">
+
+          <li>
+            <div class="li-head"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><rect x="1.5" y="1.5" width="7" height="7" rx=".8" stroke="#4F38A2" stroke-width="1.3"/><path d="M3.5 5l1 1 2-2" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div class="li-title">Chain unlimited actions per trigger.</div><div class="li-body">Add as many actions as your process requires to a single trigger. Each fires in the order you set them — there's no cap on how many actions one rule can contain.</div></div></div>
+            <div class="mv">
+              <div class="mv-label">Rule — Lead moves to "Demo Scheduled"</div>
+              <div class="flow">
+                <div class="flow-node"><div class="flow-node-icon" style="background:#25D366;"><svg viewBox="0 0 12 12" fill="white" width="10" height="10"><path d="M11 5.5a4.5 4.5 0 01-.73 2.44L11 11l-3.06-.73A4.5 4.5 0 116 1.5a4.5 4.5 0 015 4z"/></svg></div><span class="flow-node-text">Send WhatsApp — <em>Demo confirmation template</em></span></div>
+                <div class="flow-arrow"><svg viewBox="0 0 10 16" fill="none" width="10" height="16"><path d="M5 1v10M2 8l3 5 3-5" stroke="#9C8FCF" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div class="flow-node"><div class="flow-node-icon" style="background:var(--v500);"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" width="10" height="10"><rect x="1.5" y="2" width="9" height="9" rx="1.5"/><path d="M1.5 5h9M4 2V1M8 2V1"/></svg></div><span class="flow-node-text">Create follow-up task — <em>Call after demo</em></span></div>
+                <div class="flow-arrow"><svg viewBox="0 0 10 16" fill="none" width="10" height="16"><path d="M5 1v10M2 8l3 5 3-5" stroke="#9C8FCF" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div class="flow-node"><div class="flow-node-icon" style="background:var(--v300);"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" width="10" height="10"><path d="M6 1a3 3 0 110 6 3 3 0 010-6zM1 11c0-2.2 2.2-4 5-4s5 1.8 5 4"/></svg></div><span class="flow-node-text">Notify manager — <em>Demo booked alert</em></span></div>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="li-head"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5 2l3 3-3 3" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div class="li-title">Available action types.</div><div class="li-body">Each action in a sequence can be one of several types — giving full flexibility to model any step in your sales or post-sales process.</div></div></div>
+            <div class="mv">
+              <div class="mv-label">Action library</div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+                <div style="display:flex;align-items:center;gap:7px;padding:7px 10px;background:#fff;border:1.5px solid var(--border);border-radius:7px;"><div style="width:8px;height:8px;border-radius:50%;background:#25D366;flex-shrink:0;"></div><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);">Send WhatsApp</span></div>
+                <div style="display:flex;align-items:center;gap:7px;padding:7px 10px;background:#fff;border:1.5px solid var(--border);border-radius:7px;"><div style="width:8px;height:8px;border-radius:50%;background:var(--v500);flex-shrink:0;"></div><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);">Create task</span></div>
+                <div style="display:flex;align-items:center;gap:7px;padding:7px 10px;background:#fff;border:1.5px solid var(--border);border-radius:7px;"><div style="width:8px;height:8px;border-radius:50%;background:var(--v300);flex-shrink:0;"></div><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);">Notify rep / manager</span></div>
+                <div style="display:flex;align-items:center;gap:7px;padding:7px 10px;background:#fff;border:1.5px solid var(--border);border-radius:7px;"><div style="width:8px;height:8px;border-radius:50%;background:#F59E0B;flex-shrink:0;"></div><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);">Reassign lead</span></div>
+                <div style="display:flex;align-items:center;gap:7px;padding:7px 10px;background:#fff;border:1.5px solid var(--border);border-radius:7px;"><div style="width:8px;height:8px;border-radius:50%;background:#8B5CF6;flex-shrink:0;"></div><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);">Move to pipeline</span></div>
+                <div style="display:flex;align-items:center;gap:7px;padding:7px 10px;background:#fff;border:1.5px solid var(--border);border-radius:7px;"><div style="width:8px;height:8px;border-radius:50%;background:#EF4444;flex-shrink:0;"></div><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);">Update stage</span></div>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="li-head"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="3.5" stroke="#4F38A2" stroke-width="1.3"/><path d="M5 3v2l1.5 1" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div class="li-title">Delayed actions.</div><div class="li-body">Set a delay before any action fires — send a WhatsApp 30 minutes after a stage change, create a follow-up task 24 hours later. Delays are configured per action, not per rule.</div></div></div>
+            <div class="mv">
+              <div class="mv-label">Action with delay</div>
+              <div style="display:flex;flex-direction:column;gap:6px;">
+                <div class="flow-node"><div class="flow-node-icon" style="background:#25D366;"><svg viewBox="0 0 12 12" fill="white" width="10" height="10"><path d="M11 5.5a4.5 4.5 0 01-.73 2.44L11 11l-3.06-.73A4.5 4.5 0 116 1.5a4.5 4.5 0 015 4z"/></svg></div><span class="flow-node-text">Send WhatsApp — <em>immediately</em></span></div>
+                <div class="flow-node" style="border-color:var(--v200);"><div class="flow-node-icon" style="background:var(--v500);"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" width="10" height="10"><rect x="1.5" y="2" width="9" height="9" rx="1.5"/><path d="M1.5 5h9M4 2V1M8 2V1"/></svg></div><span class="flow-node-text">Create task — <em>delay 24h</em></span><span style="font-family:var(--font-head);font-size:9px;font-weight:700;background:var(--v50);color:var(--v500);padding:2px 8px;border-radius:100px;margin-left:auto;white-space:nowrap;">+24h</span></div>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="li-head"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M6.5 1.5l2 2L3 9H1v-2l5.5-5.5z" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div class="li-title">Custom trigger-based workflows.</div><div class="li-body">Build workflows from scratch to match your exact process — any trigger, any action combination. telecrm's rule engine is not limited to preset templates; every workflow is custom-configured for your pipeline, your stages, and your team's way of working.</div></div></div>
+            <div class="mv">
+              <div class="mv-label">Custom workflow — policy renewal</div>
+              <div class="rule-builder">
+                <div class="rb-head"><span class="rb-title">Policy renewal workflow</span><span class="rb-badge">Custom</span></div>
+                <div class="rb-body">
+                  <div class="rb-section-label">Trigger</div>
+                  <div class="rb-trigger"><svg viewBox="0 0 10 10" fill="none" width="12" height="12"><circle cx="5" cy="5" r="3.5" stroke="#4F38A2" stroke-width="1.3"/><path d="M5 3v2l1.5 1" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="rb-trigger-text">Renewal date field = <strong>30 days from today</strong></span></div>
+                  <div class="rb-section-label">Actions</div>
+                  <div class="rb-actions">
+                    <div class="rb-action"><div class="rb-action-icon" style="background:#25D366;"><svg viewBox="0 0 10 10" fill="white" width="8" height="8"><path d="M9 4.5a3.8 3.8 0 01-.62 2.07L9 9l-2.6-.62A3.8 3.8 0 115 .7 3.8 3.8 0 019 4.5z"/></svg></div><span class="rb-action-text">Send WhatsApp — <em>Renewal reminder template</em></span></div>
+                    <div class="rb-action"><div class="rb-action-icon" style="background:var(--v500);"><svg viewBox="0 0 10 10" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" width="8" height="8"><rect x="1.5" y="2" width="7" height="7" rx="1"/><path d="M1.5 4.5h7M3.5 2V1M6.5 2V1"/></svg></div><span class="rb-action-text">Create task — <em>Follow up on renewal</em> · +3 days</span></div>
+                    <div class="rb-action"><div class="rb-action-icon" style="background:var(--v300);"><svg viewBox="0 0 10 10" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" width="8" height="8"><path d="M5 1a2.5 2.5 0 110 5 2.5 2.5 0 010-5zM1 9c0-1.8 1.8-3 4-3s4 1.2 4 3"/></svg></div><span class="rb-action-text">Notify manager — <em>Renewal due alert</em></span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     03 — WHATSAPP AUTOMATION
+     bg: white
+════════════════════════════════════ -->
+<section class="s-white">
+  <div class="inner">
+    <div class="s-stack">
+      <div>
+        <div class="s-eye">03 — WhatsApp Automation</div>
+        <h2 class="s-h2">The right message.<br><em>Sent automatically, every time.</em></h2>
+        <p class="s-body">telecrm uses WhatsApp Cloud API to send automated messages triggered by stage changes, lead activity, or scheduled delays — welcome messages, demo reminders, payment nudges, drip sequences — all without rep involvement, all logged to the lead timeline.</p>
+        <ul class="fbullets">
+
+          <li>
+            <div class="li-head"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 2h7a.5.5 0 01.5.5v4a.5.5 0 01-.5.5H3.5L1.5 8.5V2.5a.5.5 0 01.5-.5z" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div class="li-title">Welcome messages on lead capture.</div><div class="li-body">The moment a new lead enters telecrm — from any source — an automated WhatsApp fires immediately. First response time drops to zero. Every lead is acknowledged before a rep even opens the CRM.</div></div></div>
+            <div class="mv">
+              <div class="mv-label">Auto-triggered — new lead captured</div>
+              <div style="display:flex;justify-content:flex-start;"><div style="background:#DCF8C6;border-radius:10px 10px 10px 2px;padding:9px 12px;max-width:280px;">
+                <div style="font-size:12px;color:#1a1a1a;line-height:1.6;">Hi Rahul! 👋 Thanks for your interest in telecrm. One of our team members will be in touch shortly — in the meantime, feel free to reply with any questions.</div>
+                <div style="font-size:10px;color:#667;margin-top:4px;text-align:right;">✓✓ Delivered · 0s after capture</div>
+              </div></div>
+            </div>
+          </li>
+
+          <li>
+            <div class="li-head"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1.5L9 3.5 5 5.5 1 3.5z" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 6.5l4 2 4-2" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div class="li-title">Stage-triggered template messages.</div><div class="li-body">Each stage in your pipeline can have a WhatsApp template attached — the message fires automatically when the lead moves in. Proposal confirmation, demo reminder, payment due notice — all templated, all automatic.</div></div></div>
+            <div class="mv">
+              <div class="mv-label">Stage trigger → WhatsApp template</div>
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;padding:8px 10px;background:var(--v50);border:1.5px solid var(--v100);border-radius:8px;">
+                <svg viewBox="0 0 10 10" fill="none" width="12" height="12"><path d="M5 1L9 4H7v5H3V4H1z" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span style="font-size:11px;color:var(--v900);">Lead enters <strong>Demo Scheduled</strong></span>
+                <svg viewBox="0 0 10 6" fill="none" width="10" height="6" style="margin-left:auto;"><path d="M1 1l4 4 4-4" stroke="#9C8FCF" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div style="display:flex;justify-content:flex-start;"><div style="background:#DCF8C6;border-radius:10px 10px 10px 2px;padding:9px 12px;max-width:280px;">
+                <div style="font-size:12px;color:#1a1a1a;line-height:1.6;">Hi Priya! Your demo is confirmed for <strong>Friday at 11AM</strong>. We'll send you the link 30 minutes before. Reply to reschedule if needed.</div>
+                <div style="font-size:10px;color:#667;margin-top:4px;text-align:right;">✓✓ Sent automatically</div>
+              </div></div>
+            </div>
+          </li>
+
+          <li>
+            <div class="li-head"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><circle cx="3" cy="2" r="1" stroke="#4F38A2" stroke-width="1.2"/><circle cx="3" cy="5" r="1" stroke="#4F38A2" stroke-width="1.2"/><circle cx="3" cy="8" r="1" stroke="#4F38A2" stroke-width="1.2"/><path d="M4 2h4M4 5h4M4 8h4" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round"/></svg></span><div><div class="li-title">Every automated message logged to the lead timeline.</div><div class="li-body">Every WhatsApp sent by an automation — template message, reminder, drip step — is recorded on the lead's activity timeline with timestamp and delivery status. Reps always know exactly what the lead has received.</div></div></div>
+            <div class="mv">
+              <div class="mv-label">Lead timeline — Priya S.</div>
+              <div style="display:flex;flex-direction:column;gap:0;">
+                <div style="display:flex;align-items:center;gap:8px;padding:8px 10px;border-bottom:1px solid var(--border);background:#fff;border-radius:8px 8px 0 0;"><div style="width:7px;height:7px;border-radius:50%;background:#25D366;flex-shrink:0;"></div><span style="font-size:11px;color:var(--grey);flex:1;">WA auto: Demo confirmation sent</span><span style="font-size:10px;color:var(--grey2);">9:00 AM</span></div>
+                <div style="display:flex;align-items:center;gap:8px;padding:8px 10px;border-bottom:1px solid var(--border);background:#fff;"><div style="width:7px;height:7px;border-radius:50%;background:#25D366;flex-shrink:0;"></div><span style="font-size:11px;color:var(--grey);flex:1;">WA auto: Reminder sent (30 min before)</span><span style="font-size:10px;color:var(--grey2);">10:30 AM</span></div>
+                <div style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:#fff;border-radius:0 0 8px 8px;"><div style="width:7px;height:7px;border-radius:50%;background:var(--v400);flex-shrink:0;"></div><span style="font-size:11px;color:var(--grey);flex:1;">WA received: "Yes, I'll be there"</span><span style="font-size:10px;color:var(--grey2);">10:32 AM</span></div>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="li-head"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><rect x="1.5" y="2" width="7" height="7" rx=".8" stroke="#4F38A2" stroke-width="1.3"/><path d="M1.5 4.5h7M3.5 2V1M6.5 2V1"/></svg></span><div><div class="li-title">Appointment & meeting reminders.</div><div class="li-body">Send automatic WhatsApp reminders before a scheduled demo, call-back, or in-person meeting — 24 hours before, 1 hour before, or any custom window you set. Leads show up. No-shows drop.</div></div></div>
+            <div class="mv">
+              <div class="mv-label">Appointment reminder sequence</div>
+              <div style="display:flex;flex-direction:column;gap:6px;">
+                <div style="display:flex;align-items:center;gap:8px;padding:7px 10px;background:#fff;border:1.5px solid var(--border);border-radius:7px;"><span style="font-family:var(--font-head);font-size:9px;font-weight:700;background:var(--v50);color:var(--v500);padding:2px 7px;border-radius:4px;white-space:nowrap;">−24h</span><span style="font-size:11px;color:var(--grey);">Your demo is tomorrow at 11AM — see you then!</span></div>
+                <div style="display:flex;align-items:center;gap:8px;padding:7px 10px;background:#fff;border:1.5px solid var(--border);border-radius:7px;"><span style="font-family:var(--font-head);font-size:9px;font-weight:700;background:var(--v50);color:var(--v500);padding:2px 7px;border-radius:4px;white-space:nowrap;">−1h</span><span style="font-size:11px;color:var(--grey);">Starting in 1 hour — here's your meeting link: [Link]</span></div>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="li-head"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1.5c-1.9 0-3.5 1.6-3.5 3.5s1.6 3.5 3.5 3.5 3.5-1.6 3.5-3.5" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round"/><path d="M5 3v2l1.2.8" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 1l1.5 1.5L7 4" stroke="#4F38A2" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div class="li-title">Lifecycle reminders — EMI, SIP, insurance renewals.</div><div class="li-body">For financial services, insurance, and subscription businesses — set date-based automations that send reminders as an EMI due date, SIP installment, or policy renewal approaches. Configured once, runs every cycle without rep involvement.</div></div></div>
+            <div class="mv">
+              <div class="mv-label">Recurring lifecycle reminders</div>
+              <div style="display:flex;flex-direction:column;gap:5px;">
+                <div style="display:flex;align-items:center;gap:8px;padding:7px 10px;background:#fff;border:1.5px solid var(--border);border-radius:7px;"><span style="font-family:var(--font-head);font-size:9px;font-weight:700;background:rgba(245,158,11,.1);color:#D97706;padding:2px 7px;border-radius:4px;white-space:nowrap;">EMI due −3 days</span><span style="font-size:10px;color:var(--grey);">Your EMI of ₹12,400 is due on the 15th.</span></div>
+                <div style="display:flex;align-items:center;gap:8px;padding:7px 10px;background:#fff;border:1.5px solid var(--border);border-radius:7px;"><span style="font-family:var(--font-head);font-size:9px;font-weight:700;background:rgba(245,158,11,.1);color:#D97706;padding:2px 7px;border-radius:4px;white-space:nowrap;">SIP deduction −1 day</span><span style="font-size:10px;color:var(--grey);">Your SIP of ₹5,000 will be debited tomorrow.</span></div>
+                <div style="display:flex;align-items:center;gap:8px;padding:7px 10px;background:#fff;border:1.5px solid var(--border);border-radius:7px;"><span style="font-family:var(--font-head);font-size:9px;font-weight:700;background:rgba(239,68,68,.08);color:#EF4444;padding:2px 7px;border-radius:4px;white-space:nowrap;">Policy renewal −30 days</span><span style="font-size:10px;color:var(--grey);">Your policy expires in 30 days — renew now.</span></div>
+              </div>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     04 — DRIP CAMPAIGNS
+     bg: #F8F7FC
+════════════════════════════════════ -->
+<section class="s-tint">
+  <div class="inner">
+    <div class="s-stack">
+      <div>
+        <div class="s-eye">04 — Drip Campaigns</div>
+        <h2 class="s-h2">Multi-step sequences that run themselves<br><em>over days, weeks or months.</em></h2>
+        <p class="s-body">Build WhatsApp drip campaigns that send a sequence of messages over days or weeks — triggered by a stage entry and then automatic from there. Cold leads get nurtured back to life. Warm leads stay warm. No rep needs to remember to follow up.</p>
+        <ul class="fbullets">
+
+          <li>
+            <div class="li-head"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><circle cx="3" cy="2.5" r="1.2" stroke="#4F38A2" stroke-width="1.2"/><circle cx="3" cy="7.5" r="1.2" stroke="#4F38A2" stroke-width="1.2"/><path d="M3 3.7v2.6" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round"/><path d="M4.2 2.5h3.5M4.2 7.5h3.5" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round"/></svg></span><div><div class="li-title">Multi-step sequences over days, weeks or months.</div><div class="li-body">Configure a sequence of messages with delays between each — Day 1, Day 3, Day 7. Each message fires automatically on schedule from the moment the trigger fires. No rep involvement after setup.</div></div></div>
+            <div class="mv">
+              <div class="mv-label">Drip sequence — "Cold lead reactivation"</div>
+              <div class="drip">
+                <div class="drip-step">
+                  <div class="drip-step-line"><div class="drip-dot"></div><div class="drip-connector"></div></div>
+                  <div class="drip-content"><div class="drip-day">Day 0 — Immediate</div><div class="drip-msg">Hi {{name}}, we noticed you were interested in telecrm. Still looking for a CRM? We'd love to help.</div></div>
+                </div>
+                <div class="drip-step">
+                  <div class="drip-step-line"><div class="drip-dot" style="background:var(--v300);"></div><div class="drip-connector"></div></div>
+                  <div class="drip-content"><div class="drip-day">Day 3</div><div class="drip-msg">Here's a 2-minute overview of what telecrm can do for your sales team. [Link]</div></div>
+                </div>
+                <div class="drip-step">
+                  <div class="drip-step-line"><div class="drip-dot" style="background:var(--v200);"></div></div>
+                  <div class="drip-content"><div class="drip-day">Day 7</div><div class="drip-msg">Want to see it live? Book a 30-min demo — no obligation. [Book now]</div></div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="li-head"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M6.5 1.5l2 2L3 9H1v-2l5.5-5.5z" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div class="li-title">Stop the sequence on a reply or stage change.</div><div class="li-body">If a lead replies or is moved to a new stage, the drip sequence stops automatically. Leads that re-engage don't get bombarded with the rest of the sequence — the system knows to stop.</div></div></div>
+            <div class="mv">
+              <div class="mv-label">Sequence auto-stopped</div>
+              <div style="background:rgba(34,197,94,.06);border:1.5px solid rgba(34,197,94,.2);border-radius:8px;padding:9px 12px;display:flex;align-items:center;gap:8px;">
+                <div style="width:8px;height:8px;border-radius:50%;background:#22C55E;flex-shrink:0;"></div>
+                <span style="font-family:var(--font-head);font-size:11px;font-weight:700;color:#16A34A;">Lead replied — drip sequence paused automatically</span>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="li-head"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><rect x="1" y="1.5" width="8" height="2" rx=".5" stroke="#4F38A2" stroke-width="1.2"/><rect x="2" y="4.5" width="6" height="1.5" rx=".5" stroke="#4F38A2" stroke-width="1.2"/><rect x="3.5" y="7" width="3" height="1.5" rx=".5" stroke="#4F38A2" stroke-width="1.2"/></svg></span><div><div class="li-title">Personalised at scale with template variables.</div><div class="li-body">Every message in a drip sequence can use merge fields — name, company, stage, assigned rep — so each message feels personal even when it's sent to hundreds of leads simultaneously.</div></div></div>
+            <div class="mv">
+              <div class="mv-label">Template with variables</div>
+              <div style="background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:9px 12px;">
+                <div style="font-size:12px;color:var(--grey);line-height:1.6;">Hi <span style="font-family:var(--font-head);font-weight:700;color:var(--v500);background:var(--v50);padding:1px 5px;border-radius:4px;">{{name}}</span>, your demo with <span style="font-family:var(--font-head);font-weight:700;color:var(--v500);background:var(--v50);padding:1px 5px;border-radius:4px;">{{rep_name}}</span> is tomorrow at <span style="font-family:var(--font-head);font-weight:700;color:var(--v500);background:var(--v50);padding:1px 5px;border-radius:4px;">{{time}}</span>. Looking forward to speaking!</div>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="li-head"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M5 2v3M5 5l-2.5 3M5 5l2.5 3" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="5" cy="2" r="1" stroke="#4F38A2" stroke-width="1.1"/></svg></span><div><div class="li-title">Branch the sequence based on user action or response.</div><div class="li-body">Drip campaigns can fork based on what the lead does — if they reply, open a link, or move to a stage, the sequence takes a different path. One branch for engaged leads, another for silent ones. The right next message is determined by what the lead just did, not by a fixed schedule.</div></div></div>
+            <div class="mv">
+              <div class="mv-label">Branching drip — based on lead response</div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:0;">
+                <!-- Root message -->
+                <div style="background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:8px 12px;width:100%;margin-bottom:4px;">
+                  <div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--v400);text-transform:uppercase;margin-bottom:3px;">Day 0 — Send to Fresh leads with Sales Team field empty</div>
+                  <div style="font-size:11px;color:var(--v900);">Hi {{name}}, still looking for a CRM? We'd love to show you telecrm.</div>
+                </div>
+                <!-- Branch indicator -->
+                <div style="display:flex;align-items:center;gap:0;width:100%;margin-bottom:4px;">
+                  <div style="flex:1;height:1px;background:var(--border);"></div>
+                  <div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);padding:0 8px;white-space:nowrap;">Lead responds?</div>
+                  <div style="flex:1;height:1px;background:var(--border);"></div>
+                </div>
+                <!-- Two branches -->
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;width:100%;">
+                  <div style="background:rgba(34,197,94,.05);border:1.5px solid rgba(34,197,94,.2);border-radius:8px;padding:8px 10px;">
+                    <div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:#16A34A;margin-bottom:4px;">✓ Yes — replied</div>
+                    <div style="font-size:10px;color:var(--grey);line-height:1.5;">Route to rep · Create call task · Stop drip</div>
+                  </div>
+                  <div style="background:rgba(245,158,11,.05);border:1.5px solid rgba(245,158,11,.2);border-radius:8px;padding:8px 10px;">
+                    <div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:#D97706;margin-bottom:4px;">✗ No response</div>
+                    <div style="font-size:10px;color:var(--grey);line-height:1.5;">Day 3 · Send follow-up · Continue sequence</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- ═══════════════════════════════════
+     05 — SCHEDULES
+     bg: white
+════════════════════════════════════ -->
+<section class="s-white">
+  <div class="inner">
+    <div class="s-stack">
+      <div>
+        <div class="s-eye">05 — Schedules</div>
+        <h2 class="s-h2">Bulk sends. Perfectly timed.<br><em>Always targeted.</em></h2>
+        <p class="s-body">Schedules are telecrm's timestamp-based automation — different from workflows, which fire on events or actions. A schedule fires at a specific date and time, against a filtered set of leads, and is designed for bulk operations like mass WhatsApp sends, reminders, and periodic updates. Simple, powerful, and no decision logic required.</p>
+        <ul class="fbullets">
+
+          <li>
+            <div class="li-head"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="3.5" stroke="#4F38A2" stroke-width="1.3"/><path d="M5 3v2l1.5 1" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div class="li-title">Schedules vs workflows — the key difference.</div><div class="li-body">A workflow fires when something happens — a lead moves to a stage, a form is submitted, a task expires. A schedule fires at a specific timestamp, regardless of what the lead is doing. Workflows are event-driven; schedules are time-driven. Both are necessary; neither replaces the other.</div></div></div>
+            <div class="mv">
+              <div class="mv-label">Workflow vs Schedule — at a glance</div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+                <div style="background:#fff;border:1.5px solid var(--v200);border-radius:8px;padding:10px 12px;">
+                  <div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--v500);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;">Workflow</div>
+                  <div style="font-size:11px;color:var(--grey);line-height:1.6;">Fires on an <strong style="color:var(--v900);">event or action</strong> — stage move, form submit, task expiry</div>
+                  <div style="margin-top:6px;display:flex;flex-direction:column;gap:3px;">
+                    <div style="font-family:var(--font-head);font-size:9px;color:var(--grey2);">✓ Decision branching</div>
+                    <div style="font-family:var(--font-head);font-size:9px;color:var(--grey2);">✓ Multi-action chains</div>
+                    <div style="font-family:var(--font-head);font-size:9px;color:var(--grey2);">✓ Conditional logic</div>
+                  </div>
+                </div>
+                <div style="background:#fff;border:1.5px solid var(--v200);border-radius:8px;padding:10px 12px;">
+                  <div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--v500);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;">Schedule</div>
+                  <div style="font-size:11px;color:var(--grey);line-height:1.6;">Fires at a specific <strong style="color:var(--v900);">timestamp</strong> — date, time, recurring</div>
+                  <div style="margin-top:6px;display:flex;flex-direction:column;gap:3px;">
+                    <div style="font-family:var(--font-head);font-size:9px;color:var(--grey2);">✓ Filter-based targeting</div>
+                    <div style="font-family:var(--font-head);font-size:9px;color:var(--grey2);">✓ Bulk operations</div>
+                    <div style="font-family:var(--font-head);font-size:9px;color:var(--grey2);">✗ No decision branching</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="li-head"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 5h7M1.5 3h7M1.5 7h5" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round"/></svg></span><div><div class="li-title">Requires a filter — always targeted, never blind.</div><div class="li-body">Every schedule must define a filter before it can run — stage, source, label, city, date field, or any custom field. The schedule fires only against leads that match the filter at execution time. A schedule cannot run without a filter, and will not run if the filtered lead count exceeds 10,000.</div></div></div>
+            <div class="mv">
+              <div class="mv-label">Schedule filter configuration</div>
+              <div style="display:flex;flex-direction:column;gap:6px;padding:10px 12px;background:#fff;border:1.5px solid var(--border);border-radius:8px;">
+                <div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;letter-spacing:.06em;">Filter conditions</div>
+                <div style="display:flex;gap:5px;flex-wrap:wrap;">
+                  <span style="font-family:var(--font-head);font-size:10px;font-weight:700;background:var(--v50);color:var(--v500);border:1.5px solid var(--v100);padding:3px 9px;border-radius:6px;">Stage = Active</span>
+                  <span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--grey2);">AND</span>
+                  <span style="font-family:var(--font-head);font-size:10px;font-weight:700;background:var(--v50);color:var(--v500);border:1.5px solid var(--v100);padding:3px 9px;border-radius:6px;">Source = Facebook</span>
+                </div>
+                <div style="display:flex;align-items:center;justify-content:space-between;padding:6px 0;border-top:1px solid var(--border);margin-top:2px;">
+                  <span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);">Matching leads</span>
+                  <span style="font-family:var(--font-head);font-size:14px;font-weight:900;color:var(--v500);">847</span>
+                </div>
+                <div style="background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.2);border-radius:6px;padding:5px 8px;display:flex;align-items:center;gap:6px;"><div style="width:6px;height:6px;border-radius:50%;background:#22C55E;flex-shrink:0;"></div><span style="font-family:var(--font-head);font-size:9px;font-weight:700;color:#16A34A;">Ready to schedule · Under 10,000 lead limit</span></div>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="li-head"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 3h7v6H1.5z" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M3.5 3V1.5M6.5 3V1.5M1.5 5.5h7" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round"/></svg></span><div><div class="li-title">Built for bulk operations.</div><div class="li-body">Schedules are the right tool for bulk WhatsApp sends, festive wishes, batch reminders, and periodic updates to a segment of your leads. Set the filter, set the timestamp, set the message — it fires once to all matching leads at that moment.</div></div></div>
+            <div class="mv">
+              <div class="mv-label">Bulk WhatsApp schedule</div>
+              <div style="display:flex;flex-direction:column;gap:6px;">
+                <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:var(--v50);border:1.5px solid var(--v100);border-radius:8px;">
+                  <span style="font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v900);">Diwali wishes — all active leads</span>
+                  <span style="font-family:var(--font-head);font-size:9px;font-weight:700;background:var(--v500);color:#fff;padding:2px 8px;border-radius:100px;">847 leads</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1.5px solid var(--border);border-radius:8px;">
+                  <svg viewBox="0 0 10 10" fill="none" width="12" height="12"><circle cx="5" cy="5" r="3.5" stroke="#4F38A2" stroke-width="1.3"/><path d="M5 3v2l1.5 1" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span style="font-size:11px;color:var(--grey);">Fires at: <strong style="color:var(--v900);">20 Oct · 9:00 AM</strong></span>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:#fff;border:1.5px solid var(--border);border-radius:8px;">
+                  <div style="width:18px;height:18px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg viewBox="0 0 10 10" fill="white" width="8" height="8"><path d="M9 4.5a3.8 3.8 0 01-.62 2.07L9 9l-2.6-.62A3.8 3.8 0 115 .7 3.8 3.8 0 019 4.5z"/></svg></div>
+                  <span style="font-size:11px;color:var(--grey);">WA template: <em>Festive wishes</em></span>
+                </div>
+                <div style="background:rgba(239,68,68,.05);border:1px solid rgba(239,68,68,.15);border-radius:6px;padding:5px 8px;display:flex;align-items:center;gap:6px;"><svg viewBox="0 0 10 10" fill="none" stroke="#EF4444" stroke-width="1.3" stroke-linecap="round" width="10" height="10"><path d="M5 1.5L9 8H1z"/><path d="M5 4.5v1.5"/><circle cx="5" cy="7.5" r=".3" fill="#EF4444"/></svg><span style="font-family:var(--font-head);font-size:9px;font-weight:700;color:#EF4444;">Will not run if filtered leads exceed 10,000</span></div>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="li-head"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M2 7.5l2.5-3 2 1.5L9 2" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div class="li-title">Timely updates and wishes to leads.</div><div class="li-body">Use schedules to send birthday wishes, anniversary congratulations, festive greetings, or periodic check-ins to a filtered segment. Because schedules are timestamp-driven and filter-targeted, they feel personal even at scale — the right message, to the right leads, at the right moment.</div></div></div>
+            <div class="mv">
+              <div class="mv-label">Schedule use cases</div>
+              <div style="display:flex;gap:6px;flex-wrap:wrap;">
+                <span class="chip chip--purple">Birthday wishes</span>
+                <span class="chip chip--purple">Anniversary wishes</span>
+                <span class="chip chip--purple">Festive greetings</span>
+                <span class="chip chip--purple">Product updates</span>
+                <span class="chip chip--purple">Periodic check-ins</span>
+                <span class="chip chip--purple">Event invitations</span>
+              </div>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ═══════════════════════════════════
+     05 — SALES FORMS & SCHEDULED ACTIONS
+     bg: white
+════════════════════════════════════ -->
+<section class="s-tint">
+  <div class="inner">
+    <div class="s-stack">
+      <div>
+        <div class="s-eye">06 — Sales Forms Automation</div>
+        <h2 class="s-h2">Forms that do more<br><em>than just collect data.</em></h2>
+        <p class="s-body">telecrm sales forms are connected directly to the automation engine. The moment a lead submits — an enquiry, a demo request, a contact form — a workflow fires: assign the lead, send a WhatsApp, create a task, move to stage. Beyond capture, sales forms power recurring automations for reminders, lifecycle events, and welcome messages — all without a rep lifting a finger.</p>
+        <ul class="fbullets">
+
+          <li>
+            <div class="li-head"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><rect x="1.5" y="1.5" width="7" height="7" rx=".8" stroke="#4F38A2" stroke-width="1.3"/><path d="M3.5 3.5h3M3.5 5h2" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round"/></svg></span><div><div class="li-title">Form submission triggers a workflow instantly.</div><div class="li-body">Every telecrm sales form is connected to the automation engine. When a lead submits a form — enquiry, contact us, demo request — a configured workflow fires immediately: assign the lead, move it to a stage, send a welcome WhatsApp, create a follow-up task.</div></div></div>
+            <div class="mv">
+              <div class="mv-label">Form submit → automation fires</div>
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;padding:9px 12px;background:var(--v50);border:1.5px solid var(--v100);border-radius:8px;display:flex;align-items:center;gap:8px;">
+                <svg viewBox="0 0 10 10" fill="none" width="12" height="12"><rect x="1.5" y="1.5" width="7" height="7" rx=".8" stroke="#4F38A2" stroke-width="1.3"/><path d="M3.5 3.5h3M3.5 5h2" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round"/></svg>
+                <span style="font-size:11px;color:var(--v900);">Lead submits <strong>Demo Request</strong> form</span>
+              </div>
+              <div class="flow">
+                <div class="flow-node"><div class="flow-node-icon" style="background:#F59E0B;"><svg viewBox="0 0 10 10" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" width="8" height="8"><path d="M5 1a2.5 2.5 0 110 5 2.5 2.5 0 010-5zM1 9c0-1.8 1.8-3 4-3s4 1.2 4 3"/></svg></div><span class="flow-node-text">Auto-assign to next rep in rotation</span></div>
+                <div class="flow-arrow"><svg viewBox="0 0 10 16" fill="none" width="10" height="16"><path d="M5 1v10M2 8l3 5 3-5" stroke="#9C8FCF" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div class="flow-node"><div class="flow-node-icon" style="background:#25D366;"><svg viewBox="0 0 10 10" fill="white" width="8" height="8"><path d="M9 4.5a3.8 3.8 0 01-.62 2.07L9 9l-2.6-.62A3.8 3.8 0 115 .7 3.8 3.8 0 019 4.5z"/></svg></div><span class="flow-node-text">Send WhatsApp — <em>Thank you for your enquiry</em></span></div>
+                <div class="flow-arrow"><svg viewBox="0 0 10 16" fill="none" width="10" height="16"><path d="M5 1v10M2 8l3 5 3-5" stroke="#9C8FCF" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                <div class="flow-node"><div class="flow-node-icon" style="background:var(--v500);"><svg viewBox="0 0 10 10" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" width="8" height="8"><rect x="1.5" y="2" width="7" height="7" rx="1"/><path d="M1.5 4.5h7M3.5 2V1M6.5 2V1"/></svg></div><span class="flow-node-text">Create task — <em>Call within 2 hours</em></span></div>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="li-head"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1a2.5 2.5 0 110 5 2.5 2.5 0 010-5zM1 9c0-1.8 1.8-3 4-3s4 1.2 4 3" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round"/></svg></span><div><div class="li-title">Auto lead assignment & distribution.</div><div class="li-body">The moment a form is submitted, telecrm assigns the lead automatically — round-robin across reps, or rule-based by source, geography, or any field. No manager needs to touch it. No lead sits unassigned.</div></div></div>
+            <div class="mv">
+              <div class="mv-label">Form submit → auto assign</div>
+              <div style="display:flex;align-items:center;gap:8px;padding:8px 12px;background:var(--v50);border:1.5px solid var(--v100);border-radius:8px;margin-bottom:6px;"><span style="font-size:11px;color:var(--v900);">Demo Request form submitted</span></div>
+              <div style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:#fff;border:1.5px solid var(--border);border-radius:7px;"><div style="width:20px;height:20px;border-radius:50%;background:#7260B5;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:7px;font-weight:800;color:#fff;flex-shrink:0;">AK</div><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);flex:1;">Assigned to Ahmed Khan</span><span style="font-family:var(--font-head);font-size:9px;font-weight:700;background:rgba(34,197,94,.1);color:#16A34A;padding:2px 8px;border-radius:100px;">Auto · 0s</span></div>
+            </div>
+          </li>
+
+          <li>
+            <div class="li-head"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1.5L9 3.5 5 5.5 1 3.5z" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 6.5l4 2 4-2" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div class="li-title">Welcome message via WhatsApp API.</div><div class="li-body">Send an automated welcome message to every lead the moment their form is submitted — via WhatsApp Cloud API. First contact happens in seconds, before a rep even opens the CRM. Consistent, immediate, and always on.</div></div></div>
+            <div class="mv">
+              <div class="mv-label">Auto welcome — sent on form submit</div>
+              <div style="display:flex;justify-content:flex-start;"><div style="background:#DCF8C6;border-radius:10px 10px 10px 2px;padding:9px 12px;max-width:280px;"><div style="font-size:12px;color:#1a1a1a;line-height:1.6;">Hi Rahul! 👋 Thanks for your interest. Our team will be in touch shortly. Feel free to reply with any questions!</div><div style="font-size:10px;color:#667;margin-top:4px;text-align:right;">✓✓ Delivered · 0s after submit</div></div></div>
+            </div>
+          </li>
+
+          <li>
+            <div class="li-head"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M5 2.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3z" stroke="#4F38A2" stroke-width="1.2"/><path d="M1.5 8c.5-1.5 1.8-2.5 3.5-2.5s3 1 3.5 2.5" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round"/><path d="M7.5 1.5l.7.7M8 3h1M7.5 4.5l.7-.7" stroke="#4F38A2" stroke-width="1.1" stroke-linecap="round"/></svg></span><div><div class="li-title">Birthday & anniversary reminders.</div><div class="li-body">Collect date-of-birth and anniversary fields via the sales form, then configure a recurring schedule to send a personalised WhatsApp wish on the exact date every year. Automated, personal, and zero rep effort after setup.</div></div></div>
+            <div class="mv">
+              <div class="mv-label">Recurring date-based reminders</div>
+              <div style="display:flex;flex-direction:column;gap:5px;">
+                <div style="display:flex;align-items:center;gap:8px;padding:7px 10px;background:#fff;border:1.5px solid var(--border);border-radius:7px;"><span style="font-family:var(--font-head);font-size:9px;font-weight:700;background:rgba(236,72,153,.1);color:#DB2777;padding:2px 7px;border-radius:4px;white-space:nowrap;">Birthday · annually</span><span style="font-size:10px;color:var(--grey);">Happy Birthday {{name}}! 🎂 Wishing you a wonderful year.</span></div>
+                <div style="display:flex;align-items:center;gap:8px;padding:7px 10px;background:#fff;border:1.5px solid var(--border);border-radius:7px;"><span style="font-family:var(--font-head);font-size:9px;font-weight:700;background:rgba(139,92,246,.1);color:#7C3AED;padding:2px 7px;border-radius:4px;white-space:nowrap;">Anniversary · annually</span><span style="font-size:10px;color:var(--grey);">Happy Anniversary {{name}}! 🎉 Thank you for being with us.</span></div>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="li-head"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1.5c-1.9 0-3.5 1.6-3.5 3.5s1.6 3.5 3.5 3.5 3.5-1.6 3.5-3.5" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round"/><path d="M5 3v2l1.2.8" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 1l1.5 1.5L7 4" stroke="#4F38A2" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div class="li-title">SIP, EMI & insurance premium reminders.</div><div class="li-body">Capture due dates via the sales form — SIP deduction dates, EMI due dates, policy renewal dates — and configure recurring WhatsApp reminders to fire X days before each. Runs every cycle automatically, forever, without a rep remembering to follow up.</div></div></div>
+            <div class="mv">
+              <div class="mv-label">Recurring financial reminders</div>
+              <div style="display:flex;flex-direction:column;gap:5px;">
+                <div style="display:flex;align-items:center;gap:8px;padding:7px 10px;background:#fff;border:1.5px solid var(--border);border-radius:7px;"><span style="font-family:var(--font-head);font-size:9px;font-weight:700;background:rgba(245,158,11,.1);color:#D97706;padding:2px 7px;border-radius:4px;white-space:nowrap;">SIP −1 day</span><span style="font-size:10px;color:var(--grey);">Your SIP of ₹5,000 will be debited tomorrow. Ensure your account has sufficient balance.</span></div>
+                <div style="display:flex;align-items:center;gap:8px;padding:7px 10px;background:#fff;border:1.5px solid var(--border);border-radius:7px;"><span style="font-family:var(--font-head);font-size:9px;font-weight:700;background:rgba(245,158,11,.1);color:#D97706;padding:2px 7px;border-radius:4px;white-space:nowrap;">EMI −3 days</span><span style="font-size:10px;color:var(--grey);">Your EMI of ₹12,400 is due on the 15th. Please ensure timely payment.</span></div>
+                <div style="display:flex;align-items:center;gap:8px;padding:7px 10px;background:#fff;border:1.5px solid var(--border);border-radius:7px;"><span style="font-family:var(--font-head);font-size:9px;font-weight:700;background:rgba(239,68,68,.08);color:#EF4444;padding:2px 7px;border-radius:4px;white-space:nowrap;">Policy −30 days</span><span style="font-size:10px;color:var(--grey);">Your insurance policy expires in 30 days. Renew now to stay covered.</span></div>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="li-head"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><rect x="1.5" y="2" width="7" height="7" rx=".8" stroke="#4F38A2" stroke-width="1.3"/><path d="M1.5 4.5h7M3.5 2V1M6.5 2V1"/></svg></span><div><div class="li-title">Meeting & appointment reminders.</div><div class="li-body">Capture meeting date and time via the sales form, then fire automatic WhatsApp reminders — 24 hours before, 1 hour before, or any custom window. No-shows drop. Reps spend less time chasing confirmations.</div></div></div>
+            <div class="mv">
+              <div class="mv-label">Appointment reminder sequence</div>
+              <div style="display:flex;flex-direction:column;gap:5px;">
+                <div style="display:flex;align-items:center;gap:8px;padding:7px 10px;background:#fff;border:1.5px solid var(--border);border-radius:7px;"><span style="font-family:var(--font-head);font-size:9px;font-weight:700;background:var(--v50);color:var(--v500);padding:2px 7px;border-radius:4px;white-space:nowrap;">−24h</span><span style="font-size:10px;color:var(--grey);">Your demo with our team is tomorrow at 11AM. Looking forward to it!</span></div>
+                <div style="display:flex;align-items:center;gap:8px;padding:7px 10px;background:#fff;border:1.5px solid var(--border);border-radius:7px;"><span style="font-family:var(--font-head);font-size:9px;font-weight:700;background:var(--v50);color:var(--v500);padding:2px 7px;border-radius:4px;white-space:nowrap;">−1h</span><span style="font-size:10px;color:var(--grey);">Starting in 1 hour — here's your link: [Join meeting]</span></div>
+              </div>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ═══════════════════════════════════
+     05 — LEAD ASSIGNMENT AUTOMATION
+     bg: white
+════════════════════════════════════ -->
+<section class="s-white">
+  <div class="inner">
+    <div class="s-stack">
+      <div>
+        <div class="s-eye">07 — Lead Assignment Automation</div>
+        <h2 class="s-h2">Every lead assigned<br><em>the moment it arrives.</em></h2>
+        <p class="s-body">telecrm auto-assigns leads the instant they're captured — by source, by geography, by product interest, or in a round-robin rotation. No manager has to touch a lead to send it to the right rep. No lead sits unassigned while the team is busy.</p>
+        <ul class="fbullets">
+
+          <li>
+            <div class="li-head"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M7.5 3.5A3.2 3.2 0 105 8.2" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round"/><path d="M7.5 1.5v2h-2" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div class="li-title">Round-robin assignment.</div><div class="li-body">Leads are distributed evenly across your team in rotation — rep 1, rep 2, rep 3, repeat. Every rep gets an equal share of the incoming volume, automatically, without anyone managing the queue.</div></div></div>
+            <div class="mv">
+              <div class="mv-label">Round-robin — 3 reps in rotation</div>
+              <div style="display:flex;flex-direction:column;gap:5px;">
+                <div class="assign-row"><div class="assign-av" style="background:#7260B5;">AK</div><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);flex:1;">Ahmed Khan</span><span style="font-family:var(--font-head);font-size:9px;font-weight:700;background:rgba(34,197,94,.1);color:#16A34A;padding:2px 8px;border-radius:100px;">Next up ●</span></div>
+                <div class="assign-row"><div class="assign-av" style="background:#4F38A2;">SB</div><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);flex:1;">Subu Rajan</span><span style="font-family:var(--font-head);font-size:9px;color:var(--grey2);">Last assigned</span></div>
+                <div class="assign-row"><div class="assign-av" style="background:#9C8FCF;">PR</div><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);flex:1;">Preethi R.</span><span style="font-family:var(--font-head);font-size:9px;color:var(--grey2);">2 ago</span></div>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="li-head"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1.5L9 3.5 5 5.5 1 3.5z" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 6.5l4 2 4-2" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div class="li-title">Rule-based assignment by source or field.</div><div class="li-body">Set rules that assign leads based on where they came from, what geography they're in, or any custom field — Facebook leads go to the digital team, Delhi leads go to the north region rep, ₹10L+ budget leads go to senior reps.</div></div></div>
+            <div class="mv">
+              <div class="mv-label">Assignment rules</div>
+              <div style="display:flex;flex-direction:column;gap:5px;">
+                <div style="display:flex;align-items:center;gap:6px;padding:7px 10px;background:#fff;border:1.5px solid var(--border);border-radius:7px;"><span style="font-family:var(--font-head);font-size:9px;font-weight:700;background:var(--v50);color:var(--v500);padding:2px 7px;border-radius:4px;">Source = Facebook</span><span style="font-size:9px;color:var(--grey2);">→</span><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);">Digital team</span></div>
+                <div style="display:flex;align-items:center;gap:6px;padding:7px 10px;background:#fff;border:1.5px solid var(--border);border-radius:7px;"><span style="font-family:var(--font-head);font-size:9px;font-weight:700;background:var(--v50);color:var(--v500);padding:2px 7px;border-radius:4px;">City = Delhi NCR</span><span style="font-size:9px;color:var(--grey2);">→</span><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);">North region rep</span></div>
+                <div style="display:flex;align-items:center;gap:6px;padding:7px 10px;background:#fff;border:1.5px solid var(--border);border-radius:7px;"><span style="font-family:var(--font-head);font-size:9px;font-weight:700;background:var(--v50);color:var(--v500);padding:2px 7px;border-radius:4px;">Budget ≥ ₹10L</span><span style="font-size:9px;color:var(--grey2);">→</span><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);">Senior rep</span></div>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="li-head"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><circle cx="3" cy="3.5" r="1.5" stroke="#4F38A2" stroke-width="1.2"/><path d="M0.5 8.5c0-1.4 1.1-2.5 2.5-2.5" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round"/><path d="M6 5.5l2 2-2 2" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 7.5H5" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round"/></svg></span><div><div class="li-title">Re-assignment on stage change.</div><div class="li-body">When a lead moves to a new stage, it can be automatically re-assigned to a different rep or team — passing a deal from pre-sales to a closer, or from sales to an account manager, without any manual handoff.</div></div></div>
+            <div class="mv">
+              <div class="mv-label">Re-assignment trigger</div>
+              <div style="display:flex;align-items:center;gap:8px;padding:9px 12px;background:var(--v50);border:1.5px solid var(--v100);border-radius:8px;margin-bottom:6px;"><span style="font-size:11px;color:var(--v900);">Stage → <strong>Negotiating</strong></span><span style="font-size:9px;color:var(--grey2);margin-left:auto;">Reassign to:</span></div>
+              <div class="assign-row"><div class="assign-av" style="background:#7260B5;">NK</div><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);flex:1;">Neha Kapoor</span><span style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--v500);">Senior closer</span></div>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     06 — CROSS-PIPELINE HANDOFFS
+     bg: #F8F7FC
+════════════════════════════════════ -->
+<section class="s-tint">
+  <div class="inner">
+    <div class="s-stack">
+      <div>
+        <div class="s-eye">08 — Cross-Pipeline Handoffs</div>
+        <h2 class="s-h2">Won in Sales.<br><em>Moved to Post-Sales automatically.</em></h2>
+        <p class="s-body">When a lead closes in one pipeline, telecrm can automatically create or move the record into the next — from Pre-Sales to Sales, from Sales to Post-Sales, from Sales to Onboarding. No manual reassignment, no records left behind, no context lost in the handoff.</p>
+        <ul class="fbullets">
+
+          <li>
+            <div class="li-head"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5 2l3 3-3 3" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div class="li-title">Automatic pipeline-to-pipeline move.</div><div class="li-body">Configure a rule on the Won stage that clones or moves the lead record into a target pipeline — with all its history intact. The onboarding team picks it up exactly where sales left off.</div></div></div>
+            <div class="mv">
+              <div class="mv-label">Pipeline handoff flow</div>
+              <div class="pipeline-strip">
+                <div class="ps-stage"><div class="ps-stage__label">Pre-Sales</div><div class="ps-stage__name">Qualified</div></div>
+                <div class="ps-arrow">→</div>
+                <div class="ps-stage" style="border-color:var(--v200);background:var(--v50);"><div class="ps-stage__label">Sales</div><div class="ps-stage__name">Won ✓</div></div>
+                <div class="ps-arrow">→</div>
+                <div class="ps-stage" style="border-color:#22C55E;background:rgba(34,197,94,.05);"><div class="ps-stage__label" style="color:#16A34A;">Post-Sales</div><div class="ps-stage__name" style="color:#16A34A;">Auto-created</div></div>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="li-head"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 2h7a.5.5 0 01.5.5v4a.5.5 0 01-.5.5H3.5L1.5 8.5V2.5a.5.5 0 01.5-.5z" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div class="li-title">Full history carried across.</div><div class="li-body">When a lead moves to the next pipeline, its entire activity timeline — every call, every WhatsApp, every note — is visible in the new pipeline. The next team never starts from zero.</div></div></div>
+            <div class="mv">
+              <div class="mv-label">Carried across — Priya S. · Post-Sales</div>
+              <div style="display:flex;flex-direction:column;gap:4px;">
+                <div style="display:flex;align-items:center;gap:8px;padding:7px 10px;background:#fff;border:1.5px solid var(--border);border-radius:7px;"><div style="width:6px;height:6px;border-radius:50%;background:var(--v400);flex-shrink:0;"></div><span style="font-size:10px;color:var(--grey);">Call · 4m 12s · <em>Discussed onboarding timeline</em></span></div>
+                <div style="display:flex;align-items:center;gap:8px;padding:7px 10px;background:#fff;border:1.5px solid var(--border);border-radius:7px;"><div style="width:6px;height:6px;border-radius:50%;background:#25D366;flex-shrink:0;"></div><span style="font-size:10px;color:var(--grey);">WA · <em>Contract shared via WhatsApp</em></span></div>
+                <div style="display:flex;align-items:center;gap:8px;padding:7px 10px;background:#fff;border:1.5px solid var(--border);border-radius:7px;"><div style="width:6px;height:6px;border-radius:50%;background:#22C55E;flex-shrink:0;"></div><span style="font-size:10px;color:var(--grey);">Stage · <em>Won in Sales → moved to Post-Sales</em></span></div>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="li-head"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><rect x="1" y="1" width="3.5" height="3.5" rx=".5" stroke="#4F38A2" stroke-width="1.3"/><rect x="5.5" y="1" width="3.5" height="3.5" rx=".5" stroke="#4F38A2" stroke-width="1.3"/><rect x="1" y="5.5" width="3.5" height="3.5" rx=".5" stroke="#4F38A2" stroke-width="1.3"/><rect x="5.5" y="5.5" width="3.5" height="3.5" rx=".5" stroke="#4F38A2" stroke-width="1.3"/></svg></span><div><div class="li-title">Works across any pipeline configuration.</div><div class="li-body">Handoffs can be configured between any two pipelines in your telecrm account — Pre-Sales to Sales, Sales to Post-Sales, Sales to Onboarding, or any custom pipeline structure you've built.</div></div></div>
+            <div class="mv">
+              <div class="mv-label">Supported handoff configurations</div>
+              <div class="chips">
+                <span class="chip chip--purple">Pre-Sales → Sales</span>
+                <span class="chip chip--purple">Sales → Post-Sales</span>
+                <span class="chip chip--purple">Sales → Onboarding</span>
+                <span class="chip chip--purple">Any custom pipeline</span>
+              </div>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ═══════════════════════════════════
+     08 — EMAIL, SMS & INTEGRATION AUTOMATION
+     bg: white
+════════════════════════════════════ -->
+<section class="s-white">
+  <div class="inner">
+    <div class="s-stack">
+      <div>
+        <div class="s-eye">09 — Email, SMS &amp; Integration Automation</div>
+        <h2 class="s-h2">Every channel automated.<br><em>No Zapier. No Pabbly. No middleware.</em></h2>
+        <p class="s-body">telecrm connects directly to email and SMS providers via native integrations — automation rules can trigger emails and SMSes the same way they trigger WhatsApp messages. And because telecrm integrates directly with lead sources, payment platforms, and communication tools, you don't need a third-party automation layer in between.</p>
+        <ul class="fbullets">
+
+          <li>
+            <div class="li-head"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><rect x="1" y="2.5" width="8" height="6" rx=".8" stroke="#4F38A2" stroke-width="1.3"/><path d="M1 3.5l4 2.5 4-2.5" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div class="li-title">Email automation via integrations.</div><div class="li-body">Connect telecrm to your email provider and trigger automated emails from automation rules — confirmation emails, follow-up sequences, and proposal dispatches — without leaving telecrm or setting up a separate email tool.</div></div></div>
+            <div class="mv">
+              <div class="mv-label">Email action in automation rule</div>
+              <div class="rb-action" style="margin-bottom:0;"><div class="rb-action-icon" style="background:#EA4335;"><svg viewBox="0 0 10 10" fill="none" stroke="white" stroke-width="1.3" stroke-linecap="round" width="8" height="8"><rect x="1" y="2.5" width="8" height="5.5" rx=".6"/><path d="M1 3.5l4 2 4-2"/></svg></div><span class="rb-action-text">Send email — <em>Proposal attached</em> via Gmail integration</span></div>
+            </div>
+          </li>
+
+          <li>
+            <div class="li-head"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M2.5 1.5h5a1 1 0 011 1v4a1 1 0 01-1 1H5L3 9V7.5H2.5a1 1 0 01-1-1v-4a1 1 0 011-1z" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div class="li-title">SMS automation via integrations.</div><div class="li-body">Trigger SMS messages from any automation rule through telecrm's SMS gateway integrations. Stage moves, scheduled reminders, and lifecycle events can all fire an SMS alongside or instead of a WhatsApp.</div></div></div>
+            <div class="mv">
+              <div class="mv-label">SMS action in automation rule</div>
+              <div class="rb-action" style="margin-bottom:0;"><div class="rb-action-icon" style="background:#22C55E;"><svg viewBox="0 0 10 10" fill="none" stroke="white" stroke-width="1.3" stroke-linecap="round" width="8" height="8"><path d="M2.5 1.5h5a1 1 0 011 1v4a1 1 0 01-1 1H5L3 9V7.5H2.5a1 1 0 01-1-1v-4a1 1 0 011-1z"/></svg></div><span class="rb-action-text">Send SMS — <em>Payment due reminder</em> via SMS gateway</span></div>
+            </div>
+          </li>
+
+          <li>
+            <div class="li-head"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M3 5h4M5 3l2 2-2 2" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><rect x="1" y="1" width="8" height="8" rx="1.5" stroke="#4F38A2" stroke-width="1.2"/></svg></span><div><div class="li-title">Direct integrations — no middleware needed.</div><div class="li-body">telecrm connects natively to lead sources (IndiaMART, JustDial, Facebook, Google), IVR providers, and WhatsApp Cloud API. Automation rules fire across these integrations directly — no Zapier, no Pabbly, no third-party automation layer sitting in between increasing cost and latency.</div></div></div>
+            <div class="mv">
+              <div class="mv-label">Native integration connections</div>
+              <div style="display:flex;gap:6px;flex-wrap:wrap;">
+                <span class="chip chip--purple">IndiaMART</span>
+                <span class="chip chip--purple">JustDial</span>
+                <span class="chip chip--purple">Facebook Ads</span>
+                <span class="chip chip--purple">Google Ads</span>
+                <span class="chip chip--purple">WhatsApp Cloud API</span>
+                <span class="chip chip--purple">IVR providers</span>
+                <span class="chip chip--purple">Gmail</span>
+                <span class="chip chip--purple">SMS gateway</span>
+              </div>
+              <div style="margin-top:8px;background:rgba(34,197,94,.06);border:1.5px solid rgba(34,197,94,.2);border-radius:8px;padding:8px 12px;display:flex;align-items:center;gap:8px;"><div style="width:8px;height:8px;border-radius:50%;background:#22C55E;flex-shrink:0;"></div><span style="font-family:var(--font-head);font-size:11px;font-weight:700;color:#16A34A;">No Zapier · No Pabbly · No middleware cost</span></div>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="final-cta__grid"></div>
+  <div class="final-cta__glow"></div>
+  <div class="final-cta__inner">
+    <div class="final-cta__badge">
+      <span class="final-cta__badge-dot"></span>
+      Free 30-minute demo
+    </div>
+    <div style="font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v300);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;">Join 5,000+ Indian sales teams</div>
+    <h2 class="final-cta__h2">Are you ready<br>to <em>get started?</em></h2>
+    <p class="final-cta__sub">No jargon. We'll show you exactly how telecrm works for your business — your industry, your team size, your lead sources. The demo is free. The setup is guided. The commitment is yours to make when you're ready.</p>
+    <div class="final-cta__cta-wrap">
+      <a href="telecrm-demo-request.html" class="btn-cta-white">
+        Get a Demo
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="final-cta__trust">
+      <span class="final-cta__trust-item"><span class="final-cta__trust-dot"></span>No credit card needed</span>
+      <span class="final-cta__trust-item"><span class="final-cta__trust-dot"></span>Response within 24 hours</span>
+      <span class="final-cta__trust-item"><span class="final-cta__trust-dot"></span>5,000+ businesses onboarded</span>
+      <span class="final-cta__trust-item"><span class="final-cta__trust-dot"></span>Fast setup</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<section class="faq">
+  <div class="faq__inner">
+    <div class="faq__header">
+      <div class="faq__eyebrow">FAQ</div>
+      <h2 class="faq__h2">Your questions, <em>answered plainly.</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">What can telecrm automations do?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">Stage-based triggers, multi-action sequences, WhatsApp automation, lead-assignment rules, drip campaigns, and cross-pipeline handoffs — telecrm runs your sales process so your team doesn't have to.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">How do automation triggers work?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">One trigger can fire many actions in order, so the right thing happens automatically every time a lead reaches a given stage.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">Can an automation run over a long period?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">Yes — multi-step sequences run themselves over days, weeks, or months without anyone having to remember the next step.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">Do I need technical skills to set them up?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">No. Automations are built around your stages and process, so you configure them visually rather than writing code.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__logo">telecrm</div>
+        <p class="footer__tagline">A Comprehensive Revenue Management Engine — fusing Lead Management, Call Management, Adaptive CRM, Marketing Automation, and Pipeline Management into one high-performance workspace.</p>
+        <a href="telecrm-get-started.html" class="btn-primary">Get Started →</a>
+      </div>
+      <div class="footer__links-grid">
+      <div class="footer__col-stack">
+        <div>
+          <div class="footer__col-title">Platform</div>
+          <div class="footer__links">
+            <a href="telecrm-platform-overview.html" class="footer__link">Platform Overview</a>
+            <a href="telecrm-platform-hub.html" class="footer__link">Platform Hub</a>
+            <a href="telecrm-benefits-hub.html" class="footer__link">Benefits Hub</a>
+            <a href="telecrm-platform-unified-revenue-management.html" class="footer__link">Unified Revenue Management</a>
+            <a href="telecrm-platform-lead-management.html" class="footer__link">Lead Management</a>
+            <a href="telecrm-platform-call-management.html" class="footer__link">Call Management &amp; Recording</a>
+            <a href="telecrm-platform-adaptive-crm.html" class="footer__link">Adaptive CRM</a>
+            <a href="telecrm-platform-marketing-automation.html" class="footer__link">Marketing Automation</a>
+            <a href="telecrm-platform-sales-pipeline-management.html" class="footer__link">Sales Pipeline Management</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Pricing</div>
+          <div class="footer__links">
+            <a href="telecrm-pricing.html" class="footer__link">Pricing</a>
+            <a href="telecrm-cost-savings.html" class="footer__link">Cost Savings</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__col-stack">
+        <div>
+          <div class="footer__col-title">Solutions</div>
+          <div class="footer__links">
+            <a href="telecrm-problems-hub.html" class="footer__link">Problems Hub</a>
+            <a href="telecrm-crm-hub.html" class="footer__link">CRM Hub</a>
+            <a href="telecrm-industry-hub.html" class="footer__link">Industry Hub</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Get Started</div>
+          <div class="footer__links">
+            <a href="telecrm-partnership.html" class="footer__link">Partner Program</a>
+            <a href="telecrm-demo-request.html" class="footer__link">Demo Request</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__col-stack">
+        <div>
+          <div class="footer__col-title">Trust</div>
+          <div class="footer__links">
+            <a href="telecrm-testimonials.html" class="footer__link">Testimonials</a>
+            <a href="telecrm-case-studies.html" class="footer__link">Case Studies</a>
+            <a href="telecrm-comparison.html" class="footer__link">Comparison</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">About Us</div>
+          <div class="footer__links">
+            <a href="telecrm-about-telecrm.html" class="footer__link">About telecrm</a>
+            <a href="telecrm-life-at-telecrm.html" class="footer__link">Life at telecrm</a>
+            <a href="telecrm-careers.html" class="footer__link">Careers</a>
+            <a href="telecrm-contact.html" class="footer__link">Contact Us</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Support</div>
+        <div class="footer__links">
+          <a href="telecrm-faqs.html" class="footer__link">FAQs</a>
+          <a href="telecrm-glossary.html" class="footer__link">Glossary</a>
+          <a href="telecrm-learning-repository.html" class="footer__link">Learning Repository</a>
+          <a href="telecrm-onboarding.html" class="footer__link">Onboarding</a>
+          <a href="telecrm-privacy-policy.html" class="footer__link">Privacy Policy</a>
+          <a href="telecrm-recommended-devices.html" class="footer__link">Recommended Devices</a>
+          <a href="telecrm-refund-policy.html" class="footer__link">Refund Policy</a>
+          <a href="telecrm-terms-conditions.html" class="footer__link">Terms &amp; Conditions</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Features</div>
+        <div class="footer__links">
+          <a href="telecrm-feature-automations.html" class="footer__link">Automation</a>
+          <a href="telecrm-feature-call-management.html" class="footer__link">Call Management</a>
+          <a href="telecrm-feature-calling-campaign.html" class="footer__link">Calling Campaign Management</a>
+          <a href="telecrm-feature-integrations.html" class="footer__link">Integrations</a>
+          <a href="telecrm-feature-lead-fields.html" class="footer__link">Lead Fields</a>
+          <a href="telecrm-feature-lead-management.html" class="footer__link">Lead Management &amp; Reporting</a>
+          <a href="telecrm-feature-lead-stages.html" class="footer__link">Lead Stages</a>
+          <a href="telecrm-feature-list-labels.html" class="footer__link">List and Labels</a>
+          <a href="telecrm-feature-reporting.html" class="footer__link">Reporting</a>
+          <a href="telecrm-feature-user-management.html" class="footer__link">User Management</a>
+          <a href="telecrm-feature-whatsapp.html" class="footer__link">WhatsApp</a>
+        </div>
+      </div>
+      </div><!-- /footer__links-grid -->
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__copy">© 2026 telecrm. All rights reserved.</div>
+      <div class="footer__legal">
+        <a href="telecrm-privacy-policy.html">Privacy Policy</a>
+        <a href="telecrm-terms-conditions.html">Terms &amp; Conditions</a>
+        <a href="telecrm-refund-policy.html">Refund Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.querySelector('.nav__hamburger');
+  var links=document.querySelector('.nav__links');
+  if(btn&&links){
+    btn.addEventListener('click',function(){btn.classList.toggle('open');links.classList.toggle('open');});
+  }
+  var mq=window.matchMedia('(max-width:768px)');
+  document.querySelectorAll('.nav__item > .nav__link').forEach(function(hub){
+    hub.addEventListener('click',function(e){ if(mq.matches){ e.preventDefault(); hub.parentElement.classList.toggle('open'); } });
+  });
+  document.querySelectorAll('.np__link,.np__foot,.nav__cta,.nav__mobile-cta').forEach(function(l){
+    l.addEventListener('click',function(){ if(btn){btn.classList.remove('open');} if(links){links.classList.remove('open');} });
+  });
+})();
+</script>
+<script>
+function toggleFaq(el){
+  var item=el.parentElement;
+  var isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+  if(!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>

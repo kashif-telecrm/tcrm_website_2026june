@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>telecrm Team Stories — In Their Own Words</title>
+<meta name="description" content="Real stories from the telecrm team — how people joined, what they've built, how they've grown and what working here is actually like.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://telecrm.in/about/team-stories/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="telecrm Team Stories — In Their Own Words">
+<meta property="og:description" content="Real stories from the telecrm team — how people joined, what they've built, how they've grown and what working here is actually like.">
+<meta property="og:url" content="https://telecrm.in/about/team-stories/">
+<meta property="og:site_name" content="telecrm">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cta:#F97316; --cta-hover:#EA580C;--v50:#EDEBF6;--v100:#E1DDF0;--v200:#C4BAE5;--v300:#9C8FCF;--v400:#7260B5;--v500:#4F38A2;--v600:#483393;--v700:#382873;--v900:#211844;--grey:#64748B;--grey2:#94A3B8;--border:#E9EBF8;--success:#22C55E;--font-head:'Plus Jakarta Sans',sans-serif;--font-body:'DM Sans',sans-serif;--radius-btn:10px;--radius-card:16px;--radius-pill:100px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);color:var(--v900);background:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+.nav__inner{max-width:1280px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:72px;}
+.nav__logo{font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--v500);letter-spacing:-.5px;}
+.nav__links{display:flex;align-items:center;gap:2px;}
+.nav__link{font-family:var(--font-head);font-size:12.5px;font-weight:600;color:var(--v700);padding:7px 11px;border-radius:8px;transition:all .18s;white-space:nowrap;}
+.nav__link:hover,.nav__link--active{background:var(--v50);color:var(--v500);}
+.nav__sep{display:inline-block;width:1px;height:20px;background:var(--border);margin:0 8px;vertical-align:middle;}
+.nav__cta{font-family:var(--font-head);font-size:13px;font-weight:700;background:var(--cta);color:#fff;padding:10px 22px;border-radius:var(--radius-btn);box-shadow:0 4px 12px rgba(249,115,22,.3);transition:all .18s;white-space:nowrap;margin-left:8px;}
+.nav__cta:hover{background:var(--cta-hover);transform:translateY(-1px);}
+.nav__mobile-right{display:none;align-items:center;gap:8px;margin-left:auto;}
+.nav__mobile-cta{font-family:var(--font-head);font-size:13px;font-weight:700;background:var(--v500);color:#fff;padding:8px 16px;border-radius:var(--radius-btn);white-space:nowrap;}
+.nav__mob-sep{display:none;width:1px;height:20px;background:var(--border);}
+.nav__hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:8px;border:none;background:transparent;}
+.nav__hamburger span{display:block;width:22px;height:2px;background:var(--v900);border-radius:2px;transition:all .18s;}
+.nav__hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav__hamburger.open span:nth-child(2){opacity:0;}
+.nav__hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.hero{padding:64px 0 56px;background:#fff;position:relative;overflow:hidden;}
+.hero__bg{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;opacity:.35;pointer-events:none;}
+.hero__glow{position:absolute;top:-80px;right:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(79,56,162,.07) 0%,transparent 70%);pointer-events:none;}
+.hero__inner{max-width:1280px;margin:0 auto;padding:0 32px;position:relative;}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-family:var(--font-head);font-size:12px;font-weight:600;color:var(--grey2);margin-bottom:24px;flex-wrap:wrap;}
+.breadcrumb-sep{color:var(--v200);}
+.breadcrumb a{color:var(--grey2);transition:color .2s;}
+.breadcrumb a:hover{color:var(--v500);}
+.breadcrumb-current{color:var(--v500);}
+.hero__eyebrow{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;}
+.hero__h1{font-family:var(--font-head);font-size:clamp(28px,4vw,56px);font-weight:900;letter-spacing:-1.5px;color:var(--v900);line-height:1.1;margin-bottom:16px;}
+.hero__h1 em{font-style:normal;color:var(--v500);}
+.hero__sub{font-size:17px;color:var(--grey);line-height:1.75;max-width:640px;}
+/* STORY FULL */
+.stories{padding:80px 0;}
+.stories__inner{max-width:900px;margin:0 auto;padding:0 32px;}
+.story{padding:64px 0;border-top:1px solid var(--border);}
+.story:first-child{padding-top:0;border-top:none;}
+.story__meta{display:flex;align-items:center;gap:14px;margin-bottom:28px;}
+.story__avatar{width:52px;height:52px;border-radius:50%;background:var(--v500);color:#fff;font-family:var(--font-head);font-size:16px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.story__name{font-family:var(--font-head);font-size:15px;font-weight:800;color:var(--v900);}
+.story__role{font-family:var(--font-head);font-size:12px;font-weight:600;color:var(--v400);margin-top:3px;}
+.story__team-tag{display:inline-flex;align-items:center;font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v500);background:var(--v50);border:1px solid var(--v100);padding:4px 12px;border-radius:var(--radius-pill);}
+.story__pull{font-family:var(--font-head);font-size:clamp(18px,2.5vw,26px);font-weight:900;color:var(--v900);letter-spacing:-.4px;line-height:1.25;margin-bottom:24px;}
+.story__pull::before{content:'\201C';color:var(--v300);font-size:1.4em;line-height:0;vertical-align:-.2em;margin-right:4px;}
+.story__pull::after{content:'\201D';color:var(--v300);font-size:1.4em;line-height:0;vertical-align:-.2em;margin-left:4px;}
+.story__body{font-size:16px;color:var(--grey);line-height:1.85;}
+.story__body p{margin-bottom:20px;}
+.story__body p:last-child{margin-bottom:0;}
+/* PLACEHOLDER */
+.story--placeholder{opacity:.45;}
+.story--placeholder .story__pull{color:var(--grey2);font-style:italic;}
+/* CTA */
+.join-cta{margin-top:80px;padding:48px;background:var(--v50);border:1.5px solid var(--v100);border-radius:20px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+.join-cta__text h3{font-family:var(--font-head);font-size:20px;font-weight:900;color:var(--v900);margin-bottom:8px;}
+.join-cta__text p{font-size:14px;color:var(--grey);line-height:1.7;}
+.join-cta__btns{display:flex;gap:12px;flex-shrink:0;}
+.btn-primary{font-family:var(--font-head);font-size:13px;font-weight:700;background:var(--cta);color:#fff;padding:12px 24px;border-radius:var(--radius-btn);display:inline-flex;align-items:center;gap:6px;transition:all .18s;}
+.btn-primary:hover{background:var(--cta-hover);}
+.btn-outline{font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--v500);border:1.5px solid var(--v200);padding:11px 20px;border-radius:var(--radius-btn);display:inline-flex;align-items:center;gap:6px;transition:all .18s;}
+.btn-outline:hover{background:var(--v50);}
+.footer{background:#fff;border-top:1px solid var(--border);padding:64px 0 40px;}
+.footer__inner{max-width:1280px;margin:0 auto;padding:0 32px;}
+.footer__grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+.footer__links-grid{display:contents;}
+.footer__logo{font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--v500);margin-bottom:16px;letter-spacing:-.5px;}
+.footer__tagline{font-size:14px;color:var(--grey);line-height:1.7;max-width:280px;margin-bottom:24px;}
+.footer__col-title{font-family:var(--font-head);font-size:12px;font-weight:800;color:var(--v900);text-transform:uppercase;letter-spacing:.06em;margin-bottom:16px;}
+.footer__links{display:flex;flex-direction:column;gap:10px;}
+.footer__link{font-size:14px;color:var(--grey);transition:color .2s;}
+.footer__link:hover{color:var(--v500);}
+.footer__bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer__copy{font-size:13px;color:var(--grey);}
+.footer__legal{display:flex;gap:24px;}
+.footer__legal a{font-size:13px;color:var(--grey);transition:color .2s;}
+.footer__legal a:hover{color:var(--v500);}
+@media(max-width:768px){
+  .stories__inner{padding:0 20px;}
+  .hero__inner{padding:0 20px;}
+  .join-cta{flex-direction:column;}
+  .join-cta__btns{flex-direction:column;width:100%;}
+  .btn-primary,.btn-outline{justify-content:center;}
+  .footer__grid{grid-template-columns:1fr;}
+  .footer__links-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px 16px;margin-top:32px;}
+  .footer__bottom{flex-direction:column;align-items:center;text-align:center;}
+  .footer__legal{flex-wrap:wrap;justify-content:center;}
+}
+@media(min-width:769px){.nav__hamburger{display:none;}.nav__mobile-right{display:none;}}
+
+/* ===== ROLLOUT v2026-05-29: nav mega-menu + fat footer (canonical) ===== */
+.nav__item{position:relative;display:flex;align-items:center;height:72px;}
+.nav__item > .nav__link{display:inline-flex;align-items:center;gap:4px;}
+.nav__caret{width:11px;height:11px;flex-shrink:0;transition:transform .2s;}
+.nav__item:hover > .nav__link .nav__caret,.nav__item:focus-within > .nav__link .nav__caret{transform:rotate(180deg);}
+.nav__item:hover > .nav__link,.nav__item:focus-within > .nav__link{background:var(--v50);color:var(--v500);}
+.nav__panel{position:absolute;top:100%;left:0;background:#fff;border:1px solid var(--border);border-radius:14px;box-shadow:0 18px 44px rgba(33,24,68,.13);padding:14px;opacity:0;visibility:hidden;transform:translateY(7px);transition:opacity .16s,transform .16s,visibility .16s;z-index:200;}
+.nav__panel--right{left:auto;right:0;}
+.nav__item:hover > .nav__panel,.nav__item:focus-within > .nav__panel{opacity:1;visibility:visible;transform:translateY(0);}
+.np__list{display:grid;gap:1px;}
+.np__list--2{grid-template-columns:1fr 1fr;gap:1px 14px;}
+.np__link{display:flex;flex-direction:column;gap:2px;padding:9px 12px;border-radius:8px;transition:background .15s;min-width:0;}
+.np__link:hover{background:var(--v50);}
+.np__t{font-family:var(--font-head);font-size:13.5px;font-weight:700;color:var(--v900);white-space:nowrap;}
+.np__list--2 .np__t{white-space:normal;line-height:1.3;overflow-wrap:break-word;}
+.np__link:hover .np__t{color:var(--v500);}
+.np__s{font-family:var(--font-body);font-size:12px;color:var(--grey);line-height:1.35;}
+.np__foot{display:flex;align-items:center;gap:6px;border-top:1px solid var(--border);margin-top:8px;padding:11px 12px 3px;font-family:var(--font-head);font-size:12.5px;font-weight:700;color:var(--v500);}
+.np__foot svg{width:13px;height:13px;}
+.nav__mobile-cta{background:var(--cta);}
+.footer__grid{grid-template-columns:1.5fr 1fr 1fr 1fr 1fr 1.15fr;gap:40px 32px;}
+.footer__col-stack{display:flex;flex-direction:column;gap:48px;}
+@media(max-width:1024px){.footer__grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:768px){
+  .nav__item{width:100%;height:auto;display:block;position:static;}
+  .nav__item > .nav__link{display:flex;align-items:center;justify-content:space-between;width:100%;}
+  .nav__item.open > .nav__link .nav__caret{transform:rotate(180deg);}
+  .nav__caret{width:13px;height:13px;}
+  .nav__panel{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;border-radius:0;padding:4px 0 10px 10px;width:auto !important;display:none;z-index:auto;}
+  .nav__item.open > .nav__panel{display:block;}
+  .np__list--2{grid-template-columns:1fr;}
+  .np__link{padding:9px 10px;}
+  .np__foot{padding-left:10px;}
+  .footer__links-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px 16px;margin-top:32px;}
+  .footer__links-grid > div:nth-child(1),.footer__links-grid > div:nth-child(2),.footer__links-grid > div:nth-child(3),.footer__links-grid > div:nth-child(4),.footer__links-grid > div:nth-child(5){text-align:left;grid-column:auto;grid-row:auto;}
+  .footer__links-grid > div:nth-child(4) .footer__links{align-items:flex-start;}
+}
+@media(max-width:600px){.footer__grid{grid-template-columns:1fr;}}
+/* ===== end ROLLOUT ===== */
+
+/* ===== FAQ section (locked §16A) ===== */
+.faq{padding:96px 0;background:#F8F7FC;}
+.faq__inner{max-width:1280px;margin:0 auto;padding:0 32px;}
+.faq__header{text-align:center;margin-bottom:8px;}
+.faq__eyebrow{font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v500);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;}
+.faq__h2{font-family:var(--font-head);font-size:clamp(28px,3.5vw,42px);font-weight:900;letter-spacing:-1.2px;color:var(--v900);line-height:1.15;}
+.faq__h2 em{font-style:normal;color:var(--v500);}
+.faq-list{display:flex;flex-direction:column;border-top:1px solid var(--border);max-width:860px;margin:40px auto 0;}
+.faq-item{border-bottom:1px solid var(--border);}
+.faq-item__q{display:flex;align-items:center;justify-content:space-between;padding:22px 0;cursor:pointer;gap:24px;}
+.faq-item__q-text{font-family:var(--font-head);font-size:16px;font-weight:700;color:var(--v900);}
+.faq-item__icon{width:28px;height:28px;border-radius:50%;background:#fff;border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s;}
+.faq-item__icon svg{width:12px;height:12px;transition:transform .25s;}
+.faq-item.open .faq-item__icon{background:var(--v500);border-color:var(--v500);}
+.faq-item.open .faq-item__icon svg{transform:rotate(45deg);stroke:#fff;}
+.faq-item__a{display:none;font-family:var(--font-body);font-size:15px;color:var(--grey);line-height:1.75;padding-bottom:22px;max-width:760px;}
+.faq-item.open .faq-item__a{display:block;}
+@media(max-width:768px){.faq{padding:64px 0;}.faq__inner{padding:0 20px;}}
+/* ===== end FAQ ===== */
+
+.np__cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.np__col-head{display:block;font-family:var(--font-head);font-size:11px;font-weight:800;color:var(--v400);text-transform:uppercase;letter-spacing:.07em;padding:4px 12px 8px;transition:color .15s;}
+.np__col-head:hover{color:var(--v500);}
+.nav__panel:has(.np__col:only-child) .np__cols{grid-template-columns:1fr;}
+@media(max-width:768px){.np__cols{grid-template-columns:1fr !important;gap:0 !important;}.np__col-head{padding:8px 10px 4px;}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="telecrm-approach2-home.html" class="nav__logo">telecrm</a>
+    <div class="nav__links">
+      <div class="nav__item">
+        <a href="telecrm-platform-overview.html" class="nav__link">Platform Overview <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:560px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-platform-hub.html">Platform Hub</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-platform-unified-revenue-management.html"><span class="np__t">Unified Revenue Management</span><span class="np__s">One connected engine</span></a>
+                <a class="np__link" href="telecrm-platform-lead-management.html"><span class="np__t">Lead Management</span><span class="np__s">Capture, dedupe, assign</span></a>
+                <a class="np__link" href="telecrm-platform-call-management.html"><span class="np__t">Call Management &amp; Recording</span><span class="np__s">Dial, record, track</span></a>
+                <a class="np__link" href="telecrm-platform-adaptive-crm.html"><span class="np__t">Adaptive CRM</span><span class="np__s">Stages, fields, 360°</span></a>
+                <a class="np__link" href="telecrm-platform-marketing-automation.html"><span class="np__t">Marketing Automation</span><span class="np__s">Reach leads automatically</span></a>
+                <a class="np__link" href="telecrm-platform-sales-pipeline-management.html"><span class="np__t">Sales Funnel &amp; Pipeline Management</span><span class="np__s">Track every deal stage</span></a>
+              </div>
+            </div>
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-benefits-hub.html">Benefits Hub</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-benefits-hub.html"><span class="np__t">Outcomes &amp; ROI</span><span class="np__s">What telecrm delivers for your team</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-platform-overview.html">Platform Overview — the product, end to end <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-solutions-hub.html" class="nav__link">Solutions <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-solutions-hub.html">By approach</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-problems-hub.html"><span class="np__t">Problems Hub</span><span class="np__s">Revenue leaks, by stage</span></a>
+                <a class="np__link" href="telecrm-crm-hub.html"><span class="np__t">CRM Hub</span><span class="np__s">By type &amp; by team</span></a>
+                <a class="np__link" href="telecrm-industry-hub.html"><span class="np__t">Industry Hub</span><span class="np__s">11 industries covered</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-solutions-hub.html">Browse all solutions <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-features-hub.html" class="nav__link">Features <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:620px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-features-hub.html">Engagement</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-feature-call-management.html"><span class="np__t">Call Management</span></a>
+                <a class="np__link" href="telecrm-feature-calling-campaign.html"><span class="np__t">Calling Campaign Management</span></a>
+                <a class="np__link" href="telecrm-feature-whatsapp.html"><span class="np__t">WhatsApp</span></a>
+                <a class="np__link" href="telecrm-feature-automations.html"><span class="np__t">Automation</span></a>
+              </div>
+            </div>
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-features-hub.html">Data &amp; Admin</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-feature-lead-management.html"><span class="np__t">Lead Management &amp; Reporting</span></a>
+                <a class="np__link" href="telecrm-feature-lead-fields.html"><span class="np__t">Lead Fields</span></a>
+                <a class="np__link" href="telecrm-feature-lead-stages.html"><span class="np__t">Lead Stages</span></a>
+                <a class="np__link" href="telecrm-feature-list-labels.html"><span class="np__t">List and Labels</span></a>
+                <a class="np__link" href="telecrm-feature-reporting.html"><span class="np__t">Reporting</span></a>
+                <a class="np__link" href="telecrm-feature-integrations.html"><span class="np__t">Integrations</span></a>
+                <a class="np__link" href="telecrm-feature-user-management.html"><span class="np__t">User Management</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-features-hub.html">See all features <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-trust-hub.html" class="nav__link">Trust <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-trust-hub.html">Proof</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-testimonials.html"><span class="np__t">Testimonials</span><span class="np__s">Real customers, real numbers</span></a>
+                <a class="np__link" href="telecrm-case-studies.html"><span class="np__t">Case Studies</span><span class="np__s">9 detailed stories</span></a>
+                <a class="np__link" href="telecrm-comparison.html"><span class="np__t">Comparison</span><span class="np__s">telecrm vs. alternatives</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-trust-hub.html">Visit the Trust Hub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-pricing.html" class="nav__link">Pricing <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:320px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-pricing.html">Plans</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-pricing.html"><span class="np__t">Pricing</span><span class="np__s">Plans &amp; what's included</span></a>
+                <a class="np__link" href="telecrm-cost-savings.html"><span class="np__t">Cost Savings</span><span class="np__s">What you save vs. tools</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-support-hub.html" class="nav__link">Support <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:560px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-support-hub.html">Resources</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-faqs.html"><span class="np__t">FAQs</span></a>
+                <a class="np__link" href="telecrm-glossary.html"><span class="np__t">Glossary</span></a>
+                <a class="np__link" href="telecrm-learning-repository.html"><span class="np__t">Learning Repository</span></a>
+                <a class="np__link" href="telecrm-onboarding.html"><span class="np__t">Onboarding</span></a>
+                <a class="np__link" href="telecrm-recommended-devices.html"><span class="np__t">Recommended Devices</span></a>
+              </div>
+            </div>
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-support-hub.html">Policies</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-privacy-policy.html"><span class="np__t">Privacy Policy</span></a>
+                <a class="np__link" href="telecrm-refund-policy.html"><span class="np__t">Refund Policy</span></a>
+                <a class="np__link" href="telecrm-terms-conditions.html"><span class="np__t">Terms &amp; Conditions</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-support-hub.html">Go to Support Hub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-get-started.html" class="nav__link">Get Started <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-get-started.html">Get started</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-partnership.html"><span class="np__t">Partner Program</span><span class="np__s">Refer &amp; earn 10% for life</span></a>
+                <a class="np__link" href="telecrm-demo-request.html"><span class="np__t">Demo Request</span><span class="np__s">Book a free demo</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-get-started.html">All ways to start <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-about-us.html" class="nav__link nav__link--active">About Us <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-about-us.html">Company</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-about-telecrm.html"><span class="np__t">About telecrm</span><span class="np__s">Story, vision, mission</span></a>
+                <a class="np__link" href="telecrm-life-at-telecrm.html"><span class="np__t">Life at telecrm</span><span class="np__s">Culture &amp; team</span></a>
+                <a class="np__link" href="telecrm-careers.html"><span class="np__t">Careers</span><span class="np__s">Open roles</span></a>
+                <a class="np__link" href="telecrm-contact.html"><span class="np__t">Contact Us</span><span class="np__s">Talk to us</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="nav__sep"></span>
+      <a href="telecrm-demo-request.html" class="nav__cta">Get a Demo</a>
+    </div>
+    <div class="nav__mobile-right">
+      <a href="telecrm-demo-request.html" class="nav__mobile-cta">Get a Demo</a>
+      <span class="nav__mob-sep"></span>
+      <button class="nav__hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero__bg"></div>
+  <div class="hero__glow"></div>
+  <div class="hero__inner">
+    <div class="breadcrumb">
+      <a href="telecrm-approach2-home.html">Home</a><span class="breadcrumb-sep">›</span>
+      <a href="telecrm-about-us.html">About Us</a><span class="breadcrumb-sep">›</span>
+      <a href="telecrm-life-at-telecrm.html">Life at telecrm</a><span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">Team Stories</span>
+    </div>
+    <div class="hero__eyebrow">telecrm Team Stories</div>
+    <h1 class="hero__h1">In their own words.<br><em>No script. No polish.</em></h1>
+    <p class="hero__sub">The best way to understand what working at telecrm is like is to hear it from the people who do it every day — what brought them here, what surprised them, what they've built and where they're headed.</p>
+  </div>
+</section>
+
+<section class="stories">
+  <div class="stories__inner">
+
+
+    <!-- STORY 5: YATENDRA -->
+    <div class="story" id="yatendra-chaudhary">
+      <div class="story__meta">
+        <div class="story__avatar">YC</div>
+        <div>
+          <div class="story__name">Yatendra Chaudhary</div>
+          <div class="story__role">Key Implementation Partner, Enterprise Accounts &amp; Team Lead, Customer Success · 4 years at telecrm</div>
+        </div>
+        <span class="story__team-tag">Customer Success</span>
+      </div>
+      <div class="story__pull">When I joined telecrm, it was meant to be temporary. Today I'm still here — not out of compulsion, but out of choice and willingness to contribute further.</div>
+      <div class="story__body">
+        <p>I joined telecrm as a Business Analyst in the Post-Sales domain, which is now the Customer Success team. I already had an offer from a Bangalore-based company and honestly did not imagine working in a start-up for more than six or seven months. I also had very little expectation of staying in my hometown and continuing with the same company for so long.</p>
+        <p>My journey started with onboarding and implementation responsibilities, where I closely worked with clients to understand their business operations and CRM adoption requirements. From SMEs to enterprise brands like Shiprocket, Wilson &amp; Hughes, Rays Education, Rapido and many more — I've had the opportunity to understand how different businesses operate, how their sales funnels function, and the operational challenges that eventually lead them to adopt CRM solutions.</p>
+        <p>One of the biggest mindset shifts came from being in client-facing work. In theory, we're taught that features are the highlight of any product. But in the real business world, clients don't stay because of features alone — they stay because of the solutions you provide to their business problems. Features can always be replaced with newer releases, but strong solutions remain irreplaceable. No classroom could have taught me that the way this experience did.</p>
+        <p>What I deeply appreciate is that opinions are genuinely heard and valued here. There's an open culture of discussions, idea sharing and collaborative problem-solving rather than rigid communication structures. Leadership is approachable — if I want guidance or insights, they're just a conversation away.</p>
+        <p>My work has never felt monotonous. Beyond my primary role, I've learned how sales closures work, marketing timelines for bulk broadcasting, how product enhancements are accepted and deployed, and how customer feedback impacts feature development. This continuous cross-functional exposure keeps the work engaging.</p>
+        <p>My journey from being an Onboarding Executive to now leading a team has been extremely fulfilling. Being my first job, telecrm transformed me from someone who lacked confidence into someone far more confident, expressive and extroverted. An early-stage start-up groomed me in ways that many established organisations may not have been able to. And that, to me, is one of the most rewarding parts of working here.</p>
+      </div>
+    </div>
+
+    <!-- STORY 6: RIZA -->
+    <div class="story" id="riza-hayat">
+      <div class="story__meta">
+        <div class="story__avatar">RH</div>
+        <div>
+          <div class="story__name">Riza Hayat</div>
+          <div class="story__role">Team Lead, Enterprise Sales · 3 years at telecrm</div>
+        </div>
+        <span class="story__team-tag">Sales</span>
+      </div>
+      <div class="story__pull">Rahul, our CEO, told me early on — when the company grows, you grow. When I joined, the consolidated target for sales and CS together was 9 lakh. Today we're hitting close to 2 crore. The company has grown 20x and I've grown with it.</div>
+      <div class="story__body">
+        <p>Starting your career in a start-up is risky. I knew that. But I also knew there was a huge learning opportunity, and honestly, the location made the decision easier too. What I didn't know was that the job would involve calling. That part scared me — it genuinely did.</p>
+        <p>But when I closed my first deal and people here celebrated by cutting a cake, that moment gave me the courage to keep going. The small celebrations, the energy around wins big and small — that was one of the major reasons I stayed this long. The culture. The people.</p>
+        <p>The growth from there moved faster than I expected. I joined as a Business Analyst. Within a year, I was a Senior Business Analyst. Three months after that, Enterprise Sales Manager. Then Team Lead, handling high-priority leads.</p>
+        <p>One of the best feelings in this place is when the CEO casually walks up to you and shakes your hand because you closed a big deal. Upper-level management here notices. They appreciate the small wins and the big ones equally. That's not something you find everywhere.</p>
+        <p>Things have changed around us too — the processes are more systemic now, more structured. That's a good thing. The company needed that to scale. What hasn't changed is the people. Cooperative, helpful, exactly as they were when I first walked in.</p>
+        <p>There's still more I want to explore here. Field sales is something I'm getting closer to now — it's a new territory for me, and I find it genuinely interesting. The fact that curiosity is being encouraged, that my growth prospects are being taken seriously, that tells me everything I need to know about where I'm headed.</p>
+      </div>
+    </div>
+
+    <!-- STORY 7: MAHWASH -->
+    <div class="story" id="mahwash-fatima">
+      <div class="story__meta">
+        <div class="story__avatar">MF</div>
+        <div>
+          <div class="story__name">Mahwash Fatima</div>
+          <div class="story__role">Content Marketer · 1 year at telecrm</div>
+        </div>
+        <span class="story__team-tag">Marketing</span>
+      </div>
+      <div class="story__pull">I joined as a writer. Within months I was content editor, then making creatives, then training interns. Four distinct responsibilities in under a year. That's the thing about start-ups you can't fully prepare for.</div>
+      <div class="story__body">
+        <p>I joined telecrm in February 2025 as a writer. Writing felt like the safest entry point. I knew I wanted to be in marketing, but I wasn't sure which direction yet. So I started where I was most comfortable — blog content, ad copies when needed, YouTube scripts.</p>
+        <p>It didn't stay that way for long. Within months, the role started expanding. Writer became content editor. Then I was making creatives for the company. Then training interns to do the same things I had only just figured out myself. That's the thing about start-ups that you can't fully prepare for: the pace at which things move, and the pace at which your role moves with them, is genuinely hard to anticipate. You're not waiting for a promotion to do bigger work. The bigger work just arrives and you figure it out.</p>
+        <p>Things shifted personally just as I was finding my footing in the role. When my parents got sick, I started working from home. Our marketing head made sure the shift didn't slow things down for me — along with my day-to-day work, the focus stayed on my growth. That kind of investment, regardless of where you're sitting, is something I don't take for granted.</p>
+        <p>And the work itself kept pulling me in. Every piece of content I put out, every creative — it's all trying to guide how someone thinks, nudge them towards a decision. The idea that words and visuals can do that, that something I made could change how a person behaves, never gets old.</p>
+        <p>As a content marketer in B2B SaaS, I'm still early. The field is vast, and there's a lot to learn. That's exactly what makes it worth showing up for.</p>
+      </div>
+    </div>
+
+    <!-- STORY 8: LAKSHYA -->
+    <div class="story" id="lakshya-prakash">
+      <div class="story__meta">
+        <div class="story__avatar">LP</div>
+        <div>
+          <div class="story__name">Lakshya Prakash</div>
+          <div class="story__role">Software Engineer · 1 year at telecrm</div>
+        </div>
+        <span class="story__team-tag">Technology</span>
+      </div>
+      <div class="story__pull">I had offers from MNCs. But when I spoke to the team during my interview, I realised they were technically ahead of what those companies were doing. I joined because of the culture, but I want to stay because of the people.</div>
+      <div class="story__body">
+        <p>When I was looking for my first job, I knew I wanted a start-up. Not because it was the easier path — it isn't — but because I wanted responsibility early. The hustle, the pace, the fact that what you do actually matters from day one. That was the environment I wanted to start my career in.</p>
+        <p>telecrm ticked that box. But what sealed it was the interview. I had offers from MNCs, but when I spoke to some of the team members during my interview process, I realised they were technically ahead of what those companies were doing. That's not something you come across often.</p>
+        <p>The work itself is full-stack development, but the part I'm most invested in is the AI infrastructure at telecrm — bringing AI into the product, building the structure that will power it for the company and its clients. I wanted to build something valuable, something that matters. The fact that I get to do that at the start of my career, in the middle of the AI era, is very exciting to me.</p>
+        <p>What I didn't expect was the team I'd be working with. The expertise around me is significant and the scope of learning is huge. But more than that, it's the flatness of it. There's no hierarchy that stops you from speaking. Ideas get pitched on the table, everyone has a voice and that's taken seriously. For innovation to actually happen, that kind of structure is essential. I found that here.</p>
+        <p>There are no hard rules about what technology I have to use. If I want to explore something new, I pitch it to my supervisor with a clear reason. If it makes sense, they back it. That freedom to explore, to go find what works and bring it back, is commendable. Eventually, I want to lead the AI department here. The learning, the environment, the possibilities — everything here makes me believe that's achievable.</p>
+      </div>
+    </div>
+
+    <!-- STORY 9: SAQIB -->
+    <div class="story" id="saiyid-saqib-askari">
+      <div class="story__meta">
+        <div class="story__avatar">SA</div>
+        <div>
+          <div class="story__name">Saiyid Saqib Askari</div>
+          <div class="story__role">Account Manager, Customer Success · 1 year at telecrm</div>
+        </div>
+        <span class="story__team-tag">Customer Success</span>
+      </div>
+      <div class="story__pull">The constant challenge of adapt, improvise and overcome is what keeps the work exciting to me.</div>
+      <div class="story__body">
+        <p>I had just finished my MBA and was looking for a job closer to home. telecrm turned out to be the right opportunity at the right time — professionally and personally. What made me say yes was the warmth, the positive environment and the welcoming culture.</p>
+        <p>I didn't come in as an Account Manager. My first role was handling Cloud API operations and Meta platform integrations — technical, detail-oriented work. It taught me something early that I've carried into everything since: accountability. If a task is assigned to you, it becomes your responsibility to see it through properly. A client's business operations may depend on it. Any delay or disruption impacts both the client and the company. That lesson came early and it stuck.</p>
+        <p>That experience ended up directly benefiting my current role. Today, as an Account Manager handling Gold and Platinum accounts, whenever a client runs into something Meta-related I'm able to step in, provide analysis and often resolve it myself. The earlier role built that.</p>
+        <p>Day to day, the work is about resolving client queries, managing accounts, conducting meetings and helping clients set up and use the platform effectively. But what makes it genuinely enjoyable is sitting with colleagues, discussing different use cases and brainstorming ways to adapt different business processes into telecrm. The constant challenge of adapt, improvise and overcome is what keeps the work exciting.</p>
+        <p>A year in, my perspective, critical thinking, communication skills and overall professional approach have improved tremendously. The next step for me is Key Account Manager, and eventually Senior Key Account Manager. My goal is to get there within a short span of time, while continuing to strengthen my contributions to the company.</p>
+      </div>
+    </div>
+
+    <!-- STORY 10: DANISH -->
+    <div class="story" id="mohd-danish">
+      <div class="story__meta">
+        <div class="story__avatar">MD</div>
+        <div>
+          <div class="story__name">Mohd. Danish</div>
+          <div class="story__role">Enterprise Sales Manager · 1 year at telecrm</div>
+        </div>
+        <span class="story__team-tag">Sales</span>
+      </div>
+      <div class="story__pull">After working in CRM for long enough, you automatically start noticing broken follow-up systems everywhere — even outside work. It's basically become a professional habit at this point.</div>
+      <div class="story__body">
+        <p>I joined telecrm in 2024. I started as a Customer Success Account Manager — helping clients get onboarded according to their business requirements, understanding their workflows, team structure, lead management process and helping them set up the CRM in a way that actually worked for them. Retention was also a big part of my role. It wasn't just about onboarding clients, but making sure they continued getting value from the platform and had someone they could rely on when things got messy or confusing.</p>
+        <p>That phase taught me a lot about businesses and customer relationships — and honestly, how every company thinks their sales process is slightly unique.</p>
+        <p>Currently, I work as an Enterprise Sales Manager, handling businesses with larger teams and more complex operational requirements. My role involves understanding client requirements, identifying gaps in their current process and helping them implement the right CRM workflows, automation and communication setup. And no, it's not just inside sales. I also travel to client offices to meet teams personally, understand their operations more closely and build stronger relationships. Some of the best client discussions happen over chai, whiteboards and slightly chaotic sales meetings.</p>
+        <p>Going from customer success to enterprise sales gave me a completely different perspective on how businesses evaluate and adopt technology. What I genuinely like about telecrm is the collaborative environment and the people. The management is approachable, supportive and always open to ideas and discussions — which makes it easy to learn and grow.</p>
+        <p>There's always something new happening, which keeps the work interesting. And the collaborative environment makes it feel like everyone is building something together, not just doing their individual jobs.</p>
+      </div>
+    </div>
+
+
+    <!-- STORY: LOVKESH -->
+    <div class="story" id="lovkesh-gautam">
+      <div class="story__meta">
+        <div class="story__avatar">LG</div>
+        <div>
+          <div class="story__name">Lovkesh Gautam</div>
+          <div class="story__role">Senior Key Account Manager · 3 years at telecrm</div>
+        </div>
+        <span class="story__team-tag">Customer Success</span>
+      </div>
+      <div class="story__pull">I first came to telecrm as an intern during my masters. Then I left, joined another company, and realised pretty quickly that the learning I'd get here would be far greater. So I came back.</div>
+      <div class="story__body">
+        <p>When I approached them again for a full-time opportunity, Rahul, our CEO, said I was a trained asset and that I already understood the work. They didn't just remember me — they valued what I had built here. That's one of the core reasons I'm still around.</p>
+        <p>I joined as an Account Manager. Then Senior Account Manager. Now I am a Senior Key Account Manager. In these three years I've worked across more industries than I can count — manufacturing, travel, logistics, retail. Every new client is a different world with a different set of challenges. Right now I can confidently say there isn't an industry I can't dissect and map into telecrm's use cases. That breadth of understanding is what makes this role so absorbing.</p>
+        <p>I don't come from a technical background. But today I understand the technical side of the work well enough to guide clients through it. An Account Manager at telecrm is part consultant, part problem solver, part relationship builder. Every day a new business walks in from a different industry and the challenge is to understand their process, identify what's holding them back and show them how telecrm solves it. That consultative dimension of the role is what I find most compelling.</p>
+        <p>I have onboarded 958 clients. Almost 50% of the clients I brought on three years ago are still here. I believe this is the result of consistently showing up with value, understanding their business deeply and making sure they grow with the platform.</p>
+        <p>When I joined, the team had five people. Today telecrm is expanding into different cities, the team is growing and the work is becoming more specialised. The transparency of those early days has evolved into something more structured — a sign of a company maturing — but the collaboration between different levels of management hasn't changed.</p>
+        <p>I've recommended many people to telecrm over the years. They joined and they're still here. I think that says more about this place than anything else I could tell you.</p>
+      </div>
+    </div>
+
+    <!-- STORY: MOHIT -->
+    <div class="story" id="mohit-kumar">
+      <div class="story__meta">
+        <div class="story__avatar">MK</div>
+        <div>
+          <div class="story__name">Mohit Kumar</div>
+          <div class="story__role">Key Account Manager · 3 years at telecrm</div>
+        </div>
+        <span class="story__team-tag">Customer Success</span>
+      </div>
+      <div class="story__pull">Being part of a start-up from that early means you don't just watch the company grow — you watch it get built.</div>
+      <div class="story__body">
+        <p>I joined telecrm in 2022 through campus placement. I had applied for a Business Analyst position. When I walked in, the team was around 14–15 people. Within four months we were 25. That's when I understood the company was moving in the right direction.</p>
+        <p>My first few months were in lead qualification — understanding client requirements and filtering them for the sales pipeline. Then I moved into sales: calling people, understanding their requirements, getting them to demos and closing deals. Three months of that. Then I moved to post-sales. That's where I understood the real depth of how businesses work, their challenges, their processes, where things break down. I saw the growth opportunity in that and I haven't looked back since.</p>
+        <p>Job responsibilities weren't defined back then. Four of us were looking after all the leads together. Then we restructured and brought in account managers to distribute the work properly. Then we realised we needed a support team. Then we realised there could be friction between the two, so we created paired combinations. Then team leads to oversee everything. I became a team lead after a year and was part of the entire restructuring of the CS team. Being part of the decisions that shaped it is something very few people get to experience this early in their career.</p>
+        <p>Onboarding BYJU'S was one of those moments that showed us how complex the use cases can get. The scale, the complexity, the expectations that came with a client of that size were unlike anything we had handled before. It pushed us to develop capabilities and think at a level the earlier accounts hadn't demanded. The use cases we handle today are a direct result of what we learned going through that.</p>
+        <p>We use telecrm ourselves internally for different purposes across the team. When you're selling a product you actually use, when you experience the features and improvements firsthand, you're not just describing to clients what it does — you're showing exactly how it can help them overcome their challenges. I find myself in a strong position given the growth I've had here. That's one of the reasons I'm still around.</p>
+      </div>
+    </div>
+
+    <div class="join-cta">
+      <div class="join-cta__text">
+        <h3>Want to write your own story here?</h3>
+        <p>We're growing and looking for people who care about helping Indian businesses sell better. See open roles or get in touch.</p>
+      </div>
+      <div class="join-cta__btns">
+        <a href="telecrm-careers.html" class="btn-primary">See Open Roles <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="telecrm-life-at-telecrm.html" class="btn-outline">Life at telecrm</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="faq">
+  <div class="faq__inner">
+    <div class="faq__header">
+      <div class="faq__eyebrow">FAQ</div>
+      <h2 class="faq__h2">Your questions, <em>answered plainly.</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">What are team stories?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">Real, unscripted stories from the telecrm team — how people joined, what they've built, and how they've grown.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">Are these genuine?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">Yes — in their own words, with no script and no polish.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">What do the stories cover?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">How people joined, what they've built, and what working here is actually like.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">Where can I see open roles?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">On the Careers page.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__logo">telecrm</div>
+        <p class="footer__tagline">A Comprehensive Revenue Management Engine — fusing Lead Management, Call Management, Adaptive CRM, Marketing Automation, and Pipeline Management into one high-performance workspace.</p>
+        <a href="telecrm-get-started.html" class="btn-primary">Get Started →</a>
+      </div>
+      <div class="footer__links-grid">
+      <div class="footer__col-stack">
+        <div>
+          <div class="footer__col-title">Platform</div>
+          <div class="footer__links">
+            <a href="telecrm-platform-overview.html" class="footer__link">Platform Overview</a>
+            <a href="telecrm-platform-hub.html" class="footer__link">Platform Hub</a>
+            <a href="telecrm-benefits-hub.html" class="footer__link">Benefits Hub</a>
+            <a href="telecrm-platform-unified-revenue-management.html" class="footer__link">Unified Revenue Management</a>
+            <a href="telecrm-platform-lead-management.html" class="footer__link">Lead Management</a>
+            <a href="telecrm-platform-call-management.html" class="footer__link">Call Management &amp; Recording</a>
+            <a href="telecrm-platform-adaptive-crm.html" class="footer__link">Adaptive CRM</a>
+            <a href="telecrm-platform-marketing-automation.html" class="footer__link">Marketing Automation</a>
+            <a href="telecrm-platform-sales-pipeline-management.html" class="footer__link">Sales Pipeline Management</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Pricing</div>
+          <div class="footer__links">
+            <a href="telecrm-pricing.html" class="footer__link">Pricing</a>
+            <a href="telecrm-cost-savings.html" class="footer__link">Cost Savings</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__col-stack">
+        <div>
+          <div class="footer__col-title">Solutions</div>
+          <div class="footer__links">
+            <a href="telecrm-problems-hub.html" class="footer__link">Problems Hub</a>
+            <a href="telecrm-crm-hub.html" class="footer__link">CRM Hub</a>
+            <a href="telecrm-industry-hub.html" class="footer__link">Industry Hub</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Get Started</div>
+          <div class="footer__links">
+            <a href="telecrm-partnership.html" class="footer__link">Partner Program</a>
+            <a href="telecrm-demo-request.html" class="footer__link">Demo Request</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__col-stack">
+        <div>
+          <div class="footer__col-title">Trust</div>
+          <div class="footer__links">
+            <a href="telecrm-testimonials.html" class="footer__link">Testimonials</a>
+            <a href="telecrm-case-studies.html" class="footer__link">Case Studies</a>
+            <a href="telecrm-comparison.html" class="footer__link">Comparison</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">About Us</div>
+          <div class="footer__links">
+            <a href="telecrm-about-telecrm.html" class="footer__link">About telecrm</a>
+            <a href="telecrm-life-at-telecrm.html" class="footer__link">Life at telecrm</a>
+            <a href="telecrm-careers.html" class="footer__link">Careers</a>
+            <a href="telecrm-contact.html" class="footer__link">Contact Us</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Support</div>
+        <div class="footer__links">
+          <a href="telecrm-faqs.html" class="footer__link">FAQs</a>
+          <a href="telecrm-glossary.html" class="footer__link">Glossary</a>
+          <a href="telecrm-learning-repository.html" class="footer__link">Learning Repository</a>
+          <a href="telecrm-onboarding.html" class="footer__link">Onboarding</a>
+          <a href="telecrm-privacy-policy.html" class="footer__link">Privacy Policy</a>
+          <a href="telecrm-recommended-devices.html" class="footer__link">Recommended Devices</a>
+          <a href="telecrm-refund-policy.html" class="footer__link">Refund Policy</a>
+          <a href="telecrm-terms-conditions.html" class="footer__link">Terms &amp; Conditions</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Features</div>
+        <div class="footer__links">
+          <a href="telecrm-feature-automations.html" class="footer__link">Automation</a>
+          <a href="telecrm-feature-call-management.html" class="footer__link">Call Management</a>
+          <a href="telecrm-feature-calling-campaign.html" class="footer__link">Calling Campaign Management</a>
+          <a href="telecrm-feature-integrations.html" class="footer__link">Integrations</a>
+          <a href="telecrm-feature-lead-fields.html" class="footer__link">Lead Fields</a>
+          <a href="telecrm-feature-lead-management.html" class="footer__link">Lead Management &amp; Reporting</a>
+          <a href="telecrm-feature-lead-stages.html" class="footer__link">Lead Stages</a>
+          <a href="telecrm-feature-list-labels.html" class="footer__link">List and Labels</a>
+          <a href="telecrm-feature-reporting.html" class="footer__link">Reporting</a>
+          <a href="telecrm-feature-user-management.html" class="footer__link">User Management</a>
+          <a href="telecrm-feature-whatsapp.html" class="footer__link">WhatsApp</a>
+        </div>
+      </div>
+      </div><!-- /footer__links-grid -->
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__copy">© 2026 telecrm. All rights reserved.</div>
+      <div class="footer__legal">
+        <a href="telecrm-privacy-policy.html">Privacy Policy</a>
+        <a href="telecrm-terms-conditions.html">Terms &amp; Conditions</a>
+        <a href="telecrm-refund-policy.html">Refund Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var btn=document.querySelector('.nav__hamburger');
+  var links=document.querySelector('.nav__links');
+  if(btn&&links){
+    btn.addEventListener('click',function(){btn.classList.toggle('open');links.classList.toggle('open');});
+  }
+  var mq=window.matchMedia('(max-width:768px)');
+  document.querySelectorAll('.nav__item > .nav__link').forEach(function(hub){
+    hub.addEventListener('click',function(e){ if(mq.matches){ e.preventDefault(); hub.parentElement.classList.toggle('open'); } });
+  });
+  document.querySelectorAll('.np__link,.np__foot,.nav__cta,.nav__mobile-cta').forEach(function(l){
+    l.addEventListener('click',function(){ if(btn){btn.classList.remove('open');} if(links){links.classList.remove('open');} });
+  });
+})();
+</script>
+<script>
+function toggleFaq(el){
+  var item=el.parentElement;
+  var isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+  if(!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>

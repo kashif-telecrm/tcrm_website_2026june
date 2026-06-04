@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Life at telecrm — Culture, Teams & What It's Like to Work Here</title>
+<meta name="description" content="What it's really like to work at telecrm. Our culture, how we make decisions, who we are as a team, and what we look for in the people who join us.">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cta:#F97316; --cta-hover:#EA580C;
+  --v50:#EDEBF6;--v100:#E1DDF0;--v200:#C4BAE5;--v300:#9C8FCF;
+  --v400:#7260B5;--v500:#4F38A2;--v600:#483393;--v700:#382873;--v900:#211844;
+  --white:#fff;--grey:#64748B;--border:#E9EBF8;--grey2:#94A3B8;
+  --font-head:'Plus Jakarta Sans',sans-serif;--font-body:'DM Sans',sans-serif;
+  --radius-btn:10px;--radius-card:16px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);color:var(--v900);background:#fff;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+.nav__inner{max-width:1280px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:72px;}
+.nav__logo{font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--v500);letter-spacing:-.5px;}
+.nav__links{display:flex;align-items:center;gap:2px;}
+.nav__link{font-family:var(--font-head);font-size:12.5px;font-weight:600;color:var(--v700);padding:7px 11px;border-radius:8px;transition:all .18s;white-space:nowrap;}
+.nav__link:hover,.nav__link--active{background:var(--v50);color:var(--v500);}
+.nav__sep{display:inline-block;width:1px;height:20px;background:var(--border);margin:0 8px;vertical-align:middle;}
+.nav__cta{font-family:var(--font-head);font-size:13px;font-weight:700;background:var(--cta);color:#fff;padding:10px 22px;border-radius:var(--radius-btn);box-shadow:0 4px 12px rgba(249,115,22,.3);transition:all .18s;white-space:nowrap;margin-left:8px;}
+.nav__cta:hover{background:var(--cta-hover);transform:translateY(-1px);}
+.nav__mobile-right{display:none;align-items:center;gap:8px;margin-left:auto;}
+.nav__mobile-cta{font-family:var(--font-head);font-size:13px;font-weight:700;background:var(--v500);color:#fff;padding:8px 16px;border-radius:var(--radius-btn);text-decoration:none;white-space:nowrap;}
+.nav__mob-sep{display:none;width:1px;height:20px;background:var(--border);}
+.nav__hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:8px;border:none;background:transparent;}
+.nav__hamburger span{display:block;width:22px;height:2px;background:var(--v900);border-radius:2px;transition:all .18s;}
+.nav__hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav__hamburger.open span:nth-child(2){opacity:0;}
+.nav__hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* HERO */
+.hero{padding:72px 0 64px;background:#fff;position:relative;overflow:hidden;}
+.hero__bg{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;opacity:.3;pointer-events:none;}
+.hero__glow{position:absolute;top:-80px;right:-60px;width:500px;height:500px;background:radial-gradient(circle,rgba(79,56,162,.06) 0%,transparent 65%);pointer-events:none;}
+.hero__inner{max-width:1280px;margin:0 auto;padding:0 32px;position:relative;}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-family:var(--font-head);font-size:12px;font-weight:600;color:var(--grey2);margin-bottom:24px;}
+.breadcrumb-sep{color:var(--v200);}
+.breadcrumb a{color:var(--grey2);transition:color .2s;}
+.breadcrumb a:hover{color:var(--v500);}
+.breadcrumb-current{color:var(--v500);}
+.hero__eyebrow{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px;}
+.hero__h1{font-family:var(--font-head);font-size:clamp(34px,5vw,60px);font-weight:900;letter-spacing:-2px;color:var(--v900);line-height:1.05;margin-bottom:20px;}
+.hero__h1 em{font-style:normal;color:var(--v500);}
+.hero__sub{font-size:17px;color:var(--grey);line-height:1.8;max-width:640px;}
+
+/* HIGHLIGHTS BAR */
+.highlights{background:var(--v50);border-top:1px solid var(--v100);border-bottom:1px solid var(--v100);padding:20px 32px;}
+.highlights__inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.highlight{display:flex;align-items:center;gap:10px;padding:10px 16px;background:#fff;border:1.5px solid var(--v100);border-radius:10px;}
+.highlight__dot{width:7px;height:7px;border-radius:50%;background:var(--v500);flex-shrink:0;}
+.highlight__text{font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--v700);}
+
+/* SHARED */
+.inner{max-width:1280px;margin:0 auto;padding:0 32px;}
+.section{padding:96px 0;}
+.section--tint{background:#F8F7FC;}
+.section--dark{background:var(--v900);}
+.s-eye{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px;}
+.s-eye--light{color:var(--v300);}
+.s-h2{font-family:var(--font-head);font-size:clamp(26px,3vw,42px);font-weight:900;color:var(--v900);letter-spacing:-.8px;line-height:1.15;margin-bottom:20px;}
+.s-h2 em{font-style:normal;color:var(--v500);}
+.s-h2--light{color:#fff;}
+.s-h2--light em{color:var(--v300);}
+.s-sub{font-size:16px;color:var(--grey);line-height:1.8;}
+.s-sub--light{color:var(--v200);}
+
+/* INTRO SPLIT */
+.intro-split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-top:48px;}
+.intro-split__body{font-size:16px;color:var(--grey);line-height:1.85;}
+.intro-split__body p{margin-bottom:20px;}
+.intro-split__body p:last-child{margin-bottom:0;}
+.intro-split__stats{display:flex;flex-direction:column;gap:0;}
+.stat-row{display:flex;align-items:baseline;gap:16px;padding:24px 0;border-top:1px solid var(--border);}
+.stat-row:last-child{border-bottom:1px solid var(--border);}
+.stat-row__num{font-family:var(--font-head);font-size:clamp(32px,4vw,48px);font-weight:900;color:var(--v500);letter-spacing:-2px;line-height:1;min-width:120px;}
+.stat-row__label{font-size:14px;color:var(--grey);line-height:1.6;}
+
+/* VALUES */
+.value-row{display:flex;flex-direction:column;gap:10px;padding:36px 0;border-top:1px solid var(--border);}
+.value-row:last-child{border-bottom:1px solid var(--border);}
+.value-row__header{display:flex;align-items:center;gap:16px;}
+.value-row__icon{width:40px;height:40px;border-radius:10px;background:var(--v50);border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.value-row__icon svg{width:18px;height:18px;}
+.value-row__name{font-family:var(--font-head);font-size:17px;font-weight:900;color:var(--v900);}
+.value-row__body{font-size:15px;color:var(--grey);line-height:1.8;}
+
+/* WHAT IT'S LIKE */
+.life-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px;}
+.life-card{padding:28px;border:1.5px solid var(--border);border-radius:18px;display:flex;flex-direction:column;gap:12px;}
+.life-card__header{display:flex;align-items:center;gap:12px;}
+.life-card__icon{width:44px;height:44px;border-radius:12px;background:var(--v50);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.life-card__title{font-family:var(--font-head);font-size:15px;font-weight:800;color:var(--v900);}
+.life-card__body{font-size:13px;color:var(--grey);line-height:1.75;}
+
+/* TEAM */
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 40px;margin-top:48px;}
+.team-card{display:flex;flex-direction:column;gap:0;}
+.team-card__img{aspect-ratio:1/1;border-radius:16px;background:var(--v50);overflow:hidden;margin-bottom:16px;}
+.team-card__img img{width:100%;height:100%;object-fit:cover;}
+.team-card__name{font-family:var(--font-head);font-size:16px;font-weight:800;color:var(--v900);margin-bottom:2px;}
+.team-card__role{font-size:13px;color:var(--grey);margin-bottom:10px;}
+.team-card__li{display:inline-flex;align-items:center;gap:5px;font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v500);}
+
+/* MISSION BLOCK */
+.mission-block{background:var(--v900);padding:80px 0;position:relative;overflow:hidden;}
+.mission-block__glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:400px;background:radial-gradient(ellipse,rgba(114,96,181,.25) 0%,transparent 70%);pointer-events:none;}
+.mission-block__inner{max-width:1280px;margin:0 auto;padding:0 32px;position:relative;}
+.mission-block__quote{font-family:var(--font-head);font-size:clamp(28px,4vw,52px);font-weight:900;color:#fff;letter-spacing:-1.5px;line-height:1.15;margin-bottom:32px;}
+.mission-block__quote em{font-style:normal;color:var(--v300);}
+.mission-block__body{font-size:17px;color:var(--v200);line-height:1.85;max-width:800px;}
+
+/* FINAL CTA */
+.final-cta{background:var(--v900);padding:80px 0;text-align:center;position:relative;overflow:hidden;}
+.final-cta__glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:400px;background:radial-gradient(ellipse,rgba(114,96,181,.2) 0%,transparent 70%);pointer-events:none;}
+.final-cta__inner{position:relative;max-width:640px;margin:0 auto;padding:0 32px;}
+.final-cta__eye{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v300);text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px;}
+.final-cta__h2{font-family:var(--font-head);font-size:clamp(28px,4vw,48px);font-weight:900;color:#fff;letter-spacing:-1.5px;line-height:1.1;margin-bottom:16px;}
+.final-cta__h2 em{font-style:normal;color:var(--v300);}
+.final-cta__sub{font-size:16px;color:var(--v200);line-height:1.75;margin-bottom:40px;}
+.final-cta__btn{font-family:var(--font-head);font-size:15px;font-weight:800;background:#fff;color:var(--v500);padding:16px 36px;border-radius:var(--radius-btn);display:inline-flex;align-items:center;gap:8px;transition:all .2s;}
+.final-cta__btn:hover{background:var(--v50);transform:translateY(-1px);}
+.trust-row{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:20px;font-family:var(--font-head);font-size:12px;color:var(--v300);font-weight:600;flex-wrap:wrap;}
+.trust-dot{color:var(--v400);}
+
+/* FOOTER */
+.footer{background:#fff;border-top:1px solid var(--border);padding:64px 0 40px;}
+.footer__inner{max-width:1280px;margin:0 auto;padding:0 32px;width:100%;}
+.footer__links-grid{display:contents;}
+.footer__grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:32px;margin-bottom:48px;}
+.footer__logo{font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--v500);margin-bottom:16px;letter-spacing:-.5px;}
+.footer__tagline{font-size:14px;color:var(--grey);line-height:1.7;max-width:280px;margin-bottom:24px;}
+.footer__col-title{font-family:var(--font-head);font-size:12px;font-weight:800;color:var(--v900);text-transform:uppercase;letter-spacing:.06em;margin-bottom:16px;}
+.footer__links{display:flex;flex-direction:column;gap:10px;}
+.footer__link{font-size:14px;color:var(--grey);transition:color .2s;}
+.footer__link:hover{color:var(--v500);}
+.footer__bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer__copy{font-size:13px;color:var(--grey);}
+.footer__legal{display:flex;gap:24px;}
+.footer__legal a{font-size:13px;color:var(--grey);transition:color .2s;}
+.footer__legal a:hover{color:var(--v500);}
+.btn-footer{font-family:var(--font-head);font-size:13px;font-weight:700;background:var(--v500);color:#fff;padding:10px 20px;border-radius:var(--radius-btn);display:inline-flex;align-items:center;gap:6px;}
+.btn-primary{font-family:var(--font-head);font-size:13px;font-weight:700;background:var(--cta);color:#fff;padding:12px 24px;border-radius:var(--radius-btn);display:inline-flex;align-items:center;gap:6px;transition:all .18s;}
+.btn-primary:hover{background:var(--cta-hover);}
+.btn-outline{font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--v500);border:1.5px solid var(--v200);padding:11px 20px;border-radius:var(--radius-btn);display:inline-flex;align-items:center;gap:6px;transition:all .18s;}
+.btn-outline:hover{background:var(--v50);}
+
+@media(max-width:768px){
+  .nav__links{display:none;flex-direction:column;position:fixed;top:72px;left:0;right:0;background:rgba(255,255,255,.98);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:16px 24px;gap:0;z-index:99;}
+  .nav__links.open{display:flex;}
+  .nav__link{padding:12px 0;border-bottom:1px solid var(--border);font-size:15px;display:block;}
+  .nav__link:last-child{border-bottom:none;}
+  .nav__sep{display:none;}
+  .nav__cta{display:none;}
+  .nav__mobile-right{display:flex;align-items:center;gap:8px;margin-left:auto;}
+  .nav__mob-sep{display:block;}
+  .nav__hamburger{display:flex;}
+  .hero__inner,.inner{padding:0 20px;}
+  .highlights{padding:20px;}
+  .highlights__inner{grid-template-columns:1fr!important;}
+  .intro-split{grid-template-columns:1fr!important;gap:40px;}
+  .life-grid{grid-template-columns:1fr!important;}
+  div[style*="grid-template-columns:200px 1fr"]{grid-template-columns:1fr!important;}
+  .team-strip-row{grid-template-columns:1fr!important;}
+  div[style*="grid-template-columns:220px"]{grid-template-columns:1fr!important;gap:16px!important;}
+  div[style*="grid-template-columns:1fr 1fr 1fr"]{grid-template-columns:1fr!important;}
+  div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important;}
+  .team-grid{grid-template-columns:1fr!important;}
+  .hiring-steps > div{grid-template-columns:48px 1fr!important;}
+  .life-grid[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important;}
+  .footer__grid{grid-template-columns:1fr!important;gap:32px!important;}
+  .footer__tagline{max-width:100%!important;}
+  .footer__links-grid{display:grid!important;grid-template-columns:1fr 1fr;gap:32px 16px;margin-top:32px;}
+  .footer__links-grid > div:nth-child(1),
+  .footer__links-grid > div:nth-child(2),
+  .footer__links-grid > div:nth-child(3){text-align:left;grid-column:1;}
+  .footer__links-grid > div:nth-child(4){text-align:right;grid-column:2;grid-row:1 / span 3;}
+  .footer__links-grid > div:nth-child(4) .footer__links{align-items:flex-end;}
+  .footer__bottom{flex-direction:column!important;gap:12px!important;text-align:center!important;}
+  .footer__legal{flex-wrap:wrap!important;justify-content:center!important;}
+}
+@media(min-width:769px){.nav__hamburger{display:none;}.nav__mobile-right{display:none;}}
+
+/* ===== ROLLOUT v2026-05-29: nav mega-menu + fat footer (canonical) ===== */
+.nav__item{position:relative;display:flex;align-items:center;height:72px;}
+.nav__item > .nav__link{display:inline-flex;align-items:center;gap:4px;}
+.nav__caret{width:11px;height:11px;flex-shrink:0;transition:transform .2s;}
+.nav__item:hover > .nav__link .nav__caret,.nav__item:focus-within > .nav__link .nav__caret{transform:rotate(180deg);}
+.nav__item:hover > .nav__link,.nav__item:focus-within > .nav__link{background:var(--v50);color:var(--v500);}
+.nav__panel{position:absolute;top:100%;left:0;background:#fff;border:1px solid var(--border);border-radius:14px;box-shadow:0 18px 44px rgba(33,24,68,.13);padding:14px;opacity:0;visibility:hidden;transform:translateY(7px);transition:opacity .16s,transform .16s,visibility .16s;z-index:200;}
+.nav__panel--right{left:auto;right:0;}
+.nav__item:hover > .nav__panel,.nav__item:focus-within > .nav__panel{opacity:1;visibility:visible;transform:translateY(0);}
+.np__list{display:grid;gap:1px;}
+.np__list--2{grid-template-columns:1fr 1fr;gap:1px 14px;}
+.np__link{display:flex;flex-direction:column;gap:2px;padding:9px 12px;border-radius:8px;transition:background .15s;min-width:0;}
+.np__link:hover{background:var(--v50);}
+.np__t{font-family:var(--font-head);font-size:13.5px;font-weight:700;color:var(--v900);white-space:nowrap;}
+.np__list--2 .np__t{white-space:normal;line-height:1.3;overflow-wrap:break-word;}
+.np__link:hover .np__t{color:var(--v500);}
+.np__s{font-family:var(--font-body);font-size:12px;color:var(--grey);line-height:1.35;}
+.np__foot{display:flex;align-items:center;gap:6px;border-top:1px solid var(--border);margin-top:8px;padding:11px 12px 3px;font-family:var(--font-head);font-size:12.5px;font-weight:700;color:var(--v500);}
+.np__foot svg{width:13px;height:13px;}
+.nav__mobile-cta{background:var(--cta);}
+.footer__grid{grid-template-columns:1.5fr 1fr 1fr 1fr 1fr 1.15fr;gap:40px 32px;}
+.footer__col-stack{display:flex;flex-direction:column;gap:48px;}
+@media(max-width:1024px){.footer__grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:768px){
+  .nav__item{width:100%;height:auto;display:block;position:static;}
+  .nav__item > .nav__link{display:flex;align-items:center;justify-content:space-between;width:100%;}
+  .nav__item.open > .nav__link .nav__caret{transform:rotate(180deg);}
+  .nav__caret{width:13px;height:13px;}
+  .nav__panel{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;border-radius:0;padding:4px 0 10px 10px;width:auto !important;display:none;z-index:auto;}
+  .nav__item.open > .nav__panel{display:block;}
+  .np__list--2{grid-template-columns:1fr;}
+  .np__link{padding:9px 10px;}
+  .np__foot{padding-left:10px;}
+  .footer__links-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px 16px;margin-top:32px;}
+  .footer__links-grid > div:nth-child(1),.footer__links-grid > div:nth-child(2),.footer__links-grid > div:nth-child(3),.footer__links-grid > div:nth-child(4),.footer__links-grid > div:nth-child(5){text-align:left;grid-column:auto;grid-row:auto;}
+  .footer__links-grid > div:nth-child(4) .footer__links{align-items:flex-start;}
+}
+@media(max-width:600px){.footer__grid{grid-template-columns:1fr;}}
+/* ===== end ROLLOUT ===== */
+
+/* ===== FAQ section (locked §16A) ===== */
+.faq{padding:96px 0;background:#F8F7FC;}
+.faq__inner{max-width:1280px;margin:0 auto;padding:0 32px;}
+.faq__header{text-align:center;margin-bottom:8px;}
+.faq__eyebrow{font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v500);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;}
+.faq__h2{font-family:var(--font-head);font-size:clamp(28px,3.5vw,42px);font-weight:900;letter-spacing:-1.2px;color:var(--v900);line-height:1.15;}
+.faq__h2 em{font-style:normal;color:var(--v500);}
+.faq-list{display:flex;flex-direction:column;border-top:1px solid var(--border);max-width:860px;margin:40px auto 0;}
+.faq-item{border-bottom:1px solid var(--border);}
+.faq-item__q{display:flex;align-items:center;justify-content:space-between;padding:22px 0;cursor:pointer;gap:24px;}
+.faq-item__q-text{font-family:var(--font-head);font-size:16px;font-weight:700;color:var(--v900);}
+.faq-item__icon{width:28px;height:28px;border-radius:50%;background:#fff;border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s;}
+.faq-item__icon svg{width:12px;height:12px;transition:transform .25s;}
+.faq-item.open .faq-item__icon{background:var(--v500);border-color:var(--v500);}
+.faq-item.open .faq-item__icon svg{transform:rotate(45deg);stroke:#fff;}
+.faq-item__a{display:none;font-family:var(--font-body);font-size:15px;color:var(--grey);line-height:1.75;padding-bottom:22px;max-width:760px;}
+.faq-item.open .faq-item__a{display:block;}
+@media(max-width:768px){.faq{padding:64px 0;}.faq__inner{padding:0 20px;}}
+/* ===== end FAQ ===== */
+
+.np__cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.np__col-head{display:block;font-family:var(--font-head);font-size:11px;font-weight:800;color:var(--v400);text-transform:uppercase;letter-spacing:.07em;padding:4px 12px 8px;transition:color .15s;}
+.np__col-head:hover{color:var(--v500);}
+.nav__panel:has(.np__col:only-child) .np__cols{grid-template-columns:1fr;}
+@media(max-width:768px){.np__cols{grid-template-columns:1fr !important;gap:0 !important;}.np__col-head{padding:8px 10px 4px;}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="telecrm-approach2-home.html" class="nav__logo">telecrm</a>
+    <div class="nav__links">
+      <div class="nav__item">
+        <a href="telecrm-platform-overview.html" class="nav__link">Platform Overview <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:560px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-platform-hub.html">Platform Hub</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-platform-unified-revenue-management.html"><span class="np__t">Unified Revenue Management</span><span class="np__s">One connected engine</span></a>
+                <a class="np__link" href="telecrm-platform-lead-management.html"><span class="np__t">Lead Management</span><span class="np__s">Capture, dedupe, assign</span></a>
+                <a class="np__link" href="telecrm-platform-call-management.html"><span class="np__t">Call Management &amp; Recording</span><span class="np__s">Dial, record, track</span></a>
+                <a class="np__link" href="telecrm-platform-adaptive-crm.html"><span class="np__t">Adaptive CRM</span><span class="np__s">Stages, fields, 360°</span></a>
+                <a class="np__link" href="telecrm-platform-marketing-automation.html"><span class="np__t">Marketing Automation</span><span class="np__s">Reach leads automatically</span></a>
+                <a class="np__link" href="telecrm-platform-sales-pipeline-management.html"><span class="np__t">Sales Funnel &amp; Pipeline Management</span><span class="np__s">Track every deal stage</span></a>
+              </div>
+            </div>
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-benefits-hub.html">Benefits Hub</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-benefits-hub.html"><span class="np__t">Outcomes &amp; ROI</span><span class="np__s">What telecrm delivers for your team</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-platform-overview.html">Platform Overview — the product, end to end <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-solutions-hub.html" class="nav__link">Solutions <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-solutions-hub.html">By approach</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-problems-hub.html"><span class="np__t">Problems Hub</span><span class="np__s">Revenue leaks, by stage</span></a>
+                <a class="np__link" href="telecrm-crm-hub.html"><span class="np__t">CRM Hub</span><span class="np__s">By type &amp; by team</span></a>
+                <a class="np__link" href="telecrm-industry-hub.html"><span class="np__t">Industry Hub</span><span class="np__s">11 industries covered</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-solutions-hub.html">Browse all solutions <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-features-hub.html" class="nav__link">Features <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:620px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-features-hub.html">Engagement</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-feature-call-management.html"><span class="np__t">Call Management</span></a>
+                <a class="np__link" href="telecrm-feature-calling-campaign.html"><span class="np__t">Calling Campaign Management</span></a>
+                <a class="np__link" href="telecrm-feature-whatsapp.html"><span class="np__t">WhatsApp</span></a>
+                <a class="np__link" href="telecrm-feature-automations.html"><span class="np__t">Automation</span></a>
+              </div>
+            </div>
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-features-hub.html">Data &amp; Admin</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-feature-lead-management.html"><span class="np__t">Lead Management &amp; Reporting</span></a>
+                <a class="np__link" href="telecrm-feature-lead-fields.html"><span class="np__t">Lead Fields</span></a>
+                <a class="np__link" href="telecrm-feature-lead-stages.html"><span class="np__t">Lead Stages</span></a>
+                <a class="np__link" href="telecrm-feature-list-labels.html"><span class="np__t">List and Labels</span></a>
+                <a class="np__link" href="telecrm-feature-reporting.html"><span class="np__t">Reporting</span></a>
+                <a class="np__link" href="telecrm-feature-integrations.html"><span class="np__t">Integrations</span></a>
+                <a class="np__link" href="telecrm-feature-user-management.html"><span class="np__t">User Management</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-features-hub.html">See all features <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-trust-hub.html" class="nav__link">Trust <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-trust-hub.html">Proof</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-testimonials.html"><span class="np__t">Testimonials</span><span class="np__s">Real customers, real numbers</span></a>
+                <a class="np__link" href="telecrm-case-studies.html"><span class="np__t">Case Studies</span><span class="np__s">9 detailed stories</span></a>
+                <a class="np__link" href="telecrm-comparison.html"><span class="np__t">Comparison</span><span class="np__s">telecrm vs. alternatives</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-trust-hub.html">Visit the Trust Hub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-pricing.html" class="nav__link">Pricing <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:320px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-pricing.html">Plans</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-pricing.html"><span class="np__t">Pricing</span><span class="np__s">Plans &amp; what's included</span></a>
+                <a class="np__link" href="telecrm-cost-savings.html"><span class="np__t">Cost Savings</span><span class="np__s">What you save vs. tools</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-support-hub.html" class="nav__link">Support <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:560px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-support-hub.html">Resources</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-faqs.html"><span class="np__t">FAQs</span></a>
+                <a class="np__link" href="telecrm-glossary.html"><span class="np__t">Glossary</span></a>
+                <a class="np__link" href="telecrm-learning-repository.html"><span class="np__t">Learning Repository</span></a>
+                <a class="np__link" href="telecrm-onboarding.html"><span class="np__t">Onboarding</span></a>
+                <a class="np__link" href="telecrm-recommended-devices.html"><span class="np__t">Recommended Devices</span></a>
+              </div>
+            </div>
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-support-hub.html">Policies</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-privacy-policy.html"><span class="np__t">Privacy Policy</span></a>
+                <a class="np__link" href="telecrm-refund-policy.html"><span class="np__t">Refund Policy</span></a>
+                <a class="np__link" href="telecrm-terms-conditions.html"><span class="np__t">Terms &amp; Conditions</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-support-hub.html">Go to Support Hub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-get-started.html" class="nav__link">Get Started <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-get-started.html">Get started</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-partnership.html"><span class="np__t">Partner Program</span><span class="np__s">Refer &amp; earn 10% for life</span></a>
+                <a class="np__link" href="telecrm-demo-request.html"><span class="np__t">Demo Request</span><span class="np__s">Book a free demo</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-get-started.html">All ways to start <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-about-us.html" class="nav__link nav__link--active">About Us <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-about-us.html">Company</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-about-telecrm.html"><span class="np__t">About telecrm</span><span class="np__s">Story, vision, mission</span></a>
+                <a class="np__link" href="telecrm-life-at-telecrm.html"><span class="np__t">Life at telecrm</span><span class="np__s">Culture &amp; team</span></a>
+                <a class="np__link" href="telecrm-careers.html"><span class="np__t">Careers</span><span class="np__s">Open roles</span></a>
+                <a class="np__link" href="telecrm-contact.html"><span class="np__t">Contact Us</span><span class="np__s">Talk to us</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="nav__sep"></span>
+      <a href="telecrm-demo-request.html" class="nav__cta">Get a Demo</a>
+    </div>
+    <div class="nav__mobile-right">
+      <a href="telecrm-demo-request.html" class="nav__mobile-cta">Get a Demo</a>
+      <span class="nav__mob-sep"></span>
+      <button class="nav__hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__bg"></div>
+  <div class="hero__glow"></div>
+  <div class="hero__inner">
+    <div class="breadcrumb">
+      <a href="telecrm-approach2-home.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="telecrm-about-us.html">About Us</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">Life at telecrm</span>
+    </div>
+    <div class="hero__eyebrow">Life at telecrm</div>
+    <h1 class="hero__h1">The people who build it<br><em>believe in it.</em></h1>
+    <p class="hero__sub">telecrm is built by a team that genuinely cares about what Indian sales teams go through every day. Here's what working here actually looks like — the culture, the team, and what we value.</p>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS BAR -->
+<div class="highlights">
+  <div class="highlights__inner">
+    <div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">70+ team members</span></div>
+    <div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">Fast Growing</span></div>
+    <div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">5,000+ businesses served</span></div>
+    <div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">Built for India</span></div>
+  </div>
+</div>
+
+<!-- TEAMS AT TELECRM -->
+<section class="section section--tint">
+  <div class="inner">
+    <div class="s-eye">Teams at telecrm</div>
+    <h2 class="s-h2">Four teams.<br><em>One mission.</em></h2>
+    <p class="s-sub" style="margin-bottom:48px;">Every team at telecrm exists to serve one end: helping Indian sales teams sell better. Here's how we're organised — and what each team actually does.</p>
+
+    <div style="display:flex;flex-direction:column;gap:0;">
+
+      <div style="display:grid;grid-template-columns:220px 1fr;gap:32px;align-items:center;padding:32px 0;border-top:1px solid var(--border);">
+        <div style="display:flex;align-items:center;gap:14px;">
+          <div style="width:52px;height:52px;border-radius:14px;background:#fff;border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </div>
+          <div>
+            <div style="font-family:var(--font-head);font-size:17px;font-weight:900;color:var(--v900);">Customer Success</div>
+            
+          </div>
+        </div>
+        <p style="font-size:15px;color:var(--grey);line-height:1.75;">The heartbeat of telecrm. CS is responsible for onboarding every new customer, running their WhatsApp support group, answering queries in real time, conducting review sessions, and ensuring that every business on the platform is getting real value. CS is why our retention is high and why customers trust us enough to refer others. They are not a helpdesk — they are implementation partners.</p>
+        
+      </div>
+
+      <div style="display:grid;grid-template-columns:220px 1fr;gap:32px;align-items:center;padding:32px 0;border-top:1px solid var(--border);">
+        <div style="display:flex;align-items:center;gap:14px;">
+          <div style="width:52px;height:52px;border-radius:14px;background:#fff;border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <div>
+            <div style="font-family:var(--font-head);font-size:17px;font-weight:900;color:var(--v900);">Technology</div>
+            
+          </div>
+        </div>
+        <p style="font-size:15px;color:var(--grey);line-height:1.75;">The team that builds and maintains the platform. Engineering owns the backend infrastructure that handles 60 lakh+ leads, 1 crore+ calls, and 9 crore+ automations every month without missing a beat. Product works closely with CS and customers to decide what gets built next. Every sprint, every release, every fix — Technology makes it happen.</p>
+        
+      </div>
+
+      <div style="display:grid;grid-template-columns:220px 1fr;gap:32px;align-items:center;padding:32px 0;border-top:1px solid var(--border);">
+        <div style="display:flex;align-items:center;gap:14px;">
+          <div style="width:52px;height:52px;border-radius:14px;background:#fff;border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
+          <div>
+            <div style="font-family:var(--font-head);font-size:17px;font-weight:900;color:var(--v900);">Sales</div>
+            
+          </div>
+        </div>
+        <p style="font-size:15px;color:var(--grey);line-height:1.75;">Sales at telecrm is consultative, not transactional. Reps spend their time genuinely understanding a prospect's business before recommending a solution. We don't hard-sell. We show, explain, and let the product do the convincing. The sales team uses telecrm themselves every day — which means they know it better than anyone and can speak to it honestly.</p>
+        
+      </div>
+
+      <div style="display:grid;grid-template-columns:220px 1fr;gap:32px;align-items:center;padding:32px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+        <div style="display:flex;align-items:center;gap:14px;">
+          <div style="width:52px;height:52px;border-radius:14px;background:#fff;border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
+          </div>
+          <div>
+            <div style="font-family:var(--font-head);font-size:17px;font-weight:900;color:var(--v900);">Marketing</div>
+            
+          </div>
+        </div>
+        <p style="font-size:15px;color:var(--grey);line-height:1.75;">A small but high-output team responsible for everything that brings new businesses to telecrm — content, SEO, campaigns, partnerships, and brand. Marketing at telecrm is data-driven and moves fast. The team treats every rupee of spend as their own money and every piece of content as a chance to build genuine trust with the audience.</p>
+        
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section class="section">
+  <div class="inner">
+    <div class="s-eye">How we work</div>
+    <h2 class="s-h2">No unnecessary process.<br><em>Just work that matters.</em></h2>
+    <p class="s-sub" style="margin-bottom:48px;">We have deliberately kept our processes lean. As a small team with a large product surface, we can't afford to spend time in meetings explaining what we should be building. Here's how we actually operate.</p>
+
+    <div style="display:flex;flex-direction:column;">
+<div style="display:grid;grid-template-columns:200px 1fr;gap:32px;padding:28px 0;border-top:1px solid var(--border);align-items:start;">
+        <div style="font-family:var(--font-head);font-size:15px;font-weight:800;color:var(--v900);">Customer feedback in the room</div>
+        <p style="font-size:15px;color:var(--grey);line-height:1.8;">Product decisions are made with real customer context — not assumptions. CS shares feedback constantly. Engineers are encouraged to read support tickets. Product managers talk to customers directly.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:200px 1fr;gap:32px;padding:28px 0;border-top:1px solid var(--border);align-items:start;">
+        <div style="font-family:var(--font-head);font-size:15px;font-weight:800;color:var(--v900);">Outcomes over hours</div>
+        <p style="font-size:15px;color:var(--grey);line-height:1.8;">We don't track hours — we track outcomes. Everyone knows what they own and what success looks like. If you're getting results, no one is asking what time you got in.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:200px 1fr;gap:32px;padding:28px 0;border-top:1px solid var(--border);align-items:start;">
+        <div style="font-family:var(--font-head);font-size:15px;font-weight:800;color:var(--v900);">Short, focused meetings</div>
+        <p style="font-size:15px;color:var(--grey);line-height:1.8;">If a meeting happens, it has a clear agenda and a defined outcome. We don't do status updates in meetings — those happen through async communication. If something can be resolved without a meeting, it will be. Meetings are reserved for decisions, alignment, or working through genuinely complex problems together.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:200px 1fr;gap:32px;padding:28px 0;border-top:1px solid var(--border);align-items:start;">
+        <div style="font-family:var(--font-head);font-size:15px;font-weight:800;color:var(--v900);">Frequent releases</div>
+        <p style="font-size:15px;color:var(--grey);line-height:1.8;">We ship often. Small improvements land every week. We'd rather put something useful in the hands of customers early and iterate than perfect it in isolation for months.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:200px 1fr;gap:32px;padding:28px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);align-items:start;">
+        <div style="font-family:var(--font-head);font-size:15px;font-weight:800;color:var(--v900);">Learning is part of the job</div>
+        <p style="font-size:15px;color:var(--grey);line-height:1.8;">The Indian SaaS market moves fast and so do we. Team members are encouraged to share what they're learning. Knowledge doesn't sit in silos here — if you figure something out, you share it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM STORIES -->
+<section class="section section--tint">
+  <div class="inner">
+    <div class="s-eye">telecrm team stories</div>
+    <h2 class="s-h2">In their own words.</h2>
+    <p class="s-sub" style="margin-bottom:48px;">The best way to understand what working at telecrm is like is to hear it from the people who do it every day. Here's a glimpse — read the full stories on the Team Stories page.</p>
+
+    <div style="display:flex;flex-direction:column;gap:0;">
+
+
+
+
+
+    </div>
+
+
+      <a href="telecrm-team-stories.html#yatendra-chaudhary" style="display:block;padding:32px 0;border-top:1px solid var(--border);text-decoration:none;transition:all .2s;" onmouseover="this.style.paddingLeft='12px'" onmouseout="this.style.paddingLeft='0'">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:var(--v500);color:#fff;font-family:var(--font-head);font-size:12px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;">YC</div>
+          <div style="font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--v400);">Yatendra Chaudhary · Key Implementation Partner, Enterprise Accounts · 4 years</div>
+          <div style="margin-left:auto;font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v500);display:flex;align-items:center;gap:4px;">Read story <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><path d="M3 8h10M8 3l5 5-5 5"/></svg></div>
+        </div>
+        <div style="font-family:var(--font-head);font-size:clamp(16px,2vw,20px);font-weight:800;color:var(--v900);letter-spacing:-.3px;line-height:1.3;">"When I joined telecrm, it was meant to be temporary. Today I'm still here — not out of compulsion, but out of choice and willingness to contribute further."</div>
+      </a>
+
+      <a href="telecrm-team-stories.html#riza-hayat" style="display:block;padding:32px 0;border-top:1px solid var(--border);text-decoration:none;transition:all .2s;" onmouseover="this.style.paddingLeft='12px'" onmouseout="this.style.paddingLeft='0'">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:var(--v500);color:#fff;font-family:var(--font-head);font-size:12px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;">RH</div>
+          <div style="font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--v400);">Riza Hayat · Team Lead, Enterprise Sales · 3 years</div>
+          <div style="margin-left:auto;font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v500);display:flex;align-items:center;gap:4px;">Read story <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><path d="M3 8h10M8 3l5 5-5 5"/></svg></div>
+        </div>
+        <div style="font-family:var(--font-head);font-size:clamp(16px,2vw,20px);font-weight:800;color:var(--v900);letter-spacing:-.3px;line-height:1.3;">"When the company grows, you grow. When I joined, the consolidated target for sales and CS together was 9 lakh. Today we're hitting close to 2 crore."</div>
+      </a>
+
+      <a href="telecrm-team-stories.html#mahwash-fatima" style="display:block;padding:32px 0;border-top:1px solid var(--border);text-decoration:none;transition:all .2s;" onmouseover="this.style.paddingLeft='12px'" onmouseout="this.style.paddingLeft='0'">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:var(--v500);color:#fff;font-family:var(--font-head);font-size:12px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;">MF</div>
+          <div style="font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--v400);">Mahwash Fatima · Content Marketer · 1 year</div>
+          <div style="margin-left:auto;font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v500);display:flex;align-items:center;gap:4px;">Read story <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><path d="M3 8h10M8 3l5 5-5 5"/></svg></div>
+        </div>
+        <div style="font-family:var(--font-head);font-size:clamp(16px,2vw,20px);font-weight:800;color:var(--v900);letter-spacing:-.3px;line-height:1.3;">"Four distinct responsibilities in under a year. The bigger work just arrives and you figure it out."</div>
+      </a>
+
+      <a href="telecrm-team-stories.html#lakshya-prakash" style="display:block;padding:32px 0;border-top:1px solid var(--border);text-decoration:none;transition:all .2s;" onmouseover="this.style.paddingLeft='12px'" onmouseout="this.style.paddingLeft='0'">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:var(--v500);color:#fff;font-family:var(--font-head);font-size:12px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;">LP</div>
+          <div style="font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--v400);">Lakshya Prakash · Software Engineer · 1 year</div>
+          <div style="margin-left:auto;font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v500);display:flex;align-items:center;gap:4px;">Read story <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><path d="M3 8h10M8 3l5 5-5 5"/></svg></div>
+        </div>
+        <div style="font-family:var(--font-head);font-size:clamp(16px,2vw,20px);font-weight:800;color:var(--v900);letter-spacing:-.3px;line-height:1.3;">"I joined because of the culture, but I want to stay because of the people."</div>
+      </a>
+
+      <a href="telecrm-team-stories.html#saiyid-saqib-askari" style="display:block;padding:32px 0;border-top:1px solid var(--border);text-decoration:none;transition:all .2s;" onmouseover="this.style.paddingLeft='12px'" onmouseout="this.style.paddingLeft='0'">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:var(--v500);color:#fff;font-family:var(--font-head);font-size:12px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;">SA</div>
+          <div style="font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--v400);">Saiyid Saqib Askari · Account Manager, Customer Success · 1 year</div>
+          <div style="margin-left:auto;font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v500);display:flex;align-items:center;gap:4px;">Read story <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><path d="M3 8h10M8 3l5 5-5 5"/></svg></div>
+        </div>
+        <div style="font-family:var(--font-head);font-size:clamp(16px,2vw,20px);font-weight:800;color:var(--v900);letter-spacing:-.3px;line-height:1.3;">"The constant challenge of adapt, improvise and overcome is what keeps the work exciting to me."</div>
+      </a>
+
+      <a href="telecrm-team-stories.html#mohd-danish" style="display:block;padding:32px 0;border-top:1px solid var(--border);text-decoration:none;transition:all .2s;" onmouseover="this.style.paddingLeft='12px'" onmouseout="this.style.paddingLeft='0'">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:var(--v500);color:#fff;font-family:var(--font-head);font-size:12px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;">MD</div>
+          <div style="font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--v400);">Mohd. Danish · Enterprise Sales Manager · 1 year</div>
+          <div style="margin-left:auto;font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v500);display:flex;align-items:center;gap:4px;">Read story <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><path d="M3 8h10M8 3l5 5-5 5"/></svg></div>
+        </div>
+        <div style="font-family:var(--font-head);font-size:clamp(16px,2vw,20px);font-weight:800;color:var(--v900);letter-spacing:-.3px;line-height:1.3;">"After working in CRM long enough, you automatically start noticing broken follow-up systems everywhere — even outside work."</div>
+      </a>
+
+    
+      <a href="telecrm-team-stories.html#lovkesh-gautam" style="display:block;padding:32px 0;border-top:1px solid var(--border);text-decoration:none;transition:all .2s;" onmouseover="this.style.paddingLeft='12px'" onmouseout="this.style.paddingLeft='0'">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:var(--v500);color:#fff;font-family:var(--font-head);font-size:12px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;">LG</div>
+          <div style="font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--v400);">Lovkesh Gautam · Senior Key Account Manager · 3 years</div>
+          <div style="margin-left:auto;font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v500);display:flex;align-items:center;gap:4px;">Read story <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><path d="M3 8h10M8 3l5 5-5 5"/></svg></div>
+        </div>
+        <div style="font-family:var(--font-head);font-size:clamp(16px,2vw,20px);font-weight:800;color:var(--v900);letter-spacing:-.3px;line-height:1.3;">"I have onboarded 958 clients. Almost 50% of the clients I brought on three years ago are still here."</div>
+      </a>
+
+      <a href="telecrm-team-stories.html#mohit-kumar" style="display:block;padding:32px 0;border-top:1px solid var(--border);text-decoration:none;transition:all .2s;" onmouseover="this.style.paddingLeft='12px'" onmouseout="this.style.paddingLeft='0'">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:var(--v500);color:#fff;font-family:var(--font-head);font-size:12px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;">MK</div>
+          <div style="font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--v400);">Mohit Kumar · Key Account Manager · 3 years</div>
+          <div style="margin-left:auto;font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v500);display:flex;align-items:center;gap:4px;">Read story <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><path d="M3 8h10M8 3l5 5-5 5"/></svg></div>
+        </div>
+        <div style="font-family:var(--font-head);font-size:clamp(16px,2vw,20px);font-weight:800;color:var(--v900);letter-spacing:-.3px;line-height:1.3;">"Being part of a start-up from that early means you don't just watch the company grow — you watch it get built."</div>
+      </a>
+
+        <div style="margin-top:40px;">
+      <a href="telecrm-team-stories.html" style="font-family:var(--font-head);font-size:14px;font-weight:700;background:var(--v500);color:#fff;padding:14px 28px;border-radius:10px;display:inline-flex;align-items:center;gap:8px;box-shadow:0 4px 12px rgba(79,56,162,.25);transition:all .18s;">Read all team stories <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- HIRING JOURNEY -->
+<section class="section">
+  <div class="inner">
+    <div class="s-eye">How we hire</div>
+    <h2 class="s-h2">Straightforward process.<br><em>No unnecessary rounds.</em></h2>
+    <p class="s-sub" style="margin-bottom:48px;">We respect your time. Our hiring process is designed to be fast, transparent, and fair — you'll always know where you stand and what comes next.</p>
+
+    <div style="display:flex;flex-direction:column;gap:0;" class="hiring-steps">
+      <div style="display:grid;grid-template-columns:64px 1fr;gap:0 32px;padding:28px 0;border-top:1px solid var(--border);">
+        <div style="display:flex;flex-direction:column;align-items:center;">
+          <div style="width:44px;height:44px;border-radius:50%;background:var(--v500);color:#fff;font-family:var(--font-head);font-size:16px;font-weight:900;display:flex;align-items:center;justify-content:center;">1</div>
+        </div>
+        <div>
+          <div style="font-family:var(--font-head);font-size:16px;font-weight:800;color:var(--v900);margin-bottom:8px;">Application review</div>
+          <p style="font-size:14px;color:var(--grey);line-height:1.75;">We review every application ourselves — no ATS black holes. If your background fits what we're looking for, you'll hear from us within 3–5 working days. If it doesn't, we'll tell you that too.</p>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:64px 1fr;gap:0 32px;padding:28px 0;border-top:1px solid var(--border);">
+        <div style="display:flex;flex-direction:column;align-items:center;">
+          <div style="width:44px;height:44px;border-radius:50%;background:var(--v500);color:#fff;font-family:var(--font-head);font-size:16px;font-weight:900;display:flex;align-items:center;justify-content:center;">2</div>
+        </div>
+        <div>
+          <div style="font-family:var(--font-head);font-size:16px;font-weight:800;color:var(--v900);margin-bottom:8px;">Psychometric assessment</div>
+          <p style="font-size:14px;color:var(--grey);line-height:1.75;">Before we meet, we ask you to complete a short psychometric assessment. This helps us understand how you think, how you handle pressure, and what kind of work environment brings out your best. There are no right or wrong answers — we use the results to have a more honest conversation about fit, not to filter people out. It takes around 15–20 minutes and can be done at your own pace.</p>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:64px 1fr;gap:0 32px;padding:28px 0;border-top:1px solid var(--border);">
+        <div style="display:flex;flex-direction:column;align-items:center;">
+          <div style="width:44px;height:44px;border-radius:50%;background:var(--v500);color:#fff;font-family:var(--font-head);font-size:16px;font-weight:900;display:flex;align-items:center;justify-content:center;">4</div>
+        </div>
+        <div>
+          <div style="font-family:var(--font-head);font-size:16px;font-weight:800;color:var(--v900);margin-bottom:8px;">Introductory call — 30 minutes</div>
+          <p style="font-size:14px;color:var(--grey);line-height:1.75;">A conversation with the hiring manager. We want to understand your background, what you're looking for, and why telecrm. You'll have time to ask us anything. No trick questions — we just want to get to know you.</p>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:64px 1fr;gap:0 32px;padding:28px 0;border-top:1px solid var(--border);">
+        <div style="display:flex;flex-direction:column;align-items:center;">
+          <div style="width:44px;height:44px;border-radius:50%;background:var(--v500);color:#fff;font-family:var(--font-head);font-size:16px;font-weight:900;display:flex;align-items:center;justify-content:center;">3</div>
+        </div>
+        <div>
+          <div style="font-family:var(--font-head);font-size:16px;font-weight:800;color:var(--v900);margin-bottom:8px;">Role-specific assessment</div>
+          <p style="font-size:14px;color:var(--grey);line-height:1.75;">Depending on the role, this may be a take-home task, a live problem-solving session, or a practical exercise. We try to make it relevant to actual work you'd do here — not abstract puzzles. It's also time-boxed and we respect that.</p>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:64px 1fr;gap:0 32px;padding:28px 0;border-top:1px solid var(--border);">
+        <div style="display:flex;flex-direction:column;align-items:center;">
+          <div style="width:44px;height:44px;border-radius:50%;background:var(--v500);color:#fff;font-family:var(--font-head);font-size:16px;font-weight:900;display:flex;align-items:center;justify-content:center;">5</div>
+        </div>
+        <div>
+          <div style="font-family:var(--font-head);font-size:16px;font-weight:800;color:var(--v900);margin-bottom:8px;">Assessment discussion</div>
+          <p style="font-size:14px;color:var(--grey);line-height:1.75;">After you've completed the assessment, we schedule a short call to walk through it together. We're not just looking at whether you got it right — we want to understand how you think, how you approach problems, and how you'd explain your reasoning to a teammate. This is often where we learn the most about a candidate.</p>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:64px 1fr;gap:0 32px;padding:28px 0;border-top:1px solid var(--border);">
+        <div style="display:flex;flex-direction:column;align-items:center;">
+          <div style="width:44px;height:44px;border-radius:50%;background:var(--v500);color:#fff;font-family:var(--font-head);font-size:16px;font-weight:900;display:flex;align-items:center;justify-content:center;">6</div>
+        </div>
+        <div>
+          <div style="font-family:var(--font-head);font-size:16px;font-weight:800;color:var(--v900);margin-bottom:8px;">Final interview</div>
+          <p style="font-size:14px;color:var(--grey);line-height:1.75;">A deeper conversation — usually with a founder or senior team member. We're assessing fit on both sides. You should be evaluating whether telecrm is right for you just as much as we're evaluating whether you're right for us.</p>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:64px 1fr;gap:0 32px;padding:28px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+        <div style="display:flex;flex-direction:column;align-items:center;">
+          <div style="width:44px;height:44px;border-radius:50%;background:#22C55E;color:#fff;font-family:var(--font-head);font-size:16px;font-weight:900;display:flex;align-items:center;justify-content:center;">✓</div>
+        </div>
+        <div>
+          <div style="font-family:var(--font-head);font-size:16px;font-weight:800;color:var(--v900);margin-bottom:8px;">Offer & onboarding</div>
+          <p style="font-size:14px;color:var(--grey);line-height:1.75;">If we're a match, we move fast. Offers are made promptly, onboarding is structured, and your first week is set up so you hit the ground running — not lost in paperwork. Within a few weeks, you'll be owning something real.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OPEN ROLES -->
+<section class="section section--tint">
+  <div class="inner">
+    <div class="s-eye">Open roles</div>
+    <h2 class="s-h2">We're growing.<br><em>Come build with us.</em></h2>
+    <p class="s-sub" style="margin-bottom:48px;">We're always looking for people who care deeply about helping Indian businesses grow. Whether you're in customer success, engineering, sales, or marketing — if you're driven, curious, and take ownership seriously, we want to hear from you.</p>
+
+    <div style="display:flex;flex-direction:column;gap:0;">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-top:1px solid var(--border);gap:16px;flex-wrap:wrap;">
+        <div style="font-family:var(--font-head);font-size:15px;font-weight:800;color:var(--v900);">Customer Success</div>
+        <div style="font-size:14px;color:var(--grey);">Implementation &amp; Support roles</div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-top:1px solid var(--border);gap:16px;flex-wrap:wrap;">
+        <div style="font-family:var(--font-head);font-size:15px;font-weight:800;color:var(--v900);">Technology</div>
+        <div style="font-size:14px;color:var(--grey);">Backend, Frontend &amp; Product roles</div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-top:1px solid var(--border);gap:16px;flex-wrap:wrap;">
+        <div style="font-family:var(--font-head);font-size:15px;font-weight:800;color:var(--v900);">Sales</div>
+        <div style="font-size:14px;color:var(--grey);">Inside Sales &amp; Account Executive roles</div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);gap:16px;flex-wrap:wrap;">
+        <div style="font-family:var(--font-head);font-size:15px;font-weight:800;color:var(--v900);">Internships</div>
+        <div style="font-size:14px;color:var(--grey);">Structured programmes across all teams</div>
+      </div>
+    </div>
+
+    <div style="margin-top:40px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+      <a href="telecrm-careers.html" style="font-family:var(--font-head);font-size:14px;font-weight:700;background:var(--v500);color:#fff;padding:14px 28px;border-radius:var(--radius-btn);display:inline-flex;align-items:center;gap:8px;box-shadow:0 4px 12px rgba(79,56,162,.25);transition:all .18s;">View all open roles <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="13" height="13"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+
+    <p style="font-size:13px;color:var(--grey);margin-top:24px;line-height:1.7;"><strong style="font-family:var(--font-head);color:var(--v700);">Don't see a role that fits?</strong> We occasionally hire for roles we haven't listed yet. If you believe you'd add value to telecrm, write to us with a note on what you'd do here.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<section class="faq">
+  <div class="faq__inner">
+    <div class="faq__header">
+      <div class="faq__eyebrow">FAQ</div>
+      <h2 class="faq__h2">Your questions, <em>answered plainly.</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">What is the culture like at telecrm?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">It's built by people who believe in the product — four teams, one mission, with no unnecessary process, just work that matters.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">How is the team organised?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">Into four teams working toward one shared mission.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">What is the hiring process like?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">Straightforward, with no unnecessary rounds.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">How do people describe working here?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">In their own words on the team stories — candid and unscripted.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__logo">telecrm</div>
+        <p class="footer__tagline">A Comprehensive Revenue Management Engine — fusing Lead Management, Call Management, Adaptive CRM, Marketing Automation, and Pipeline Management into one high-performance workspace.</p>
+        <a href="telecrm-get-started.html" class="btn-primary">Get Started →</a>
+      </div>
+      <div class="footer__links-grid">
+      <div class="footer__col-stack">
+        <div>
+          <div class="footer__col-title">Platform</div>
+          <div class="footer__links">
+            <a href="telecrm-platform-overview.html" class="footer__link">Platform Overview</a>
+            <a href="telecrm-platform-hub.html" class="footer__link">Platform Hub</a>
+            <a href="telecrm-benefits-hub.html" class="footer__link">Benefits Hub</a>
+            <a href="telecrm-platform-unified-revenue-management.html" class="footer__link">Unified Revenue Management</a>
+            <a href="telecrm-platform-lead-management.html" class="footer__link">Lead Management</a>
+            <a href="telecrm-platform-call-management.html" class="footer__link">Call Management &amp; Recording</a>
+            <a href="telecrm-platform-adaptive-crm.html" class="footer__link">Adaptive CRM</a>
+            <a href="telecrm-platform-marketing-automation.html" class="footer__link">Marketing Automation</a>
+            <a href="telecrm-platform-sales-pipeline-management.html" class="footer__link">Sales Pipeline Management</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Pricing</div>
+          <div class="footer__links">
+            <a href="telecrm-pricing.html" class="footer__link">Pricing</a>
+            <a href="telecrm-cost-savings.html" class="footer__link">Cost Savings</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__col-stack">
+        <div>
+          <div class="footer__col-title">Solutions</div>
+          <div class="footer__links">
+            <a href="telecrm-problems-hub.html" class="footer__link">Problems Hub</a>
+            <a href="telecrm-crm-hub.html" class="footer__link">CRM Hub</a>
+            <a href="telecrm-industry-hub.html" class="footer__link">Industry Hub</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Get Started</div>
+          <div class="footer__links">
+            <a href="telecrm-partnership.html" class="footer__link">Partner Program</a>
+            <a href="telecrm-demo-request.html" class="footer__link">Demo Request</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__col-stack">
+        <div>
+          <div class="footer__col-title">Trust</div>
+          <div class="footer__links">
+            <a href="telecrm-testimonials.html" class="footer__link">Testimonials</a>
+            <a href="telecrm-case-studies.html" class="footer__link">Case Studies</a>
+            <a href="telecrm-comparison.html" class="footer__link">Comparison</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">About Us</div>
+          <div class="footer__links">
+            <a href="telecrm-about-telecrm.html" class="footer__link">About telecrm</a>
+            <a href="telecrm-life-at-telecrm.html" class="footer__link">Life at telecrm</a>
+            <a href="telecrm-careers.html" class="footer__link">Careers</a>
+            <a href="telecrm-contact.html" class="footer__link">Contact Us</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Support</div>
+        <div class="footer__links">
+          <a href="telecrm-faqs.html" class="footer__link">FAQs</a>
+          <a href="telecrm-glossary.html" class="footer__link">Glossary</a>
+          <a href="telecrm-learning-repository.html" class="footer__link">Learning Repository</a>
+          <a href="telecrm-onboarding.html" class="footer__link">Onboarding</a>
+          <a href="telecrm-privacy-policy.html" class="footer__link">Privacy Policy</a>
+          <a href="telecrm-recommended-devices.html" class="footer__link">Recommended Devices</a>
+          <a href="telecrm-refund-policy.html" class="footer__link">Refund Policy</a>
+          <a href="telecrm-terms-conditions.html" class="footer__link">Terms &amp; Conditions</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Features</div>
+        <div class="footer__links">
+          <a href="telecrm-feature-automations.html" class="footer__link">Automation</a>
+          <a href="telecrm-feature-call-management.html" class="footer__link">Call Management</a>
+          <a href="telecrm-feature-calling-campaign.html" class="footer__link">Calling Campaign Management</a>
+          <a href="telecrm-feature-integrations.html" class="footer__link">Integrations</a>
+          <a href="telecrm-feature-lead-fields.html" class="footer__link">Lead Fields</a>
+          <a href="telecrm-feature-lead-management.html" class="footer__link">Lead Management &amp; Reporting</a>
+          <a href="telecrm-feature-lead-stages.html" class="footer__link">Lead Stages</a>
+          <a href="telecrm-feature-list-labels.html" class="footer__link">List and Labels</a>
+          <a href="telecrm-feature-reporting.html" class="footer__link">Reporting</a>
+          <a href="telecrm-feature-user-management.html" class="footer__link">User Management</a>
+          <a href="telecrm-feature-whatsapp.html" class="footer__link">WhatsApp</a>
+        </div>
+      </div>
+      </div><!-- /footer__links-grid -->
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__copy">© 2026 telecrm. All rights reserved.</div>
+      <div class="footer__legal">
+        <a href="telecrm-privacy-policy.html">Privacy Policy</a>
+        <a href="telecrm-terms-conditions.html">Terms &amp; Conditions</a>
+        <a href="telecrm-refund-policy.html">Refund Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.querySelector('.nav__hamburger');
+  var links=document.querySelector('.nav__links');
+  if(btn&&links){
+    btn.addEventListener('click',function(){btn.classList.toggle('open');links.classList.toggle('open');});
+  }
+  var mq=window.matchMedia('(max-width:768px)');
+  document.querySelectorAll('.nav__item > .nav__link').forEach(function(hub){
+    hub.addEventListener('click',function(e){ if(mq.matches){ e.preventDefault(); hub.parentElement.classList.toggle('open'); } });
+  });
+  document.querySelectorAll('.np__link,.np__foot,.nav__cta,.nav__mobile-cta').forEach(function(l){
+    l.addEventListener('click',function(){ if(btn){btn.classList.remove('open');} if(links){links.classList.remove('open');} });
+  });
+})();
+</script>
+<script>
+function toggleFaq(el){
+  var item=el.parentElement;
+  var isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+  if(!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>

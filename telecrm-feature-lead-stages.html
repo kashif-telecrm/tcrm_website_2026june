@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://telecrm.in/features/lead-stages/">
+<title>Lead Stages — telecrm Features</title>
+<meta name="description" content="Custom lead stages and pipelines in telecrm — build the exact sales funnel your business needs, with stage-wise automation and real-time funnel visibility.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cta:#F97316; --cta-hover:#EA580C;
+  --v50:#EDEBF6;--v100:#E1DDF0;--v200:#C4BAE5;--v300:#9C8FCF;
+  --v400:#7260B5;--v500:#4F38A2;--v600:#483393;--v700:#382873;--v900:#211844;
+  --white:#fff;--grey:#64748B;--border:#E9EBF8;--grey2:#94A3B8;
+  --font-head:'Plus Jakarta Sans',sans-serif;--font-body:'DM Sans',sans-serif;
+  --radius-btn:10px;--radius-card:16px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);color:var(--v900);background:#fff;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+.nav__inner{max-width:1280px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:72px;}
+.nav__logo{font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--v500);letter-spacing:-.5px;}
+.nav__links{display:flex;align-items:center;gap:2px;}
+.nav__link{font-family:var(--font-head);font-size:12.5px;font-weight:600;color:var(--v700);padding:7px 11px;border-radius:8px;transition:all .18s;white-space:nowrap;}
+.nav__link:hover,.nav__link--active{background:var(--v50);color:var(--v500);}
+.nav__sep{display:inline-block;width:1px;height:20px;background:var(--border);margin:0 8px;vertical-align:middle;}
+.nav__cta{font-family:var(--font-head);font-size:13px;font-weight:700;background:var(--cta);color:#fff;padding:10px 22px;border-radius:var(--radius-btn);box-shadow:0 4px 12px rgba(249,115,22,.3);transition:all .18s;white-space:nowrap;margin-left:8px;}
+.nav__cta:hover{background:var(--cta-hover);transform:translateY(-1px);}
+.nav__mobile-right{display:none;align-items:center;gap:8px;margin-left:auto;}
+.nav__mobile-cta{font-family:var(--font-head);font-size:13px;font-weight:700;background:var(--v500);color:#fff;padding:8px 16px;border-radius:var(--radius-btn);text-decoration:none;white-space:nowrap;}
+.nav__mob-sep{display:none;width:1px;height:20px;background:var(--border);}
+.nav__hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:8px;border:none;background:transparent;}
+.nav__hamburger span{display:block;width:22px;height:2px;background:var(--v900);border-radius:2px;transition:all .18s;}
+.nav__hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav__hamburger.open span:nth-child(2){opacity:0;}
+.nav__hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* HERO */
+.hero{padding:64px 0 56px;background:#fff;position:relative;overflow:hidden;}
+.hero__bg{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;opacity:.35;pointer-events:none;}
+.hero__glow{position:absolute;top:-80px;right:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(79,56,162,.07) 0%,transparent 70%);pointer-events:none;}
+.hero__inner{max-width:1280px;margin:0 auto;padding:0 32px;position:relative;}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-family:var(--font-head);font-size:12px;font-weight:600;color:var(--grey2);margin-bottom:24px;}
+.breadcrumb-sep{color:var(--v200);}
+.breadcrumb a{color:var(--grey2);transition:color .2s;}
+.breadcrumb a:hover{color:var(--v500);}
+.breadcrumb-current{color:var(--v500);}
+.hero__eyebrow{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;}
+.hero__h1{font-family:var(--font-head);font-size:clamp(28px,4vw,48px);font-weight:900;letter-spacing:-1.5px;color:var(--v900);line-height:1.1;margin-bottom:14px;}
+.hero__h1 em{font-style:normal;color:var(--v500);}
+.hero__sub{font-size:17px;color:var(--grey);line-height:1.75;}
+
+/* HIGHLIGHTS BAR */
+.highlights{background:var(--v50);border-top:1px solid var(--v100);border-bottom:1px solid var(--v100);padding:20px 32px;}
+.highlights__inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.highlight{display:flex;align-items:center;gap:10px;padding:10px 16px;background:#fff;border:1.5px solid var(--v100);border-radius:10px;}
+.highlight__dot{width:7px;height:7px;border-radius:50%;background:var(--v500);flex-shrink:0;}
+.highlight__text{font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--v700);}
+
+/* MAIN CONTENT */
+.content{padding:72px 0;background:#fff;}
+.inner{max-width:1280px;margin:0 auto;padding:0 32px;}
+
+/* FEATURE SECTIONS */
+.feature-section{margin-bottom:64px;padding-bottom:64px;border-bottom:1px solid var(--border);}
+.feature-section > div[style*="margin-bottom:32px"] + div{margin-top:32px;}
+.feature-section:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.feature-section__layout{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+.feature-section__layout--reverse{direction:rtl;}
+.feature-section__layout--reverse > *{direction:ltr;}
+.feature-section__eyebrow{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
+.feature-section__h2{font-family:var(--font-head);font-size:clamp(22px,2.5vw,30px);font-weight:900;color:var(--v900);letter-spacing:-.5px;line-height:1.2;margin-bottom:12px;}
+.feature-section__h2 em{font-style:normal;color:var(--v500);}
+.feature-section__body{font-size:15px;color:var(--grey);line-height:1.75;margin-bottom:24px;}
+.feature-bullets{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.feature-bullets li{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--grey);line-height:1.6;}
+.feature-bullets__dot{width:20px;height:20px;border-radius:6px;background:var(--v50);border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.feature-bullets__dot svg{width:10px;height:10px;}
+.feature-bullets strong{font-family:var(--font-head);font-weight:700;color:var(--v700);}
+
+/* VISUAL PANEL */
+.feature-visual{background:var(--v50);border:1.5px solid var(--v100);border-radius:20px;padding:32px;display:flex;align-items:center;justify-content:center;min-height:280px;}
+.feature-visual--dark{background:var(--v900);}
+
+/* INTEGRATION LOGOS GRID */
+.int-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;width:100%;}
+.int-tile{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:16px 12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;transition:all .2s;}
+.int-tile:hover{border-color:var(--v300);box-shadow:0 4px 16px rgba(79,56,162,.1);}
+.int-tile__icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:20px;}
+.int-tile__name{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v700);text-align:center;}
+
+  .cat-row{grid-template-columns:1fr;}
+  .cat-row__label{border-right:none;border-bottom:1px solid var(--border);}
+}
+
+/* CATALOGUE */
+.catalogue{padding:80px 0;background:#F8F7FC;}
+.catalogue__header{margin-bottom:56px;}
+.catalogue__eyebrow{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
+.catalogue__h2{font-family:var(--font-head);font-size:clamp(24px,3vw,36px);font-weight:900;color:var(--v900);letter-spacing:-.5px;margin-bottom:10px;line-height:1.2;}
+.catalogue__sub{font-size:15px;color:var(--grey);line-height:1.7;}
+
+
+/* ORBITAL HUB */
+.orbital-section{padding:80px 0;background:#F8F7FC;}
+.orbital-section__header{margin-bottom:56px;}
+.orbital-section__eyebrow{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
+.orbital-section__h2{font-family:var(--font-head);font-size:clamp(24px,3vw,36px);font-weight:900;color:var(--v900);letter-spacing:-.5px;margin-bottom:10px;line-height:1.2;}
+.orbital-section__h2 em{font-style:normal;color:var(--v500);}
+.orbital-section__sub{font-size:15px;color:var(--grey);line-height:1.7;}
+
+.orbital-wrap{position:relative;width:600px;height:600px;margin:0 auto;}
+
+/* RINGS */
+.orbital-ring{position:absolute;border:1.5px dashed rgba(79,56,162,.15);border-radius:50%;}
+.orbital-ring--inner{width:300px;height:300px;top:150px;left:150px;}
+.orbital-ring--outer{width:560px;height:560px;top:20px;left:20px;}
+
+/* CENTRE NODE */
+.orbital-centre{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120px;height:120px;background:var(--v500);border-radius:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 8px 40px rgba(79,56,162,.4);z-index:10;}
+.orbital-centre__logo{font-family:var(--font-head);font-size:16px;font-weight:900;color:#fff;letter-spacing:-.5px;}
+.orbital-centre__label{font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--v200);text-transform:uppercase;letter-spacing:.08em;margin-top:2px;}
+
+/* ORBITAL NODES */
+.orbital-node{position:absolute;display:flex;flex-direction:column;align-items:center;gap:6px;transform:translate(-50%,-50%);z-index:10;}
+.orbital-node__icon{width:52px;height:52px;border-radius:14px;background:#fff;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(79,56,162,.08);transition:all .2s;}
+.orbital-node__icon:hover{border-color:var(--v300);box-shadow:0 4px 24px rgba(79,56,162,.18);}
+.orbital-node__icon svg{width:26px;height:26px;}
+.orbital-node__label{font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v700);white-space:nowrap;text-align:center;max-width:80px;white-space:normal;line-height:1.3;}
+
+/* SVG CANVAS FOR LINES + PULSES */
+.orbital-svg{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;}
+
+/* PULSE ANIMATION */
+@keyframes pulse-flow{
+  0%{opacity:0;offset-distance:0%;}
+  10%{opacity:1;}
+  90%{opacity:1;}
+  100%{opacity:0;offset-distance:100%;}
+}
+.pulse{animation:pulse-flow 2.5s linear infinite;}
+
+@media(max-width:768px){
+  .nav__links{display:none;flex-direction:column;position:fixed;top:72px;left:0;right:0;background:rgba(255,255,255,.98);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:16px 24px;gap:0;z-index:99;}
+  .nav__links.open{display:flex;}
+  .nav__link{padding:12px 0;border-bottom:1px solid var(--border);font-size:15px;display:block;}
+  .nav__link:last-child{border-bottom:none;}
+  .nav__sep{display:none;}
+  .nav__cta{display:none;}
+  .nav__mobile-right{display:flex;align-items:center;gap:8px;margin-left:auto;}
+  .nav__mob-sep{display:block;}
+  .nav__hamburger{display:flex;}
+  .orbital-wrap{width:340px;height:340px;}
+  .orbital-ring--inner{width:170px;height:170px;top:85px;left:85px;}
+  .orbital-ring--outer{width:320px;height:320px;top:10px;left:10px;}
+  .orbital-centre{width:72px;height:72px;border-radius:16px;}
+  .orbital-centre__logo{font-size:11px;}
+  .orbital-node__icon{width:36px;height:36px;border-radius:10px;}
+  .orbital-node__icon svg{width:18px;height:18px;}
+  .orbital-node__label{font-size:8px;}
+}
+@media(min-width:769px){.nav__hamburger{display:none;}.nav__mobile-right{display:none;}}
+.nav__mobile-right{display:none;}}
+
+
+
+/* INT LIST */
+.int-list{display:flex;flex-direction:column;border:1.5px solid var(--border);border-radius:16px;overflow:hidden;background:#fff;}
+.int-row{display:grid;grid-template-columns:180px 1fr;border-bottom:1px solid var(--border);}
+.int-row:last-child{border-bottom:none;}
+.int-row__cat{background:var(--v50);border-right:1px solid var(--border);padding:14px 18px;display:flex;align-items:center;gap:10px;}
+.int-row__cat-icon{width:32px;height:32px;border-radius:8px;background:#fff;border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.int-row__cat-icon svg{width:16px;height:16px;}
+.int-row__cat-name{font-family:var(--font-head);font-size:11.5px;font-weight:800;color:var(--v700);line-height:1.3;}
+.int-row__platforms{padding:14px 18px;display:flex;flex-wrap:wrap;align-items:center;gap:6px;}
+.int-pill{font-family:var(--font-head);font-size:11px;font-weight:600;color:var(--v600);background:var(--v50);border:1.5px solid var(--v100);padding:4px 12px;border-radius:100px;white-space:nowrap;}
+
+@media(max-width:600px){.int-row{grid-template-columns:1fr;}.int-row__cat{border-right:none;border-bottom:1px solid var(--border);}}'
+
+
+/* FLOW DIAGRAM */
+.flow-diagram{display:flex;flex-direction:column;gap:12px;}
+.flow-row{display:flex;align-items:center;gap:0;background:#fff;border:1.5px solid var(--border);border-radius:12px;overflow:hidden;}
+.flow-cat{display:flex;align-items:center;gap:10px;padding:14px 16px;background:var(--v50);border-right:1px solid var(--border);min-width:200px;flex-shrink:0;}
+.flow-cat__icon{width:32px;height:32px;border-radius:8px;background:#fff;border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.flow-cat__icon svg{width:16px;height:16px;}
+.flow-cat__name{font-family:var(--font-head);font-size:11px;font-weight:800;color:var(--v700);line-height:1.3;}
+.flow-arrow{padding:0 12px;color:var(--v300);font-size:16px;flex-shrink:0;}
+.flow-platforms{display:flex;flex-wrap:wrap;gap:5px;padding:10px 14px;flex:1;}
+.flow-pill{font-family:var(--font-head);font-size:10.5px;font-weight:600;color:var(--v600);background:var(--v50);border:1.5px solid var(--v100);padding:4px 10px;border-radius:100px;white-space:nowrap;}
+.flow-arrow-final{padding:0 12px;color:var(--v400);font-size:16px;flex-shrink:0;font-weight:700;}
+.flow-crm{background:var(--v500);padding:14px 16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;border-left:1px solid var(--v600);}
+.flow-crm__logo{font-family:var(--font-head);font-size:11px;font-weight:900;color:#fff;letter-spacing:-.3px;}
+
+@media(max-width:768px){
+  .flow-cat{min-width:140px;}
+  .flow-crm{display:none;}
+  .flow-arrow-final{display:none;}
+}
+
+  .converge__lines,.converge__mid,.converge__logo-wrap{display:none;}
+}
+.converge-right{display:none;}}
+
+
+
+
+
+
+
+/* FINAL CTA */
+.page-cta{padding:80px 0;background:var(--v900);position:relative;overflow:hidden;}
+.page-cta__glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(114,96,181,.2) 0%,transparent 65%);pointer-events:none;}
+.page-cta__grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;}
+.page-cta__inner{max-width:768px;margin:0 auto;padding:0 32px;text-align:center;position:relative;}
+.page-cta__consensus{font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v300);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;}
+.page-cta__h2{font-family:var(--font-head);font-size:clamp(28px,3.5vw,44px);font-weight:900;letter-spacing:-1px;color:#fff;line-height:1.15;margin-bottom:12px;}
+.page-cta__h2 em{font-style:normal;color:var(--v300);}
+.page-cta__sub{font-size:16px;color:var(--v200);line-height:1.7;margin-bottom:32px;}
+.btn-white{font-family:var(--font-head);font-size:15px;font-weight:700;background:#fff;color:var(--v500);padding:15px 36px;border-radius:var(--radius-btn);border:none;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.15);transition:all .2s;display:inline-flex;align-items:center;gap:8px;}
+.btn-white:hover{background:var(--v50);transform:translateY(-2px);}
+.btn-white svg{width:16px;height:16px;}
+.page-cta__trust{display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:24px;}
+.page-cta__trust-item{font-size:13px;font-weight:500;color:var(--v200);display:flex;align-items:center;gap:7px;}
+.page-cta__trust-dot{width:6px;height:6px;border-radius:50%;background:#22C55E;flex-shrink:0;}
+
+
+/* FOOTER */
+.footer{background:#fff;border-top:1px solid var(--border);padding:64px 0 40px;}
+.footer__inner{max-width:1280px;margin:0 auto;padding:0 32px;}
+.footer__links-grid{display:contents;}
+.footer__grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+.footer__logo{font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--v500);margin-bottom:16px;letter-spacing:-.5px;}
+.footer__tagline{font-size:14px;color:var(--grey);line-height:1.7;max-width:280px;margin-bottom:24px;}
+.footer__col-title{font-family:var(--font-head);font-size:12px;font-weight:800;color:var(--v900);text-transform:uppercase;letter-spacing:.06em;margin-bottom:16px;}
+.footer__links{display:flex;flex-direction:column;gap:10px;}
+.footer__link{font-size:14px;color:var(--grey);transition:color .2s;}
+.footer__link:hover{color:var(--v500);}
+.footer__bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer__copy{font-size:13px;color:var(--grey);}
+.footer__legal{display:flex;gap:24px;}
+.footer__legal a{font-size:13px;color:var(--grey);transition:color .2s;}
+.footer__legal a:hover{color:var(--v500);}
+.btn-primary{font-family:var(--font-head);font-size:13px;font-weight:700;background:var(--cta);color:#fff;padding:10px 20px;border-radius:var(--radius-btn);border:none;cursor:pointer;box-shadow:0 4px 12px rgba(249,115,22,.3);transition:all .2s;display:inline-flex;align-items:center;gap:6px;}
+.btn-primary:hover{background:var(--cta-hover);}
+
+
+/* FINAL CTA */
+.final-cta{padding:96px 0;background:var(--v900);position:relative;overflow:hidden;}
+.final-cta__grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;}
+.final-cta__glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(114,96,181,.25) 0%,transparent 65%);pointer-events:none;}
+.final-cta__inner{max-width:860px;margin:0 auto;padding:0 32px;text-align:center;position:relative;}
+.final-cta__badge{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v200);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);padding:6px 16px;border-radius:100px;margin-bottom:28px;}
+.final-cta__badge-dot{width:6px;height:6px;border-radius:50%;background:#22C55E;}
+.final-cta__h2{font-family:var(--font-head);font-size:clamp(32px,4.5vw,56px);font-weight:900;letter-spacing:-1.5px;color:#fff;line-height:1.1;margin-bottom:16px;}
+.final-cta__h2 em{font-style:normal;color:var(--v300);}
+.final-cta__sub{font-size:18px;color:var(--v200);line-height:1.7;max-width:560px;margin:0 auto 40px;}
+.final-cta__cta-wrap{display:flex;align-items:center;justify-content:center;margin-bottom:40px;}
+.btn-cta-white{font-family:var(--font-head);font-size:16px;font-weight:700;background:#fff;color:var(--v500);padding:16px 40px;border-radius:var(--radius-btn);border:none;cursor:pointer;box-shadow:0 8px 28px rgba(0,0,0,.2);transition:all .2s;display:inline-flex;align-items:center;gap:8px;}
+.btn-cta-white:hover{background:var(--v50);transform:translateY(-2px);}
+.btn-cta-white svg{width:16px;height:16px;}
+.final-cta__trust{display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap;}
+.final-cta__trust-item{font-size:13px;font-weight:500;color:var(--v200);display:flex;align-items:center;gap:7px;}
+.final-cta__trust-dot{width:6px;height:6px;border-radius:50%;background:#22C55E;flex-shrink:0;}
+@media(max-width:768px){.final-cta__inner{padding:0 20px;}.final-cta__trust{gap:16px;}}
+
+@media(max-width:768px){
+  .feature-section__layout,
+  .feature-section__layout--reverse{
+    grid-template-columns:1fr;
+    direction:ltr;
+  }
+  .feature-section__layout--reverse > *{direction:ltr;}
+  .s2__inner,.s3__inner,.s5__inner{grid-template-columns:1fr;}
+}
+
+.np__cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.np__col-head{display:block;font-family:var(--font-head);font-size:11px;font-weight:800;color:var(--v400);text-transform:uppercase;letter-spacing:.07em;padding:4px 12px 8px;transition:color .15s;}
+.np__col-head:hover{color:var(--v500);}
+.nav__panel:has(.np__col:only-child) .np__cols{grid-template-columns:1fr;}
+@media(max-width:768px){.np__cols{grid-template-columns:1fr !important;gap:0 !important;}.np__col-head{padding:8px 10px 4px;}}
+</style>
+<style>
+/* CALL MGMT CONTENT SECTIONS */
+
+/* SECTION 1 — numbered horizontal rows, full width, no boxes */
+.s1{padding:80px 0;background:#fff;}
+.s1__header{margin-bottom:48px;}
+.s1__eyebrow{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
+.s1__h2{font-family:var(--font-head);font-size:clamp(24px,3vw,34px);font-weight:900;color:var(--v900);letter-spacing:-.5px;line-height:1.2;margin-bottom:10px;}
+.s1__h2 em{font-style:normal;color:var(--v500);}
+.s1__body{font-size:15px;color:var(--grey);line-height:1.7;}
+.s1__rows{border-top:1px solid var(--border);}
+.s1__row{display:grid;grid-template-columns:56px 280px 1fr;gap:32px;align-items:start;padding:28px 0;border-bottom:1px solid var(--border);}
+.s1__num{font-family:var(--font-head);font-size:24px;font-weight:900;color:var(--v200);}
+.s1__title{font-family:var(--font-head);font-size:15px;font-weight:800;color:var(--v900);padding-top:2px;}
+.s1__desc{font-size:14px;color:var(--grey);line-height:1.7;padding-top:2px;}
+
+/* SECTION 2 — two col: bullets left, dark UI panel right */
+.s2{padding:80px 0;background:#fff;}
+.s2__inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.s2__eyebrow{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
+.s2__h2{font-family:var(--font-head);font-size:clamp(22px,2.5vw,30px);font-weight:900;color:var(--v900);letter-spacing:-.5px;line-height:1.2;margin-bottom:12px;}
+.s2__h2 em{font-style:normal;color:var(--v500);}
+.s2__body{font-size:15px;color:var(--grey);line-height:1.75;margin-bottom:24px;}
+.s2__bullets{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;}
+.s2__bullets li{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--grey);line-height:1.6;}
+.s2__check{width:20px;height:20px;border-radius:6px;background:var(--v50);border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.s2__check svg{width:10px;height:10px;}
+.s2__bullets strong{font-family:var(--font-head);font-weight:700;color:var(--v700);}
+
+/* UI PANEL */
+.ui-panel{background:var(--v900);border-radius:16px;overflow:hidden;}
+.ui-panel__bar{background:rgba(255,255,255,.06);padding:11px 16px;display:flex;align-items:center;gap:6px;border-bottom:1px solid rgba(255,255,255,.06);}
+.ui-dot{width:10px;height:10px;border-radius:50%;}
+.ui-dot--r{background:#FF5F57;} .ui-dot--y{background:#FEBC2E;} .ui-dot--g{background:#28C840;}
+.ui-panel__ttl{font-family:var(--font-head);font-size:11px;font-weight:600;color:var(--v300);margin-left:8px;}
+.ui-panel__body{padding:20px;}
+.ui-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06);}
+.ui-row:last-child{border-bottom:none;}
+.ui-lbl{font-family:var(--font-head);font-size:11.5px;font-weight:600;color:var(--v300);}
+.ui-val{font-family:var(--font-head);font-size:12px;font-weight:800;color:#fff;}
+.ub{font-family:var(--font-head);font-size:9px;font-weight:700;padding:2px 7px;border-radius:100px;display:inline-block;}
+.ub-g{background:rgba(34,197,94,.2);color:#22C55E;}
+.ub-o{background:rgba(251,146,60,.2);color:#FB923C;}
+.ub-b{background:rgba(99,179,237,.2);color:#63B3ED;}
+.ub-r{background:rgba(239,68,68,.2);color:#F87171;}
+
+/* SECTION 3 — timeline left, UI panel right (reversed) */
+.s3{padding:80px 0;background:#F8F7FC;}
+.s3__inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.s3__eyebrow{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
+.s3__h2{font-family:var(--font-head);font-size:clamp(22px,2.5vw,30px);font-weight:900;color:var(--v900);letter-spacing:-.5px;line-height:1.2;margin-bottom:12px;}
+.s3__h2 em{font-style:normal;color:var(--v500);}
+.s3__body{font-size:15px;color:var(--grey);line-height:1.75;margin-bottom:28px;}
+.tl{display:flex;flex-direction:column;gap:0;}
+.tl__item{display:flex;gap:18px;padding-bottom:28px;position:relative;}
+.tl__item:last-child{padding-bottom:0;}
+.tl__item:not(:last-child)::before{content:'';position:absolute;left:19px;top:42px;bottom:0;width:2px;background:linear-gradient(var(--v200),var(--v50));}
+.tl__num{width:40px;height:40px;border-radius:50%;background:var(--v500);color:#fff;font-family:var(--font-head);font-size:14px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 12px rgba(79,56,162,.25);}
+.tl__title{font-family:var(--font-head);font-size:15px;font-weight:800;color:var(--v900);margin-bottom:4px;margin-top:8px;}
+.tl__body{font-size:14px;color:var(--grey);line-height:1.7;}
+
+/* SECTION 4 — full dark, 3 col icon+text no borders */
+.s4{padding:80px 0;background:var(--v900);}
+.s4__header{margin-bottom:56px;}
+.s4__eyebrow{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v300);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
+.s4__h2{font-family:var(--font-head);font-size:clamp(24px,3vw,34px);font-weight:900;color:#fff;letter-spacing:-.5px;line-height:1.2;margin-bottom:10px;}
+.s4__h2 em{font-style:normal;color:var(--v300);}
+.s4__body{font-size:15px;color:var(--grey);line-height:1.7;}
+.s4__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;}
+.s4__icon{width:48px;height:48px;border-radius:14px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.s4__icon svg{width:24px;height:24px;}
+.s4__title{font-family:var(--font-head);font-size:15px;font-weight:800;color:#fff;margin-bottom:8px;}
+.s4__desc{font-size:14px;color:var(--v200);line-height:1.7;}
+
+/* SECTION 5 — agent table in UI panel left, bullets right */
+.s5{padding:80px 0;background:#fff;}
+.s5__inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.s5__eyebrow{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
+.s5__h2{font-family:var(--font-head);font-size:clamp(22px,2.5vw,30px);font-weight:900;color:var(--v900);letter-spacing:-.5px;line-height:1.2;margin-bottom:12px;}
+.s5__h2 em{font-style:normal;color:var(--v500);}
+.s5__body{font-size:15px;color:var(--grey);line-height:1.75;margin-bottom:24px;}
+.agent-tbl{width:100%;border-collapse:collapse;}
+.agent-tbl th{font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v300);text-transform:uppercase;letter-spacing:.06em;padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.08);text-align:left;}
+.agent-tbl td{font-family:var(--font-head);font-size:12px;padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.06);color:var(--v200);}
+.agent-tbl td:last-child{color:#fff;font-weight:700;}
+.agent-tbl tr:last-child td{border-bottom:none;}
+
+/* SECTION 6 — numbered rows, white bg */
+.s6{padding:80px 0;background:#F8F7FC;}
+.s7{padding:80px 0;background:#F8F7FC;}
+
+@media(max-width:900px){
+  .s1__row,.s2__inner,.s3__inner,.s5__inner{grid-template-columns:1fr;}
+  .s4__grid{grid-template-columns:1fr;gap:32px;}
+  .s1__row{grid-template-columns:48px 1fr;}
+  .s1__desc{display:block;}
+}
+</style>
+<style id="mobile-responsive">
+@media(max-width:768px){
+  .nav__inner{display:flex!important;align-items:center!important;justify-content:space-between!important;}
+  .nav__links{display:none;flex-direction:column;position:fixed;top:72px;left:0;right:0;background:rgba(255,255,255,.98);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:16px 24px;gap:0;z-index:99;}
+  .nav__links.open{display:flex;}
+  .nav__link{padding:12px 0;border-bottom:1px solid var(--border);font-size:15px;display:block;}
+  .nav__link:last-child{border-bottom:none;}
+  .nav__cta{display:none;}
+  .nav__mobile-right{display:flex;align-items:center;gap:8px;margin-left:auto;}
+  .nav__mobile-cta{font-family:var(--font-head);font-size:13px;font-weight:700;background:var(--v500);color:#fff;padding:8px 16px;border-radius:var(--radius-btn);text-decoration:none;white-space:nowrap;}
+  .nav__hamburger{display:flex;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:8px;border:none;background:transparent;}
+  .nav__hamburger span{display:block;width:22px;height:2px;background:var(--v900);border-radius:2px;transition:all .25s;}
+  .nav__hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav__hamburger.open span:nth-child(2){opacity:0;}
+  .nav__hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+}
+@media(min-width:769px){.nav__hamburger{display:none;}.nav__mobile-right{display:none;}}
+@media(max-width:768px){.highlights__inner{grid-template-columns:1fr!important;}}
+@media(max-width:768px){
+  div[style*="grid-template-columns:1fr 1fr"],
+  div[style*="grid-template-columns:1fr 2fr"],
+  div[style*="grid-template-columns:1fr 1.5fr"],
+  .stage-grid,.pipeline-grid,.automation-grid{grid-template-columns:1fr!important;gap:32px!important;}
+}
+@media(max-width:768px){
+  .final-cta__inner{padding:0 20px;}
+  .final-cta__trust{display:grid!important;grid-template-columns:1fr 1fr;gap:12px;justify-items:center;}
+}
+@media(max-width:768px){
+  .footer__grid{grid-template-columns:1fr!important;gap:32px!important;}  .footer__tagline{max-width:100%!important;}
+  .footer__bottom{flex-direction:column!important;gap:12px!important;text-align:center!important;}
+  .footer__legal{flex-wrap:wrap!important;justify-content:center!important;}
+
+  .footer__links-grid{display:grid!important;grid-template-columns:1fr 1fr;gap:32px 16px;margin-top:32px;}
+  .footer__links-grid > div:nth-child(1),
+  .footer__links-grid > div:nth-child(2),
+  .footer__links-grid > div:nth-child(3){text-align:left!important;grid-column:1;}
+  .footer__links-grid > div:nth-child(4){text-align:right!important;grid-column:2;grid-row:1 / span 3;}
+  .footer__links-grid > div:nth-child(4) .footer__links{align-items:flex-end;}
+}
+</style>
+<style id="two-col-mobile">
+@media(max-width:768px){
+  .s1__desc{display:block!important;}
+}
+</style>
+<style>
+.s1{padding:80px 0;background:#fff;}
+.s2{padding:80px 0;background:#F8F7FC;}
+.s3{padding:80px 0;background:#fff;}
+.s4{padding:80px 0;background:#F8F7FC;}
+.s5{padding:80px 0;background:#fff;}
+.s1__header{margin-bottom:48px;}
+.s1__eyebrow{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
+.s1__h2{font-family:var(--font-head);font-size:clamp(24px,3vw,36px);font-weight:900;color:var(--v900);letter-spacing:-.5px;line-height:1.2;margin-bottom:12px;}
+.s1__h2 em{font-style:normal;color:var(--v500);}
+.s1__body{font-size:16px;color:var(--grey);line-height:1.75;margin-bottom:0;}
+.s1__title{font-family:var(--font-head);font-size:15px;font-weight:800;color:var(--v900);margin-bottom:8px;}
+.s1__desc{font-size:14px;color:var(--grey);line-height:1.75;}
+
+/* Stage group cards */
+.stage-groups{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px;}
+.stage-card{border-radius:16px;overflow:hidden;border:1.5px solid var(--border);}
+.stage-card__header{padding:16px 18px;font-family:var(--font-head);font-size:13px;font-weight:800;color:#fff;}
+.stage-card__body{background:#fff;padding:14px 18px;}
+.stage-card__rule{font-size:12px;color:var(--grey);line-height:1.7;padding:6px 0;border-bottom:3px solid var(--border);}
+.stage-card__rule:last-child{border-bottom:none;}
+.stage-card__badge{display:inline-block;font-family:var(--font-head);font-size:10px;font-weight:700;padding:2px 8px;border-radius:100px;margin-bottom:8px;}
+
+/* Funnel */
+.funnel-wrap{display:flex;flex-direction:column;align-items:center;gap:0;width:100%;max-width:420px;margin:0 auto;}
+.funnel-stage{display:flex;align-items:center;justify-content:center;border-radius:8px;font-family:var(--font-head);font-size:13px;font-weight:700;color:#fff;position:relative;transition:all .2s;}
+.funnel-arrow{width:0;height:0;border-left:12px solid transparent;border-right:12px solid transparent;border-top:10px solid var(--v500);margin:0 auto;opacity:.3;}
+
+@media(max-width:768px){
+  .stage-groups{grid-template-columns:1fr 1fr!important;}
+}
+</style>
+<style id="footer-col-align">
+@media(max-width:768px){
+
+  .int-grid{grid-template-columns:1fr;}
+}
+
+/* ===== ROLLOUT v2026-05-29: nav mega-menu + fat footer (canonical) ===== */
+.nav__item{position:relative;display:flex;align-items:center;height:72px;}
+.nav__item > .nav__link{display:inline-flex;align-items:center;gap:4px;}
+.nav__caret{width:11px;height:11px;flex-shrink:0;transition:transform .2s;}
+.nav__item:hover > .nav__link .nav__caret,.nav__item:focus-within > .nav__link .nav__caret{transform:rotate(180deg);}
+.nav__item:hover > .nav__link,.nav__item:focus-within > .nav__link{background:var(--v50);color:var(--v500);}
+.nav__panel{position:absolute;top:100%;left:0;background:#fff;border:1px solid var(--border);border-radius:14px;box-shadow:0 18px 44px rgba(33,24,68,.13);padding:14px;opacity:0;visibility:hidden;transform:translateY(7px);transition:opacity .16s,transform .16s,visibility .16s;z-index:200;}
+.nav__panel--right{left:auto;right:0;}
+.nav__item:hover > .nav__panel,.nav__item:focus-within > .nav__panel{opacity:1;visibility:visible;transform:translateY(0);}
+.np__list{display:grid;gap:1px;}
+.np__list--2{grid-template-columns:1fr 1fr;gap:1px 14px;}
+.np__link{display:flex;flex-direction:column;gap:2px;padding:9px 12px;border-radius:8px;transition:background .15s;min-width:0;}
+.np__link:hover{background:var(--v50);}
+.np__t{font-family:var(--font-head);font-size:13.5px;font-weight:700;color:var(--v900);white-space:nowrap;}
+.np__list--2 .np__t{white-space:normal;line-height:1.3;overflow-wrap:break-word;}
+.np__link:hover .np__t{color:var(--v500);}
+.np__s{font-family:var(--font-body);font-size:12px;color:var(--grey);line-height:1.35;}
+.np__foot{display:flex;align-items:center;gap:6px;border-top:1px solid var(--border);margin-top:8px;padding:11px 12px 3px;font-family:var(--font-head);font-size:12.5px;font-weight:700;color:var(--v500);}
+.np__foot svg{width:13px;height:13px;}
+.nav__mobile-cta{background:var(--cta);}
+.footer__grid{grid-template-columns:1.5fr 1fr 1fr 1fr 1fr 1.15fr;gap:40px 32px;}
+.footer__col-stack{display:flex;flex-direction:column;gap:48px;}
+@media(max-width:1024px){.footer__grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:768px){
+  .nav__item{width:100%;height:auto;display:block;position:static;}
+  .nav__item > .nav__link{display:flex;align-items:center;justify-content:space-between;width:100%;}
+  .nav__item.open > .nav__link .nav__caret{transform:rotate(180deg);}
+  .nav__caret{width:13px;height:13px;}
+  .nav__panel{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;border-radius:0;padding:4px 0 10px 10px;width:auto !important;display:none;z-index:auto;}
+  .nav__item.open > .nav__panel{display:block;}
+  .np__list--2{grid-template-columns:1fr;}
+  .np__link{padding:9px 10px;}
+  .np__foot{padding-left:10px;}
+  .footer__links-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px 16px;margin-top:32px;}
+  .footer__links-grid > div:nth-child(1),.footer__links-grid > div:nth-child(2),.footer__links-grid > div:nth-child(3),.footer__links-grid > div:nth-child(4),.footer__links-grid > div:nth-child(5){text-align:left;grid-column:auto;grid-row:auto;}
+  .footer__links-grid > div:nth-child(4) .footer__links{align-items:flex-start;}
+}
+@media(max-width:600px){.footer__grid{grid-template-columns:1fr;}}
+/* ===== end ROLLOUT ===== */
+
+/* ===== FAQ section (locked §16A) ===== */
+.faq{padding:96px 0;background:#F8F7FC;}
+.faq__inner{max-width:1280px;margin:0 auto;padding:0 32px;}
+.faq__header{text-align:center;margin-bottom:8px;}
+.faq__eyebrow{font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v500);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;}
+.faq__h2{font-family:var(--font-head);font-size:clamp(28px,3.5vw,42px);font-weight:900;letter-spacing:-1.2px;color:var(--v900);line-height:1.15;}
+.faq__h2 em{font-style:normal;color:var(--v500);}
+.faq-list{display:flex;flex-direction:column;border-top:1px solid var(--border);max-width:860px;margin:40px auto 0;}
+.faq-item{border-bottom:1px solid var(--border);}
+.faq-item__q{display:flex;align-items:center;justify-content:space-between;padding:22px 0;cursor:pointer;gap:24px;}
+.faq-item__q-text{font-family:var(--font-head);font-size:16px;font-weight:700;color:var(--v900);}
+.faq-item__icon{width:28px;height:28px;border-radius:50%;background:#fff;border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s;}
+.faq-item__icon svg{width:12px;height:12px;transition:transform .25s;}
+.faq-item.open .faq-item__icon{background:var(--v500);border-color:var(--v500);}
+.faq-item.open .faq-item__icon svg{transform:rotate(45deg);stroke:#fff;}
+.faq-item__a{display:none;font-family:var(--font-body);font-size:15px;color:var(--grey);line-height:1.75;padding-bottom:22px;max-width:760px;}
+.faq-item.open .faq-item__a{display:block;}
+@media(max-width:768px){.faq{padding:64px 0;}.faq__inner{padding:0 20px;}}
+/* ===== end FAQ ===== */
+</style>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="telecrm-approach2-home.html" class="nav__logo">telecrm</a>
+    <div class="nav__links">
+      <div class="nav__item">
+        <a href="telecrm-platform-overview.html" class="nav__link">Platform Overview <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:560px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-platform-hub.html">Platform Hub</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-platform-unified-revenue-management.html"><span class="np__t">Unified Revenue Management</span><span class="np__s">One connected engine</span></a>
+                <a class="np__link" href="telecrm-platform-lead-management.html"><span class="np__t">Lead Management</span><span class="np__s">Capture, dedupe, assign</span></a>
+                <a class="np__link" href="telecrm-platform-call-management.html"><span class="np__t">Call Management &amp; Recording</span><span class="np__s">Dial, record, track</span></a>
+                <a class="np__link" href="telecrm-platform-adaptive-crm.html"><span class="np__t">Adaptive CRM</span><span class="np__s">Stages, fields, 360°</span></a>
+                <a class="np__link" href="telecrm-platform-marketing-automation.html"><span class="np__t">Marketing Automation</span><span class="np__s">Reach leads automatically</span></a>
+                <a class="np__link" href="telecrm-platform-sales-pipeline-management.html"><span class="np__t">Sales Funnel &amp; Pipeline Management</span><span class="np__s">Track every deal stage</span></a>
+              </div>
+            </div>
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-benefits-hub.html">Benefits Hub</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-benefits-hub.html"><span class="np__t">Outcomes &amp; ROI</span><span class="np__s">What telecrm delivers for your team</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-platform-overview.html">Platform Overview — the product, end to end <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-solutions-hub.html" class="nav__link">Solutions <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-solutions-hub.html">By approach</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-problems-hub.html"><span class="np__t">Problems Hub</span><span class="np__s">Revenue leaks, by stage</span></a>
+                <a class="np__link" href="telecrm-crm-hub.html"><span class="np__t">CRM Hub</span><span class="np__s">By type &amp; by team</span></a>
+                <a class="np__link" href="telecrm-industry-hub.html"><span class="np__t">Industry Hub</span><span class="np__s">11 industries covered</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-solutions-hub.html">Browse all solutions <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-features-hub.html" class="nav__link nav__link--active">Features <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:620px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-features-hub.html">Engagement</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-feature-call-management.html"><span class="np__t">Call Management</span></a>
+                <a class="np__link" href="telecrm-feature-calling-campaign.html"><span class="np__t">Calling Campaign Management</span></a>
+                <a class="np__link" href="telecrm-feature-whatsapp.html"><span class="np__t">WhatsApp</span></a>
+                <a class="np__link" href="telecrm-feature-automations.html"><span class="np__t">Automation</span></a>
+              </div>
+            </div>
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-features-hub.html">Data &amp; Admin</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-feature-lead-management.html"><span class="np__t">Lead Management &amp; Reporting</span></a>
+                <a class="np__link" href="telecrm-feature-lead-fields.html"><span class="np__t">Lead Fields</span></a>
+                <a class="np__link" href="telecrm-feature-lead-stages.html"><span class="np__t">Lead Stages</span></a>
+                <a class="np__link" href="telecrm-feature-list-labels.html"><span class="np__t">List and Labels</span></a>
+                <a class="np__link" href="telecrm-feature-reporting.html"><span class="np__t">Reporting</span></a>
+                <a class="np__link" href="telecrm-feature-integrations.html"><span class="np__t">Integrations</span></a>
+                <a class="np__link" href="telecrm-feature-user-management.html"><span class="np__t">User Management</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-features-hub.html">See all features <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-trust-hub.html" class="nav__link">Trust <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-trust-hub.html">Proof</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-testimonials.html"><span class="np__t">Testimonials</span><span class="np__s">Real customers, real numbers</span></a>
+                <a class="np__link" href="telecrm-case-studies.html"><span class="np__t">Case Studies</span><span class="np__s">9 detailed stories</span></a>
+                <a class="np__link" href="telecrm-comparison.html"><span class="np__t">Comparison</span><span class="np__s">telecrm vs. alternatives</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-trust-hub.html">Visit the Trust Hub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-pricing.html" class="nav__link">Pricing <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:320px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-pricing.html">Plans</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-pricing.html"><span class="np__t">Pricing</span><span class="np__s">Plans &amp; what's included</span></a>
+                <a class="np__link" href="telecrm-cost-savings.html"><span class="np__t">Cost Savings</span><span class="np__s">What you save vs. tools</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-support-hub.html" class="nav__link">Support <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:560px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-support-hub.html">Resources</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-faqs.html"><span class="np__t">FAQs</span></a>
+                <a class="np__link" href="telecrm-glossary.html"><span class="np__t">Glossary</span></a>
+                <a class="np__link" href="telecrm-learning-repository.html"><span class="np__t">Learning Repository</span></a>
+                <a class="np__link" href="telecrm-onboarding.html"><span class="np__t">Onboarding</span></a>
+                <a class="np__link" href="telecrm-recommended-devices.html"><span class="np__t">Recommended Devices</span></a>
+              </div>
+            </div>
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-support-hub.html">Policies</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-privacy-policy.html"><span class="np__t">Privacy Policy</span></a>
+                <a class="np__link" href="telecrm-refund-policy.html"><span class="np__t">Refund Policy</span></a>
+                <a class="np__link" href="telecrm-terms-conditions.html"><span class="np__t">Terms &amp; Conditions</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-support-hub.html">Go to Support Hub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-get-started.html" class="nav__link">Get Started <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-get-started.html">Get started</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-partnership.html"><span class="np__t">Partner Program</span><span class="np__s">Refer &amp; earn 10% for life</span></a>
+                <a class="np__link" href="telecrm-demo-request.html"><span class="np__t">Demo Request</span><span class="np__s">Book a free demo</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-get-started.html">All ways to start <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-about-us.html" class="nav__link">About Us <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-about-us.html">Company</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-about-telecrm.html"><span class="np__t">About telecrm</span><span class="np__s">Story, vision, mission</span></a>
+                <a class="np__link" href="telecrm-life-at-telecrm.html"><span class="np__t">Life at telecrm</span><span class="np__s">Culture &amp; team</span></a>
+                <a class="np__link" href="telecrm-careers.html"><span class="np__t">Careers</span><span class="np__s">Open roles</span></a>
+                <a class="np__link" href="telecrm-contact.html"><span class="np__t">Contact Us</span><span class="np__s">Talk to us</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="nav__sep"></span>
+      <a href="telecrm-demo-request.html" class="nav__cta">Get a Demo</a>
+    </div>
+    <div class="nav__mobile-right">
+      <a href="telecrm-demo-request.html" class="nav__mobile-cta">Get a Demo</a>
+      <span class="nav__mob-sep"></span>
+      <button class="nav__hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__bg"></div>
+  <div class="hero__glow"></div>
+  <div class="hero__inner">
+    <div class="breadcrumb">
+      <a href="telecrm-approach2-home.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="telecrm-features-hub.html">Features</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">Lead Stages</span>
+    </div>
+    <div class="hero__eyebrow">Features · Lead Stages</div>
+    <h1 class="hero__h1">Your sales process. Your stages.<br><em>Built the way your team works.</em></h1>
+    <p class="hero__sub">telecrm gives you a fully configurable lead workflow — fixed stage groups with unlimited customisation inside them, colour coding, automation triggers, and multi-pipeline support. Model your exact sales process without compromise.</p>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS BAR -->
+<div class="highlights">
+  <div class="highlights__inner">
+    <div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">4 fixed stage groups</span></div>
+    <div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">Unlimited active stages</span></div>
+    <div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">Custom pipelines</span></div>
+    <div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">Stage-wise automation</span></div>
+  </div>
+</div>
+<!-- SECTION 1: STAGE STRUCTURE -->
+<section class="s1">
+  <div class="inner">
+    <div class="s1__header">
+      <div class="s1__eyebrow">Stage Structure</div>
+      <h2 class="s1__h2">Four stage groups.<br><em>Infinite flexibility inside them.</em></h2>
+      <p class="s1__body">Every lead in telecrm moves through four fixed stage groups — Initial, Active, Closed Won, and Closed Lost. The groups are fixed. What happens inside each one is entirely up to you.</p>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:8px;margin-top:48px;">
+
+      <!-- Initial -->
+      <div style="border-radius:12px;overflow:hidden;border:1.5px solid #B3A9DB;">
+        <div style="display:flex;align-items:center;gap:14px;padding:14px 18px;background:#EDEBF6;">
+          <div style="width:14px;height:14px;border-radius:4px;background:#7260B5;flex-shrink:0;"></div>
+          <span style="font-family:var(--font-head);font-size:14px;font-weight:800;color:#3D2B8A;flex:1;">Initial</span>
+          <span style="font-family:var(--font-head);font-size:10px;font-weight:700;background:#D9D4ED;color:#3D2B8A;padding:2px 10px;border-radius:100px;">Entry point</span>
+        </div>
+        <div style="padding:0 18px 14px 46px;background:#EDEBF6;">
+          <div style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--grey);padding:6px 0;border-bottom:3px solid #D9D4ED;line-height:1.5;"><div style="width:6px;height:6px;border-radius:50%;background:#7260B5;flex-shrink:0;margin-top:5px;"></div><span>1 fixed stage — every new lead starts here</span></div>
+          <div style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--grey);padding:6px 0;border-bottom:3px solid #D9D4ED;line-height:1.5;"><div style="width:6px;height:6px;border-radius:50%;background:#7260B5;flex-shrink:0;margin-top:5px;"></div><span>Label is editable — rename to match your process</span></div>
+          <div style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--grey);padding:6px 0;line-height:1.5;"><div style="width:6px;height:6px;border-radius:50%;background:#7260B5;flex-shrink:0;margin-top:5px;"></div><span>Cannot add or delete stages in this group</span></div>
+        </div>
+      </div>
+
+      <!-- Active -->
+      <div style="border-radius:12px;overflow:hidden;border:1.5px solid #B3A9DB;">
+        <div style="display:flex;align-items:center;gap:14px;padding:14px 18px;background:#EDEBF6;">
+          <div style="width:14px;height:14px;border-radius:4px;background:#4F38A2;flex-shrink:0;"></div>
+          <span style="font-family:var(--font-head);font-size:14px;font-weight:800;color:#211844;flex:1;">Active</span>
+          <span style="font-family:var(--font-head);font-size:10px;font-weight:700;background:#D9D4ED;color:#211844;padding:2px 10px;border-radius:100px;">Your pipeline</span>
+        </div>
+        <div style="padding:0 18px 14px 46px;background:#EDEBF6;">
+          <div style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--grey);padding:6px 0;border-bottom:3px solid #D9D4ED;line-height:1.5;"><div style="width:6px;height:6px;border-radius:50%;background:#4F38A2;flex-shrink:0;margin-top:5px;"></div><span>Unlimited stages — add as many as your process needs</span></div>
+          <div style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--grey);padding:6px 0;border-bottom:3px solid #D9D4ED;line-height:1.5;"><div style="width:6px;height:6px;border-radius:50%;background:#4F38A2;flex-shrink:0;margin-top:5px;"></div><span>All stage labels fully editable</span></div>
+          <div style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--grey);padding:6px 0;border-bottom:3px solid #D9D4ED;line-height:1.5;"><div style="width:6px;height:6px;border-radius:50%;background:#4F38A2;flex-shrink:0;margin-top:5px;"></div><span>Arranged in a funnel format as recommended by the telecrm team</span></div>
+          <div style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--grey);padding:6px 0;line-height:1.5;"><div style="width:6px;height:6px;border-radius:50%;background:#4F38A2;flex-shrink:0;margin-top:5px;"></div><span>Supports stage-wise automation triggers</span></div>
+        </div>
+      </div>
+
+      <!-- Closed Won -->
+      <div style="border-radius:12px;overflow:hidden;border:1.5px solid #BBF7D0;">
+        <div style="display:flex;align-items:center;gap:14px;padding:14px 18px;background:#DCFCE7;">
+          <div style="width:14px;height:14px;border-radius:4px;background:#16A34A;flex-shrink:0;"></div>
+          <span style="font-family:var(--font-head);font-size:14px;font-weight:800;color:#15803D;flex:1;">Closed · Won</span>
+          <span style="font-family:var(--font-head);font-size:10px;font-weight:700;background:#BBF7D0;color:#15803D;padding:2px 10px;border-radius:100px;">Converted</span>
+        </div>
+        <div style="padding:0 18px 14px 46px;background:#DCFCE7;">
+          <div style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:#15803D;padding:6px 0;border-bottom:3px solid #BBF7D0;line-height:1.5;"><div style="width:6px;height:6px;border-radius:50%;background:#16A34A;flex-shrink:0;margin-top:5px;"></div><span>Mark a lead as successfully converted</span></div>
+          <div style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:#15803D;padding:6px 0;border-bottom:3px solid #BBF7D0;line-height:1.5;"><div style="width:6px;height:6px;border-radius:50%;background:#16A34A;flex-shrink:0;margin-top:5px;"></div><span>Triggers won-stage automation rules</span></div>
+          <div style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:#15803D;padding:6px 0;line-height:1.5;"><div style="width:6px;height:6px;border-radius:50%;background:#16A34A;flex-shrink:0;margin-top:5px;"></div><span>Label editable — customise to your business context</span></div>
+        </div>
+      </div>
+
+      <!-- Closed Lost -->
+      <div style="border-radius:12px;overflow:hidden;border:1.5px solid #FECACA;">
+        <div style="display:flex;align-items:center;gap:14px;padding:14px 18px;background:#FEE2E2;">
+          <div style="width:14px;height:14px;border-radius:4px;background:#DC2626;flex-shrink:0;"></div>
+          <span style="font-family:var(--font-head);font-size:14px;font-weight:800;color:#B91C1C;flex:1;">Closed · Lost</span>
+          <span style="font-family:var(--font-head);font-size:10px;font-weight:700;background:#FECACA;color:#B91C1C;padding:2px 10px;border-radius:100px;">Special stage</span>
+        </div>
+        <div style="padding:0 18px 14px 46px;background:#FEE2E2;">
+          <div style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:#B91C1C;padding:6px 0;border-bottom:3px solid #FECACA;line-height:1.5;"><div style="width:6px;height:6px;border-radius:50%;background:#DC2626;flex-shrink:0;margin-top:5px;"></div><span>Requires a loss reason — up to 25 configurable reasons</span></div>
+          <div style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:#B91C1C;padding:6px 0;border-bottom:3px solid #FECACA;line-height:1.5;"><div style="width:6px;height:6px;border-radius:50%;background:#DC2626;flex-shrink:0;margin-top:5px;"></div><span>Captures why deals are lost for analysis and reporting</span></div>
+          <div style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:#B91C1C;padding:6px 0;line-height:1.5;"><div style="width:6px;height:6px;border-radius:50%;background:#DC2626;flex-shrink:0;margin-top:5px;"></div><span>Loss reasons are fully customisable per pipeline</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- SECTION 2: ACTIVE STAGE FUNNEL -->
+<section class="s2">
+  <div class="inner">
+    <div class="s1__header">
+      <div class="s1__eyebrow">The Active Stage</div>
+      <h2 class="s1__h2">The Active stage is your pipeline.<br><em>Build it your way.</em></h2>
+      <p class="s1__body">The Active stage is where all the action happens. Add as many statuses as your sales process needs — arranged in a funnel format as recommended by the telecrm team. Every stage represents a step closer to a close.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;" class="stage-grid">
+      <div>
+        <div style="display:flex;flex-direction:column;gap:20px;">
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <div style="width:40px;height:40px;border-radius:12px;background:var(--v50);border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M12 20V10M18 20V4M6 20v-4" fill="#EDEBF6"/></svg>
+            </div>
+            <div><div class="s1__title">Unlimited stages</div><p class="s1__desc">Add as many active stages as your sales process requires — no cap, no restrictions. Every business is different.</p></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <div style="width:40px;height:40px;border-radius:12px;background:var(--v50);border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M11 4H4a2 2 0 00-2 2v14h14v-7" fill="#EDEBF6"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1z"/></svg>
+            </div>
+            <div><div class="s1__title">Fully editable labels</div><p class="s1__desc">Every stage name can be edited to match your team's language. Call it what your reps actually say.</p></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <div style="width:40px;height:40px;border-radius:12px;background:var(--v50);border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M19 9l-7 7-7-7" fill="none"/></svg>
+            </div>
+            <div><div class="s1__title">Funnel format</div><p class="s1__desc">Stages are presented in a narrowing funnel — the telecrm-recommended format that shows how leads progress and where they drop off.</p></div>
+          </div>
+        </div>
+      </div>
+      <div><div style="display:flex;flex-direction:column;align-items:center;gap:0;width:100%;max-width:420px;margin:0 auto;">
+  <div style="width:100%;background:#4F38A2;border-radius:8px;padding:12px 0;text-align:center;font-family:var(--font-head);font-size:12px;font-weight:700;color:#fff;">New / Contacted</div><div style="width:0;height:0;border-left:10px solid transparent;border-right:10px solid transparent;border-top:8px solid #4F38A2;opacity:.5;"></div>
+  <div style="width:90%;background:#5B46AD;border-radius:8px;padding:12px 0;text-align:center;font-family:var(--font-head);font-size:12px;font-weight:700;color:#fff;margin-top:4px;">Interested</div><div style="width:0;height:0;border-left:10px solid transparent;border-right:10px solid transparent;border-top:8px solid #5B46AD;opacity:.5;"></div>
+  <div style="width:78%;background:#6754B8;border-radius:8px;padding:12px 0;text-align:center;font-family:var(--font-head);font-size:12px;font-weight:700;color:#fff;margin-top:4px;">Demo Scheduled</div><div style="width:0;height:0;border-left:10px solid transparent;border-right:10px solid transparent;border-top:8px solid #6754B8;opacity:.5;"></div>
+  <div style="width:64%;background:#7362C3;border-radius:8px;padding:12px 0;text-align:center;font-family:var(--font-head);font-size:12px;font-weight:700;color:#fff;margin-top:4px;">Demo Done</div><div style="width:0;height:0;border-left:10px solid transparent;border-right:10px solid transparent;border-top:8px solid #7362C3;opacity:.5;"></div>
+  <div style="width:50%;background:#7F70CE;border-radius:8px;padding:12px 0;text-align:center;font-family:var(--font-head);font-size:12px;font-weight:700;color:#fff;margin-top:4px;">Proposal Sent</div><div style="width:0;height:0;border-left:10px solid transparent;border-right:10px solid transparent;border-top:8px solid #7F70CE;opacity:.5;"></div>
+  <div style="width:38%;background:#8B7ED9;border-radius:8px;padding:12px 0;text-align:center;font-family:var(--font-head);font-size:12px;font-weight:700;color:#fff;margin-top:4px;">Negotiation</div><div style="width:0;height:0;border-left:10px solid transparent;border-right:10px solid transparent;border-top:8px solid #8B7ED9;opacity:.5;"></div>
+  <div style="width:28%;background:#16A34A;border-radius:8px;padding:12px 0;text-align:center;font-family:var(--font-head);font-size:12px;font-weight:700;color:#fff;margin-top:4px;">Closed Won</div></div></div>
+    </div>
+  </div>
+</section>
+<!-- SECTION 3: STAGE CUSTOMISATION -->
+<section class="s3">
+  <div class="inner">
+    <div class="s1__header">
+      <div class="s1__eyebrow">Stage Customisation</div>
+      <h2 class="s1__h2">Edit, colour, and organise<br><em>every stage.</em></h2>
+      <p class="s1__body">Every stage label can be edited. Every stage gets a colour. Active stages can be added, reordered, or deleted. Your pipeline looks exactly the way your team thinks about it.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;" class="stage-grid">
+      <div>
+        <div style="display:flex;flex-direction:column;gap:20px;">
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <div style="width:40px;height:40px;border-radius:12px;background:var(--v50);border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="12" cy="12" r="10" fill="#EDEBF6"/><circle cx="12" cy="12" r="3" fill="#4F38A2"/></svg>
+            </div>
+            <div><div class="s1__title">Colour per stage</div><p class="s1__desc">Assign a colour to every stage — making your pipeline instantly scannable and visually distinct for every rep.</p></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <div style="width:40px;height:40px;border-radius:12px;background:var(--v50);border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M11 4H4a2 2 0 00-2 2v14h14v-7" fill="#EDEBF6"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1z"/></svg>
+            </div>
+            <div><div class="s1__title">Edit any label</div><p class="s1__desc">Rename stages to match your team's actual language — just the terms used every day. No confusing default names.</p></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <div style="width:40px;height:40px;border-radius:12px;background:var(--v50);border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/></svg>
+            </div>
+            <div><div class="s1__title">Add &amp; delete stages</div><p class="s1__desc">Add new stages to the Active group at any time, or delete ones that no longer fit your process. Initial, Won, and Lost groups are protected.</p></div>
+          </div>
+        </div>
+      </div>
+      <div><div style="background:#fff;border:1.5px solid var(--border);border-radius:16px;overflow:hidden;"><div style="background:var(--v50);padding:12px 16px;border-bottom:1.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;"><span style="font-family:var(--font-head);font-size:12px;font-weight:800;color:var(--v900);">Stage editor · Active pipeline</span><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:#22C55E;background:rgba(34,197,94,.1);padding:2px 8px;border-radius:100px;">8 stages</span></div><div style="padding:12px 16px;display:flex;flex-direction:column;gap:6px;"><div style="display:flex;align-items:center;gap:10px;padding:8px 10px;background:var(--v50);border-radius:8px;border:1px solid var(--v100);">
+          <div style="width:12px;height:12px;border-radius:3px;background:#4F38A2;flex-shrink:0;"></div>
+          <span style="font-size:12px;color:var(--v900);flex:1;font-family:var(--font-head);font-weight:600;">New / Contacted</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.8" width="14" height="14" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 00-2 2v14h14v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.8" width="14" height="14" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 8 10 3 21 3 21 14 16 19"/><rect x="3" y="10" width="13" height="13" rx="2"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="1.8" width="14" height="14" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/></svg>
+        </div><div style="display:flex;align-items:center;gap:10px;padding:8px 10px;background:var(--v50);border-radius:8px;border:1px solid var(--v100);">
+          <div style="width:12px;height:12px;border-radius:3px;background:#0F6E56;flex-shrink:0;"></div>
+          <span style="font-size:12px;color:var(--v900);flex:1;font-family:var(--font-head);font-weight:600;">Interested</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.8" width="14" height="14" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 00-2 2v14h14v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.8" width="14" height="14" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 8 10 3 21 3 21 14 16 19"/><rect x="3" y="10" width="13" height="13" rx="2"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="1.8" width="14" height="14" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/></svg>
+        </div><div style="display:flex;align-items:center;gap:10px;padding:8px 10px;background:var(--v50);border-radius:8px;border:1px solid var(--v100);">
+          <div style="width:12px;height:12px;border-radius:3px;background:#D85A30;flex-shrink:0;"></div>
+          <span style="font-size:12px;color:var(--v900);flex:1;font-family:var(--font-head);font-weight:600;">Demo Scheduled</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.8" width="14" height="14" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 00-2 2v14h14v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.8" width="14" height="14" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 8 10 3 21 3 21 14 16 19"/><rect x="3" y="10" width="13" height="13" rx="2"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="1.8" width="14" height="14" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/></svg>
+        </div><div style="display:flex;align-items:center;gap:10px;padding:8px 10px;background:var(--v50);border-radius:8px;border:1px solid var(--v100);">
+          <div style="width:12px;height:12px;border-radius:3px;background:#BA7517;flex-shrink:0;"></div>
+          <span style="font-size:12px;color:var(--v900);flex:1;font-family:var(--font-head);font-weight:600;">Proposal Sent</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.8" width="14" height="14" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 00-2 2v14h14v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.8" width="14" height="14" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 8 10 3 21 3 21 14 16 19"/><rect x="3" y="10" width="13" height="13" rx="2"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="1.8" width="14" height="14" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/></svg>
+        </div><div style="display:flex;align-items:center;gap:10px;padding:8px 10px;background:var(--v50);border-radius:8px;border:1px solid var(--v100);">
+          <div style="width:12px;height:12px;border-radius:3px;background:#993556;flex-shrink:0;"></div>
+          <span style="font-size:12px;color:var(--v900);flex:1;font-family:var(--font-head);font-weight:600;">Negotiation</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.8" width="14" height="14" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 00-2 2v14h14v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.8" width="14" height="14" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 8 10 3 21 3 21 14 16 19"/><rect x="3" y="10" width="13" height="13" rx="2"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="1.8" width="14" height="14" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/></svg>
+        </div><div style="padding:8px 10px;border-radius:8px;border:1.5px dashed var(--v200);display:flex;align-items:center;gap:8px;cursor:pointer;"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" width="14" height="14" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg><span style="font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v500);">Add stage</span></div></div></div></div>
+    </div>
+  </div>
+</section>
+<!-- SECTION 4: CUSTOM PIPELINES -->
+<section class="s4">
+  <div class="inner">
+    <div class="s1__header">
+      <div class="s1__eyebrow">Custom Pipelines</div>
+      <h2 class="s1__h2">Different products. Different teams.<br><em>Different pipelines.</em></h2>
+      <p class="s1__body">Create multiple pipelines for different products, teams, or business units — each with its own stage structure, automation rules, and reporting. One CRM, many workflows.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;margin-top:0;">
+
+      <div style="display:grid;grid-template-columns:120px 1fr;border:1.5px solid var(--border);border-radius:10px;overflow:hidden;">
+        <div style="background:#7260B5;padding:14px 16px;display:flex;align-items:center;">
+          <span style="font-family:var(--font-head);font-size:12px;font-weight:800;color:#fff;">Real Estate</span>
+        </div>
+        <div style="padding:12px 16px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;background:#fff;">
+          <span style="font-family:var(--font-head);font-size:11px;font-weight:600;background:#EDEBF6;color:#7260B5;padding:3px 10px;border-radius:100px;">New Enquiry</span>
+          <span style="color:var(--grey2);font-size:11px;">→</span>
+          <span style="font-family:var(--font-head);font-size:11px;font-weight:600;background:#EDEBF6;color:#7260B5;padding:3px 10px;border-radius:100px;">Site Visit</span>
+          <span style="color:var(--grey2);font-size:11px;">→</span>
+          <span style="font-family:var(--font-head);font-size:11px;font-weight:600;background:#EDEBF6;color:#7260B5;padding:3px 10px;border-radius:100px;">Negotiation</span>
+          <span style="color:var(--grey2);font-size:11px;">→</span>
+          <span style="font-family:var(--font-head);font-size:11px;font-weight:600;background:#EDEBF6;color:#7260B5;padding:3px 10px;border-radius:100px;">Agreement</span>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:120px 1fr;border:1.5px solid var(--border);border-radius:10px;overflow:hidden;">
+        <div style="background:#4F38A2;padding:14px 16px;display:flex;align-items:center;">
+          <span style="font-family:var(--font-head);font-size:12px;font-weight:800;color:#fff;">Insurance</span>
+        </div>
+        <div style="padding:12px 16px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;background:#fff;">
+          <span style="font-family:var(--font-head);font-size:11px;font-weight:600;background:#EDEBF6;color:#4F38A2;padding:3px 10px;border-radius:100px;">Lead Received</span>
+          <span style="color:var(--grey2);font-size:11px;">→</span>
+          <span style="font-family:var(--font-head);font-size:11px;font-weight:600;background:#EDEBF6;color:#4F38A2;padding:3px 10px;border-radius:100px;">Needs Analysis</span>
+          <span style="color:var(--grey2);font-size:11px;">→</span>
+          <span style="font-family:var(--font-head);font-size:11px;font-weight:600;background:#EDEBF6;color:#4F38A2;padding:3px 10px;border-radius:100px;">Quote Shared</span>
+          <span style="color:var(--grey2);font-size:11px;">→</span>
+          <span style="font-family:var(--font-head);font-size:11px;font-weight:600;background:#EDEBF6;color:#4F38A2;padding:3px 10px;border-radius:100px;">Policy Issued</span>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:120px 1fr;border:1.5px solid var(--border);border-radius:10px;overflow:hidden;">
+        <div style="background:#2E2070;padding:14px 16px;display:flex;align-items:center;">
+          <span style="font-family:var(--font-head);font-size:12px;font-weight:800;color:#fff;">Education</span>
+        </div>
+        <div style="padding:12px 16px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;background:#fff;">
+          <span style="font-family:var(--font-head);font-size:11px;font-weight:600;background:#EDEBF6;color:#2E2070;padding:3px 10px;border-radius:100px;">Enquiry</span>
+          <span style="color:var(--grey2);font-size:11px;">→</span>
+          <span style="font-family:var(--font-head);font-size:11px;font-weight:600;background:#EDEBF6;color:#2E2070;padding:3px 10px;border-radius:100px;">Counselling</span>
+          <span style="color:var(--grey2);font-size:11px;">→</span>
+          <span style="font-family:var(--font-head);font-size:11px;font-weight:600;background:#EDEBF6;color:#2E2070;padding:3px 10px;border-radius:100px;">Application</span>
+          <span style="color:var(--grey2);font-size:11px;">→</span>
+          <span style="font-family:var(--font-head);font-size:11px;font-weight:600;background:#EDEBF6;color:#2E2070;padding:3px 10px;border-radius:100px;">Enrolled</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:32px;background:var(--v50);border:1.5px solid var(--v100);border-radius:14px;padding:20px 24px;display:flex;align-items:flex-start;gap:16px;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" style="flex-shrink:0;margin-top:2px;"><circle cx="12" cy="12" r="10" fill="#EDEBF6"/><path d="M12 8v4M12 16h.01"/></svg>
+      <p style="font-size:14px;color:var(--grey);line-height:1.75;margin:0;">Each pipeline has its own Active stage funnel, loss reasons, automation triggers, and reporting dashboard — completely independent from other pipelines in your telecrm account.</p>
+    </div>
+  </div>
+</section>
+<!-- SECTION 5: STAGE-WISE AUTOMATION -->
+<section class="s5">
+  <div class="inner">
+    <div class="s1__header">
+      <div class="s1__eyebrow">Stage-wise Automation</div>
+      <h2 class="s1__h2">Every stage change triggers<br><em>the next action automatically.</em></h2>
+      <p class="s1__body">Set automation rules that fire the moment a lead moves to a new stage — send a WhatsApp, assign a follow-up, notify a manager, or move the lead to the next pipeline. No manual steps. No dropped balls.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;" class="automation-grid">
+      <div>
+        <div style="display:flex;flex-direction:column;gap:20px;">
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <div style="width:40px;height:40px;border-radius:12px;background:var(--v50);border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="#EDEBF6"/></svg>
+            </div>
+            <div><div class="s1__title">Stage-based triggers</div><p class="s1__desc">Define rules that fire automatically when a lead enters or exits any stage — no manual intervention required from your team.</p></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <div style="width:40px;height:40px;border-radius:12px;background:var(--v50);border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect x="3" y="3" width="18" height="18" rx="2" fill="#EDEBF6"/><path d="M8 12h8M12 8v8"/></svg>
+            </div>
+            <div><div class="s1__title">Multi-action rules</div><p class="s1__desc">Each trigger can fire multiple actions in sequence — send a WhatsApp, schedule a follow-up, and notify a manager, all from a single stage move.</p></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <div style="width:40px;height:40px;border-radius:12px;background:var(--v50);border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M17 2l4 4-4 4M3 11V9a4 4 0 014-4h14M7 22l-4-4 4-4M21 13v2a4 4 0 01-4 4H3" fill="#EDEBF6"/></svg>
+            </div>
+            <div><div class="s1__title">Cross-pipeline handoffs</div><p class="s1__desc">When a deal closes in one pipeline, automatically move the record to the next — e.g. from Sales to Post-Sales — without any manual reassignment.</p></div>
+          </div>
+        </div>
+      </div>
+      <div><div style="background:#fff;border:1.5px solid var(--border);border-radius:16px;overflow:hidden;"><div style="background:var(--v50);padding:12px 16px;border-bottom:1.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;"><span style="font-family:var(--font-head);font-size:12px;font-weight:800;color:var(--v900);">Automation rule · Active pipeline</span></div><div style="padding:16px;"><div style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;">Trigger</div><div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:8px;padding:10px 12px;margin-bottom:16px;display:flex;align-items:center;gap:10px;"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="#EDEBF6"/></svg><span style="font-size:13px;color:var(--v900);">Lead moves to <strong>Proposal Sent</strong></span></div><div style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;">Actions</div><div style="display:flex;flex-direction:column;gap:8px;"><div style="display:flex;align-items:center;gap:10px;padding:8px 12px;background:#fff;border:1.5px solid var(--border);border-radius:8px;"><span style="width:20px;height:20px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg viewBox="0 0 24 24" fill="white" width="10" height="10"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></span><span style="font-size:12.5px;color:var(--grey);">Send WhatsApp: <em>Proposal template</em></span></div><div style="display:flex;align-items:center;gap:10px;padding:8px 12px;background:#fff;border:1.5px solid var(--border);border-radius:8px;"><span style="width:20px;height:20px;border-radius:50%;background:var(--v500);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="10" height="10"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span><span style="font-size:12.5px;color:var(--grey);">Schedule follow-up in <em>2 days</em></span></div><div style="display:flex;align-items:center;gap:10px;padding:8px 12px;background:#fff;border:1.5px solid var(--border);border-radius:8px;"><span style="width:20px;height:20px;border-radius:50%;background:var(--v500);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="10" height="10"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg></span><span style="font-size:12.5px;color:var(--grey);">Notify manager: <em>Priya M.</em></span></div></div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="final-cta__grid"></div>
+  <div class="final-cta__glow"></div>
+  <div class="final-cta__inner">
+    <div class="final-cta__badge">
+      <span class="final-cta__badge-dot"></span>
+      Free 30-minute demo
+    </div>
+    <div style="font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v300);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;">Join 5,000+ Indian sales teams</div>
+    <h2 class="final-cta__h2">Are you ready<br>to <em>get started?</em></h2>
+    <p class="final-cta__sub">No jargon. We'll show you exactly how telecrm works for your business — your industry, your team size, your lead sources. The demo is free. The setup is guided. The commitment is yours to make when you're ready.</p>
+    <div class="final-cta__cta-wrap">
+      <a href="telecrm-demo-request.html" class="btn-cta-white">Get a Demo
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="final-cta__trust">
+      <span class="final-cta__trust-item"><span class="final-cta__trust-dot"></span>No credit card needed</span>
+      <span class="final-cta__trust-item"><span class="final-cta__trust-dot"></span>Response within 24 hours</span>
+      <span class="final-cta__trust-item"><span class="final-cta__trust-dot"></span>5,000+ businesses onboarded</span>
+      <span class="final-cta__trust-item"><span class="final-cta__trust-dot"></span>Fast setup</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<section class="faq">
+  <div class="faq__inner">
+    <div class="faq__header">
+      <div class="faq__eyebrow">FAQ</div>
+      <h2 class="faq__h2">Your questions, <em>answered plainly.</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">Can I customise my sales stages?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">Yes — build the exact sales funnel your business needs, the way your team works.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">How are stages organised?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">Into four stage groups with flexibility inside each; the Active stage group is your live pipeline.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">Can I run different pipelines for different products or teams?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">Yes — different products and teams can have entirely different pipelines.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">Can I edit and colour-code stages?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">Yes — edit, colour, and organise every stage as you like.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__logo">telecrm</div>
+        <p class="footer__tagline">A Comprehensive Revenue Management Engine — fusing Lead Management, Call Management, Adaptive CRM, Marketing Automation, and Pipeline Management into one high-performance workspace.</p>
+        <a href="telecrm-get-started.html" class="btn-primary">Get Started →</a>
+      </div>
+      <div class="footer__links-grid">
+      <div class="footer__col-stack">
+        <div>
+          <div class="footer__col-title">Platform</div>
+          <div class="footer__links">
+            <a href="telecrm-platform-overview.html" class="footer__link">Platform Overview</a>
+            <a href="telecrm-platform-hub.html" class="footer__link">Platform Hub</a>
+            <a href="telecrm-benefits-hub.html" class="footer__link">Benefits Hub</a>
+            <a href="telecrm-platform-unified-revenue-management.html" class="footer__link">Unified Revenue Management</a>
+            <a href="telecrm-platform-lead-management.html" class="footer__link">Lead Management</a>
+            <a href="telecrm-platform-call-management.html" class="footer__link">Call Management &amp; Recording</a>
+            <a href="telecrm-platform-adaptive-crm.html" class="footer__link">Adaptive CRM</a>
+            <a href="telecrm-platform-marketing-automation.html" class="footer__link">Marketing Automation</a>
+            <a href="telecrm-platform-sales-pipeline-management.html" class="footer__link">Sales Pipeline Management</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Pricing</div>
+          <div class="footer__links">
+            <a href="telecrm-pricing.html" class="footer__link">Pricing</a>
+            <a href="telecrm-cost-savings.html" class="footer__link">Cost Savings</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__col-stack">
+        <div>
+          <div class="footer__col-title">Solutions</div>
+          <div class="footer__links">
+            <a href="telecrm-problems-hub.html" class="footer__link">Problems Hub</a>
+            <a href="telecrm-crm-hub.html" class="footer__link">CRM Hub</a>
+            <a href="telecrm-industry-hub.html" class="footer__link">Industry Hub</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Get Started</div>
+          <div class="footer__links">
+            <a href="telecrm-partnership.html" class="footer__link">Partner Program</a>
+            <a href="telecrm-demo-request.html" class="footer__link">Demo Request</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__col-stack">
+        <div>
+          <div class="footer__col-title">Trust</div>
+          <div class="footer__links">
+            <a href="telecrm-testimonials.html" class="footer__link">Testimonials</a>
+            <a href="telecrm-case-studies.html" class="footer__link">Case Studies</a>
+            <a href="telecrm-comparison.html" class="footer__link">Comparison</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">About Us</div>
+          <div class="footer__links">
+            <a href="telecrm-about-telecrm.html" class="footer__link">About telecrm</a>
+            <a href="telecrm-life-at-telecrm.html" class="footer__link">Life at telecrm</a>
+            <a href="telecrm-careers.html" class="footer__link">Careers</a>
+            <a href="telecrm-contact.html" class="footer__link">Contact Us</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Support</div>
+        <div class="footer__links">
+          <a href="telecrm-faqs.html" class="footer__link">FAQs</a>
+          <a href="telecrm-glossary.html" class="footer__link">Glossary</a>
+          <a href="telecrm-learning-repository.html" class="footer__link">Learning Repository</a>
+          <a href="telecrm-onboarding.html" class="footer__link">Onboarding</a>
+          <a href="telecrm-privacy-policy.html" class="footer__link">Privacy Policy</a>
+          <a href="telecrm-recommended-devices.html" class="footer__link">Recommended Devices</a>
+          <a href="telecrm-refund-policy.html" class="footer__link">Refund Policy</a>
+          <a href="telecrm-terms-conditions.html" class="footer__link">Terms &amp; Conditions</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Features</div>
+        <div class="footer__links">
+          <a href="telecrm-feature-automations.html" class="footer__link">Automation</a>
+          <a href="telecrm-feature-call-management.html" class="footer__link">Call Management</a>
+          <a href="telecrm-feature-calling-campaign.html" class="footer__link">Calling Campaign Management</a>
+          <a href="telecrm-feature-integrations.html" class="footer__link">Integrations</a>
+          <a href="telecrm-feature-lead-fields.html" class="footer__link">Lead Fields</a>
+          <a href="telecrm-feature-lead-management.html" class="footer__link">Lead Management &amp; Reporting</a>
+          <a href="telecrm-feature-lead-stages.html" class="footer__link">Lead Stages</a>
+          <a href="telecrm-feature-list-labels.html" class="footer__link">List and Labels</a>
+          <a href="telecrm-feature-reporting.html" class="footer__link">Reporting</a>
+          <a href="telecrm-feature-user-management.html" class="footer__link">User Management</a>
+          <a href="telecrm-feature-whatsapp.html" class="footer__link">WhatsApp</a>
+        </div>
+      </div>
+      </div><!-- /footer__links-grid -->
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__copy">© 2026 telecrm. All rights reserved.</div>
+      <div class="footer__legal">
+        <a href="telecrm-privacy-policy.html">Privacy Policy</a>
+        <a href="telecrm-terms-conditions.html">Terms &amp; Conditions</a>
+        <a href="telecrm-refund-policy.html">Refund Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleFaq(el){
+  var item=el.parentElement;
+  var isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+  if(!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>
+<script id="hamburger-js">
+(function(){
+  var btn=document.querySelector('.nav__hamburger');
+  var links=document.querySelector('.nav__links');
+  if(btn&&links){
+    btn.addEventListener('click',function(){btn.classList.toggle('open');links.classList.toggle('open');});
+  }
+  var mq=window.matchMedia('(max-width:768px)');
+  document.querySelectorAll('.nav__item > .nav__link').forEach(function(hub){
+    hub.addEventListener('click',function(e){ if(mq.matches){ e.preventDefault(); hub.parentElement.classList.toggle('open'); } });
+  });
+  document.querySelectorAll('.np__link,.np__foot,.nav__cta,.nav__mobile-cta').forEach(function(l){
+    l.addEventListener('click',function(){ if(btn){btn.classList.remove('open');} if(links){links.classList.remove('open');} });
+  });
+})();
+</script>

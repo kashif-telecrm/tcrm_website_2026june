@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply to the Partner Programme — telecrm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cta:#F97316; --cta-hover:#EA580C;
+  --v50:#EDEBF6;--v100:#E1DDF0;--v200:#C4BAE5;--v300:#9C8FCF;
+  --v400:#7260B5;--v500:#4F38A2;--v600:#483393;--v700:#382873;--v900:#211844;
+  --grey:#64748B;--grey2:#94A3B8;--border:#E9EBF8;--error:#EF4444;
+  --font-head:'Plus Jakarta Sans',sans-serif;--font-body:'DM Sans',sans-serif;
+  --radius-btn:10px;--radius-card:16px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--font-body);color:var(--v900);background:#F8F7FC;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+.nav__inner{max-width:1280px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:72px;}
+.nav__logo{font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--v500);letter-spacing:-.5px;}
+.nav__links{display:flex;align-items:center;gap:2px;}
+.nav__link{font-family:var(--font-head);font-size:12.5px;font-weight:600;color:var(--v700);padding:7px 11px;border-radius:8px;transition:all .18s;white-space:nowrap;}
+.nav__link:hover,.nav__link--active{background:var(--v50);color:var(--v500);}
+.nav__sep{display:inline-block;width:1px;height:20px;background:var(--border);margin:0 8px;vertical-align:middle;}
+.nav__mobile-right{display:none;align-items:center;gap:8px;margin-left:auto;}
+.nav__mobile-cta{font-family:var(--font-head);font-size:13px;font-weight:700;background:var(--v500);color:#fff;padding:8px 16px;border-radius:var(--radius-btn);text-decoration:none;white-space:nowrap;}
+.nav__mob-sep{display:none;width:1px;height:20px;background:var(--border);}
+.nav__hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:8px;border:none;background:transparent;}
+.nav__hamburger span{display:block;width:22px;height:2px;background:var(--v900);border-radius:2px;transition:all .18s;}
+.nav__hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav__hamburger.open span:nth-child(2){opacity:0;}
+.nav__hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* PAGE LAYOUT */
+.page{display:flex;align-items:flex-start;justify-content:center;padding:24px 32px 0;}
+.page__inner{width:100%;max-width:560px;}
+
+/* BREADCRUMB */
+.breadcrumb{display:flex;align-items:center;gap:8px;font-family:var(--font-head);font-size:12px;font-weight:600;color:var(--grey2);margin-bottom:16px;}
+.breadcrumb-sep{color:var(--v200);}
+.breadcrumb a{color:var(--grey2);transition:color .2s;}
+.breadcrumb a:hover{color:var(--v500);}
+.breadcrumb-current{color:var(--v500);}
+
+/* FORM CARD */
+.form-card{background:#fff;border:1.5px solid var(--border);border-radius:24px;padding:28px 32px;box-shadow:0 8px 32px rgba(79,56,162,.07);}
+.form-card__eyebrow{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;}
+.form-card__title{font-family:var(--font-head);font-size:22px;font-weight:900;color:var(--v900);letter-spacing:-.5px;margin-bottom:6px;line-height:1.2;}
+.form-card__sub{font-size:14px;color:var(--grey);line-height:1.65;margin-bottom:20px;}
+
+/* FORM */
+.form-group{display:flex;flex-direction:column;gap:5px;margin-bottom:14px;}
+.form-label{font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--v700);}
+.form-label span{color:var(--error);}
+.form-label .optional{font-weight:500;color:var(--grey2);font-size:11px;margin-left:4px;}
+.form-input,.form-select{font-family:var(--font-body);font-size:13.5px;color:var(--v900);background:#fff;border:1.5px solid var(--border);border-radius:10px;padding:10px 13px;transition:all .2s;outline:none;width:100%;}
+.form-input:focus,.form-select:focus{border-color:var(--v400);box-shadow:0 0 0 3px rgba(79,56,162,.08);}
+.form-input.invalid,.form-select.invalid{border-color:var(--error);box-shadow:0 0 0 3px rgba(239,68,68,.08);}
+.form-input::placeholder{color:var(--grey2);}
+.form-select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2394A3B8' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:34px;cursor:pointer;}
+.phone-code{height:100%;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.field-error{font-family:var(--font-head);font-size:11px;font-weight:600;color:var(--error);display:none;}
+.field-error.show{display:block;}
+
+/* SUBMIT */
+.btn-submit{font-family:var(--font-head);font-size:14px;font-weight:700;background:var(--v500);color:#fff;border:none;padding:12px 32px;border-radius:var(--radius-btn);cursor:pointer;box-shadow:0 4px 14px rgba(79,56,162,.3);transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin-top:6px;}
+.btn-submit:hover{background:var(--v600);transform:translateY(-1px);}
+.btn-submit svg{width:16px;height:16px;}
+.form-note{font-size:12px;color:var(--grey2);text-align:center;margin-top:14px;line-height:1.6;}
+.form-note a{color:var(--v400);text-decoration:underline;}
+
+/* SUCCESS STATE */
+.success{display:none;text-align:center;padding:48px 0;}
+.success__icon{width:72px;height:72px;border-radius:20px;background:var(--v50);border:2px solid var(--v100);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;}
+.success__icon svg{width:36px;height:36px;}
+.success__title{font-family:var(--font-head);font-size:22px;font-weight:900;color:var(--v900);margin-bottom:10px;}
+.success__sub{font-size:14px;color:var(--grey);line-height:1.7;margin-bottom:28px;}
+.btn-back{font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--v500);background:var(--v50);border:none;padding:12px 24px;border-radius:var(--radius-btn);cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:all .2s;}
+.btn-back:hover{background:var(--v100);}
+
+/* FOOTER */
+.footer{background:#fff;border-top:1px solid var(--border);padding:64px 0 40px;}
+.footer__inner{max-width:1280px;margin:0 auto;padding:0 32px;}
+.footer__links-grid{display:contents;}
+.footer__grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+.footer__logo{font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--v500);margin-bottom:16px;letter-spacing:-.5px;}
+.footer__tagline{font-size:14px;color:var(--grey);line-height:1.7;max-width:280px;margin-bottom:24px;}
+.footer__col-title{font-family:var(--font-head);font-size:12px;font-weight:800;color:var(--v900);text-transform:uppercase;letter-spacing:.06em;margin-bottom:16px;}
+.footer__links{display:flex;flex-direction:column;gap:10px;}
+.footer__link{font-size:14px;color:var(--grey);transition:color .2s;}
+.footer__link:hover{color:var(--v500);}
+.footer__bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer__copy{font-size:13px;color:var(--grey);}
+.footer__legal{display:flex;gap:24px;}
+.footer__legal a{font-size:13px;color:var(--grey);transition:color .2s;}
+.footer__legal a:hover{color:var(--v500);}
+.btn-primary{font-family:var(--font-head);font-size:13px;font-weight:700;background:var(--cta);color:#fff;padding:10px 20px;border-radius:var(--radius-btn);display:inline-flex;align-items:center;gap:6px;}
+
+.page{padding:32px 16px 64px;}.form-card{padding:24px;}.form-row{grid-template-columns:1fr;}.footer__grid{grid-template-columns:1fr;}.footer__inner{padding:0 20px;}
+  /* Footer Section A — full width brand block */
+  .footer__tagline{max-width:100%;}
+  .btn-primary{width:100%;justify-content:center;}
+  /* Footer Section B — 2-col link layout */
+  .footer__links-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px 16px;margin-top:32px;}
+  .footer__links-grid > div:nth-child(1),
+  .footer__links-grid > div:nth-child(2),
+  .footer__links-grid > div:nth-child(3){text-align:left;grid-column:1;}
+  .footer__links-grid > div:nth-child(4){text-align:right;grid-column:2;grid-row:1 / span 3;}
+  .footer__links-grid > div:nth-child(4) .footer__links{align-items:flex-end;}
+
+/* Phone */
+.phone-wrap{display:flex;gap:8px;}
+.phone-code{width:120px;flex-shrink:0;}
+.input-wrap{position:relative;flex:1;}
+.valid-tick{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:13px;color:#22C55E;font-weight:700;display:none;}
+.valid-tick.show{display:block;}
+.form-input.valid{border-color:#22C55E;}
+
+/* Search dropdown */
+.search-dropdown{position:relative;}
+.search-input{width:100%;padding:12px 14px;border:1.5px solid var(--border);border-radius:10px;font-family:var(--font-body);font-size:14px;color:var(--v900);background:#fff;transition:all .2s;outline:none;}
+.search-input:focus{border-color:var(--v400);box-shadow:0 0 0 3px rgba(79,56,162,.08);}
+.search-input::placeholder{color:var(--grey2);}
+.search-dropdown__list{position:absolute;top:calc(100% + 4px);left:0;right:0;background:#fff;border:1.5px solid var(--v200);border-radius:10px;max-height:200px;overflow-y:auto;z-index:50;display:none;box-shadow:0 8px 24px rgba(0,0,0,.1);}
+.search-dropdown__list.open{display:block;}
+.search-dropdown__item{padding:10px 14px;font-size:13.5px;color:var(--v900);cursor:pointer;transition:background .15s;}
+.search-dropdown__item:hover{background:var(--v50);}
+.search-dropdown__empty{padding:12px 14px;font-size:13px;color:var(--grey2);}
+
+/* REINFORCE SECTION */
+.reinforce{padding:40px 0 24px;background:var(--v900);margin-top:32px;position:relative;overflow:hidden;text-align:center;}
+.reinforce__bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
+.reinforce__glow{position:absolute;top:-120px;right:-80px;width:700px;height:700px;background:radial-gradient(circle,rgba(114,96,181,.2) 0%,transparent 65%);pointer-events:none;}
+.reinforce__glow2{position:absolute;bottom:-100px;left:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(79,56,162,.15) 0%,transparent 65%);pointer-events:none;}
+.reinforce__inner{max-width:1280px;margin:0 auto;padding:0 32px;position:relative;}
+.reinforce__eyebrow{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v300);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
+.reinforce__h2{font-family:var(--font-head);font-size:clamp(26px,3vw,38px);font-weight:900;letter-spacing:-1px;color:#fff;line-height:1.1;margin-bottom:12px;}
+.reinforce__h2 em{font-style:normal;color:var(--v300);}
+.reinforce__sub{font-size:15px;color:var(--v200);line-height:1.65;margin:0 auto 28px;}
+.reinforce__pills{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;}
+.reinforce__pill{display:flex;flex-direction:column;align-items:center;padding:12px 20px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;min-width:110px;}
+.reinforce__pill-val{font-family:var(--font-head);font-size:22px;font-weight:900;color:#fff;letter-spacing:-.5px;line-height:1;}
+.reinforce__pill-label{font-size:11px;color:var(--v200);margin-top:5px;text-align:center;line-height:1.3;}
+.reinforce__auth{background:rgba(255,255,255,.05);border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);padding:16px 32px;margin-top:40px;}
+.reinforce__auth-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap;}
+.reinforce__auth-label{font-family:var(--font-head);font-size:11px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.06em;}
+.reinforce__auth-brand{font-family:var(--font-head);font-size:14px;font-weight:800;color:var(--v300);}
+.reinforce__auth-count{font-family:var(--font-head);font-size:11px;font-weight:700;color:rgba(255,255,255,.4);}
+
+@media(max-width:768px){
+  .nav__links{display:none;flex-direction:column;position:fixed;top:72px;left:0;right:0;background:rgba(255,255,255,.98);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:16px 24px;gap:0;z-index:99;}
+  .nav__links.open{display:flex;}
+  .nav__link{padding:12px 0;border-bottom:1px solid var(--border);font-size:15px;display:block;}
+  .nav__link:last-child{border-bottom:none;}
+  .nav__sep{display:none;}
+  .nav__mobile-right{display:flex;align-items:center;gap:8px;margin-left:auto;}
+  .nav__mob-sep{display:block;}
+  .nav__hamburger{display:flex;}
+  .footer__bottom{flex-direction:column;align-items:center;text-align:center;}
+  .footer__legal{flex-wrap:wrap;justify-content:center;}
+}
+@media(min-width:769px){.nav__hamburger{display:none;}.nav__mobile-right{display:none;}}
+
+/* ===== ROLLOUT v2026-05-29: nav mega-menu + fat footer (canonical) ===== */
+.nav__item{position:relative;display:flex;align-items:center;height:72px;}
+.nav__item > .nav__link{display:inline-flex;align-items:center;gap:4px;}
+.nav__caret{width:11px;height:11px;flex-shrink:0;transition:transform .2s;}
+.nav__item:hover > .nav__link .nav__caret,.nav__item:focus-within > .nav__link .nav__caret{transform:rotate(180deg);}
+.nav__item:hover > .nav__link,.nav__item:focus-within > .nav__link{background:var(--v50);color:var(--v500);}
+.nav__panel{position:absolute;top:100%;left:0;background:#fff;border:1px solid var(--border);border-radius:14px;box-shadow:0 18px 44px rgba(33,24,68,.13);padding:14px;opacity:0;visibility:hidden;transform:translateY(7px);transition:opacity .16s,transform .16s,visibility .16s;z-index:200;}
+.nav__panel--right{left:auto;right:0;}
+.nav__item:hover > .nav__panel,.nav__item:focus-within > .nav__panel{opacity:1;visibility:visible;transform:translateY(0);}
+.np__list{display:grid;gap:1px;}
+.np__list--2{grid-template-columns:1fr 1fr;gap:1px 14px;}
+.np__link{display:flex;flex-direction:column;gap:2px;padding:9px 12px;border-radius:8px;transition:background .15s;min-width:0;}
+.np__link:hover{background:var(--v50);}
+.np__t{font-family:var(--font-head);font-size:13.5px;font-weight:700;color:var(--v900);white-space:nowrap;}
+.np__list--2 .np__t{white-space:normal;line-height:1.3;overflow-wrap:break-word;}
+.np__link:hover .np__t{color:var(--v500);}
+.np__s{font-family:var(--font-body);font-size:12px;color:var(--grey);line-height:1.35;}
+.np__foot{display:flex;align-items:center;gap:6px;border-top:1px solid var(--border);margin-top:8px;padding:11px 12px 3px;font-family:var(--font-head);font-size:12.5px;font-weight:700;color:var(--v500);}
+.np__foot svg{width:13px;height:13px;}
+.nav__mobile-cta{background:var(--cta);}
+.footer__grid{grid-template-columns:1.5fr 1fr 1fr 1fr 1fr 1.15fr;gap:40px 32px;}
+.footer__col-stack{display:flex;flex-direction:column;gap:48px;}
+@media(max-width:1024px){.footer__grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:768px){
+  .nav__item{width:100%;height:auto;display:block;position:static;}
+  .nav__item > .nav__link{display:flex;align-items:center;justify-content:space-between;width:100%;}
+  .nav__item.open > .nav__link .nav__caret{transform:rotate(180deg);}
+  .nav__caret{width:13px;height:13px;}
+  .nav__panel{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;border-radius:0;padding:4px 0 10px 10px;width:auto !important;display:none;z-index:auto;}
+  .nav__item.open > .nav__panel{display:block;}
+  .np__list--2{grid-template-columns:1fr;}
+  .np__link{padding:9px 10px;}
+  .np__foot{padding-left:10px;}
+  .footer__links-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px 16px;margin-top:32px;}
+  .footer__links-grid > div:nth-child(1),.footer__links-grid > div:nth-child(2),.footer__links-grid > div:nth-child(3),.footer__links-grid > div:nth-child(4),.footer__links-grid > div:nth-child(5){text-align:left;grid-column:auto;grid-row:auto;}
+  .footer__links-grid > div:nth-child(4) .footer__links{align-items:flex-start;}
+}
+@media(max-width:600px){.footer__grid{grid-template-columns:1fr;}}
+/* ===== end ROLLOUT ===== */
+
+.np__cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.np__col-head{display:block;font-family:var(--font-head);font-size:11px;font-weight:800;color:var(--v400);text-transform:uppercase;letter-spacing:.07em;padding:4px 12px 8px;transition:color .15s;}
+.np__col-head:hover{color:var(--v500);}
+.nav__panel:has(.np__col:only-child) .np__cols{grid-template-columns:1fr;}
+@media(max-width:768px){.np__cols{grid-template-columns:1fr !important;gap:0 !important;}.np__col-head{padding:8px 10px 4px;}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="telecrm-approach2-home.html" class="nav__logo">telecrm</a>
+    <div class="nav__links">
+      <div class="nav__item">
+        <a href="telecrm-platform-overview.html" class="nav__link">Platform Overview <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:560px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-platform-hub.html">Platform Hub</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-platform-unified-revenue-management.html"><span class="np__t">Unified Revenue Management</span><span class="np__s">One connected engine</span></a>
+                <a class="np__link" href="telecrm-platform-lead-management.html"><span class="np__t">Lead Management</span><span class="np__s">Capture, dedupe, assign</span></a>
+                <a class="np__link" href="telecrm-platform-call-management.html"><span class="np__t">Call Management &amp; Recording</span><span class="np__s">Dial, record, track</span></a>
+                <a class="np__link" href="telecrm-platform-adaptive-crm.html"><span class="np__t">Adaptive CRM</span><span class="np__s">Stages, fields, 360°</span></a>
+                <a class="np__link" href="telecrm-platform-marketing-automation.html"><span class="np__t">Marketing Automation</span><span class="np__s">Reach leads automatically</span></a>
+                <a class="np__link" href="telecrm-platform-sales-pipeline-management.html"><span class="np__t">Sales Funnel &amp; Pipeline Management</span><span class="np__s">Track every deal stage</span></a>
+              </div>
+            </div>
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-benefits-hub.html">Benefits Hub</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-benefits-hub.html"><span class="np__t">Outcomes &amp; ROI</span><span class="np__s">What telecrm delivers for your team</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-platform-overview.html">Platform Overview — the product, end to end <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-solutions-hub.html" class="nav__link">Solutions <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-solutions-hub.html">By approach</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-problems-hub.html"><span class="np__t">Problems Hub</span><span class="np__s">Revenue leaks, by stage</span></a>
+                <a class="np__link" href="telecrm-crm-hub.html"><span class="np__t">CRM Hub</span><span class="np__s">By type &amp; by team</span></a>
+                <a class="np__link" href="telecrm-industry-hub.html"><span class="np__t">Industry Hub</span><span class="np__s">11 industries covered</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-solutions-hub.html">Browse all solutions <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-features-hub.html" class="nav__link">Features <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:620px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-features-hub.html">Engagement</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-feature-call-management.html"><span class="np__t">Call Management</span></a>
+                <a class="np__link" href="telecrm-feature-calling-campaign.html"><span class="np__t">Calling Campaign Management</span></a>
+                <a class="np__link" href="telecrm-feature-whatsapp.html"><span class="np__t">WhatsApp</span></a>
+                <a class="np__link" href="telecrm-feature-automations.html"><span class="np__t">Automation</span></a>
+              </div>
+            </div>
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-features-hub.html">Data &amp; Admin</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-feature-lead-management.html"><span class="np__t">Lead Management &amp; Reporting</span></a>
+                <a class="np__link" href="telecrm-feature-lead-fields.html"><span class="np__t">Lead Fields</span></a>
+                <a class="np__link" href="telecrm-feature-lead-stages.html"><span class="np__t">Lead Stages</span></a>
+                <a class="np__link" href="telecrm-feature-list-labels.html"><span class="np__t">List and Labels</span></a>
+                <a class="np__link" href="telecrm-feature-reporting.html"><span class="np__t">Reporting</span></a>
+                <a class="np__link" href="telecrm-feature-integrations.html"><span class="np__t">Integrations</span></a>
+                <a class="np__link" href="telecrm-feature-user-management.html"><span class="np__t">User Management</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-features-hub.html">See all features <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-trust-hub.html" class="nav__link">Trust <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-trust-hub.html">Proof</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-testimonials.html"><span class="np__t">Testimonials</span><span class="np__s">Real customers, real numbers</span></a>
+                <a class="np__link" href="telecrm-case-studies.html"><span class="np__t">Case Studies</span><span class="np__s">9 detailed stories</span></a>
+                <a class="np__link" href="telecrm-comparison.html"><span class="np__t">Comparison</span><span class="np__s">telecrm vs. alternatives</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-trust-hub.html">Visit the Trust Hub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-pricing.html" class="nav__link">Pricing <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:320px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-pricing.html">Plans</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-pricing.html"><span class="np__t">Pricing</span><span class="np__s">Plans &amp; what's included</span></a>
+                <a class="np__link" href="telecrm-cost-savings.html"><span class="np__t">Cost Savings</span><span class="np__s">What you save vs. tools</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-support-hub.html" class="nav__link">Support <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:560px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-support-hub.html">Resources</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-faqs.html"><span class="np__t">FAQs</span></a>
+                <a class="np__link" href="telecrm-glossary.html"><span class="np__t">Glossary</span></a>
+                <a class="np__link" href="telecrm-learning-repository.html"><span class="np__t">Learning Repository</span></a>
+                <a class="np__link" href="telecrm-onboarding.html"><span class="np__t">Onboarding</span></a>
+                <a class="np__link" href="telecrm-recommended-devices.html"><span class="np__t">Recommended Devices</span></a>
+              </div>
+            </div>
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-support-hub.html">Policies</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-privacy-policy.html"><span class="np__t">Privacy Policy</span></a>
+                <a class="np__link" href="telecrm-refund-policy.html"><span class="np__t">Refund Policy</span></a>
+                <a class="np__link" href="telecrm-terms-conditions.html"><span class="np__t">Terms &amp; Conditions</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-support-hub.html">Go to Support Hub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-get-started.html" class="nav__link">Get Started <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-get-started.html">Get started</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-partnership.html"><span class="np__t">Partner Program</span><span class="np__s">Refer &amp; earn 10% for life</span></a>
+                <a class="np__link" href="telecrm-demo-request.html"><span class="np__t">Demo Request</span><span class="np__s">Book a free demo</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-get-started.html">All ways to start <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-about-us.html" class="nav__link">About Us <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-about-us.html">Company</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-about-telecrm.html"><span class="np__t">About telecrm</span><span class="np__s">Story, vision, mission</span></a>
+                <a class="np__link" href="telecrm-life-at-telecrm.html"><span class="np__t">Life at telecrm</span><span class="np__s">Culture &amp; team</span></a>
+                <a class="np__link" href="telecrm-careers.html"><span class="np__t">Careers</span><span class="np__s">Open roles</span></a>
+                <a class="np__link" href="telecrm-contact.html"><span class="np__t">Contact Us</span><span class="np__s">Talk to us</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="nav__mobile-right">
+      <a href="telecrm-demo-request.html" class="nav__mobile-cta">Get a Demo</a>
+      <span class="nav__mob-sep"></span>
+      <button class="nav__hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE -->
+<div class="page">
+  <div class="page__inner">
+
+    <div class="breadcrumb">
+      <a href="telecrm-approach2-home.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="telecrm-partnership.html">Partner Programme</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">Apply</span>
+    </div>
+
+    <div class="form-card">
+
+      <!-- FORM -->
+      <div id="apply-form">
+        <div class="form-card__eyebrow">Partner Programme</div>
+        <div class="form-card__title">Apply to the programme</div>
+        <div class="form-card__sub">Fill in your details below and we'll review your application within 24 hours.</div>
+
+        <div class="form-group">
+          <label class="form-label" for="f-name">Full Name <span>*</span></label>
+          <input class="form-input" id="f-name" type="text" placeholder="e.g. Rahul Sharma" oninput="this.value=this.value.replace(/[^a-zA-Z\s]/g,''); clearErr('f-name','err-name')">
+          <div class="field-error" id="err-name">Please enter your full name (letters only).</div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Phone Number <span>*</span></label>
+          <div class="phone-wrap">
+            <select class="form-select phone-code" id="f-country-code">
+              <option value="+91">🇮🇳 +91</option>
+              <option value="+1">🇺🇸 +1</option>
+              <option value="+44">🇬🇧 +44</option>
+              <option value="+61">🇦🇺 +61</option>
+              <option value="+971">🇦🇪 +971</option>
+              <option value="+65">🇸🇬 +65</option>
+              <option value="+60">🇲🇾 +60</option>
+              <option value="+880">🇧🇩 +880</option>
+              <option value="+92">🇵🇰 +92</option>
+              <option value="+94">🇱🇰 +94</option>
+            </select>
+            <div class="input-wrap">
+              <input class="form-input" id="f-phone" type="tel" placeholder="98765 43210" maxlength="10" oninput="validatePhone(this)">
+              <span class="valid-tick" id="tick-phone">✓</span>
+            </div>
+          </div>
+          <div class="field-error" id="err-phone">Enter a valid 10-digit phone number.</div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="f-email">Preferred Email <span>*</span></label>
+          <div class="input-wrap">
+            <input class="form-input" id="f-email" type="email" placeholder="e.g. rahul@example.com" onblur="validateEmail()">
+            <span class="valid-tick" id="tick-email">✓</span>
+          </div>
+          <div class="field-error" id="err-email">Please enter a valid email address.</div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="f-company">Company Name <span class="optional">(optional)</span></label>
+          <input class="form-input" id="f-company" type="text" placeholder="e.g. Sharma Enterprises">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group" style="margin-bottom:0;">
+            <label class="form-label">State <span>*</span></label>
+            <select class="form-select" id="f-state" onchange="populateCities()">
+              <option value="" disabled selected>Select state</option>
+            </select>
+            <div class="field-error" id="err-state">Please select a state.</div>
+          </div>
+          <div class="form-group" style="margin-bottom:0;">
+            <label class="form-label">City <span>*</span></label>
+            <div class="search-dropdown" id="city-dropdown">
+              <input class="search-input" id="f-city-search" placeholder="Select state first" oninput="filterCities()" onfocus="openCityList()" autocomplete="off" disabled>
+              <input type="hidden" id="f-city">
+              <div class="search-dropdown__list" id="city-list"></div>
+            </div>
+            <div class="field-error" id="err-city">Please select a city.</div>
+          </div>
+        </div>
+
+        <button class="btn-submit" onclick="submitApplication()" style="margin-top:28px;">
+          Submit Application
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <p class="form-note">By submitting, you agree to our <a href="telecrm-privacy-policy.html">Privacy Policy</a>. We'll review your application and get back to you within 24 hours.</p>
+      </div>
+
+      <!-- SUCCESS -->
+      <div class="success" id="success-state">
+        <div class="success__icon">
+          <svg viewBox="0 0 36 36" fill="none" stroke="#4F38A2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 18l8 8L29 10"/>
+          </svg>
+        </div>
+        <div class="success__title">Application submitted!</div>
+        <div class="success__sub">Thanks for applying to the telecrm Partner Programme. Our team will review your application and reach out within 24 hours.</div>
+        <a href="telecrm-partnership.html" class="btn-back">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+          Back to Partner Programme
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- REINFORCE SECTION -->
+<section class="reinforce">
+  <div class="reinforce__bg"></div>
+  <div class="reinforce__glow"></div>
+  <div class="reinforce__glow2"></div>
+  <div class="reinforce__inner">
+    <div class="reinforce__eyebrow">SaaS Affiliate Programme · India</div>
+    <h2 class="reinforce__h2">Refer &amp; earn <em>10% for life.</em></h2>
+    <p class="reinforce__sub">10% recurring commission on every business you refer — for as long as they stay on the platform. No cap. No expiry.</p>
+    <div class="reinforce__pills">
+      <div class="reinforce__pill">
+        <div class="reinforce__pill-val">10%</div>
+        <div class="reinforce__pill-label">Recurring commission on every referral</div>
+      </div>
+      <div class="reinforce__pill">
+        <div class="reinforce__pill-val">∞</div>
+        <div class="reinforce__pill-label">No ceiling on how many you refer</div>
+      </div>
+      <div class="reinforce__pill">
+        <div class="reinforce__pill-val">Free</div>
+        <div class="reinforce__pill-label">No fee to join, ever</div>
+      </div>
+    </div>
+  </div>
+  <div class="reinforce__auth">
+    <div class="reinforce__auth-inner">
+      <span class="reinforce__auth-label">Trusted by</span>
+      <span class="reinforce__auth-brand">Mahindra</span>
+      <span class="reinforce__auth-brand">Domino's</span>
+      <span class="reinforce__auth-brand">Cox &amp; Kings</span>
+      <span class="reinforce__auth-brand">Housing.com</span>
+      <span class="reinforce__auth-brand">JioMart</span>
+      <span class="reinforce__auth-brand">UpGrad</span>
+      <span class="reinforce__auth-count">and 5,000+ Indian businesses</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__logo">telecrm</div>
+        <p class="footer__tagline">A Comprehensive Revenue Management Engine — fusing Lead Management, Call Management, Adaptive CRM, Marketing Automation, and Pipeline Management into one high-performance workspace.</p>
+        <a href="telecrm-get-started.html" class="btn-primary">Get Started →</a>
+      </div>
+      <div class="footer__links-grid">
+      <div class="footer__col-stack">
+        <div>
+          <div class="footer__col-title">Platform</div>
+          <div class="footer__links">
+            <a href="telecrm-platform-overview.html" class="footer__link">Platform Overview</a>
+            <a href="telecrm-platform-hub.html" class="footer__link">Platform Hub</a>
+            <a href="telecrm-benefits-hub.html" class="footer__link">Benefits Hub</a>
+            <a href="telecrm-platform-unified-revenue-management.html" class="footer__link">Unified Revenue Management</a>
+            <a href="telecrm-platform-lead-management.html" class="footer__link">Lead Management</a>
+            <a href="telecrm-platform-call-management.html" class="footer__link">Call Management &amp; Recording</a>
+            <a href="telecrm-platform-adaptive-crm.html" class="footer__link">Adaptive CRM</a>
+            <a href="telecrm-platform-marketing-automation.html" class="footer__link">Marketing Automation</a>
+            <a href="telecrm-platform-sales-pipeline-management.html" class="footer__link">Sales Pipeline Management</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Pricing</div>
+          <div class="footer__links">
+            <a href="telecrm-pricing.html" class="footer__link">Pricing</a>
+            <a href="telecrm-cost-savings.html" class="footer__link">Cost Savings</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__col-stack">
+        <div>
+          <div class="footer__col-title">Solutions</div>
+          <div class="footer__links">
+            <a href="telecrm-problems-hub.html" class="footer__link">Problems Hub</a>
+            <a href="telecrm-crm-hub.html" class="footer__link">CRM Hub</a>
+            <a href="telecrm-industry-hub.html" class="footer__link">Industry Hub</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Get Started</div>
+          <div class="footer__links">
+            <a href="telecrm-partnership.html" class="footer__link">Partner Program</a>
+            <a href="telecrm-demo-request.html" class="footer__link">Demo Request</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__col-stack">
+        <div>
+          <div class="footer__col-title">Trust</div>
+          <div class="footer__links">
+            <a href="telecrm-testimonials.html" class="footer__link">Testimonials</a>
+            <a href="telecrm-case-studies.html" class="footer__link">Case Studies</a>
+            <a href="telecrm-comparison.html" class="footer__link">Comparison</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">About Us</div>
+          <div class="footer__links">
+            <a href="telecrm-about-telecrm.html" class="footer__link">About telecrm</a>
+            <a href="telecrm-life-at-telecrm.html" class="footer__link">Life at telecrm</a>
+            <a href="telecrm-careers.html" class="footer__link">Careers</a>
+            <a href="telecrm-contact.html" class="footer__link">Contact Us</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Support</div>
+        <div class="footer__links">
+          <a href="telecrm-faqs.html" class="footer__link">FAQs</a>
+          <a href="telecrm-glossary.html" class="footer__link">Glossary</a>
+          <a href="telecrm-learning-repository.html" class="footer__link">Learning Repository</a>
+          <a href="telecrm-onboarding.html" class="footer__link">Onboarding</a>
+          <a href="telecrm-privacy-policy.html" class="footer__link">Privacy Policy</a>
+          <a href="telecrm-recommended-devices.html" class="footer__link">Recommended Devices</a>
+          <a href="telecrm-refund-policy.html" class="footer__link">Refund Policy</a>
+          <a href="telecrm-terms-conditions.html" class="footer__link">Terms &amp; Conditions</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Features</div>
+        <div class="footer__links">
+          <a href="telecrm-feature-automations.html" class="footer__link">Automation</a>
+          <a href="telecrm-feature-call-management.html" class="footer__link">Call Management</a>
+          <a href="telecrm-feature-calling-campaign.html" class="footer__link">Calling Campaign Management</a>
+          <a href="telecrm-feature-integrations.html" class="footer__link">Integrations</a>
+          <a href="telecrm-feature-lead-fields.html" class="footer__link">Lead Fields</a>
+          <a href="telecrm-feature-lead-management.html" class="footer__link">Lead Management &amp; Reporting</a>
+          <a href="telecrm-feature-lead-stages.html" class="footer__link">Lead Stages</a>
+          <a href="telecrm-feature-list-labels.html" class="footer__link">List and Labels</a>
+          <a href="telecrm-feature-reporting.html" class="footer__link">Reporting</a>
+          <a href="telecrm-feature-user-management.html" class="footer__link">User Management</a>
+          <a href="telecrm-feature-whatsapp.html" class="footer__link">WhatsApp</a>
+        </div>
+      </div>
+      </div><!-- /footer__links-grid -->
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__copy">© 2026 telecrm. All rights reserved.</div>
+      <div class="footer__legal">
+        <a href="telecrm-privacy-policy.html">Privacy Policy</a>
+        <a href="telecrm-terms-conditions.html">Terms &amp; Conditions</a>
+        <a href="telecrm-refund-policy.html">Refund Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.querySelector('.nav__hamburger');
+  var links=document.querySelector('.nav__links');
+  if(btn&&links){
+    btn.addEventListener('click',function(){btn.classList.toggle('open');links.classList.toggle('open');});
+  }
+  var mq=window.matchMedia('(max-width:768px)');
+  document.querySelectorAll('.nav__item > .nav__link').forEach(function(hub){
+    hub.addEventListener('click',function(e){ if(mq.matches){ e.preventDefault(); hub.parentElement.classList.toggle('open'); } });
+  });
+  document.querySelectorAll('.np__link,.np__foot,.nav__cta,.nav__mobile-cta').forEach(function(l){
+    l.addEventListener('click',function(){ if(btn){btn.classList.remove('open');} if(links){links.classList.remove('open');} });
+  });
+})();
+</script>
+
+<script>
+const STATES_CITIES = {
+  "Andhra Pradesh":["Visakhapatnam","Vijayawada","Guntur","Nellore","Kurnool","Rajahmundry","Tirupati","Kakinada","Eluru","Ongole"],
+  "Arunachal Pradesh":["Itanagar","Naharlagun","Pasighat"],
+  "Assam":["Guwahati","Silchar","Dibrugarh","Jorhat","Nagaon","Tezpur","Tinsukia"],
+  "Bihar":["Patna","Gaya","Bhagalpur","Muzaffarpur","Purnia","Darbhanga","Bihar Sharif","Arrah"],
+  "Chhattisgarh":["Raipur","Bhilai","Bilaspur","Korba","Raigarh","Durg"],
+  "Goa":["Panaji","Margao","Vasco da Gama","Mapusa","Ponda"],
+  "Gujarat":["Ahmedabad","Surat","Vadodara","Rajkot","Bhavnagar","Jamnagar","Gandhinagar","Junagadh","Anand","Nadiad"],
+  "Haryana":["Faridabad","Gurugram","Panipat","Ambala","Yamunanagar","Rohtak","Hisar","Karnal","Sonipat","Panchkula"],
+  "Himachal Pradesh":["Shimla","Solan","Dharamsala","Mandi","Kullu","Hamirpur"],
+  "Jharkhand":["Ranchi","Jamshedpur","Dhanbad","Bokaro","Hazaribagh","Giridih"],
+  "Karnataka":["Bengaluru","Mysuru","Hubballi","Mangaluru","Belagavi","Kalaburagi","Davanagere","Bellary","Shimoga","Tumkur"],
+  "Kerala":["Thiruvananthapuram","Kochi","Kozhikode","Thrissur","Kollam","Palakkad","Alappuzha","Malappuram","Kannur","Kasaragod"],
+  "Madhya Pradesh":["Bhopal","Indore","Jabalpur","Gwalior","Ujjain","Sagar","Dewas","Satna","Ratlam"],
+  "Maharashtra":["Mumbai","Pune","Nagpur","Thane","Nashik","Aurangabad","Solapur","Kolhapur","Amravati","Nanded"],
+  "Manipur":["Imphal","Thoubal","Bishnupur","Churachandpur"],
+  "Meghalaya":["Shillong","Tura","Jowai"],
+  "Mizoram":["Aizawl","Lunglei","Champhai"],
+  "Nagaland":["Kohima","Dimapur","Mokokchung"],
+  "Odisha":["Bhubaneswar","Cuttack","Rourkela","Brahmapur","Sambalpur","Puri","Balasore"],
+  "Punjab":["Ludhiana","Amritsar","Jalandhar","Patiala","Bathinda","Mohali","Hoshiarpur"],
+  "Rajasthan":["Jaipur","Jodhpur","Kota","Bikaner","Ajmer","Udaipur","Bhilwara","Alwar","Bharatpur","Sikar"],
+  "Sikkim":["Gangtok","Namchi","Mangan"],
+  "Tamil Nadu":["Chennai","Coimbatore","Madurai","Tiruchirappalli","Salem","Tirunelveli","Tiruppur","Vellore","Erode","Thoothukudi"],
+  "Telangana":["Hyderabad","Warangal","Nizamabad","Karimnagar","Khammam","Ramagundam","Mahbubnagar"],
+  "Tripura":["Agartala","Udaipur","Dharmanagar"],
+  "Uttar Pradesh":["Lucknow","Kanpur","Agra","Varanasi","Prayagraj","Meerut","Ghaziabad","Noida","Bareilly","Aligarh"],
+  "Uttarakhand":["Dehradun","Haridwar","Roorkee","Haldwani","Rudrapur","Rishikesh"],
+  "West Bengal":["Kolkata","Howrah","Durgapur","Asansol","Siliguri","Bardhaman","Malda","Kharagpur"],
+  "Delhi":["New Delhi","Delhi","Dwarka","Rohini","Pitampura","Laxmi Nagar","Janakpuri","Saket"],
+  "Jammu & Kashmir":["Srinagar","Jammu","Anantnag","Baramulla","Sopore"],
+  "Ladakh":["Leh","Kargil"],
+  "Puducherry":["Puducherry","Karaikal","Mahe","Yanam"],
+  "Chandigarh":["Chandigarh"],
+  "Andaman & Nicobar Islands":["Port Blair"],
+  "Dadra & Nagar Haveli":["Silvassa"],
+  "Daman & Diu":["Daman","Diu"],
+  "Lakshadweep":["Kavaratti"]
+};
+
+window.addEventListener('DOMContentLoaded', () => {
+  const stateEl = document.getElementById('f-state');
+  Object.keys(STATES_CITIES).sort().forEach(s => stateEl.innerHTML += `<option value="${s}">${s}</option>`);
+  document.addEventListener('click', e => { if (!e.target.closest('#city-dropdown')) closeCityList(); });
+});
+
+let allCities = [];
+function populateCities() {
+  const state = document.getElementById('f-state').value;
+  allCities = state ? [...STATES_CITIES[state]].sort() : [];
+  document.getElementById('f-city').value = '';
+  document.getElementById('f-city-search').value = '';
+  document.getElementById('f-city-search').disabled = !state;
+  document.getElementById('f-city-search').placeholder = state ? 'Search city…' : 'Select state first';
+  document.getElementById('err-state').classList.remove('show');
+  document.getElementById('f-state').classList.remove('invalid');
+  renderCityList(allCities);
+}
+
+function filterCities() {
+  const q = document.getElementById('f-city-search').value.toLowerCase();
+  renderCityList(allCities.filter(c => c.toLowerCase().includes(q)));
+  openCityList();
+}
+
+function renderCityList(cities) {
+  const list = document.getElementById('city-list');
+  list.innerHTML = cities.length
+    ? cities.map(c => `<div class="search-dropdown__item" onclick="selectCity('${c}')">${c}</div>`).join('')
+    : '<div class="search-dropdown__empty">No cities found</div>';
+}
+
+function openCityList() { if (allCities.length) document.getElementById('city-list').classList.add('open'); }
+function closeCityList() { document.getElementById('city-list').classList.remove('open'); }
+function selectCity(city) {
+  document.getElementById('f-city').value = city;
+  document.getElementById('f-city-search').value = city;
+  closeCityList();
+  document.getElementById('err-city').classList.remove('show');
+}
+
+function validateEmail() {
+  const el = document.getElementById('f-email');
+  const val = el.value.trim();
+  const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+  el.classList.toggle('valid', ok);
+  el.classList.toggle('invalid', val.length > 0 && !ok);
+  document.getElementById('tick-email').classList.toggle('show', ok);
+  document.getElementById('err-email').classList.toggle('show', val.length > 0 && !ok);
+}
+
+function validatePhone(el) {
+  el.value = el.value.replace(/\D/g, '');
+  const ok = el.value.length === 10;
+  el.classList.toggle('valid', ok);
+  el.classList.toggle('invalid', el.value.length > 0 && !ok);
+  document.getElementById('tick-phone').classList.toggle('show', ok);
+  document.getElementById('err-phone').classList.toggle('show', el.value.length > 0 && !ok);
+}
+
+function clearErr(inputId, errId) {
+  document.getElementById(inputId).classList.remove('invalid');
+  document.getElementById(errId).classList.remove('show');
+}
+
+function submitApplication() {
+  let ok = true;
+
+  const name = document.getElementById('f-name').value.trim();
+  if (!name || !/^[a-zA-Z\s]+$/.test(name)) {
+    document.getElementById('f-name').classList.add('invalid');
+    document.getElementById('err-name').classList.add('show');
+    ok = false;
+  }
+
+  const phone = document.getElementById('f-phone').value.trim();
+  if (!phone || phone.length !== 10) {
+    document.getElementById('f-phone').classList.add('invalid');
+    document.getElementById('err-phone').classList.add('show');
+    ok = false;
+  }
+
+  const email = document.getElementById('f-email').value.trim();
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    document.getElementById('f-email').classList.add('invalid');
+    document.getElementById('err-email').classList.add('show');
+    document.getElementById('tick-email').classList.remove('show');
+    ok = false;
+  }
+
+  const state = document.getElementById('f-state').value;
+  if (!state) {
+    document.getElementById('f-state').classList.add('invalid');
+    document.getElementById('err-state').classList.add('show');
+    ok = false;
+  }
+
+  const city = document.getElementById('f-city').value;
+  if (!city) {
+    document.getElementById('err-city').classList.add('show');
+    ok = false;
+  }
+
+  if (!ok) return;
+
+  window.location.href = 'telecrm-partner-thankyou.html';
+}
+</script>
+
+</body>
+</html>

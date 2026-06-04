@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://telecrm.in/features/reporting/">
+<title>Reporting — telecrm Features</title>
+<meta name="description" content="Live leaderboards, call breakdowns, funnel analytics, hourly activity reports, and custom dashboards — telecrm gives managers the data they need without assembling a single spreadsheet.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Reporting — telecrm | Know exactly what's working.">
+<meta property="og:description" content="Live leaderboards, call breakdowns, funnel analytics, hourly activity reports, and custom dashboards built for Indian sales managers.">
+<meta property="og:url" content="https://telecrm.in/features/reporting/">
+<meta property="og:site_name" content="telecrm">
+<meta property="og:image" content="https://telecrm.in/assets/og-image.png">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Reporting — telecrm | Know exactly what's working.">
+<meta name="twitter:description" content="Live leaderboards, call breakdowns, funnel analytics, hourly activity reports, and custom dashboards.">
+<meta name="twitter:image" content="https://telecrm.in/assets/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Reporting — telecrm",
+  "description": "Live leaderboards, call breakdown reports, funnel analytics, hourly activity reports, and custom dashboards in telecrm.",
+  "url": "https://telecrm.in/features/reporting/",
+  "publisher": { "@type": "Organization", "name": "telecrm" }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cta:#F97316; --cta-hover:#EA580C;
+  --v50:#EDEBF6;--v100:#E1DDF0;--v200:#C4BAE5;--v300:#9C8FCF;
+  --v400:#7260B5;--v500:#4F38A2;--v600:#483393;--v700:#382873;--v900:#211844;
+  --white:#fff;--grey:#64748B;--border:#E9EBF8;--grey2:#94A3B8;
+  --success:#22C55E;--warning:#F59E0B;--error:#EF4444;
+  --font-head:'Plus Jakarta Sans',sans-serif;--font-body:'DM Sans',sans-serif;
+  --radius-btn:10px;--radius-card:16px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);color:var(--v900);background:#fff;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+.nav__inner{max-width:1280px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:72px;}
+.nav__logo{font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--v500);letter-spacing:-.5px;}
+.nav__links{display:flex;align-items:center;gap:2px;}
+.nav__link{font-family:var(--font-head);font-size:12.5px;font-weight:600;color:var(--v700);padding:7px 11px;border-radius:8px;transition:all .18s;white-space:nowrap;}
+.nav__link:hover,.nav__link--active{background:var(--v50);color:var(--v500);}
+.nav__sep{display:inline-block;width:1px;height:20px;background:var(--border);margin:0 8px;vertical-align:middle;}
+.nav__cta{font-family:var(--font-head);font-size:13px;font-weight:700;background:var(--cta);color:#fff;padding:10px 22px;border-radius:var(--radius-btn);box-shadow:0 4px 12px rgba(249,115,22,.3);transition:all .18s;white-space:nowrap;margin-left:8px;}
+.nav__cta:hover{background:var(--cta-hover);transform:translateY(-1px);}
+.nav__mobile-right{display:none;align-items:center;gap:8px;margin-left:auto;}
+.nav__mobile-cta{font-family:var(--font-head);font-size:13px;font-weight:700;background:var(--v500);color:#fff;padding:8px 16px;border-radius:var(--radius-btn);text-decoration:none;white-space:nowrap;}
+.nav__mob-sep{display:none;width:1px;height:20px;background:var(--border);}
+.nav__hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:8px;border:none;background:transparent;}
+.nav__hamburger span{display:block;width:22px;height:2px;background:var(--v900);border-radius:2px;transition:all .18s;}
+.nav__hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav__hamburger.open span:nth-child(2){opacity:0;}
+.nav__hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* HERO */
+.hero{padding:64px 0 56px;background:#fff;position:relative;overflow:hidden;}
+.hero__bg{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;opacity:.35;pointer-events:none;}
+.hero__glow{position:absolute;top:-80px;right:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(79,56,162,.07) 0%,transparent 70%);pointer-events:none;}
+.hero__inner{max-width:1280px;margin:0 auto;padding:0 32px;position:relative;}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-family:var(--font-head);font-size:12px;font-weight:600;color:var(--grey2);margin-bottom:24px;}
+.breadcrumb-sep{color:var(--v200);}
+.breadcrumb a{color:var(--grey2);transition:color .2s;}
+.breadcrumb a:hover{color:var(--v500);}
+.breadcrumb-current{color:var(--v500);}
+.hero__eyebrow{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;}
+.hero__h1{font-family:var(--font-head);font-size:clamp(28px,4vw,52px);font-weight:900;letter-spacing:-1.5px;color:var(--v900);line-height:1.1;margin-bottom:16px;}
+.hero__h1 em{font-style:normal;color:var(--v500);}
+.hero__sub{font-size:17px;color:var(--grey);line-height:1.75;max-width:680px;margin-bottom:32px;}
+.btn-primary{font-family:var(--font-head);font-size:14px;font-weight:700;background:var(--cta);color:#fff;padding:13px 28px;border-radius:var(--radius-btn);border:none;cursor:pointer;box-shadow:0 4px 14px rgba(249,115,22,.3);transition:all .2s;display:inline-flex;align-items:center;gap:8px;text-decoration:none;}
+.btn-primary:hover{background:var(--cta-hover);transform:translateY(-1px);}
+.btn-primary svg{width:16px;height:16px;}
+
+/* HIGHLIGHTS */
+.highlights{background:var(--v50);border-top:1px solid var(--v100);border-bottom:1px solid var(--v100);padding:20px 32px;}
+.highlights__inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.highlight{display:flex;align-items:center;gap:10px;padding:10px 16px;background:#fff;border:1.5px solid var(--v100);border-radius:10px;}
+.highlight__dot{width:7px;height:7px;border-radius:50%;background:var(--v500);flex-shrink:0;}
+.highlight__text{font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v700);}
+
+/* SHARED */
+.inner{max-width:1280px;margin:0 auto;padding:0 32px;}
+.s-white{padding:80px 0;background:#fff;}
+.s-tint{padding:80px 0;background:#F8F7FC;}
+.s-eye{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
+.s-h2{font-family:var(--font-head);font-size:clamp(22px,2.5vw,32px);font-weight:900;color:var(--v900);letter-spacing:-.5px;line-height:1.2;margin-bottom:12px;}
+.s-h2 em{font-style:normal;color:var(--v500);}
+.s-body{font-size:15px;color:var(--grey);line-height:1.75;margin-bottom:28px;}
+.fbullets{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.fbullets li{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--grey);line-height:1.6;}
+.fbd{width:20px;height:20px;border-radius:6px;background:var(--v50);border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.fbd svg{width:10px;height:10px;}
+.fbullets strong{font-family:var(--font-head);font-weight:700;color:var(--v700);}
+
+/* stacked layout — content full width, visual below centred */
+.s-stack{display:flex;flex-direction:column;gap:40px;}
+.s-visual{max-width:860px;margin-left:auto;margin-right:auto;width:100%;}
+
+/* LIGHT PANEL */
+.lpanel{background:#fff;border:1.5px solid var(--border);border-radius:16px;overflow:hidden;}
+.lpanel-bar{background:var(--v50);border-bottom:1px solid var(--v100);padding:11px 16px;display:flex;align-items:center;gap:6px;}
+.lp-dot{width:10px;height:10px;border-radius:50%;}
+.lp-r{background:#FF5F57;}
+.lp-y{background:#FEBC2E;}
+.lp-g{background:#28C840;}
+.lpanel-ttl{font-family:var(--font-head);font-size:11px;font-weight:600;color:var(--v400);margin-left:8px;}
+
+/* ── S1: LIVE CALL LEADERBOARD ── */
+.lb-panel{background:#fff;border:1.5px solid var(--border);border-radius:16px;overflow:hidden;}
+.lb-head{background:var(--v50);border-bottom:1px solid var(--v100);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;}
+.lb-title{font-family:var(--font-head);font-size:12px;font-weight:800;color:var(--v900);}
+.lb-filters{display:flex;gap:4px;}
+.lb-filter{font-family:var(--font-head);font-size:10px;font-weight:700;padding:3px 10px;border-radius:100px;cursor:pointer;}
+.lb-filter--on{background:var(--v500);color:#fff;}
+.lb-filter--off{color:var(--grey2);}
+.lb-row{display:grid;grid-template-columns:32px 1fr 60px 60px 60px 60px;gap:0;padding:11px 16px;border-bottom:1px solid var(--border);align-items:center;}
+.lb-row:last-child{border-bottom:none;}
+.lb-row--head{background:var(--v50);border-bottom:1px solid var(--v100);}
+.lb-rank{font-family:var(--font-head);font-size:12px;font-weight:900;color:var(--v200);text-align:center;}
+.lb-rank--1{color:#F59E0B;}
+.lb-rank--2{color:var(--v300);}
+.lb-rank--3{color:#CD7C32;}
+.lb-rep{display:flex;align-items:center;gap:8px;}
+.lb-av{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:9px;font-weight:800;color:#fff;flex-shrink:0;}
+.lb-name{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v900);}
+.lb-time{font-size:9px;color:var(--grey2);margin-top:1px;}
+.lb-col{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v900);text-align:center;}
+.lb-col--green{color:#16A34A;}
+.lb-col--head{font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;letter-spacing:.06em;text-align:center;}
+.lb-bar-wrap{padding:8px 16px;border-top:1px solid var(--border);background:#FAFBFF;}
+.lb-bar-label{display:flex;justify-content:space-between;font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v700);margin-bottom:5px;}
+.lb-bar-track{height:6px;background:var(--v50);border-radius:100px;overflow:hidden;}
+.lb-bar-fill{height:100%;background:linear-gradient(90deg,var(--v400),var(--v500));border-radius:100px;}
+
+/* ── S2: CALL BREAKDOWN ── */
+.cb-panel{background:#fff;border:1.5px solid var(--border);border-radius:16px;overflow:hidden;}
+.cb-head{background:var(--v50);border-bottom:1px solid var(--v100);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;}
+.cb-title{font-family:var(--font-head);font-size:12px;font-weight:800;color:var(--v900);}
+.cb-stat-row{display:grid;grid-template-columns:repeat(5,1fr);border-bottom:1px solid var(--border);}
+.cb-stat{padding:12px;text-align:center;border-right:1px solid var(--border);}
+.cb-stat:last-child{border-right:none;}
+.cb-stat__n{font-family:var(--font-head);font-size:18px;font-weight:900;color:var(--v900);letter-spacing:-.5px;}
+.cb-stat__l{font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;margin-top:2px;}
+.cb-rep-rows{display:flex;flex-direction:column;}
+.cb-rep-row{display:grid;grid-template-columns:1fr 72px 72px 72px 72px 72px;gap:0;padding:10px 16px;border-bottom:1px solid var(--border);align-items:center;}
+.cb-rep-row:last-child{border-bottom:none;}
+.cb-rep-row--head{background:#FAFBFF;border-bottom:1px solid var(--border);}
+.cb-rep-name{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v900);}
+.cb-rep-time{font-size:9px;color:var(--grey2);margin-top:1px;}
+.cb-cell{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v900);text-align:center;}
+.cb-cell--green{color:#16A34A;}
+.cb-cell--amber{color:#D97706;}
+.cb-cell--head{font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;letter-spacing:.06em;text-align:center;}
+.cb-drill{padding:10px 16px;background:var(--v50);border-top:1px solid var(--v100);display:flex;align-items:center;gap:6px;}
+.cb-drill-label{font-family:var(--font-head);font-size:11px;font-weight:600;color:var(--v500);}
+
+/* ── S3: FUNNEL/PIPELINE REPORTS ── */
+.funnel-panel{background:#fff;border:1.5px solid var(--border);border-radius:16px;overflow:hidden;}
+.funnel-head{background:var(--v50);border-bottom:1px solid var(--v100);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;}
+.funnel-title{font-family:var(--font-head);font-size:12px;font-weight:800;color:var(--v900);}
+.funnel-body{padding:16px;}
+/* Funnel stages */
+.funnel-stages{display:flex;flex-direction:column;gap:8px;}
+.funnel-stage{display:flex;align-items:center;gap:12px;}
+.funnel-stage-label{font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);width:100px;flex-shrink:0;text-align:right;}
+.funnel-stage-bar-wrap{flex:1;position:relative;}
+.funnel-stage-bar{height:28px;border-radius:6px;display:flex;align-items:center;padding-left:10px;transition:width .3s;}
+.funnel-stage-count{font-family:var(--font-head);font-size:11px;font-weight:800;color:#fff;}
+.funnel-stage-pct{font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--grey2);margin-left:8px;white-space:nowrap;}
+/* Source comparison */
+.source-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px;}
+.source-card{background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:12px;}
+.source-card__name{font-family:var(--font-head);font-size:10px;font-weight:800;color:var(--v900);margin-bottom:6px;}
+.source-card__rate{font-family:var(--font-head);font-size:20px;font-weight:900;color:var(--v500);letter-spacing:-.5px;}
+.source-card__label{font-size:9px;color:var(--grey2);margin-top:2px;}
+.source-card__bar{height:4px;background:var(--v100);border-radius:100px;overflow:hidden;margin-top:8px;}
+.source-card__bar-fill{height:100%;background:var(--v500);border-radius:100px;}
+
+/* ── S4: HOURLY ACTIVITY ── */
+.hourly-panel{background:#fff;border:1.5px solid var(--border);border-radius:16px;overflow:hidden;}
+.hourly-head{background:var(--v50);border-bottom:1px solid var(--v100);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;}
+.hourly-title{font-family:var(--font-head);font-size:12px;font-weight:800;color:var(--v900);}
+.hourly-body{padding:16px;}
+/* Bar chart of hourly calls */
+.hour-chart{display:flex;align-items:flex-end;gap:4px;height:80px;margin-bottom:6px;}
+.hour-bar-wrap{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;}
+.hour-bar{width:100%;border-radius:3px 3px 0 0;transition:height .3s;}
+.hour-bar--peak{background:var(--v500);}
+.hour-bar--high{background:var(--v300);}
+.hour-bar--low{background:var(--v100);}
+.hour-bar--dead{background:#F1F5F9;}
+.hour-label{font-family:var(--font-head);font-size:7px;font-weight:600;color:var(--grey2);}
+.hourly-insights{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px;}
+.hi-card{background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:12px;}
+.hi-card__label{font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;}
+.hi-card__value{font-family:var(--font-head);font-size:16px;font-weight:900;color:var(--v500);letter-spacing:-.5px;}
+.hi-card__sub{font-size:10px;color:var(--grey);margin-top:2px;}
+
+/* ── S5: CUSTOM DASHBOARDS ── */
+.dash-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.dash-card{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:18px;}
+.dash-card__icon{width:40px;height:40px;border-radius:12px;background:var(--v50);border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
+.dash-card__icon svg{width:20px;height:20px;}
+.dash-card__title{font-family:var(--font-head);font-size:13px;font-weight:800;color:var(--v900);margin-bottom:6px;}
+.dash-card__body{font-size:13px;color:var(--grey);line-height:1.65;}
+/* Mini stat tiles */
+.stat-tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:14px;}
+.stat-tile{background:var(--v50);border-radius:10px;padding:12px 14px;}
+.stat-tile__n{font-family:var(--font-head);font-size:20px;font-weight:900;color:var(--v500);letter-spacing:-.5px;}
+.stat-tile__l{font-size:11px;color:var(--grey2);margin-top:2px;}
+
+/* ── S6: EXPORT & DOWNLOAD ── */
+.export-panel{background:#fff;border:1.5px solid var(--border);border-radius:16px;overflow:hidden;}
+.export-head{background:var(--v50);border-bottom:1px solid var(--v100);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;}
+.export-title{font-family:var(--font-head);font-size:12px;font-weight:800;color:var(--v900);}
+.export-body{padding:16px;display:flex;flex-direction:column;gap:10px;}
+.export-row{display:flex;align-items:center;gap:12px;padding:10px 14px;background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;}
+.export-row__icon{width:30px;height:30px;border-radius:8px;background:#fff;border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.export-row__icon svg{width:14px;height:14px;}
+.export-row__name{font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v900);flex:1;}
+.export-row__meta{font-size:10px;color:var(--grey2);}
+.export-row__btn{font-family:var(--font-head);font-size:9px;font-weight:700;background:var(--v500);color:#fff;padding:4px 12px;border-radius:100px;white-space:nowrap;}
+/* Date range picker mock */
+.date-picker{background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.date-picker__label{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v700);}
+.date-range-chips{display:flex;gap:5px;}
+.drc{font-family:var(--font-head);font-size:9px;font-weight:700;padding:3px 10px;border-radius:100px;}
+.drc--on{background:var(--v500);color:#fff;}
+.drc--off{background:#fff;color:var(--grey2);border:1px solid var(--border);}
+
+/* FINAL CTA */
+.final-cta{padding:96px 0;background:var(--v900);position:relative;overflow:hidden;}
+.final-cta__grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;}
+.final-cta__glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(114,96,181,.2) 0%,transparent 65%);pointer-events:none;}
+.final-cta__inner{max-width:860px;margin:0 auto;padding:0 32px;text-align:center;position:relative;}
+.final-cta__badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v300);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:6px 14px;border-radius:100px;margin-bottom:24px;}
+.final-cta__badge-dot{width:7px;height:7px;border-radius:50%;background:#22C55E;flex-shrink:0;}
+.final-cta__h2{font-family:var(--font-head);font-size:clamp(28px,3.5vw,44px);font-weight:900;letter-spacing:-1px;color:#fff;line-height:1.15;margin-bottom:12px;}
+.final-cta__h2 em{font-style:normal;color:var(--v300);}
+.final-cta__sub{font-size:16px;color:var(--v200);line-height:1.7;margin-bottom:32px;}
+.btn-cta-white{font-family:var(--font-head);font-size:15px;font-weight:700;background:#fff;color:var(--v500);padding:15px 36px;border-radius:var(--radius-btn);border:none;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.15);transition:all .2s;display:inline-flex;align-items:center;gap:8px;text-decoration:none;}
+.btn-cta-white:hover{background:var(--v50);transform:translateY(-2px);}
+.btn-cta-white svg{width:16px;height:16px;}
+.final-cta__cta-wrap{margin-bottom:28px;}
+.final-cta__trust{display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap;}
+.final-cta__trust-item{font-size:13px;font-weight:500;color:var(--v200);display:flex;align-items:center;gap:7px;}
+.final-cta__trust-dot{width:6px;height:6px;border-radius:50%;background:#22C55E;flex-shrink:0;}
+
+/* FOOTER */
+.footer{background:#fff;border-top:1px solid var(--border);padding:64px 0 40px;}
+.footer__inner{max-width:1280px;margin:0 auto;padding:0 32px;}
+.footer__links-grid{display:contents;}
+.footer__grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+.footer__logo{font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--v500);margin-bottom:16px;letter-spacing:-.5px;}
+.footer__tagline{font-size:14px;color:var(--grey);line-height:1.7;max-width:280px;margin-bottom:24px;}
+.footer__col-title{font-family:var(--font-head);font-size:12px;font-weight:800;color:var(--v900);text-transform:uppercase;letter-spacing:.06em;margin-bottom:16px;}
+.footer__links{display:flex;flex-direction:column;gap:10px;}
+.footer__link{font-size:14px;color:var(--grey);transition:color .2s;}
+.footer__link:hover{color:var(--v500);}
+.footer-col-right{}
+.footer-col-left{}
+.footer__bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer__copy{font-size:13px;color:var(--grey);}
+.footer__legal{display:flex;gap:24px;}
+.footer__legal a{font-size:13px;color:var(--grey);transition:color .2s;}
+.footer__legal a:hover{color:var(--v500);}
+
+/* MOBILE */
+@media(max-width:768px){
+  .nav__links{display:none;flex-direction:column;position:fixed;top:72px;left:0;right:0;background:rgba(255,255,255,.98);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:16px 24px;gap:0;z-index:99;}
+  .nav__links.open{display:flex;}
+  .nav__link{padding:12px 0;border-bottom:1px solid var(--border);font-size:15px;display:block;}
+  .nav__link:last-child{border-bottom:none;}
+  .nav__sep{display:none;}
+  .nav__cta{display:none;}
+  .nav__mobile-right{display:flex;align-items:center;gap:8px;margin-left:auto;}
+  .nav__mob-sep{display:block;}
+  .nav__hamburger{display:flex;}
+}
+@media(min-width:769px){.nav__hamburger{display:none;}.nav__mobile-right{display:none;}}
+.nav__mobile-right{display:none;}}
+.nav__mobile-right{display:none;}}
+@media(max-width:768px){
+  .highlights__inner{grid-template-columns:1fr 1fr!important;}
+  .dash-grid{grid-template-columns:1fr!important;}
+  .source-grid{grid-template-columns:1fr!important;}
+  .hourly-insights{grid-template-columns:1fr 1fr!important;}
+  .stat-tiles{grid-template-columns:1fr 1fr!important;}
+  .cb-stat-row{grid-template-columns:1fr 1fr 1fr!important;}
+  .lb-row{grid-template-columns:24px 1fr 50px 50px!important;}
+  .cb-rep-row{grid-template-columns:1fr 60px 60px!important;}
+  .footer__grid{grid-template-columns:1fr!important;gap:32px!important;}
+  .footer__tagline{max-width:100%!important;}
+  .footer__bottom{flex-direction:column!important;gap:12px!important;text-align:center!important;}
+  .footer__legal{flex-wrap:wrap!important;justify-content:center!important;}
+  .footer__links-grid{display:grid!important;grid-template-columns:1fr 1fr;gap:32px 16px;margin-top:32px;}
+  .footer__links-grid > div:nth-child(1),
+  .footer__links-grid > div:nth-child(2),
+  .footer__links-grid > div:nth-child(3){text-align:left!important;grid-column:1;}
+  .footer__links-grid > div:nth-child(4){text-align:right!important;grid-column:2;grid-row:1 / span 3;}
+  .footer__links-grid > div:nth-child(4) .footer__links{align-items:flex-end;}
+  .final-cta__trust{gap:16px;}
+  .final-cta__inner{padding:0 20px;}
+}
+@media(max-width:480px){
+  .highlights__inner{grid-template-columns:1fr!important;}
+}
+
+/* ===== ROLLOUT v2026-05-29: nav mega-menu + fat footer (canonical) ===== */
+.nav__item{position:relative;display:flex;align-items:center;height:72px;}
+.nav__item > .nav__link{display:inline-flex;align-items:center;gap:4px;}
+.nav__caret{width:11px;height:11px;flex-shrink:0;transition:transform .2s;}
+.nav__item:hover > .nav__link .nav__caret,.nav__item:focus-within > .nav__link .nav__caret{transform:rotate(180deg);}
+.nav__item:hover > .nav__link,.nav__item:focus-within > .nav__link{background:var(--v50);color:var(--v500);}
+.nav__panel{position:absolute;top:100%;left:0;background:#fff;border:1px solid var(--border);border-radius:14px;box-shadow:0 18px 44px rgba(33,24,68,.13);padding:14px;opacity:0;visibility:hidden;transform:translateY(7px);transition:opacity .16s,transform .16s,visibility .16s;z-index:200;}
+.nav__panel--right{left:auto;right:0;}
+.nav__item:hover > .nav__panel,.nav__item:focus-within > .nav__panel{opacity:1;visibility:visible;transform:translateY(0);}
+.np__list{display:grid;gap:1px;}
+.np__list--2{grid-template-columns:1fr 1fr;gap:1px 14px;}
+.np__link{display:flex;flex-direction:column;gap:2px;padding:9px 12px;border-radius:8px;transition:background .15s;min-width:0;}
+.np__link:hover{background:var(--v50);}
+.np__t{font-family:var(--font-head);font-size:13.5px;font-weight:700;color:var(--v900);white-space:nowrap;}
+.np__list--2 .np__t{white-space:normal;line-height:1.3;overflow-wrap:break-word;}
+.np__link:hover .np__t{color:var(--v500);}
+.np__s{font-family:var(--font-body);font-size:12px;color:var(--grey);line-height:1.35;}
+.np__foot{display:flex;align-items:center;gap:6px;border-top:1px solid var(--border);margin-top:8px;padding:11px 12px 3px;font-family:var(--font-head);font-size:12.5px;font-weight:700;color:var(--v500);}
+.np__foot svg{width:13px;height:13px;}
+.nav__mobile-cta{background:var(--cta);}
+.footer__grid{grid-template-columns:1.5fr 1fr 1fr 1fr 1fr 1.15fr;gap:40px 32px;}
+.footer__col-stack{display:flex;flex-direction:column;gap:48px;}
+@media(max-width:1024px){.footer__grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:768px){
+  .nav__item{width:100%;height:auto;display:block;position:static;}
+  .nav__item > .nav__link{display:flex;align-items:center;justify-content:space-between;width:100%;}
+  .nav__item.open > .nav__link .nav__caret{transform:rotate(180deg);}
+  .nav__caret{width:13px;height:13px;}
+  .nav__panel{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;border-radius:0;padding:4px 0 10px 10px;width:auto !important;display:none;z-index:auto;}
+  .nav__item.open > .nav__panel{display:block;}
+  .np__list--2{grid-template-columns:1fr;}
+  .np__link{padding:9px 10px;}
+  .np__foot{padding-left:10px;}
+  .footer__links-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px 16px;margin-top:32px;}
+  .footer__links-grid > div:nth-child(1),.footer__links-grid > div:nth-child(2),.footer__links-grid > div:nth-child(3),.footer__links-grid > div:nth-child(4),.footer__links-grid > div:nth-child(5){text-align:left;grid-column:auto;grid-row:auto;}
+  .footer__links-grid > div:nth-child(4) .footer__links{align-items:flex-start;}
+}
+@media(max-width:600px){.footer__grid{grid-template-columns:1fr;}}
+/* ===== end ROLLOUT ===== */
+
+/* ===== FAQ section (locked §16A) ===== */
+.faq{padding:96px 0;background:#F8F7FC;}
+.faq__inner{max-width:1280px;margin:0 auto;padding:0 32px;}
+.faq__header{text-align:center;margin-bottom:8px;}
+.faq__eyebrow{font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v500);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;}
+.faq__h2{font-family:var(--font-head);font-size:clamp(28px,3.5vw,42px);font-weight:900;letter-spacing:-1.2px;color:var(--v900);line-height:1.15;}
+.faq__h2 em{font-style:normal;color:var(--v500);}
+.faq-list{display:flex;flex-direction:column;border-top:1px solid var(--border);max-width:860px;margin:40px auto 0;}
+.faq-item{border-bottom:1px solid var(--border);}
+.faq-item__q{display:flex;align-items:center;justify-content:space-between;padding:22px 0;cursor:pointer;gap:24px;}
+.faq-item__q-text{font-family:var(--font-head);font-size:16px;font-weight:700;color:var(--v900);}
+.faq-item__icon{width:28px;height:28px;border-radius:50%;background:#fff;border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s;}
+.faq-item__icon svg{width:12px;height:12px;transition:transform .25s;}
+.faq-item.open .faq-item__icon{background:var(--v500);border-color:var(--v500);}
+.faq-item.open .faq-item__icon svg{transform:rotate(45deg);stroke:#fff;}
+.faq-item__a{display:none;font-family:var(--font-body);font-size:15px;color:var(--grey);line-height:1.75;padding-bottom:22px;max-width:760px;}
+.faq-item.open .faq-item__a{display:block;}
+@media(max-width:768px){.faq{padding:64px 0;}.faq__inner{padding:0 20px;}}
+/* ===== end FAQ ===== */
+
+.np__cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.np__col-head{display:block;font-family:var(--font-head);font-size:11px;font-weight:800;color:var(--v400);text-transform:uppercase;letter-spacing:.07em;padding:4px 12px 8px;transition:color .15s;}
+.np__col-head:hover{color:var(--v500);}
+.nav__panel:has(.np__col:only-child) .np__cols{grid-template-columns:1fr;}
+@media(max-width:768px){.np__cols{grid-template-columns:1fr !important;gap:0 !important;}.np__col-head{padding:8px 10px 4px;}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="telecrm-approach2-home.html" class="nav__logo">telecrm</a>
+    <div class="nav__links">
+      <div class="nav__item">
+        <a href="telecrm-platform-overview.html" class="nav__link">Platform Overview <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:560px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-platform-hub.html">Platform Hub</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-platform-unified-revenue-management.html"><span class="np__t">Unified Revenue Management</span><span class="np__s">One connected engine</span></a>
+                <a class="np__link" href="telecrm-platform-lead-management.html"><span class="np__t">Lead Management</span><span class="np__s">Capture, dedupe, assign</span></a>
+                <a class="np__link" href="telecrm-platform-call-management.html"><span class="np__t">Call Management &amp; Recording</span><span class="np__s">Dial, record, track</span></a>
+                <a class="np__link" href="telecrm-platform-adaptive-crm.html"><span class="np__t">Adaptive CRM</span><span class="np__s">Stages, fields, 360°</span></a>
+                <a class="np__link" href="telecrm-platform-marketing-automation.html"><span class="np__t">Marketing Automation</span><span class="np__s">Reach leads automatically</span></a>
+                <a class="np__link" href="telecrm-platform-sales-pipeline-management.html"><span class="np__t">Sales Funnel &amp; Pipeline Management</span><span class="np__s">Track every deal stage</span></a>
+              </div>
+            </div>
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-benefits-hub.html">Benefits Hub</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-benefits-hub.html"><span class="np__t">Outcomes &amp; ROI</span><span class="np__s">What telecrm delivers for your team</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-platform-overview.html">Platform Overview — the product, end to end <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-solutions-hub.html" class="nav__link">Solutions <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-solutions-hub.html">By approach</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-problems-hub.html"><span class="np__t">Problems Hub</span><span class="np__s">Revenue leaks, by stage</span></a>
+                <a class="np__link" href="telecrm-crm-hub.html"><span class="np__t">CRM Hub</span><span class="np__s">By type &amp; by team</span></a>
+                <a class="np__link" href="telecrm-industry-hub.html"><span class="np__t">Industry Hub</span><span class="np__s">11 industries covered</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-solutions-hub.html">Browse all solutions <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-features-hub.html" class="nav__link nav__link--active">Features <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:620px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-features-hub.html">Engagement</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-feature-call-management.html"><span class="np__t">Call Management</span></a>
+                <a class="np__link" href="telecrm-feature-calling-campaign.html"><span class="np__t">Calling Campaign Management</span></a>
+                <a class="np__link" href="telecrm-feature-whatsapp.html"><span class="np__t">WhatsApp</span></a>
+                <a class="np__link" href="telecrm-feature-automations.html"><span class="np__t">Automation</span></a>
+              </div>
+            </div>
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-features-hub.html">Data &amp; Admin</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-feature-lead-management.html"><span class="np__t">Lead Management &amp; Reporting</span></a>
+                <a class="np__link" href="telecrm-feature-lead-fields.html"><span class="np__t">Lead Fields</span></a>
+                <a class="np__link" href="telecrm-feature-lead-stages.html"><span class="np__t">Lead Stages</span></a>
+                <a class="np__link" href="telecrm-feature-list-labels.html"><span class="np__t">List and Labels</span></a>
+                <a class="np__link" href="telecrm-feature-reporting.html"><span class="np__t">Reporting</span></a>
+                <a class="np__link" href="telecrm-feature-integrations.html"><span class="np__t">Integrations</span></a>
+                <a class="np__link" href="telecrm-feature-user-management.html"><span class="np__t">User Management</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-features-hub.html">See all features <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-trust-hub.html" class="nav__link">Trust <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-trust-hub.html">Proof</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-testimonials.html"><span class="np__t">Testimonials</span><span class="np__s">Real customers, real numbers</span></a>
+                <a class="np__link" href="telecrm-case-studies.html"><span class="np__t">Case Studies</span><span class="np__s">9 detailed stories</span></a>
+                <a class="np__link" href="telecrm-comparison.html"><span class="np__t">Comparison</span><span class="np__s">telecrm vs. alternatives</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-trust-hub.html">Visit the Trust Hub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-pricing.html" class="nav__link">Pricing <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:320px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-pricing.html">Plans</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-pricing.html"><span class="np__t">Pricing</span><span class="np__s">Plans &amp; what's included</span></a>
+                <a class="np__link" href="telecrm-cost-savings.html"><span class="np__t">Cost Savings</span><span class="np__s">What you save vs. tools</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-support-hub.html" class="nav__link">Support <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:560px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-support-hub.html">Resources</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-faqs.html"><span class="np__t">FAQs</span></a>
+                <a class="np__link" href="telecrm-glossary.html"><span class="np__t">Glossary</span></a>
+                <a class="np__link" href="telecrm-learning-repository.html"><span class="np__t">Learning Repository</span></a>
+                <a class="np__link" href="telecrm-onboarding.html"><span class="np__t">Onboarding</span></a>
+                <a class="np__link" href="telecrm-recommended-devices.html"><span class="np__t">Recommended Devices</span></a>
+              </div>
+            </div>
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-support-hub.html">Policies</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-privacy-policy.html"><span class="np__t">Privacy Policy</span></a>
+                <a class="np__link" href="telecrm-refund-policy.html"><span class="np__t">Refund Policy</span></a>
+                <a class="np__link" href="telecrm-terms-conditions.html"><span class="np__t">Terms &amp; Conditions</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-support-hub.html">Go to Support Hub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-get-started.html" class="nav__link">Get Started <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-get-started.html">Get started</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-partnership.html"><span class="np__t">Partner Program</span><span class="np__s">Refer &amp; earn 10% for life</span></a>
+                <a class="np__link" href="telecrm-demo-request.html"><span class="np__t">Demo Request</span><span class="np__s">Book a free demo</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-get-started.html">All ways to start <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-about-us.html" class="nav__link">About Us <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-about-us.html">Company</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-about-telecrm.html"><span class="np__t">About telecrm</span><span class="np__s">Story, vision, mission</span></a>
+                <a class="np__link" href="telecrm-life-at-telecrm.html"><span class="np__t">Life at telecrm</span><span class="np__s">Culture &amp; team</span></a>
+                <a class="np__link" href="telecrm-careers.html"><span class="np__t">Careers</span><span class="np__s">Open roles</span></a>
+                <a class="np__link" href="telecrm-contact.html"><span class="np__t">Contact Us</span><span class="np__s">Talk to us</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="nav__sep"></span>
+      <a href="telecrm-demo-request.html" class="nav__cta">Get a Demo</a>
+    </div>
+    <div class="nav__mobile-right">
+      <a href="telecrm-demo-request.html" class="nav__mobile-cta">Get a Demo</a>
+      <span class="nav__mob-sep"></span>
+      <button class="nav__hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__bg"></div>
+  <div class="hero__glow"></div>
+  <div class="hero__inner">
+    <div class="breadcrumb">
+      <a href="telecrm-approach2-home.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="telecrm-features-hub.html">Features</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">Reporting</span>
+    </div>
+    <div class="hero__eyebrow">Features · Reporting</div>
+    <h1 class="hero__h1">Know what's working and what isn't.<br><em>Exactly, Easily, Quickly.</em></h1>
+    <p class="hero__sub">Live leaderboards, granular call breakdowns, funnel analytics, hourly activity reports, and custom dashboards — telecrm gives managers the data they need to coach their team, fix bottlenecks, and hit targets without assembling a single spreadsheet.</p>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS BAR -->
+<div class="highlights">
+  <div class="highlights__inner">
+    <div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">Live call leaderboard</span></div>
+    <div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">Granular call breakdown</span></div>
+    <div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">Funnel & pipeline analytics</span></div>
+    <div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">Real-time reporting</span></div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════
+     01 — LIVE CALL LEADERBOARD
+     bg: white
+════════════════════════════════════ -->
+<section class="s-white">
+  <div class="inner">
+    <div class="s-stack">
+      <div>
+        <div class="s-eye">01 — Live Leaderboard</div>
+        <h2 class="s-h2">Your team ranked.<br><em>Updated in real time.</em></h2>
+        <p class="s-body">The leaderboard shows every rep ranked by calls made, total duration, and deals closed — refreshed live, all day. Managers see instantly who is leading, who is struggling, and who needs intervention. No waiting for end-of-day reports.</p>
+        <ul class="fbullets" style="gap:20px;">
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1.5L9 3.5 5 5.5 1 3.5z" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 6.5l4 2 4-2" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Ranked by calls, duration, and sales.</div><div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">See who made the most calls, who spent the most time on the phone, and who closed the most deals — all three dimensions, simultaneously.</div></div></div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;">
+              <div style="display:grid;grid-template-columns:22px 1fr 44px 52px 44px;gap:0;padding-bottom:5px;border-bottom:1px solid var(--border);margin-bottom:5px;"><div></div><div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;">Rep</div><div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;text-align:center;">Calls</div><div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;text-align:center;">Duration</div><div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;text-align:center;">Sales</div></div>
+              <div style="display:grid;grid-template-columns:22px 1fr 44px 52px 44px;gap:0;align-items:center;margin-bottom:5px;"><span style="font-family:var(--font-head);font-size:10px;font-weight:900;color:#F59E0B;">#1</span><div style="display:flex;align-items:center;gap:5px;"><div style="width:18px;height:18px;border-radius:50%;background:#7260B5;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:6px;font-weight:800;color:#fff;flex-shrink:0;">AK</div><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);">Ahmed K.</span></div><div style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);text-align:center;">89</div><div style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);text-align:center;">4h 12m</div><div style="font-family:var(--font-head);font-size:10px;font-weight:700;color:#16A34A;text-align:center;">7</div></div>
+              <div style="display:grid;grid-template-columns:22px 1fr 44px 52px 44px;gap:0;align-items:center;margin-bottom:5px;"><span style="font-family:var(--font-head);font-size:10px;font-weight:900;color:var(--v300);">#2</span><div style="display:flex;align-items:center;gap:5px;"><div style="width:18px;height:18px;border-radius:50%;background:#4F38A2;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:6px;font-weight:800;color:#fff;flex-shrink:0;">SB</div><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);">Subu R.</span></div><div style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);text-align:center;">74</div><div style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);text-align:center;">3h 44m</div><div style="font-family:var(--font-head);font-size:10px;font-weight:700;color:#16A34A;text-align:center;">5</div></div>
+              <div style="display:grid;grid-template-columns:22px 1fr 44px 52px 44px;gap:0;align-items:center;opacity:.55;"><span style="font-family:var(--font-head);font-size:10px;font-weight:900;color:#CD7C32;">#3</span><div style="display:flex;align-items:center;gap:5px;"><div style="width:18px;height:18px;border-radius:50%;background:#9C8FCF;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:6px;font-weight:800;color:#fff;flex-shrink:0;">PR</div><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);">Preethi R.</span></div><div style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);text-align:center;">44</div><div style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);text-align:center;">2h 31m</div><div style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--grey2);text-align:center;">0</div></div>
+            </div>
+          </li>
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="3.5" stroke="#4F38A2" stroke-width="1.3"/><path d="M5 3v2l1.5 1" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Filter by day, week, month, or year.</div><div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">Switch time windows instantly — today's leaderboard, this week's, this month's. Every filter is one click, no re-configuration needed.</div></div></div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;display:flex;gap:6px;align-items:center;"><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--grey2);">View:</span><span style="font-family:var(--font-head);font-size:10px;font-weight:700;background:var(--v500);color:#fff;padding:4px 12px;border-radius:100px;">Day</span><span style="font-family:var(--font-head);font-size:10px;font-weight:600;color:var(--grey2);background:#fff;border:1px solid var(--border);padding:4px 12px;border-radius:100px;">Week</span><span style="font-family:var(--font-head);font-size:10px;font-weight:600;color:var(--grey2);background:#fff;border:1px solid var(--border);padding:4px 12px;border-radius:100px;">Month</span><span style="font-family:var(--font-head);font-size:10px;font-weight:600;color:var(--grey2);background:#fff;border:1px solid var(--border);padding:4px 12px;border-radius:100px;">Year</span></div>
+          </li>
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><circle cx="3" cy="3.5" r="1.5" stroke="#4F38A2" stroke-width="1.2"/><path d="M0.5 8.5c0-1.4 1.1-2.5 2.5-2.5" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round"/><path d="M6 5.5l2 2-2 2" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 7.5H5" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round"/></svg></span><div><div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Drill into any rep in one click.</div><div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">From the leaderboard, open any rep's full activity breakdown — every call, duration, outcome, and lead touched — without navigating to a separate report.</div></div></div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;display:flex;align-items:center;justify-content:space-between;"><div style="display:flex;align-items:center;gap:8px;"><div style="width:24px;height:24px;border-radius:50%;background:#7260B5;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:8px;font-weight:800;color:#fff;">AK</div><div><div style="font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v900);">Ahmed Khan</div><div style="font-size:9px;color:var(--grey2);">89 calls · 4h 12m · 7 sales</div></div></div><span style="font-family:var(--font-head);font-size:10px;font-weight:700;background:var(--v500);color:#fff;padding:5px 12px;border-radius:7px;white-space:nowrap;">View full report →</span></div>
+          </li>
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 8.5v-5M4 8.5v-3M6.5 8.5V2M9 8.5V4" stroke="#4F38A2" stroke-width="1.5" stroke-linecap="round"/></svg></span><div><div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Always live, never delayed.</div><div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">The leaderboard is not a scheduled report — it reflects activity as it happens, so managers can act on what they see while the day is still in progress.</div></div></div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;display:flex;align-items:center;gap:12px;"><div style="width:8px;height:8px;border-radius:50%;background:#22C55E;box-shadow:0 0 0 3px rgba(34,197,94,.2);flex-shrink:0;"></div><span style="font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v900);">Live now — last updated <span style="color:var(--v500);">14 seconds ago</span></span><span style="font-family:var(--font-head);font-size:10px;color:var(--grey2);margin-left:auto;">Auto-refreshes every 30s</span></div>
+          </li>
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="3.5" stroke="#4F38A2" stroke-width="1.3"/><path d="M5 3v2l1.5 1" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8.5" cy="2" r="1" fill="#22C55E" stroke="none"/></svg></span><div><div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Real-time reporting across all modules.</div><div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">Every report in telecrm — calls, leads, campaigns, pipeline — is live. No scheduled batch runs, no overnight refresh. The number you see is current to the last action taken.</div></div></div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;display:flex;gap:8px;flex-wrap:wrap;"><span style="font-family:var(--font-head);font-size:10px;font-weight:700;background:#fff;border:1.5px solid var(--v100);color:var(--v700);padding:4px 10px;border-radius:100px;display:flex;align-items:center;gap:5px;"><span style="width:6px;height:6px;border-radius:50%;background:#22C55E;display:inline-block;flex-shrink:0;"></span>Call reports</span><span style="font-family:var(--font-head);font-size:10px;font-weight:700;background:#fff;border:1.5px solid var(--v100);color:var(--v700);padding:4px 10px;border-radius:100px;display:flex;align-items:center;gap:5px;"><span style="width:6px;height:6px;border-radius:50%;background:#22C55E;display:inline-block;flex-shrink:0;"></span>Lead pipeline</span><span style="font-family:var(--font-head);font-size:10px;font-weight:700;background:#fff;border:1.5px solid var(--v100);color:var(--v700);padding:4px 10px;border-radius:100px;display:flex;align-items:center;gap:5px;"><span style="width:6px;height:6px;border-radius:50%;background:#22C55E;display:inline-block;flex-shrink:0;"></span>Campaigns</span><span style="font-family:var(--font-head);font-size:10px;font-weight:700;background:#fff;border:1.5px solid var(--v100);color:var(--v700);padding:4px 10px;border-radius:100px;display:flex;align-items:center;gap:5px;"><span style="width:6px;height:6px;border-radius:50%;background:#22C55E;display:inline-block;flex-shrink:0;"></span>Dashboards</span></div>
+          </li>
+        </ul>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     02 — GRANULAR CALL BREAKDOWN
+     bg: #F8F7FC
+════════════════════════════════════ -->
+
+
+<!-- ═══════════════════════════════════
+     02 — PER-REP REPORTING DEPTH
+     bg: #F8F7FC
+════════════════════════════════════ -->
+<section class="s-tint">
+  <div class="inner">
+    <div class="s-stack">
+      <div>
+        <div class="s-eye">02 — Per-Rep Reporting Depth</div>
+        <h2 class="s-h2">Not just who called more.<br><em>Everything each rep did.</em></h2>
+        <p class="s-body">telecrm tracks every measurable action a rep takes across calls, tasks, WhatsApp, lead movement, and lead quality — and surfaces it per person, in real time. Managers get a complete picture of each rep's day without asking for a single update.</p>
+        <ul class="fbullets" style="gap:20px;">
+
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;">
+              <span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M8.5 7.2a7 7 0 01-1.35.7 8.3 8.3 0 01-5.65-5.65 7 7 0 01.7-1.35l1.8 1.3-.5 1c.46.87 1.18 1.58 2.05 2.04l1-.5 1.95 1.46z" stroke="#4F38A2" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <div>
+                <div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Calls — 9 metrics per rep.</div>
+                <div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">First call time, last call time, all calls made, incoming, outgoing, missed, connected, attempted, and total duration — every call dimension tracked as a count, giving managers a complete picture of calling effort and reach.</div>
+              </div>
+            </div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;">
+              <div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;">Call metrics — Ahmed Khan · Today</div>
+              <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;">
+                <div style="background:#fff;border:1.5px solid var(--border);border-radius:7px;padding:7px 8px;text-align:center;"><div style="font-family:var(--font-head);font-size:15px;font-weight:900;color:var(--v500);">89</div><div style="font-family:var(--font-head);font-size:8px;font-weight:700;color:var(--grey2);">All calls</div></div>
+                <div style="background:#fff;border:1.5px solid var(--border);border-radius:7px;padding:7px 8px;text-align:center;"><div style="font-family:var(--font-head);font-size:15px;font-weight:900;color:var(--v500);">67</div><div style="font-family:var(--font-head);font-size:8px;font-weight:700;color:var(--grey2);">Outgoing</div></div>
+                <div style="background:#fff;border:1.5px solid var(--border);border-radius:7px;padding:7px 8px;text-align:center;"><div style="font-family:var(--font-head);font-size:15px;font-weight:900;color:var(--v500);">12</div><div style="font-family:var(--font-head);font-size:8px;font-weight:700;color:var(--grey2);">Incoming</div></div>
+                <div style="background:#fff;border:1.5px solid var(--border);border-radius:7px;padding:7px 8px;text-align:center;"><div style="font-family:var(--font-head);font-size:15px;font-weight:900;color:#16A34A;">74</div><div style="font-family:var(--font-head);font-size:8px;font-weight:700;color:var(--grey2);">Connected</div></div>
+                <div style="background:#fff;border:1.5px solid var(--border);border-radius:7px;padding:7px 8px;text-align:center;"><div style="font-family:var(--font-head);font-size:15px;font-weight:900;color:var(--v900);">84</div><div style="font-family:var(--font-head);font-size:8px;font-weight:700;color:var(--grey2);">Attempted</div></div>
+                <div style="background:#fff;border:1.5px solid var(--border);border-radius:7px;padding:7px 8px;text-align:center;"><div style="font-family:var(--font-head);font-size:15px;font-weight:900;color:#EF4444;">10</div><div style="font-family:var(--font-head);font-size:8px;font-weight:700;color:var(--grey2);">Missed</div></div>
+              </div>
+              <div style="display:flex;gap:8px;margin-top:6px;">
+                <div style="background:#fff;border:1.5px solid var(--border);border-radius:7px;padding:7px 10px;flex:1;display:flex;align-items:center;gap:8px;"><div><div style="font-family:var(--font-head);font-size:8px;font-weight:700;color:var(--grey2);">First call</div><div style="font-family:var(--font-head);font-size:12px;font-weight:900;color:var(--v500);">9:04am</div></div></div>
+                <div style="background:#fff;border:1.5px solid var(--border);border-radius:7px;padding:7px 10px;flex:1;display:flex;align-items:center;gap:8px;"><div><div style="font-family:var(--font-head);font-size:8px;font-weight:700;color:var(--grey2);">Last call</div><div style="font-family:var(--font-head);font-size:12px;font-weight:900;color:var(--v500);">5:47pm</div></div></div>
+                <div style="background:#fff;border:1.5px solid var(--border);border-radius:7px;padding:7px 10px;flex:1;display:flex;align-items:center;gap:8px;"><div><div style="font-family:var(--font-head);font-size:8px;font-weight:700;color:var(--grey2);">Total duration</div><div style="font-family:var(--font-head);font-size:12px;font-weight:900;color:var(--v500);">4h 12m</div></div></div>
+              </div>
+            </div>
+          </li>
+
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;">
+              <span class="fbd"><svg viewBox="0 0 10 10" fill="none"><rect x="2" y="2" width="6" height="7" rx="0.8" stroke="#4F38A2" stroke-width="1.3"/><path d="M3.5 1.5h3" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round"/><path d="M3.5 4.5l1 1 2-2" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <div>
+                <div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Tasks — 4 states per rep.</div>
+                <div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">Every follow-up task is tracked across four states — late, pending, done, and created — so managers can see at a glance who is executing on their commitments and who is letting tasks pile up or expire.</div>
+              </div>
+            </div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;">
+              <div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;">Task count — Ahmed Khan · Today</div>
+              <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;">
+                <div style="background:#fff;border:1.5px solid var(--border);border-radius:7px;padding:8px;text-align:center;"><div style="font-family:var(--font-head);font-size:18px;font-weight:900;color:#EF4444;">3</div><div style="font-family:var(--font-head);font-size:8px;font-weight:700;color:var(--grey2);">Late</div></div>
+                <div style="background:#fff;border:1.5px solid var(--border);border-radius:7px;padding:8px;text-align:center;"><div style="font-family:var(--font-head);font-size:18px;font-weight:900;color:#D97706;">5</div><div style="font-family:var(--font-head);font-size:8px;font-weight:700;color:var(--grey2);">Pending</div></div>
+                <div style="background:#fff;border:1.5px solid var(--border);border-radius:7px;padding:8px;text-align:center;"><div style="font-family:var(--font-head);font-size:18px;font-weight:900;color:#16A34A;">12</div><div style="font-family:var(--font-head);font-size:8px;font-weight:700;color:var(--grey2);">Done</div></div>
+                <div style="background:#fff;border:1.5px solid var(--border);border-radius:7px;padding:8px;text-align:center;"><div style="font-family:var(--font-head);font-size:18px;font-weight:900;color:var(--v500);">20</div><div style="font-family:var(--font-head);font-size:8px;font-weight:700;color:var(--grey2);">Created</div></div>
+              </div>
+            </div>
+          </li>
+
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;">
+              <span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 2h7a.5.5 0 01.5.5v4a.5.5 0 01-.5.5H3.5L1.5 8.5V2.5a.5.5 0 01.5-.5z" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <div>
+                <div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">WhatsApp — incoming and outgoing per rep.</div>
+                <div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">Message counts for incoming and outgoing WhatsApp conversations are tracked per rep — so managers can see who is actively engaging leads over WhatsApp and how much inbound response that's generating.</div>
+              </div>
+            </div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;">
+              <div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;">WhatsApp message count — Today</div>
+              <div style="display:flex;gap:6px;">
+                <div style="background:#fff;border:1.5px solid var(--border);border-radius:7px;padding:10px 14px;flex:1;display:flex;align-items:center;gap:10px;">
+                  <svg viewBox="0 0 14 14" fill="none" width="18" height="18"><path d="M7 1.5a5.5 5.5 0 014.33 8.9L12.5 12.5l-2.1-1.17A5.5 5.5 0 117 1.5z" stroke="#25D366" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <div><div style="font-family:var(--font-head);font-size:8px;font-weight:700;color:var(--grey2);">Outgoing</div><div style="font-family:var(--font-head);font-size:20px;font-weight:900;color:var(--v900);">34</div><div style="font-size:9px;color:var(--grey2);">messages sent</div></div>
+                </div>
+                <div style="background:#fff;border:1.5px solid var(--border);border-radius:7px;padding:10px 14px;flex:1;display:flex;align-items:center;gap:10px;">
+                  <svg viewBox="0 0 14 14" fill="none" width="18" height="18"><path d="M7 1.5a5.5 5.5 0 014.33 8.9L12.5 12.5l-2.1-1.17A5.5 5.5 0 117 1.5z" stroke="#25D366" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <div><div style="font-family:var(--font-head);font-size:8px;font-weight:700;color:var(--grey2);">Incoming</div><div style="font-family:var(--font-head);font-size:20px;font-weight:900;color:var(--v900);">21</div><div style="font-size:9px;color:var(--grey2);">messages received</div></div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;">
+              <span class="fbd"><svg viewBox="0 0 10 10" fill="none"><rect x="1" y="1.5" width="8" height="2" rx=".5" stroke="#4F38A2" stroke-width="1.2"/><rect x="2" y="4.5" width="6" height="1.5" rx=".5" stroke="#4F38A2" stroke-width="1.2"/><rect x="3.5" y="7" width="3" height="1.5" rx=".5" stroke="#4F38A2" stroke-width="1.2"/></svg></span>
+              <div>
+                <div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Lead stages — full pipeline distribution per rep.</div>
+                <div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">For each rep, see how many leads sit in each stage — Initial (fresh leads), Active (call back scheduled, demo booked, meeting done), Closed (Won or Lost) — and for Lost leads, the exact reason: irrelevant, not interested, budget issues, language barrier, and more. Count of leads at every stage, per rep.</div>
+              </div>
+            </div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;">
+              <div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;">Lead stage distribution — Ahmed Khan</div>
+              <div style="display:flex;flex-direction:column;gap:5px;">
+                <!-- Initial -->
+                <div style="display:flex;align-items:center;gap:0;border-radius:8px;overflow:hidden;background:#fff;border:1.5px solid var(--border);">
+                  <div style="width:4px;background:var(--v200);align-self:stretch;flex-shrink:0;"></div>
+                  <div style="padding:7px 10px;flex:1;display:flex;align-items:center;justify-content:space-between;">
+                    <div><div style="font-family:var(--font-head);font-size:10px;font-weight:800;color:var(--v900);">Initial</div><div style="font-size:9px;color:var(--grey2);margin-top:1px;">Fresh leads not yet contacted</div></div>
+                    <div style="font-family:var(--font-head);font-size:16px;font-weight:900;color:var(--v500);">28</div>
+                  </div>
+                </div>
+                <!-- Active -->
+                <div style="display:flex;align-items:center;gap:0;border-radius:8px;overflow:hidden;background:#fff;border:1.5px solid var(--border);">
+                  <div style="width:4px;background:var(--v500);align-self:stretch;flex-shrink:0;"></div>
+                  <div style="padding:7px 10px;flex:1;">
+                    <div style="display:flex;align-items:center;justify-content:space-between;"><div style="font-family:var(--font-head);font-size:10px;font-weight:800;color:var(--v900);">Active</div><div style="font-family:var(--font-head);font-size:16px;font-weight:900;color:var(--v500);">41</div></div>
+                    <div style="display:flex;gap:4px;margin-top:4px;flex-wrap:wrap;">
+                      <span style="font-family:var(--font-head);font-size:8px;font-weight:700;background:var(--v50);color:var(--v500);border:1px solid var(--v100);padding:2px 7px;border-radius:100px;">Call back later · 18</span>
+                      <span style="font-family:var(--font-head);font-size:8px;font-weight:700;background:var(--v50);color:var(--v500);border:1px solid var(--v100);padding:2px 7px;border-radius:100px;">Demo scheduled · 11</span>
+                      <span style="font-family:var(--font-head);font-size:8px;font-weight:700;background:var(--v50);color:var(--v500);border:1px solid var(--v100);padding:2px 7px;border-radius:100px;">Meeting done · 8</span>
+                      <span style="font-family:var(--font-head);font-size:8px;font-weight:700;background:var(--v50);color:var(--v500);border:1px solid var(--v100);padding:2px 7px;border-radius:100px;">Webinar booked · 4</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Closed -->
+                <div style="display:flex;gap:6px;">
+                  <div style="display:flex;align-items:center;gap:0;border-radius:8px;overflow:hidden;background:#fff;border:1.5px solid var(--border);flex:1;">
+                    <div style="width:4px;background:#22C55E;align-self:stretch;flex-shrink:0;"></div>
+                    <div style="padding:7px 10px;flex:1;display:flex;align-items:center;justify-content:space-between;"><div><div style="font-family:var(--font-head);font-size:10px;font-weight:800;color:var(--v900);">Won</div></div><div style="font-family:var(--font-head);font-size:16px;font-weight:900;color:#16A34A;">7</div></div>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:0;border-radius:8px;overflow:hidden;background:#fff;border:1.5px solid var(--border);flex:1;">
+                    <div style="width:4px;background:#EF4444;align-self:stretch;flex-shrink:0;"></div>
+                    <div style="padding:7px 10px;flex:1;">
+                      <div style="display:flex;align-items:center;justify-content:space-between;"><div style="font-family:var(--font-head);font-size:10px;font-weight:800;color:var(--v900);">Lost</div><div style="font-family:var(--font-head);font-size:16px;font-weight:900;color:#EF4444;">13</div></div>
+                      <div style="display:flex;gap:4px;margin-top:4px;flex-wrap:wrap;">
+                        <span style="font-family:var(--font-head);font-size:8px;font-weight:700;background:rgba(239,68,68,.08);color:#EF4444;border:1px solid rgba(239,68,68,.15);padding:2px 7px;border-radius:100px;">Budget · 5</span>
+                        <span style="font-family:var(--font-head);font-size:8px;font-weight:700;background:rgba(239,68,68,.08);color:#EF4444;border:1px solid rgba(239,68,68,.15);padding:2px 7px;border-radius:100px;">Not interested · 4</span>
+                        <span style="font-family:var(--font-head);font-size:8px;font-weight:700;background:rgba(239,68,68,.08);color:#EF4444;border:1px solid rgba(239,68,68,.15);padding:2px 7px;border-radius:100px;">Irrelevant · 3</span>
+                        <span style="font-family:var(--font-head);font-size:8px;font-weight:700;background:rgba(239,68,68,.08);color:#EF4444;border:1px solid rgba(239,68,68,.15);padding:2px 7px;border-radius:100px;">Language · 1</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;">
+              <span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1.5l1.1 2.2 2.4.35-1.75 1.7.41 2.4L5 7l-2.16 1.15.41-2.4L1.5 4.05l2.4-.35z" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <div>
+                <div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Lead rating — quality split per rep.</div>
+                <div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">See how many leads each rep has rated at each quality level — 1 through 5 stars — as a count. This tells managers whether a rep is working high-quality leads or spending time on weak ones, and whether the lead pool itself is strong or diluted.</div>
+              </div>
+            </div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;">
+              <div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;">Lead rating distribution — Ahmed Khan</div>
+              <div style="display:flex;flex-direction:column;gap:5px;">
+                <div style="display:flex;align-items:center;gap:8px;">
+                  <div style="display:flex;gap:2px;flex-shrink:0;">
+                    <svg viewBox="0 0 10 10" fill="#F59E0B" width="10" height="10"><path d="M5 1l1.1 2.2 2.4.35-1.75 1.7.41 2.4L5 6.5l-2.16 1.15.41-2.4L1.5 3.55l2.4-.35z"/></svg>
+                    <svg viewBox="0 0 10 10" fill="#F59E0B" width="10" height="10"><path d="M5 1l1.1 2.2 2.4.35-1.75 1.7.41 2.4L5 6.5l-2.16 1.15.41-2.4L1.5 3.55l2.4-.35z"/></svg>
+                    <svg viewBox="0 0 10 10" fill="#F59E0B" width="10" height="10"><path d="M5 1l1.1 2.2 2.4.35-1.75 1.7.41 2.4L5 6.5l-2.16 1.15.41-2.4L1.5 3.55l2.4-.35z"/></svg>
+                    <svg viewBox="0 0 10 10" fill="#F59E0B" width="10" height="10"><path d="M5 1l1.1 2.2 2.4.35-1.75 1.7.41 2.4L5 6.5l-2.16 1.15.41-2.4L1.5 3.55l2.4-.35z"/></svg>
+                    <svg viewBox="0 0 10 10" fill="#F59E0B" width="10" height="10"><path d="M5 1l1.1 2.2 2.4.35-1.75 1.7.41 2.4L5 6.5l-2.16 1.15.41-2.4L1.5 3.55l2.4-.35z"/></svg>
+                  </div>
+                  <div style="flex:1;height:8px;border-radius:100px;overflow:hidden;background:var(--v100);"><div style="height:100%;width:76%;background:#F59E0B;border-radius:100px;"></div></div>
+                  <span style="font-family:var(--font-head);font-size:11px;font-weight:900;color:var(--v900);width:24px;text-align:right;">19</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;">
+                  <div style="display:flex;gap:2px;flex-shrink:0;">
+                    <svg viewBox="0 0 10 10" fill="#F59E0B" width="10" height="10"><path d="M5 1l1.1 2.2 2.4.35-1.75 1.7.41 2.4L5 6.5l-2.16 1.15.41-2.4L1.5 3.55l2.4-.35z"/></svg>
+                    <svg viewBox="0 0 10 10" fill="#F59E0B" width="10" height="10"><path d="M5 1l1.1 2.2 2.4.35-1.75 1.7.41 2.4L5 6.5l-2.16 1.15.41-2.4L1.5 3.55l2.4-.35z"/></svg>
+                    <svg viewBox="0 0 10 10" fill="#F59E0B" width="10" height="10"><path d="M5 1l1.1 2.2 2.4.35-1.75 1.7.41 2.4L5 6.5l-2.16 1.15.41-2.4L1.5 3.55l2.4-.35z"/></svg>
+                    <svg viewBox="0 0 10 10" fill="#F59E0B" width="10" height="10"><path d="M5 1l1.1 2.2 2.4.35-1.75 1.7.41 2.4L5 6.5l-2.16 1.15.41-2.4L1.5 3.55l2.4-.35z"/></svg>
+                    <svg viewBox="0 0 10 10" fill="#E2E8F0" width="10" height="10"><path d="M5 1l1.1 2.2 2.4.35-1.75 1.7.41 2.4L5 6.5l-2.16 1.15.41-2.4L1.5 3.55l2.4-.35z"/></svg>
+                  </div>
+                  <div style="flex:1;height:8px;border-radius:100px;overflow:hidden;background:var(--v100);"><div style="height:100%;width:56%;background:#FBBF24;border-radius:100px;"></div></div>
+                  <span style="font-family:var(--font-head);font-size:11px;font-weight:900;color:var(--v900);width:24px;text-align:right;">14</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;">
+                  <div style="display:flex;gap:2px;flex-shrink:0;">
+                    <svg viewBox="0 0 10 10" fill="#F59E0B" width="10" height="10"><path d="M5 1l1.1 2.2 2.4.35-1.75 1.7.41 2.4L5 6.5l-2.16 1.15.41-2.4L1.5 3.55l2.4-.35z"/></svg>
+                    <svg viewBox="0 0 10 10" fill="#F59E0B" width="10" height="10"><path d="M5 1l1.1 2.2 2.4.35-1.75 1.7.41 2.4L5 6.5l-2.16 1.15.41-2.4L1.5 3.55l2.4-.35z"/></svg>
+                    <svg viewBox="0 0 10 10" fill="#F59E0B" width="10" height="10"><path d="M5 1l1.1 2.2 2.4.35-1.75 1.7.41 2.4L5 6.5l-2.16 1.15.41-2.4L1.5 3.55l2.4-.35z"/></svg>
+                    <svg viewBox="0 0 10 10" fill="#E2E8F0" width="10" height="10"><path d="M5 1l1.1 2.2 2.4.35-1.75 1.7.41 2.4L5 6.5l-2.16 1.15.41-2.4L1.5 3.55l2.4-.35z"/></svg>
+                    <svg viewBox="0 0 10 10" fill="#E2E8F0" width="10" height="10"><path d="M5 1l1.1 2.2 2.4.35-1.75 1.7.41 2.4L5 6.5l-2.16 1.15.41-2.4L1.5 3.55l2.4-.35z"/></svg>
+                  </div>
+                  <div style="flex:1;height:8px;border-radius:100px;overflow:hidden;background:var(--v100);"><div style="height:100%;width:32%;background:#D97706;border-radius:100px;"></div></div>
+                  <span style="font-family:var(--font-head);font-size:11px;font-weight:900;color:var(--v900);width:24px;text-align:right;">8</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;">
+                  <div style="display:flex;gap:2px;flex-shrink:0;">
+                    <svg viewBox="0 0 10 10" fill="#F59E0B" width="10" height="10"><path d="M5 1l1.1 2.2 2.4.35-1.75 1.7.41 2.4L5 6.5l-2.16 1.15.41-2.4L1.5 3.55l2.4-.35z"/></svg>
+                    <svg viewBox="0 0 10 10" fill="#F59E0B" width="10" height="10"><path d="M5 1l1.1 2.2 2.4.35-1.75 1.7.41 2.4L5 6.5l-2.16 1.15.41-2.4L1.5 3.55l2.4-.35z"/></svg>
+                    <svg viewBox="0 0 10 10" fill="#E2E8F0" width="10" height="10"><path d="M5 1l1.1 2.2 2.4.35-1.75 1.7.41 2.4L5 6.5l-2.16 1.15.41-2.4L1.5 3.55l2.4-.35z"/></svg>
+                    <svg viewBox="0 0 10 10" fill="#E2E8F0" width="10" height="10"><path d="M5 1l1.1 2.2 2.4.35-1.75 1.7.41 2.4L5 6.5l-2.16 1.15.41-2.4L1.5 3.55l2.4-.35z"/></svg>
+                    <svg viewBox="0 0 10 10" fill="#E2E8F0" width="10" height="10"><path d="M5 1l1.1 2.2 2.4.35-1.75 1.7.41 2.4L5 6.5l-2.16 1.15.41-2.4L1.5 3.55l2.4-.35z"/></svg>
+                  </div>
+                  <div style="flex:1;height:8px;border-radius:100px;overflow:hidden;background:var(--v100);"><div style="height:100%;width:20%;background:#94A3B8;border-radius:100px;"></div></div>
+                  <span style="font-family:var(--font-head);font-size:11px;font-weight:900;color:var(--v900);width:24px;text-align:right;">5</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;">
+                  <div style="display:flex;gap:2px;flex-shrink:0;">
+                    <svg viewBox="0 0 10 10" fill="#F59E0B" width="10" height="10"><path d="M5 1l1.1 2.2 2.4.35-1.75 1.7.41 2.4L5 6.5l-2.16 1.15.41-2.4L1.5 3.55l2.4-.35z"/></svg>
+                    <svg viewBox="0 0 10 10" fill="#E2E8F0" width="10" height="10"><path d="M5 1l1.1 2.2 2.4.35-1.75 1.7.41 2.4L5 6.5l-2.16 1.15.41-2.4L1.5 3.55l2.4-.35z"/></svg>
+                    <svg viewBox="0 0 10 10" fill="#E2E8F0" width="10" height="10"><path d="M5 1l1.1 2.2 2.4.35-1.75 1.7.41 2.4L5 6.5l-2.16 1.15.41-2.4L1.5 3.55l2.4-.35z"/></svg>
+                    <svg viewBox="0 0 10 10" fill="#E2E8F0" width="10" height="10"><path d="M5 1l1.1 2.2 2.4.35-1.75 1.7.41 2.4L5 6.5l-2.16 1.15.41-2.4L1.5 3.55l2.4-.35z"/></svg>
+                    <svg viewBox="0 0 10 10" fill="#E2E8F0" width="10" height="10"><path d="M5 1l1.1 2.2 2.4.35-1.75 1.7.41 2.4L5 6.5l-2.16 1.15.41-2.4L1.5 3.55l2.4-.35z"/></svg>
+                  </div>
+                  <div style="flex:1;height:8px;border-radius:100px;overflow:hidden;background:var(--v100);"><div style="height:100%;width:8%;background:#CBD5E1;border-radius:100px;"></div></div>
+                  <span style="font-family:var(--font-head);font-size:11px;font-weight:900;color:var(--v900);width:24px;text-align:right;">2</span>
+                </div>
+              </div>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s-white">
+  <div class="inner">
+    <div class="s-stack">
+      <div>
+        <div class="s-eye">03 — Granular Call Breakdown</div>
+        <h2 class="s-h2">Every call. Every rep.<br><em>Every minute accounted for.</em></h2>
+        <p class="s-body">The granular call report gives managers a full per-rep breakdown of calling activity — not just totals, but the specifics that drive coaching decisions: first call time, last call time, connected vs attempted, duration, and missed calls.</p>
+        <ul class="fbullets" style="gap:20px;">
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="3.5" stroke="#4F38A2" stroke-width="1.3"/><path d="M5 3v2l1.5 1" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">First and last call time.</div><div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">Know when each rep started their day and when they made their last call — the data that reveals who is working the full shift and who isn't.</div></div></div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;display:flex;flex-direction:column;gap:6px;">
+              <div style="display:flex;align-items:center;justify-content:space-between;"><div style="display:flex;align-items:center;gap:7px;"><div style="width:20px;height:20px;border-radius:50%;background:#7260B5;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:7px;font-weight:800;color:#fff;">AK</div><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);">Ahmed Khan</span></div><div style="display:flex;gap:12px;"><span style="font-family:var(--font-head);font-size:10px;color:var(--grey2);">First: <strong style="color:var(--v500);">9:04am</strong></span><span style="font-family:var(--font-head);font-size:10px;color:var(--grey2);">Last: <strong style="color:var(--v500);">5:47pm</strong></span></div></div>
+              <div style="display:flex;align-items:center;justify-content:space-between;"><div style="display:flex;align-items:center;gap:7px;"><div style="width:20px;height:20px;border-radius:50%;background:#EC4899;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:7px;font-weight:800;color:#fff;">NK</div><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);">Neha Kapoor</span></div><div style="display:flex;gap:12px;"><span style="font-family:var(--font-head);font-size:10px;color:var(--grey2);">First: <strong style="color:#D97706;">10:02am</strong></span><span style="font-family:var(--font-head);font-size:10px;color:var(--grey2);">Last: <strong style="color:var(--grey2);">3:55pm</strong></span></div></div>
+            </div>
+          </li>
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M8.5 7.2a7 7 0 01-1.35.7 8.3 8.3 0 01-5.65-5.65 7 7 0 01.7-1.35l1.8 1.3-.5 1c.46.87 1.18 1.58 2.05 2.04l1-.5 1.95 1.46z" stroke="#4F38A2" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 2l1.5 1.5L5.5 5" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Connected vs attempted.</div><div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">Total calls attempted tells you effort. Connected calls tells you reach. The gap between the two reveals call quality and number reachability issues.</div></div></div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;display:flex;gap:16px;align-items:center;">
+              <div style="text-align:center;"><div style="font-family:var(--font-head);font-size:22px;font-weight:900;color:var(--v900);">266</div><div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;">Attempted</div></div>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--v300)" stroke-width="1.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <div style="text-align:center;"><div style="font-family:var(--font-head);font-size:22px;font-weight:900;color:#16A34A;">193</div><div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;">Connected</div></div>
+              <div style="height:40px;width:1px;background:var(--border);flex-shrink:0;"></div>
+              <div style="text-align:center;"><div style="font-family:var(--font-head);font-size:18px;font-weight:900;color:var(--v500);">72.5%</div><div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;">Connect rate</div></div>
+            </div>
+          </li>
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 8.5v-5M4 8.5v-3M6.5 8.5V2M9 8.5V4" stroke="#4F38A2" stroke-width="1.5" stroke-linecap="round"/></svg></span><div><div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Total talk time and average duration.</div><div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">Track how long reps are actually talking — short calls may indicate early hang-ups or disengaged leads, long calls may indicate strong conversations.</div></div></div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;display:flex;gap:16px;align-items:center;">
+              <div style="text-align:center;"><div style="font-family:var(--font-head);font-size:20px;font-weight:900;color:var(--v500);">12h 24m</div><div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;">Total talk time</div></div>
+              <div style="height:40px;width:1px;background:var(--border);flex-shrink:0;"></div>
+              <div style="text-align:center;"><div style="font-family:var(--font-head);font-size:20px;font-weight:900;color:var(--v900);">2m 48s</div><div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;">Avg duration</div></div>
+              <div style="height:40px;width:1px;background:var(--border);flex-shrink:0;"></div>
+              <div style="text-align:center;"><div style="font-family:var(--font-head);font-size:20px;font-weight:900;color:#D97706;">41</div><div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;">Missed</div></div>
+            </div>
+          </li>
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M6.5 2L8 3.5M8 2L6.5 3.5" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round"/><path d="M8.5 7.2a7 7 0 01-1.35.7 8.3 8.3 0 01-5.65-5.65 7 7 0 01.7-1.35l1.8 1.3-.5 1c.46.87 1.18 1.58 2.05 2.04l1-.5 1.95 1.46z" stroke="#4F38A2" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Outgoing, incoming, and missed breakdown.</div><div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">See the full call type split per rep — who is proactively calling out, who is only taking inbound, and who is missing calls they should be answering.</div></div></div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;">
+              <div style="display:flex;gap:0;height:12px;border-radius:100px;overflow:hidden;margin-bottom:8px;"><div style="width:68%;background:var(--v500);"></div><div style="width:17%;background:var(--v300);"></div><div style="width:15%;background:#EF4444;"></div></div>
+              <div style="display:flex;gap:12px;flex-wrap:wrap;"><div style="display:flex;align-items:center;gap:5px;"><div style="width:8px;height:8px;border-radius:2px;background:var(--v500);"></div><span style="font-family:var(--font-head);font-size:10px;color:var(--v900);">Outgoing <strong style="color:var(--v500);">68%</strong></span></div><div style="display:flex;align-items:center;gap:5px;"><div style="width:8px;height:8px;border-radius:2px;background:var(--v300);"></div><span style="font-family:var(--font-head);font-size:10px;color:var(--v900);">Incoming <strong style="color:var(--v500);">17%</strong></span></div><div style="display:flex;align-items:center;gap:5px;"><div style="width:8px;height:8px;border-radius:2px;background:#EF4444;"></div><span style="font-family:var(--font-head);font-size:10px;color:var(--v900);">Missed <strong style="color:#EF4444;">15%</strong></span></div></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     03 — LEAD PIPELINE & FUNNEL REPORTS
+     bg: white
+════════════════════════════════════ -->
+<section class="s-tint">
+  <div class="inner">
+    <div class="s-stack">
+      <div>
+        <div class="s-eye">04 — Funnel, Pipeline &amp; Conversion Reports</div>
+        <h2 class="s-h2">Pinpoint where<br><em>revenue is being lost.</em></h2>
+        <p class="s-body">Funnel analysis, lead conversion tracking, and sales performance reports give managers a complete view of where deals progress, where they stall, and which reps and sources are driving real revenue.</p>
+        <ul class="fbullets" style="gap:20px;">
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><rect x="1" y="1.5" width="8" height="2" rx=".5" stroke="#4F38A2" stroke-width="1.2"/><rect x="2" y="4.5" width="6" height="1.5" rx=".5" stroke="#4F38A2" stroke-width="1.2"/><rect x="3.5" y="7" width="3" height="1.5" rx=".5" stroke="#4F38A2" stroke-width="1.2"/></svg></span><div><div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Stage-by-stage drop-off analysis.</div><div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">See how many leads entered each stage, how many progressed, and how many stalled or were lost — across your entire pipeline or filtered by date, source, or rep.</div></div></div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;display:flex;flex-direction:column;gap:5px;">
+              <div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px;">Pipeline funnel — this month</div>
+              <div style="display:flex;align-items:center;gap:8px;"><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);width:80px;flex-shrink:0;">New</span><div style="flex:1;height:10px;border-radius:4px;overflow:hidden;background:var(--v100);"><div style="height:100%;width:100%;background:var(--v500);"></div></div><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v500);width:40px;text-align:right;">1,247</span></div>
+              <div style="display:flex;align-items:center;gap:8px;"><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);width:80px;flex-shrink:0;">Contacted</span><div style="flex:1;height:10px;border-radius:4px;overflow:hidden;background:var(--v100);"><div style="height:100%;width:81%;background:var(--v400);"></div></div><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v500);width:40px;text-align:right;">81%</span></div>
+              <div style="display:flex;align-items:center;gap:8px;"><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);width:80px;flex-shrink:0;">Interested</span><div style="flex:1;height:10px;border-radius:4px;overflow:hidden;background:var(--v100);"><div style="height:100%;width:47%;background:var(--v300);"></div></div><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v500);width:40px;text-align:right;">47%</span></div>
+              <div style="display:flex;align-items:center;gap:8px;"><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);width:80px;flex-shrink:0;">Won</span><div style="flex:1;height:10px;border-radius:4px;overflow:hidden;background:var(--v100);"><div style="height:100%;width:11%;background:#22C55E;"></div></div><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:#16A34A;width:40px;text-align:right;">11%</span></div>
+            </div>
+          </li>
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M2 7.5l2.5-3 2 1.5L9 2" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="2" r="1" fill="#22C55E" stroke="none"/></svg></span><div><div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Lead conversion reports.</div><div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">Track what percentage of leads at each stage convert to the next — and which reps, sources, and time periods produce the highest conversion rates across the full journey from new lead to closed deal.</div></div></div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;display:flex;gap:16px;align-items:center;">
+              <div style="text-align:center;flex-shrink:0;"><div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">Overall conversion</div><div style="font-family:var(--font-head);font-size:22px;font-weight:900;color:var(--v500);">11.8%</div></div>
+              <div style="height:40px;width:1px;background:var(--border);flex-shrink:0;"></div>
+              <div style="flex:1;display:flex;flex-direction:column;gap:4px;">
+                <div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px;">Conversion rate by rep</div>
+                <div style="display:flex;align-items:center;gap:6px;"><span style="font-family:var(--font-head);font-size:9px;color:var(--grey2);width:58px;flex-shrink:0;">Ahmed K.</span><div style="flex:1;height:6px;background:var(--v100);border-radius:100px;overflow:hidden;"><div style="height:100%;width:82%;background:#22C55E;border-radius:100px;"></div></div><span style="font-family:var(--font-head);font-size:9px;font-weight:700;color:#16A34A;width:36px;text-align:right;">16.4%</span></div>
+                <div style="display:flex;align-items:center;gap:6px;"><span style="font-family:var(--font-head);font-size:9px;color:var(--grey2);width:58px;flex-shrink:0;">Subu R.</span><div style="flex:1;height:6px;background:var(--v100);border-radius:100px;overflow:hidden;"><div style="height:100%;width:62%;background:var(--v500);border-radius:100px;"></div></div><span style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--v500);width:36px;text-align:right;">12.3%</span></div>
+                <div style="display:flex;align-items:center;gap:6px;"><span style="font-family:var(--font-head);font-size:9px;color:var(--grey2);width:58px;flex-shrink:0;">Preethi R.</span><div style="flex:1;height:6px;background:var(--v100);border-radius:100px;overflow:hidden;"><div style="height:100%;width:38%;background:#D97706;border-radius:100px;"></div></div><span style="font-family:var(--font-head);font-size:9px;font-weight:700;color:#D97706;width:36px;text-align:right;">7.6%</span></div>
+              </div>
+            </div>
+          </li>
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 8.5v-5M4 8.5v-3M6.5 8.5V2M9 8.5V4" stroke="#4F38A2" stroke-width="1.5" stroke-linecap="round"/></svg></span><div><div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Sales performance reports.</div><div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">Measure each rep's contribution to revenue — deals closed, pipeline generated, conversion rate, and average deal size. Compare performance across individuals, teams, and time periods.</div></div></div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;">
+              <div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;">Sales performance — this month</div>
+              <div style="display:flex;gap:10px;">
+              <div style="background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:10px 14px;flex:1;text-align:center;"><div style="font-family:var(--font-head);font-size:18px;font-weight:900;color:#16A34A;">₹48.2L</div><div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;">Pipeline</div></div>
+              <div style="background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:10px 14px;flex:1;text-align:center;"><div style="font-family:var(--font-head);font-size:18px;font-weight:900;color:var(--v500);">34%</div><div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;">Win rate</div></div>
+              <div style="background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:10px 14px;flex:1;text-align:center;"><div style="font-family:var(--font-head);font-size:18px;font-weight:900;color:var(--v900);">7.2d</div><div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;">Avg close</div></div>
+              </div>
+            </div>
+          </li>
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1.5L9 3.5 5 5.5 1 3.5z" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 6.5l4 2 4-2" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Source quality comparison.</div><div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">Which source converts at the highest rate — IndiaMart, Facebook, JustDial, or Google? telecrm shows conversion rate per source so you can optimise spend with data, not instinct.</div></div></div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;display:flex;flex-direction:column;gap:5px;">
+              <div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px;">Conversion rate by source</div>
+              <div style="display:flex;align-items:center;gap:8px;"><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);width:72px;flex-shrink:0;">Facebook</span><div style="flex:1;height:8px;border-radius:100px;overflow:hidden;background:var(--v100);"><div style="height:100%;width:71%;background:var(--v500);border-radius:100px;"></div></div><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v500);width:36px;text-align:right;">14.2%</span></div>
+              <div style="display:flex;align-items:center;gap:8px;"><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);width:72px;flex-shrink:0;">IndiaMART</span><div style="flex:1;height:8px;border-radius:100px;overflow:hidden;background:var(--v100);"><div style="height:100%;width:59%;background:var(--v400);border-radius:100px;"></div></div><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v500);width:36px;text-align:right;">11.8%</span></div>
+              <div style="display:flex;align-items:center;gap:8px;"><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);width:72px;flex-shrink:0;">JustDial</span><div style="flex:1;height:8px;border-radius:100px;overflow:hidden;background:var(--v100);"><div style="height:100%;width:42%;background:var(--v300);border-radius:100px;"></div></div><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v500);width:36px;text-align:right;">8.4%</span></div>
+              <div style="display:flex;align-items:center;gap:8px;"><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);width:72px;flex-shrink:0;">Google</span><div style="flex:1;height:8px;border-radius:100px;overflow:hidden;background:var(--v100);"><div style="height:100%;width:32%;background:#9C8FCF;border-radius:100px;"></div></div><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v500);width:36px;text-align:right;">6.3%</span></div>
+            </div>
+          </li>
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M7.5 3.5A3.2 3.2 0 105 8.2" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round"/><path d="M7.5 1.5v2h-2" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Stage velocity tracking.</div><div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">How long does a lead spend in each stage before progressing or being lost? Velocity data shows where deals stagnate so managers can intervene before it's too late.</div></div></div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;">
+              <div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;">Avg time in stage</div>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;">
+              <div style="background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:8px 12px;text-align:center;"><div style="font-family:var(--font-head);font-size:14px;font-weight:900;color:var(--v500);">1.2d</div><div style="font-family:var(--font-head);font-size:9px;color:var(--grey2);">New → Contacted</div></div>
+              <div style="background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:8px 12px;text-align:center;"><div style="font-family:var(--font-head);font-size:14px;font-weight:900;color:var(--v500);">3.4d</div><div style="font-family:var(--font-head);font-size:9px;color:var(--grey2);">Contacted → Interested</div></div>
+              <div style="background:#fff;border:1.5px solid #EF4444;border-radius:8px;padding:8px 12px;text-align:center;"><div style="font-family:var(--font-head);font-size:14px;font-weight:900;color:#EF4444;">9.1d</div><div style="font-family:var(--font-head);font-size:9px;color:var(--grey2);">Interested → Won ⚠</div></div>
+              </div>
+            </div>
+          </li>
+        </ul>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     04 — HOURLY ACTIVITY REPORTS
+     bg: #F8F7FC
+════════════════════════════════════ -->
+<section class="s-white">
+  <div class="inner">
+    <div class="s-stack">
+      <div>
+        <div class="s-eye">05 — Hourly Activity Reports</div>
+        <h2 class="s-h2">See when your team is<br><em>most and least active.</em></h2>
+        <p class="s-body">Hourly activity reports show call volume hour by hour across the entire working day — so managers can identify peak windows, spot dead hours, and schedule their team's effort where it lands best.</p>
+        <ul class="fbullets" style="gap:20px;">
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="3.5" stroke="#4F38A2" stroke-width="1.3"/><path d="M5 3v2l1.5 1" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Hour-by-hour call volume.</div><div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">See exactly when calls are being made — which hours are peak, which are idle, and how activity patterns shift across the week.</div></div></div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;">
+              <div style="display:flex;align-items:flex-end;gap:4px;margin-bottom:4px;">
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;"><div style="width:100%;border-radius:2px 2px 0 0;background:var(--v100);height:10px;"></div><div style="font-family:var(--font-head);font-size:7px;color:var(--grey2);">9am</div></div>
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;"><div style="width:100%;border-radius:2px 2px 0 0;background:var(--v300);height:28px;"></div><div style="font-family:var(--font-head);font-size:7px;color:var(--grey2);">10am</div></div>
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;"><div style="width:100%;border-radius:2px 2px 0 0;background:var(--v500);height:46px;"></div><div style="font-family:var(--font-head);font-size:7px;color:var(--grey2);">11am</div></div>
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;"><div style="width:100%;border-radius:2px 2px 0 0;background:var(--v500);height:52px;"></div><div style="font-family:var(--font-head);font-size:7px;color:var(--grey2);">12pm</div></div>
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;"><div style="width:100%;border-radius:2px 2px 0 0;background:#E9EBF8;height:8px;"></div><div style="font-family:var(--font-head);font-size:7px;color:var(--grey2);">1pm</div></div>
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;"><div style="width:100%;border-radius:2px 2px 0 0;background:var(--v300);height:36px;"></div><div style="font-family:var(--font-head);font-size:7px;color:var(--grey2);">2pm</div></div>
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;"><div style="width:100%;border-radius:2px 2px 0 0;background:var(--v500);height:44px;"></div><div style="font-family:var(--font-head);font-size:7px;color:var(--grey2);">3pm</div></div>
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;"><div style="width:100%;border-radius:2px 2px 0 0;background:var(--v300);height:32px;"></div><div style="font-family:var(--font-head);font-size:7px;color:var(--grey2);">4pm</div></div>
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;"><div style="width:100%;border-radius:2px 2px 0 0;background:var(--v100);height:20px;"></div><div style="font-family:var(--font-head);font-size:7px;color:var(--grey2);">5pm</div></div>
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;"><div style="width:100%;border-radius:2px 2px 0 0;background:#E9EBF8;height:5px;"></div><div style="font-family:var(--font-head);font-size:7px;color:var(--grey2);">6pm</div></div>
+              </div>
+            </div>
+          </li>
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M1 5s1.5-3 4-3 4 3 4 3-1.5 3-4 3-4-3-4-3z" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round"/><circle cx="5" cy="5" r="1.2" stroke="#4F38A2" stroke-width="1.2"/></svg></span><div><div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Identify peak calling windows.</div><div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">Know which hours produce the most connected calls — so campaigns and follow-ups are scheduled when leads are most likely to answer.</div></div></div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;display:flex;gap:10px;"><div style="background:#fff;border:1.5px solid var(--v200);border-radius:8px;padding:8px 12px;text-align:center;flex:1;"><div style="font-family:var(--font-head);font-size:14px;font-weight:900;color:var(--v500);">11am–12pm</div><div style="font-family:var(--font-head);font-size:9px;color:var(--grey2);">Peak window</div><div style="font-size:9px;color:#16A34A;font-weight:600;margin-top:2px;">Highest connect rate</div></div><div style="background:#fff;border:1.5px solid var(--v200);border-radius:8px;padding:8px 12px;text-align:center;flex:1;"><div style="font-family:var(--font-head);font-size:14px;font-weight:900;color:var(--v500);">2pm–4pm</div><div style="font-family:var(--font-head);font-size:9px;color:var(--grey2);">Second peak</div><div style="font-size:9px;color:#16A34A;font-weight:600;margin-top:2px;">Good for follow-ups</div></div></div>
+          </li>
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M6.5 1.5l2 2L3 9H1v-2l5.5-5.5z" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Spot dead hours and intervene.</div><div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">Long gaps in activity during core working hours are visible immediately — managers can check in, realign, or redistribute work before the day is lost.</div></div></div>
+            <div style="background:rgba(239,68,68,.06);border:1.5px solid rgba(239,68,68,.2);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;display:flex;align-items:center;gap:10px;"><svg viewBox="0 0 12 12" fill="none" stroke="#EF4444" stroke-width="1.5" stroke-linecap="round" width="14" height="14"><path d="M6 1.5L9.5 8H2.5z"/><path d="M6 5v1.5"/><circle cx="6" cy="8" r=".4" fill="#EF4444"/></svg><span style="font-family:var(--font-head);font-size:11px;font-weight:700;color:#EF4444;">Dead hour detected — 1pm to 2pm: only 15 calls</span></div>
+          </li>
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1.5v5M3 4.5L5 6.5l2-2" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M1.5 8.5h7" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round"/></svg></span><div><div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Download per day with lead counts.</div><div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">Export the hourly breakdown for any specific date — call volume by hour alongside the number of unique leads contacted in each window.</div></div></div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;display:flex;align-items:center;justify-content:space-between;"><span style="font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v900);">Hourly activity · 11 May 2026</span><span style="font-family:var(--font-head);font-size:10px;font-weight:700;background:var(--v500);color:#fff;padding:5px 12px;border-radius:100px;">Download CSV</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     05 — CUSTOM DASHBOARDS & BI ANALYTICS
+     bg: white
+════════════════════════════════════ -->
+<section class="s-tint">
+  <div class="inner">
+    <div class="s-stack">
+      <div>
+        <div class="s-eye">06 — Custom Dashboards &amp; BI Analytics</div>
+        <h2 class="s-h2">Dashboards built<br><em>for your business, not a template.</em></h2>
+        <p class="s-body">telecrm's dashboard and analytics layer goes beyond standard reports — managers can build dashboards that show exactly what their team, pipeline, or business needs. BI-level analysis without a data team.</p>
+        <ul class="fbullets" style="gap:20px;">
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><rect x="1" y="1" width="3.5" height="3.5" rx=".5" stroke="#4F38A2" stroke-width="1.3"/><rect x="5.5" y="1" width="3.5" height="3.5" rx=".5" stroke="#4F38A2" stroke-width="1.3"/><rect x="1" y="5.5" width="3.5" height="3.5" rx=".5" stroke="#4F38A2" stroke-width="1.3"/><rect x="5.5" y="5.5" width="3.5" height="3.5" rx=".5" stroke="#4F38A2" stroke-width="1.3"/></svg></span><div><div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Custom dashboards per role.</div><div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">Each dashboard holds 6 configurable cards — chosen by the manager from the full library of available reports and plots. A sales manager picks conversion rate, pipeline value, and rep leaderboard. A founder picks revenue trend, source ROI, and target tracking. Same platform, completely different views — configured once, live always.</div></div></div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:12px 14px;margin-left:32px;max-width:520px;">
+              <!-- Dashboard header -->
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+                <div style="display:flex;align-items:center;gap:8px;">
+                  <div style="font-family:var(--font-head);font-size:11px;font-weight:800;color:var(--v900);">Sales Manager Dashboard</div>
+                  <span style="font-family:var(--font-head);font-size:9px;font-weight:700;background:var(--v50);color:var(--v500);border:1.5px solid var(--v100);padding:2px 8px;border-radius:100px;">6 / 6 slots</span>
+                </div>
+                <span style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--v500);cursor:pointer;">+ Add card</span>
+              </div>
+              <!-- 2×3 grid of 6 slots -->
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+                <!-- Slot 1: Conversion rate — mini stat -->
+                <div style="background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:8px 10px;">
+                  <div style="font-family:var(--font-head);font-size:8px;font-weight:700;color:var(--grey2);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;">Conversion rate</div>
+                  <div style="font-family:var(--font-head);font-size:18px;font-weight:900;color:var(--v500);">11.8%</div>
+                  <div style="font-size:9px;color:#16A34A;margin-top:2px;">↑ 1.4% vs last month</div>
+                </div>
+                <!-- Slot 2: Pipeline value -->
+                <div style="background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:8px 10px;">
+                  <div style="font-family:var(--font-head);font-size:8px;font-weight:700;color:var(--grey2);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;">Pipeline value</div>
+                  <div style="font-family:var(--font-head);font-size:18px;font-weight:900;color:var(--v900);">₹48.2L</div>
+                  <div style="font-size:9px;color:var(--grey2);margin-top:2px;">Across 299 active leads</div>
+                </div>
+                <!-- Slot 3: Rep leaderboard mini -->
+                <div style="background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:8px 10px;">
+                  <div style="font-family:var(--font-head);font-size:8px;font-weight:700;color:var(--grey2);text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px;">Top reps today</div>
+                  <div style="display:flex;flex-direction:column;gap:3px;">
+                    <div style="display:flex;align-items:center;gap:5px;"><span style="font-family:var(--font-head);font-size:9px;font-weight:900;color:#F59E0B;">1</span><div style="width:14px;height:14px;border-radius:50%;background:#7260B5;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:5px;font-weight:800;color:#fff;flex-shrink:0;">AK</div><span style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--v900);flex:1;">Ahmed K.</span><span style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--v500);">89</span></div>
+                    <div style="display:flex;align-items:center;gap:5px;"><span style="font-family:var(--font-head);font-size:9px;font-weight:900;color:var(--v300);">2</span><div style="width:14px;height:14px;border-radius:50%;background:#4F38A2;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:5px;font-weight:800;color:#fff;flex-shrink:0;">SB</div><span style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--v900);flex:1;">Subu R.</span><span style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--v500);">74</span></div>
+                  </div>
+                </div>
+                <!-- Slot 4: Source quality mini bars -->
+                <div style="background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:8px 10px;">
+                  <div style="font-family:var(--font-head);font-size:8px;font-weight:700;color:var(--grey2);text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px;">Source conversion</div>
+                  <div style="display:flex;flex-direction:column;gap:3px;">
+                    <div style="display:flex;align-items:center;gap:4px;"><span style="font-family:var(--font-head);font-size:8px;color:var(--grey2);width:42px;flex-shrink:0;">Facebook</span><div style="flex:1;height:5px;border-radius:100px;background:var(--v100);overflow:hidden;"><div style="height:100%;width:71%;background:var(--v500);border-radius:100px;"></div></div><span style="font-family:var(--font-head);font-size:8px;font-weight:700;color:var(--v500);width:28px;text-align:right;">14.2%</span></div>
+                    <div style="display:flex;align-items:center;gap:4px;"><span style="font-family:var(--font-head);font-size:8px;color:var(--grey2);width:42px;flex-shrink:0;">IndiaMRT</span><div style="flex:1;height:5px;border-radius:100px;background:var(--v100);overflow:hidden;"><div style="height:100%;width:59%;background:var(--v400);border-radius:100px;"></div></div><span style="font-family:var(--font-head);font-size:8px;font-weight:700;color:var(--v500);width:28px;text-align:right;">11.8%</span></div>
+                  </div>
+                </div>
+                <!-- Slot 5: Calls today stat -->
+                <div style="background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:8px 10px;">
+                  <div style="font-family:var(--font-head);font-size:8px;font-weight:700;color:var(--grey2);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;">Calls today</div>
+                  <div style="font-family:var(--font-head);font-size:18px;font-weight:900;color:var(--v900);">266</div>
+                  <div style="display:flex;gap:8px;margin-top:3px;"><span style="font-size:9px;color:#16A34A;">193 connected</span><span style="font-size:9px;color:#D97706;">41 missed</span></div>
+                </div>
+                <!-- Slot 6: empty / picker state -->
+                <div style="background:#fff;border:1.5px dashed var(--v200);border-radius:8px;padding:8px 10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:68px;">
+                  <div style="width:20px;height:20px;border-radius:6px;background:var(--v50);border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;">
+                    <svg viewBox="0 0 10 10" fill="none" width="10" height="10"><path d="M5 2v6M2 5h6" stroke="#9C8FCF" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  </div>
+                  <div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--v300);text-align:center;">Choose a card</div>
+                  <div style="font-family:var(--font-head);font-size:8px;color:var(--grey2);text-align:center;">Funnel · Tasks · Hourly · KPIs…</div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 8.5v-5M4 8.5v-3M6.5 8.5V2M9 8.5V4" stroke="#4F38A2" stroke-width="1.5" stroke-linecap="round"/></svg></span><div><div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">BI-level funnel and stage analytics.</div><div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">Funnel drop-off, stage velocity, source quality, rep performance — every dimension of your sales engine, visible in one place without exporting to a BI tool.</div></div></div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;display:flex;gap:8px;flex-wrap:wrap;"><span style="font-family:var(--font-head);font-size:10px;font-weight:700;background:#fff;border:1.5px solid var(--v100);color:var(--v700);padding:4px 10px;border-radius:100px;">Funnel drop-off</span><span style="font-family:var(--font-head);font-size:10px;font-weight:700;background:#fff;border:1.5px solid var(--v100);color:var(--v700);padding:4px 10px;border-radius:100px;">Stage velocity</span><span style="font-family:var(--font-head);font-size:10px;font-weight:700;background:#fff;border:1.5px solid var(--v100);color:var(--v700);padding:4px 10px;border-radius:100px;">Source quality</span><span style="font-family:var(--font-head);font-size:10px;font-weight:700;background:#fff;border:1.5px solid var(--v100);color:var(--v700);padding:4px 10px;border-radius:100px;">Rep performance</span></div>
+          </li>
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1.5L9 3.5 5 5.5 1 3.5z" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 6.5l4 2 4-2" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Rep leaderboards embedded in dashboards.</div><div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">Pull the leaderboard — calls, duration, sales — into any dashboard view, filtered by team, date range, or campaign.</div></div></div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;display:flex;flex-direction:column;gap:5px;">
+              <div style="display:flex;align-items:center;gap:8px;"><span style="font-family:var(--font-head);font-size:10px;font-weight:900;color:#F59E0B;width:18px;">#1</span><div style="width:18px;height:18px;border-radius:50%;background:#7260B5;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:6px;font-weight:800;color:#fff;flex-shrink:0;">AK</div><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);flex:1;margin-left:4px;">Ahmed Khan</span><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v500);">89 calls</span></div>
+              <div style="display:flex;align-items:center;gap:8px;"><span style="font-family:var(--font-head);font-size:10px;font-weight:900;color:var(--v300);width:18px;">#2</span><div style="width:18px;height:18px;border-radius:50%;background:#4F38A2;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:6px;font-weight:800;color:#fff;flex-shrink:0;">SB</div><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);flex:1;margin-left:4px;">Subu Rajan</span><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v500);">74 calls</span></div>
+            </div>
+          </li>
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 5h7M1.5 3h7M1.5 7h5" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round"/></svg></span><div><div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Always-on, always current.</div><div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">Dashboards are live — not scheduled batch runs or daily email digests. The number you see reflects what happened in the last minute, not last night.</div></div></div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;display:flex;align-items:center;gap:10px;"><div style="width:8px;height:8px;border-radius:50%;background:#22C55E;box-shadow:0 0 0 3px rgba(34,197,94,.2);flex-shrink:0;"></div><span style="font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v900);">Dashboard last updated <span style="color:var(--v500);">8 seconds ago</span></span></div>
+          </li>
+        </ul>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+
+
+<!-- ═══════════════════════════════════
+     06 — EXPORT & DOWNLOAD
+     bg: #F8F7FC
+════════════════════════════════════ -->
+<section class="s-white">
+  <div class="inner">
+    <div class="s-stack">
+      <div>
+        <div class="s-eye">07 — Export &amp; Download</div>
+        <h2 class="s-h2">Every report exportable.<br><em>No analysis blockers.</em></h2>
+        <p class="s-body">Every report in telecrm can be exported with custom date ranges — call reports, lead reports, campaign reports, funnel breakdowns. Download a CSV, share with your leadership, and present data that's always current.</p>
+        <ul class="fbullets" style="gap:20px;">
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><rect x="2" y="1.5" width="6" height="7.5" rx=".8" stroke="#4F38A2" stroke-width="1.3"/><path d="M4 5.5l1 1 2-2" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Custom date range filters.</div><div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">Set any date range — today, last 7 days, last month, a custom window — and generate the report instantly. No waiting, no request to an admin.</div></div></div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;display:flex;gap:6px;align-items:center;flex-wrap:wrap;"><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--grey2);">Date range:</span><span style="font-family:var(--font-head);font-size:10px;font-weight:600;background:#fff;border:1px solid var(--border);color:var(--grey2);padding:4px 10px;border-radius:100px;">Today</span><span style="font-family:var(--font-head);font-size:10px;font-weight:600;background:#fff;border:1px solid var(--border);color:var(--grey2);padding:4px 10px;border-radius:100px;">7 days</span><span style="font-family:var(--font-head);font-size:10px;font-weight:700;background:var(--v500);color:#fff;padding:4px 10px;border-radius:100px;">This month</span><span style="font-family:var(--font-head);font-size:10px;font-weight:600;background:#fff;border:1px solid var(--border);color:var(--grey2);padding:4px 10px;border-radius:100px;">Custom</span></div>
+          </li>
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1.5v5M3 4.5L5 6.5l2-2" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M1.5 8.5h7" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round"/></svg></span><div><div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">One-click CSV export.</div><div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">Download any report as a CSV file — call reports, lead reports, campaign reports. Formatted and ready to present without further manipulation.</div></div></div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;display:flex;flex-direction:column;gap:6px;"><div style="display:flex;align-items:center;gap:10px;padding:8px 10px;background:#fff;border:1.5px solid var(--border);border-radius:8px;"><span style="font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v900);flex:1;">Call Report · This month</span><span style="font-family:var(--font-head);font-size:9px;font-weight:700;background:var(--v500);color:#fff;padding:3px 10px;border-radius:100px;">Download CSV</span></div><div style="display:flex;align-items:center;gap:10px;padding:8px 10px;background:#fff;border:1.5px solid var(--border);border-radius:8px;"><span style="font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v900);flex:1;">Lead Report · This month</span><span style="font-family:var(--font-head);font-size:9px;font-weight:700;background:var(--v500);color:#fff;padding:3px 10px;border-radius:100px;">Download CSV</span></div><div style="display:flex;align-items:center;gap:10px;padding:8px 10px;background:#fff;border:1.5px solid var(--border);border-radius:8px;"><span style="font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v900);flex:1;">Campaign Report · This month</span><span style="font-family:var(--font-head);font-size:9px;font-weight:700;background:var(--v500);color:#fff;padding:3px 10px;border-radius:100px;">Download CSV</span></div></div>
+          </li>
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="3.5" stroke="#4F38A2" stroke-width="1.3"/><path d="M5 3v2l1.5 1" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Downloadable per day.</div><div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">The hourly activity report can be downloaded for any specific date — useful for reviewing team performance on a particular campaign day or event.</div></div></div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;display:flex;align-items:center;justify-content:space-between;"><span style="font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v900);">Hourly activity · 11 May 2026</span><span style="font-family:var(--font-head);font-size:10px;font-weight:700;background:var(--v500);color:#fff;padding:5px 12px;border-radius:100px;">Download CSV</span></div>
+          </li>
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 2h7a.5.5 0 01.5.5v4a.5.5 0 01-.5.5H3.5L1.5 8.5V2.5a.5.5 0 01.5-.5z" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3.5 4.5h3M3.5 6h1.5" stroke="#4F38A2" stroke-width="1.1" stroke-linecap="round"/></svg></span><div><div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Share with leadership in seconds.</div><div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">Exported reports are clean, labelled, and immediately presentable — no post-processing, no formula adjustments, no reformatting needed.</div></div></div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;display:flex;gap:8px;flex-wrap:wrap;"><span style="font-family:var(--font-head);font-size:10px;font-weight:700;background:#fff;border:1.5px solid var(--v100);color:var(--v700);padding:4px 10px;border-radius:100px;">Clean CSV</span><span style="font-family:var(--font-head);font-size:10px;font-weight:700;background:#fff;border:1.5px solid var(--v100);color:var(--v700);padding:4px 10px;border-radius:100px;">Pre-labelled columns</span><span style="font-family:var(--font-head);font-size:10px;font-weight:700;background:#fff;border:1.5px solid var(--v100);color:var(--v700);padding:4px 10px;border-radius:100px;">Excel-ready</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     07 — CAMPAIGN PERFORMANCE REPORTS
+     bg: white
+════════════════════════════════════ -->
+<section class="s-tint">
+  <div class="inner">
+    <div class="s-stack">
+      <div>
+        <div class="s-eye">08 — Campaign Performance Reports</div>
+        <h2 class="s-h2">Every campaign measured.<br><em>Every outcome visible.</em></h2>
+        <p class="s-body">Campaign performance reports give managers a complete view of how each calling campaign performed — who was assigned what, how many leads were attempted, what outcomes were recorded, and what drove losses. Scoped to the campaign, available in real time.</p>
+        <ul class="fbullets" style="gap:20px;">
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><circle cx="3" cy="3.5" r="1.5" stroke="#4F38A2" stroke-width="1.2"/><path d="M0.5 8.5c0-1.4 1.1-2.5 2.5-2.5" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round"/><path d="M6 5.5l2 2-2 2" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 7.5H5" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round"/></svg></span><div><div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Assignee report.</div><div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">How many leads were assigned to each rep in the campaign — and how many they worked, skipped, or left pending.</div></div></div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;display:flex;flex-direction:column;gap:6px;">
+              <div style="display:flex;align-items:center;gap:8px;"><div style="width:18px;height:18px;border-radius:50%;background:#7260B5;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:6px;font-weight:800;color:#fff;flex-shrink:0;">AK</div><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);flex:1;">Ahmed Khan</span><span style="font-family:var(--font-head);font-size:9px;color:var(--grey2);">70 assigned</span><span style="font-family:var(--font-head);font-size:9px;font-weight:700;color:#16A34A;margin-left:8px;">66 worked</span></div>
+              <div style="display:flex;align-items:center;gap:8px;"><div style="width:18px;height:18px;border-radius:50%;background:#4F38A2;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:6px;font-weight:800;color:#fff;flex-shrink:0;">SB</div><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);flex:1;">Subu Rajan</span><span style="font-family:var(--font-head);font-size:9px;color:var(--grey2);">114 assigned</span><span style="font-family:var(--font-head);font-size:9px;font-weight:700;color:#D97706;margin-left:8px;">51 worked</span></div>
+            </div>
+          </li>
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M8.5 7.2a7 7 0 01-1.35.7 8.3 8.3 0 01-5.65-5.65 7 7 0 01.7-1.35l1.8 1.3-.5 1c.46.87 1.18 1.58 2.05 2.04l1-.5 1.95 1.46z" stroke="#4F38A2" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Calling report.</div><div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">Total leads attempted, connected calls, pending leads, unanswered calls, and skipped leads — the four numbers that define campaign execution quality.</div></div></div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;display:flex;gap:12px;align-items:center;">
+              <div style="text-align:center;"><div style="font-family:var(--font-head);font-size:18px;font-weight:900;color:var(--v900);">184</div><div style="font-family:var(--font-head);font-size:8px;font-weight:700;color:var(--grey2);text-transform:uppercase;">Total</div></div>
+              <div style="text-align:center;"><div style="font-family:var(--font-head);font-size:18px;font-weight:900;color:var(--v500);">117</div><div style="font-family:var(--font-head);font-size:8px;font-weight:700;color:var(--grey2);text-transform:uppercase;">Attempted</div></div>
+              <div style="text-align:center;"><div style="font-family:var(--font-head);font-size:18px;font-weight:900;color:#16A34A;">89</div><div style="font-family:var(--font-head);font-size:8px;font-weight:700;color:var(--grey2);text-transform:uppercase;">Connected</div></div>
+              <div style="text-align:center;"><div style="font-family:var(--font-head);font-size:18px;font-weight:900;color:#EF4444;">7</div><div style="font-family:var(--font-head);font-size:8px;font-weight:700;color:var(--grey2);text-transform:uppercase;">Skipped</div></div>
+            </div>
+          </li>
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><rect x="1" y="1.5" width="8" height="2" rx=".5" stroke="#4F38A2" stroke-width="1.2"/><rect x="2" y="4.5" width="6" height="1.5" rx=".5" stroke="#4F38A2" stroke-width="1.2"/><rect x="3.5" y="7" width="3" height="1.5" rx=".5" stroke="#4F38A2" stroke-width="1.2"/></svg></span><div><div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Lead status report.</div><div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">What stage are leads in this campaign — Interested, Negotiating, Won, Lost? A real-time pipeline view scoped to the campaign, not the entire database.</div></div></div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;display:flex;flex-direction:column;gap:5px;">
+              <div style="display:flex;align-items:center;gap:8px;"><div style="width:8px;height:8px;border-radius:2px;background:var(--v500);flex-shrink:0;"></div><span style="font-family:var(--font-head);font-size:10px;font-weight:600;color:var(--v900);flex:1;">Interested</span><span style="font-family:var(--font-head);font-size:12px;font-weight:900;color:var(--v500);">38</span></div>
+              <div style="display:flex;align-items:center;gap:8px;"><div style="width:8px;height:8px;border-radius:2px;background:#8B5CF6;flex-shrink:0;"></div><span style="font-family:var(--font-head);font-size:10px;font-weight:600;color:var(--v900);flex:1;">Negotiating</span><span style="font-family:var(--font-head);font-size:12px;font-weight:900;color:var(--v500);">14</span></div>
+              <div style="display:flex;align-items:center;gap:8px;"><div style="width:8px;height:8px;border-radius:2px;background:#22C55E;flex-shrink:0;"></div><span style="font-family:var(--font-head);font-size:10px;font-weight:600;color:var(--v900);flex:1;">Won</span><span style="font-family:var(--font-head);font-size:12px;font-weight:900;color:#16A34A;">9</span></div>
+            </div>
+          </li>
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="3.5" stroke="#4F38A2" stroke-width="1.3"/><path d="M3.5 3.5l3 3M6.5 3.5l-3 3" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round"/></svg></span><div><div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Lost reason report.</div><div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">Every lead marked lost has a reason recorded — pricing, timing, budget, competition. The campaign aggregates these so managers know what's blocking conversion in this specific list.</div></div></div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;display:flex;gap:6px;flex-wrap:wrap;"><span style="font-family:var(--font-head);font-size:10px;font-weight:700;background:rgba(239,68,68,.1);color:#EF4444;padding:3px 10px;border-radius:100px;">Pricing (40%)</span><span style="font-family:var(--font-head);font-size:10px;font-weight:700;background:rgba(245,158,11,.1);color:#D97706;padding:3px 10px;border-radius:100px;">Budget (25%)</span><span style="font-family:var(--font-head);font-size:10px;font-weight:700;background:rgba(156,143,207,.15);color:var(--v400);padding:3px 10px;border-radius:100px;">Timing (20%)</span><span style="font-family:var(--font-head);font-size:10px;font-weight:700;background:rgba(148,163,184,.15);color:var(--grey);padding:3px 10px;border-radius:100px;">Competition (15%)</span></div>
+          </li>
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 8.5v-5M4 8.5v-3M6.5 8.5V2M9 8.5V4" stroke="#4F38A2" stroke-width="1.5" stroke-linecap="round"/></svg></span><div><div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Progress tracking.</div><div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">Live completion percentage — how many leads have been worked vs how many remain — with the option to inspect all leads in the campaign with a single filter.</div></div></div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;">
+              <div style="display:flex;justify-content:space-between;font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v900);margin-bottom:5px;"><span>Campaign progress</span><span style="color:var(--v500);">64%</span></div>
+              <div style="height:8px;background:var(--v100);border-radius:100px;overflow:hidden;"><div style="height:100%;width:64%;background:linear-gradient(90deg,var(--v400),var(--v500));border-radius:100px;"></div></div>
+              <div style="display:flex;justify-content:space-between;margin-top:5px;"><span style="font-size:10px;color:var(--grey2);">117 worked · 67 remaining</span><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v500);">● Live</span></div>
+            </div>
+          </li>
+        </ul>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+
+<!-- ═══════════════════════════════════
+     08 — PRODUCTIVITY REPORTS & KPI DASHBOARDS
+     bg: #F8F7FC
+════════════════════════════════════ -->
+<section class="s-white">
+  <div class="inner">
+    <div class="s-stack">
+      <div>
+        <div class="s-eye">09 — Productivity Reports &amp; KPI Dashboards</div>
+        <h2 class="s-h2">Agent productivity.<br><em>KPIs that actually matter.</em></h2>
+        <p class="s-body">Productivity reports give a per-rep view of working efficiency — not just how many calls were made, but when they started, how long they were active, how many tasks they completed, and how those numbers compare to team benchmarks. KPI dashboards surface the metrics that drive your specific business, configured once and always live.</p>
+        <ul class="fbullets" style="gap:20px;">
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><circle cx="3" cy="3.5" r="1.5" stroke="#4F38A2" stroke-width="1.2"/><path d="M0.5 8.5c0-1.4 1.1-2.5 2.5-2.5" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round"/><circle cx="7" cy="3.5" r="1" stroke="#4F38A2" stroke-width="1.1"/><path d="M7 6c.9 0 1.5.7 1.8 1.5" stroke="#4F38A2" stroke-width="1.1" stroke-linecap="round"/></svg></span><div><div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Agent-wise productivity reports.</div><div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">For every rep — calls made, talk time, tasks completed, follow-ups sent, leads updated. A complete daily productivity picture per person, not just aggregate team numbers.</div></div></div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;display:flex;flex-direction:column;gap:6px;">
+              <div style="display:grid;grid-template-columns:1fr 48px 48px 48px 48px;gap:0;padding-bottom:6px;border-bottom:1px solid var(--border);"><div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;">Rep</div><div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;text-align:center;">Calls</div><div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;text-align:center;">Tasks</div><div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;text-align:center;">Active</div><div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;text-align:center;">vs Tgt</div></div>
+              <div style="display:grid;grid-template-columns:1fr 48px 48px 48px 48px;gap:0;align-items:center;"><div style="display:flex;align-items:center;gap:6px;"><div style="width:18px;height:18px;border-radius:50%;background:#7260B5;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:7px;font-weight:800;color:#fff;">AK</div><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);">Ahmed K.</span></div><div style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);text-align:center;">89</div><div style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);text-align:center;">12</div><div style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);text-align:center;">7.2h</div><div style="text-align:center;"><span style="font-family:var(--font-head);font-size:9px;font-weight:700;background:rgba(34,197,94,.1);color:#16A34A;padding:1px 7px;border-radius:100px;">148%</span></div></div>
+              <div style="display:grid;grid-template-columns:1fr 48px 48px 48px 48px;gap:0;align-items:center;opacity:.7;"><div style="display:flex;align-items:center;gap:6px;"><div style="width:18px;height:18px;border-radius:50%;background:#9C8FCF;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:7px;font-weight:800;color:#fff;">PR</div><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);">Preethi R.</span></div><div style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);text-align:center;">44</div><div style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);text-align:center;">4</div><div style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);text-align:center;">4.1h</div><div style="text-align:center;"><span style="font-family:var(--font-head);font-size:9px;font-weight:700;background:rgba(245,158,11,.1);color:#D97706;padding:1px 7px;border-radius:100px;">73%</span></div></div>
+            </div>
+          </li>
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="3.5" stroke="#4F38A2" stroke-width="1.3"/><path d="M5 3v2l1.5 1" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Active hours vs idle hours.</div><div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">See how many hours each rep was genuinely active — calls made, leads updated, tasks actioned — vs logged in but idle. Spot disengagement before it affects results.</div></div></div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;"><div style="display:flex;justify-content:space-between;font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);margin-bottom:4px;"><span>Ahmed Khan</span><span style="color:var(--v500);">7.2h active / 1.3h idle</span></div><div style="height:8px;border-radius:100px;overflow:hidden;display:flex;"><div style="width:85%;background:var(--v500);"></div><div style="width:15%;background:#E9EBF8;"></div></div></div>
+          </li>
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 5h7M1.5 3h7M1.5 7h5" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round"/></svg></span><div><div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">KPI tracking dashboards.</div><div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">Define the KPIs your business tracks — calls per day, conversion rate, average response time, deals closed per month — and surface them in a persistent dashboard that every manager sees the moment they log in.</div></div></div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;display:flex;gap:8px;flex-wrap:wrap;"><div style="background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:8px 12px;text-align:center;"><div style="font-family:var(--font-head);font-size:16px;font-weight:900;color:var(--v500);">266</div><div style="font-family:var(--font-head);font-size:8px;font-weight:700;color:var(--grey2);">Calls today</div><div style="font-size:8px;color:#16A34A;font-weight:600;margin-top:2px;">Target: 60/rep ✓</div></div><div style="background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:8px 12px;text-align:center;"><div style="font-family:var(--font-head);font-size:16px;font-weight:900;color:#16A34A;">11.8%</div><div style="font-family:var(--font-head);font-size:8px;font-weight:700;color:var(--grey2);">Conversion</div><div style="font-size:8px;color:#16A34A;font-weight:600;margin-top:2px;">Target: 10% ✓</div></div><div style="background:#fff;border:1.5px solid #EF4444;border-radius:8px;padding:8px 12px;text-align:center;"><div style="font-family:var(--font-head);font-size:16px;font-weight:900;color:#D97706;">3.1h</div><div style="font-family:var(--font-head);font-size:8px;font-weight:700;color:var(--grey2);">Response time</div><div style="font-size:8px;color:#EF4444;font-weight:600;margin-top:2px;">Target: &lt;2h ✗</div></div></div>
+          </li>
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M2 7.5l2.5-3 2 1.5L9 2" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="2" r="1" fill="#22C55E" stroke="none"/></svg></span><div><div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Track vs target.</div><div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">Set targets for each KPI — 60 calls per day, 10% conversion rate, 2-hour response time — and see actual vs target for every rep, every day. No separate tracking sheet needed.</div></div></div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;display:flex;flex-direction:column;gap:6px;"><div style="display:flex;align-items:center;gap:8px;"><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);width:100px;flex-shrink:0;">Calls/day</span><div style="flex:1;height:7px;background:var(--v100);border-radius:100px;overflow:hidden;"><div style="height:100%;width:88%;background:#22C55E;border-radius:100px;"></div></div><span style="font-family:var(--font-head);font-size:9px;font-weight:700;color:#16A34A;width:52px;text-align:right;">53 / 60</span></div><div style="display:flex;align-items:center;gap:8px;"><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);width:100px;flex-shrink:0;">Conversion</span><div style="flex:1;height:7px;background:var(--v100);border-radius:100px;overflow:hidden;"><div style="height:100%;max-width:100%;background:#22C55E;border-radius:100px;"></div></div><span style="font-family:var(--font-head);font-size:9px;font-weight:700;color:#16A34A;width:52px;text-align:right;">11.8/10%</span></div><div style="display:flex;align-items:center;gap:8px;"><span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);width:100px;flex-shrink:0;">Response time</span><div style="flex:1;height:7px;background:var(--v100);border-radius:100px;overflow:hidden;"><div style="height:100%;width:64%;background:#EF4444;border-radius:100px;"></div></div><span style="font-family:var(--font-head);font-size:9px;font-weight:700;color:#EF4444;width:52px;text-align:right;">3.1h / 2h</span></div></div>
+          </li>
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;"><span class="fbd"><svg viewBox="0 0 10 10" fill="none"><rect x="2" y="2" width="6" height="7" rx="0.8" stroke="#4F38A2" stroke-width="1.3"/><path d="M3.5 1.5h3" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round"/><path d="M3.5 5.5l1 1 2-2" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Task completion tracking.</div><div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">Every follow-up task created and completed is logged per rep — so managers can see who is following up on commitments and who is letting tasks expire.</div></div></div>
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:10px 14px;margin-left:32px;max-width:520px;display:flex;gap:12px;align-items:center;"><div style="text-align:center;"><div style="font-family:var(--font-head);font-size:20px;font-weight:900;color:#16A34A;">84%</div><div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);">Tasks completed</div></div><div style="height:40px;width:1px;background:var(--border);"></div><div style="text-align:center;"><div style="font-family:var(--font-head);font-size:20px;font-weight:900;color:#EF4444;">7</div><div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);">Overdue tasks</div></div><div style="height:40px;width:1px;background:var(--border);"></div><div style="text-align:center;"><div style="font-family:var(--font-head);font-size:20px;font-weight:900;color:var(--v900);">12</div><div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);">Due today</div></div></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="final-cta__grid"></div>
+  <div class="final-cta__glow"></div>
+  <div class="final-cta__inner">
+    <div class="final-cta__badge">
+      <span class="final-cta__badge-dot"></span>
+      Free 30-minute demo
+    </div>
+    <div style="font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v300);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;">Join 5,000+ Indian sales teams</div>
+    <h2 class="final-cta__h2">Are you ready<br>to <em>get started?</em></h2>
+    <p class="final-cta__sub">No jargon. We'll show you exactly how telecrm works for your business — your industry, your team size, your lead sources. The demo is free. The setup is guided. The commitment is yours to make when you're ready.</p>
+    <div class="final-cta__cta-wrap">
+      <a href="telecrm-demo-request.html" class="btn-cta-white">
+        Get a Demo
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="final-cta__trust">
+      <span class="final-cta__trust-item"><span class="final-cta__trust-dot"></span>No credit card needed</span>
+      <span class="final-cta__trust-item"><span class="final-cta__trust-dot"></span>Response within 24 hours</span>
+      <span class="final-cta__trust-item"><span class="final-cta__trust-dot"></span>5,000+ businesses onboarded</span>
+      <span class="final-cta__trust-item"><span class="final-cta__trust-dot"></span>Fast setup</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<section class="faq">
+  <div class="faq__inner">
+    <div class="faq__header">
+      <div class="faq__eyebrow">FAQ</div>
+      <h2 class="faq__h2">Your questions, <em>answered plainly.</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">What reports does telecrm provide?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">Live leaderboards, call breakdowns, funnel analytics, hourly activity reports, and custom dashboards.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">Do I need spreadsheets to get insights?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">No — managers get the data they need without assembling a single spreadsheet.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">Can I see what each rep actually did?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">Yes — not just who called more, but everything each rep did, with every call and minute accounted for.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">Can reporting show where deals are lost?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">Yes — funnel analytics pinpoint exactly where revenue is being lost.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__logo">telecrm</div>
+        <p class="footer__tagline">A Comprehensive Revenue Management Engine — fusing Lead Management, Call Management, Adaptive CRM, Marketing Automation, and Pipeline Management into one high-performance workspace.</p>
+        <a href="telecrm-get-started.html" class="btn-primary">Get Started →</a>
+      </div>
+      <div class="footer__links-grid">
+      <div class="footer__col-stack">
+        <div>
+          <div class="footer__col-title">Platform</div>
+          <div class="footer__links">
+            <a href="telecrm-platform-overview.html" class="footer__link">Platform Overview</a>
+            <a href="telecrm-platform-hub.html" class="footer__link">Platform Hub</a>
+            <a href="telecrm-benefits-hub.html" class="footer__link">Benefits Hub</a>
+            <a href="telecrm-platform-unified-revenue-management.html" class="footer__link">Unified Revenue Management</a>
+            <a href="telecrm-platform-lead-management.html" class="footer__link">Lead Management</a>
+            <a href="telecrm-platform-call-management.html" class="footer__link">Call Management &amp; Recording</a>
+            <a href="telecrm-platform-adaptive-crm.html" class="footer__link">Adaptive CRM</a>
+            <a href="telecrm-platform-marketing-automation.html" class="footer__link">Marketing Automation</a>
+            <a href="telecrm-platform-sales-pipeline-management.html" class="footer__link">Sales Pipeline Management</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Pricing</div>
+          <div class="footer__links">
+            <a href="telecrm-pricing.html" class="footer__link">Pricing</a>
+            <a href="telecrm-cost-savings.html" class="footer__link">Cost Savings</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__col-stack">
+        <div>
+          <div class="footer__col-title">Solutions</div>
+          <div class="footer__links">
+            <a href="telecrm-problems-hub.html" class="footer__link">Problems Hub</a>
+            <a href="telecrm-crm-hub.html" class="footer__link">CRM Hub</a>
+            <a href="telecrm-industry-hub.html" class="footer__link">Industry Hub</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Get Started</div>
+          <div class="footer__links">
+            <a href="telecrm-partnership.html" class="footer__link">Partner Program</a>
+            <a href="telecrm-demo-request.html" class="footer__link">Demo Request</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__col-stack">
+        <div>
+          <div class="footer__col-title">Trust</div>
+          <div class="footer__links">
+            <a href="telecrm-testimonials.html" class="footer__link">Testimonials</a>
+            <a href="telecrm-case-studies.html" class="footer__link">Case Studies</a>
+            <a href="telecrm-comparison.html" class="footer__link">Comparison</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">About Us</div>
+          <div class="footer__links">
+            <a href="telecrm-about-telecrm.html" class="footer__link">About telecrm</a>
+            <a href="telecrm-life-at-telecrm.html" class="footer__link">Life at telecrm</a>
+            <a href="telecrm-careers.html" class="footer__link">Careers</a>
+            <a href="telecrm-contact.html" class="footer__link">Contact Us</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Support</div>
+        <div class="footer__links">
+          <a href="telecrm-faqs.html" class="footer__link">FAQs</a>
+          <a href="telecrm-glossary.html" class="footer__link">Glossary</a>
+          <a href="telecrm-learning-repository.html" class="footer__link">Learning Repository</a>
+          <a href="telecrm-onboarding.html" class="footer__link">Onboarding</a>
+          <a href="telecrm-privacy-policy.html" class="footer__link">Privacy Policy</a>
+          <a href="telecrm-recommended-devices.html" class="footer__link">Recommended Devices</a>
+          <a href="telecrm-refund-policy.html" class="footer__link">Refund Policy</a>
+          <a href="telecrm-terms-conditions.html" class="footer__link">Terms &amp; Conditions</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Features</div>
+        <div class="footer__links">
+          <a href="telecrm-feature-automations.html" class="footer__link">Automation</a>
+          <a href="telecrm-feature-call-management.html" class="footer__link">Call Management</a>
+          <a href="telecrm-feature-calling-campaign.html" class="footer__link">Calling Campaign Management</a>
+          <a href="telecrm-feature-integrations.html" class="footer__link">Integrations</a>
+          <a href="telecrm-feature-lead-fields.html" class="footer__link">Lead Fields</a>
+          <a href="telecrm-feature-lead-management.html" class="footer__link">Lead Management &amp; Reporting</a>
+          <a href="telecrm-feature-lead-stages.html" class="footer__link">Lead Stages</a>
+          <a href="telecrm-feature-list-labels.html" class="footer__link">List and Labels</a>
+          <a href="telecrm-feature-reporting.html" class="footer__link">Reporting</a>
+          <a href="telecrm-feature-user-management.html" class="footer__link">User Management</a>
+          <a href="telecrm-feature-whatsapp.html" class="footer__link">WhatsApp</a>
+        </div>
+      </div>
+      </div><!-- /footer__links-grid -->
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__copy">© 2026 telecrm. All rights reserved.</div>
+      <div class="footer__legal">
+        <a href="telecrm-privacy-policy.html">Privacy Policy</a>
+        <a href="telecrm-terms-conditions.html">Terms &amp; Conditions</a>
+        <a href="telecrm-refund-policy.html">Refund Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.querySelector('.nav__hamburger');
+  var links=document.querySelector('.nav__links');
+  if(btn&&links){
+    btn.addEventListener('click',function(){btn.classList.toggle('open');links.classList.toggle('open');});
+  }
+  var mq=window.matchMedia('(max-width:768px)');
+  document.querySelectorAll('.nav__item > .nav__link').forEach(function(hub){
+    hub.addEventListener('click',function(e){ if(mq.matches){ e.preventDefault(); hub.parentElement.classList.toggle('open'); } });
+  });
+  document.querySelectorAll('.np__link,.np__foot,.nav__cta,.nav__mobile-cta').forEach(function(l){
+    l.addEventListener('click',function(){ if(btn){btn.classList.remove('open');} if(links){links.classList.remove('open');} });
+  });
+})();
+</script>
+<script>
+function toggleFaq(el){
+  var item=el.parentElement;
+  var isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+  if(!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>

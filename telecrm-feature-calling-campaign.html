@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://telecrm.in/features/calling-campaign-management/">
+<title>Calling Campaign Management — telecrm Features</title>
+<meta name="description" content="Replace target sheets with structured calling campaigns. Assign leads, track progress, manage attempts, and run team-wise campaigns — all inside telecrm.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Calling Campaign Management — telecrm">
+<meta property="og:description" content="Replace target sheets with structured calling campaigns. Assign leads, track progress, manage attempts, and run team-wise campaigns.">
+<meta property="og:url" content="https://telecrm.in/features/calling-campaign-management/">
+<meta property="og:site_name" content="telecrm">
+<meta property="og:image" content="https://telecrm.in/assets/og-image.png">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Calling Campaign Management — telecrm">
+<meta name="twitter:description" content="Replace target sheets with structured calling campaigns. Assign leads, track progress, manage attempts, and run team-wise campaigns.">
+<meta name="twitter:image" content="https://telecrm.in/assets/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Calling Campaign Management — telecrm",
+  "description": "Create calling campaigns, assign leads, track attempts, and manage team-wise campaign allocation in telecrm.",
+  "url": "https://telecrm.in/features/calling-campaign-management/",
+  "publisher": { "@type": "Organization", "name": "telecrm" }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cta:#F97316; --cta-hover:#EA580C;
+  --v50:#EDEBF6;--v100:#E1DDF0;--v200:#C4BAE5;--v300:#9C8FCF;
+  --v400:#7260B5;--v500:#4F38A2;--v600:#483393;--v700:#382873;--v900:#211844;
+  --white:#fff;--grey:#64748B;--border:#E9EBF8;--grey2:#94A3B8;
+  --success:#22C55E;--warning:#F59E0B;--error:#EF4444;
+  --font-head:'Plus Jakarta Sans',sans-serif;--font-body:'DM Sans',sans-serif;
+  --radius-btn:10px;--radius-card:16px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);color:var(--v900);background:#fff;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+
+/* ── NAV ── */
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+.nav__inner{max-width:1280px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:72px;}
+.nav__logo{font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--v500);letter-spacing:-.5px;}
+.nav__links{display:flex;align-items:center;gap:2px;}
+.nav__link{font-family:var(--font-head);font-size:12.5px;font-weight:600;color:var(--v700);padding:7px 11px;border-radius:8px;transition:all .18s;white-space:nowrap;}
+.nav__link:hover,.nav__link--active{background:var(--v50);color:var(--v500);}
+.nav__sep{display:inline-block;width:1px;height:20px;background:var(--border);margin:0 8px;vertical-align:middle;}
+.nav__cta{font-family:var(--font-head);font-size:13px;font-weight:700;background:var(--cta);color:#fff;padding:10px 22px;border-radius:var(--radius-btn);box-shadow:0 4px 12px rgba(249,115,22,.3);transition:all .18s;white-space:nowrap;margin-left:8px;}
+.nav__cta:hover{background:var(--cta-hover);transform:translateY(-1px);}
+.nav__mobile-right{display:none;align-items:center;gap:8px;margin-left:auto;}
+.nav__mobile-cta{font-family:var(--font-head);font-size:13px;font-weight:700;background:var(--v500);color:#fff;padding:8px 16px;border-radius:var(--radius-btn);text-decoration:none;white-space:nowrap;}
+.nav__mob-sep{display:none;width:1px;height:20px;background:var(--border);}
+.nav__hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:8px;border:none;background:transparent;}
+.nav__hamburger span{display:block;width:22px;height:2px;background:var(--v900);border-radius:2px;transition:all .18s;}
+.nav__hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav__hamburger.open span:nth-child(2){opacity:0;}
+.nav__hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+.hero{padding:64px 0 56px;background:#fff;position:relative;overflow:hidden;}
+.hero__bg{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;opacity:.35;pointer-events:none;}
+.hero__glow{position:absolute;top:-80px;right:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(79,56,162,.07) 0%,transparent 70%);pointer-events:none;}
+.hero__inner{max-width:1280px;margin:0 auto;padding:0 32px;position:relative;}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-family:var(--font-head);font-size:12px;font-weight:600;color:var(--grey2);margin-bottom:24px;}
+.breadcrumb-sep{color:var(--v200);}
+.breadcrumb a{color:var(--grey2);transition:color .2s;}
+.breadcrumb a:hover{color:var(--v500);}
+.breadcrumb-current{color:var(--v500);}
+.hero__eyebrow{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;}
+.hero__h1{font-family:var(--font-head);font-size:clamp(28px,4vw,52px);font-weight:900;letter-spacing:-1.5px;color:var(--v900);line-height:1.1;margin-bottom:16px;}
+.hero__h1 em{font-style:normal;color:var(--v500);}
+.hero__sub{font-size:17px;color:var(--grey);line-height:1.75;max-width:660px;margin-bottom:32px;}
+.btn-primary{font-family:var(--font-head);font-size:14px;font-weight:700;background:var(--cta);color:#fff;padding:13px 28px;border-radius:var(--radius-btn);border:none;cursor:pointer;box-shadow:0 4px 14px rgba(249,115,22,.3);transition:all .2s;display:inline-flex;align-items:center;gap:8px;text-decoration:none;}
+.btn-primary:hover{background:var(--cta-hover);transform:translateY(-1px);}
+.btn-primary svg{width:16px;height:16px;}
+
+/* ── HIGHLIGHTS BAR ── */
+.highlights{background:var(--v50);border-top:1px solid var(--v100);border-bottom:1px solid var(--v100);padding:20px 32px;}
+.highlights__inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.highlight{display:flex;align-items:center;gap:10px;padding:10px 16px;background:#fff;border:1.5px solid var(--v100);border-radius:10px;}
+.highlight__dot{width:7px;height:7px;border-radius:50%;background:var(--v500);flex-shrink:0;}
+.highlight__text{font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v700);}
+
+/* ── SHARED ── */
+.inner{max-width:1280px;margin:0 auto;padding:0 32px;}
+.s-white{padding:80px 0;background:#fff;}
+.s-tint{padding:80px 0;background:#F8F7FC;}
+.s-dark{padding:80px 0;background:var(--v900);}
+.two-col{display:flex;flex-direction:column;gap:40px;}
+.two-col--rev{display:flex;flex-direction:column;gap:40px;}
+.two-col > div:last-child{max-width:860px;margin-left:auto;margin-right:auto;}
+/* content block always first, visual always second */
+
+/* ── SECTION TYPE ── */
+.s-eye{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
+.s-eye--dark{color:var(--v300);}
+.s-h2{font-family:var(--font-head);font-size:clamp(22px,2.5vw,32px);font-weight:900;color:var(--v900);letter-spacing:-.5px;line-height:1.2;margin-bottom:12px;}
+.s-h2 em{font-style:normal;color:var(--v500);}
+.s-h2--dark{color:#fff;}
+.s-body{font-size:15px;color:var(--grey);line-height:1.75;margin-bottom:28px;}
+.s-body--dark{color:var(--v200);}
+
+/* ── FEATURE BULLETS ── */
+.fbullets{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.fbullets li{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--grey);line-height:1.6;}
+.fbd{width:20px;height:20px;border-radius:6px;background:var(--v50);border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.fbd svg{width:10px;height:10px;}
+.fbullets strong{font-family:var(--font-head);font-weight:700;color:var(--v700);}
+
+/* ── LIGHT PANEL CHROME ── */
+.lpanel{background:#fff;border:1.5px solid var(--border);border-radius:16px;overflow:hidden;}
+.lpanel-bar{background:var(--v50);border-bottom:1px solid var(--v100);padding:11px 16px;display:flex;align-items:center;gap:6px;}
+.lp-dot{width:10px;height:10px;border-radius:50%;}
+.lp-dot--r{background:#FF5F57;}
+.lp-dot--y{background:#FEBC2E;}
+.lp-dot--g{background:#28C840;}
+.lpanel-ttl{font-family:var(--font-head);font-size:11px;font-weight:600;color:var(--v400);margin-left:8px;}
+.lpanel-body{padding:16px;}
+
+/* ── S1: CREATE CAMPAIGN ── */
+/* Campaign setup card */
+.camp-setup{background:#fff;border:1.5px solid var(--border);border-radius:16px;overflow:hidden;}
+.camp-setup__head{background:var(--v50);border-bottom:1px solid var(--v100);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;}
+.camp-setup__title{font-family:var(--font-head);font-size:13px;font-weight:800;color:var(--v900);}
+.camp-setup__badge{font-family:var(--font-head);font-size:10px;font-weight:700;background:var(--v500);color:#fff;padding:3px 10px;border-radius:100px;}
+.camp-setup__body{padding:16px;display:flex;flex-direction:column;gap:12px;}
+.camp-field{display:flex;flex-direction:column;gap:5px;}
+.camp-field__label{font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v700);text-transform:uppercase;letter-spacing:.05em;}
+.camp-field__input{background:#F8F7FC;border:1.5px solid var(--border);border-radius:8px;padding:9px 12px;font-family:var(--font-head);font-size:12px;font-weight:600;color:var(--v900);display:flex;align-items:center;justify-content:space-between;}
+.camp-field__input--active{border-color:var(--v300);background:var(--v50);}
+.camp-field__input svg{width:10px;height:10px;color:var(--v400);}
+.camp-source-chips{display:flex;flex-wrap:wrap;gap:6px;}
+.csc{font-family:var(--font-head);font-size:10px;font-weight:600;padding:4px 10px;border-radius:100px;border:1.5px solid var(--v200);color:var(--v600);background:#fff;}
+.csc--on{background:var(--v500);border-color:var(--v500);color:#fff;}
+.camp-setup__footer{padding:12px 16px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
+.camp-count{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v500);}
+.camp-btn{font-family:var(--font-head);font-size:12px;font-weight:700;background:var(--v500);color:#fff;padding:9px 18px;border-radius:8px;border:none;cursor:pointer;}
+
+/* ── S2: ASSIGN LEADS ── */
+/* New / Active sections */
+.na-panel{background:#fff;border:1.5px solid var(--border);border-radius:16px;overflow:hidden;}
+.na-tabs{display:flex;border-bottom:1px solid var(--border);}
+.na-tab{flex:1;padding:10px 16px;font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--grey);background:#fff;text-align:center;cursor:pointer;}
+.na-tab--on{color:var(--v500);border-bottom:2px solid var(--v500);}
+.na-section-label{font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;letter-spacing:.07em;padding:8px 14px 4px;}
+.na-row{padding:10px 14px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--border);}
+.na-row:last-child{border-bottom:none;}
+.na-row--active{background:var(--v50);}
+.na-avatar{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:9px;font-weight:800;color:#fff;flex-shrink:0;}
+.na-name{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v900);flex:1;}
+.na-meta{font-size:9px;color:var(--grey2);}
+.na-badge{font-family:var(--font-head);font-size:8px;font-weight:700;padding:2px 7px;border-radius:100px;}
+.nb-new{background:rgba(156,143,207,.12);color:var(--v400);}
+.nb-active{background:rgba(79,56,162,.12);color:var(--v500);}
+.nb-skip{background:rgba(245,158,11,.12);color:#D97706;}
+.na-next-btn{font-family:var(--font-head);font-size:9px;font-weight:700;background:var(--v500);color:#fff;padding:4px 10px;border-radius:6px;border:none;cursor:pointer;}
+
+/* ── S3: CAMPAIGN DASHBOARD / PERFORMANCE ── */
+.dash-panel{background:#fff;border:1.5px solid var(--border);border-radius:16px;overflow:hidden;}
+.dash-panel__head{background:var(--v50);border-bottom:1px solid var(--v100);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;}
+.dash-panel__title{font-family:var(--font-head);font-size:12px;font-weight:800;color:var(--v900);}
+.dash-panel__sub{font-size:10px;color:var(--grey2);margin-top:1px;}
+.dash-stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-bottom:1px solid var(--border);}
+.dash-stat{padding:14px 16px;border-right:1px solid var(--border);text-align:center;}
+.dash-stat:last-child{border-right:none;}
+.dash-stat__n{font-family:var(--font-head);font-size:22px;font-weight:900;color:var(--v900);letter-spacing:-1px;}
+.dash-stat__n--purple{color:var(--v500);}
+.dash-stat__n--green{color:#16A34A;}
+.dash-stat__n--amber{color:#D97706;}
+.dash-stat__l{font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;letter-spacing:.06em;margin-top:3px;}
+/* Progress bar */
+.prog-section{padding:14px 18px;border-bottom:1px solid var(--border);}
+.prog-label{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;}
+.prog-title{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v900);}
+.prog-pct{font-family:var(--font-head);font-size:11px;font-weight:900;color:var(--v500);}
+.prog-bar{height:8px;background:var(--v50);border-radius:100px;overflow:hidden;border:1px solid var(--v100);}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--v400),var(--v500));border-radius:100px;}
+/* Report rows */
+.report-rows{padding:10px 0;}
+.report-row{display:flex;align-items:center;justify-content:space-between;padding:8px 18px;}
+.report-row__label{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v900);}
+.report-row__sub{font-size:10px;color:var(--grey2);margin-top:1px;}
+.report-row__count{font-family:var(--font-head);font-size:13px;font-weight:900;color:var(--v500);}
+.report-row__bar{height:4px;width:80px;background:var(--v50);border-radius:100px;overflow:hidden;margin-top:4px;}
+.report-row__bar-fill{height:100%;background:var(--v400);border-radius:100px;}
+
+/* ── S4: ATTEMPT TRACKING ── */
+.attempt-panel{background:#fff;border:1.5px solid var(--border);border-radius:16px;overflow:hidden;}
+.attempt-head{background:var(--v50);border-bottom:1px solid var(--v100);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;}
+.attempt-title{font-family:var(--font-head);font-size:12px;font-weight:800;color:var(--v900);}
+.attempt-rows{display:flex;flex-direction:column;}
+.attempt-row{padding:11px 16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);}
+.attempt-row:last-child{border-bottom:none;}
+.att-av{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:9px;font-weight:800;color:#fff;flex-shrink:0;}
+.att-name{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v900);}
+.att-meta{font-size:9px;color:var(--grey2);margin-top:1px;}
+.att-badges{display:flex;gap:5px;margin-left:auto;flex-wrap:wrap;}
+.att-badge{font-family:var(--font-head);font-size:9px;font-weight:700;padding:3px 8px;border-radius:100px;white-space:nowrap;}
+.ab-connected{background:rgba(34,197,94,.1);color:#16A34A;}
+.ab-unanswered{background:rgba(245,158,11,.1);color:#D97706;}
+.ab-pending{background:rgba(156,143,207,.15);color:var(--v400);}
+.ab-skip{background:rgba(239,68,68,.1);color:#EF4444;}
+/* Attempt timeline dots */
+.att-dots{display:flex;gap:3px;align-items:center;}
+.att-dot{width:8px;height:8px;border-radius:50%;}
+
+/* ── S5: FOLLOW-UP AUTOMATION ── */
+.fu-builder{background:#fff;border:1.5px solid var(--border);border-radius:16px;overflow:hidden;}
+.fu-head{background:var(--v50);border-bottom:1px solid var(--v100);padding:12px 16px;}
+.fu-title{font-family:var(--font-head);font-size:12px;font-weight:800;color:var(--v900);}
+.fu-sub{font-size:10px;color:var(--grey2);margin-top:1px;}
+.fu-body{padding:14px;}
+.fu-step{display:flex;gap:12px;margin-bottom:12px;}
+.fu-step:last-child{margin-bottom:0;}
+.fu-step-left{display:flex;flex-direction:column;align-items:center;gap:0;}
+.fu-step-num{width:26px;height:26px;border-radius:50%;background:var(--v500);color:#fff;font-family:var(--font-head);font-size:10px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 6px rgba(79,56,162,.3);}
+.fu-step-line{width:2px;flex:1;background:var(--v100);margin-top:4px;min-height:24px;}
+.fu-step-content{flex:1;padding-top:2px;}
+.fu-step-title{font-family:var(--font-head);font-size:11px;font-weight:800;color:var(--v900);margin-bottom:3px;}
+.fu-step-desc{font-size:10px;color:var(--grey);line-height:1.5;}
+.fu-step-chip{display:inline-flex;align-items:center;gap:5px;font-family:var(--font-head);font-size:9px;font-weight:700;background:var(--v50);border:1.5px solid var(--v100);color:var(--v500);padding:3px 9px;border-radius:100px;margin-top:5px;}
+.fu-trigger{background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:12px 14px;margin-top:12px;display:flex;align-items:center;justify-content:space-between;}
+.fu-trigger-label{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v700);}
+.fu-trigger-meta{font-size:10px;color:var(--grey2);margin-top:2px;}
+.fu-trigger-badge{font-family:var(--font-head);font-size:9px;font-weight:700;background:rgba(34,197,94,.1);color:#16A34A;border:1px solid rgba(34,197,94,.2);padding:3px 9px;border-radius:100px;}
+
+/* ── S6: TEAM ALLOCATION — dark ── */
+.team-grid-panel{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.team-card{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:20px;}
+.team-card__head{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.team-card__avatar{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:12px;font-weight:800;color:#fff;flex-shrink:0;}
+.team-card__name{font-family:var(--font-head);font-size:12px;font-weight:800;color:var(--v900);}
+.team-card__role{font-size:10px;color:var(--grey2);margin-top:1px;}
+.team-card__camp{font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--grey);margin-bottom:6px;}
+.team-card__prog-bar{height:6px;background:var(--v50);border-radius:100px;overflow:hidden;margin-bottom:6px;}
+.team-card__prog-fill{height:100%;border-radius:100px;}
+.team-card__stats{display:flex;gap:12px;}
+.team-card__stat{text-align:center;}
+.team-card__stat-n{font-family:var(--font-head);font-size:14px;font-weight:900;color:var(--v900);}
+.team-card__stat-l{font-size:9px;color:var(--grey2);}
+
+/* ── S7: PRIORITY QUEUE ── */
+.priority-panel{background:#fff;border:1.5px solid var(--border);border-radius:16px;overflow:hidden;}
+.pq-head{background:var(--v50);border-bottom:1px solid var(--v100);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;}
+.pq-title{font-family:var(--font-head);font-size:12px;font-weight:800;color:var(--v900);}
+.pq-badge{font-family:var(--font-head);font-size:10px;font-weight:700;background:var(--v500);color:#fff;padding:3px 10px;border-radius:100px;}
+.pq-rows{display:flex;flex-direction:column;}
+.pq-row{padding:11px 16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);}
+.pq-row:last-child{border-bottom:none;}
+.pq-rank{font-family:var(--font-head);font-size:11px;font-weight:900;color:var(--v200);width:20px;text-align:center;flex-shrink:0;}
+.pq-priority{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.pq-p--high{background:#EF4444;}
+.pq-p--med{background:#F59E0B;}
+.pq-p--low{background:var(--v300);}
+.pq-name{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v900);flex:1;}
+.pq-meta{font-size:10px;color:var(--grey2);}
+.pq-tag{font-family:var(--font-head);font-size:9px;font-weight:700;padding:2px 8px;border-radius:100px;}
+
+/* ── FINAL CTA ── */
+.final-cta{padding:96px 0;background:var(--v900);position:relative;overflow:hidden;}
+.final-cta__grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;}
+.final-cta__glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(114,96,181,.2) 0%,transparent 65%);pointer-events:none;}
+.final-cta__inner{max-width:860px;margin:0 auto;padding:0 32px;text-align:center;position:relative;}
+.final-cta__badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v300);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:6px 14px;border-radius:100px;margin-bottom:24px;}
+.final-cta__badge-dot{width:7px;height:7px;border-radius:50%;background:#22C55E;flex-shrink:0;}
+.final-cta__h2{font-family:var(--font-head);font-size:clamp(28px,3.5vw,44px);font-weight:900;letter-spacing:-1px;color:#fff;line-height:1.15;margin-bottom:12px;}
+.final-cta__h2 em{font-style:normal;color:var(--v300);}
+.final-cta__sub{font-size:16px;color:var(--v200);line-height:1.7;margin-bottom:32px;}
+.btn-cta-white{font-family:var(--font-head);font-size:15px;font-weight:700;background:#fff;color:var(--v500);padding:15px 36px;border-radius:var(--radius-btn);border:none;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.15);transition:all .2s;display:inline-flex;align-items:center;gap:8px;text-decoration:none;}
+.btn-cta-white:hover{background:var(--v50);transform:translateY(-2px);}
+.btn-cta-white svg{width:16px;height:16px;}
+.final-cta__cta-wrap{margin-bottom:28px;}
+.final-cta__trust{display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap;}
+.final-cta__trust-item{font-size:13px;font-weight:500;color:var(--v200);display:flex;align-items:center;gap:7px;}
+.final-cta__trust-dot{width:6px;height:6px;border-radius:50%;background:#22C55E;flex-shrink:0;}
+
+/* ── FOOTER ── */
+.footer{background:#fff;border-top:1px solid var(--border);padding:64px 0 40px;}
+.footer__inner{max-width:1280px;margin:0 auto;padding:0 32px;}
+.footer__links-grid{display:contents;}
+.footer__grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+.footer__logo{font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--v500);margin-bottom:16px;letter-spacing:-.5px;}
+.footer__tagline{font-size:14px;color:var(--grey);line-height:1.7;max-width:280px;margin-bottom:24px;}
+.footer__col-title{font-family:var(--font-head);font-size:12px;font-weight:800;color:var(--v900);text-transform:uppercase;letter-spacing:.06em;margin-bottom:16px;}
+.footer__links{display:flex;flex-direction:column;gap:10px;}
+.footer__link{font-size:14px;color:var(--grey);transition:color .2s;}
+.footer__link:hover{color:var(--v500);}
+.footer-col-right{}
+.footer-col-left{}
+.footer__bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer__copy{font-size:13px;color:var(--grey);}
+.footer__legal{display:flex;gap:24px;}
+.footer__legal a{font-size:13px;color:var(--grey);transition:color .2s;}
+.footer__legal a:hover{color:var(--v500);}
+
+/* ── MOBILE ── */
+@media(max-width:768px){
+  .nav__links{display:none;flex-direction:column;position:fixed;top:72px;left:0;right:0;background:rgba(255,255,255,.98);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:16px 24px;gap:0;z-index:99;}
+  .nav__links.open{display:flex;}
+  .nav__link{padding:12px 0;border-bottom:1px solid var(--border);font-size:15px;display:block;}
+  .nav__link:last-child{border-bottom:none;}
+  .nav__sep{display:none;}
+  .nav__cta{display:none;}
+  .nav__mobile-right{display:flex;align-items:center;gap:8px;margin-left:auto;}
+  .nav__mob-sep{display:block;}
+  .nav__hamburger{display:flex;}
+}
+@media(min-width:769px){.nav__hamburger{display:none;}.nav__mobile-right{display:none;}}
+.nav__mobile-right{display:none;}}
+.nav__mobile-right{display:none;}}
+@media(max-width:768px){
+  .highlights__inner{grid-template-columns:1fr 1fr!important;}
+  .team-grid-panel{grid-template-columns:1fr!important;}
+  .dash-stat-row{grid-template-columns:1fr 1fr!important;}
+  .footer__grid{grid-template-columns:1fr!important;gap:32px!important;}
+  .footer__tagline{max-width:100%!important;}
+  .footer__bottom{flex-direction:column!important;gap:12px!important;text-align:center!important;}
+  .footer__legal{flex-wrap:wrap!important;justify-content:center!important;}
+  .footer__links-grid{display:grid!important;grid-template-columns:1fr 1fr;gap:32px 16px;margin-top:32px;}
+  .footer__links-grid > div:nth-child(1),
+  .footer__links-grid > div:nth-child(2),
+  .footer__links-grid > div:nth-child(3){text-align:left!important;grid-column:1;}
+  .footer__links-grid > div:nth-child(4){text-align:right!important;grid-column:2;grid-row:1 / span 3;}
+  .footer__links-grid > div:nth-child(4) .footer__links{align-items:flex-end;}
+  .final-cta__trust{gap:16px;}
+  .final-cta__inner{padding:0 20px;}
+}
+@media(max-width:480px){
+  .highlights__inner{grid-template-columns:1fr!important;}
+  .dash-stat-row{grid-template-columns:1fr 1fr!important;}
+}
+
+/* ===== ROLLOUT v2026-05-29: nav mega-menu + fat footer (canonical) ===== */
+.nav__item{position:relative;display:flex;align-items:center;height:72px;}
+.nav__item > .nav__link{display:inline-flex;align-items:center;gap:4px;}
+.nav__caret{width:11px;height:11px;flex-shrink:0;transition:transform .2s;}
+.nav__item:hover > .nav__link .nav__caret,.nav__item:focus-within > .nav__link .nav__caret{transform:rotate(180deg);}
+.nav__item:hover > .nav__link,.nav__item:focus-within > .nav__link{background:var(--v50);color:var(--v500);}
+.nav__panel{position:absolute;top:100%;left:0;background:#fff;border:1px solid var(--border);border-radius:14px;box-shadow:0 18px 44px rgba(33,24,68,.13);padding:14px;opacity:0;visibility:hidden;transform:translateY(7px);transition:opacity .16s,transform .16s,visibility .16s;z-index:200;}
+.nav__panel--right{left:auto;right:0;}
+.nav__item:hover > .nav__panel,.nav__item:focus-within > .nav__panel{opacity:1;visibility:visible;transform:translateY(0);}
+.np__list{display:grid;gap:1px;}
+.np__list--2{grid-template-columns:1fr 1fr;gap:1px 14px;}
+.np__link{display:flex;flex-direction:column;gap:2px;padding:9px 12px;border-radius:8px;transition:background .15s;min-width:0;}
+.np__link:hover{background:var(--v50);}
+.np__t{font-family:var(--font-head);font-size:13.5px;font-weight:700;color:var(--v900);white-space:nowrap;}
+.np__list--2 .np__t{white-space:normal;line-height:1.3;overflow-wrap:break-word;}
+.np__link:hover .np__t{color:var(--v500);}
+.np__s{font-family:var(--font-body);font-size:12px;color:var(--grey);line-height:1.35;}
+.np__foot{display:flex;align-items:center;gap:6px;border-top:1px solid var(--border);margin-top:8px;padding:11px 12px 3px;font-family:var(--font-head);font-size:12.5px;font-weight:700;color:var(--v500);}
+.np__foot svg{width:13px;height:13px;}
+.nav__mobile-cta{background:var(--cta);}
+.footer__grid{grid-template-columns:1.5fr 1fr 1fr 1fr 1fr 1.15fr;gap:40px 32px;}
+.footer__col-stack{display:flex;flex-direction:column;gap:48px;}
+@media(max-width:1024px){.footer__grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:768px){
+  .nav__item{width:100%;height:auto;display:block;position:static;}
+  .nav__item > .nav__link{display:flex;align-items:center;justify-content:space-between;width:100%;}
+  .nav__item.open > .nav__link .nav__caret{transform:rotate(180deg);}
+  .nav__caret{width:13px;height:13px;}
+  .nav__panel{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;border-radius:0;padding:4px 0 10px 10px;width:auto !important;display:none;z-index:auto;}
+  .nav__item.open > .nav__panel{display:block;}
+  .np__list--2{grid-template-columns:1fr;}
+  .np__link{padding:9px 10px;}
+  .np__foot{padding-left:10px;}
+  .footer__links-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px 16px;margin-top:32px;}
+  .footer__links-grid > div:nth-child(1),.footer__links-grid > div:nth-child(2),.footer__links-grid > div:nth-child(3),.footer__links-grid > div:nth-child(4),.footer__links-grid > div:nth-child(5){text-align:left;grid-column:auto;grid-row:auto;}
+  .footer__links-grid > div:nth-child(4) .footer__links{align-items:flex-start;}
+}
+@media(max-width:600px){.footer__grid{grid-template-columns:1fr;}}
+/* ===== end ROLLOUT ===== */
+
+/* ===== FAQ section (locked §16A) ===== */
+.faq{padding:96px 0;background:#F8F7FC;}
+.faq__inner{max-width:1280px;margin:0 auto;padding:0 32px;}
+.faq__header{text-align:center;margin-bottom:8px;}
+.faq__eyebrow{font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v500);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;}
+.faq__h2{font-family:var(--font-head);font-size:clamp(28px,3.5vw,42px);font-weight:900;letter-spacing:-1.2px;color:var(--v900);line-height:1.15;}
+.faq__h2 em{font-style:normal;color:var(--v500);}
+.faq-list{display:flex;flex-direction:column;border-top:1px solid var(--border);max-width:860px;margin:40px auto 0;}
+.faq-item{border-bottom:1px solid var(--border);}
+.faq-item__q{display:flex;align-items:center;justify-content:space-between;padding:22px 0;cursor:pointer;gap:24px;}
+.faq-item__q-text{font-family:var(--font-head);font-size:16px;font-weight:700;color:var(--v900);}
+.faq-item__icon{width:28px;height:28px;border-radius:50%;background:#fff;border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s;}
+.faq-item__icon svg{width:12px;height:12px;transition:transform .25s;}
+.faq-item.open .faq-item__icon{background:var(--v500);border-color:var(--v500);}
+.faq-item.open .faq-item__icon svg{transform:rotate(45deg);stroke:#fff;}
+.faq-item__a{display:none;font-family:var(--font-body);font-size:15px;color:var(--grey);line-height:1.75;padding-bottom:22px;max-width:760px;}
+.faq-item.open .faq-item__a{display:block;}
+@media(max-width:768px){.faq{padding:64px 0;}.faq__inner{padding:0 20px;}}
+/* ===== end FAQ ===== */
+
+.np__cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.np__col-head{display:block;font-family:var(--font-head);font-size:11px;font-weight:800;color:var(--v400);text-transform:uppercase;letter-spacing:.07em;padding:4px 12px 8px;transition:color .15s;}
+.np__col-head:hover{color:var(--v500);}
+.nav__panel:has(.np__col:only-child) .np__cols{grid-template-columns:1fr;}
+@media(max-width:768px){.np__cols{grid-template-columns:1fr !important;gap:0 !important;}.np__col-head{padding:8px 10px 4px;}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="telecrm-approach2-home.html" class="nav__logo">telecrm</a>
+    <div class="nav__links">
+      <div class="nav__item">
+        <a href="telecrm-platform-overview.html" class="nav__link">Platform Overview <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:560px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-platform-hub.html">Platform Hub</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-platform-unified-revenue-management.html"><span class="np__t">Unified Revenue Management</span><span class="np__s">One connected engine</span></a>
+                <a class="np__link" href="telecrm-platform-lead-management.html"><span class="np__t">Lead Management</span><span class="np__s">Capture, dedupe, assign</span></a>
+                <a class="np__link" href="telecrm-platform-call-management.html"><span class="np__t">Call Management &amp; Recording</span><span class="np__s">Dial, record, track</span></a>
+                <a class="np__link" href="telecrm-platform-adaptive-crm.html"><span class="np__t">Adaptive CRM</span><span class="np__s">Stages, fields, 360°</span></a>
+                <a class="np__link" href="telecrm-platform-marketing-automation.html"><span class="np__t">Marketing Automation</span><span class="np__s">Reach leads automatically</span></a>
+                <a class="np__link" href="telecrm-platform-sales-pipeline-management.html"><span class="np__t">Sales Funnel &amp; Pipeline Management</span><span class="np__s">Track every deal stage</span></a>
+              </div>
+            </div>
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-benefits-hub.html">Benefits Hub</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-benefits-hub.html"><span class="np__t">Outcomes &amp; ROI</span><span class="np__s">What telecrm delivers for your team</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-platform-overview.html">Platform Overview — the product, end to end <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-solutions-hub.html" class="nav__link">Solutions <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-solutions-hub.html">By approach</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-problems-hub.html"><span class="np__t">Problems Hub</span><span class="np__s">Revenue leaks, by stage</span></a>
+                <a class="np__link" href="telecrm-crm-hub.html"><span class="np__t">CRM Hub</span><span class="np__s">By type &amp; by team</span></a>
+                <a class="np__link" href="telecrm-industry-hub.html"><span class="np__t">Industry Hub</span><span class="np__s">11 industries covered</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-solutions-hub.html">Browse all solutions <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-features-hub.html" class="nav__link nav__link--active">Features <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:620px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-features-hub.html">Engagement</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-feature-call-management.html"><span class="np__t">Call Management</span></a>
+                <a class="np__link" href="telecrm-feature-calling-campaign.html"><span class="np__t">Calling Campaign Management</span></a>
+                <a class="np__link" href="telecrm-feature-whatsapp.html"><span class="np__t">WhatsApp</span></a>
+                <a class="np__link" href="telecrm-feature-automations.html"><span class="np__t">Automation</span></a>
+              </div>
+            </div>
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-features-hub.html">Data &amp; Admin</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-feature-lead-management.html"><span class="np__t">Lead Management &amp; Reporting</span></a>
+                <a class="np__link" href="telecrm-feature-lead-fields.html"><span class="np__t">Lead Fields</span></a>
+                <a class="np__link" href="telecrm-feature-lead-stages.html"><span class="np__t">Lead Stages</span></a>
+                <a class="np__link" href="telecrm-feature-list-labels.html"><span class="np__t">List and Labels</span></a>
+                <a class="np__link" href="telecrm-feature-reporting.html"><span class="np__t">Reporting</span></a>
+                <a class="np__link" href="telecrm-feature-integrations.html"><span class="np__t">Integrations</span></a>
+                <a class="np__link" href="telecrm-feature-user-management.html"><span class="np__t">User Management</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-features-hub.html">See all features <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-trust-hub.html" class="nav__link">Trust <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-trust-hub.html">Proof</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-testimonials.html"><span class="np__t">Testimonials</span><span class="np__s">Real customers, real numbers</span></a>
+                <a class="np__link" href="telecrm-case-studies.html"><span class="np__t">Case Studies</span><span class="np__s">9 detailed stories</span></a>
+                <a class="np__link" href="telecrm-comparison.html"><span class="np__t">Comparison</span><span class="np__s">telecrm vs. alternatives</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-trust-hub.html">Visit the Trust Hub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-pricing.html" class="nav__link">Pricing <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:320px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-pricing.html">Plans</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-pricing.html"><span class="np__t">Pricing</span><span class="np__s">Plans &amp; what's included</span></a>
+                <a class="np__link" href="telecrm-cost-savings.html"><span class="np__t">Cost Savings</span><span class="np__s">What you save vs. tools</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-support-hub.html" class="nav__link">Support <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:560px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-support-hub.html">Resources</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-faqs.html"><span class="np__t">FAQs</span></a>
+                <a class="np__link" href="telecrm-glossary.html"><span class="np__t">Glossary</span></a>
+                <a class="np__link" href="telecrm-learning-repository.html"><span class="np__t">Learning Repository</span></a>
+                <a class="np__link" href="telecrm-onboarding.html"><span class="np__t">Onboarding</span></a>
+                <a class="np__link" href="telecrm-recommended-devices.html"><span class="np__t">Recommended Devices</span></a>
+              </div>
+            </div>
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-support-hub.html">Policies</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-privacy-policy.html"><span class="np__t">Privacy Policy</span></a>
+                <a class="np__link" href="telecrm-refund-policy.html"><span class="np__t">Refund Policy</span></a>
+                <a class="np__link" href="telecrm-terms-conditions.html"><span class="np__t">Terms &amp; Conditions</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-support-hub.html">Go to Support Hub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-get-started.html" class="nav__link">Get Started <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-get-started.html">Get started</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-partnership.html"><span class="np__t">Partner Program</span><span class="np__s">Refer &amp; earn 10% for life</span></a>
+                <a class="np__link" href="telecrm-demo-request.html"><span class="np__t">Demo Request</span><span class="np__s">Book a free demo</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-get-started.html">All ways to start <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-about-us.html" class="nav__link">About Us <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-about-us.html">Company</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-about-telecrm.html"><span class="np__t">About telecrm</span><span class="np__s">Story, vision, mission</span></a>
+                <a class="np__link" href="telecrm-life-at-telecrm.html"><span class="np__t">Life at telecrm</span><span class="np__s">Culture &amp; team</span></a>
+                <a class="np__link" href="telecrm-careers.html"><span class="np__t">Careers</span><span class="np__s">Open roles</span></a>
+                <a class="np__link" href="telecrm-contact.html"><span class="np__t">Contact Us</span><span class="np__s">Talk to us</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="nav__sep"></span>
+      <a href="telecrm-demo-request.html" class="nav__cta">Get a Demo</a>
+    </div>
+    <div class="nav__mobile-right">
+      <a href="telecrm-demo-request.html" class="nav__mobile-cta">Get a Demo</a>
+      <span class="nav__mob-sep"></span>
+      <button class="nav__hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__bg"></div>
+  <div class="hero__glow"></div>
+  <div class="hero__inner">
+    <div class="breadcrumb">
+      <a href="telecrm-approach2-home.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="telecrm-features-hub.html">Features</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">Calling Campaign Management</span>
+    </div>
+    <div class="hero__eyebrow">Features · Calling Campaign Management</div>
+    <h1 class="hero__h1">Evolve from manual processes.<br><em>Run structured calling campaigns.</em></h1>
+    <p class="hero__sub">A campaign is a focused calling list assigned to your team — with progress tracking, attempt reporting, and a Next button that keeps reps moving. No more spread sheets, no more manual dialling decisions.</p>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS BAR -->
+<div class="highlights">
+  <div class="highlights__inner">
+    <div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">Priority-based calling queues</span></div>
+    <div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">New → Active lead tracking</span></div>
+    <div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">Detailed campaign reports</span></div>
+    <div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">Create from any lead source</span></div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════
+     01 — CREATE CALLING CAMPAIGNS
+     bg: white
+════════════════════════════════════ -->
+<section class="s-white">
+  <div class="inner">
+    <div class="two-col">
+      <div>
+        <div class="s-eye">01 — Create Calling Campaigns</div>
+        <h2 class="s-h2">A unique calling list for every target.<br><em>Built in seconds.</em></h2>
+        <p class="s-body">A campaign is a named, targeted calling list — the telecrm equivalent of the target spread sheet you used to hand to your caller, but structured, trackable, and built directly from your lead database. Create one from any filter, any import, or any integration.</p>
+        <ul class="fbullets">
+          <li>
+            <span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 2h7l-2.8 3.5v3l-1.4-.7V5.5L1.5 2z" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span><strong>From any lead set.</strong> Build a campaign from a saved filter or <a href="telecrm-feature-lead-management.html#smart-filters-segmentation" style="color:var(--v500);font-weight:700;text-decoration:underline;text-underline-offset:2px;">SMART filter</a>, a bulk import from Excel, a CRM integration, or any combination — available at every touch point where leads enter telecrm.</span>
+          </li>
+          <li>
+            <span class="fbd"><svg viewBox="0 0 10 10" fill="none"><rect x="1.5" y="2.5" width="7" height="6" rx="1" stroke="#4F38A2" stroke-width="1.3"/><path d="M1.5 4.5h7M3.5 1.5v2M6.5 1.5v2" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+            <span><strong>Temporary or target-based.</strong> Assign campaigns for a time window (this week's follow-ups) or a target (close 20 leads by Friday). The purpose defines the campaign; telecrm tracks the rest.</span>
+          </li>
+          <li>
+            <span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M2.5 1.5v7M2.5 1.5h5l-1.5 2.5 1.5 2.5H2.5" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span><strong>Priority and urgency controls.</strong> Set urgency and priority for any campaign — reps see which campaigns to work first, managers see which are critical, all without a separate coordination tool.</span>
+          </li>
+          <li>
+            <span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M4 6.5l-.7.7a2 2 0 01-2.8-2.8L2.2 2.7A2 2 0 015 2.7l.7.7" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round"/><path d="M6 3.5l.7-.7a2 2 0 012.8 2.8L7.8 7.3A2 2 0 015 7.3l-.7-.7" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+            <span><strong>Available everywhere leads exist.</strong> Campaigns are a first-class action at every import, filter, and integration endpoint — not a separate module to navigate to.</span>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <div class="camp-setup">
+          <div class="camp-setup__head">
+            <div><div class="camp-setup__title">New Campaign</div><div style="font-size:10px;color:var(--grey2);margin-top:2px;">Set up a targeted calling list</div></div>
+            <div class="camp-setup__badge">Live preview</div>
+          </div>
+          <div class="camp-setup__body">
+            <div class="camp-field">
+              <div class="camp-field__label">Campaign name</div>
+              <div class="camp-field__input camp-field__input--active">
+                <span style="color:var(--v900);">Facebook May — Hot Leads</span>
+              </div>
+            </div>
+            <div class="camp-field">
+              <div class="camp-field__label">Lead source</div>
+              <div class="camp-source-chips">
+                <span class="csc csc--on">Facebook Ads</span>
+                <span class="csc">IndiaMART</span>
+                <span class="csc">Google Ads</span>
+                <span class="csc">JustDial</span>
+                <span class="csc">WhatsApp</span>
+                <span class="csc">Excel Import</span>
+              </div>
+            </div>
+            <div class="camp-field">
+              <div class="camp-field__label">Filter leads by label</div>
+              <div class="camp-source-chips">
+                <span class="csc csc--on" style="background:#EF4444;border-color:#EF4444;">Hot Lead</span>
+                <span class="csc csc--on" style="background:#0EA5E9;border-color:#0EA5E9;">Follow Up</span>
+                <span class="csc">Warm</span>
+                <span class="csc">Negotiating</span>
+              </div>
+            </div>
+            <div class="camp-field">
+              <div class="camp-field__label">Urgency / Priority</div>
+              <div class="camp-source-chips">
+                <span class="csc csc--on">High</span>
+                <span class="csc">Medium</span>
+                <span class="csc">Normal</span>
+              </div>
+            </div>
+            <div class="camp-field">
+              <div class="camp-field__label">Assign to</div>
+              <div style="display:flex;gap:6px;align-items:center;">
+                <div style="display:flex;gap:-4px;">
+                  <div style="width:24px;height:24px;border-radius:50%;background:#7260B5;border:2px solid #fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:8px;font-weight:800;color:#fff;">AK</div>
+                  <div style="width:24px;height:24px;border-radius:50%;background:#4F38A2;border:2px solid #fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:8px;font-weight:800;color:#fff;margin-left:-6px;">PV</div>
+                  <div style="width:24px;height:24px;border-radius:50%;background:#9C8FCF;border:2px solid #fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:8px;font-weight:800;color:#fff;margin-left:-6px;">SM</div>
+                </div>
+                <span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v500);background:var(--v50);border:1.5px solid var(--v100);padding:3px 9px;border-radius:100px;">+ Add rep</span>
+              </div>
+            </div>
+          </div>
+          <div class="camp-setup__footer">
+            <span class="camp-count">● 184 leads matched</span>
+            <button class="camp-btn">Create Campaign</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     02 — ASSIGN LEADS TO CAMPAIGNS
+     bg: #F8F7FC
+════════════════════════════════════ -->
+<section class="s-tint">
+  <div class="inner">
+    <div class="two-col two-col--rev">
+      <div>
+        <div class="s-eye">02 — Assign Leads to Campaigns</div>
+        <h2 class="s-h2">New. Active.<br><em>Always know where each lead stands.</em></h2>
+        <p class="s-body">Every lead in a campaign starts in the New section — not yet called. The moment a rep initiates any call, that lead moves automatically to Active. This simple two-state system gives callers instant clarity on what they've worked and what's still waiting.</p>
+        <ul class="fbullets">
+          <li>
+            <span class="fbd"><svg viewBox="0 0 10 10" fill="none"><rect x="1.5" y="5" width="7" height="3.5" rx="0.8" stroke="#4F38A2" stroke-width="1.3"/><path d="M1.5 5l1.5-3h4l1.5 3" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span><strong>New section — not yet approached.</strong> All freshly assigned leads land here. Reps open a lead, initiate a call, and the lead moves — regardless of whether the call connected or not.</span>
+          </li>
+          <li>
+            <span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M8.5 7.2a7 7 0 01-1.35.7 8.3 8.3 0 01-5.65-5.65 7 7 0 01.7-1.35l1.8 1.3-.5 1c.46.87 1.18 1.58 2.05 2.04l1-.5 1.95 1.46z" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span><strong>Active section — already approached.</strong> Once any call is initiated — connected, unanswered, or skipped — the lead moves to Active. Reps can bifurcate their work without manual tagging.</span>
+          </li>
+          <li>
+            <span class="fbd"><svg viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="3.5" stroke="#4F38A2" stroke-width="1.3"/><path d="M3.8 5h2.4M5.5 3.8L6.7 5l-1.2 1.2" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span><strong>Next button — no manual navigation.</strong> After completing a call and updating status, the Next button auto-opens the following lead in the queue. No searching, no scrolling, no wasted time between calls.</span>
+          </li>
+          <li>
+            <span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1.5L8.5 8H1.5L5 1.5z" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 4.2v1.8" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round"/><circle cx="5" cy="7" r=".4" fill="#4F38A2"/></svg></span>
+            <span><strong>Skip warning and accountability.</strong> If a rep hits Next without calling, telecrm flags it as a skip. Skipped leads appear in the campaign report — managers can create a follow-up campaign from skipped leads.</span>
+          </li>
+          <li>
+            <span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 8.5v-5M4 8.5v-3M6.5 8.5V2M9 8.5V4" stroke="#4F38A2" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            <span><strong>Progress bar — popular for a reason.</strong> Reps love seeing campaign completion move. The live progress bar is one of the most-cited reasons callers prefer campaigns over free-dial calling.</span>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <div class="na-panel">
+          <div class="lpanel-bar" style="background:var(--v50);border-bottom:1px solid var(--v100);">
+            <div class="lp-dot lp-dot--r"></div><div class="lp-dot lp-dot--y"></div><div class="lp-dot lp-dot--g"></div>
+            <span class="lpanel-ttl">Facebook May — Hot Leads · 184 leads</span>
+          </div>
+          <!-- Progress bar -->
+          <div style="padding:12px 16px;border-bottom:1px solid var(--border);">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;">
+              <span style="font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v900);">Campaign progress</span>
+              <span style="font-family:var(--font-head);font-size:11px;font-weight:900;color:var(--v500);">12%</span>
+            </div>
+            <div style="height:8px;background:var(--v50);border-radius:100px;overflow:hidden;border:1px solid var(--v100);">
+              <div style="height:100%;width:12%;background:linear-gradient(90deg,var(--v400),var(--v500));border-radius:100px;"></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-top:5px;">
+              <span style="font-size:10px;color:var(--grey2);">22 called · 162 remaining</span>
+              <span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v500);">● 2 reps active</span>
+            </div>
+          </div>
+          <!-- Tabs -->
+          <div class="na-tabs">
+            <div class="na-tab na-tab--on">New <span style="font-size:9px;opacity:.7;">(162)</span></div>
+            <div class="na-tab">Active <span style="font-size:9px;opacity:.7;">(22)</span></div>
+          </div>
+          <!-- New leads -->
+          <div class="na-section-label">Not yet called</div>
+          <div class="na-row">
+            <div class="na-avatar" style="background:#7260B5;">RS</div>
+            <div style="flex:1;"><div class="na-name">Rajesh Sharma</div><div class="na-meta">Mumbai · Hot Lead</div></div>
+            <span class="na-badge nb-new">New</span>
+            <button class="na-next-btn">Call →</button>
+          </div>
+          <div class="na-row">
+            <div class="na-avatar" style="background:#4F38A2;">PV</div>
+            <div style="flex:1;"><div class="na-name">Priya Verma</div><div class="na-meta">Pune · Follow Up</div></div>
+            <span class="na-badge nb-new">New</span>
+            <button class="na-next-btn">Call →</button>
+          </div>
+          <div class="na-row">
+            <div class="na-avatar" style="background:#382873;">AK</div>
+            <div style="flex:1;"><div class="na-name">Amit Kumar</div><div class="na-meta">Delhi · Hot Lead</div></div>
+            <span class="na-badge nb-new">New</span>
+            <button class="na-next-btn">Call →</button>
+          </div>
+          <!-- Active section label -->
+          <div class="na-section-label" style="background:#F8F7FC;margin-top:4px;">Calls initiated — moved to active</div>
+          <div class="na-row na-row--active">
+            <div class="na-avatar" style="background:#9C8FCF;">SM</div>
+            <div style="flex:1;"><div class="na-name">Sunita Mehta</div><div class="na-meta">Bengaluru · 1 call made</div></div>
+            <span class="na-badge nb-active">Active</span>
+          </div>
+          <div class="na-row na-row--active">
+            <div class="na-avatar" style="background:#EC4899;">NK</div>
+            <div style="flex:1;"><div class="na-name">Neha Kapoor</div><div class="na-meta">Hyderabad · 2 calls made</div></div>
+            <span class="na-badge nb-skip">Skipped</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     03 — CAMPAIGN PERFORMANCE TRACKING
+     bg: white
+════════════════════════════════════ -->
+<section class="s-white">
+  <div class="inner">
+    <div>
+      <div class="s-eye">03 — Campaign Performance Tracking</div>
+        <h2 class="s-h2">Detailed reports.<br><em>Complete campaign visibility.</em></h2>
+        <p class="s-body">The campaign dashboard gives managers a real-time read on every campaign in progress — who's been assigned what, how many leads have been attempted, where leads stand in the pipeline, and what's blocking conversions.</p>
+        <ul class="fbullets" style="gap:20px;">
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;">
+              <span class="fbd"><svg viewBox="0 0 10 10" fill="none"><circle cx="3.5" cy="3.5" r="1.5" stroke="#4F38A2" stroke-width="1.2"/><path d="M1 8.5c0-1.4 1.1-2.5 2.5-2.5S6 7.1 6 8.5" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round"/><circle cx="7" cy="3.5" r="1" stroke="#4F38A2" stroke-width="1.1"/><path d="M7 6c.9 0 1.5.7 1.8 1.5" stroke="#4F38A2" stroke-width="1.1" stroke-linecap="round"/></svg></span>
+              <div>
+                <div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Campaign assignee report.</div>
+                <div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">How many leads are assigned to each rep in the campaign — and whether they've started working them.</div>
+              </div>
+            </div>
+            <!-- Mini visual: horizontal bar chart -->
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:12px 16px;margin-left:32px;max-width:480px;">
+              <div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;">Leads per rep</div>
+              <div style="display:flex;flex-direction:column;gap:6px;">
+                <div style="display:flex;align-items:center;gap:8px;">
+                  <span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);width:60px;flex-shrink:0;">Ahmed K.</span>
+                  <div style="flex:1;height:8px;background:var(--v100);border-radius:100px;overflow:hidden;"><div style="height:100%;width:57%;background:var(--v500);border-radius:100px;"></div></div>
+                  <span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v500);width:24px;text-align:right;">70</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;">
+                  <span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);width:60px;flex-shrink:0;">Subu R.</span>
+                  <div style="flex:1;height:8px;background:var(--v100);border-radius:100px;overflow:hidden;"><div style="height:100%;width:100%;background:var(--v400);border-radius:100px;"></div></div>
+                  <span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v500);width:24px;text-align:right;">184</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;">
+                  <span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v900);width:60px;flex-shrink:0;">Preethi R.</span>
+                  <div style="flex:1;height:8px;background:var(--v100);border-radius:100px;overflow:hidden;"><div style="height:100%;width:35%;background:var(--v300);border-radius:100px;"></div></div>
+                  <span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v500);width:24px;text-align:right;">42</span>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;">
+              <span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M5.5 2h4M5.5 5h4M5.5 8h2" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round"/><path d="M3.5 6.5a5 5 0 01-1.5-1.5l.7-.8-.8-1.5H.8c-.1.3-.1.7 0 1a5.5 5.5 0 003.7 3.7c.3.1.7.1 1 0v-1.1L4 6.5l-.5.7" stroke="#4F38A2" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <div>
+                <div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Campaign calling report.</div>
+                <div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">Total leads attempted, connected calls, pending leads, and skipped leads — the four numbers that define campaign execution quality.</div>
+              </div>
+            </div>
+            <!-- Mini visual: donut chart -->
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:12px 16px;margin-left:32px;max-width:480px;display:flex;align-items:center;gap:20px;">
+              <svg viewBox="0 0 80 80" width="72" height="72" style="flex-shrink:0;">
+                <!-- Donut: attempted 64% connected, 23% pending, 9% unanswered, 4% skipped -->
+                <circle cx="40" cy="40" r="28" fill="none" stroke="var(--v100)" stroke-width="12"/>
+                <!-- connected: 63.6% = 228.9deg -->
+                <circle cx="40" cy="40" r="28" fill="none" stroke="#4F38A2" stroke-width="12" stroke-dasharray="100 175.9" stroke-dashoffset="44" transform="rotate(-90 40 40)"/>
+                <!-- pending: 22.7% = 81.7deg -->
+                <circle cx="40" cy="40" r="28" fill="none" stroke="#9C8FCF" stroke-width="12" stroke-dasharray="40 135.9" stroke-dashoffset="-56" transform="rotate(-90 40 40)"/>
+                <!-- unanswered: 9.1% -->
+                <circle cx="40" cy="40" r="28" fill="none" stroke="#F59E0B" stroke-width="12" stroke-dasharray="16 159.9" stroke-dashoffset="-96" transform="rotate(-90 40 40)"/>
+                <!-- skipped: 4.5% -->
+                <circle cx="40" cy="40" r="28" fill="none" stroke="#EF4444" stroke-width="12" stroke-dasharray="8 167.9" stroke-dashoffset="-112" transform="rotate(-90 40 40)"/>
+                <text x="40" y="36" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-size="9" font-weight="900" fill="#211844">184</text>
+                <text x="40" y="47" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-size="7" fill="#94A3B8">leads</text>
+              </svg>
+              <div style="display:flex;flex-direction:column;gap:5px;">
+                <div style="display:flex;align-items:center;gap:6px;"><div style="width:8px;height:8px;border-radius:2px;background:#4F38A2;flex-shrink:0;"></div><span style="font-family:var(--font-head);font-size:10px;font-weight:600;color:var(--v900);">Connected <span style="color:var(--v500);font-weight:800;">117</span></span></div>
+                <div style="display:flex;align-items:center;gap:6px;"><div style="width:8px;height:8px;border-radius:2px;background:#9C8FCF;flex-shrink:0;"></div><span style="font-family:var(--font-head);font-size:10px;font-weight:600;color:var(--v900);">Pending <span style="color:var(--v500);font-weight:800;">42</span></span></div>
+                <div style="display:flex;align-items:center;gap:6px;"><div style="width:8px;height:8px;border-radius:2px;background:#F59E0B;flex-shrink:0;"></div><span style="font-family:var(--font-head);font-size:10px;font-weight:600;color:var(--v900);">Unanswered <span style="color:var(--v500);font-weight:800;">18</span></span></div>
+                <div style="display:flex;align-items:center;gap:6px;"><div style="width:8px;height:8px;border-radius:2px;background:#EF4444;flex-shrink:0;"></div><span style="font-family:var(--font-head);font-size:10px;font-weight:600;color:var(--v900);">Skipped <span style="color:var(--v500);font-weight:800;">7</span></span></div>
+              </div>
+            </div>
+          </li>
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;">
+              <span class="fbd"><svg viewBox="0 0 10 10" fill="none"><rect x="1" y="1.5" width="8" height="2" rx=".5" stroke="#4F38A2" stroke-width="1.2"/><rect x="2" y="4.5" width="6" height="1.5" rx=".5" stroke="#4F38A2" stroke-width="1.2"/><rect x="3.5" y="7" width="3" height="1.5" rx=".5" stroke="#4F38A2" stroke-width="1.2"/></svg></span>
+              <div><div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Lead status report.</div><div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">What stage are the leads in this campaign? How many are Interested, Negotiating, Won, or Lost — a real-time pipeline view scoped to the campaign.</div></div>
+            </div>
+            <!-- Mini visual: pie chart segments -->
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:12px 16px;margin-left:32px;max-width:480px;display:flex;align-items:center;gap:20px;">
+              <svg viewBox="0 0 80 80" width="72" height="72" style="flex-shrink:0;">
+                <!-- Pie chart: Interested 38%, Negotiating 16%, Won 11%, Not interested 19%, New 16% -->
+                <!-- Using stroke-dasharray on circle r=25.5 circumference=160.2 -->
+                <circle cx="40" cy="40" r="25.5" fill="none" stroke="#4F38A2" stroke-width="51" stroke-dasharray="60.9 99.3" stroke-dashoffset="40" transform="rotate(-90 40 40)"/>
+                <circle cx="40" cy="40" r="25.5" fill="none" stroke="#7260B5" stroke-width="51" stroke-dasharray="25.6 134.6" stroke-dashoffset="-20.9" transform="rotate(-90 40 40)"/>
+                <circle cx="40" cy="40" r="25.5" fill="none" stroke="#22C55E" stroke-width="51" stroke-dasharray="17.6 142.6" stroke-dashoffset="-46.5" transform="rotate(-90 40 40)"/>
+                <circle cx="40" cy="40" r="25.5" fill="none" stroke="#94A3B8" stroke-width="51" stroke-dasharray="30.4 129.8" stroke-dashoffset="-64.1" transform="rotate(-90 40 40)"/>
+                <circle cx="40" cy="40" r="25.5" fill="none" stroke="#C4BAE5" stroke-width="51" stroke-dasharray="25.6 134.6" stroke-dashoffset="-94.5" transform="rotate(-90 40 40)"/>
+                <circle cx="40" cy="40" r="14" fill="#fff"/>
+                <text x="40" y="37" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-size="8" font-weight="900" fill="#211844">Stage</text>
+                <text x="40" y="47" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-size="7" fill="#94A3B8">breakdown</text>
+              </svg>
+              <div style="display:flex;flex-direction:column;gap:5px;">
+                <div style="display:flex;align-items:center;gap:6px;"><div style="width:8px;height:8px;border-radius:2px;background:#4F38A2;flex-shrink:0;"></div><span style="font-family:var(--font-head);font-size:10px;font-weight:600;color:var(--v900);">Interested <span style="color:var(--v500);font-weight:800;">38%</span></span></div>
+                <div style="display:flex;align-items:center;gap:6px;"><div style="width:8px;height:8px;border-radius:2px;background:#7260B5;flex-shrink:0;"></div><span style="font-family:var(--font-head);font-size:10px;font-weight:600;color:var(--v900);">Negotiating <span style="color:var(--v500);font-weight:800;">16%</span></span></div>
+                <div style="display:flex;align-items:center;gap:6px;"><div style="width:8px;height:8px;border-radius:2px;background:#22C55E;flex-shrink:0;"></div><span style="font-family:var(--font-head);font-size:10px;font-weight:600;color:var(--v900);">Won <span style="color:var(--v500);font-weight:800;">11%</span></span></div>
+                <div style="display:flex;align-items:center;gap:6px;"><div style="width:8px;height:8px;border-radius:2px;background:#94A3B8;flex-shrink:0;"></div><span style="font-family:var(--font-head);font-size:10px;font-weight:600;color:var(--v900);">Not interested <span style="color:var(--v500);font-weight:800;">19%</span></span></div>
+                <div style="display:flex;align-items:center;gap:6px;"><div style="width:8px;height:8px;border-radius:2px;background:#C4BAE5;flex-shrink:0;"></div><span style="font-family:var(--font-head);font-size:10px;font-weight:600;color:var(--v900);">New <span style="color:var(--v500);font-weight:800;">16%</span></span></div>
+              </div>
+            </div>
+          </li>
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;">
+              <span class="fbd"><svg viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="3.5" stroke="#4F38A2" stroke-width="1.3"/><path d="M3.5 3.5l3 3M6.5 3.5l-3 3" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+              <div><div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Lost reason report.</div><div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">Every time a lead is marked lost, a reason is captured. The campaign shows a breakdown — so managers know whether it's pricing, timing, or competition killing the deal.</div></div>
+            </div>
+            <!-- Mini visual: half donut gauge -->
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:12px 16px;margin-left:32px;max-width:480px;display:flex;align-items:center;gap:20px;">
+              <svg viewBox="0 0 100 60" width="100" height="60" style="flex-shrink:0;">
+                <!-- Half donut -->
+                <path d="M10 50 A40 40 0 0 1 90 50" fill="none" stroke="var(--v100)" stroke-width="14" stroke-linecap="round"/>
+                <!-- Pricing 40% -->
+                <path d="M10 50 A40 40 0 0 1 90 50" fill="none" stroke="#EF4444" stroke-width="14" stroke-dasharray="50.3 125.7" stroke-dashoffset="0" stroke-linecap="round"/>
+                <!-- Budget 25% -->
+                <path d="M10 50 A40 40 0 0 1 90 50" fill="none" stroke="#F59E0B" stroke-width="14" stroke-dasharray="31.4 144.6" stroke-dashoffset="-50.3" stroke-linecap="round"/>
+                <!-- Timing 20% -->
+                <path d="M10 50 A40 40 0 0 1 90 50" fill="none" stroke="#9C8FCF" stroke-width="14" stroke-dasharray="25.1 150.9" stroke-dashoffset="-81.7" stroke-linecap="round"/>
+                <!-- Competition 15% -->
+                <path d="M10 50 A40 40 0 0 1 90 50" fill="none" stroke="#C4BAE5" stroke-width="14" stroke-dasharray="18.8 157.2" stroke-dashoffset="-106.8" stroke-linecap="round"/>
+                <text x="50" y="46" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-size="8" font-weight="900" fill="#211844">Lost</text>
+                <text x="50" y="56" text-anchor="middle" font-family="Plus Jakarta Sans,sans-serif" font-size="6.5" fill="#94A3B8">reasons</text>
+              </svg>
+              <div style="display:flex;flex-direction:column;gap:5px;">
+                <div style="display:flex;align-items:center;gap:6px;"><div style="width:8px;height:8px;border-radius:2px;background:#EF4444;flex-shrink:0;"></div><span style="font-family:var(--font-head);font-size:10px;font-weight:600;color:var(--v900);">Pricing <span style="color:var(--v500);font-weight:800;">40%</span></span></div>
+                <div style="display:flex;align-items:center;gap:6px;"><div style="width:8px;height:8px;border-radius:2px;background:#F59E0B;flex-shrink:0;"></div><span style="font-family:var(--font-head);font-size:10px;font-weight:600;color:var(--v900);">Budget <span style="color:var(--v500);font-weight:800;">25%</span></span></div>
+                <div style="display:flex;align-items:center;gap:6px;"><div style="width:8px;height:8px;border-radius:2px;background:#9C8FCF;flex-shrink:0;"></div><span style="font-family:var(--font-head);font-size:10px;font-weight:600;color:var(--v900);">Timing <span style="color:var(--v500);font-weight:800;">20%</span></span></div>
+                <div style="display:flex;align-items:center;gap:6px;"><div style="width:8px;height:8px;border-radius:2px;background:#C4BAE5;flex-shrink:0;"></div><span style="font-family:var(--font-head);font-size:10px;font-weight:600;color:var(--v900);">Competition <span style="color:var(--v500);font-weight:800;">15%</span></span></div>
+              </div>
+            </div>
+          </li>
+          <li style="flex-direction:column;align-items:stretch;gap:10px;">
+            <div style="display:flex;align-items:flex-start;gap:12px;">
+              <span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M5 8V6M2.5 8V4M7.5 8V4M1 8c0-2.2.9-4.2 2.3-5.6M9 8a6.9 6.9 0 00-2.3-5.6" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round"/></svg></span>
+              <div><div style="font-family:var(--font-head);font-weight:700;color:var(--v700);font-size:14px;">Call status report.</div><div style="font-size:14px;color:var(--grey);line-height:1.6;margin-top:3px;">For every unanswered call, the rep marks the status — busy, switched off, out of coverage, will call back. Aggregated here for the full campaign.</div></div>
+            </div>
+            <!-- Mini visual: stacked bar -->
+            <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:12px 16px;margin-left:32px;max-width:480px;">
+              <div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;">Unanswered call reasons</div>
+              <div style="height:16px;border-radius:100px;overflow:hidden;display:flex;margin-bottom:8px;">
+                <div style="width:35%;background:#4F38A2;height:100%;"></div>
+                <div style="width:28%;background:#7260B5;height:100%;"></div>
+                <div style="width:22%;background:#9C8FCF;height:100%;"></div>
+                <div style="width:15%;background:#C4BAE5;height:100%;"></div>
+              </div>
+              <div style="display:flex;gap:12px;flex-wrap:wrap;">
+                <div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;border-radius:2px;background:#4F38A2;flex-shrink:0;"></div><span style="font-family:var(--font-head);font-size:9px;color:var(--v900);">Busy <strong style="color:var(--v500);">35%</strong></span></div>
+                <div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;border-radius:2px;background:#7260B5;flex-shrink:0;"></div><span style="font-family:var(--font-head);font-size:9px;color:var(--v900);">Call back <strong style="color:var(--v500);">28%</strong></span></div>
+                <div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;border-radius:2px;background:#9C8FCF;flex-shrink:0;"></div><span style="font-family:var(--font-head);font-size:9px;color:var(--v900);">Switched off <strong style="color:var(--v500);">22%</strong></span></div>
+                <div style="display:flex;align-items:center;gap:4px;"><div style="width:8px;height:8px;border-radius:2px;background:#C4BAE5;flex-shrink:0;"></div><span style="font-family:var(--font-head);font-size:9px;color:var(--v900);">No coverage <strong style="color:var(--v500);">15%</strong></span></div>
+              </div>
+            </div>
+          </li>
+        </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     04 — ATTEMPT TRACKING
+     bg: #F8F7FC
+════════════════════════════════════ -->
+<section class="s-tint">
+  <div class="inner">
+    <div class="two-col two-col--rev">
+      <div>
+        <div class="s-eye">04 — Attempt Tracking</div>
+        <h2 class="s-h2">Connected. Unanswered. Pending. Skipped.<br><em>Every call accounted for.</em></h2>
+        <p class="s-body">The campaign calling report tracks every attempt made against every lead — how many times a rep tried, whether the call connected, and what happened to calls that didn't. Nothing slips through untracked.</p>
+        <ul class="fbullets">
+          <li>
+            <span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M6 2l1.5 1.5L5.5 5" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M8.5 7.2a7 7 0 01-1.35.7 8.3 8.3 0 01-5.65-5.65 7 7 0 01.7-1.35l1.8 1.3-.5 1c.46.87 1.18 1.58 2.05 2.04l1-.5 1.95 1.46z" stroke="#4F38A2" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span><strong>Connected calls tracked automatically.</strong> Every connected call is recorded and attributed to the campaign — duration, outcome, and rep — with no manual entry required.</span>
+          </li>
+          <li>
+            <span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M6.5 2L8 3.5M8 2L6.5 3.5" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round"/><path d="M8.5 7.2a7 7 0 01-1.35.7 8.3 8.3 0 01-5.65-5.65 7 7 0 01.7-1.35l1.8 1.3-.5 1c.46.87 1.18 1.58 2.05 2.04l1-.5 1.95 1.46z" stroke="#4F38A2" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span><strong>Unanswered call status.</strong> For every call that doesn't connect, the rep marks the reason — busy, switched off, out of coverage, asked to call back. All aggregated in the call status report.</span>
+          </li>
+          <li>
+            <span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M1 5s1.5-3 4-3 4 3 4 3-1.5 3-4 3-4-3-4-3z" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round"/><circle cx="5" cy="5" r="1.2" stroke="#4F38A2" stroke-width="1.2"/></svg></span>
+            <span><strong>Skip detection and reporting.</strong> Clicking Next without calling flags the lead as skipped in the campaign report. Managers can instantly see which reps are skipping leads and create a new campaign from the skipped set.</span>
+          </li>
+          <li>
+            <span class="fbd"><svg viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="3.5" stroke="#4F38A2" stroke-width="1.3"/><path d="M5 3v2l1.5 1" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span><strong>Per-lead attempt timeline.</strong> See how many times a lead has been attempted, when, and with what outcome — a colour-coded dot sequence that gives managers instant read on rep effort.</span>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <div class="attempt-panel">
+          <div class="attempt-head">
+            <div class="attempt-title">Campaign Calling Report</div>
+            <span style="font-family:var(--font-head);font-size:10px;font-weight:700;background:var(--v50);color:var(--v500);border:1.5px solid var(--v100);padding:3px 10px;border-radius:100px;">22 attempted of 184</span>
+          </div>
+          <!-- Summary row -->
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--border);">
+            <div style="padding:12px;text-align:center;border-right:1px solid var(--border);">
+              <div style="font-family:var(--font-head);font-size:18px;font-weight:900;color:var(--v900);">22</div>
+              <div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;margin-top:2px;">Attempted</div>
+            </div>
+            <div style="padding:12px;text-align:center;border-right:1px solid var(--border);">
+              <div style="font-family:var(--font-head);font-size:18px;font-weight:900;color:#16A34A;">14</div>
+              <div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;margin-top:2px;">Connected</div>
+            </div>
+            <div style="padding:12px;text-align:center;border-right:1px solid var(--border);">
+              <div style="font-family:var(--font-head);font-size:18px;font-weight:900;color:#D97706;">5</div>
+              <div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;margin-top:2px;">Unanswered</div>
+            </div>
+            <div style="padding:12px;text-align:center;">
+              <div style="font-family:var(--font-head);font-size:18px;font-weight:900;color:#EF4444;">3</div>
+              <div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;margin-top:2px;">Skipped</div>
+            </div>
+          </div>
+          <!-- Per-lead attempt rows -->
+          <div style="padding:8px 16px;border-bottom:1px solid var(--border);"><div style="font-family:var(--font-head);font-size:9px;font-weight:700;color:var(--grey2);text-transform:uppercase;letter-spacing:.07em;">Lead-level attempt log</div></div>
+          <div class="attempt-rows">
+            <div class="attempt-row">
+              <div class="att-av" style="background:#7260B5;">RS</div>
+              <div style="flex:1;">
+                <div class="att-name">Rajesh Sharma</div>
+                <div class="att-meta">3 attempts · Last: 11:42 am</div>
+              </div>
+              <div class="att-dots">
+                <div class="att-dot" style="background:#22C55E;" title="Connected"></div>
+                <div class="att-dot" style="background:#F59E0B;" title="Unanswered"></div>
+                <div class="att-dot" style="background:#22C55E;" title="Connected"></div>
+              </div>
+              <div class="att-badges">
+                <span class="att-badge ab-connected">Connected</span>
+              </div>
+            </div>
+            <div class="attempt-row">
+              <div class="att-av" style="background:#4F38A2;">PV</div>
+              <div style="flex:1;">
+                <div class="att-name">Priya Verma</div>
+                <div class="att-meta">2 attempts · Last: 10:15 am</div>
+              </div>
+              <div class="att-dots">
+                <div class="att-dot" style="background:#F59E0B;"></div>
+                <div class="att-dot" style="background:#F59E0B;"></div>
+              </div>
+              <div class="att-badges">
+                <span class="att-badge ab-unanswered">Unanswered</span>
+              </div>
+            </div>
+            <div class="attempt-row">
+              <div class="att-av" style="background:#382873;">AK</div>
+              <div style="flex:1;">
+                <div class="att-name">Amit Kumar</div>
+                <div class="att-meta">1 attempt · Last: 9:51 am</div>
+              </div>
+              <div class="att-dots">
+                <div class="att-dot" style="background:#22C55E;"></div>
+              </div>
+              <div class="att-badges">
+                <span class="att-badge ab-connected">Connected</span>
+              </div>
+            </div>
+            <div class="attempt-row">
+              <div class="att-av" style="background:#EC4899;">NK</div>
+              <div style="flex:1;">
+                <div class="att-name">Neha Kapoor</div>
+                <div class="att-meta">0 calls · Skipped by rep</div>
+              </div>
+              <div class="att-dots">
+                <div class="att-dot" style="background:#EF4444;"></div>
+              </div>
+              <div class="att-badges">
+                <span class="att-badge ab-skip">Skipped</span>
+              </div>
+            </div>
+            <div class="attempt-row" style="opacity:.5;">
+              <div class="att-av" style="background:#9C8FCF;">SM</div>
+              <div style="flex:1;">
+                <div class="att-name">Sunita Mehta</div>
+                <div class="att-meta">Not yet called</div>
+              </div>
+              <div class="att-badges">
+                <span class="att-badge ab-pending">Pending</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     05 — FOLLOW-UP AUTOMATION
+     bg: white
+════════════════════════════════════ -->
+<section class="s-white">
+  <div class="inner">
+    <div class="two-col">
+      <div>
+        <div class="s-eye">05 — Follow-up Automation Within Campaigns</div>
+        <h2 class="s-h2">Campaign ends.<br><em>Follow-up starts automatically.</em></h2>
+        <p class="s-body">The best campaigns don't stop at the first call. telecrm lets you define what happens after each call outcome — a WhatsApp message sent automatically, a task created for the rep, or a new follow-up campaign launched from unanswered and skipped leads.</p>
+        <ul class="fbullets">
+          <li>
+            <span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 2h7a.5.5 0 01.5.5v4a.5.5 0 01-.5.5H3.5L1.5 8.5V2.5a.5.5 0 01.5-.5z" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 3.5l-1 1.5h2l-1 1.5" stroke="#4F38A2" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span><strong>Post-call WhatsApp triggered automatically.</strong> When a rep marks a call as Interested or Proposal Sent, a personalised WhatsApp message fires automatically — no rep action required, no delay.</span>
+          </li>
+          <li>
+            <span class="fbd"><svg viewBox="0 0 10 10" fill="none"><rect x="2" y="2" width="6" height="7" rx="0.8" stroke="#4F38A2" stroke-width="1.3"/><path d="M3.5 1.5h3" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round"/><path d="M3.5 5.5l1 1 2-2" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span><strong>Task creation on call completion.</strong> After each call in the campaign, reps can create a follow-up task — call back in 2 days, send quote today — that ties back to the lead and the campaign.</span>
+          </li>
+          <li>
+            <span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M7.5 3.5A3.2 3.2 0 105 8.2" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round"/><path d="M7.5 1.5v2h-2" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span><strong>New campaign from lost or skipped leads.</strong> Managers can filter the campaign's skipped, unanswered, or lost leads and spin up a second campaign — assigned to a different rep or scheduled for a different time slot.</span>
+          </li>
+          <li>
+            <span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M6.5 1.5l2 2L3 9H1v-2l5.5-5.5z" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span><strong>Remark and status update mid-call.</strong> Reps can add a remark, update the lead stage, and send a WhatsApp — all from the active call screen — before clicking Next to move to the following lead.</span>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <div class="fu-builder">
+          <div class="fu-head">
+            <div class="fu-title">Follow-up Automation — Campaign flow</div>
+            <div class="fu-sub">Triggers on call outcome · Auto-executes</div>
+          </div>
+          <div class="fu-body">
+            <div class="fu-step">
+              <div class="fu-step-left">
+                <div class="fu-step-num">1</div>
+                <div class="fu-step-line"></div>
+              </div>
+              <div class="fu-step-content">
+                <div class="fu-step-title">Rep initiates call from campaign</div>
+                <div class="fu-step-desc">Lead moves from New → Active automatically the moment the call starts.</div>
+                <span class="fu-step-chip">
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="#4F38A2" stroke-width="1.5" stroke-linecap="round"><path d="M5 1v4l2.5 2.5"/><circle cx="5" cy="5" r="4"/></svg>
+                  Auto on call start
+                </span>
+              </div>
+            </div>
+            <div class="fu-step">
+              <div class="fu-step-left">
+                <div class="fu-step-num">2</div>
+                <div class="fu-step-line"></div>
+              </div>
+              <div class="fu-step-content">
+                <div class="fu-step-title">Rep updates status + adds remark</div>
+                <div class="fu-step-desc">Mid-call or after — stage change, remark, WhatsApp message all from the same screen.</div>
+                <span class="fu-step-chip">Interested → Proposal Sent</span>
+              </div>
+            </div>
+            <div class="fu-step">
+              <div class="fu-step-left">
+                <div class="fu-step-num">3</div>
+                <div class="fu-step-line"></div>
+              </div>
+              <div class="fu-step-content">
+                <div class="fu-step-title">WhatsApp fires automatically</div>
+                <div class="fu-step-desc">Personalised template sent to the lead the moment the outcome is marked — no rep action needed.</div>
+                <span class="fu-step-chip" style="background:rgba(34,197,94,.1);border-color:rgba(34,197,94,.3);color:#16A34A;">
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="#16A34A" stroke-width="1.5" stroke-linecap="round"><path d="M2 5l2 2 4-4"/></svg>
+                  Auto-sent
+                </span>
+              </div>
+            </div>
+            <div class="fu-step">
+              <div class="fu-step-left">
+                <div class="fu-step-num">4</div>
+              </div>
+              <div class="fu-step-content">
+                <div class="fu-step-title">Next button → next lead opens</div>
+                <div class="fu-step-desc">No manual navigation. The next lead in the campaign queue opens automatically — rep stays in flow.</div>
+                <span class="fu-step-chip">→ Auto-advance to next lead</span>
+              </div>
+            </div>
+            <!-- Manager creates follow-up campaign from skipped -->
+            <div class="fu-trigger">
+              <div>
+                <div class="fu-trigger-label">Manager action: New campaign from skipped leads</div>
+                <div class="fu-trigger-meta">Filter skipped → assign to different rep → launch</div>
+              </div>
+              <div class="fu-trigger-badge">✓ 3 leads</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     06 — TEAM-WISE CAMPAIGN ALLOCATION
+     bg: dark
+════════════════════════════════════ -->
+<section class="s-tint">
+  <div class="inner">
+    <div style="margin-bottom:48px;">
+      <div class="s-eye">06 — Team-wise Campaign Allocation</div>
+      <h2 class="s-h2" style="font-size:clamp(24px,3vw,34px);">Every rep has<br>their <em>own campaign focus.</em></h2>
+      <p class="s-body" style="max-width:680px;">Campaigns can be assigned to individual reps, to groups, or to your entire team — each person gets their own focused calling list. Managers see campaign progress per rep and can rebalance allocation mid-campaign without disruption.</p>
+    </div>
+    <div class="team-grid-panel">
+      <div class="team-card">
+        <div class="team-card__head">
+          <div class="team-card__avatar" style="background:#7260B5;">AK</div>
+          <div>
+            <div class="team-card__name">Ahmed Khan</div>
+            <div class="team-card__role">Inside Sales Rep</div>
+          </div>
+        </div>
+        <div class="team-card__camp">Campaign: Facebook May — Hot Leads</div>
+        <div class="prog-bar" style="margin-bottom:6px;"><div class="prog-fill" style="width:38%;"></div></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+          <span style="font-family:var(--font-head);font-size:10px;color:var(--grey2);">70 of 184 leads called</span>
+          <span style="font-family:var(--font-head);font-size:11px;font-weight:900;color:var(--v500);">38%</span>
+        </div>
+        <div class="team-card__stats">
+          <div class="team-card__stat"><div class="team-card__stat-n">70</div><div class="team-card__stat-l">Attempted</div></div>
+          <div class="team-card__stat"><div class="team-card__stat-n" style="color:#22C55E;">44</div><div class="team-card__stat-l">Connected</div></div>
+          <div class="team-card__stat"><div class="team-card__stat-n" style="color:#F59E0B;">22</div><div class="team-card__stat-l">Pending</div></div>
+          <div class="team-card__stat"><div class="team-card__stat-n" style="color:#EF4444;">4</div><div class="team-card__stat-l">Skipped</div></div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-card__head">
+          <div class="team-card__avatar" style="background:#4F38A2;">SB</div>
+          <div>
+            <div class="team-card__name">Subu Rajan</div>
+            <div class="team-card__role">Inside Sales Rep</div>
+          </div>
+        </div>
+        <div class="team-card__camp">Campaign: IndiaMART Q2 — Warm</div>
+        <div class="prog-bar" style="margin-bottom:6px;"><div class="prog-fill" style="width:61%;"></div></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+          <span style="font-family:var(--font-head);font-size:10px;color:var(--grey2);">238 of 389 leads called</span>
+          <span style="font-family:var(--font-head);font-size:11px;font-weight:900;color:var(--v500);">61%</span>
+        </div>
+        <div class="team-card__stats">
+          <div class="team-card__stat"><div class="team-card__stat-n">238</div><div class="team-card__stat-l">Attempted</div></div>
+          <div class="team-card__stat"><div class="team-card__stat-n" style="color:#22C55E;">179</div><div class="team-card__stat-l">Connected</div></div>
+          <div class="team-card__stat"><div class="team-card__stat-n" style="color:#F59E0B;">51</div><div class="team-card__stat-l">Pending</div></div>
+          <div class="team-card__stat"><div class="team-card__stat-n" style="color:#EF4444;">8</div><div class="team-card__stat-l">Skipped</div></div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-card__head">
+          <div class="team-card__avatar" style="background:#9C8FCF;">PR</div>
+          <div>
+            <div class="team-card__name">Preethi R.</div>
+            <div class="team-card__role">Inside Sales Rep</div>
+          </div>
+        </div>
+        <div class="team-card__camp">Campaign: Delhi NCR — Re-engagement</div>
+        <div class="prog-bar" style="margin-bottom:6px;"><div class="prog-fill" style="width:24%;"></div></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+          <span style="font-family:var(--font-head);font-size:10px;color:var(--grey2);">42 of 176 leads called</span>
+          <span style="font-family:var(--font-head);font-size:11px;font-weight:900;color:var(--v500);">24%</span>
+        </div>
+        <div class="team-card__stats">
+          <div class="team-card__stat"><div class="team-card__stat-n">42</div><div class="team-card__stat-l">Attempted</div></div>
+          <div class="team-card__stat"><div class="team-card__stat-n" style="color:#22C55E;">29</div><div class="team-card__stat-l">Connected</div></div>
+          <div class="team-card__stat"><div class="team-card__stat-n" style="color:#F59E0B;">11</div><div class="team-card__stat-l">Pending</div></div>
+          <div class="team-card__stat"><div class="team-card__stat-n" style="color:#EF4444;">2</div><div class="team-card__stat-l">Skipped</div></div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:20px;text-align:center;">
+      <p style="font-family:var(--font-head);font-size:11px;font-weight:600;color:var(--grey);">Managers can reassign leads, add reps, or create a new campaign from any rep's skipped or unanswered leads — mid-campaign, without disruption.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════
+     07 — PRIORITY-BASED CALLING QUEUES
+     bg: white
+════════════════════════════════════ -->
+<section class="s-white">
+  <div class="inner">
+    <div class="two-col two-col--rev">
+      <div>
+        <div class="s-eye">07 — Priority-based Calling Queues</div>
+        <h2 class="s-h2">Hot leads first.<br><em>Always.</em></h2>
+        <p class="s-body">Not all leads in a campaign are equal. telecrm lets managers set urgency and priority at the campaign level — so high-value, time-sensitive leads always surface at the top of the rep's calling queue, and nothing critical gets buried under a generic list.</p>
+        <ul class="fbullets">
+          <li>
+            <span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M6 1.5L3.5 5.5H6L4 8.5l4.5-5H6L6.5 2" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span><strong>Campaign-level urgency setting.</strong> Set a campaign as High, Medium, or Normal urgency — reps see the urgency flag and prioritise which campaign to work when they have multiple active.</span>
+          </li>
+          <li>
+            <span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M5 1.5L9 3.5 5 5.5 1 3.5z" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 6.5l4 2 4-2" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span><strong>Lead-level priority within campaigns.</strong> Within a campaign, leads are ordered by priority — Hot Leads and Negotiating leads surface first, new cold leads come after. Reps work the highest-value leads while they're fresh.</span>
+          </li>
+          <li>
+            <span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M4.5 2.5h4.5M4.5 5h4.5M4.5 7.5h4.5M1.5 2.5h1v2.5M1 5h2" stroke="#4F38A2" stroke-width="1.2" stroke-linecap="round"/></svg></span>
+            <span><strong>Queue order enforced by the Next button.</strong> Reps can't reorder the queue at will — the Next button follows the priority sequence set by the manager, keeping execution disciplined.</span>
+          </li>
+          <li>
+            <span class="fbd"><svg viewBox="0 0 10 10" fill="none"><path d="M1.5 3h7M1.5 7h7" stroke="#4F38A2" stroke-width="1.3" stroke-linecap="round"/><circle cx="3.5" cy="3" r="1" fill="#fff" stroke="#4F38A2" stroke-width="1.2"/><circle cx="6.5" cy="7" r="1" fill="#fff" stroke="#4F38A2" stroke-width="1.2"/></svg></span>
+            <span><strong>Manager adjusts mid-campaign.</strong> Priority can be updated at any time — when a batch of new hot leads arrives mid-campaign, managers push them to the top without rebuilding the campaign.</span>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <div class="priority-panel">
+          <div class="pq-head">
+            <div class="pq-title">Priority Queue — Facebook May</div>
+            <div class="pq-badge">High urgency set</div>
+          </div>
+          <div style="padding:8px 16px;border-bottom:1px solid var(--border);display:flex;gap:8px;">
+            <span style="font-family:var(--font-head);font-size:9px;font-weight:700;padding:3px 10px;border-radius:100px;background:rgba(239,68,68,.1);color:#EF4444;border:1px solid rgba(239,68,68,.2);">● High priority · 12 leads</span>
+            <span style="font-family:var(--font-head);font-size:9px;font-weight:700;padding:3px 10px;border-radius:100px;background:rgba(245,158,11,.1);color:#D97706;border:1px solid rgba(245,158,11,.2);">Medium · 48 leads</span>
+            <span style="font-family:var(--font-head);font-size:9px;font-weight:700;padding:3px 10px;border-radius:100px;background:var(--v50);color:var(--v400);border:1px solid var(--v100);">Normal · 124 leads</span>
+          </div>
+          <div class="pq-rows">
+            <div class="pq-row">
+              <span class="pq-rank">#1</span>
+              <div class="pq-priority pq-p--high"></div>
+              <div style="flex:1;">
+                <div class="pq-name">Rajesh Sharma</div>
+                <div class="pq-meta">Hot Lead · 3 previous calls · Mumbai</div>
+              </div>
+              <span class="pq-tag" style="background:rgba(239,68,68,.1);color:#EF4444;">High</span>
+            </div>
+            <div class="pq-row">
+              <span class="pq-rank">#2</span>
+              <div class="pq-priority pq-p--high"></div>
+              <div style="flex:1;">
+                <div class="pq-name">Priya Verma</div>
+                <div class="pq-meta">Negotiating · Sent proposal yesterday · Pune</div>
+              </div>
+              <span class="pq-tag" style="background:rgba(239,68,68,.1);color:#EF4444;">High</span>
+            </div>
+            <div class="pq-row">
+              <span class="pq-rank">#3</span>
+              <div class="pq-priority pq-p--high"></div>
+              <div style="flex:1;">
+                <div class="pq-name">Vikram Bansal</div>
+                <div class="pq-meta">Hot Lead · Decision pending · Gurgaon</div>
+              </div>
+              <span class="pq-tag" style="background:rgba(239,68,68,.1);color:#EF4444;">High</span>
+            </div>
+            <div class="pq-row">
+              <span class="pq-rank">#4</span>
+              <div class="pq-priority pq-p--med"></div>
+              <div style="flex:1;">
+                <div class="pq-name">Sunita Mehta</div>
+                <div class="pq-meta">Warm · 1 call · Bengaluru</div>
+              </div>
+              <span class="pq-tag" style="background:rgba(245,158,11,.1);color:#D97706;">Medium</span>
+            </div>
+            <div class="pq-row">
+              <span class="pq-rank">#5</span>
+              <div class="pq-priority pq-p--med"></div>
+              <div style="flex:1;">
+                <div class="pq-name">Deepak Gupta</div>
+                <div class="pq-meta">Follow Up · New lead · Chennai</div>
+              </div>
+              <span class="pq-tag" style="background:rgba(245,158,11,.1);color:#D97706;">Medium</span>
+            </div>
+            <div class="pq-row" style="opacity:.5;">
+              <span class="pq-rank">#6</span>
+              <div class="pq-priority pq-p--low"></div>
+              <div style="flex:1;">
+                <div class="pq-name">Anjali Tiwari</div>
+                <div class="pq-meta">Cold · No previous calls · Noida</div>
+              </div>
+              <span class="pq-tag" style="background:var(--v50);color:var(--v400);">Normal</span>
+            </div>
+          </div>
+          <div style="padding:10px 16px;background:var(--v50);border-top:1px solid var(--v100);text-align:center;">
+            <span style="font-family:var(--font-head);font-size:11px;font-weight:600;color:var(--v400);">High priority leads always surface first · Rep always calls in queue order</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="final-cta__grid"></div>
+  <div class="final-cta__glow"></div>
+  <div class="final-cta__inner">
+    <div class="final-cta__badge">
+      <span class="final-cta__badge-dot"></span>
+      Free 30-minute demo
+    </div>
+    <div style="font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v300);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;">Join 5,000+ Indian sales teams</div>
+    <h2 class="final-cta__h2">Are you ready<br>to <em>get started?</em></h2>
+    <p class="final-cta__sub">No jargon. We'll show you exactly how telecrm works for your business — your industry, your team size, your lead sources. The demo is free. The setup is guided. The commitment is yours to make when you're ready.</p>
+    <div class="final-cta__cta-wrap">
+      <a href="telecrm-demo-request.html" class="btn-cta-white">
+        Get a Demo
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="final-cta__trust">
+      <span class="final-cta__trust-item"><span class="final-cta__trust-dot"></span>No credit card needed</span>
+      <span class="final-cta__trust-item"><span class="final-cta__trust-dot"></span>Response within 24 hours</span>
+      <span class="final-cta__trust-item"><span class="final-cta__trust-dot"></span>5,000+ businesses onboarded</span>
+      <span class="final-cta__trust-item"><span class="final-cta__trust-dot"></span>Fast setup</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<section class="faq">
+  <div class="faq__inner">
+    <div class="faq__header">
+      <div class="faq__eyebrow">FAQ</div>
+      <h2 class="faq__h2">Your questions, <em>answered plainly.</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">What is a calling campaign?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">A structured replacement for target sheets — assign leads, track progress, and manage call attempts as a proper campaign inside telecrm.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">How quickly can I build a calling list?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">A unique calling list for every target is built in seconds.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">Can I track every call attempt?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">Yes — Connected, Unanswered, Pending, and Skipped are all accounted for, so every call is visible.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">Can I run campaigns across a whole team?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">Yes — run team-wise campaigns with detailed reports and complete campaign visibility.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__logo">telecrm</div>
+        <p class="footer__tagline">A Comprehensive Revenue Management Engine — fusing Lead Management, Call Management, Adaptive CRM, Marketing Automation, and Pipeline Management into one high-performance workspace.</p>
+        <a href="telecrm-get-started.html" class="btn-primary">Get Started →</a>
+      </div>
+      <div class="footer__links-grid">
+      <div class="footer__col-stack">
+        <div>
+          <div class="footer__col-title">Platform</div>
+          <div class="footer__links">
+            <a href="telecrm-platform-overview.html" class="footer__link">Platform Overview</a>
+            <a href="telecrm-platform-hub.html" class="footer__link">Platform Hub</a>
+            <a href="telecrm-benefits-hub.html" class="footer__link">Benefits Hub</a>
+            <a href="telecrm-platform-unified-revenue-management.html" class="footer__link">Unified Revenue Management</a>
+            <a href="telecrm-platform-lead-management.html" class="footer__link">Lead Management</a>
+            <a href="telecrm-platform-call-management.html" class="footer__link">Call Management &amp; Recording</a>
+            <a href="telecrm-platform-adaptive-crm.html" class="footer__link">Adaptive CRM</a>
+            <a href="telecrm-platform-marketing-automation.html" class="footer__link">Marketing Automation</a>
+            <a href="telecrm-platform-sales-pipeline-management.html" class="footer__link">Sales Pipeline Management</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Pricing</div>
+          <div class="footer__links">
+            <a href="telecrm-pricing.html" class="footer__link">Pricing</a>
+            <a href="telecrm-cost-savings.html" class="footer__link">Cost Savings</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__col-stack">
+        <div>
+          <div class="footer__col-title">Solutions</div>
+          <div class="footer__links">
+            <a href="telecrm-problems-hub.html" class="footer__link">Problems Hub</a>
+            <a href="telecrm-crm-hub.html" class="footer__link">CRM Hub</a>
+            <a href="telecrm-industry-hub.html" class="footer__link">Industry Hub</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Get Started</div>
+          <div class="footer__links">
+            <a href="telecrm-partnership.html" class="footer__link">Partner Program</a>
+            <a href="telecrm-demo-request.html" class="footer__link">Demo Request</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__col-stack">
+        <div>
+          <div class="footer__col-title">Trust</div>
+          <div class="footer__links">
+            <a href="telecrm-testimonials.html" class="footer__link">Testimonials</a>
+            <a href="telecrm-case-studies.html" class="footer__link">Case Studies</a>
+            <a href="telecrm-comparison.html" class="footer__link">Comparison</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">About Us</div>
+          <div class="footer__links">
+            <a href="telecrm-about-telecrm.html" class="footer__link">About telecrm</a>
+            <a href="telecrm-life-at-telecrm.html" class="footer__link">Life at telecrm</a>
+            <a href="telecrm-careers.html" class="footer__link">Careers</a>
+            <a href="telecrm-contact.html" class="footer__link">Contact Us</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Support</div>
+        <div class="footer__links">
+          <a href="telecrm-faqs.html" class="footer__link">FAQs</a>
+          <a href="telecrm-glossary.html" class="footer__link">Glossary</a>
+          <a href="telecrm-learning-repository.html" class="footer__link">Learning Repository</a>
+          <a href="telecrm-onboarding.html" class="footer__link">Onboarding</a>
+          <a href="telecrm-privacy-policy.html" class="footer__link">Privacy Policy</a>
+          <a href="telecrm-recommended-devices.html" class="footer__link">Recommended Devices</a>
+          <a href="telecrm-refund-policy.html" class="footer__link">Refund Policy</a>
+          <a href="telecrm-terms-conditions.html" class="footer__link">Terms &amp; Conditions</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Features</div>
+        <div class="footer__links">
+          <a href="telecrm-feature-automations.html" class="footer__link">Automation</a>
+          <a href="telecrm-feature-call-management.html" class="footer__link">Call Management</a>
+          <a href="telecrm-feature-calling-campaign.html" class="footer__link">Calling Campaign Management</a>
+          <a href="telecrm-feature-integrations.html" class="footer__link">Integrations</a>
+          <a href="telecrm-feature-lead-fields.html" class="footer__link">Lead Fields</a>
+          <a href="telecrm-feature-lead-management.html" class="footer__link">Lead Management &amp; Reporting</a>
+          <a href="telecrm-feature-lead-stages.html" class="footer__link">Lead Stages</a>
+          <a href="telecrm-feature-list-labels.html" class="footer__link">List and Labels</a>
+          <a href="telecrm-feature-reporting.html" class="footer__link">Reporting</a>
+          <a href="telecrm-feature-user-management.html" class="footer__link">User Management</a>
+          <a href="telecrm-feature-whatsapp.html" class="footer__link">WhatsApp</a>
+        </div>
+      </div>
+      </div><!-- /footer__links-grid -->
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__copy">© 2026 telecrm. All rights reserved.</div>
+      <div class="footer__legal">
+        <a href="telecrm-privacy-policy.html">Privacy Policy</a>
+        <a href="telecrm-terms-conditions.html">Terms &amp; Conditions</a>
+        <a href="telecrm-refund-policy.html">Refund Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.querySelector('.nav__hamburger');
+  var links=document.querySelector('.nav__links');
+  if(btn&&links){
+    btn.addEventListener('click',function(){btn.classList.toggle('open');links.classList.toggle('open');});
+  }
+  var mq=window.matchMedia('(max-width:768px)');
+  document.querySelectorAll('.nav__item > .nav__link').forEach(function(hub){
+    hub.addEventListener('click',function(e){ if(mq.matches){ e.preventDefault(); hub.parentElement.classList.toggle('open'); } });
+  });
+  document.querySelectorAll('.np__link,.np__foot,.nav__cta,.nav__mobile-cta').forEach(function(l){
+    l.addEventListener('click',function(){ if(btn){btn.classList.remove('open');} if(links){links.classList.remove('open');} });
+  });
+})();
+</script>
+<script>
+function toggleFaq(el){
+  var item=el.parentElement;
+  var isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+  if(!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>

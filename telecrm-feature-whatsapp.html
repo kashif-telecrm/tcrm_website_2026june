@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale:1"/>
+<link rel="canonical" href="https://telecrm.in/features/whatsapp/">
+<meta name="description" content="telecrm WhatsApp — Send messages, automate follow-ups, and track every conversation from within your CRM. No switching apps."/>
+<title>WhatsApp | Features | telecrm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800;1,900&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --cta:#F97316; --cta-hover:#EA580C;
+  --font-head:'Plus Jakarta Sans',sans-serif;
+  --font-body:'DM Sans',sans-serif;
+  --v50:#EDEBF6;--v100:#DDD9EE;--v200:#BDB5DE;--v300:#9C8FCF;
+  --v400:#7260B5;--v500:#4F38A2;--v600:#483393;--v700:#382873;--v900:#211844;
+  --grey:#4B5563;--grey2:#9CA3AF;--border:#E5E7EB;
+  --radius-btn:10px;--radius-card:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--font-body);color:var(--v900);background:#fff;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none;}
+.inner{max-width:1160px;margin:0 auto;padding:0 40px;}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+.nav__inner{max-width:1280px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:72px;}
+.nav__logo{font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--v500);letter-spacing:-.5px;}
+.nav__links{display:flex;align-items:center;gap:2px;}
+.nav__link{font-family:var(--font-head);font-size:12.5px;font-weight:600;color:var(--v700);padding:7px 11px;border-radius:8px;transition:all .18s;white-space:nowrap;}
+.nav__link:hover,.nav__link--active{background:var(--v50);color:var(--v500);}
+.nav__sep{display:inline-block;width:1px;height:20px;background:var(--border);margin:0 8px;vertical-align:middle;}
+.nav__cta{font-family:var(--font-head);font-size:13px;font-weight:700;background:var(--cta);color:#fff;padding:10px 22px;border-radius:var(--radius-btn);box-shadow:0 4px 12px rgba(249,115,22,.3);transition:all .18s;white-space:nowrap;margin-left:8px;}
+.nav__cta:hover{background:var(--cta-hover);transform:translateY(-1px);}
+.nav__mobile-right{display:none;align-items:center;gap:8px;margin-left:auto;}
+.nav__mobile-cta{font-family:var(--font-head);font-size:13px;font-weight:700;background:var(--v500);color:#fff;padding:8px 16px;border-radius:var(--radius-btn);text-decoration:none;white-space:nowrap;}
+.nav__mob-sep{display:none;width:1px;height:20px;background:var(--border);}
+.nav__hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:8px;border:none;background:transparent;}
+.nav__hamburger span{display:block;width:22px;height:2px;background:var(--v900);border-radius:2px;transition:all .18s;}
+.nav__hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav__hamburger.open span:nth-child(2){opacity:0;}
+.nav__hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* HERO */
+.hero{padding:64px 0 56px;background:#fff;border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+.hero__bg{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:96px 96px;opacity:.35;pointer-events:none;}
+.hero__glow{position:absolute;top:-80px;right:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(79,56,162,.07) 0%,transparent 70%);pointer-events:none;}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-family:var(--font-head);font-size:12px;font-weight:600;color:var(--grey2);margin-bottom:24px;}
+.breadcrumb__sep{color:var(--border);}
+.hero__eyebrow{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;}
+.hero__h1{font-family:var(--font-head);font-size:clamp(28px,4vw,48px);font-weight:900;letter-spacing:-1.5px;color:var(--v900);line-height:1.1;margin-bottom:14px;}
+.hero__h1 em{font-style:normal;color:var(--v500);}
+.hero__sub{font-size:17px;color:var(--grey);line-height:1.75;max-width:640px;}
+.hero__cta-wrap{display:flex;align-items:center;gap:16px;margin-bottom:40px;}
+.btn-primary{font-family:var(--font-head);font-size:15px;font-weight:700;background:var(--cta);color:#fff;padding:14px 32px;border-radius:var(--radius-btn);border:none;cursor:pointer;transition:background .2s;display:inline-flex;align-items:center;gap:8px;}
+.btn-primary:hover{background:var(--cta-hover);}
+.btn-ghost{font-family:var(--font-head);font-size:15px;font-weight:700;background:transparent;color:var(--v500);padding:14px 24px;border-radius:var(--radius-btn);border:1.5px solid var(--v200);cursor:pointer;transition:all .2s;}
+.btn-ghost:hover{background:var(--v50);}
+.highlights{background:var(--v50);border-top:1px solid var(--v100);border-bottom:1px solid var(--v100);}
+.highlights__inner{max-width:1160px;margin:0 auto;padding:0 40px;display:flex;align-items:center;gap:32px;height:48px;overflow-x:auto;}
+.highlight{display:flex;align-items:center;gap:10px;padding:10px 16px;background:#fff;border:1.5px solid var(--v100);border-radius:10px;}
+.highlight__dot{width:6px;height:6px;border-radius:50%;background:var(--v500);flex-shrink:0;}
+.highlight__text{font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v700);white-space:nowrap;}
+
+/* SECTIONS */
+.s1{padding:80px 0;background:#fff;}
+.s1__eyebrow{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
+.s1__h2{font-family:var(--font-head);font-size:clamp(24px,3vw,34px);font-weight:900;color:var(--v900);letter-spacing:-.5px;line-height:1.2;margin-bottom:10px;}
+.s1__h2 em{font-style:normal;color:var(--v500);}
+.s1__body{font-size:15px;color:var(--grey);line-height:1.75;max-width:100%;}
+.s1__header{margin-bottom:40px;}
+
+.s2{padding:80px 0;background:#F8F7FC;}
+.s3{padding:80px 0;background:#fff;}
+.s4{padding:80px 0;background:#F8F7FC;}
+.s5{padding:80px 0;background:#fff;}
+.s6{padding:80px 0;background:#F8F7FC;}
+
+/* PAGE CTA */
+.page-cta{padding:48px 0;background:var(--v500);}
+.page-cta__inner{display:flex;align-items:center;justify-content:space-between;gap:32px;}
+.page-cta__h2{font-family:var(--font-head);font-size:clamp(20px,2.5vw,28px);font-weight:900;color:#fff;letter-spacing:-.5px;margin-bottom:4px;}
+.page-cta__sub{font-size:14px;color:var(--v200);line-height:1.6;}
+.page-cta__trust{display:flex;align-items:center;gap:6px;margin-top:10px;}
+.page-cta__trust-dot{width:6px;height:6px;border-radius:50%;background:#22C55E;flex-shrink:0;}
+.page-cta__trust-text{font-family:var(--font-head);font-size:11px;font-weight:600;color:var(--v200);}
+.btn-white{font-family:var(--font-head);font-size:15px;font-weight:700;background:#fff;color:var(--v500);padding:15px 36px;border-radius:var(--radius-btn);border:none;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.15);transition:all .2s;display:inline-flex;align-items:center;gap:8px;}
+
+/* FINAL CTA */
+.final-cta{padding:96px 0;background:var(--v900);text-align:center;}
+.final-cta__inner{max-width:720px;margin:0 auto;}
+.final-cta__badge{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v200);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);padding:6px 16px;border-radius:100px;margin-bottom:28px;}
+.final-cta__badge-dot{width:6px;height:6px;border-radius:50%;background:#22C55E;}
+.final-cta__h2{font-family:var(--font-head);font-size:clamp(32px,4.5vw,56px);font-weight:900;letter-spacing:-1.5px;color:#fff;line-height:1.1;margin-bottom:16px;}
+.final-cta__h2 em{font-style:normal;color:var(--v300);}
+.final-cta__sub{font-size:17px;color:var(--v200);line-height:1.7;margin-bottom:32px;}
+.final-cta__cta-wrap{display:flex;align-items:center;justify-content:center;margin-bottom:40px;}
+.btn-cta-white{font-family:var(--font-head);font-size:16px;font-weight:700;background:#fff;color:var(--v500);padding:16px 40px;border-radius:var(--radius-btn);border:none;cursor:pointer;box-shadow:0 8px 28px rgba(0,0,0,.2);transition:all .2s;display:inline-flex;align-items:center;gap:8px;}
+.final-cta__trust{display:flex;align-items:center;justify-content:center;gap:6px;}
+.final-cta__trust-dot{width:6px;height:6px;border-radius:50%;background:#22C55E;flex-shrink:0;}
+.final-cta__trust-text{font-family:var(--font-head);font-size:12px;font-weight:600;color:var(--v300);}
+
+/* FOOTER */
+.footer{padding:64px 0 40px;background:#fff;border-top:1px solid var(--border);}
+.footer__links-grid{display:contents;}
+.footer__grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+.footer__logo{font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--v500);margin-bottom:16px;letter-spacing:-.5px;}
+.footer__tagline{font-size:14px;color:var(--grey);line-height:1.7;max-width:280px;margin-bottom:24px;}
+.footer__col-title{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;}
+.footer__link{display:block;font-size:14px;color:var(--grey2);margin-bottom:10px;transition:color .2s;}
+.footer__link:hover{color:#fff;}
+.footer__bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;display:flex;align-items:center;justify-content:space-between;}
+.footer__copy{font-size:13px;color:var(--grey2);}
+
+/* WHATSAPP CHAT BUBBLE STYLES */
+.wa-bubble{border-radius:12px;padding:10px 14px;max-width:80%;font-size:13px;line-height:1.6;position:relative;}
+.wa-bubble--out{background:#DCF8C6;color:#1a1a1a;margin-left:auto;border-bottom-right-radius:4px;}
+.wa-bubble--in{background:#fff;color:#1a1a1a;border-bottom-left-radius:4px;border:1px solid #e5e7eb;}
+.wa-time{font-size:10px;color:#8696a0;text-align:right;margin-top:3px;}
+.wa-check{color:#53bdeb;}
+
+.final-cta{position:relative;overflow:hidden;}
+.final-cta__grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:96px 96px;pointer-events:none;}
+.final-cta__glow{position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(79,56,162,.25) 0%,transparent 70%);pointer-events:none;}
+.btn-cta-white{font-family:var(--font-head);font-size:16px;font-weight:700;background:#fff;color:var(--v500);padding:16px 40px;border-radius:var(--radius-btn);border:none;cursor:pointer;box-shadow:0 8px 28px rgba(0,0,0,.2);transition:all .2s;display:inline-flex;align-items:center;gap:8px;text-decoration:none;}
+.btn-cta-white:hover{background:var(--v50);transform:translateY(-2px);}
+.btn-cta-white svg{width:16px;height:16px;}
+.footer__links{display:flex;flex-direction:column;}
+.footer__bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;display:flex;align-items:center;justify-content:space-between;}
+.footer__copy{font-size:13px;color:var(--grey2);}
+.footer__legal{display:flex;gap:24px;}
+.footer__legal a{font-size:13px;color:var(--grey2);text-decoration:none;}
+
+.footer__inner{max-width:1280px;margin:0 auto;padding:0 32px;}
+.footer__bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.final-cta__grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;}
+.final-cta__glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(114,96,181,.25) 0%,transparent 65%);pointer-events:none;}
+.page-cta__grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;}
+.btn-cta-white{font-family:var(--font-head);font-size:16px;font-weight:700;background:#fff;color:var(--v500);padding:16px 40px;border-radius:var(--radius-btn);border:none;cursor:pointer;box-shadow:0 8px 28px rgba(0,0,0,.2);transition:all .2s;display:inline-flex;align-items:center;gap:8px;}
+.final-cta__trust-item{font-size:13px;font-weight:500;color:var(--v200);display:flex;align-items:center;gap:7px;}
+@media(max-width:768px){
+  .nav__links{display:none;flex-direction:column;position:fixed;top:72px;left:0;right:0;background:rgba(255,255,255,.98);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:16px 24px;gap:0;z-index:99;}
+  .nav__links.open{display:flex;}
+  .nav__link{padding:12px 0;border-bottom:1px solid var(--border);font-size:15px;display:block;}
+  .nav__link:last-child{border-bottom:none;}
+  .nav__sep{display:none;}
+  .nav__cta{display:none;}
+  .nav__mobile-right{display:flex;align-items:center;gap:8px;margin-left:auto;}
+  .nav__mob-sep{display:block;}
+  .nav__hamburger{display:flex;}
+  .footer__tagline{max-width:100%;}
+  .btn-primary{width:100%;justify-content:center;}
+  .footer__grid{grid-template-columns:1fr;}
+  .footer__inner{padding:0 20px;}
+  .footer__tagline{max-width:100%;}
+  .btn-primary{width:100%;justify-content:center;}
+  .footer__links-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px 16px;margin-top:32px;}
+  .footer__links-grid > div:nth-child(1),.footer__links-grid > div:nth-child(2),.footer__links-grid > div:nth-child(3){text-align:left;grid-column:1;}
+  .footer__links-grid > div:nth-child(4){text-align:right;grid-column:2;grid-row:1 / span 3;}
+  .footer__links-grid > div:nth-child(4) .footer__links{align-items:flex-end;}
+}
+@media(min-width:769px){.nav__hamburger{display:none;}.nav__mobile-right{display:none;}}
+}
+
+
+/* ===== ROLLOUT v2026-05-29: nav mega-menu + fat footer (canonical) ===== */
+.nav__item{position:relative;display:flex;align-items:center;height:72px;}
+.nav__item > .nav__link{display:inline-flex;align-items:center;gap:4px;}
+.nav__caret{width:11px;height:11px;flex-shrink:0;transition:transform .2s;}
+.nav__item:hover > .nav__link .nav__caret,.nav__item:focus-within > .nav__link .nav__caret{transform:rotate(180deg);}
+.nav__item:hover > .nav__link,.nav__item:focus-within > .nav__link{background:var(--v50);color:var(--v500);}
+.nav__panel{position:absolute;top:100%;left:0;background:#fff;border:1px solid var(--border);border-radius:14px;box-shadow:0 18px 44px rgba(33,24,68,.13);padding:14px;opacity:0;visibility:hidden;transform:translateY(7px);transition:opacity .16s,transform .16s,visibility .16s;z-index:200;}
+.nav__panel--right{left:auto;right:0;}
+.nav__item:hover > .nav__panel,.nav__item:focus-within > .nav__panel{opacity:1;visibility:visible;transform:translateY(0);}
+.np__list{display:grid;gap:1px;}
+.np__list--2{grid-template-columns:1fr 1fr;gap:1px 14px;}
+.np__link{display:flex;flex-direction:column;gap:2px;padding:9px 12px;border-radius:8px;transition:background .15s;min-width:0;}
+.np__link:hover{background:var(--v50);}
+.np__t{font-family:var(--font-head);font-size:13.5px;font-weight:700;color:var(--v900);white-space:nowrap;}
+.np__list--2 .np__t{white-space:normal;line-height:1.3;overflow-wrap:break-word;}
+.np__link:hover .np__t{color:var(--v500);}
+.np__s{font-family:var(--font-body);font-size:12px;color:var(--grey);line-height:1.35;}
+.np__foot{display:flex;align-items:center;gap:6px;border-top:1px solid var(--border);margin-top:8px;padding:11px 12px 3px;font-family:var(--font-head);font-size:12.5px;font-weight:700;color:var(--v500);}
+.np__foot svg{width:13px;height:13px;}
+.nav__mobile-cta{background:var(--cta);}
+.footer__grid{grid-template-columns:1.5fr 1fr 1fr 1fr 1fr 1.15fr;gap:40px 32px;}
+.footer__col-stack{display:flex;flex-direction:column;gap:48px;}
+@media(max-width:1024px){.footer__grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:768px){
+  .nav__item{width:100%;height:auto;display:block;position:static;}
+  .nav__item > .nav__link{display:flex;align-items:center;justify-content:space-between;width:100%;}
+  .nav__item.open > .nav__link .nav__caret{transform:rotate(180deg);}
+  .nav__caret{width:13px;height:13px;}
+  .nav__panel{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;border-radius:0;padding:4px 0 10px 10px;width:auto !important;display:none;z-index:auto;}
+  .nav__item.open > .nav__panel{display:block;}
+  .np__list--2{grid-template-columns:1fr;}
+  .np__link{padding:9px 10px;}
+  .np__foot{padding-left:10px;}
+  .footer__links-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px 16px;margin-top:32px;}
+  .footer__links-grid > div:nth-child(1),.footer__links-grid > div:nth-child(2),.footer__links-grid > div:nth-child(3),.footer__links-grid > div:nth-child(4),.footer__links-grid > div:nth-child(5){text-align:left;grid-column:auto;grid-row:auto;}
+  .footer__links-grid > div:nth-child(4) .footer__links{align-items:flex-start;}
+}
+@media(max-width:600px){.footer__grid{grid-template-columns:1fr;}}
+/* ===== end ROLLOUT ===== */
+
+/* ===== FAQ section (locked §16A) ===== */
+.faq{padding:96px 0;background:#F8F7FC;}
+.faq__inner{max-width:1280px;margin:0 auto;padding:0 32px;}
+.faq__header{text-align:center;margin-bottom:8px;}
+.faq__eyebrow{font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v500);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;}
+.faq__h2{font-family:var(--font-head);font-size:clamp(28px,3.5vw,42px);font-weight:900;letter-spacing:-1.2px;color:var(--v900);line-height:1.15;}
+.faq__h2 em{font-style:normal;color:var(--v500);}
+.faq-list{display:flex;flex-direction:column;border-top:1px solid var(--border);max-width:860px;margin:40px auto 0;}
+.faq-item{border-bottom:1px solid var(--border);}
+.faq-item__q{display:flex;align-items:center;justify-content:space-between;padding:22px 0;cursor:pointer;gap:24px;}
+.faq-item__q-text{font-family:var(--font-head);font-size:16px;font-weight:700;color:var(--v900);}
+.faq-item__icon{width:28px;height:28px;border-radius:50%;background:#fff;border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s;}
+.faq-item__icon svg{width:12px;height:12px;transition:transform .25s;}
+.faq-item.open .faq-item__icon{background:var(--v500);border-color:var(--v500);}
+.faq-item.open .faq-item__icon svg{transform:rotate(45deg);stroke:#fff;}
+.faq-item__a{display:none;font-family:var(--font-body);font-size:15px;color:var(--grey);line-height:1.75;padding-bottom:22px;max-width:760px;}
+.faq-item.open .faq-item__a{display:block;}
+@media(max-width:768px){.faq{padding:64px 0;}.faq__inner{padding:0 20px;}}
+/* ===== end FAQ ===== */
+
+.np__cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.np__col-head{display:block;font-family:var(--font-head);font-size:11px;font-weight:800;color:var(--v400);text-transform:uppercase;letter-spacing:.07em;padding:4px 12px 8px;transition:color .15s;}
+.np__col-head:hover{color:var(--v500);}
+.nav__panel:has(.np__col:only-child) .np__cols{grid-template-columns:1fr;}
+@media(max-width:768px){.np__cols{grid-template-columns:1fr !important;gap:0 !important;}.np__col-head{padding:8px 10px 4px;}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="telecrm-approach2-home.html" class="nav__logo">telecrm</a>
+    <div class="nav__links">
+      <div class="nav__item">
+        <a href="telecrm-platform-overview.html" class="nav__link">Platform Overview <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:560px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-platform-hub.html">Platform Hub</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-platform-unified-revenue-management.html"><span class="np__t">Unified Revenue Management</span><span class="np__s">One connected engine</span></a>
+                <a class="np__link" href="telecrm-platform-lead-management.html"><span class="np__t">Lead Management</span><span class="np__s">Capture, dedupe, assign</span></a>
+                <a class="np__link" href="telecrm-platform-call-management.html"><span class="np__t">Call Management &amp; Recording</span><span class="np__s">Dial, record, track</span></a>
+                <a class="np__link" href="telecrm-platform-adaptive-crm.html"><span class="np__t">Adaptive CRM</span><span class="np__s">Stages, fields, 360°</span></a>
+                <a class="np__link" href="telecrm-platform-marketing-automation.html"><span class="np__t">Marketing Automation</span><span class="np__s">Reach leads automatically</span></a>
+                <a class="np__link" href="telecrm-platform-sales-pipeline-management.html"><span class="np__t">Sales Funnel &amp; Pipeline Management</span><span class="np__s">Track every deal stage</span></a>
+              </div>
+            </div>
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-benefits-hub.html">Benefits Hub</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-benefits-hub.html"><span class="np__t">Outcomes &amp; ROI</span><span class="np__s">What telecrm delivers for your team</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-platform-overview.html">Platform Overview — the product, end to end <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-solutions-hub.html" class="nav__link">Solutions <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-solutions-hub.html">By approach</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-problems-hub.html"><span class="np__t">Problems Hub</span><span class="np__s">Revenue leaks, by stage</span></a>
+                <a class="np__link" href="telecrm-crm-hub.html"><span class="np__t">CRM Hub</span><span class="np__s">By type &amp; by team</span></a>
+                <a class="np__link" href="telecrm-industry-hub.html"><span class="np__t">Industry Hub</span><span class="np__s">11 industries covered</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-solutions-hub.html">Browse all solutions <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-features-hub.html" class="nav__link nav__link--active">Features <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:620px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-features-hub.html">Engagement</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-feature-call-management.html"><span class="np__t">Call Management</span></a>
+                <a class="np__link" href="telecrm-feature-calling-campaign.html"><span class="np__t">Calling Campaign Management</span></a>
+                <a class="np__link" href="telecrm-feature-whatsapp.html"><span class="np__t">WhatsApp</span></a>
+                <a class="np__link" href="telecrm-feature-automations.html"><span class="np__t">Automation</span></a>
+              </div>
+            </div>
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-features-hub.html">Data &amp; Admin</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-feature-lead-management.html"><span class="np__t">Lead Management &amp; Reporting</span></a>
+                <a class="np__link" href="telecrm-feature-lead-fields.html"><span class="np__t">Lead Fields</span></a>
+                <a class="np__link" href="telecrm-feature-lead-stages.html"><span class="np__t">Lead Stages</span></a>
+                <a class="np__link" href="telecrm-feature-list-labels.html"><span class="np__t">List and Labels</span></a>
+                <a class="np__link" href="telecrm-feature-reporting.html"><span class="np__t">Reporting</span></a>
+                <a class="np__link" href="telecrm-feature-integrations.html"><span class="np__t">Integrations</span></a>
+                <a class="np__link" href="telecrm-feature-user-management.html"><span class="np__t">User Management</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-features-hub.html">See all features <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-trust-hub.html" class="nav__link">Trust <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-trust-hub.html">Proof</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-testimonials.html"><span class="np__t">Testimonials</span><span class="np__s">Real customers, real numbers</span></a>
+                <a class="np__link" href="telecrm-case-studies.html"><span class="np__t">Case Studies</span><span class="np__s">9 detailed stories</span></a>
+                <a class="np__link" href="telecrm-comparison.html"><span class="np__t">Comparison</span><span class="np__s">telecrm vs. alternatives</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-trust-hub.html">Visit the Trust Hub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-pricing.html" class="nav__link">Pricing <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:320px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-pricing.html">Plans</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-pricing.html"><span class="np__t">Pricing</span><span class="np__s">Plans &amp; what's included</span></a>
+                <a class="np__link" href="telecrm-cost-savings.html"><span class="np__t">Cost Savings</span><span class="np__s">What you save vs. tools</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-support-hub.html" class="nav__link">Support <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:560px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-support-hub.html">Resources</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-faqs.html"><span class="np__t">FAQs</span></a>
+                <a class="np__link" href="telecrm-glossary.html"><span class="np__t">Glossary</span></a>
+                <a class="np__link" href="telecrm-learning-repository.html"><span class="np__t">Learning Repository</span></a>
+                <a class="np__link" href="telecrm-onboarding.html"><span class="np__t">Onboarding</span></a>
+                <a class="np__link" href="telecrm-recommended-devices.html"><span class="np__t">Recommended Devices</span></a>
+              </div>
+            </div>
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-support-hub.html">Policies</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-privacy-policy.html"><span class="np__t">Privacy Policy</span></a>
+                <a class="np__link" href="telecrm-refund-policy.html"><span class="np__t">Refund Policy</span></a>
+                <a class="np__link" href="telecrm-terms-conditions.html"><span class="np__t">Terms &amp; Conditions</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-support-hub.html">Go to Support Hub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-get-started.html" class="nav__link">Get Started <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-get-started.html">Get started</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-partnership.html"><span class="np__t">Partner Program</span><span class="np__s">Refer &amp; earn 10% for life</span></a>
+                <a class="np__link" href="telecrm-demo-request.html"><span class="np__t">Demo Request</span><span class="np__s">Book a free demo</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-get-started.html">All ways to start <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-about-us.html" class="nav__link">About Us <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-about-us.html">Company</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-about-telecrm.html"><span class="np__t">About telecrm</span><span class="np__s">Story, vision, mission</span></a>
+                <a class="np__link" href="telecrm-life-at-telecrm.html"><span class="np__t">Life at telecrm</span><span class="np__s">Culture &amp; team</span></a>
+                <a class="np__link" href="telecrm-careers.html"><span class="np__t">Careers</span><span class="np__s">Open roles</span></a>
+                <a class="np__link" href="telecrm-contact.html"><span class="np__t">Contact Us</span><span class="np__s">Talk to us</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="nav__sep"></span>
+      <a href="telecrm-demo-request.html" class="nav__cta">Get a Demo</a>
+    </div>
+    <div class="nav__mobile-right">
+      <a href="telecrm-demo-request.html" class="nav__mobile-cta">Get a Demo</a>
+      <span class="nav__mob-sep"></span>
+      <button class="nav__hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__bg"></div>
+  <div class="hero__glow"></div>
+  <div class="inner" style="position:relative;">
+    <div class="breadcrumb">
+      <a href="/telecrm-platform-hub.html">Home</a>
+      <span class="breadcrumb__sep">›</span>
+      <a href="/telecrm-features-hub.html">Features</a>
+      <span class="breadcrumb__sep">›</span>
+      <span>WhatsApp</span>
+    </div>
+    <div class="hero__eyebrow">Features · WhatsApp</div>
+    <h1 class="hero__h1">WhatsApp Cloud capabilities.<br><em>Enterprise-grade, without the complexity.</em></h1>
+    <p class="hero__sub">telecrm integrates natively with WhatsApp Cloud API — so your reps can message leads, send follow-ups, and run broadcast campaigns from within telecrm. Every message logged. Every conversation visible.</p>
+    </div>
+</section>
+
+<!-- HIGHLIGHTS BAR -->
+<div class="highlights">
+  <div class="highlights__inner">
+    <div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">1-click WhatsApp messaging</span></div>
+    <div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">Broadcast campaigns</span></div>
+    <div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">Auto follow-up messages</span></div>
+    <div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">Message templates</span></div>
+    <div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">Full conversation history</span></div>
+  </div>
+</div>
+
+<!-- SECTION 1: 1-CLICK MESSAGING -->
+
+<!-- SECTION 1: LEAD & CONVERSATION MANAGEMENT -->
+<section class="s1">
+  <div class="inner">
+    <div class="s1__header">
+      <div class="s1__eyebrow">Lead &amp; Conversation Management</div>
+      <h2 class="s1__h2">WhatsApp-powered lead capture.<br><em>Every conversation. Zero manual work.</em></h2>
+      <p class="s1__body">From the moment a lead messages you on WhatsApp, telecrm captures it, creates a lead record, and puts it in front of the right rep — automatically. Every conversation tracked. Every pop-up surfaced. Every touchpoint logged.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;border-top:1px solid var(--border);">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:28px 0;border-bottom:1px solid var(--border);">
+        <div style="display:flex;gap:20px;align-items:flex-start;">
+          <div style="width:48px;height:48px;border-radius:12px;background:var(--v50);border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg></div>
+          <div>
+            <div style="font-family:var(--font-head);font-size:15px;font-weight:800;color:var(--v900);margin-bottom:6px;">WhatsApp lead creation</div>
+            <p style="font-size:14px;color:var(--grey);line-height:1.75;margin:0;">When an unknown number messages you on WhatsApp, telecrm automatically creates a new lead record — name, number, source — without any manual data entry. No lead slips through because no one remembered to log it.</p>
+          </div>
+        </div>
+        <div style="background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:14px 16px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+            <div style="font-family:var(--font-head);font-size:11.5px;font-weight:800;color:var(--v900);">New lead created</div>
+            <span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:#22C55E;background:rgba(34,197,94,.1);padding:2px 8px;border-radius:100px;">Auto-captured</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:5px;">
+            <div style="display:flex;justify-content:space-between;font-size:11px;"><span style="color:var(--grey2);">Phone</span><span style="font-weight:600;color:var(--v900);">+91 98765 43210</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:11px;"><span style="color:var(--grey2);">Source</span><span style="font-weight:600;color:var(--v900);">WhatsApp inbound</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:11px;"><span style="color:var(--grey2);">Assigned to</span><span style="font-weight:600;color:var(--v900);">Priya M.</span></div>
+          </div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:28px 0;border-bottom:1px solid var(--border);">
+        <div style="display:flex;gap:20px;align-items:flex-start;">
+          <div style="width:48px;height:48px;border-radius:12px;background:var(--v50);border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" fill="#EDEBF6"/></svg></div>
+          <div>
+            <div style="font-family:var(--font-head);font-size:15px;font-weight:800;color:var(--v900);margin-bottom:6px;">WhatsApp chat pop-ups</div>
+            <p style="font-size:14px;color:var(--grey);line-height:1.75;margin:0;">When a lead sends a WhatsApp message, the rep gets an instant pop-up inside telecrm — showing who messaged, what they said, and the lead record context. Reply directly. Never miss an incoming message again.</p>
+          </div>
+        </div>
+        <div style="background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:14px 16px;">
+          <div style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;">New WhatsApp message</div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+            <div style="width:30px;height:30px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg viewBox="0 0 24 24" fill="white" width="14" height="14"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></div>
+            <div style="flex:1;"><div style="font-family:var(--font-head);font-size:11.5px;font-weight:800;color:var(--v900);">Rahul Sharma</div><div style="font-size:11px;color:var(--grey);margin-top:1px;">"Hi, I was looking at your pricing..."</div></div>
+          </div>
+          <div style="display:flex;gap:6px;justify-content:flex-end;">
+            <div style="font-family:var(--font-head);font-size:11px;font-weight:700;color:#22C55E;background:rgba(34,197,94,.1);padding:4px 12px;border-radius:6px;">Reply</div>
+            <div style="font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--grey2);background:var(--v50);padding:4px 12px;border-radius:6px;">View lead</div>
+          </div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:28px 0;border-bottom:1px solid var(--border);">
+        <div style="display:flex;gap:20px;align-items:flex-start;">
+          <div style="width:48px;height:48px;border-radius:12px;background:var(--v50);border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 01-4 4H3"/></svg></div>
+          <div>
+            <div style="font-family:var(--font-head);font-size:15px;font-weight:800;color:var(--v900);margin-bottom:6px;">WhatsApp Chat Sync</div>
+            <p style="font-size:14px;color:var(--grey);line-height:1.75;margin:0;">telecrm syncs each rep's WhatsApp activity — messages sent and received — directly into the CRM. Managers get full visibility into how reps are engaging leads on WhatsApp, not just on calls.</p>
+          </div>
+        </div>
+        <div style="background:#fff;border:1.5px solid var(--border);border-radius:12px;overflow:hidden;">
+          <div style="background:var(--v50);padding:10px 14px;border-bottom:1px solid var(--border);"><div style="font-family:var(--font-head);font-size:11px;font-weight:800;color:var(--v900);">Rahul Sharma · WhatsApp Sync</div></div>
+          <div style="padding:0;"><div style="display:flex;align-items:center;gap:8px;padding:9px 14px;border-bottom:1px solid var(--border);"><div style="width:7px;height:7px;border-radius:50%;background:#25D366;flex-shrink:0;"></div><div style="flex:1;font-size:11px;color:var(--grey);">WA sent: "Hi Rahul, thanks for your time!"</div><div style="font-size:10px;color:var(--grey2);">11:44 AM</div></div><div style="display:flex;align-items:center;gap:8px;padding:9px 14px;"><div style="width:7px;height:7px;border-radius:50%;background:#25D366;flex-shrink:0;"></div><div style="flex:1;font-size:11px;color:var(--grey);">WA received: "Interested in knowing more"</div><div style="font-size:10px;color:var(--grey2);">10:15 AM</div></div></div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:28px 0;margin-bottom:52px;">
+        <div style="display:flex;gap:20px;align-items:flex-start;">
+          <div style="width:48px;height:48px;border-radius:12px;background:var(--v50);border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><circle cx="3" cy="6" r="1" fill="#4F38A2"/><circle cx="3" cy="12" r="1" fill="#4F38A2"/><circle cx="3" cy="18" r="1" fill="#4F38A2"/></svg></div>
+          <div>
+            <div style="font-family:var(--font-head);font-size:15px;font-weight:800;color:var(--v900);margin-bottom:6px;">WhatsApp conversation timeline tracking</div>
+            <p style="font-size:14px;color:var(--grey);line-height:1.75;margin:0;">Every WhatsApp message — sent and received — appears in the lead's timeline alongside calls, notes, and stage changes. Any rep picking up the lead sees the full story. No context lost. No re-introductions.</p>
+          </div>
+        </div>
+        <div style="background:#fff;border:1.5px solid var(--border);border-radius:12px;overflow:hidden;">
+          <div style="background:var(--v50);padding:10px 14px;border-bottom:1px solid var(--border);"><div style="font-family:var(--font-head);font-size:11px;font-weight:800;color:var(--v900);">Sneha R. · WhatsApp Timeline</div></div>
+          <div style="padding:0;"><div style="display:flex;align-items:center;gap:8px;padding:9px 14px;border-bottom:1px solid var(--border);"><div style="width:7px;height:7px;border-radius:50%;background:#25D366;flex-shrink:0;"></div><div style="flex:1;font-size:11px;color:var(--grey);">WA sent: "Hi Sneha, sharing the details now!"</div><div style="font-size:10px;color:var(--grey2);">2:10 PM</div></div><div style="display:flex;align-items:center;gap:8px;padding:9px 14px;border-bottom:1px solid var(--border);"><div style="width:7px;height:7px;border-radius:50%;background:#25D366;flex-shrink:0;"></div><div style="flex:1;font-size:11px;color:var(--grey);">WA received: "Got it, I'll check and revert"</div><div style="font-size:10px;color:var(--grey2);">2:05 PM</div></div><div style="display:flex;align-items:center;gap:8px;padding:9px 14px;border-bottom:1px solid var(--border);"><div style="width:7px;height:7px;border-radius:50%;background:#4F38A2;flex-shrink:0;"></div><div style="flex:1;font-size:11px;color:var(--grey);">WA API message: Demo reminder sent</div><div style="font-size:10px;color:var(--grey2);">10:00 AM</div></div><div style="display:flex;align-items:center;gap:8px;padding:9px 14px;"><div style="width:7px;height:7px;border-radius:50%;background:#25D366;flex-shrink:0;"></div><div style="flex:1;font-size:11px;color:var(--grey);">WA received: "Yes, confirm my slot" <span style="font-size:10px;color:var(--v400);font-weight:600;">· Button reply</span></div><div style="font-size:10px;color:var(--grey2);">10:03 AM</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: MESSAGING & OUTREACH -->
+<section class="s2">
+  <div class="inner">
+    <div class="s1__header">
+      <div class="s1__eyebrow">Messaging &amp; Outreach</div>
+      <h2 class="s1__h2">WhatsApp-led outreach.<br><em>Personal at scale.</em></h2>
+      <p class="s1__body">From one-click messages to personalised templates, telecrm makes it effortless for reps to reach leads on WhatsApp — fast, consistent, and without leaving the CRM.</p>
+    </div>
+    <div style="margin-top:8px;">
+      <svg width="100%" viewBox="0 0 780 390" role="img">
+<title>WhatsApp messaging features diagram</title>
+<desc>Purple WhatsApp icon on the left with angular purple lines connecting to 4 feature icons on the right, each with title and bullet points</desc>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+<rect x="28" y="163" width="72" height="72" rx="16" fill="#EDEBF6" stroke="#D9D4ED" stroke-width="1.5"/>
+<svg x="40" y="175" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" fill="#EDEBF6"/>
+  <path d="M9.1 9a.5.5 0 01.5-.5h.4c.2 0 .4.1.5.3l.6 1.4c.1.2.1.5-.1.7l-.4.5c-.1.1-.1.3 0 .4.4.7.9 1.3 1.6 1.7.1.1.3.1.4 0l.5-.5c.2-.2.4-.2.6-.1l1.4.7c.2.1.3.3.3.5v.4a.5.5 0 01-.5.5C11.4 15.1 9 12.6 9.1 9z" fill="#4F38A2" stroke="none"/>
+</svg>
+<circle cx="152" cy="199" r="3" fill="#4F38A2" opacity="0.5"/>
+<polyline points="100,199 152,199 152,66 200,66"  fill="none" stroke="#4F38A2" stroke-width="1.5" stroke-dasharray="5 3" opacity="0.5" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="152,199 152,156 200,156"         fill="none" stroke="#4F38A2" stroke-width="1.5" stroke-dasharray="5 3" opacity="0.5" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="152,199 152,246 200,246"         fill="none" stroke="#4F38A2" stroke-width="1.5" stroke-dasharray="5 3" opacity="0.5" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="152,199 152,336 200,336"         fill="none" stroke="#4F38A2" stroke-width="1.5" stroke-dasharray="5 3" opacity="0.5" stroke-linejoin="round" stroke-linecap="round"/>
+<!-- Feature 1 -->
+<rect x="200" y="42" width="48" height="48" rx="12" fill="#EDEBF6" stroke="#D9D4ED" stroke-width="1"/>
+<svg x="212" y="54" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" fill="#EDEBF6"/></svg>
+<text x="260" y="62" font-family="var(--font-head)" font-size="14" font-weight="800" fill="#211844">1-click messaging</text>
+<circle cx="262" cy="78" r="2.5" fill="#4F38A2"/>
+<text x="272" y="82" font-family="var(--font-body)" font-size="12" fill="#4B5563">Send a WhatsApp message to any lead directly from their record</text>
+<circle cx="262" cy="96" r="2.5" fill="#4F38A2"/>
+<text x="272" y="100" font-family="var(--font-body)" font-size="12" fill="#4B5563">Lead number pre-filled — no app switching, no manual typing</text>
+<line x1="200" y1="122" x2="756" y2="122" stroke="#E5E7EB" stroke-width="0.5"/>
+<!-- Feature 2 -->
+<rect x="200" y="136" width="48" height="48" rx="12" fill="#EDEBF6" stroke="#D9D4ED" stroke-width="1"/>
+<svg x="212" y="148" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" fill="#EDEBF6"/><path d="M14 2v6h6M16 13H8M16 17H8"/></svg>
+<text x="260" y="156" font-family="var(--font-head)" font-size="14" font-weight="800" fill="#211844">Pre-saved templates</text>
+<circle cx="262" cy="172" r="2.5" fill="#4F38A2"/>
+<text x="272" y="176" font-family="var(--font-body)" font-size="12" fill="#4B5563">Team-wide shared library — reps pick and send in seconds</text>
+<circle cx="262" cy="190" r="2.5" fill="#4F38A2"/>
+<text x="272" y="194" font-family="var(--font-body)" font-size="12" fill="#4B5563">Dynamic placeholders personalise each message automatically</text>
+<line x1="200" y1="212" x2="756" y2="212" stroke="#E5E7EB" stroke-width="0.5"/>
+<!-- Feature 3 -->
+<rect x="200" y="226" width="48" height="48" rx="12" fill="#EDEBF6" stroke="#D9D4ED" stroke-width="1"/>
+<svg x="212" y="238" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+<text x="260" y="246" font-family="var(--font-head)" font-size="14" font-weight="800" fill="#211844">Bulk messaging</text>
+<circle cx="262" cy="262" r="2.5" fill="#4F38A2"/>
+<text x="272" y="266" font-family="var(--font-body)" font-size="12" fill="#4B5563">Filter leads by stage, source, or any field — send in one action</text>
+<circle cx="262" cy="280" r="2.5" fill="#4F38A2"/>
+<text x="272" y="284" font-family="var(--font-body)" font-size="12" fill="#4B5563">Powered by WhatsApp Cloud API — every message logged to the lead</text>
+<line x1="200" y1="302" x2="756" y2="302" stroke="#E5E7EB" stroke-width="0.5"/>
+<!-- Feature 4 -->
+<rect x="200" y="316" width="48" height="48" rx="12" fill="#EDEBF6" stroke="#D9D4ED" stroke-width="1"/>
+<svg x="212" y="328" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="5" height="5"/><rect x="16" y="3" width="5" height="5"/><rect x="3" y="16" width="5" height="5"/><path d="M21 16h-3a2 2 0 00-2 2v3M12 7v3M12 3v.01M7 12h3M17 12h3M12 17v3"/></svg>
+<text x="260" y="336" font-family="var(--font-head)" font-size="14" font-weight="800" fill="#211844">Interactive messages</text>
+<circle cx="262" cy="352" r="2.5" fill="#4F38A2"/>
+<text x="272" y="356" font-family="var(--font-body)" font-size="12" fill="#4B5563">Quick-reply buttons and list menus — leads tap instead of typing</text>
+<circle cx="262" cy="372" r="2.5" fill="#4F38A2"/>
+<text x="272" y="376" font-family="var(--font-body)" font-size="12" fill="#4B5563">Works without a verified business account — button replies auto-logged</text>
+</svg>
+    </div>
+  </div>
+</section>
+<!-- SECTION 3: AUTOMATION & CAMPAIGNS -->
+<section class="s3">
+  <div class="inner">
+    <div class="s1__header">
+      <div class="s1__eyebrow">Automation &amp; Campaigns</div>
+      <h2 class="s1__h2">WhatsApp-driven automation.<br><em>Follow-ups that send themselves.</em></h2>
+      <p class="s1__body">Set rules once and telecrm handles the rest — welcome messages, reminders, drip campaigns, and notifications. Every lead gets the right message at the right time without any manual effort from your team.</p>
+    </div>
+
+    <!-- ALTERNATING TIMELINE -->
+    <div style="position:relative;padding:40px 0;">
+
+      <!-- Centre vertical line -->
+      <div style="position:absolute;left:50%;top:0;bottom:0;width:2px;background:var(--v100);transform:translateX(-50%);"></div>
+
+      <!-- POINT 1 — left -->
+      <div style="display:grid;grid-template-columns:1fr 64px 1fr;align-items:center;margin-bottom:56px;">
+        <!-- Content left -->
+        <div style="padding-right:40px;text-align:right;">
+          <div style="display:flex;align-items:center;justify-content:flex-end;gap:12px;margin-bottom:10px;">
+            <div style="font-family:var(--font-head);font-size:15px;font-weight:800;color:var(--v900);">Automated welcome messages</div>
+            <div style="width:44px;height:44px;border-radius:12px;background:var(--v50);border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" fill="#EDEBF6"/><path d="M8 10h8M8 14h5"/></svg>
+            </div>
+          </div>
+          <p style="font-size:14px;color:var(--grey);line-height:1.75;margin:0 0 16px;">The moment a new lead comes in, telecrm sends an automated WhatsApp welcome — introducing your brand before your rep picks up the phone.</p>
+          <div style="background:#ECE5DD;border-radius:10px;padding:12px 14px;text-align:left;">
+            <div style="background:#DCF8C6;border-radius:8px;padding:8px 10px;max-width:90%;margin-left:auto;">
+              <div style="font-size:12px;color:#1a1a1a;line-height:1.6;">Hi Rahul! 👋 Welcome to telecrm. A member of our team will reach out shortly. Feel free to ask us anything here!</div>
+              <div style="font-size:10px;color:#8696a0;text-align:right;margin-top:4px;">Sent automatically ✓✓</div>
+            </div>
+          </div>
+        </div>
+        <!-- Centre dot -->
+        <div style="display:flex;align-items:center;justify-content:center;z-index:1;">
+          <div style="width:20px;height:20px;border-radius:50%;background:var(--v500);border:3px solid var(--v50);box-shadow:0 0 0 2px var(--v500);"></div>
+        </div>
+        <!-- Empty right -->
+        <div></div>
+      </div>
+
+      <!-- POINT 2 — right -->
+      <div style="display:grid;grid-template-columns:1fr 64px 1fr;align-items:center;margin-bottom:56px;">
+        <!-- Empty left -->
+        <div></div>
+        <!-- Centre dot -->
+        <div style="display:flex;align-items:center;justify-content:center;z-index:1;">
+          <div style="width:20px;height:20px;border-radius:50%;background:var(--v500);border:3px solid var(--v50);box-shadow:0 0 0 2px var(--v500);"></div>
+        </div>
+        <!-- Content right -->
+        <div style="padding-left:40px;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+            <div style="width:44px;height:44px;border-radius:12px;background:var(--v50);border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><rect x="3" y="4" width="18" height="18" rx="2" fill="#EDEBF6"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg>
+            </div>
+            <div style="font-family:var(--font-head);font-size:15px;font-weight:800;color:var(--v900);">Meeting &amp; follow-up reminders</div>
+          </div>
+          <p style="font-size:14px;color:var(--grey);line-height:1.75;margin:0 0 16px;">Schedule reminders to fire automatically — morning of a demo, after a missed call, or at any custom interval. Leads stay engaged. Reps stay focused.</p>
+          <div style="background:#fff;border:1.5px solid var(--border);border-radius:10px;padding:12px 14px;">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+              <div style="font-family:var(--font-head);font-size:11px;font-weight:800;color:var(--v900);">Scheduled reminder</div>
+              <span style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v500);background:var(--v50);padding:2px 8px;border-radius:100px;">Tomorrow 9AM</span>
+            </div>
+            <div style="background:#DCF8C6;border-radius:8px;padding:8px 10px;">
+              <div style="font-size:12px;color:#1a1a1a;line-height:1.6;">Hi Rahul, just a reminder — we have a demo scheduled today at 11AM. Looking forward to speaking with you!</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- POINT 3 — left -->
+      <div style="display:grid;grid-template-columns:1fr 64px 1fr;align-items:center;margin-bottom:56px;">
+        <!-- Content left -->
+        <div style="padding-right:40px;text-align:right;">
+          <div style="display:flex;align-items:center;justify-content:flex-end;gap:12px;margin-bottom:10px;">
+            <div style="font-family:var(--font-head);font-size:15px;font-weight:800;color:var(--v900);">Drip marketing campaigns</div>
+            <div style="width:44px;height:44px;border-radius:12px;background:var(--v50);border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><circle cx="18" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><path d="M6 8v8"/><path d="M6 8a4 4 0 004 4h4a4 4 0 014-4"/><circle cx="6" cy="6" r="2"/></svg>
+            </div>
+          </div>
+          <p style="font-size:14px;color:var(--grey);line-height:1.75;margin:0 0 16px;">Multi-step WhatsApp sequences over days or weeks — nurturing cold leads back to life without rep intervention. Right message, right time, automatically.</p>
+          <div style="background:var(--v50);border:1.5px solid var(--v100);border-radius:10px;padding:12px 14px;text-align:left;">
+            <div style="font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;">Campaign: Cold lead nurture</div>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <div style="display:flex;align-items:center;gap:8px;"><div style="width:20px;height:20px;border-radius:50%;background:var(--v500);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><span style="font-family:var(--font-head);font-size:9px;font-weight:800;color:#fff;">1</span></div><span style="font-size:12px;color:var(--grey);">Day 1 · Welcome + intro</span><span style="font-family:var(--font-head);font-size:10px;color:#22C55E;margin-left:auto;">Sent</span></div>
+              <div style="display:flex;align-items:center;gap:8px;"><div style="width:20px;height:20px;border-radius:50%;background:var(--v300);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><span style="font-family:var(--font-head);font-size:9px;font-weight:800;color:#fff;">2</span></div><span style="font-size:12px;color:var(--grey);">Day 3 · Case study share</span><span style="font-family:var(--font-head);font-size:10px;color:#22C55E;margin-left:auto;">Sent</span></div>
+              <div style="display:flex;align-items:center;gap:8px;"><div style="width:20px;height:20px;border-radius:50%;background:var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><span style="font-family:var(--font-head);font-size:9px;font-weight:800;color:var(--v500);">3</span></div><span style="font-size:12px;color:var(--grey);">Day 7 · Demo invite</span><span style="font-family:var(--font-head);font-size:10px;color:var(--grey2);margin-left:auto;">Scheduled</span></div>
+            </div>
+          </div>
+        </div>
+        <!-- Centre dot -->
+        <div style="display:flex;align-items:center;justify-content:center;z-index:1;">
+          <div style="width:20px;height:20px;border-radius:50%;background:var(--v500);border:3px solid var(--v50);box-shadow:0 0 0 2px var(--v500);"></div>
+        </div>
+        <!-- Empty right -->
+        <div></div>
+      </div>
+
+      <!-- POINT 4 — right -->
+      <div style="display:grid;grid-template-columns:1fr 64px 1fr;align-items:center;">
+        <!-- Empty left -->
+        <div></div>
+        <!-- Centre dot -->
+        <div style="display:flex;align-items:center;justify-content:center;z-index:1;">
+          <div style="width:20px;height:20px;border-radius:50%;background:var(--v500);border:3px solid var(--v50);box-shadow:0 0 0 2px var(--v500);"></div>
+        </div>
+        <!-- Content right -->
+        <div style="padding-left:40px;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+            <div style="width:44px;height:44px;border-radius:12px;background:var(--v50);border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9" fill="#EDEBF6"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+            </div>
+            <div style="font-family:var(--font-head);font-size:15px;font-weight:800;color:var(--v900);">Auto notifications</div>
+          </div>
+          <p style="font-size:14px;color:var(--grey);line-height:1.75;margin:0 0 16px;">Trigger automatic notifications for payments due, appointment confirmations, delivery updates, or any custom event — keeping leads informed without lifting a finger.</p>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="background:#DCF8C6;border-radius:8px;padding:8px 12px;max-width:90%;margin-left:auto;"><div style="font-size:12px;color:#1a1a1a;">Your demo is confirmed for Friday 11AM. 📅</div><div style="font-size:10px;color:#8696a0;text-align:right;margin-top:2px;">Auto ✓✓</div></div>
+            <div style="background:#DCF8C6;border-radius:8px;padding:8px 12px;max-width:90%;margin-left:auto;"><div style="font-size:12px;color:#1a1a1a;">Payment of ₹15,000 is due tomorrow.</div><div style="font-size:10px;color:#8696a0;text-align:right;margin-top:2px;">Auto ✓✓</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- SECTION 4: CLOUD API -->
+<section class="s4">
+  <div class="inner">
+    <div class="s1__header">
+      <div class="s1__eyebrow">WhatsApp Cloud API</div>
+      <h2 class="s1__h2">The full power of WhatsApp Cloud.<br><em>Built into telecrm.</em></h2>
+      <p class="s1__body">telecrm's WhatsApp Cloud API integration unlocks advanced features — chatbots, flows, segmentation, and message scheduling — giving your team the power of a full WhatsApp Business Platform without the engineering overhead.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1px 1fr 1px 1fr 1px 1fr;gap:32px;align-items:start;">
+
+      <div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+          <div style="width:44px;height:44px;border-radius:12px;background:#fff;border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect x="3" y="3" width="18" height="18" rx="2" fill="#EDEBF6"/><path d="M8 12h8M12 8l4 4-4 4"/></svg>
+          </div>
+          <div style="font-family:var(--font-head);font-size:14px;font-weight:800;color:var(--v900);">Chatbots</div>
+        </div>
+        <ul style="list-style:none;padding:0;margin:0;"><li style="display:flex;align-items:flex-start;gap:8px;font-size:13.5px;color:var(--grey);line-height:1.7;margin-bottom:6px;"><span style="width:16px;height:16px;border-radius:50%;background:var(--v500);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:3px;"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="9" height="9"><polyline points="20 6 9 17 4 12"/></svg></span>Qualify leads automatically before a rep steps in</li><li style="display:flex;align-items:flex-start;gap:8px;font-size:13.5px;color:var(--grey);line-height:1.7;margin-bottom:6px;"><span style="width:16px;height:16px;border-radius:50%;background:var(--v500);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:3px;"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="9" height="9"><polyline points="20 6 9 17 4 12"/></svg></span>Answer FAQs around the clock — no human needed</li><li style="display:flex;align-items:flex-start;gap:8px;font-size:13.5px;color:var(--grey);line-height:1.7;margin-bottom:6px;"><span style="width:16px;height:16px;border-radius:50%;background:var(--v500);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:3px;"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="9" height="9"><polyline points="20 6 9 17 4 12"/></svg></span>Route conversations to the right rep based on intent</li></ul>
+      </div>
+      <div style="background:var(--border);height:100%;min-height:140px;"></div>
+
+      <div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+          <div style="width:44px;height:44px;border-radius:12px;background:#fff;border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <div style="font-family:var(--font-head);font-size:14px;font-weight:800;color:var(--v900);">WhatsApp Flows</div>
+        </div>
+        <ul style="list-style:none;padding:0;margin:0;"><li style="display:flex;align-items:flex-start;gap:8px;font-size:13.5px;color:var(--grey);line-height:1.7;margin-bottom:6px;"><span style="width:16px;height:16px;border-radius:50%;background:var(--v500);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:3px;"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="9" height="9"><polyline points="20 6 9 17 4 12"/></svg></span>Build multi-step forms and surveys inside WhatsApp</li><li style="display:flex;align-items:flex-start;gap:8px;font-size:13.5px;color:var(--grey);line-height:1.7;margin-bottom:6px;"><span style="width:16px;height:16px;border-radius:50%;background:var(--v500);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:3px;"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="9" height="9"><polyline points="20 6 9 17 4 12"/></svg></span>Run onboarding journeys entirely within WhatsApp — no external links</li><li style="display:flex;align-items:flex-start;gap:8px;font-size:13.5px;color:var(--grey);line-height:1.7;margin-bottom:6px;"><span style="width:16px;height:16px;border-radius:50%;background:var(--v500);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:3px;"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="9" height="9"><polyline points="20 6 9 17 4 12"/></svg></span>Deliver structured conversations that feel native to WhatsApp</li></ul>
+      </div>
+      <div style="background:var(--border);height:100%;min-height:140px;"></div>
+
+      <div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+          <div style="width:44px;height:44px;border-radius:12px;background:#fff;border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 014-4h4"/><path d="M16 11h6M19 8v6"/></svg>
+          </div>
+          <div style="font-family:var(--font-head);font-size:14px;font-weight:800;color:var(--v900);">Contact list segmentation</div>
+        </div>
+        <ul style="list-style:none;padding:0;margin:0;"><li style="display:flex;align-items:flex-start;gap:8px;font-size:13.5px;color:var(--grey);line-height:1.7;margin-bottom:6px;"><span style="width:16px;height:16px;border-radius:50%;background:var(--v500);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:3px;"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="9" height="9"><polyline points="20 6 9 17 4 12"/></svg></span>Slice your lead database by stage, source, or any custom field</li><li style="display:flex;align-items:flex-start;gap:8px;font-size:13.5px;color:var(--grey);line-height:1.7;margin-bottom:6px;"><span style="width:16px;height:16px;border-radius:50%;background:var(--v500);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:3px;"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="9" height="9"><polyline points="20 6 9 17 4 12"/></svg></span>Send targeted campaigns to each segment independently</li><li style="display:flex;align-items:flex-start;gap:8px;font-size:13.5px;color:var(--grey);line-height:1.7;margin-bottom:6px;"><span style="width:16px;height:16px;border-radius:50%;background:var(--v500);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:3px;"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="9" height="9"><polyline points="20 6 9 17 4 12"/></svg></span>Never blast the wrong audience with the wrong message again</li></ul>
+      </div>
+      <div style="background:var(--border);height:100%;min-height:140px;"></div>
+
+      <div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+          <div style="width:44px;height:44px;border-radius:12px;background:#fff;border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="12" cy="12" r="10" fill="#EDEBF6"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <div style="font-family:var(--font-head);font-size:14px;font-weight:800;color:var(--v900);">Message scheduling</div>
+        </div>
+        <ul style="list-style:none;padding:0;margin:0;"><li style="display:flex;align-items:flex-start;gap:8px;font-size:13.5px;color:var(--grey);line-height:1.7;margin-bottom:6px;"><span style="width:16px;height:16px;border-radius:50%;background:var(--v500);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:3px;"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="9" height="9"><polyline points="20 6 9 17 4 12"/></svg></span>Schedule single or bulk messages for any time of day</li><li style="display:flex;align-items:flex-start;gap:8px;font-size:13.5px;color:var(--grey);line-height:1.7;margin-bottom:6px;"><span style="width:16px;height:16px;border-radius:50%;background:var(--v500);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:3px;"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="9" height="9"><polyline points="20 6 9 17 4 12"/></svg></span>Choose morning, evening, or any time that works for your audience</li><li style="display:flex;align-items:flex-start;gap:8px;font-size:13.5px;color:var(--grey);line-height:1.7;margin-bottom:6px;"><span style="width:16px;height:16px;border-radius:50%;background:var(--v500);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:3px;"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="9" height="9"><polyline points="20 6 9 17 4 12"/></svg></span>Set it once, runs automatically — no manual follow-through needed</li></ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="final-cta__grid"></div>
+  <div class="final-cta__glow"></div>
+  <div class="final-cta__inner">
+    <div class="final-cta__badge">
+      <span class="final-cta__badge-dot"></span>
+      Free 30-minute demo
+    </div>
+    <div style="font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v300);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;">Join 5,000+ Indian sales teams</div>
+    <h2 class="final-cta__h2">Are you ready<br>to <em>get started?</em></h2>
+    <p class="final-cta__sub">No jargon. We'll show you exactly how telecrm works for your business — your industry, your team size, your lead sources. The demo is free. The setup is guided. The commitment is yours to make when you're ready.</p>
+    <div class="final-cta__cta-wrap">
+      <a href="telecrm-demo-request.html" class="btn-cta-white">Get a Demo
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="final-cta__trust">
+      <span class="final-cta__trust-item"><span class="final-cta__trust-dot"></span>No credit card needed</span>
+      <span class="final-cta__trust-item"><span class="final-cta__trust-dot"></span>Response within 24 hours</span>
+      <span class="final-cta__trust-item"><span class="final-cta__trust-dot"></span>5,000+ businesses onboarded</span>
+      <span class="final-cta__trust-item"><span class="final-cta__trust-dot"></span>Fast setup</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<section class="faq">
+  <div class="faq__inner">
+    <div class="faq__header">
+      <div class="faq__eyebrow">FAQ</div>
+      <h2 class="faq__h2">Your questions, <em>answered plainly.</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">What can I do with WhatsApp inside telecrm?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">Send messages, automate follow-ups, and track every conversation from within your CRM — no switching apps.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">Is this the official WhatsApp?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">Yes — it's the full power of WhatsApp Cloud, enterprise-grade, built into telecrm without the complexity.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">Can follow-ups be sent automatically?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">Yes — WhatsApp-driven automation sends follow-ups for you, personal at scale.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">Does WhatsApp help capture leads?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">Yes — WhatsApp-powered lead capture brings every conversation in with zero manual work.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__logo">telecrm</div>
+        <p class="footer__tagline">A Comprehensive Revenue Management Engine — fusing Lead Management, Call Management, Adaptive CRM, Marketing Automation, and Pipeline Management into one high-performance workspace.</p>
+        <a href="telecrm-get-started.html" class="btn-primary">Get Started →</a>
+      </div>
+      <div class="footer__links-grid">
+      <div class="footer__col-stack">
+        <div>
+          <div class="footer__col-title">Platform</div>
+          <div class="footer__links">
+            <a href="telecrm-platform-overview.html" class="footer__link">Platform Overview</a>
+            <a href="telecrm-platform-hub.html" class="footer__link">Platform Hub</a>
+            <a href="telecrm-benefits-hub.html" class="footer__link">Benefits Hub</a>
+            <a href="telecrm-platform-unified-revenue-management.html" class="footer__link">Unified Revenue Management</a>
+            <a href="telecrm-platform-lead-management.html" class="footer__link">Lead Management</a>
+            <a href="telecrm-platform-call-management.html" class="footer__link">Call Management &amp; Recording</a>
+            <a href="telecrm-platform-adaptive-crm.html" class="footer__link">Adaptive CRM</a>
+            <a href="telecrm-platform-marketing-automation.html" class="footer__link">Marketing Automation</a>
+            <a href="telecrm-platform-sales-pipeline-management.html" class="footer__link">Sales Pipeline Management</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Pricing</div>
+          <div class="footer__links">
+            <a href="telecrm-pricing.html" class="footer__link">Pricing</a>
+            <a href="telecrm-cost-savings.html" class="footer__link">Cost Savings</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__col-stack">
+        <div>
+          <div class="footer__col-title">Solutions</div>
+          <div class="footer__links">
+            <a href="telecrm-problems-hub.html" class="footer__link">Problems Hub</a>
+            <a href="telecrm-crm-hub.html" class="footer__link">CRM Hub</a>
+            <a href="telecrm-industry-hub.html" class="footer__link">Industry Hub</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Get Started</div>
+          <div class="footer__links">
+            <a href="telecrm-partnership.html" class="footer__link">Partner Program</a>
+            <a href="telecrm-demo-request.html" class="footer__link">Demo Request</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__col-stack">
+        <div>
+          <div class="footer__col-title">Trust</div>
+          <div class="footer__links">
+            <a href="telecrm-testimonials.html" class="footer__link">Testimonials</a>
+            <a href="telecrm-case-studies.html" class="footer__link">Case Studies</a>
+            <a href="telecrm-comparison.html" class="footer__link">Comparison</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">About Us</div>
+          <div class="footer__links">
+            <a href="telecrm-about-telecrm.html" class="footer__link">About telecrm</a>
+            <a href="telecrm-life-at-telecrm.html" class="footer__link">Life at telecrm</a>
+            <a href="telecrm-careers.html" class="footer__link">Careers</a>
+            <a href="telecrm-contact.html" class="footer__link">Contact Us</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Support</div>
+        <div class="footer__links">
+          <a href="telecrm-faqs.html" class="footer__link">FAQs</a>
+          <a href="telecrm-glossary.html" class="footer__link">Glossary</a>
+          <a href="telecrm-learning-repository.html" class="footer__link">Learning Repository</a>
+          <a href="telecrm-onboarding.html" class="footer__link">Onboarding</a>
+          <a href="telecrm-privacy-policy.html" class="footer__link">Privacy Policy</a>
+          <a href="telecrm-recommended-devices.html" class="footer__link">Recommended Devices</a>
+          <a href="telecrm-refund-policy.html" class="footer__link">Refund Policy</a>
+          <a href="telecrm-terms-conditions.html" class="footer__link">Terms &amp; Conditions</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Features</div>
+        <div class="footer__links">
+          <a href="telecrm-feature-automations.html" class="footer__link">Automation</a>
+          <a href="telecrm-feature-call-management.html" class="footer__link">Call Management</a>
+          <a href="telecrm-feature-calling-campaign.html" class="footer__link">Calling Campaign Management</a>
+          <a href="telecrm-feature-integrations.html" class="footer__link">Integrations</a>
+          <a href="telecrm-feature-lead-fields.html" class="footer__link">Lead Fields</a>
+          <a href="telecrm-feature-lead-management.html" class="footer__link">Lead Management &amp; Reporting</a>
+          <a href="telecrm-feature-lead-stages.html" class="footer__link">Lead Stages</a>
+          <a href="telecrm-feature-list-labels.html" class="footer__link">List and Labels</a>
+          <a href="telecrm-feature-reporting.html" class="footer__link">Reporting</a>
+          <a href="telecrm-feature-user-management.html" class="footer__link">User Management</a>
+          <a href="telecrm-feature-whatsapp.html" class="footer__link">WhatsApp</a>
+        </div>
+      </div>
+      </div><!-- /footer__links-grid -->
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__copy">© 2026 telecrm. All rights reserved.</div>
+      <div class="footer__legal">
+        <a href="telecrm-privacy-policy.html">Privacy Policy</a>
+        <a href="telecrm-terms-conditions.html">Terms &amp; Conditions</a>
+        <a href="telecrm-refund-policy.html">Refund Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.querySelector('.nav__hamburger');
+  var links=document.querySelector('.nav__links');
+  if(btn&&links){
+    btn.addEventListener('click',function(){btn.classList.toggle('open');links.classList.toggle('open');});
+  }
+  var mq=window.matchMedia('(max-width:768px)');
+  document.querySelectorAll('.nav__item > .nav__link').forEach(function(hub){
+    hub.addEventListener('click',function(e){ if(mq.matches){ e.preventDefault(); hub.parentElement.classList.toggle('open'); } });
+  });
+  document.querySelectorAll('.np__link,.np__foot,.nav__cta,.nav__mobile-cta').forEach(function(l){
+    l.addEventListener('click',function(){ if(btn){btn.classList.remove('open');} if(links){links.classList.remove('open');} });
+  });
+})();
+</script>
+<script>
+function toggleFaq(el){
+  var item=el.parentElement;
+  var isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+  if(!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>

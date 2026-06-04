@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Platform Hub — telecrm | One Revenue Engine for Indian Sales Teams</title>
+<meta name="description" content="telecrm is one platform — five capabilities fused together. Lead Management, Call Management, Adaptive CRM, Marketing Automation and Sales Pipeline. Explore how each one works.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://telecrm.in/platform/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Platform Hub — telecrm | One Revenue Engine for Indian Sales Teams">
+<meta property="og:description" content="A multi capable unified revenue engine for Indian sales teams. Lead Management, Call Management, Adaptive CRM, Marketing Automation and Sales Pipeline — one system, every requirement met.">
+<meta property="og:url" content="https://telecrm.in/platform/">
+<meta property="og:site_name" content="telecrm">
+<meta property="og:locale" content="en_IN">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cta:#F97316; --cta-hover:#EA580C;--v50:#EDEBF6;--v100:#E1DDF0;--v200:#C4BAE5;--v300:#9C8FCF;--v400:#7260B5;--v500:#4F38A2;--v600:#483393;--v700:#382873;--v900:#211844;--grey:#64748B;--grey2:#94A3B8;--border:#E9EBF8;--success:#22C55E;--font-head:'Plus Jakarta Sans',sans-serif;--font-body:'DM Sans',sans-serif;--radius-btn:10px;--radius-card:16px;--radius-pill:100px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);color:var(--v900);background:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+.nav__inner{max-width:1280px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:72px;}
+.nav__logo{font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--v500);letter-spacing:-.5px;}
+.nav__links{display:flex;align-items:center;gap:2px;}
+.nav__link{font-family:var(--font-head);font-size:12.5px;font-weight:600;color:var(--v700);padding:7px 11px;border-radius:8px;transition:all .18s;white-space:nowrap;}
+.nav__link:hover,.nav__link--active{background:var(--v50);color:var(--v500);}
+.nav__sep{display:inline-block;width:1px;height:20px;background:var(--border);margin:0 8px;vertical-align:middle;}
+.nav__cta{font-family:var(--font-head);font-size:13px;font-weight:700;background:var(--cta);color:#fff;padding:10px 22px;border-radius:var(--radius-btn);box-shadow:0 4px 12px rgba(249,115,22,.3);transition:all .18s;white-space:nowrap;margin-left:8px;}
+.nav__cta:hover{background:var(--cta-hover);transform:translateY(-1px);}
+.nav__mobile-right{display:none;align-items:center;gap:8px;margin-left:auto;}
+.nav__mobile-cta{font-family:var(--font-head);font-size:13px;font-weight:700;background:var(--v500);color:#fff;padding:8px 16px;border-radius:var(--radius-btn);white-space:nowrap;}
+.nav__mob-sep{display:none;width:1px;height:20px;background:var(--border);}
+.nav__hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:8px;border:none;background:transparent;}
+.nav__hamburger span{display:block;width:22px;height:2px;background:var(--v900);border-radius:2px;transition:all .18s;}
+.nav__hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav__hamburger.open span:nth-child(2){opacity:0;}
+.nav__hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+/* HERO */
+.hero{padding:80px 0 64px;background:#fff;position:relative;overflow:hidden;}
+.hero__bg{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;opacity:.35;pointer-events:none;}
+.hero__glow{position:absolute;top:-80px;right:-80px;width:600px;height:600px;background:radial-gradient(circle,rgba(79,56,162,.07) 0%,transparent 70%);pointer-events:none;}
+.hero__inner{max-width:1280px;margin:0 auto;padding:0 32px;position:relative;text-align:left;}
+.hero__eyebrow{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;}
+.hero__h1{font-family:var(--font-head);font-size:clamp(32px,5vw,64px);font-weight:900;letter-spacing:-2px;color:var(--v900);line-height:1.05;margin-bottom:20px;}
+.hero__h1 em{font-style:normal;color:var(--v500);}
+.hero__sub{font-size:18px;color:var(--grey);line-height:1.75;max-width:680px;margin:0 36px 0 0;}
+.hero__cta-row{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;}
+.btn-primary-lg{font-family:var(--font-head);font-size:15px;font-weight:700;background:var(--v500);color:#fff;padding:14px 32px;border-radius:var(--radius-btn);box-shadow:0 6px 20px rgba(79,56,162,.3);transition:all .2s;display:inline-flex;align-items:center;gap:8px;}
+.btn-primary-lg:hover{background:var(--v600);transform:translateY(-1px);}
+.btn-primary-lg svg{width:15px;height:15px;}
+.btn-outline-lg{font-family:var(--font-head);font-size:15px;font-weight:700;color:var(--v500);border:1.5px solid var(--v200);padding:13px 28px;border-radius:var(--radius-btn);display:inline-flex;align-items:center;gap:8px;transition:all .2s;}
+.btn-outline-lg:hover{background:var(--v50);}
+/* STATS BAR */
+.highlights{background:var(--v50);border-top:1px solid var(--v100);border-bottom:1px solid var(--v100);padding:20px 32px;}
+.highlights__inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.highlight{display:flex;align-items:center;gap:10px;padding:10px 16px;background:#fff;border:1.5px solid var(--v100);border-radius:10px;}
+.highlight__dot{width:7px;height:7px;border-radius:50%;background:var(--v500);flex-shrink:0;}
+.highlight__text{font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v700);}
+/* INTRO */
+.intro{padding:80px 0;background:#fff;}
+.intro__inner{max-width:1280px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+.intro__text .sec-eyebrow{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
+.intro__text h2{font-family:var(--font-head);font-size:clamp(24px,3vw,38px);font-weight:900;color:var(--v900);letter-spacing:-.8px;line-height:1.2;margin-bottom:20px;}
+.intro__text h2 em{font-style:normal;color:var(--v500);}
+.intro__text p{font-size:16px;color:var(--grey);line-height:1.8;margin-bottom:16px;}
+.intro__text p:last-child{margin-bottom:0;}
+.intro__cards{display:flex;flex-direction:column;gap:12px;}
+.intro__card{background:var(--v50);border:1.5px solid var(--v100);border-radius:14px;padding:20px 24px;display:flex;align-items:center;gap:16px;}
+.intro__card__icon{width:40px;height:40px;border-radius:10px;background:#fff;border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.intro__card__icon svg{width:20px;height:20px;}
+.intro__card__title{font-family:var(--font-head);font-size:14px;font-weight:800;color:var(--v900);}
+.intro__card__body{font-size:12.5px;color:var(--grey);line-height:1.5;margin-top:2px;}
+/* CAPABILITY STRIPS */
+.capabilities{padding:0 0 80px;}
+.capabilities__inner{max-width:1280px;margin:0 auto;padding:0 32px;}
+.cap-strip{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1.5px solid var(--border);border-radius:20px;overflow:hidden;margin-bottom:20px;transition:box-shadow .2s;}
+.cap-strip:hover{box-shadow:0 12px 40px rgba(79,56,162,.08);}
+.cap-strip__content{padding:48px 48px;display:flex;flex-direction:column;justify-content:center;}
+.cap-strip__num{font-family:var(--font-head);font-size:11px;font-weight:800;color:var(--v300);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px;}
+.cap-strip__title{font-family:var(--font-head);font-size:clamp(22px,2.5vw,30px);font-weight:900;color:var(--v900);letter-spacing:-.6px;line-height:1.2;margin-bottom:14px;}
+.cap-strip__title em{font-style:normal;color:var(--v500);}
+.cap-strip__body{font-size:15px;color:var(--grey);line-height:1.75;margin-bottom:24px;}
+.cap-strip__bullets{display:flex;flex-direction:column;gap:8px;margin-bottom:28px;}
+.cap-strip__bullet{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--v700);font-family:var(--font-head);font-weight:600;}
+.cap-strip__bullet::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--v500);flex-shrink:0;margin-top:5px;}
+.cap-strip__link{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--v500);background:var(--v50);border:1.5px solid var(--v100);padding:10px 20px;border-radius:var(--radius-btn);transition:all .2s;width:fit-content;}
+.cap-strip__link:hover{background:var(--v100);}
+.cap-strip__link svg{width:13px;height:13px;transition:transform .2s;}
+.cap-strip__link:hover svg{transform:translateX(3px);}
+.cap-strip__visual{background:var(--v50);border-left:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;padding:48px 40px;min-height:320px;}
+.cap-strip__visual--tint{background:#F8F7FC;}
+.cap-visual{display:flex;flex-direction:column;gap:10px;width:100%;}
+.cv-row{display:flex;align-items:center;gap:12px;background:#fff;border:1.5px solid var(--border);border-radius:10px;padding:12px 16px;}
+.cv-row__icon{width:32px;height:32px;border-radius:8px;background:var(--v50);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.cv-row__icon svg{width:16px;height:16px;}
+.cv-row__text{flex:1;}
+.cv-row__title{font-family:var(--font-head);font-size:12px;font-weight:800;color:var(--v900);}
+.cv-row__sub{font-size:11px;color:var(--grey2);margin-top:1px;}
+.cv-row__badge{font-family:var(--font-head);font-size:10px;font-weight:700;padding:3px 10px;border-radius:var(--radius-pill);}
+.cv-row__badge--green{background:#dcfce7;color:#16a34a;}
+.cv-row__badge--purple{background:var(--v50);color:var(--v500);}
+.cv-row__badge--blue{background:#dbeafe;color:#1d4ed8;}
+.cv-row__badge--orange{background:#fef9c3;color:#92400e;}
+/* REVENUE ENGINE SECTION */
+.engine{padding:80px 0;background:var(--v900);position:relative;overflow:hidden;}
+.engine__bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;}
+.engine__glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(114,96,181,.2) 0%,transparent 65%);pointer-events:none;}
+.engine__inner{max-width:1280px;margin:0 auto;padding:0 32px;position:relative;}
+.engine__head{text-align:center;margin-bottom:56px;}
+.engine__eyebrow{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v300);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;}
+.engine__h2{font-family:var(--font-head);font-size:clamp(26px,3.5vw,44px);font-weight:900;letter-spacing:-1.2px;color:#fff;line-height:1.1;margin-bottom:16px;}
+.engine__h2 em{font-style:normal;color:var(--v300);}
+.engine__sub{font-size:17px;color:var(--v200);line-height:1.75;max-width:600px;margin:0 auto;}
+.engine__grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-bottom:48px;}
+.engine__card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:24px;text-align:center;transition:all .2s;}
+.engine__card:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);}
+.engine__card__icon{width:48px;height:48px;border-radius:12px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;}
+.engine__card__icon svg{width:24px;height:24px;}
+.engine__card__title{font-family:var(--font-head);font-size:13px;font-weight:800;color:#fff;margin-bottom:8px;}
+.engine__card__body{font-size:12px;color:var(--v200);line-height:1.6;}
+.engine__cta{text-align:center;}
+.engine__cta a{font-family:var(--font-head);font-size:15px;font-weight:700;background:#fff;color:var(--v500);padding:15px 36px;border-radius:var(--radius-btn);display:inline-flex;align-items:center;gap:8px;box-shadow:0 8px 28px rgba(0,0,0,.2);transition:all .2s;}
+.engine__cta a:hover{background:var(--v50);transform:translateY(-2px);}
+/* FINAL CTA */
+.final-cta{padding:96px 0;background:var(--v900);position:relative;overflow:hidden;}
+.final-cta__grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;}
+.final-cta__glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(114,96,181,.25) 0%,transparent 65%);pointer-events:none;}
+.final-cta__inner{max-width:860px;margin:0 auto;padding:0 32px;text-align:center;position:relative;}
+.final-cta__badge{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v200);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);padding:6px 16px;border-radius:var(--radius-pill);margin-bottom:28px;}
+.final-cta__badge-dot{width:6px;height:6px;border-radius:50%;background:var(--success);}
+.final-cta__eyebrow{font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v300);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;}
+.final-cta__h2{font-family:var(--font-head);font-size:clamp(28px,4vw,48px);font-weight:900;letter-spacing:-1.2px;color:#fff;line-height:1.1;margin-bottom:16px;}
+.final-cta__h2 em{font-style:normal;color:var(--v300);}
+.final-cta__sub{font-size:17px;color:var(--v200);line-height:1.75;max-width:560px;margin:0 auto 36px;}
+.btn-cta-white{font-family:var(--font-head);font-size:15px;font-weight:700;background:#fff;color:var(--v500);padding:15px 36px;border-radius:var(--radius-btn);box-shadow:0 8px 28px rgba(0,0,0,.2);transition:all .2s;display:inline-flex;align-items:center;gap:8px;}
+.btn-cta-white:hover{background:var(--v50);transform:translateY(-2px);}
+.btn-cta-white svg{width:16px;height:16px;}
+.final-cta__trust{display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:28px;}
+.final-cta__trust-item{display:flex;align-items:center;gap:7px;font-family:var(--font-head);font-size:12px;font-weight:600;color:var(--v200);}
+.final-cta__trust-dot{width:5px;height:5px;border-radius:50%;background:var(--success);}
+/* FOOTER */
+.footer{background:#fff;border-top:1px solid var(--border);padding:64px 0 40px;}
+.footer__inner{max-width:1280px;margin:0 auto;padding:0 32px;}
+.footer__grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+.footer__links-grid{display:contents;}
+.footer__logo{font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--v500);margin-bottom:16px;letter-spacing:-.5px;}
+.footer__tagline{font-size:14px;color:var(--grey);line-height:1.7;max-width:280px;margin-bottom:24px;}
+.footer__col-title{font-family:var(--font-head);font-size:12px;font-weight:800;color:var(--v900);text-transform:uppercase;letter-spacing:.06em;margin-bottom:16px;}
+.footer__links{display:flex;flex-direction:column;gap:10px;}
+.footer__link{font-size:14px;color:var(--grey);transition:color .2s;}
+.footer__link:hover{color:var(--v500);}
+.footer__bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer__copy{font-size:13px;color:var(--grey);}
+.footer__legal{display:flex;gap:24px;}
+.footer__legal a{font-size:13px;color:var(--grey);transition:color .2s;}
+.footer__legal a:hover{color:var(--v500);}
+.sec-h2{font-family:var(--font-head);font-size:clamp(24px,3vw,38px);font-weight:900;color:var(--v900);letter-spacing:-.8px;line-height:1.2;margin-bottom:16px;}
+.sec-h2 em{font-style:normal;color:var(--v500);}
+.sec-eyebrow{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
+.btn-primary{font-family:var(--font-head);font-size:13px;font-weight:700;background:var(--cta);color:#fff;padding:10px 20px;border-radius:var(--radius-btn);display:inline-flex;align-items:center;gap:6px;}
+.btn-primary:hover{background:var(--cta-hover);}
+@media(max-width:1024px){
+  .engine__grid{grid-template-columns:repeat(3,1fr);}
+}
+@media(max-width:768px){
+  .intro__inner{grid-template-columns:1fr;}
+  .cap-strip{grid-template-columns:1fr;}
+  .cap-strip__visual{display:none;}
+  .cap-strip__content{padding:32px 28px;}
+  .engine__grid{grid-template-columns:repeat(2,1fr);}
+  .highlights__inner{grid-template-columns:1fr;}
+  .footer__grid{grid-template-columns:1fr;}
+  .footer__tagline{max-width:100%;}
+  .btn-primary{width:100%;justify-content:center;}
+  .footer__links-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px 16px;margin-top:32px;}
+  .footer__links-grid > div:nth-child(1),.footer__links-grid > div:nth-child(2),.footer__links-grid > div:nth-child(3){text-align:left;grid-column:1;}
+  .footer__links-grid > div:nth-child(4){text-align:right;grid-column:2;grid-row:1 / span 3;}
+  .footer__links-grid > div:nth-child(4) .footer__links{align-items:flex-end;}
+  .footer__bottom{flex-direction:column;align-items:center;text-align:center;}
+  .footer__legal{flex-wrap:wrap;justify-content:center;}
+  .footer__tagline{max-width:100%;}
+  .hero__inner,.intro__inner,.capabilities__inner,.engine__inner,.final-cta__inner{padding:0 20px;}
+}
+@media(max-width:500px){
+  .engine__grid{grid-template-columns:1fr;}
+  .hero__cta-row{flex-direction:column;}
+}
+@media(min-width:769px){.nav__hamburger{display:none;}.nav__mobile-right{display:none;}}
+
+/* ===== ROLLOUT v2026-05-29: nav mega-menu + fat footer (canonical) ===== */
+.nav__item{position:relative;display:flex;align-items:center;height:72px;}
+.nav__item > .nav__link{display:inline-flex;align-items:center;gap:4px;}
+.nav__caret{width:11px;height:11px;flex-shrink:0;transition:transform .2s;}
+.nav__item:hover > .nav__link .nav__caret,.nav__item:focus-within > .nav__link .nav__caret{transform:rotate(180deg);}
+.nav__item:hover > .nav__link,.nav__item:focus-within > .nav__link{background:var(--v50);color:var(--v500);}
+.nav__panel{position:absolute;top:100%;left:0;background:#fff;border:1px solid var(--border);border-radius:14px;box-shadow:0 18px 44px rgba(33,24,68,.13);padding:14px;opacity:0;visibility:hidden;transform:translateY(7px);transition:opacity .16s,transform .16s,visibility .16s;z-index:200;}
+.nav__panel--right{left:auto;right:0;}
+.nav__item:hover > .nav__panel,.nav__item:focus-within > .nav__panel{opacity:1;visibility:visible;transform:translateY(0);}
+.np__list{display:grid;gap:1px;}
+.np__list--2{grid-template-columns:1fr 1fr;gap:1px 14px;}
+.np__link{display:flex;flex-direction:column;gap:2px;padding:9px 12px;border-radius:8px;transition:background .15s;min-width:0;}
+.np__link:hover{background:var(--v50);}
+.np__t{font-family:var(--font-head);font-size:13.5px;font-weight:700;color:var(--v900);white-space:nowrap;}
+.np__list--2 .np__t{white-space:normal;line-height:1.3;overflow-wrap:break-word;}
+.np__link:hover .np__t{color:var(--v500);}
+.np__s{font-family:var(--font-body);font-size:12px;color:var(--grey);line-height:1.35;}
+.np__foot{display:flex;align-items:center;gap:6px;border-top:1px solid var(--border);margin-top:8px;padding:11px 12px 3px;font-family:var(--font-head);font-size:12.5px;font-weight:700;color:var(--v500);}
+.np__foot svg{width:13px;height:13px;}
+.nav__mobile-cta{background:var(--cta);}
+.footer__grid{grid-template-columns:1.5fr 1fr 1fr 1fr 1fr 1.15fr;gap:40px 32px;}
+.footer__col-stack{display:flex;flex-direction:column;gap:48px;}
+@media(max-width:1024px){.footer__grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:768px){
+  .nav__item{width:100%;height:auto;display:block;position:static;}
+  .nav__item > .nav__link{display:flex;align-items:center;justify-content:space-between;width:100%;}
+  .nav__item.open > .nav__link .nav__caret{transform:rotate(180deg);}
+  .nav__caret{width:13px;height:13px;}
+  .nav__panel{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;border-radius:0;padding:4px 0 10px 10px;width:auto !important;display:none;z-index:auto;}
+  .nav__item.open > .nav__panel{display:block;}
+  .np__list--2{grid-template-columns:1fr;}
+  .np__link{padding:9px 10px;}
+  .np__foot{padding-left:10px;}
+  .footer__links-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px 16px;margin-top:32px;}
+  .footer__links-grid > div:nth-child(1),.footer__links-grid > div:nth-child(2),.footer__links-grid > div:nth-child(3),.footer__links-grid > div:nth-child(4),.footer__links-grid > div:nth-child(5){text-align:left;grid-column:auto;grid-row:auto;}
+  .footer__links-grid > div:nth-child(4) .footer__links{align-items:flex-start;}
+}
+@media(max-width:600px){.footer__grid{grid-template-columns:1fr;}}
+/* ===== end ROLLOUT ===== */
+
+/* ===== FAQ section (locked §16A) ===== */
+.faq{padding:96px 0;background:#F8F7FC;}
+.faq__inner{max-width:1280px;margin:0 auto;padding:0 32px;}
+.faq__header{text-align:center;margin-bottom:8px;}
+.faq__eyebrow{font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--v500);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;}
+.faq__h2{font-family:var(--font-head);font-size:clamp(28px,3.5vw,42px);font-weight:900;letter-spacing:-1.2px;color:var(--v900);line-height:1.15;}
+.faq__h2 em{font-style:normal;color:var(--v500);}
+.faq-list{display:flex;flex-direction:column;border-top:1px solid var(--border);max-width:860px;margin:40px auto 0;}
+.faq-item{border-bottom:1px solid var(--border);}
+.faq-item__q{display:flex;align-items:center;justify-content:space-between;padding:22px 0;cursor:pointer;gap:24px;}
+.faq-item__q-text{font-family:var(--font-head);font-size:16px;font-weight:700;color:var(--v900);}
+.faq-item__icon{width:28px;height:28px;border-radius:50%;background:#fff;border:1.5px solid var(--v100);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s;}
+.faq-item__icon svg{width:12px;height:12px;transition:transform .25s;}
+.faq-item.open .faq-item__icon{background:var(--v500);border-color:var(--v500);}
+.faq-item.open .faq-item__icon svg{transform:rotate(45deg);stroke:#fff;}
+.faq-item__a{display:none;font-family:var(--font-body);font-size:15px;color:var(--grey);line-height:1.75;padding-bottom:22px;max-width:760px;}
+.faq-item.open .faq-item__a{display:block;}
+@media(max-width:768px){.faq{padding:64px 0;}.faq__inner{padding:0 20px;}}
+/* ===== end FAQ ===== */
+
+.np__cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.np__col-head{display:block;font-family:var(--font-head);font-size:11px;font-weight:800;color:var(--v400);text-transform:uppercase;letter-spacing:.07em;padding:4px 12px 8px;transition:color .15s;}
+.np__col-head:hover{color:var(--v500);}
+.nav__panel:has(.np__col:only-child) .np__cols{grid-template-columns:1fr;}
+@media(max-width:768px){.np__cols{grid-template-columns:1fr !important;gap:0 !important;}.np__col-head{padding:8px 10px 4px;}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="telecrm-approach2-home.html" class="nav__logo">telecrm</a>
+    <div class="nav__links">
+      <div class="nav__item">
+        <a href="telecrm-platform-overview.html" class="nav__link nav__link--active">Platform Overview <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:560px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-platform-hub.html">Platform Hub</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-platform-unified-revenue-management.html"><span class="np__t">Unified Revenue Management</span><span class="np__s">One connected engine</span></a>
+                <a class="np__link" href="telecrm-platform-lead-management.html"><span class="np__t">Lead Management</span><span class="np__s">Capture, dedupe, assign</span></a>
+                <a class="np__link" href="telecrm-platform-call-management.html"><span class="np__t">Call Management &amp; Recording</span><span class="np__s">Dial, record, track</span></a>
+                <a class="np__link" href="telecrm-platform-adaptive-crm.html"><span class="np__t">Adaptive CRM</span><span class="np__s">Stages, fields, 360°</span></a>
+                <a class="np__link" href="telecrm-platform-marketing-automation.html"><span class="np__t">Marketing Automation</span><span class="np__s">Reach leads automatically</span></a>
+                <a class="np__link" href="telecrm-platform-sales-pipeline-management.html"><span class="np__t">Sales Funnel &amp; Pipeline Management</span><span class="np__s">Track every deal stage</span></a>
+              </div>
+            </div>
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-benefits-hub.html">Benefits Hub</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-benefits-hub.html"><span class="np__t">Outcomes &amp; ROI</span><span class="np__s">What telecrm delivers for your team</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-platform-overview.html">Platform Overview — the product, end to end <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-solutions-hub.html" class="nav__link">Solutions <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-solutions-hub.html">By approach</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-problems-hub.html"><span class="np__t">Problems Hub</span><span class="np__s">Revenue leaks, by stage</span></a>
+                <a class="np__link" href="telecrm-crm-hub.html"><span class="np__t">CRM Hub</span><span class="np__s">By type &amp; by team</span></a>
+                <a class="np__link" href="telecrm-industry-hub.html"><span class="np__t">Industry Hub</span><span class="np__s">11 industries covered</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-solutions-hub.html">Browse all solutions <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-features-hub.html" class="nav__link">Features <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:620px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-features-hub.html">Engagement</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-feature-call-management.html"><span class="np__t">Call Management</span></a>
+                <a class="np__link" href="telecrm-feature-calling-campaign.html"><span class="np__t">Calling Campaign Management</span></a>
+                <a class="np__link" href="telecrm-feature-whatsapp.html"><span class="np__t">WhatsApp</span></a>
+                <a class="np__link" href="telecrm-feature-automations.html"><span class="np__t">Automation</span></a>
+              </div>
+            </div>
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-features-hub.html">Data &amp; Admin</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-feature-lead-management.html"><span class="np__t">Lead Management &amp; Reporting</span></a>
+                <a class="np__link" href="telecrm-feature-lead-fields.html"><span class="np__t">Lead Fields</span></a>
+                <a class="np__link" href="telecrm-feature-lead-stages.html"><span class="np__t">Lead Stages</span></a>
+                <a class="np__link" href="telecrm-feature-list-labels.html"><span class="np__t">List and Labels</span></a>
+                <a class="np__link" href="telecrm-feature-reporting.html"><span class="np__t">Reporting</span></a>
+                <a class="np__link" href="telecrm-feature-integrations.html"><span class="np__t">Integrations</span></a>
+                <a class="np__link" href="telecrm-feature-user-management.html"><span class="np__t">User Management</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-features-hub.html">See all features <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-trust-hub.html" class="nav__link">Trust <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-trust-hub.html">Proof</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-testimonials.html"><span class="np__t">Testimonials</span><span class="np__s">Real customers, real numbers</span></a>
+                <a class="np__link" href="telecrm-case-studies.html"><span class="np__t">Case Studies</span><span class="np__s">9 detailed stories</span></a>
+                <a class="np__link" href="telecrm-comparison.html"><span class="np__t">Comparison</span><span class="np__s">telecrm vs. alternatives</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-trust-hub.html">Visit the Trust Hub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-pricing.html" class="nav__link">Pricing <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:320px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-pricing.html">Plans</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-pricing.html"><span class="np__t">Pricing</span><span class="np__s">Plans &amp; what's included</span></a>
+                <a class="np__link" href="telecrm-cost-savings.html"><span class="np__t">Cost Savings</span><span class="np__s">What you save vs. tools</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-support-hub.html" class="nav__link">Support <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:560px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-support-hub.html">Resources</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-faqs.html"><span class="np__t">FAQs</span></a>
+                <a class="np__link" href="telecrm-glossary.html"><span class="np__t">Glossary</span></a>
+                <a class="np__link" href="telecrm-learning-repository.html"><span class="np__t">Learning Repository</span></a>
+                <a class="np__link" href="telecrm-onboarding.html"><span class="np__t">Onboarding</span></a>
+                <a class="np__link" href="telecrm-recommended-devices.html"><span class="np__t">Recommended Devices</span></a>
+              </div>
+            </div>
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-support-hub.html">Policies</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-privacy-policy.html"><span class="np__t">Privacy Policy</span></a>
+                <a class="np__link" href="telecrm-refund-policy.html"><span class="np__t">Refund Policy</span></a>
+                <a class="np__link" href="telecrm-terms-conditions.html"><span class="np__t">Terms &amp; Conditions</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-support-hub.html">Go to Support Hub <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-get-started.html" class="nav__link">Get Started <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-get-started.html">Get started</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-partnership.html"><span class="np__t">Partner Program</span><span class="np__s">Refer &amp; earn 10% for life</span></a>
+                <a class="np__link" href="telecrm-demo-request.html"><span class="np__t">Demo Request</span><span class="np__s">Book a free demo</span></a>
+              </div>
+            </div>
+          </div>
+          <a class="np__foot" href="telecrm-get-started.html">All ways to start <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2.5 6h7M6 2.5l3.5 3.5L6 9.5"/></svg></a>
+        </div>
+      </div>
+      <div class="nav__item">
+        <a href="telecrm-about-us.html" class="nav__link">About Us <svg class="nav__caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="nav__panel" style="width:340px;">
+          <div class="np__cols">
+            <div class="np__col">
+              <a class="np__col-head" href="telecrm-about-us.html">Company</a>
+              <div class="np__list">
+                <a class="np__link" href="telecrm-about-telecrm.html"><span class="np__t">About telecrm</span><span class="np__s">Story, vision, mission</span></a>
+                <a class="np__link" href="telecrm-life-at-telecrm.html"><span class="np__t">Life at telecrm</span><span class="np__s">Culture &amp; team</span></a>
+                <a class="np__link" href="telecrm-careers.html"><span class="np__t">Careers</span><span class="np__s">Open roles</span></a>
+                <a class="np__link" href="telecrm-contact.html"><span class="np__t">Contact Us</span><span class="np__s">Talk to us</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="nav__sep"></span>
+      <a href="telecrm-demo-request.html" class="nav__cta">Get a Demo</a>
+    </div>
+    <div class="nav__mobile-right">
+      <a href="telecrm-demo-request.html" class="nav__mobile-cta">Get a Demo</a>
+      <span class="nav__mob-sep"></span>
+      <button class="nav__hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero__bg"></div>
+  <div class="hero__glow"></div>
+  <div class="hero__inner">
+    <div class="hero__eyebrow">The telecrm Platform</div>
+    <h1 class="hero__h1">Multi capable<br><em>unified revenue engine.</em></h1>
+    <p class="hero__sub">Most companies run their sales on five disconnected tools. telecrm replaces them all — Lead Management, Call Management, Adaptive CRM, Marketing Automation and Sales Pipeline — fused into one active execution suite.</p>
+  </div>
+</section>
+
+<div class="highlights">
+  <div class="highlights__inner">
+    <div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">Revenue driving platform</span></div>
+    <div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">Powerful actions</span></div>
+    <div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">Unified reporting</span></div>
+    <div class="highlight"><span class="highlight__dot"></span><span class="highlight__text">Cost Advantages</span></div>
+  </div>
+</div>
+
+<section class="intro">
+  <div class="intro__inner">
+    <div class="intro__text">
+      <div class="sec-eyebrow">Why one platform matters</div>
+      <h2 class="sec-h2">Your tools don't talk to each other.<br><em>telecrm does.</em></h2>
+      <p>When your lead management tool, calling system, WhatsApp platform and CRM are separate products, every handoff between them costs you context, time and deals. A lead captured in one tool has to be manually entered into another. A call logged in a third tool never makes it to the CRM. A WhatsApp reply sits in a separate inbox while the lead goes cold.</p>
+      <p>telecrm was built from the ground up as a single platform — where every lead, call, message, stage change and automation shares the same database. No integration tax. No data gaps. No version of the customer in five different places.</p>
+    </div>
+    <div class="intro__cards">
+      <div class="intro__card">
+        <div class="intro__card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <div><div class="intro__card__title">One record for every lead</div><div class="intro__card__body">Every call, message, stage change and note on a single timeline. Any rep picking up the lead has full context.</div></div>
+      </div>
+      <div class="intro__card">
+        <div class="intro__card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+        <div><div class="intro__card__title">Automations that cross capabilities</div><div class="intro__card__body">A stage change in the CRM can trigger a WhatsApp message, create a call task and reassign a lead — simultaneously, without Zapier.</div></div>
+      </div>
+      <div class="intro__card">
+        <div class="intro__card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+        <div><div class="intro__card__title">One view for leadership</div><div class="intro__card__body">Calls, pipeline, follow-up adherence and campaign performance — all on one dashboard, not five different logins.</div></div>
+      </div>
+      <div class="intro__card">
+        <div class="intro__card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <div><div class="intro__card__title">Reduced bills and Cost Savings</div><div class="intro__card__body">Replace your calling tool, WhatsApp platform, CRM, reminder app and reporting layer. Most teams cut stack cost by 60%.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="capabilities">
+  <div class="capabilities__inner">
+    <div style="text-align:left;margin-bottom:48px;">
+      <div style="font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;">Multi-pronged Capabilities</div>
+      <h2 class="sec-h2">Each one powerful on its own.<br><em>Together, they run your entire revenue operation.</em></h2>
+    </div>
+
+    <!-- 1: LEAD MANAGEMENT -->
+    <div class="cap-strip">
+      <div class="cap-strip__content">
+        <div class="cap-strip__num">Lead Management</div>
+        <div class="cap-strip__title">Every lead captured and assigned<br><em>before your competitor calls.</em></div>
+        <div class="cap-strip__body">telecrm pulls leads from 30+ sources the moment they arrive — IndiaMart, Facebook, Google, WhatsApp, website forms — and routes to the right rep automatically. No manual entry, no missed enquiries, no leads going cold in a portal no one checked.</div>
+        <div class="cap-strip__bullets">
+          <div class="cap-strip__bullet">Auto-capture from every source with smart deduplication</div>
+          <div class="cap-strip__bullet">Assign by source, geography, product or round-robin in under 5 seconds</div>
+          <div class="cap-strip__bullet">Lead scoring, follow-up automation and stage-wise pipeline</div>
+        </div>
+        <a href="telecrm-platform-overview.html" class="cap-strip__link">Explore Lead Management <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="cap-strip__visual">
+        <div class="cap-visual">
+          <div class="cv-row">
+            <div class="cv-row__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.6" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+            <div class="cv-row__text"><div class="cv-row__title">New lead from Facebook</div><div class="cv-row__sub">Captured · 2 seconds ago</div></div>
+            <span class="cv-row__badge cv-row__badge--green">Assigned</span>
+          </div>
+          <div class="cv-row">
+            <div class="cv-row__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.6" stroke-linecap="round"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg></div>
+            <div class="cv-row__text"><div class="cv-row__title">Hot lead — 99acres</div><div class="cv-row__sub">Score: 92 · Routed to Senior Rep</div></div>
+            <span class="cv-row__badge cv-row__badge--purple">Priority</span>
+          </div>
+          <div class="cv-row">
+            <div class="cv-row__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div class="cv-row__text"><div class="cv-row__title">Follow-up overdue · IndiaMart</div><div class="cv-row__sub">SLA: 2 hours · Re-assigned</div></div>
+            <span class="cv-row__badge cv-row__badge--orange">Escalated</span>
+          </div>
+          <div class="cv-row">
+            <div class="cv-row__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.6" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <div class="cv-row__text"><div class="cv-row__title">Duplicate merged · WhatsApp</div><div class="cv-row__sub">Same buyer — 3 sources consolidated</div></div>
+            <span class="cv-row__badge cv-row__badge--blue">Deduped</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2: CALL MANAGEMENT -->
+    <div class="cap-strip">
+      <div class="cap-strip__visual cap-strip__visual--tint">
+        <div class="cap-visual">
+          <div class="cv-row">
+            <div class="cv-row__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.6" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+            <div class="cv-row__text"><div class="cv-row__title">Call connected · 4m 32s</div><div class="cv-row__sub">Recording saved · Follow-up created</div></div>
+            <span class="cv-row__badge cv-row__badge--green">Logged</span>
+          </div>
+          <div class="cv-row">
+            <div class="cv-row__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.6" stroke-linecap="round"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg></div>
+            <div class="cv-row__text"><div class="cv-row__title">AI summary generated</div><div class="cv-row__sub">Objection: price · Next: send proposal</div></div>
+            <span class="cv-row__badge cv-row__badge--purple">AI</span>
+          </div>
+          <div class="cv-row">
+            <div class="cv-row__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.6" stroke-linecap="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+            <div class="cv-row__text"><div class="cv-row__title">Today's team performance</div><div class="cv-row__sub">142 calls · 89 connected · 6 closed</div></div>
+            <span class="cv-row__badge cv-row__badge--blue">Live</span>
+          </div>
+        </div>
+      </div>
+      <div class="cap-strip__content">
+        <div class="cap-strip__num">Call Management</div>
+        <div class="cap-strip__title">Every call dialled, recorded<br><em>and reviewed — automatically.</em></div>
+        <div class="cap-strip__body">1-click dialling from the lead card. Every call recorded the moment it connects. Follow-up tasks created automatically. AI summaries for managers to review without listening to every recording. Real-time performance dashboards across the team.</div>
+        <div class="cap-strip__bullets">
+          <div class="cap-strip__bullet">1-click dialler — no number copying, no app switching</div>
+          <div class="cap-strip__bullet">Automatic call recording, inbound and outbound</div>
+          <div class="cap-strip__bullet">AI call audit, IVR integration, live rep performance reports</div>
+        </div>
+        <a href="telecrm-platform-overview.html" class="cap-strip__link">Explore Call Management <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+
+    <!-- 3: ADAPTIVE CRM -->
+    <div class="cap-strip">
+      <div class="cap-strip__content">
+        <div class="cap-strip__num">Adaptive CRM</div>
+        <div class="cap-strip__title">A CRM that works<br><em>the way you do.</em></div>
+        <div class="cap-strip__body">Most CRMs come with fixed stages, fixed fields and fixed workflows that don't match how you sell. telecrm gives you custom pipelines, custom fields, role-based access and workflow automation — configured for your process in an afternoon, not in months.</div>
+        <div class="cap-strip__bullets">
+          <div class="cap-strip__bullet">Custom stages, fields and labels — no developer needed</div>
+          <div class="cap-strip__bullet">Role-based access: reps see their leads, managers see the team</div>
+          <div class="cap-strip__bullet">Workflow automation triggered by any event, field or stage</div>
+        </div>
+        <a href="telecrm-platform-overview.html" class="cap-strip__link">Explore Adaptive CRM <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="cap-strip__visual">
+        <div class="cap-visual">
+          <div class="cv-row">
+            <div class="cv-row__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.6" stroke-linecap="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+            <div class="cv-row__text"><div class="cv-row__title">Pipeline: Real Estate</div><div class="cv-row__sub">New → Site Visit → Negotiation → Booked</div></div>
+            <span class="cv-row__badge cv-row__badge--purple">Custom</span>
+          </div>
+          <div class="cv-row">
+            <div class="cv-row__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.6" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+            <div class="cv-row__text"><div class="cv-row__title">Field: Property Type</div><div class="cv-row__sub">Dropdown · Required · Used in reports</div></div>
+            <span class="cv-row__badge cv-row__badge--blue">Custom field</span>
+          </div>
+          <div class="cv-row">
+            <div class="cv-row__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.6" stroke-linecap="round"><path d="M9 11l3 3L22 4"/></svg></div>
+            <div class="cv-row__text"><div class="cv-row__title">Workflow triggered</div><div class="cv-row__sub">Stage: Site Visit → Send WhatsApp + Assign Senior</div></div>
+            <span class="cv-row__badge cv-row__badge--green">Auto</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4: MARKETING AUTOMATION -->
+    <div class="cap-strip">
+      <div class="cap-strip__visual cap-strip__visual--tint">
+        <div class="cap-visual">
+          <div class="cv-row">
+            <div class="cv-row__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.6" stroke-linecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+            <div class="cv-row__text"><div class="cv-row__title">Drip sequence started</div><div class="cv-row__sub">Day 1 → Day 3 → Day 7 → Day 14</div></div>
+            <span class="cv-row__badge cv-row__badge--purple">WhatsApp</span>
+          </div>
+          <div class="cv-row">
+            <div class="cv-row__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.6" stroke-linecap="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 012 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg></div>
+            <div class="cv-row__text"><div class="cv-row__title">Conversion signal sent</div><div class="cv-row__sub">Meta CAPI · Lead marked Won</div></div>
+            <span class="cv-row__badge cv-row__badge--blue">CAPI</span>
+          </div>
+          <div class="cv-row">
+            <div class="cv-row__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.6" stroke-linecap="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+            <div class="cv-row__text"><div class="cv-row__title">Campaign: Diwali Offer</div><div class="cv-row__sub">Sent 2,400 · Read 1,840 · Replied 312</div></div>
+            <span class="cv-row__badge cv-row__badge--green">Live</span>
+          </div>
+        </div>
+      </div>
+      <div class="cap-strip__content">
+        <div class="cap-strip__num">Marketing Automation</div>
+        <div class="cap-strip__title">Nurture leads. Run campaigns.<br><em>Send conversion signals. Automatically.</em></div>
+        <div class="cap-strip__body">WhatsApp drip sequences, lead scoring, chatbot qualification, bulk campaigns and Conversion API signals to Meta and Google — all running from the same platform your sales team uses every day, without a separate marketing tool.</div>
+        <div class="cap-strip__bullets">
+          <div class="cap-strip__bullet">WhatsApp drip campaigns triggered by stage change or inactivity</div>
+          <div class="cap-strip__bullet">Chatbot qualification — leads scored and handed off automatically</div>
+          <div class="cap-strip__bullet">Conversion API signals to Meta and Google for better ad quality</div>
+        </div>
+        <a href="telecrm-platform-overview.html" class="cap-strip__link">Explore Marketing Automation <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+
+    <!-- 5: SALES PIPELINE -->
+    <div class="cap-strip">
+      <div class="cap-strip__content">
+        <div class="cap-strip__num">Sales Pipeline</div>
+        <div class="cap-strip__title">Every deal visible.<br><em>Every stall caught before it costs you.</em></div>
+        <div class="cap-strip__body">Live pipeline view across every stage, rep and source. Automated alerts for deals with no activity. Stage-wise funnel analytics to see exactly where leads are dropping off. Your team always knows what to do next — and your managers always know where the month stands.</div>
+        <div class="cap-strip__bullets">
+          <div class="cap-strip__bullet">Live pipeline with stage, owner, value and last activity per deal</div>
+          <div class="cap-strip__bullet">Automated alerts for stalled deals beyond your activity threshold</div>
+          <div class="cap-strip__bullet">Stage-wise funnel analytics and source-to-close reporting</div>
+        </div>
+        <a href="telecrm-platform-overview.html" class="cap-strip__link">Explore Sales Pipeline <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="cap-strip__visual">
+        <div class="cap-visual">
+          <div class="cv-row">
+            <div class="cv-row__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#4F38A2" stroke-width="1.6" stroke-linecap="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+            <div class="cv-row__text"><div class="cv-row__title">Pipeline · Last 30 days</div><div class="cv-row__sub">New ₹8.4C · Negotiation ₹3.2C · Won ₹1.1C</div></div>
+            <span class="cv-row__badge cv-row__badge--blue">Live</span>
+          </div>
+          <div class="cv-row">
+            <div class="cv-row__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="1.6" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+            <div class="cv-row__text"><div class="cv-row__title">Deal stalled · 8 days inactive</div><div class="cv-row__sub">Ananya · ₹45,000 · Negotiation</div></div>
+            <span class="cv-row__badge cv-row__badge--orange">Alert</span>
+          </div>
+          <div class="cv-row">
+            <div class="cv-row__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+            <div class="cv-row__text"><div class="cv-row__title">Deal Won — handoff triggered</div><div class="cv-row__sub">CS onboarding started · Invoice raised</div></div>
+            <span class="cv-row__badge cv-row__badge--green">Won</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- REVENUE ENGINE -->
+<section class="engine">
+  <div class="engine__bg"></div>
+  <div class="engine__glow"></div>
+  <div class="engine__inner">
+    <div class="engine__head">
+      <div class="engine__eyebrow">The complete picture</div>
+      <h2 class="engine__h2">Multi capable<br><em>unified revenue engine.</em></h2>
+      <p class="engine__sub">When all five capabilities run from the same database, every action informs all the others — no syncing, no API glue, no version of the customer in five different places.</p>
+    </div>
+    <div class="engine__grid">
+      <div class="engine__card">
+        <div class="engine__card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#9C8FCF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <div class="engine__card__title">Lead Management</div>
+        <div class="engine__card__body">Capture, deduplicate, assign and prioritise every lead from every source — automatically.</div>
+      </div>
+      <div class="engine__card">
+        <div class="engine__card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#9C8FCF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+        <div class="engine__card__title">Call Management</div>
+        <div class="engine__card__body">1-click dialling, automatic recording, AI summaries and real-time performance dashboards.</div>
+      </div>
+      <div class="engine__card">
+        <div class="engine__card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#9C8FCF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+        <div class="engine__card__title">Adaptive CRM</div>
+        <div class="engine__card__body">Custom stages, fields, role-based access and workflow automation — built for your process.</div>
+      </div>
+      <div class="engine__card">
+        <div class="engine__card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#9C8FCF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+        <div class="engine__card__title">Marketing Automation</div>
+        <div class="engine__card__body">WhatsApp drip campaigns, chatbot qualification and Conversion API signals to Meta and Google.</div>
+      </div>
+      <div class="engine__card">
+        <div class="engine__card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="#9C8FCF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+        <div class="engine__card__title">Sales Pipeline</div>
+        <div class="engine__card__body">Live pipeline view, stall alerts, stage-wise funnel analytics and automated post-win handoffs.</div>
+      </div>
+    </div>
+    <div class="engine__cta">
+      <a href="telecrm-platform-overview.html">See the full Revenue Engine <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="final-cta__grid"></div>
+  <div class="final-cta__glow"></div>
+  <div class="final-cta__inner">
+    <div class="final-cta__badge"><span class="final-cta__badge-dot"></span>Free 30-minute demo</div>
+    <div class="final-cta__eyebrow">Join 5,000+ Indian sales teams</div>
+    <h2 class="final-cta__h2">See the full platform<br><em>in 30 minutes.</em></h2>
+    <p class="final-cta__sub">We'll show you all five capabilities working together — configured for your industry, your team size and your lead sources. No jargon. No pressure. Just a focused look at how telecrm works for a business like yours.</p>
+    <a href="telecrm-demo-request.html" class="btn-cta-white">Get a Demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    <div class="final-cta__trust">
+      <span class="final-cta__trust-item"><span class="final-cta__trust-dot"></span>No credit card needed</span>
+      <span class="final-cta__trust-item"><span class="final-cta__trust-dot"></span>Response within 24 hours</span>
+      <span class="final-cta__trust-item"><span class="final-cta__trust-dot"></span>5,000+ businesses onboarded</span>
+      <span class="final-cta__trust-item"><span class="final-cta__trust-dot"></span>Fast setup</span>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="faq__inner">
+    <div class="faq__header">
+      <div class="faq__eyebrow">FAQ</div>
+      <h2 class="faq__h2">Your questions, <em>answered plainly.</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">What are the five capabilities of telecrm?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">Lead Management, Call Management &amp; Recording, Adaptive CRM, Marketing Automation, and Sales Pipeline Management — fused into one engine.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">Why one platform instead of separate tools?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">Disconnected tools don't talk to each other, so data and conversations slip through the cracks. telecrm unifies all five capabilities so everything flows in one place.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">Can I use just one capability to start?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">Yes — each one is powerful on its own. Most teams start with the capability that solves their most pressing problem and grow into the rest.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-item__q" onclick="toggleFaq(this)">
+          <span class="faq-item__q-text">How long does it take to see the platform?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 12 12" fill="none" stroke="#4F38A2" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></div>
+        </div>
+        <div class="faq-item__a">A 30-minute demo walks you through how each capability works together.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__logo">telecrm</div>
+        <p class="footer__tagline">A Comprehensive Revenue Management Engine — fusing Lead Management, Call Management, Adaptive CRM, Marketing Automation, and Pipeline Management into one high-performance workspace.</p>
+        <a href="telecrm-get-started.html" class="btn-primary">Get Started →</a>
+      </div>
+      <div class="footer__links-grid">
+      <div class="footer__col-stack">
+        <div>
+          <div class="footer__col-title">Platform</div>
+          <div class="footer__links">
+            <a href="telecrm-platform-overview.html" class="footer__link">Platform Overview</a>
+            <a href="telecrm-platform-hub.html" class="footer__link">Platform Hub</a>
+            <a href="telecrm-benefits-hub.html" class="footer__link">Benefits Hub</a>
+            <a href="telecrm-platform-unified-revenue-management.html" class="footer__link">Unified Revenue Management</a>
+            <a href="telecrm-platform-lead-management.html" class="footer__link">Lead Management</a>
+            <a href="telecrm-platform-call-management.html" class="footer__link">Call Management &amp; Recording</a>
+            <a href="telecrm-platform-adaptive-crm.html" class="footer__link">Adaptive CRM</a>
+            <a href="telecrm-platform-marketing-automation.html" class="footer__link">Marketing Automation</a>
+            <a href="telecrm-platform-sales-pipeline-management.html" class="footer__link">Sales Pipeline Management</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Pricing</div>
+          <div class="footer__links">
+            <a href="telecrm-pricing.html" class="footer__link">Pricing</a>
+            <a href="telecrm-cost-savings.html" class="footer__link">Cost Savings</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__col-stack">
+        <div>
+          <div class="footer__col-title">Solutions</div>
+          <div class="footer__links">
+            <a href="telecrm-problems-hub.html" class="footer__link">Problems Hub</a>
+            <a href="telecrm-crm-hub.html" class="footer__link">CRM Hub</a>
+            <a href="telecrm-industry-hub.html" class="footer__link">Industry Hub</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Get Started</div>
+          <div class="footer__links">
+            <a href="telecrm-partnership.html" class="footer__link">Partner Program</a>
+            <a href="telecrm-demo-request.html" class="footer__link">Demo Request</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__col-stack">
+        <div>
+          <div class="footer__col-title">Trust</div>
+          <div class="footer__links">
+            <a href="telecrm-testimonials.html" class="footer__link">Testimonials</a>
+            <a href="telecrm-case-studies.html" class="footer__link">Case Studies</a>
+            <a href="telecrm-comparison.html" class="footer__link">Comparison</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">About Us</div>
+          <div class="footer__links">
+            <a href="telecrm-about-telecrm.html" class="footer__link">About telecrm</a>
+            <a href="telecrm-life-at-telecrm.html" class="footer__link">Life at telecrm</a>
+            <a href="telecrm-careers.html" class="footer__link">Careers</a>
+            <a href="telecrm-contact.html" class="footer__link">Contact Us</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Support</div>
+        <div class="footer__links">
+          <a href="telecrm-faqs.html" class="footer__link">FAQs</a>
+          <a href="telecrm-glossary.html" class="footer__link">Glossary</a>
+          <a href="telecrm-learning-repository.html" class="footer__link">Learning Repository</a>
+          <a href="telecrm-onboarding.html" class="footer__link">Onboarding</a>
+          <a href="telecrm-privacy-policy.html" class="footer__link">Privacy Policy</a>
+          <a href="telecrm-recommended-devices.html" class="footer__link">Recommended Devices</a>
+          <a href="telecrm-refund-policy.html" class="footer__link">Refund Policy</a>
+          <a href="telecrm-terms-conditions.html" class="footer__link">Terms &amp; Conditions</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Features</div>
+        <div class="footer__links">
+          <a href="telecrm-feature-automations.html" class="footer__link">Automation</a>
+          <a href="telecrm-feature-call-management.html" class="footer__link">Call Management</a>
+          <a href="telecrm-feature-calling-campaign.html" class="footer__link">Calling Campaign Management</a>
+          <a href="telecrm-feature-integrations.html" class="footer__link">Integrations</a>
+          <a href="telecrm-feature-lead-fields.html" class="footer__link">Lead Fields</a>
+          <a href="telecrm-feature-lead-management.html" class="footer__link">Lead Management &amp; Reporting</a>
+          <a href="telecrm-feature-lead-stages.html" class="footer__link">Lead Stages</a>
+          <a href="telecrm-feature-list-labels.html" class="footer__link">List and Labels</a>
+          <a href="telecrm-feature-reporting.html" class="footer__link">Reporting</a>
+          <a href="telecrm-feature-user-management.html" class="footer__link">User Management</a>
+          <a href="telecrm-feature-whatsapp.html" class="footer__link">WhatsApp</a>
+        </div>
+      </div>
+      </div><!-- /footer__links-grid -->
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__copy">© 2026 telecrm. All rights reserved.</div>
+      <div class="footer__legal">
+        <a href="telecrm-privacy-policy.html">Privacy Policy</a>
+        <a href="telecrm-terms-conditions.html">Terms &amp; Conditions</a>
+        <a href="telecrm-refund-policy.html">Refund Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.querySelector('.nav__hamburger');
+  var links=document.querySelector('.nav__links');
+  if(btn&&links){
+    btn.addEventListener('click',function(){btn.classList.toggle('open');links.classList.toggle('open');});
+  }
+  var mq=window.matchMedia('(max-width:768px)');
+  document.querySelectorAll('.nav__item > .nav__link').forEach(function(hub){
+    hub.addEventListener('click',function(e){ if(mq.matches){ e.preventDefault(); hub.parentElement.classList.toggle('open'); } });
+  });
+  document.querySelectorAll('.np__link,.np__foot,.nav__cta,.nav__mobile-cta').forEach(function(l){
+    l.addEventListener('click',function(){ if(btn){btn.classList.remove('open');} if(links){links.classList.remove('open');} });
+  });
+})();
+</script>
+<script>
+function toggleFaq(el){
+  var item=el.parentElement;
+  var isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+  if(!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>
