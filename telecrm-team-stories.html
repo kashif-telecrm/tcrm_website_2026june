@@ -53,7 +53,7 @@ a{text-decoration:none;color:inherit;}
 .hero__eyebrow{font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--v400);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;}
 .hero__h1{font-family:var(--font-head);font-size:clamp(28px,4vw,56px);font-weight:900;letter-spacing:-1.5px;color:var(--v900);line-height:1.1;margin-bottom:16px;}
 .hero__h1 em{font-style:normal;color:var(--v500);}
-.hero__sub{font-size:17px;color:var(--grey);line-height:1.75;max-width:640px;}
+.hero__sub{font-size:17px;color:var(--grey);line-height:1.75;max-width:none;}
 /* STORY FULL */
 .stories{padding:80px 0;}
 .stories__inner{max-width:900px;margin:0 auto;padding:0 32px;}
@@ -534,6 +534,71 @@ a{text-decoration:none;color:inherit;}
       </div>
     </div>
 
+    <!-- STORY 9: RAFEY -->
+    <div class="story" id="rafey-nizam">
+      <div class="story__meta">
+        <div class="story__avatar">RN</div>
+        <div>
+          <div class="story__name">Rafey Nizam</div>
+          <div class="story__role">Software Engineer · 18 months at telecrm</div>
+        </div>
+        <span class="story__team-tag">Technology</span>
+      </div>
+      <div class="story__pull">During the design phase, differences of opinion with senior engineers are debated based on the strength of the argument, not seniority. So I feel my opinions are heard here.</div>
+      <div class="story__body">
+        <p>I applied to telecrm through our placement committee in college. After interning here for six months, I got a full-time role as a Software Engineer.</p>
+        <p>My work involves working on flexible schemas for enterprise clients, integrations with third-party platforms like Facebook, WhatsApp and Indiamart, complex filtering across 100k+ leads and bulk operations like imports and edits. Working on problems at this scale has shaped how I think as a developer.</p>
+        <p>What I appreciate about the engineering culture here is that during the design phase, differences of opinion with senior engineers are debated based on the strength of the argument, not seniority. So I feel my opinions are heard here.</p>
+        <p>That same collaborative approach continues through every phase of a feature, from design all the way to deployment. PR reviews are handled by senior engineers, and when you're stuck, they're always available. I recently wanted to understand how our deduplication strategy works when creating leads in the system. My colleague Hashir walked me through it quickly and it saved me a lot of time.</p>
+        <p>Of course, there are times when the work can feel repetitive, especially when you spend a long time on the same feature or part of the codebase. What helps me is treating each iteration as a chance to improve something. It could be a cleaner implementation, a better approach or simply a small improvement that makes the work stronger.</p>
+        <p>After working at telecrm for 18 months, I have a much stronger understanding of how to write maintainable code through the controller-service-repository three-layer pattern. I have a clearer mental model of how different services communicate and how they're deployed across Lambdas, queues, EC2 and API Gateway. And I can now think ahead about potential bottlenecks in a design before they become problems at scale.</p>
+      </div>
+    </div>
+    <!-- STORY 10: MOHD -->
+    <div class="story" id="mohd-naved-khan">
+      <div class="story__meta">
+        <div class="story__avatar">NK</div>
+        <div>
+          <div class="story__name">Mohd Naved Khan</div>
+          <div class="story__role">Software Development Engineer II · 3+ years at telecrm</div>
+        </div>
+        <span class="story__team-tag">Technology</span>
+      </div>
+      <div class="story__pull">I was given real problems to solve, not isolated tickets but problems where the outcome actually affected users and the business. You could see the impact of your work directly in the product.</div>
+      <div class="story__body">
+        <p>I have been in telecrm since 2023. I joined as an SDE I, and now I am an SDE II after being promoted in 2024.</p>
+        <p>Which means my scope of work has expanded beyond individual feature delivery. I am now more involved in shaping architecture decisions, defining component standards, leading code reviews for a team of 3-4 engineers and mentoring junior developers on debugging practices, accessibility and clean code. I also work closely with product managers, designers and the backend team to take features from initial requirements through to production. The shift has been more about being responsible for the quality direction and cohesion of the work the team produces collectively.</p>
+        <p>From early on at telecrm, I was given real problems to solve, not isolated tickets but problems where the outcome actually affected users and the business. You could see the impact of your work directly in the product and hear about it from customers.</p>
+        <p>One of the first big things I took on was a full performance overhaul of our frontend. The app was taking eight seconds to load. I rearchitected the bundling strategy, introduced lazy loading and route-level code splitting and brought it down to three seconds while reducing the initial bundle from 14 MiB to 6 MiB. Users don't describe slow software in technical terms. They just stop using it.</p>
+        <p>Another problem that shaped how I think was designing a client-side mutation system. Instead of sending the full state to the server on every update, the system computes a diff on the client and ships only the difference, reducing update payload size by 70%. It forced me to think about where intelligence should live in a system and how a single decision at the client layer can reduce server load, latency and perceived responsiveness all at once.</p>
+        <p>Here, my opinions are heard and I think that's because of outcomes. When I flagged that access-related support tickets were piling up because the existing permissions system was too coarse, I proposed a granular UI-level permissions system, not just route-level guards but component-level access control across leads, reports and forms. We shipped it, and access-related support tickets dropped by 80%.</p>
+        <p>Another time, I pushed for shared component standards across the codebase. I made the case that the inconsistency was slowing down feature development and costing us in QA cycles. We built a shared component library, and QA effort dropped by 60%.</p>
+        <p>Also, there have been periods where the work started feeling familiar. But every time that happened, something new came along that was a completely different kind of problem. When core feature development started feeling routine, I was building a drag-and-drop workflow builder with zoom, undo/redo and copy-paste from scratch. Then a full performance overhaul. Then, an in-app webhook ingestion platform. Then, OAuth 2.0 flows for an API-triggering platform handling over two million daily invocations.</p>
+        <p>The workflow builder is a good example of what happens when you understand the business context behind the work. New users were finding the platform too complex and were churning early. Understanding that shaped every decision I made while building it. When it launched, new-user onboarding time reduced by 40%.</p>
+        <p>If I recall correctly, when I joined I could write clean functional code for a well-defined problem. Today I can look at a system and diagnose where the bottlenecks are, anticipate where an architecture decision will create friction at scale and own a feature end to end from design through deployment to monitoring in production. That full loop is something I now drive rather than participate in.</p>
+      </div>
+    </div>
+    <!-- STORY 11: AKANSHA -->
+    <div class="story" id="akansha-sengar">
+      <div class="story__meta">
+        <div class="story__avatar">AS</div>
+        <div>
+          <div class="story__name">Akansha Sengar</div>
+          <div class="story__role">Key Implementation Partner, Enterprise Accounts &amp; Team Lead, Customer Success · 4 years at telecrm</div>
+        </div>
+        <span class="story__team-tag">Customer Success</span>
+      </div>
+      <div class="story__pull">When I joined, it was meant to be temporary — I'd even accepted an offer in Bangalore. Four years on, I'm still here, not out of compulsion but out of choice.</div>
+      <div class="story__body">
+        <p>telecrm is my first job, and it has shaped both my professional and personal growth in ways I didn't expect. I joined as a Business Analyst in the Post-Sales domain — what's now the Customer Success team — starting with onboarding and implementation, working closely with clients to understand their operations and what they actually needed from a CRM.</p>
+        <p>Today I work as a Key Implementation Partner for Enterprise Accounts and Onboarding, and I also lead the Customer Success team. My work spans enterprise implementations, onboarding strategy, process optimisation, and mentoring the people on my team.</p>
+        <p>The biggest advantage of working here is the exposure to such different businesses. From SMEs to enterprise brands like Shiprocket, Wilson &amp; Hughes, Rays Education, Cast You, Highspring LLP and Rapido, I've seen how varied companies operate, how their sales funnels work, and the real operational challenges that lead them to adopt a CRM. That's expanded my understanding of business far beyond anything a classroom taught me.</p>
+        <p>In fact, that was my biggest mindset shift. In theory you're taught that features are the highlight of a product. But in the real world clients don't stay because of features — they stay because of the solutions you give them to their business problems. Features get replaced with the next release; strong solutions stay irreplaceable.</p>
+        <p>What I value most is that opinions are genuinely heard here. There's an open culture of discussion, idea-sharing and collaborative problem-solving instead of rigid communication structures. Leadership is approachable too — if I want guidance, they're just a conversation away, and they engage with real interest.</p>
+        <p>The work has never felt monotonous. Four years in, the learning keeps evolving. Beyond my core role I've come to understand how sales closures and cycle timelines work, how bulk-broadcast marketing is timed, why client testimonials matter, and how customer feedback flows into product enhancements and deployment. That cross-functional exposure is what keeps it engaging. It also helps that the team is young and energetic, with a minimal generation gap — the kind of environment where even introverts gradually become more confident.</p>
+        <p>When I joined, it was meant to be temporary. I had an offer from another Bangalore-based company and didn't imagine staying at a start-up for more than six or seven months, let alone in my hometown. But I'm still here by choice. telecrm turned me from someone who lacked confidence into someone far more confident and expressive — an early-stage start-up groomed me in ways I'm not sure an established organisation could have. Going from an onboarding executive to leading a team, and now mentoring new members, is one of the most rewarding parts of being here.</p>
+      </div>
+    </div>
     <div class="join-cta">
       <div class="join-cta__text">
         <h3>Want to write your own story here?</h3>
@@ -544,6 +609,9 @@ a{text-decoration:none;color:inherit;}
         <a href="telecrm-life-at-telecrm.html" class="btn-outline">Life at telecrm</a>
       </div>
     </div>
+
+
+
 
   </div>
 </section>
